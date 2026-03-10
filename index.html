@@ -643,6 +643,33 @@
             box-shadow: 0 0 60px rgba(0,0,0,0.5);
         }
 
+
+        /* ========================
+           BRAND REFERENCE CARDS
+           ======================== */
+        .brand-ref-section { background: #0A0A0A; }
+        .brand-ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; margin-top: 3rem; }
+        .brand-ref-card { background: #0E0E0E; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; overflow: hidden; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .brand-ref-card:hover { border-color: rgba(255,255,255,0.1); transform: translateY(-6px); box-shadow: 0 24px 64px rgba(0,0,0,0.5); }
+        .brand-ref-hero { position: relative; width: 100%; height: 420px; overflow: hidden; }
+        .brand-ref-hero img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+        .brand-ref-card:hover .brand-ref-hero img { transform: scale(1.03); }
+        .brand-ref-hero .brand-ref-badge { position: absolute; bottom: 1.2rem; left: 1.2rem; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: #999; }
+        .brand-ref-thumbs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
+        .brand-ref-thumbs img { width: 100%; height: 180px; object-fit: cover; transition: opacity 0.3s ease; }
+        .brand-ref-thumbs img:hover { opacity: 0.85; }
+        .brand-ref-info { padding: 1.8rem; }
+        .brand-ref-name { font-size: 1.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #FFF; margin-bottom: 0.3rem; }
+        .brand-ref-type { font-size: 0.85rem; color: #555; margin-bottom: 1.5rem; }
+        .brand-ref-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+        .brand-ref-meta-item { display: flex; flex-direction: column; gap: 0.35rem; }
+        .brand-ref-meta-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.18em; color: #444; }
+        .brand-ref-meta-value { font-size: 0.85rem; color: #CCC; font-weight: 500; }
+        .brand-ref-palette { display: flex; gap: 0.5rem; align-items: center; }
+        .brand-ref-swatch { width: 22px; height: 22px; border-radius: 50%; border: 2px solid #222; }
+        .brand-ref-hex { font-size: 0.7rem; color: #555; font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; letter-spacing: 0.04em; }
+        @media (max-width: 768px) { .brand-ref-grid { grid-template-columns: 1fr; } .brand-ref-hero { height: 300px; } .brand-ref-thumbs img { height: 120px; } }
+
         .lightbox-close {
             position: absolute;
             top: 1.5rem;
@@ -1234,6 +1261,93 @@ a {
     </section>
 
     <hr class="divider">
+
+    <!-- ===== BRAND REFERENCES ===== -->
+    <section class="brand-ref-section">
+        <div class="container">
+            <h3 class="fade-up">Brand Builds</h3>
+            <h2 class="fade-up">What a Complete Brand System Looks Like</h2>
+
+            <div class="brand-ref-grid">
+
+                <!-- NORTH -->
+                <div class="brand-ref-card fade-up">
+                    <div class="brand-ref-hero">
+                        <img src="images/north/north_hero_01.png" alt="NORTH — campsite in foggy morning woods" loading="lazy">
+                        <div class="brand-ref-badge">25 images delivered</div>
+                    </div>
+                    <div class="brand-ref-thumbs">
+                        <img src="images/north/north_hero_02.png" alt="NORTH — camp gear detail" loading="lazy">
+                        <img src="images/north/north_hero_03.png" alt="NORTH — trail at dawn" loading="lazy">
+                    </div>
+                    <div class="brand-ref-info">
+                        <div class="brand-ref-name">NORTH</div>
+                        <div class="brand-ref-type">Premium Camping &amp; Outdoor Brand</div>
+                        <div class="brand-ref-meta">
+                            <div class="brand-ref-meta-item">
+                                <div class="brand-ref-meta-label">Palette</div>
+                                <div class="brand-ref-meta-value">
+                                    <div class="brand-ref-palette">
+                                        <div class="brand-ref-swatch" style="background:#2D4A22;"></div>
+                                        <div class="brand-ref-swatch" style="background:#C4A35A;"></div>
+                                        <div class="brand-ref-swatch" style="background:#3B3B3B;"></div>
+                                    </div>
+                                    <div class="brand-ref-hex" style="margin-top:0.4rem;">#2D4A22 · #C4A35A · #3B3B3B</div>
+                                </div>
+                            </div>
+                            <div class="brand-ref-meta-item">
+                                <div class="brand-ref-meta-label">Camera</div>
+                                <div class="brand-ref-meta-value">Kodak Gold 200<br>35mm film</div>
+                            </div>
+                            <div class="brand-ref-meta-item">
+                                <div class="brand-ref-meta-label">Mission</div>
+                                <div class="brand-ref-meta-value">Cinematic outdoor storytelling. Fog, fire, silence.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRIMO TACOS -->
+                <div class="brand-ref-card fade-up">
+                    <div class="brand-ref-hero">
+                        <img src="images/primo/primo_hero_01.png" alt="PRIMO TACOS — taco close-up with flash" loading="lazy">
+                        <div class="brand-ref-badge">25 images delivered</div>
+                    </div>
+                    <div class="brand-ref-thumbs">
+                        <img src="images/primo/primo_hero_02.png" alt="PRIMO TACOS — truck at golden hour" loading="lazy">
+                        <img src="images/primo/primo_hero_03.png" alt="PRIMO TACOS — night crowd scene" loading="lazy">
+                    </div>
+                    <div class="brand-ref-info">
+                        <div class="brand-ref-name">PRIMO TACOS</div>
+                        <div class="brand-ref-type">LA Taco Truck</div>
+                        <div class="brand-ref-meta">
+                            <div class="brand-ref-meta-item">
+                                <div class="brand-ref-meta-label">Palette</div>
+                                <div class="brand-ref-meta-value">
+                                    <div class="brand-ref-palette">
+                                        <div class="brand-ref-swatch" style="background:#E84420;"></div>
+                                        <div class="brand-ref-swatch" style="background:#F5D547;"></div>
+                                        <div class="brand-ref-swatch" style="background:#1A1A1A;"></div>
+                                    </div>
+                                    <div class="brand-ref-hex" style="margin-top:0.4rem;">#E84420 · #F5D547 · #1A1A1A</div>
+                                </div>
+                            </div>
+                            <div class="brand-ref-meta-item">
+                                <div class="brand-ref-meta-label">Camera</div>
+                                <div class="brand-ref-meta-value">Portra 400<br>Direct flash</div>
+                            </div>
+                            <div class="brand-ref-meta-item">
+                                <div class="brand-ref-meta-label">Mission</div>
+                                <div class="brand-ref-meta-value">Street food with cult energy. Late-night, no filter.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
 
     <!-- ===== WHAT YOU GET ===== -->
     <section>
