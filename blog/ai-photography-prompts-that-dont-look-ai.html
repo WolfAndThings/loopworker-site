@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50 AI Photography Prompts That Don't Look Like AI | LoopWorker</title>
+    <meta name="description" content="50 real, usable AI photography prompts organized by category. Each specifies camera, film stock, and lighting. Learn the anti-AI framework that makes generated images look like real photographs.">
+    <meta name="keywords" content="AI photography prompts, AI image prompts, Midjourney prompts, ChatGPT image prompts, realistic AI photography">
+    <meta name="author" content="Alex Lamb">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://loopworker.com/blog/ai-photography-prompts-that-dont-look-ai.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="50 AI Photography Prompts That Don't Look Like AI">
+    <meta property="og:description" content="50 real, usable AI photography prompts with camera, film stock, and lighting specs. The anti-AI framework for images that look like real photographs.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://loopworker.com/blog/ai-photography-prompts-that-dont-look-ai.html">
+    <meta property="og:site_name" content="LoopWorker">
+    <meta property="article:author" content="Alex Lamb">
+    <meta property="article:published_time" content="2026-03-09">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="50 AI Photography Prompts That Don't Look Like AI">
+    <meta name="twitter:description" content="50 tested prompts that produce realistic AI photos. Camera + scene + mood + film stock = images that don't look generated.">
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "50 AI Photography Prompts That Don't Look Like AI",
+        "author": {
+            "@type": "Person",
+            "name": "Alex Lamb"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "LoopWorker"
+        },
+        "datePublished": "2026-03-09",
+        "dateModified": "2026-03-09",
+        "description": "50 real, usable AI photography prompts organized by category. Each specifies camera, film stock, and lighting. Learn the anti-AI framework for realistic images.",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://loopworker.com/blog/ai-photography-prompts-that-dont-look-ai.html"
+        }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #080808; color: #E8E8E8; font-family: 'Inter', -apple-system, sans-serif; font-size: 1.1rem; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+        a { color: #FFF; }
+        .article-container { max-width: 720px; margin: 0 auto; padding: 140px 24px 80px; }
+        .article-meta { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin-bottom: 1.5rem; }
+        .article-title { font-size: 2.6rem; font-weight: 700; line-height: 1.15; color: #FFF; margin-bottom: 2rem; letter-spacing: -0.02em; }
+        .article-subtitle { font-size: 1.25rem; color: #999; line-height: 1.6; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        h2 { font-size: 1.5rem; font-weight: 600; color: #FFF; margin: 3rem 0 1.2rem; letter-spacing: -0.01em; }
+        h3 { font-size: 1.2rem; font-weight: 600; color: #DDD; margin: 2rem 0 0.8rem; }
+        p { margin-bottom: 1.4rem; color: #CCC; }
+        strong { color: #FFF; font-weight: 600; }
+        ul, ol { margin: 0 0 1.4rem 1.5rem; color: #CCC; }
+        li { margin-bottom: 0.5rem; }
+        .prompt-block { background: #0e0e0e; border: 1px solid #1a1a1a; border-radius: 6px; padding: 1.2rem 1.4rem; margin: 1rem 0 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.88rem; line-height: 1.7; color: #B8B8B8; position: relative; }
+        .prompt-number { position: absolute; top: -10px; left: 14px; background: #080808; padding: 0 8px; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #555; }
+        .banned-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 1rem 0 2rem; }
+        .banned-word { background: #1a0a0a; border: 1px solid #331a1a; color: #cc6666; padding: 4px 12px; border-radius: 3px; font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; }
+        .framework-box { background: #0a0f0a; border: 1px solid #1a2a1a; border-radius: 6px; padding: 1.5rem 1.8rem; margin: 2rem 0; }
+        .framework-box p { color: #8cb88c; margin-bottom: 0.5rem; }
+        .framework-box strong { color: #a8d8a8; }
+        .category-label { display: inline-block; background: #151515; color: #888; padding: 4px 14px; border-radius: 3px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; }
+        blockquote { border-left: 3px solid #333; padding: 1rem 0 1rem 1.5rem; margin: 2rem 0; color: #999; font-style: italic; }
+        .cta-section { margin-top: 4rem; padding: 3rem 2.5rem; background: #111; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; text-align: center; }
+        .cta-section p { color: #CCC; font-size: 1.15rem; margin-bottom: 1.5rem; }
+        .cta-section a.cta-btn { display: inline-block; background: #FFF; color: #0A0A0A; padding: 0.8rem 2rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; }
+        .cta-section a.cta-btn:hover { background: #E0E0E0; }
+        footer { text-align: center; padding: 3rem 2rem; color: #444; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; border-top: 1px solid rgba(255,255,255,0.05); }
+        @media (max-width: 640px) {
+            .article-title { font-size: 1.8rem; }
+            .article-container { padding: 120px 18px 60px; }
+            .prompt-block { font-size: 0.8rem; padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav style="position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(8,8,8,0.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);">
+    <a href="/" style="font-size:0.8rem;font-weight:700;letter-spacing:0.15em;color:#FFF;text-transform:uppercase;text-decoration:none;">LoopWorker</a>
+    <div style="display:flex;gap:2rem;align-items:center;">
+        <a href="/services.html" style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#888;text-decoration:none;">Services</a>
+        <a href="/about.html" style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#888;text-decoration:none;">About</a>
+        <a href="https://linkedin.com/in/alexlamb" target="_blank" rel="noopener" style="font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#0A0A0A;background:#FFF;padding:0.55rem 1.4rem;border-radius:4px;text-decoration:none;">Book a Call</a>
+    </div>
+</nav>
+
+<article class="article-container">
+    <div class="article-meta">March 2026 &middot; Alex Lamb &middot; 14 min read</div>
+
+    <h1 class="article-title">50 AI Photography Prompts That Don't Look Like AI</h1>
+
+    <p class="article-subtitle">Real prompts with real camera specs. Each one is designed to produce images that look like they were shot on film by a skilled photographer, not generated by a machine. Bookmark this page.</p>
+
+    <h2>The Anti-AI Philosophy</h2>
+
+    <p>The reason most AI-generated images look fake isn't the technology. It's the prompts. People ask for "stunning, beautiful, ultra-realistic 8K photograph" and get exactly what they deserve: a glossy, overprocessed, obviously-AI image that screams stock photo.</p>
+
+    <p>Real photographs aren't perfect. They have grain. Slightly off white balance. A little motion blur in someone's hand. A background that's busy because real life is busy. The photographer made choices about what to include and exclude, and those choices left artifacts.</p>
+
+    <p>The framework for realistic AI photography is simple:</p>
+
+    <div class="framework-box">
+        <p><strong>Camera + Scene + Mood + Film Stock = Real-looking image</strong></p>
+        <p>Specify the camera system. Describe the scene like a location scout, not a poet. Set the emotional tone. Name the film stock. Let the AI fill in the details.</p>
+    </div>
+
+    <h3>The Banned Word List</h3>
+    <p>These words and phrases are banned from every prompt. They trigger the AI's "make it look impressive" mode, which is the opposite of what you want:</p>
+
+    <div class="banned-list">
+        <span class="banned-word">beautiful</span>
+        <span class="banned-word">stunning</span>
+        <span class="banned-word">perfect</span>
+        <span class="banned-word">8K</span>
+        <span class="banned-word">hyperrealistic</span>
+        <span class="banned-word">ultra-detailed</span>
+        <span class="banned-word">masterpiece</span>
+        <span class="banned-word">award-winning</span>
+        <span class="banned-word">breathtaking</span>
+        <span class="banned-word">dramatic lighting</span>
+        <span class="banned-word">cinematic</span>
+        <span class="banned-word">professional photo</span>
+        <span class="banned-word">HDR</span>
+        <span class="banned-word">unreal engine</span>
+        <span class="banned-word">octane render</span>
+    </div>
+
+    <p>Instead: be specific. Name real cameras. Name real film stocks. Describe real lighting conditions. The more you sound like a photographer talking to an assistant on set, the more real the output looks.</p>
+
+    <h2>Food Photography (Prompts 1-10)</h2>
+    <span class="category-label">Food &amp; Restaurant</span>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 01</span>
+        Smash burger on a steel counter, cheese melting over the edge, sesame bun slightly crushed. Direct flash, harsh shadows. Shot on Contax T2, Portra 400 pushed one stop. Tight crop, shallow depth of field. Grease on the wrapper. Red and yellow neon reflecting off the counter surface.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 02</span>
+        Barista mid-pour, latte art forming in a ceramic cup. Steam rising into frame. Morning light from a window on the left, no artificial light. Leica Q2, natural color. Coffee shop interior slightly out of focus behind them. Their hands are the subject.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 03</span>
+        Line cook plating a dish, motion blur in their hands, everything else sharp. Industrial kitchen, stainless steel surfaces, ticket rail in the background. Overhead fluorescent mixed with heat lamp warmth. Nikon FM2, Kodak Tri-X 400. Black and white.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 04</span>
+        Pizza being pulled from a wood-fired oven, cheese bubbling, flour dust in the air catching the oven light. Wide shot showing the brick interior. Canon AE-1, Ektachrome 100. Warm tungsten cast from the fire. Cook's face lit by the oven glow.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 05</span>
+        Two people at a diner counter, coffee cups and half-eaten plates between them. Mid-conversation, one laughing. Overhead fluorescent lighting, slightly green cast. Minolta X-700, Fuji Superia 400. Wide angle, showing the full counter and the cook working behind the pass.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 06</span>
+        Espresso machine close-up, crema flowing into a small glass. Hands pulling the lever. Dark wood bar surface, brass fixtures. Window light from the right, no flash. Hasselblad 500C, Portra 160. Medium format crop ratio. Shallow focus on the stream of espresso.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 07</span>
+        Street taco stand at night, corn tortillas on the grill, smoke rising. String lights overhead. Customer waiting, phone in hand. Shot from across the street, capturing the full scene. Ricoh GR III, high ISO grain. Warm incandescent light mixed with blue phone screen glow.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 08</span>
+        Baker's hands covered in flour, shaping sourdough on a wooden board. Early morning light through a dusty window. Only the hands and dough in focus, everything else soft. Pentax 67, Portra 800. Tight crop, vertical composition. Flour particles floating in the light beam.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 09</span>
+        Bowl of ramen from above, chopsticks resting across the rim. Soft egg halved, nori sheet, scallions scattered. Dark stone table. Single overhead light source, no fill. Fuji X100V, Classic Chrome film simulation. Slight vignette in the corners. Steam visible rising from the broth.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 10</span>
+        Busy restaurant dining room at golden hour, sun streaming through floor-to-ceiling windows. Diners in conversation, waitstaff moving between tables with motion blur. Shot from the host stand looking into the room. Olympus OM-1, Kodak Gold 200. Warm, golden, alive.
+    </div>
+
+    <h2>Fashion &amp; Apparel (Prompts 11-20)</h2>
+    <span class="category-label">Fashion</span>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 11</span>
+        Person in an oversized white t-shirt and dark jeans standing against a raw concrete wall. Flat daylight, no shadows on the face. Mamiya RZ67, Ilford HP5 Plus. Full body shot, straight-on, relaxed posture. No styling, no expression. The clothes are the subject.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 12</span>
+        Close-up of hands adjusting a watch strap on a wrist. Cream knit sleeve visible. Natural light from a north-facing window, soft and even. Contax 645, Portra 160. Extremely shallow depth of field. Background is a blurred wood desk surface.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 13</span>
+        Three people walking down an empty sidewalk away from camera. Matching earth-tone outfits, different fits. Late afternoon side light casting long shadows on the pavement. Nikon F3, Kodak Ektar 100. Medium distance, full bodies in frame. Urban street, no cars.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 14</span>
+        Folded stack of crew neck sweatshirts on a plywood shelf, varying shades of gray and cream. Hard directional light from the right creating a strong shadow behind the stack. No people. Hasselblad X1D, Phase One digital back. Clean, minimal, architectural.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 15</span>
+        Person sitting on a fire escape, legs dangling, wearing canvas jacket and work boots. Shot from below looking up, building facade framing them. Overcast sky, flat lighting. Leica M6, Tri-X 400. Grain visible, high contrast black and white. New York energy.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 16</span>
+        Detail shot of a jacket collar and lapel, showing stitching and fabric texture. Person wearing it is mostly out of frame, just neck and shoulder visible. Open shade lighting outdoors. Canon EOS 3, Fuji Pro 400H. Soft color, low contrast, texture is everything.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 17</span>
+        Person leaning against a parked vintage car, hands in pockets, looking off camera. Wearing a simple dark coat over a white tee. Dusk light, warm but fading. Pentax K1000, Cinestill 800T. Slight halation around the streetlights in the background. Moody, quiet.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 18</span>
+        Flat lay on a wrinkled linen bedsheet: sunglasses, a folded bandana, a worn leather wallet, car keys. Morning light from a window, soft shadows. iPhone 15 Pro camera, natural processing. Overhead shot, casual, unstaged feeling. Warm white balance.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 19</span>
+        Two people in a laundromat, one sitting on a machine, one leaning against the wall. Both wearing the same brand hoodie in different colors. Fluorescent overhead lights, slightly green. Yashica T4, Fuji Superia 800. Grain, warmth, casual energy. Machines spinning in the background.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 20</span>
+        Person walking through a crosswalk, mid-stride, carrying a canvas tote bag. Shot from street level, traffic blurred behind them. Overcast day, even lighting. Ricoh GR III, black and white high contrast mode. Sharp subject, everything else in motion. Urban commute energy.
+    </div>
+
+    <h2>Hotel &amp; Real Estate (Prompts 21-30)</h2>
+    <span class="category-label">Hospitality &amp; Architecture</span>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 21</span>
+        Boutique hotel room with floor-to-ceiling windows looking out at a mountain valley. Unmade bed with white linen, morning light flooding in. Person in a robe standing at the window, back to camera, coffee cup in hand. Kodak Gold 200, warm tones. No flash. Architectural lines leading to the view.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 22</span>
+        Hotel lobby at night, low ambient lighting, a single floor lamp illuminating a leather armchair. Polished concrete floor reflecting the light. Person walking through the frame in the background, motion blur. Leica M10, ISO 3200, available light only. Grain and atmosphere.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 23</span>
+        Infinity pool at dawn, steam rising off the water surface. Empty except for two towels folded on a lounger. Jungle canopy visible beyond the pool edge. Fuji GFX 50S, Astia film simulation. Wide shot, low angle from water level. Pastel sky reflected in the still water.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 24</span>
+        Restaurant terrace of a cliffside hotel, table set for two, candles lit. Ocean in the background, twilight blue hour. No people. Hasselblad X2D, medium format look. Shallow focus on the table setting, coastline soft in the distance. Warm candlelight against cool sky.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 25</span>
+        Concrete and glass staircase in a modern hotel, person ascending with a hand on the railing. Natural light from a skylight above. Shot from below, looking up through the spiral. Nikon Z8, architectural perspective. Clean lines, minimal, the geometry is the subject.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 26</span>
+        Luxury bathroom, freestanding tub near a window, afternoon light. Stone walls, brass fixtures, folded towels on a wooden stool. No person. Wide angle but not distorted. Canon 5D Mark IV, 24mm tilt-shift lens. Even exposure, detail in the highlights and shadows. Feels like an architecture magazine spread.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 27</span>
+        Hotel hallway with numbered doors, perspective lines converging to a vanishing point. Warm sconce lighting on the walls, patterned carpet. Person at the far end, key card in hand, about to enter a room. Contax G2, Portra 400. The hallway is the composition, the person is the scale.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 28</span>
+        Rooftop bar with city skyline at dusk. Bartender behind the counter mixing a drink, two guests seated. String lights overhead. Shot from the end of the bar showing the full scene. Sony A7III, 35mm, Lightroom warm edit. Ambient light only, natural grain at high ISO.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 29</span>
+        Minimalist Airbnb living room, white walls, a single large painting, low sofa, concrete coffee table. Afternoon sun making a sharp rectangle of light on the floor. No people. Fuji X-T5, Classic Negative film simulation. Quiet, still, inviting. Interior design portfolio quality.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 30</span>
+        Guest arriving at a resort, luggage on the path, looking up at the entrance. Tropical plants lining the walkway, wooden reception structure ahead. Late afternoon golden light filtering through the foliage. Pentax 67, Portra 800. Shot from behind the guest, following them in. First impression moment.
+    </div>
+
+    <h2>Product Photography (Prompts 31-40)</h2>
+    <span class="category-label">Product &amp; E-commerce</span>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 31</span>
+        Skincare bottle on a wet stone surface, water droplets on the glass. Single hard light from above creating a defined shadow behind the bottle. Beige stone, clear product, minimal. Hasselblad H6D, Phase One back. Product centered, negative space around it. Clean but not sterile.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 32</span>
+        Candle burning on a bedside table next to an open book and reading glasses. Evening, only the candle and a small lamp providing light. Warm, intimate. Nikon FM2, Portra 800 pushed one stop. Grain visible, slight warm color shift. The candle flame slightly blurred from long exposure.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 33</span>
+        Person applying moisturizer to their face, bathroom mirror partially fogged, morning light from a frosted window. Shot over their shoulder showing their reflection. Contax T3, Fuji Pro 400H. Soft, dewy, natural. Not posed — caught mid-routine.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 34</span>
+        Headphones resting on a wooden desk next to a closed laptop and a mug of black coffee. Overhead shot, flat lay. Natural window light from the top of frame. iPhone 15 Pro, minimal editing. Simple, editorial, tech-meets-lifestyle. The desk has some wear and character.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 35</span>
+        Tote bag hanging on a wall hook by a front door, keys in the side pocket, jacket draped next to it. Entryway of an apartment, shoes on the floor below. Soft daylight from the door. Ricoh GR III, positive film mode. Everyday moment, product in context, nothing forced.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 36</span>
+        Wine bottle and two glasses on a kitchen island, one glass half full. Cutting board with cheese and bread in the background, slightly out of focus. Window light and one pendant light overhead. Leica Q2, available light. Dinner prep energy, lived-in, warm.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 37</span>
+        Sneakers on feet, person sitting on a curb, street visible in background. Shot low, at shoe level. Direct sunlight, hard shadows on the concrete. Olympus Mju II, Kodak Ultramax 400. Saturated daylight colors, slight lens flare from the sun. Casual, no posing.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 38</span>
+        Ceramic mug being held in two hands, steam rising, person's face cropped out above the nose. Wearing a chunky knit sweater. Overcast window light, neutral tones. Fuji X100V, Classic Chrome. Tight crop, shallow depth of field on the mug rim. Comfort in a frame.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 39</span>
+        Sunglasses on a concrete ledge with a pool reflection visible below. Bright midday sun, harsh shadow of the frames on the concrete. No people. Pentax K1000, Ektachrome 100. Bold color, hard light, summer noon energy. Minimal composition, product as sculpture.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 40</span>
+        Person unpacking a delivery box at their kitchen table, pulling out a product wrapped in tissue paper. Overhead angle, their hands and the table filling the frame. Afternoon light from a side window. Canon AE-1, Portra 160. The unboxing moment, genuine reaction. Box details visible but not staged.
+    </div>
+
+    <h2>Portrait &amp; Lifestyle (Prompts 41-50)</h2>
+    <span class="category-label">Portrait</span>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 41</span>
+        Person reading a newspaper at a cafe table, espresso cup beside them. Shot through the cafe window from outside, reflection of the street visible in the glass. Leica M6, Tri-X 400. Black and white, grain, voyeuristic perspective. They don't know they're being photographed.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 42</span>
+        Portrait of a person standing in a doorway, half in sunlight half in shadow. White t-shirt, direct gaze at camera. Hard midday light creating a sharp line down the center of their face. Mamiya 7, Portra 400. Medium format, waist-up crop. No smile, no styling, just presence.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 43</span>
+        Group of four friends sitting on the hood of a car in a parking lot at sunset. Laughing, one pointing at something off camera. Golden hour backlight creating lens flare. Nikon F3, Kodak Gold 200. Full scene, wide shot, catching a real moment. Warm, nostalgic, lived.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 44</span>
+        Person working at a desk in a home office, mid-focus-pulling on their face with the computer screen blurred in foreground. Side light from a window with blinds creating stripe shadows. Contax RTS, Ilford Delta 3200. Black and white, high grain, moody concentration.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 45</span>
+        Person lying on a blanket in a park, one arm behind their head, eyes closed. Dappled sunlight through tree leaves creating patterns on their face and clothes. Shot from above, looking down. Pentax 67, Fuji Pro 400H. Peaceful, unhurried, summer afternoon energy.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 46</span>
+        Person in a vintage shop, holding a record up to look at the cover, surrounded by shelves of vinyl. Warm tungsten overhead light, no flash. Yashica T4, Cinestill 800T. Halation around the bright spots, amber warmth everywhere. Browsing, in their element, not performing.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 47</span>
+        Person on a morning run, shot from the side at a crosswalk, mid-stride. Urban background, early light, empty streets. Slight motion blur in the legs, face sharp. Leica Q2, Monochrom mode. High contrast black and white. Discipline energy, 6 AM vibes. Not an ad, a document.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 48</span>
+        Two people at a rooftop party, in conversation, drinks in hand. City lights bokeh behind them. One is gesturing while talking, the other listening intently. Shot at eye level with a 50mm. Nikon FM2, Portra 800. Available light, slight underexposure, grain. The connection between them is the subject.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 49</span>
+        Person walking their dog on an empty beach at low tide, footprints trailing behind them in the wet sand. Overcast sky, flat diffused light, muted colors. Shot from far away, small figures in a wide landscape. Fuji GW690, Kodak Portra 160. Medium format, panoramic feeling. Solitude.
+    </div>
+
+    <div class="prompt-block">
+        <span class="prompt-number">Prompt 50</span>
+        Close-up portrait, just the eyes and bridge of the nose, freckles visible. Natural north-light from a large window, catchlight in both eyes. No makeup, no retouching. Hasselblad 500C, Portra 160. Medium format detail, extremely shallow depth of field. The eyelashes are sharp, the ears are soft. Intimate, still, human.
+    </div>
+
+    <h2>How to Use These Prompts</h2>
+
+    <p>These prompts work in ChatGPT (GPT-4o image generation), Midjourney, and most other AI image generators. A few tips:</p>
+
+    <ol>
+        <li><strong>Use them as-is first.</strong> Don't add to them. Don't append "4K ultra-detailed" or any modifier. The restraint is what makes them work.</li>
+        <li><strong>Swap the film stock to change the mood.</strong> Portra 400 gives you warm, soft skin tones. Tri-X 400 gives you gritty black and white. Ektachrome gives you punchy, saturated color. Cinestill 800T gives you amber tungsten warmth with halation. The film stock is the single most powerful lever.</li>
+        <li><strong>Change the camera to change the format.</strong> 35mm cameras (Nikon F3, Canon AE-1) give you a classic rectangular frame. Medium format (Mamiya RZ67, Pentax 67, Hasselblad) gives you a squarer, more detailed look. Compact cameras (Contax T2, Ricoh GR III) give you a snapshot, everyday feel.</li>
+        <li><strong>Always include a human.</strong> Empty still lifes look more artificial than scenes with people. Even a hand, a blurred figure in the background, or someone partially out of frame adds life and scale.</li>
+        <li><strong>Describe light like a photographer, not a poet.</strong> "Morning light from a window on the left" is better than "ethereal golden luminance." Be literal. Name the source, the direction, and the quality (hard/soft/diffused).</li>
+    </ol>
+
+    <h2>The Framework, Summarized</h2>
+
+    <div class="framework-box">
+        <p><strong>1. Camera system</strong> — names a specific real camera (sets the "look")</p>
+        <p><strong>2. Film stock or profile</strong> — controls color, grain, and tonal character</p>
+        <p><strong>3. Scene description</strong> — what's literally in front of the camera, described like a location scout</p>
+        <p><strong>4. Light source + direction</strong> — where the light is coming from and what quality it has</p>
+        <p><strong>5. Mood / energy</strong> — one or two words for the feeling (quiet, chaotic, intimate, busy)</p>
+        <p><strong>6. What NOT to include</strong> — no superlatives, no quality modifiers, no rendering engines</p>
+    </div>
+
+    <p>That's the whole system. Camera, film, scene, light, mood. Simple prompts that trust the AI to fill in the details, instead of overloading it with adjectives that push it toward its worst instincts.</p>
+
+    <p>Every prompt above follows this framework. Use them directly, adapt them for your brand, or use the framework to write your own. The goal is always the same: images that look like a real photographer shot them on real film in a real place.</p>
+
+    <h2>Related Reading</h2>
+    <ul>
+        <li><a href="/blog/midjourney-vs-chatgpt-brand-photography.html">Midjourney vs ChatGPT for Brand Photography: Which Makes Better Images?</a></li>
+        <li><a href="/blog/ai-generated-lifestyle-photography.html">AI-Generated Lifestyle Photography: The Content Shortcut</a></li>
+        <li><a href="/blog/how-to-create-brand-style-guide-ai.html">How to Create a Brand Style Guide with AI</a></li>
+        <li><a href="/blog/ai-brand-photography-cost.html">How Much Does AI Brand Photography Actually Cost?</a></li>
+    </ul>
+
+    <div class="cta-section">
+        <p>Want the whole system built for you? I'll build your complete brand system in 7 days.</p>
+        <a href="https://loopworker.gumroad.com/" target="_blank" rel="noopener" class="cta-btn" style="background:#4ADE80;color:#0A0A0A;">Download Free Resources</a> <a href="/services.html" class="cta-btn">See Packages</a>
+    </div>
+</article>
+
+<footer>LoopWorker. AI Brand Systems.</footer>
+
+</body>
+</html>
