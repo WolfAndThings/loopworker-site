@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Brand Audit Tool — Score Your Brand in 2 Minutes | LoopWorker</title>
+<meta name="description" content="Free interactive brand audit tool. Score your brand across 6 categories — visual identity, content, social media, website, automation, and consistency. Get a custom action plan.">
+<link rel="canonical" href="https://www.loopworker.com/brand-audit.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.loopworker.com/brand-audit.html">
+<meta property="og:title" content="Free Brand Audit Tool — Score Your Brand in 2 Minutes">
+<meta property="og:description" content="Free interactive brand audit. Score your brand across 6 categories and get a custom action plan.">
+<meta property="og:site_name" content="LoopWorker">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Brand Audit Tool — Score Your Brand in 2 Minutes">
+<meta name="twitter:description" content="Free interactive brand audit. Score your brand across 6 categories and get a custom action plan.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "LoopWorker Brand Audit Tool",
+  "url": "https://www.loopworker.com/brand-audit.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "description": "Free interactive brand audit tool that scores your brand across 6 categories and provides a custom action plan."
+}
+</script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#080808;color:#D4D4D4;font-family:'Inter',sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3{color:#FFF;font-weight:700;letter-spacing:-.03em}
+h1{font-size:clamp(2rem,4vw,3rem);line-height:1.1;font-weight:800}
+h2{font-size:1.4rem;margin-bottom:1rem}
+p{color:#B0B0B0;font-size:1rem;max-width:640px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(8,8,8,.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-logo{font-size:.8rem;font-weight:700;letter-spacing:.15em;color:#FFF;text-transform:uppercase;text-decoration:none}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#888;text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:#FFF}
+
+.container{max-width:720px;margin:0 auto;padding:8rem 1.5rem 4rem}
+
+.intro{text-align:center;margin-bottom:3rem}
+.intro p{margin:1rem auto 0;text-align:center}
+.intro .subtitle{font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;color:#555;margin-bottom:1rem}
+
+.category{background:#0C0C0C;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:2rem;margin-bottom:1.5rem}
+.category h2{display:flex;align-items:center;gap:.6rem;font-size:1.1rem;margin-bottom:1.2rem}
+.category h2 span{font-size:1.4rem}
+
+.question{margin-bottom:1.2rem}
+.question label{display:block;font-size:.92rem;color:#CCC;margin-bottom:.5rem;cursor:pointer}
+.options{display:flex;gap:.5rem;flex-wrap:wrap}
+.options button{background:#151515;border:1px solid #222;color:#888;padding:.45rem 1rem;border-radius:6px;font-size:.8rem;font-family:'Inter',sans-serif;cursor:pointer;transition:all .2s}
+.options button:hover{border-color:#444;color:#CCC}
+.options button.selected{background:#FFF;color:#080808;border-color:#FFF;font-weight:600}
+
+.progress-bar{width:100%;height:4px;background:#151515;border-radius:2px;margin-bottom:2rem;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,#FFF 0%,#888 100%);border-radius:2px;transition:width .4s ease}
+
+#results{display:none;text-align:center}
+.score-circle{width:160px;height:160px;border-radius:50%;border:3px solid #222;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:2rem auto}
+.score-number{font-size:3.5rem;font-weight:900;color:#FFF;line-height:1}
+.score-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:#666;margin-top:.3rem}
+.score-grade{font-size:1.2rem;font-weight:700;margin:1rem 0;color:#FFF}
+
+.category-scores{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0;text-align:left}
+.cat-score{background:#0C0C0C;border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:1.2rem}
+.cat-score h3{font-size:.85rem;color:#999;font-weight:500;margin-bottom:.3rem;letter-spacing:0}
+.cat-score .bar{width:100%;height:6px;background:#151515;border-radius:3px;margin-top:.5rem}
+.cat-score .bar-fill{height:100%;border-radius:3px;transition:width .6s ease}
+
+.action-plan{text-align:left;margin:2rem 0;background:#0C0C0C;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:2rem}
+.action-plan h2{font-size:1.2rem;margin-bottom:1rem}
+.action-plan ul{list-style:none;padding:0}
+.action-plan li{padding:.6rem 0;border-bottom:1px solid #151515;font-size:.92rem;color:#B0B0B0;display:flex;align-items:flex-start;gap:.5rem}
+.action-plan li:last-child{border-bottom:none}
+.action-plan li::before{content:'→';color:#555;flex-shrink:0}
+
+.cta-section{margin-top:2.5rem;padding:2.5rem;background:linear-gradient(135deg,#0E0E0E,#111);border:1px solid rgba(255,255,255,.06);border-radius:12px;text-align:center}
+.cta-section p{margin:0 auto .8rem;text-align:center;color:#999}
+.cta-section h2{font-size:1.3rem;margin-bottom:.5rem}
+.btn{display:inline-block;padding:.85rem 2rem;font-size:.85rem;font-weight:600;text-decoration:none;border-radius:4px;letter-spacing:.04em;text-transform:uppercase;margin:.3rem}
+.btn-primary{background:#FFF;color:#0A0A0A}
+.btn-outline{background:transparent;color:#888;border:1px solid #222}
+.btn-outline:hover{border-color:#444;color:#FFF}
+
+#restart-btn{display:none;margin:1.5rem auto;background:transparent;border:1px solid #333;color:#888;padding:.6rem 1.5rem;border-radius:6px;font-size:.8rem;font-family:'Inter',sans-serif;cursor:pointer}
+#restart-btn:hover{border-color:#666;color:#FFF}
+
+footer{text-align:center;padding:2rem 1.5rem;border-top:1px solid #111}
+footer p{font-size:.8rem;color:#333;margin:0 auto}
+
+@media(max-width:640px){
+  .category-scores{grid-template-columns:1fr}
+  .options{flex-direction:column}
+  .options button{width:100%;text-align:left}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+<nav>
+<a href="/" class="nav-logo">LoopWorker</a>
+<div class="nav-links">
+<a href="/blog/">Blog</a>
+<a href="/services.html">Services</a>
+<a href="/about.html">About</a>
+<a href="/free-resources.html">Free Resources</a>
+</div>
+</nav>
+
+<div class="container">
+<div class="intro">
+<div class="subtitle">Free Tool</div>
+<h1>Brand Audit</h1>
+<p>Score your brand across 6 categories in 2 minutes. Get a custom action plan based on your weaknesses.</p>
+</div>
+
+<div class="progress-bar"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+
+<div id="quiz">
+
+<div class="category" data-cat="identity">
+<h2><span>01</span> Visual Identity</h2>
+<div class="question" data-q="logo">
+<label>Do you have a professional logo and defined color palette?</label>
+<div class="options">
+<button data-val="0">No logo or colors</button>
+<button data-val="1">DIY / Canva logo</button>
+<button data-val="2">Professional but outdated</button>
+<button data-val="3">Strong, consistent identity</button>
+</div>
+</div>
+<div class="question" data-q="typography">
+<label>Do you use consistent fonts across all materials?</label>
+<div class="options">
+<button data-val="0">Random fonts each time</button>
+<button data-val="1">1-2 fonts, not always consistent</button>
+<button data-val="2">Defined fonts, mostly consistent</button>
+<button data-val="3">Strict typography system</button>
+</div>
+</div>
+<div class="question" data-q="photography">
+<label>How would you describe your brand photography?</label>
+<div class="options">
+<button data-val="0">No brand photos / stock only</button>
+<button data-val="1">Phone photos, inconsistent</button>
+<button data-val="2">Some professional shots</button>
+<button data-val="3">Consistent, on-brand library</button>
+</div>
+</div>
+</div>
+
+<div class="category" data-cat="content">
+<h2><span>02</span> Content System</h2>
+<div class="question" data-q="calendar">
+<label>Do you have a content calendar?</label>
+<div class="options">
+<button data-val="0">Post when I remember</button>
+<button data-val="1">Loose plan, not consistent</button>
+<button data-val="2">Monthly calendar, usually follow it</button>
+<button data-val="3">Systematic calendar + batching</button>
+</div>
+</div>
+<div class="question" data-q="frequency">
+<label>How often do you post on social media?</label>
+<div class="options">
+<button data-val="0">Rarely / when I have time</button>
+<button data-val="1">1-2 times per week</button>
+<button data-val="2">3-5 times per week</button>
+<button data-val="3">Daily with variety</button>
+</div>
+</div>
+<div class="question" data-q="quality">
+<label>Is your content visually consistent?</label>
+<div class="options">
+<button data-val="0">Every post looks different</button>
+<button data-val="1">Somewhat consistent</button>
+<button data-val="2">Mostly on-brand</button>
+<button data-val="3">Cohesive, recognizable feed</button>
+</div>
+</div>
+</div>
+
+<div class="category" data-cat="social">
+<h2><span>03</span> Social Media</h2>
+<div class="question" data-q="profile">
+<label>Is your social media profile optimized?</label>
+<div class="options">
+<button data-val="0">Basic / incomplete</button>
+<button data-val="1">Has info but no strategy</button>
+<button data-val="2">Optimized bio and highlights</button>
+<button data-val="3">Fully optimized with CTA + link</button>
+</div>
+</div>
+<div class="question" data-q="engagement">
+<label>How do you handle engagement and DMs?</label>
+<div class="options">
+<button data-val="0">Ignore most of it</button>
+<button data-val="1">Reply sometimes</button>
+<button data-val="2">Reply within 24 hours</button>
+<button data-val="3">Active engagement strategy</button>
+</div>
+</div>
+</div>
+
+<div class="category" data-cat="website">
+<h2><span>04</span> Website & SEO</h2>
+<div class="question" data-q="site">
+<label>What's your website situation?</label>
+<div class="options">
+<button data-val="0">No website</button>
+<button data-val="1">Basic site, rarely updated</button>
+<button data-val="2">Professional site, some SEO</button>
+<button data-val="3">Optimized site with blog + SEO</button>
+</div>
+</div>
+<div class="question" data-q="gbp">
+<label>Is your Google Business Profile set up?</label>
+<div class="options">
+<button data-val="0">Don't have one</button>
+<button data-val="1">Claimed but bare</button>
+<button data-val="2">Set up with photos + hours</button>
+<button data-val="3">Fully optimized, regular posts + reviews</button>
+</div>
+</div>
+</div>
+
+<div class="category" data-cat="automation">
+<h2><span>05</span> Automation & Systems</h2>
+<div class="question" data-q="posting">
+<label>Is any part of your content posting automated?</label>
+<div class="options">
+<button data-val="0">Everything is manual</button>
+<button data-val="1">Use a basic scheduler</button>
+<button data-val="2">Scheduled + some AI tools</button>
+<button data-val="3">Full pipeline: generate → schedule → post</button>
+</div>
+</div>
+<div class="question" data-q="email">
+<label>Do you have an email list and automation?</label>
+<div class="options">
+<button data-val="0">No email list</button>
+<button data-val="1">Collecting emails, no automation</button>
+<button data-val="2">List + welcome sequence</button>
+<button data-val="3">Segmented list + regular campaigns</button>
+</div>
+</div>
+</div>
+
+<div class="category" data-cat="consistency">
+<h2><span>06</span> Brand Consistency</h2>
+<div class="question" data-q="guidelines">
+<label>Do you have brand guidelines documented?</label>
+<div class="options">
+<button data-val="0">Nothing documented</button>
+<button data-val="1">Some notes, not formal</button>
+<button data-val="2">Basic style guide</button>
+<button data-val="3">Comprehensive Brand DNA doc</button>
+</div>
+</div>
+<div class="question" data-q="recognition">
+<label>Would someone recognize your brand without seeing your name?</label>
+<div class="options">
+<button data-val="0">Definitely not</button>
+<button data-val="1">Unlikely</button>
+<button data-val="2">Maybe from the colors</button>
+<button data-val="3">Yes — distinct visual identity</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="results">
+<div class="score-circle">
+<div class="score-number" id="total-score">0</div>
+<div class="score-label">out of 48</div>
+</div>
+<div class="score-grade" id="grade"></div>
+<p id="grade-desc" style="margin:0 auto 2rem;text-align:center"></p>
+
+<div class="category-scores" id="cat-scores"></div>
+
+<div class="action-plan">
+<h2>Your Action Plan</h2>
+<ul id="action-items"></ul>
+</div>
+
+<div class="cta-section">
+<h2>Want This Fixed in 7 Days?</h2>
+<p>I build complete brand systems — visual identity, photography, content calendar, and automation. You go from whatever score you got to a fully operational brand.</p>
+<a href="/services.html" class="btn btn-primary">See Packages</a>
+<a href="/free-resources.html" class="btn btn-outline">Free Resources</a>
+</div>
+
+<button id="restart-btn">Take the Audit Again</button>
+</div>
+</div>
+
+<footer><p>LoopWorker. AI Brand Systems.</p></footer>
+
+<script>
+const answers = {};
+const totalQs = document.querySelectorAll('.question').length;
+let answered = 0;
+
+document.querySelectorAll('.options button').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const q = this.closest('.question').dataset.q;
+    const cat = this.closest('.category').dataset.cat;
+    const wasNew = !(q in answers);
+
+    this.closest('.options').querySelectorAll('button').forEach(b => b.classList.remove('selected'));
+    this.classList.add('selected');
+
+    answers[q] = { val: parseInt(this.dataset.val), cat };
+    if (wasNew) answered++;
+
+    document.getElementById('progress').style.width = (answered / totalQs * 100) + '%';
+
+    if (answered === totalQs) setTimeout(showResults, 400);
+  });
+});
+
+function showResults() {
+  const cats = {
+    identity: { name: 'Visual Identity', max: 9, score: 0, color: '#FFF' },
+    content: { name: 'Content System', max: 9, score: 0, color: '#CCC' },
+    social: { name: 'Social Media', max: 6, score: 0, color: '#AAA' },
+    website: { name: 'Website & SEO', max: 6, score: 0, color: '#888' },
+    automation: { name: 'Automation', max: 6, score: 0, color: '#666' },
+    consistency: { name: 'Consistency', max: 6, score: 0, color: '#555' }
+  };
+
+  let total = 0;
+  Object.values(answers).forEach(a => {
+    cats[a.cat].score += a.val;
+    total += a.val;
+  });
+
+  document.getElementById('quiz').style.display = 'none';
+  document.getElementById('results').style.display = 'block';
+  document.getElementById('restart-btn').style.display = 'block';
+  document.getElementById('progress').style.width = '100%';
+
+  const pct = total / 48;
+  let grade, desc;
+  if (pct >= .85) { grade = 'A — Strong Brand'; desc = 'Your brand is in great shape. Focus on scaling and optimization.'; }
+  else if (pct >= .7) { grade = 'B — Good Foundation'; desc = 'Solid foundation with room to systematize and automate.'; }
+  else if (pct >= .5) { grade = 'C — Needs Work'; desc = 'You have some pieces but lack a cohesive system. This is where most small businesses sit.'; }
+  else if (pct >= .3) { grade = 'D — Major Gaps'; desc = 'Significant gaps are holding your brand back from growth.'; }
+  else { grade = 'F — Starting from Scratch'; desc = 'Your brand needs a complete build. The good news: AI makes this faster and cheaper than ever.'; }
+
+  document.getElementById('total-score').textContent = total;
+  document.getElementById('grade').textContent = grade;
+  document.getElementById('grade-desc').textContent = desc;
+
+  const catHTML = Object.entries(cats).map(([k, c]) => {
+    const pct = c.score / c.max * 100;
+    return `<div class="cat-score"><h3>${c.name}</h3><strong style="color:#FFF">${c.score}/${c.max}</strong><div class="bar"><div class="bar-fill" style="width:${pct}%;background:${c.color}"></div></div></div>`;
+  }).join('');
+  document.getElementById('cat-scores').innerHTML = catHTML;
+
+  const actions = [];
+  if (cats.identity.score < 6) actions.push('<a href="/blog/how-to-build-a-brand-from-scratch.html">Build your visual identity from scratch</a> — logo, colors, typography, and photography direction');
+  if (cats.identity.score < 4) actions.push('<a href="/blog/ai-photography-prompts-that-dont-look-ai.html">Start with AI photography prompts</a> to build a consistent image library');
+  if (cats.content.score < 6) actions.push('<a href="/blog/content-calendar-template-small-business.html">Download the free content calendar template</a> and commit to a 30-day plan');
+  if (cats.content.score < 4) actions.push('<a href="/blog/how-to-batch-content-creation.html">Learn content batching</a> — produce a month of posts in one day');
+  if (cats.social.score < 4) actions.push('<a href="/blog/how-to-increase-instagram-engagement.html">Fix your Instagram engagement</a> with proven strategies');
+  if (cats.social.score < 3) actions.push('<a href="/blog/build-visual-brand-instagram.html">Build your visual brand on Instagram</a> from scratch');
+  if (cats.website.score < 4) actions.push('<a href="/blog/google-business-profile-optimization.html">Optimize your Google Business Profile</a> — it\'s free and drives local traffic');
+  if (cats.automation.score < 4) actions.push('<a href="/blog/ai-content-automation-small-business.html">Set up content automation</a> to post consistently without manual effort');
+  if (cats.automation.score < 3) actions.push('<a href="/blog/how-to-automate-instagram-posting.html">Automate your Instagram posting</a> with a simple pipeline');
+  if (cats.consistency.score < 4) actions.push('<a href="/blog/how-to-create-brand-style-guide-ai.html">Create a brand style guide</a> so every piece of content matches');
+  if (cats.consistency.score < 3) actions.push('<a href="/blog/branding-checklist-small-business.html">Use the branding checklist</a> to identify what\'s missing');
+  if (total < 24) actions.push('<a href="/services.html">Consider a done-for-you brand system</a> — we build the whole thing in 7 days');
+
+  if (actions.length === 0) actions.push('Keep doing what you\'re doing. Consider <a href="/blog/ai-content-automation-small-business.html">automation</a> to scale.');
+
+  document.getElementById('action-items').innerHTML = actions.map(a => `<li>${a}</li>`).join('');
+
+  window.scrollTo({ top: document.getElementById('results').offsetTop - 100, behavior: 'smooth' });
+}
+
+document.getElementById('restart-btn').addEventListener('click', () => {
+  Object.keys(answers).forEach(k => delete answers[k]);
+  answered = 0;
+  document.querySelectorAll('.options button').forEach(b => b.classList.remove('selected'));
+  document.getElementById('progress').style.width = '0%';
+  document.getElementById('quiz').style.display = 'block';
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('restart-btn').style.display = 'none';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+</body>
+</html>
