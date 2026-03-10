@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Content Calendar Generator — Build Your Month in 60 Seconds | LoopWorker</title>
+    <meta name="description" content="Free interactive content calendar generator. Select your industry, platforms, and posting frequency. Get a custom 30-day content calendar with topics, content types, and caption starters.">
+    <meta name="keywords" content="content calendar generator, free content calendar, social media content calendar, content planner, monthly content calendar template">
+    <meta name="author" content="Alex Lamb">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.loopworker.com/blog/content-calendar-generator.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Free Content Calendar Generator — Build Your Month in 60 Seconds">
+    <meta property="og:description" content="Select your industry, platforms, and frequency. Get a custom 30-day content calendar with topics and caption starters.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.loopworker.com/blog/content-calendar-generator.html">
+    <meta property="og:site_name" content="LoopWorker">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Content Calendar Generator — Build Your Month in 60 Seconds">
+    <meta name="twitter:description" content="Free tool: generate a custom 30-day content calendar for any industry. Copy to clipboard and start posting.">
+
+    <!-- JSON-LD WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "LoopWorker Content Calendar Generator",
+        "url": "https://www.loopworker.com/blog/content-calendar-generator.html",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "description": "Free interactive content calendar generator. Build a custom 30-day content calendar with industry-specific topics, content types, and caption starters."
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #080808; color: #E8E8E8; font-family: 'Inter', -apple-system, sans-serif; font-size: 1.1rem; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+        a { color: #FFF; }
+
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(8,8,8,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .nav-logo { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; color: #FFF; text-transform: uppercase; text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #888; text-decoration: none; }
+        .nav-links a.cta-nav { font-weight: 600; letter-spacing: 0.08em; color: #0A0A0A; background: #FFF; padding: 0.55rem 1.4rem; border-radius: 4px; }
+
+        .container { max-width: 720px; margin: 0 auto; padding: 140px 24px 80px; }
+
+        .article-meta { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin-bottom: 1.5rem; }
+        .article-title { font-size: 2.6rem; font-weight: 700; line-height: 1.15; color: #FFF; margin-bottom: 2rem; letter-spacing: -0.02em; }
+        .article-subtitle { font-size: 1.25rem; color: #999; line-height: 1.6; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        h2 { font-size: 1.5rem; font-weight: 600; color: #FFF; margin: 3rem 0 1.2rem; letter-spacing: -0.01em; }
+        h3 { font-size: 1.2rem; font-weight: 600; color: #DDD; margin: 2rem 0 0.8rem; }
+        p { margin-bottom: 1.4rem; color: #CCC; }
+        strong { color: #FFF; font-weight: 600; }
+        ul, ol { margin: 0 0 1.4rem 1.5rem; color: #CCC; }
+        li { margin-bottom: 0.5rem; }
+
+        /* Tool styles */
+        .step-card { background: #0C0C0C; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; }
+        .step-card h2 { margin-top: 0; font-size: 1.1rem; display: flex; align-items: center; gap: 0.6rem; }
+        .step-card h2 span { font-size: 1.4rem; }
+
+        label.field-label { display: block; font-size: 0.92rem; color: #CCC; margin-bottom: 0.5rem; }
+        select { width: 100%; background: #151515; border: 1px solid #222; color: #E8E8E8; padding: 0.7rem 1rem; border-radius: 6px; font-size: 0.95rem; font-family: 'Inter', sans-serif; appearance: none; cursor: pointer; }
+        select:focus { outline: none; border-color: #444; }
+
+        .checkbox-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.5rem; }
+        .checkbox-item { background: #151515; border: 1px solid #222; color: #888; padding: 0.6rem 1rem; border-radius: 6px; font-size: 0.85rem; cursor: pointer; text-align: center; transition: all 0.2s; user-select: none; }
+        .checkbox-item:hover { border-color: #444; color: #CCC; }
+        .checkbox-item.selected { background: #FFF; color: #080808; border-color: #FFF; font-weight: 600; }
+
+        .freq-row { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #151515; }
+        .freq-row:last-child { border-bottom: none; }
+        .freq-label { font-size: 0.92rem; color: #CCC; }
+        .freq-control { display: flex; align-items: center; gap: 0.6rem; }
+        .freq-btn { width: 32px; height: 32px; background: #151515; border: 1px solid #222; color: #888; border-radius: 4px; font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif; }
+        .freq-btn:hover { border-color: #444; color: #FFF; }
+        .freq-val { width: 30px; text-align: center; font-size: 0.95rem; color: #FFF; font-weight: 600; }
+
+        .generate-btn { display: block; width: 100%; padding: 1rem; background: #FFF; color: #0A0A0A; border: none; border-radius: 6px; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; font-family: 'Inter', sans-serif; margin-top: 1rem; }
+        .generate-btn:hover { background: #E0E0E0; }
+        .generate-btn:disabled { background: #333; color: #666; cursor: not-allowed; }
+
+        /* Calendar output */
+        #calendar-output { display: none; margin-top: 2rem; }
+        .calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
+        .calendar-header h2 { margin: 0; }
+        .copy-btn { background: transparent; border: 1px solid #333; color: #888; padding: 0.5rem 1.2rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; cursor: pointer; font-family: 'Inter', sans-serif; }
+        .copy-btn:hover { border-color: #666; color: #FFF; }
+        .copy-btn.copied { border-color: #4CAF50; color: #4CAF50; }
+
+        .cal-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+        .cal-table th { background: #151515; color: #FFF; font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid #333; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; position: sticky; top: 60px; }
+        .cal-table td { padding: 10px 12px; border-bottom: 1px solid #1a1a1a; color: #CCC; vertical-align: top; }
+        .cal-table tr:hover td { background: #0f0f0f; }
+
+        .platform-tag { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .tag-instagram { background: #2d1a3e; color: #c77dff; }
+        .tag-facebook { background: #1a2540; color: #6fa8ff; }
+        .tag-linkedin { background: #1a2d30; color: #5ec4d4; }
+        .tag-tiktok { background: #2d1a2a; color: #ff6b9d; }
+        .tag-pinterest { background: #2d1a1a; color: #ff6b6b; }
+
+        .type-badge { font-size: 0.7rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; }
+
+        .cta-section { margin-top: 4rem; padding: 3rem 2.5rem; background: #111; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; text-align: center; }
+        .cta-section p { color: #CCC; font-size: 1.15rem; margin-bottom: 1.5rem; }
+        .cta-section .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .cta-section a.cta-btn { display: inline-block; background: #FFF; color: #0A0A0A; padding: 0.8rem 2rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; }
+        .cta-section a.cta-btn:hover { background: #E0E0E0; }
+        .cta-section a.cta-btn-alt { display: inline-block; background: transparent; color: #FFF; padding: 0.8rem 2rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.2); }
+        .cta-section a.cta-btn-alt:hover { border-color: rgba(255,255,255,0.5); }
+
+        footer { text-align: center; padding: 3rem 2rem; color: #444; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; border-top: 1px solid rgba(255,255,255,0.05); }
+
+        @media (max-width: 640px) {
+            .article-title { font-size: 1.8rem; }
+            .container { padding: 120px 18px 60px; }
+            .checkbox-grid { grid-template-columns: 1fr 1fr; }
+            .cal-table { font-size: 0.75rem; }
+            .cal-table th, .cal-table td { padding: 8px 6px; }
+            .nav-links { display: none; }
+            .calendar-header { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.loopworker.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.loopworker.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Free Content Calendar Generator",
+      "item": "https://www.loopworker.com/blog/content-calendar-generator.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+    <a href="/" class="nav-logo">LoopWorker</a>
+    <div class="nav-links">
+        <a href="/blog/">Blog</a>
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="https://linkedin.com/in/alexlamb" target="_blank" rel="noopener" class="cta-nav">Book a Call</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="article-meta">March 2026 &middot; Free Tool</div>
+
+    <h1 class="article-title">Free Content Calendar Generator</h1>
+
+    <p class="article-subtitle">Select your industry, pick your platforms, set your posting frequency. Get a custom 30-day content calendar with content types, topic ideas, and caption starters — ready to copy.</p>
+
+    <!-- Step 1: Industry -->
+    <div class="step-card">
+        <h2><span>01</span> Select Your Industry</h2>
+        <label class="field-label">What type of business are you?</label>
+        <select id="industry-select">
+            <option value="">Choose an industry...</option>
+            <option value="restaurant">Restaurant / Food Business</option>
+            <option value="coffee">Coffee Shop / Cafe</option>
+            <option value="salon">Salon / Barbershop</option>
+            <option value="fitness">Fitness / Gym</option>
+            <option value="coaching">Coaching / Consulting</option>
+            <option value="photography">Photography / Videography</option>
+            <option value="ecommerce">Ecommerce / Product Brand</option>
+            <option value="realestate">Real Estate</option>
+            <option value="dental">Dental / Medical Practice</option>
+            <option value="wedding">Wedding / Event Services</option>
+            <option value="legal">Law Firm / Legal Services</option>
+            <option value="home">Home Services (Cleaning, Landscaping, HVAC)</option>
+        </select>
+    </div>
+
+    <!-- Step 2: Platforms -->
+    <div class="step-card">
+        <h2><span>02</span> Select Your Platforms</h2>
+        <label class="field-label">Where do you post? (select all that apply)</label>
+        <div class="checkbox-grid" id="platform-grid">
+            <div class="checkbox-item" data-platform="instagram">Instagram</div>
+            <div class="checkbox-item" data-platform="facebook">Facebook</div>
+            <div class="checkbox-item" data-platform="linkedin">LinkedIn</div>
+            <div class="checkbox-item" data-platform="tiktok">TikTok</div>
+            <div class="checkbox-item" data-platform="pinterest">Pinterest</div>
+        </div>
+    </div>
+
+    <!-- Step 3: Frequency -->
+    <div class="step-card">
+        <h2><span>03</span> Posting Frequency</h2>
+        <label class="field-label">How many times per week on each platform?</label>
+        <div id="freq-container">
+            <p style="font-size:0.9rem;color:#555;">Select platforms above to set frequency.</p>
+        </div>
+    </div>
+
+    <!-- Step 4: Generate -->
+    <div class="step-card">
+        <h2><span>04</span> Generate Your Calendar</h2>
+        <p style="font-size:0.92rem;color:#999;">One click. 30 days of content. Topic ideas, content types, and caption starters — all tailored to your industry.</p>
+        <button class="generate-btn" id="generate-btn" disabled onclick="generateCalendar()">Generate Calendar</button>
+    </div>
+
+    <!-- Output -->
+    <div id="calendar-output">
+        <div class="calendar-header">
+            <h2>Your 30-Day Calendar</h2>
+            <button class="copy-btn" id="copy-btn" onclick="copyCalendar()">Copy to Clipboard</button>
+        </div>
+        <div style="overflow-x:auto;">
+            <table class="cal-table" id="cal-table">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Platform</th>
+                        <th>Type</th>
+                        <th>Topic</th>
+                        <th>Caption Starter</th>
+                    </tr>
+                </thead>
+                <tbody id="cal-body"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <h2>Related Reading</h2>
+    <ul>
+        <li><a href="/blog/content-calendar-template-small-business.html">Content Calendar Template for Small Business</a></li>
+        <li><a href="/blog/how-to-batch-content-creation.html">How to Batch Content Creation</a></li>
+        <li><a href="/blog/social-media-content-strategy-small-business.html">Social Media Content Strategy for Small Business</a></li>
+        <li><a href="/blog/social-media-post-ideas-small-business.html">Social Media Post Ideas for Small Business</a></li>
+    </ul>
+
+    <div class="cta-section">
+        <p>Want someone to build and execute the whole calendar for you? That's what we do.</p>
+        <div class="cta-buttons">
+            <a href="/services.html" class="cta-btn">See Packages</a>
+            <a href="/free-resources.html" class="cta-btn-alt">Free Resources</a>
+        </div>
+    </div>
+</div>
+
+<footer>&copy; 2026 LoopWorker. AI Brand Systems.</footer>
+
+<script>
+const INDUSTRY_TOPICS = {
+    restaurant: {
+        carousel: ["5 dishes every first-timer should order", "How we source our ingredients", "Menu items ranked by our staff", "Behind the scenes: prep day", "What goes into our signature dish", "Our most underrated menu items", "How to pair drinks with our food", "5 reasons locals keep coming back", "The story behind our bestseller", "Our seasonal menu explained"],
+        reel: ["Watch us make our signature dish", "Kitchen chaos at peak hour", "POV: you just sat down at our best table", "Sound on: the sizzle", "Staff picks vs customer favorites", "30 seconds of plating perfection", "How we prep 200 plates a night", "Our chef's knife skills", "The lunch rush in real time", "Empty restaurant to packed house"],
+        story: ["Today's special", "Behind the scenes right now", "Quick poll: which dish wins?", "Repost a customer review", "Staff meal of the day", "Guess this ingredient", "Sneak peek at the new menu", "Our kitchen playlist today"],
+        post: ["Customer spotlight and review", "Meet the team: our head chef", "Our story: why we opened", "Holiday hours announcement", "Community event we're sponsoring", "New menu item reveal", "Thank you post — milestone", "Throwback to day one"]
+    },
+    coffee: {
+        carousel: ["5 ways to brew better coffee at home", "Our bean sourcing process explained", "Coffee drinks ranked by caffeine content", "How to order like a regular", "Single origin vs blend: the difference", "Our roasting process step by step", "Coffee drink guide for beginners", "What your coffee order says about you", "Behind the scenes: a day at the shop", "How to store coffee beans properly"],
+        reel: ["Latte art in real time", "Morning rush: first to last customer", "Sound on: the grinder + steam", "Watch us pull the perfect shot", "Iced coffee hack you need to try", "Our barista's morning routine", "POV: your usual order", "Empty cafe to opening time", "Slow pour-over in 30 seconds", "Taste testing new beans"],
+        story: ["Today's featured single origin", "Poll: hot or iced?", "Barista pick of the day", "Behind the bar right now", "Guess the tasting notes", "Customer shoutout", "New pastry just dropped", "Weather-based drink rec"],
+        post: ["Meet our barista team", "Why we chose these beans", "Customer photo repost", "Our space: design story", "Community board highlights", "Weekend hours reminder", "Local artist feature", "Thank you — anniversary post"]
+    },
+    salon: {
+        carousel: ["5 questions to ask before a color appointment", "How to maintain your color between visits", "Balayage vs highlights: which is right for you?", "Hair care routine for color-treated hair", "What to expect at your first appointment", "Products our stylists actually use", "Before and after: color correction journey", "How to find the right stylist for you", "Seasonal hair trends we're loving", "Men's grooming guide: fade styles explained"],
+        reel: ["Before and after transformation", "Color melt process in real time", "Satisfying blowout finish", "Fade haircut start to finish", "Client reaction to their new look", "Texture transformation: curly to straight", "Behind the chair: a full day", "Watch this color correction", "Braiding technique in 30 seconds", "Our most dramatic transformation this month"],
+        story: ["Availability check: open slots this week", "Poll: blonde or brunette?", "Product recommendation", "Client in the chair right now", "Quick styling tip", "Repost a client selfie", "New service announcement", "Team training day"],
+        post: ["Client testimonial and photo", "Meet the team: stylist spotlight", "Pricing and service menu update", "Before and after grid post", "Why we use these specific products", "Holiday booking reminder", "Referral program announcement", "Our salon story and values"]
+    },
+    fitness: {
+        carousel: ["5 exercises for stronger glutes (no equipment)", "Common squat mistakes and how to fix them", "What to eat before and after a workout", "Beginner gym routine: week 1", "How to track progress without the scale", "5 stretches for desk workers", "How to build a workout habit that sticks", "Progressive overload explained simply", "Meal prep for muscle gain: 5 easy meals", "Recovery tips most people skip"],
+        reel: ["Full workout in 60 seconds", "Exercise form check: deadlift", "Client transformation story", "Gym fails vs proper form", "What I eat in a day as a trainer", "My client's first pull-up ever", "5 exercises you're doing wrong", "Morning routine of a personal trainer", "No-equipment hotel room workout", "The exercise most people skip"],
+        story: ["Today's workout", "Poll: upper body or lower body?", "Quick form tip", "Client win of the day", "What's in my gym bag", "Healthy snack idea", "Motivation moment", "Open spots for new clients"],
+        post: ["Client transformation + testimonial", "Why I became a trainer", "Free workout download", "Myth vs fact: fitness edition", "Community event or class schedule", "New program launch", "Milestone celebration", "FAQ: most asked training questions"]
+    },
+    coaching: {
+        carousel: ["5 signs you've outgrown your current business model", "The framework I use with every client", "Common mistakes new entrepreneurs make", "How to price your services (step by step)", "What I'd do differently starting over", "Revenue milestones: what changes at each level", "How to fire a bad client professionally", "5 automations every coach needs", "Client results: before and after their business", "The mindset shift that changes everything"],
+        reel: ["Day in my life as a business coach", "Client win: watch their reaction", "The advice I wish someone gave me at 25", "Unpopular opinion about my industry", "My morning routine for peak productivity", "What scaling to 6 figures actually looks like", "3 books that changed my business", "The question I ask every new client", "Behind the scenes: coaching call excerpt", "From corporate to coaching: my story"],
+        story: ["Poll: what's your biggest business challenge?", "Quick tip of the day", "Client spotlight", "Book recommendation", "Q&A: ask me anything", "Behind the scenes of my business", "Resource I'm loving right now", "Enrollment closing reminder"],
+        post: ["Client case study with results", "My story: how I got here", "Free resource or lead magnet promo", "Testimonial graphic", "What I learned this quarter", "Upcoming workshop announcement", "Industry insight or hot take", "Thank you — community milestone"]
+    },
+    photography: {
+        carousel: ["5 posing tips for non-models", "How to prepare for your brand photoshoot", "What to wear to your photo session", "Behind the scenes: how I edit", "My camera bag: gear breakdown", "Natural light vs studio: which is right for you", "How to choose a photographer for your brand", "5 ways to use your brand photos", "Shoot day timeline: what to expect", "Location scouting: how I pick spots"],
+        reel: ["Behind the scenes of a recent shoot", "Before and after: raw vs edited", "Client reaction to their gallery", "30 seconds of a full shoot day", "How I use natural light", "Packing my gear for a shoot", "Location reveal + final photos", "Editing process in real time", "Posing direction in action", "My favorite shot from this month"],
+        story: ["Booking availability update", "Poll: which edit style?", "Gear tip of the day", "BTS from today's shoot", "Client gallery sneak peek", "Location inspo", "Editing before and after", "Mini portfolio update"],
+        post: ["Portfolio piece with context", "Client testimonial + photos", "Why I specialize in this niche", "Booking info for next quarter", "How to get the most from your shoot", "Creative inspiration post", "Collaboration spotlight", "Year in review: best shots"]
+    },
+    ecommerce: {
+        carousel: ["5 ways to style our bestseller", "How our product is made", "Customer reviews: what people actually say", "Gift guide by personality type", "Size guide and fit tips", "The story behind our brand name", "How to care for your product", "Our packaging process explained", "What makes us different from competitors", "5 things you didn't know about our brand"],
+        reel: ["Unboxing experience", "How it's made: production process", "Customer try-on or reaction", "Packing orders: the ASMR version", "Styling our product 3 different ways", "Behind the scenes: photo shoot day", "New product reveal", "A day in the life of a small brand owner", "Our best review read aloud", "Product in action: real customer footage"],
+        story: ["Restock alert", "Poll: which color next?", "Customer photo repost", "Flash sale announcement", "Behind the scenes: warehouse", "Shipping update", "Sneak peek at new product", "Limited edition countdown"],
+        post: ["New product launch", "Customer spotlight with photo", "Brand story and values", "Milestone: orders shipped", "Collaboration announcement", "Seasonal collection reveal", "Community feature", "Thank you post — anniversary or milestone"]
+    },
+    realestate: {
+        carousel: ["5 things first-time buyers overlook", "How to make your offer stand out in 2026", "Home staging tips that actually work", "The buying process explained step by step", "Market update: what's happening in your area", "Renting vs buying: the real math", "What to look for at an open house", "How to choose the right neighborhood", "Investment property checklist", "Closing costs explained simply"],
+        reel: ["Property tour: new listing", "Before and after: staged home", "Neighborhood spotlight: 60-second tour", "Day in the life of an agent", "Client closing day celebration", "This house has a surprise feature", "Open house walkthrough", "Market update in 30 seconds", "Drone footage of a new listing", "Keys handoff moment"],
+        story: ["Just listed: quick walkthrough", "Poll: which kitchen do you prefer?", "Market stat of the day", "Open house this weekend", "Client testimonial", "Price reduction alert", "Neighborhood restaurant rec", "Mortgage rate update"],
+        post: ["Just listed: full feature post", "Just sold: celebration post", "Client testimonial with photo", "Market report graphic", "Community event spotlight", "Home maintenance tip", "Why I love this neighborhood", "Monthly market recap"]
+    },
+    dental: {
+        carousel: ["5 foods that are secretly damaging your teeth", "What to expect during a dental cleaning", "Invisalign vs braces: pros and cons", "How to choose the right toothbrush", "Teeth whitening options compared", "When to bring your kid to the dentist for the first time", "Dental myths debunked", "How to floss properly (most people do it wrong)", "What causes sensitive teeth and how to fix it", "Your dental visit checklist"],
+        reel: ["Smile transformation: before and after", "A day at our practice", "Quick flossing tutorial", "Meet our team", "Patient reaction to their new smile", "Office tour in 30 seconds", "What we see vs what you see at a cleaning", "Technology we use: explained", "Kids' first dental visit", "The most common question we get"],
+        story: ["Dental tip of the day", "Poll: electric or manual toothbrush?", "Patient smile reveal", "Team spotlight", "Appointment availability", "Product recommendation", "Fun dental fact", "Before and after peek"],
+        post: ["Patient testimonial (with permission)", "Meet the doctor", "New technology or service announcement", "Community involvement post", "Dental health awareness month", "Office culture and team photo", "FAQ graphic", "Holiday schedule"]
+    },
+    wedding: {
+        carousel: ["Wedding planning timeline: 12 months out", "5 questions to ask every vendor before booking", "How to create a wedding day timeline", "Budget breakdown: where the money actually goes", "Photo shot list you'll thank us for", "How to choose your wedding color palette", "Vendor red flags to watch for", "First look vs traditional reveal: pros and cons", "Reception layout tips for better flow", "What to put in your day-of emergency kit"],
+        reel: ["Wedding day highlight reel", "Behind the scenes: setup to ceremony", "First look reaction", "Venue transformation: empty to decorated", "Best moments from last weekend", "Getting ready montage", "Dance floor energy compilation", "Floral arrangement process", "Sunset portrait session", "The toast that made everyone cry"],
+        story: ["Behind the scenes today", "Poll: outdoor or indoor ceremony?", "Vendor recommendation", "Real wedding sneak peek", "Planning tip quick hit", "Venue tour", "Trend alert", "Booking availability update"],
+        post: ["Real wedding feature with photos", "Vendor collaboration spotlight", "Client review and testimonial", "Planning tip with examples", "Portfolio piece: best of", "Booking announcement for next season", "Industry award or feature", "Thank you — milestone post"]
+    },
+    legal: {
+        carousel: ["5 things to do before signing any contract", "LLC vs S-Corp: which is right for your business", "What to do if you get a cease and desist letter", "Estate planning checklist for new parents", "How to protect your business from lawsuits", "Employment law basics every business owner should know", "What happens during a consultation", "Common legal mistakes small businesses make", "Trademark vs copyright: the difference", "When you actually need a lawyer"],
+        reel: ["Day in the life at our firm", "Legal myth vs reality", "Quick tip: what to do if you get pulled over", "Explaining a legal concept in plain English", "Client win celebration (anonymized)", "Tour of our office", "The question we get asked most", "What your contract is missing", "Legal term of the week explained", "Behind the scenes: case prep"],
+        story: ["Legal tip of the day", "Poll: did you know this law?", "Q&A: ask us anything", "Team spotlight", "Case study teaser", "Consultation availability", "News story legal analysis", "Free resource promo"],
+        post: ["Client testimonial (anonymized)", "Meet the attorney", "Community involvement", "Legal explainer graphic", "FAQ post", "Firm anniversary or milestone", "Pro bono work spotlight", "Industry update or new law"]
+    },
+    home: {
+        carousel: ["5 signs your HVAC system needs replacement", "Seasonal home maintenance checklist", "How to choose a reliable contractor", "Before and after: our recent project", "What to ask before hiring a cleaning service", "Landscaping ideas that increase home value", "DIY vs professional: when to call us", "How we price our services (transparent breakdown)", "Spring cleaning checklist room by room", "5 ways to lower your energy bill"],
+        reel: ["Before and after transformation", "Time-lapse: full project from start to finish", "Satisfying cleaning or repair moment", "Day in the life of our crew", "The most common issue we fix", "Tool tip in 30 seconds", "Customer reaction to finished project", "Our process from estimate to completion", "What's inside your air ducts", "Seasonal prep in 60 seconds"],
+        story: ["Job in progress today", "Poll: which design do you prefer?", "Quick DIY tip", "Customer review highlight", "Team at work", "Availability this week", "Weather-related service reminder", "New equipment showcase"],
+        post: ["Before and after with description", "Customer testimonial and photo", "Meet our team", "Service area map", "Seasonal reminder post", "Milestone: jobs completed", "Community sponsorship", "New service announcement"]
+    }
+};
+
+const CONTENT_TYPES_BY_PLATFORM = {
+    instagram: ["carousel", "reel", "story", "post"],
+    facebook: ["post", "reel", "story"],
+    linkedin: ["post", "carousel"],
+    tiktok: ["reel"],
+    pinterest: ["post"]
+};
+
+const CAPTION_STARTERS = {
+    carousel: [
+        "Save this for later.",
+        "Bookmark this one.",
+        "Swipe through to see all {n}.",
+        "Here's what nobody tells you about...",
+        "Stop scrolling. You need to see this.",
+        "The cheat sheet you didn't know you needed.",
+        "I wish someone told me this sooner.",
+        "Most people get this wrong. Here's the fix.",
+        "Everything you need to know in {n} slides.",
+        "Your free guide to..."
+    ],
+    reel: [
+        "Watch until the end.",
+        "POV: you just discovered...",
+        "This is what it actually looks like.",
+        "Wait for it...",
+        "Behind the scenes of...",
+        "3 seconds in and you'll understand why.",
+        "Nobody shows you this part.",
+        "The part they don't put on the brochure.",
+        "Real, unfiltered, no edits.",
+        "If you've been wondering..."
+    ],
+    story: [
+        "Quick update:",
+        "Thought you should see this.",
+        "Today at the shop:",
+        "Honest question:",
+        "Real talk for a second:",
+        "Just happened:",
+        "Your opinion matters:",
+        "Sharing this before I forget:"
+    ],
+    post: [
+        "Here's the thing about...",
+        "We don't talk about this enough.",
+        "A moment we're proud of.",
+        "Thank you to everyone who...",
+        "The real reason we do this.",
+        "Story time.",
+        "Something we've been working on.",
+        "This is why we started."
+    ]
+};
+
+const DAYS = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+
+let selectedPlatforms = [];
+let frequencies = {};
+
+// Platform selection
+document.querySelectorAll('.checkbox-item').forEach(item => {
+    item.addEventListener('click', () => {
+        item.classList.toggle('selected');
+        const p = item.dataset.platform;
+        if (item.classList.contains('selected')) {
+            selectedPlatforms.push(p);
+            frequencies[p] = 3;
+        } else {
+            selectedPlatforms = selectedPlatforms.filter(x => x !== p);
+            delete frequencies[p];
+        }
+        renderFrequency();
+        checkReady();
+    });
+});
+
+function renderFrequency() {
+    const c = document.getElementById('freq-container');
+    if (selectedPlatforms.length === 0) {
+        c.innerHTML = '<p style="font-size:0.9rem;color:#555;">Select platforms above to set frequency.</p>';
+        return;
+    }
+    c.innerHTML = selectedPlatforms.map(p => `
+        <div class="freq-row">
+            <span class="freq-label">${p.charAt(0).toUpperCase() + p.slice(1)}</span>
+            <div class="freq-control">
+                <button class="freq-btn" onclick="changeFreq('${p}',-1)">-</button>
+                <span class="freq-val" id="freq-${p}">${frequencies[p]}</span>
+                <button class="freq-btn" onclick="changeFreq('${p}',1)">+</button>
+                <span style="font-size:0.75rem;color:#555;margin-left:4px;">/ week</span>
+            </div>
+        </div>
+    `).join('');
+}
+
+function changeFreq(platform, delta) {
+    frequencies[platform] = Math.max(1, Math.min(7, (frequencies[platform] || 3) + delta));
+    document.getElementById('freq-' + platform).textContent = frequencies[platform];
+}
+
+function checkReady() {
+    const industry = document.getElementById('industry-select').value;
+    document.getElementById('generate-btn').disabled = !industry || selectedPlatforms.length === 0;
+}
+document.getElementById('industry-select').addEventListener('change', checkReady);
+
+function shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+
+function generateCalendar() {
+    const industry = document.getElementById('industry-select').value;
+    if (!industry || selectedPlatforms.length === 0) return;
+
+    const topics = INDUSTRY_TOPICS[industry];
+    const tbody = document.getElementById('cal-body');
+    tbody.innerHTML = '';
+
+    // Build posting schedule for 30 days
+    const rows = [];
+    for (let day = 1; day <= 30; day++) {
+        const dayOfWeek = (day - 1) % 7;
+        const dayLabel = DAYS[dayOfWeek];
+
+        selectedPlatforms.forEach(platform => {
+            const freq = frequencies[platform] || 3;
+            // Distribute posts evenly across the week
+            const postDays = [];
+            const step = 7 / freq;
+            for (let i = 0; i < freq; i++) {
+                postDays.push(Math.round(i * step));
+            }
+            if (!postDays.includes(dayOfWeek)) return;
+
+            // Pick content type
+            const availableTypes = CONTENT_TYPES_BY_PLATFORM[platform];
+            const contentType = availableTypes[day % availableTypes.length];
+
+            // Pick topic
+            const topicPool = topics[contentType] || topics['post'];
+            const topic = topicPool[(day + selectedPlatforms.indexOf(platform)) % topicPool.length];
+
+            // Pick caption starter
+            const starters = CAPTION_STARTERS[contentType] || CAPTION_STARTERS['post'];
+            const caption = starters[(day + selectedPlatforms.indexOf(platform)) % starters.length].replace('{n}', String(Math.floor(Math.random()*5)+5));
+
+            rows.push({ day, dayLabel, platform, contentType, topic, caption });
+        });
+    }
+
+    rows.forEach(r => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td><strong>Day ${r.day}</strong><br><span style="font-size:0.7rem;color:#555;">${r.dayLabel}</span></td>
+            <td><span class="platform-tag tag-${r.platform}">${r.platform}</span></td>
+            <td><span class="type-badge">${r.contentType}</span></td>
+            <td>${r.topic}</td>
+            <td style="font-style:italic;color:#999;">${r.caption}</td>
+        `;
+        tbody.appendChild(tr);
+    });
+
+    document.getElementById('calendar-output').style.display = 'block';
+    document.getElementById('calendar-output').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Store for copy
+    window._calendarRows = rows;
+}
+
+function copyCalendar() {
+    if (!window._calendarRows) return;
+    const header = "Day\tPlatform\tType\tTopic\tCaption Starter";
+    const lines = window._calendarRows.map(r =>
+        `Day ${r.day} (${r.dayLabel})\t${r.platform}\t${r.contentType}\t${r.topic}\t${r.caption}`
+    );
+    const text = header + '\n' + lines.join('\n');
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('copy-btn');
+        btn.classList.add('copied');
+        btn.textContent = 'Copied!';
+        setTimeout(() => {
+            btn.classList.remove('copied');
+            btn.textContent = 'Copy to Clipboard';
+        }, 2000);
+    });
+}
+</script>
+
+</body>
+</html>
