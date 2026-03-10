@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | LoopWorker</title>
+    <meta name="robots" content="noindex">
+    <script>
+        // GitHub Pages clean URL routing
+        var path = window.location.pathname;
+        var cleanPaths = ['/services', '/portfolio', '/about'];
+        if (cleanPaths.indexOf(path) !== -1) {
+            window.location.replace(path + '.html');
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #080808; color: #D4D4D4;
+            font-family: 'Inter', sans-serif;
+            display: flex; align-items: center; justify-content: center;
+            min-height: 100vh; text-align: center; padding: 2rem;
+        }
+        h1 { color: #FFF; font-size: 3rem; font-weight: 800; margin-bottom: 1rem; }
+        p { color: #888; font-size: 1.1rem; margin-bottom: 2rem; }
+        a { color: #FFF; text-decoration: none; border: 1px solid #333; padding: 0.8rem 2rem;
+            border-radius: 4px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; }
+        a:hover { border-color: #666; background: rgba(255,255,255,0.03); }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>404</h1>
+        <p>This page doesn't exist.</p>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>
