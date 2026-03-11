@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Upscaling Guide: Make Low-Res Photos Print and Web Ready | LoopWorker</title>
+    <meta name="description" content="AI image upscaling guide for small business. Tools compared: Topaz Gigapixel, Let's Enhance, Upscayl, BigJPG. Resolution guide for Instagram, web, and print. Step-by-step workflow and quality expectations.">
+    <meta name="keywords" content="AI image upscaling, upscale photos, increase image resolution, Topaz Gigapixel, AI upscaler, photo upscaling, low resolution fix, print resolution, image enlargement">
+    <meta name="author" content="Alex Lamb">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.loopworker.com/blog/ai-image-upscaling-guide.html">
+
+    <meta property="og:title" content="AI Image Upscaling Guide: Make Low-Res Photos Print and Web Ready">
+    <meta property="og:description" content="Turn low-resolution photos into print and web-ready images with AI upscaling. Tools compared, resolution guide, step-by-step workflow, and quality expectations.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.loopworker.com/blog/ai-image-upscaling-guide.html">
+    <meta property="og:site_name" content="LoopWorker">
+    <meta property="article:author" content="Alex Lamb">
+    <meta property="article:published_time" content="2026-03-10">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Image Upscaling Guide: Make Low-Res Photos Print and Web Ready">
+    <meta name="twitter:description" content="AI upscaling tools compared. Resolution guide for every platform. When 2x works and when 4x doesn't.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AI Image Upscaling Guide: Make Low-Res Photos Print and Web Ready",
+        "author": { "@type": "Person", "name": "Alex Lamb" },
+        "publisher": { "@type": "Organization", "name": "LoopWorker" },
+        "datePublished": "2026-03-10",
+        "dateModified": "2026-03-10",
+        "description": "AI image upscaling guide with tools compared and resolution requirements for every platform.",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.loopworker.com/blog/ai-image-upscaling-guide.html" }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.loopworker.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.loopworker.com/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "AI Image Upscaling Guide", "item": "https://www.loopworker.com/blog/ai-image-upscaling-guide.html" }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #080808; color: #E8E8E8; font-family: 'Inter', -apple-system, sans-serif; font-size: 1.1rem; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+        a { color: #FFF; }
+        .article-container { max-width: 720px; margin: 0 auto; padding: 140px 24px 80px; }
+        .article-meta { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #666; margin-bottom: 1.5rem; }
+        .article-title { font-size: 2.6rem; font-weight: 700; line-height: 1.15; color: #FFF; margin-bottom: 2rem; letter-spacing: -0.02em; }
+        .article-subtitle { font-size: 1.25rem; color: #999; line-height: 1.6; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        h2 { font-size: 1.5rem; font-weight: 600; color: #FFF; margin: 3rem 0 1.2rem; letter-spacing: -0.01em; }
+        h3 { font-size: 1.2rem; font-weight: 600; color: #DDD; margin: 2rem 0 0.8rem; }
+        p { margin-bottom: 1.4rem; color: #CCC; }
+        strong { color: #FFF; font-weight: 600; }
+        ul, ol { margin: 0 0 1.4rem 1.5rem; color: #CCC; }
+        li { margin-bottom: 0.5rem; }
+        table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.95rem; }
+        th { background: #151515; color: #FFF; font-weight: 600; text-align: left; padding: 14px 16px; border-bottom: 2px solid #333; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
+        td { padding: 12px 16px; border-bottom: 1px solid #1a1a1a; color: #CCC; vertical-align: top; }
+        tr:hover td { background: #0f0f0f; }
+        blockquote { border-left: 3px solid #333; padding: 1rem 0 1rem 1.5rem; margin: 2rem 0; color: #999; font-style: italic; }
+        .cta-section { margin-top: 4rem; padding: 3rem 2.5rem; background: #111; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; text-align: center; }
+        .cta-section p { color: #CCC; font-size: 1.15rem; margin-bottom: 1.5rem; }
+        .cta-section .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .cta-section a.cta-btn { display: inline-block; background: #FFF; color: #0A0A0A; padding: 0.8rem 2rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; }
+        .cta-section a.cta-btn:hover { background: #E0E0E0; }
+        .cta-section a.cta-btn-alt { display: inline-block; background: transparent; color: #FFF; padding: 0.8rem 2rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.2); }
+        .cta-section a.cta-btn-alt:hover { border-color: rgba(255,255,255,0.5); }
+        footer { text-align: center; padding: 3rem 2rem; color: #444; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; border-top: 1px solid rgba(255,255,255,0.05); }
+        .callout { background: #111; border-left: 3px solid #FFF; padding: 1.2rem 1.5rem; margin: 2rem 0; border-radius: 0 4px 4px 0; }
+        .callout p { margin-bottom: 0; }
+        .idea-card { background: #111; border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 1rem 1.2rem; margin: 1rem 0; }
+        .idea-card .idea-num { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: #666; margin-bottom: 0.3rem; }
+        .idea-card .idea-title { font-weight: 600; color: #FFF; font-size: 1.05rem; margin-bottom: 0.4rem; }
+        .idea-card .idea-detail { font-size: 0.95rem; color: #999; margin-bottom: 0.3rem; }
+        body::after { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9998; opacity: 0.025; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-repeat: repeat; }
+        .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        @media (max-width: 640px) { .article-title { font-size: 1.8rem; } .article-container { padding: 120px 18px 60px; } table { font-size: 0.8rem; } th, td { padding: 8px 10px; } }
+    </style>
+</head>
+<body>
+
+<nav style="position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(8,8,8,0.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);">
+    <a href="/" style="font-size:0.8rem;font-weight:700;letter-spacing:0.15em;color:#FFF;text-transform:uppercase;text-decoration:none;">LoopWorker</a>
+    <div style="display:flex;gap:2rem;align-items:center;">
+        <a href="/blog/" style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#888;text-decoration:none;">Blog</a>
+        <a href="/services.html" style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#888;text-decoration:none;">Services</a>
+        <a href="/about.html" style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#888;text-decoration:none;">About</a>
+        <a href="https://linkedin.com/in/alexlamb" target="_blank" rel="noopener" style="font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#0A0A0A;background:#FFF;padding:0.55rem 1.4rem;border-radius:4px;text-decoration:none;">Book a Call</a>
+    </div>
+</nav>
+
+<article class="article-container">
+    <div class="article-meta fade-up">March 2026 &middot; Alex Lamb &middot; 19 min read</div>
+
+    <h1 class="article-title fade-up">AI Image Upscaling Guide: Make Low-Res Photos Print and Web Ready</h1>
+
+    <p class="article-subtitle fade-up">That product photo from 2019 is 800x600 pixels. Your new website banner needs 2400x1600. You could reshoot &mdash; or you could let AI upscale it in 30 seconds. Here's when upscaling works, when it doesn't, and which tools produce the best results.</p>
+
+    <p class="fade-up">AI image upscaling uses machine learning models trained on millions of images to add detail that doesn't exist in the original. It's not "zooming in" &mdash; it's the AI predicting what additional detail should be there based on what it's learned about textures, edges, and patterns. The results in 2026 are genuinely impressive. A 2x upscale is often indistinguishable from a photo taken at the higher resolution.</p>
+
+    <p>But it's not magic. It has limits, and understanding those limits is the difference between saving a usable photo and wasting time on a lost cause.</p>
+
+    <h2 class="fade-up">What Upscaling Does (and Doesn't Do)</h2>
+
+    <h3 class="fade-up">What It Does</h3>
+    <ul>
+        <li><strong>Increases pixel dimensions.</strong> A 1000x1000px image becomes 2000x2000px (at 2x) or 4000x4000px (at 4x). More pixels = more detail when viewed at larger sizes or printed.</li>
+        <li><strong>Adds believable detail.</strong> The AI fills in texture, edges, and patterns that are plausible based on the original image. Fabric gets weave texture. Skin gets pore detail. Text gets sharper edges.</li>
+        <li><strong>Reduces the appearance of pixelation.</strong> Blocky, pixelated images become smooth. Jagged edges become clean lines.</li>
+    </ul>
+
+    <h3 class="fade-up">What It Doesn't Do</h3>
+    <ul>
+        <li><strong>Recover information that was never captured.</strong> If the original photo is a blurry mess, upscaling produces a bigger, slightly sharper blurry mess. The AI can only work with what's there.</li>
+        <li><strong>Replace actual high-resolution photography.</strong> A properly shot high-res photo will always look better than an upscaled low-res photo. Upscaling is a rescue tool, not a substitute for shooting correctly.</li>
+        <li><strong>Create detail from nothing at extreme scales.</strong> 2x upscaling is reliable. 4x is good. 6x is pushing it. 8x+ often looks artificial, with AI-hallucinated texture that doesn't match reality.</li>
+    </ul>
+
+    <h2 class="fade-up">When You Need Upscaling</h2>
+
+    <ul>
+        <li><strong>Old product photos.</strong> You shot your products in 2020 on an older phone. The photos are 1200x900px. Your new Shopify theme needs 2000px wide minimum. Upscale instead of reshooting every product.</li>
+        <li><strong>Screenshots.</strong> You took a screenshot of a social media post, a web page, or a design mockup. Screenshots are typically 72 DPI and too small for print or large web use. Upscale to usable resolution.</li>
+        <li><strong>Low-res downloads.</strong> A client sent you their logo at 300px wide. You need it at 1200px for the website header. The only version that exists is the tiny one. Upscale it.</li>
+        <li><strong>Phone crops.</strong> You cropped in tight on a phone photo to isolate a detail. The cropped image is now 600x400px &mdash; too small for anything. Upscale to recover usable resolution.</li>
+        <li><strong>Social media repurposing.</strong> An Instagram photo (1080px) needs to become a website banner (2400px) or a print piece (300 DPI at 8x10" = 2400x3000px). Upscale to bridge the gap.</li>
+    </ul>
+
+    <h2 class="fade-up">Tools Compared</h2>
+
+    <table class="fade-up">
+        <thead>
+            <tr>
+                <th>Tool</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Best For</th>
+                <th>Max Scale</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Topaz Gigapixel AI</strong></td>
+                <td>Desktop</td>
+                <td>$99 (one-time, or bundled with Photo AI at $199)</td>
+                <td>Best overall quality. Handles photos, graphics, and text. Multiple AI models to choose from (Standard, High Fidelity, Art). Batch processing built in.</td>
+                <td>6x</td>
+            </tr>
+            <tr>
+                <td><strong>Let's Enhance</strong></td>
+                <td>Web</td>
+                <td>$12/mo (100 images), $24/mo (300)</td>
+                <td>E-commerce and batch work. "Smart Enhance" mode adds detail + upscales in one step. API for automation. No software to install.</td>
+                <td>16x</td>
+            </tr>
+            <tr>
+                <td><strong>Upscayl</strong></td>
+                <td>Desktop (free)</td>
+                <td>Free (open source)</td>
+                <td>The best free option. Multiple AI models (Real-ESRGAN, Remacri, etc.). Batch processing. No subscription, no limits, no watermarks. Quality is 85-90% of Topaz.</td>
+                <td>4x</td>
+            </tr>
+            <tr>
+                <td><strong>BigJPG</strong></td>
+                <td>Web</td>
+                <td>Free (limited) / $9.90/mo</td>
+                <td>Quick upscales without software. Decent quality for photos and illustrations. Less control than desktop tools. Free tier limited to 3000x3000px output.</td>
+                <td>4x (free), 16x (paid)</td>
+            </tr>
+            <tr>
+                <td><strong>Pixlr AI Upscale</strong></td>
+                <td>Web</td>
+                <td>Included with Pixlr Plus ($4.90/mo)</td>
+                <td>Convenient if you already use Pixlr for editing. Built into the editing workflow. Quality is adequate for social media but not as strong as dedicated tools for print.</td>
+                <td>4x</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout fade-up">
+        <p><strong>My pick:</strong> For most small businesses, start with Upscayl (free). If the quality isn't sufficient or you need batch processing at scale, upgrade to Topaz Gigapixel AI ($99 one-time). For web-based convenience without installing anything, Let's Enhance is the best option.</p>
+    </div>
+
+    <h2 class="fade-up">Resolution Guide: What Size for What</h2>
+
+    <table class="fade-up">
+        <thead>
+            <tr>
+                <th>Use Case</th>
+                <th>Minimum Resolution</th>
+                <th>Ideal Resolution</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Instagram feed</strong></td>
+                <td>1080px wide</td>
+                <td>1080x1350px (4:5 portrait)</td>
+            </tr>
+            <tr>
+                <td><strong>Instagram/TikTok story</strong></td>
+                <td>1080px wide</td>
+                <td>1080x1920px (9:16)</td>
+            </tr>
+            <tr>
+                <td><strong>Website product image</strong></td>
+                <td>1200px wide</td>
+                <td>2000px wide</td>
+            </tr>
+            <tr>
+                <td><strong>Website hero banner</strong></td>
+                <td>1920px wide</td>
+                <td>2400-3000px wide</td>
+            </tr>
+            <tr>
+                <td><strong>Email marketing</strong></td>
+                <td>600px wide</td>
+                <td>600px wide (larger = slow loading)</td>
+            </tr>
+            <tr>
+                <td><strong>Print: 4x6" photo</strong></td>
+                <td>1200x1800px</td>
+                <td>1800x2700px (at 300 DPI)</td>
+            </tr>
+            <tr>
+                <td><strong>Print: 8x10" flyer</strong></td>
+                <td>2400x3000px</td>
+                <td>2400x3000px (at 300 DPI)</td>
+            </tr>
+            <tr>
+                <td><strong>Print: 24x36" poster</strong></td>
+                <td>3600x5400px</td>
+                <td>7200x10800px (at 300 DPI, 150 DPI acceptable for large format)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p><strong>The DPI rule:</strong> For print, you need 300 dots per inch (DPI) at the physical size you're printing. An 8x10" print at 300 DPI requires a 2400x3000px image. For large format prints (posters, banners), you can get away with 150 DPI because people view them from farther away.</p>
+
+    <h2 class="fade-up">Step-by-Step Workflow</h2>
+
+    <div class="idea-card fade-up">
+        <div class="idea-num">Step 1</div>
+        <div class="idea-title">Check Your Current Resolution</div>
+        <div class="idea-detail">On iPhone: open the photo in Photos > swipe up to see details including dimensions. On Mac: right-click > Get Info. On Windows: right-click > Properties > Details. Note the pixel dimensions (e.g., 1000x750). Compare to the target resolution for your use case (see table above).</div>
+    </div>
+
+    <div class="idea-card fade-up">
+        <div class="idea-num">Step 2</div>
+        <div class="idea-title">Calculate the Scale Factor</div>
+        <div class="idea-detail">Divide your target resolution by your current resolution. Example: You have a 1000px wide image and need 2000px. That's 2x. You have a 600px image and need 2400px. That's 4x. <strong>Stick to 2x or 4x whenever possible.</strong> If you need more, consider whether the source image is worth upscaling at all.</div>
+    </div>
+
+    <div class="idea-card fade-up">
+        <div class="idea-num">Step 3</div>
+        <div class="idea-title">Upload and Select Settings</div>
+        <div class="idea-detail">Open your chosen tool. Upload the image. Select the scale factor (2x or 4x). If the tool offers AI model options: <strong>"Standard"</strong> or <strong>"High Fidelity"</strong> for photos, <strong>"Art &amp; CG"</strong> for illustrations and graphics, <strong>"Text"</strong> or <strong>"Lines"</strong> for documents and screenshots with text. The right model selection makes a significant difference in output quality.</div>
+    </div>
+
+    <div class="idea-card fade-up">
+        <div class="idea-num">Step 4</div>
+        <div class="idea-title">Preview Before Processing</div>
+        <div class="idea-detail">Most tools show a split-view preview comparing original vs. upscaled. Check edges, text, textures, and faces for artifacts. If the preview shows hallucinated patterns, try a different AI model or reduce the scale factor. In Topaz, toggle between "Standard" and "High Fidelity" models to see which produces cleaner results for your specific image.</div>
+    </div>
+
+    <div class="idea-card fade-up">
+        <div class="idea-num">Step 5</div>
+        <div class="idea-title">Export</div>
+        <div class="idea-detail">Export as JPEG (85-90% quality) for web and social media. Export as PNG for maximum quality and transparency. Export as TIFF for print. Check the output file size &mdash; a 4x upscaled photo can be 20-50MB. For web use, you'll need to compress after upscaling.</div>
+    </div>
+
+    <h2 class="fade-up">Quality Expectations by Scale Factor</h2>
+
+    <table class="fade-up">
+        <thead>
+            <tr>
+                <th>Scale</th>
+                <th>Quality</th>
+                <th>Use Case</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>2x</strong></td>
+                <td>Excellent. Nearly indistinguishable from a photo taken at the higher resolution. Safe for all uses including print.</td>
+                <td>Everyday upscaling. Social media to website. Product photos that are almost big enough.</td>
+            </tr>
+            <tr>
+                <td><strong>4x</strong></td>
+                <td>Good. Visible AI enhancement on close inspection but perfectly acceptable for web, social, and most print applications. Textures may show slight smoothing.</td>
+                <td>Small source images that need to go to print. Old product photos. Phone crops that need full resolution.</td>
+            </tr>
+            <tr>
+                <td><strong>6x</strong></td>
+                <td>Fair. Noticeable softening and possible texture artifacts. Faces may look slightly waxy. Acceptable for large format print (viewed from distance) but not for close inspection.</td>
+                <td>Emergency use only. When reshooting isn't an option and you need the largest possible output.</td>
+            </tr>
+            <tr>
+                <td><strong>8x+</strong></td>
+                <td>Diminishing returns. Significant loss of natural texture. AI-hallucinated details become visible. Not recommended for professional use.</td>
+                <td>Rarely justified. Consider whether the source image is worth saving or if it's time to reshoot.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 class="fade-up">Batch Upscaling for Product Catalogs</h2>
+
+    <p>If you have 50-200 product images that all need upscaling:</p>
+
+    <ul>
+        <li><strong>Topaz Gigapixel AI:</strong> Drag an entire folder of images into the app. Set the scale factor and AI model. Click "Export All." The app processes them sequentially. On a modern Mac or PC, expect 30-60 seconds per image at 2x. Leave it running and walk away.</li>
+        <li><strong>Upscayl:</strong> Has a batch mode built in. Select a folder, choose your model and scale, and let it run. Free, no limits. Processing time is similar to Topaz.</li>
+        <li><strong>Let's Enhance API:</strong> For developers or automation-minded business owners, the Let's Enhance API can be integrated into workflows. Process hundreds of images programmatically. Pay per image ($0.05-0.20 each depending on plan).</li>
+    </ul>
+
+    <h2 class="fade-up">The Full AI Pipeline: Denoise + Sharpen + Upscale</h2>
+
+    <p>The best results come from combining multiple AI enhancements in sequence, not just upscaling alone. Here's the optimal order:</p>
+
+    <ol>
+        <li><strong>Denoise first.</strong> Remove grain and noise from the original resolution image. Upscaling noisy images amplifies the noise. Clean it first. Use Topaz Photo AI "Remove Noise" or Lightroom's AI noise reduction.</li>
+        <li><strong>Sharpen second.</strong> Add detail and edge definition at the original resolution. Sharpening before upscaling gives the AI more detail to work with when it upscales. Use Topaz "Sharpen" at strength 30-50, or Lightroom's Sharpening at +25-35.</li>
+        <li><strong>Upscale last.</strong> Now upscale the clean, sharp image. The AI has the best possible source material to work with. The upscaled result will be dramatically better than upscaling the original noisy, soft image.</li>
+    </ol>
+
+    <p><strong>Topaz Photo AI handles all three in one pass.</strong> Enable "Remove Noise" + "Sharpen" + "Upscale" and the app processes them in the correct order automatically. This is the main reason Topaz produces better results than tools that only upscale &mdash; it's doing three things, not one.</p>
+
+    <div class="callout fade-up">
+        <p><strong>Real-world example:</strong> A client sent us a product photo from 2021 &mdash; 900x600px, noisy, slightly soft, shot on an older phone. Through the denoise + sharpen + 4x upscale pipeline in Topaz Photo AI, we produced a 3600x2400px image clean enough for their Shopify product page and a trade show banner. Total processing time: 45 seconds. Alternative: reshoot 200 products at $10-15 per image. The AI saved them $2,000-3,000 and 2 days of work.</p>
+    </div>
+
+    <h2>Related Reading</h2>
+    <ul>
+        <li><a href="/blog/ai-tools-for-photographers.html">AI Tools for Photographers</a></li>
+        <li><a href="/blog/ai-photo-enhancement-iphone.html">How to Turn iPhone Photos Into Professional Content with AI</a></li>
+        <li><a href="/blog/social-media-image-sizes-2026.html">Social Media Image Sizes 2026</a></li>
+        <li><a href="/blog/ecommerce-ai-product-photos.html">E-Commerce AI Product Photos</a></li>
+    </ul>
+
+    <div class="cta-section">
+        <p>AI upscaling rescues old photos. A complete visual brand system prevents you from needing to rescue them in the first place &mdash; with professional-quality content generated and posted automatically. We build those systems.</p>
+        <div class="cta-buttons">
+            <a href="/services.html" class="cta-btn">See Packages</a>
+            <a href="/free-resources.html" class="cta-btn-alt">Free Resources</a>
+        </div>
+    </div>
+</article>
+
+<footer>&copy; 2026 LoopWorker. AI Brand Systems.</footer>
+
+<script>
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+</script>
+
+</body>
+</html>
