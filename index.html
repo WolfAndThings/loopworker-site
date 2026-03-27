@@ -8,14 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <title>Get More Customers From Your Social Media | LoopWorker</title>
-    <meta name="description" content="Done-for-you social media content that actually brings in customers. 10 high-converting posts, hooks, captions, and a posting plan — delivered ready to go.">
+    <meta name="description" content="Done-for-you social media content that actually brings in customers. High-converting posts, hooks, captions, and a posting plan — delivered ready to go.">
     <link rel="canonical" href="https://www.loopworker.com/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.loopworker.com/">
     <meta property="og:title" content="Get More Customers From Your Social Media | LoopWorker">
-    <meta property="og:description" content="Done-for-you social media content that actually brings in customers. 10 high-converting posts delivered ready to go.">
+    <meta property="og:description" content="Done-for-you social media content that actually brings in customers.">
     <meta property="og:site_name" content="LoopWorker">
     <meta property="og:locale" content="en_US">
 
@@ -50,7 +50,6 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* --- Typography --- */
         h1, h2, h3, h4 {
             color: #FFFFFF;
             font-weight: 700;
@@ -75,7 +74,6 @@
             max-width: 640px;
         }
 
-        /* --- Layout --- */
         section {
             padding: 6rem 2rem;
         }
@@ -86,7 +84,7 @@
         }
 
         .container-wide {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
@@ -104,7 +102,7 @@
         }
 
         .nav-inner {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
             align-items: center;
@@ -133,7 +131,6 @@
             color: #888;
             text-decoration: none;
             transition: color 0.2s ease;
-            letter-spacing: 0.01em;
         }
 
         .nav-links a:hover {
@@ -157,7 +154,6 @@
             transform: translateY(-1px);
         }
 
-        /* Hamburger */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -175,26 +171,14 @@
             transition: all 0.3s ease;
         }
 
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
-
-        /* Mobile nav overlay */
         .mobile-nav {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background: rgba(8, 8, 8, 0.98);
             z-index: 1001;
             flex-direction: column;
@@ -203,20 +187,13 @@
             gap: 2rem;
         }
 
-        .mobile-nav.active {
-            display: flex;
-        }
+        .mobile-nav.active { display: flex; }
 
         .mobile-nav a {
             font-size: 1.3rem;
             color: #CCC;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        .mobile-nav a:hover {
-            color: #FFF;
         }
 
         .mobile-nav .nav-cta {
@@ -252,6 +229,17 @@
             transform: translateY(-1px);
         }
 
+        .btn-outline {
+            background: transparent;
+            color: #999;
+            border: 1px solid #333;
+        }
+
+        .btn-outline:hover {
+            border-color: #555;
+            color: #FFF;
+        }
+
         .btn-sub {
             display: block;
             margin-top: 0.75rem;
@@ -267,9 +255,7 @@
             padding-bottom: 5rem;
         }
 
-        .hero h1 {
-            margin-bottom: 1.5rem;
-        }
+        .hero h1 { margin-bottom: 1.5rem; }
 
         .hero p {
             font-size: 1.2rem;
@@ -332,9 +318,7 @@
             margin-top: 1rem;
         }
 
-        .problem-kicker strong {
-            color: #FFFFFF;
-        }
+        .problem-kicker strong { color: #FFFFFF; }
 
         /* ========================
            SOLUTION
@@ -345,12 +329,144 @@
         }
 
         /* ========================
-           WHAT YOU GET
+           PORTFOLIO
            ======================== */
-        .deliverables {
+        .portfolio {
             background: #0C0C0C;
         }
 
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .brand-card {
+            background: #0E0E0E;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 1.4rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .brand-card:hover {
+            border-color: rgba(255,255,255,0.1);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .brand-card-img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.4rem;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .brand-card:hover .brand-card-img {
+            transform: scale(1.02);
+        }
+
+        .brand-name {
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            color: #FFF;
+        }
+
+        .brand-type {
+            font-size: 0.8rem;
+            color: #555;
+            margin-bottom: 0.8rem;
+        }
+
+        .brand-spec {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .brand-gallery {
+            display: none;
+        }
+
+        /* Gallery modal */
+        .gallery-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(2, 2, 2, 0.97);
+            z-index: 9999;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .gallery-modal.active { display: block; }
+
+        .gallery-modal-header {
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: rgba(5, 5, 5, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 10001;
+            border-bottom: 1px solid #1A1A1A;
+        }
+
+        .gallery-modal-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            color: #FFF;
+        }
+
+        .gallery-modal-close {
+            font-size: 1.8rem;
+            color: #666;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: color 0.2s ease;
+            line-height: 1;
+        }
+
+        .gallery-modal-close:hover { color: #FFF; }
+
+        .gallery-modal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-modal-grid img {
+            width: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .gallery-modal-grid img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+        }
+
+        /* ========================
+           WHAT YOU GET
+           ======================== */
         .deliverables-list {
             list-style: none;
             margin: 2.5rem 0 2rem;
@@ -366,9 +482,7 @@
             color: #CCC;
         }
 
-        .deliverables-list li:last-child {
-            border-bottom: none;
-        }
+        .deliverables-list li:last-child { border-bottom: none; }
 
         .deliverables-list li::before {
             content: '';
@@ -386,9 +500,7 @@
             margin-top: 1rem;
         }
 
-        .deliverables-goal strong {
-            color: #FFFFFF;
-        }
+        .deliverables-goal strong { color: #FFFFFF; }
 
         /* ========================
            HOW IT WORKS
@@ -398,10 +510,6 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 2.5rem;
             margin-top: 3rem;
-        }
-
-        .process-step {
-            padding: 0;
         }
 
         .step-number {
@@ -458,30 +566,95 @@
             color: #999;
         }
 
-        .results-closer strong {
-            color: #FFFFFF;
-        }
+        .results-closer strong { color: #FFFFFF; }
 
         /* ========================
            PRICING
            ======================== */
+        .pricing-section {
+            background: #0C0C0C;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
         .pricing-card {
             background: #0E0E0E;
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.06);
             border-radius: 12px;
-            padding: 3rem 2.5rem;
-            margin-top: 2.5rem;
-            max-width: 500px;
+            padding: 2.5rem 2rem;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .pricing-card:hover {
+            border-color: rgba(255,255,255,0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+        }
+
+        .pricing-card.featured {
+            border-color: rgba(255,255,255,0.12);
+            background: linear-gradient(180deg, #121212 0%, #0E0E0E 100%);
+        }
+
+        .pricing-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #FFFFFF;
+            color: #0A0A0A;
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            padding: 0.4rem 1.2rem;
+            border-radius: 0 0 6px 6px;
+        }
+
+        .pricing-tier {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #FFF;
+            margin-bottom: 0.8rem;
+        }
+
+        .pricing-amount {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.02em;
+        }
+
+        .pricing-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
         }
 
         .pricing-includes {
             list-style: none;
-            margin: 1.5rem 0 2rem;
+            margin-bottom: 2rem;
         }
 
         .pricing-includes li {
-            padding: 0.55rem 0;
-            font-size: 1rem;
+            padding: 0.5rem 0;
+            font-size: 0.92rem;
             color: #AAA;
             display: flex;
             align-items: flex-start;
@@ -489,9 +662,7 @@
             border-bottom: 1px solid rgba(255,255,255,0.03);
         }
 
-        .pricing-includes li:last-child {
-            border-bottom: none;
-        }
+        .pricing-includes li:last-child { border-bottom: none; }
 
         .pricing-includes li::before {
             content: '\2014';
@@ -499,17 +670,10 @@
             flex-shrink: 0;
         }
 
-        .pricing-amount {
-            font-size: 2.4rem;
-            font-weight: 800;
-            color: #FFFFFF;
-            margin-bottom: 0.4rem;
-            letter-spacing: -0.02em;
-        }
-
         .pricing-note {
-            font-size: 0.9rem;
-            color: #666;
+            font-size: 0.85rem;
+            color: #555;
+            margin-top: 1rem;
         }
 
         /* ========================
@@ -519,13 +683,8 @@
             text-align: center;
         }
 
-        .cta-section .container {
-            max-width: 600px;
-        }
-
-        .cta-section h2 {
-            margin-bottom: 1rem;
-        }
+        .cta-section .container { max-width: 600px; }
+        .cta-section h2 { margin-bottom: 1rem; }
 
         .cta-section p {
             margin: 0 auto 2rem;
@@ -533,7 +692,7 @@
         }
 
         /* ========================
-           SECONDARY / UPSELL
+           SECONDARY
            ======================== */
         .secondary {
             background: #0C0C0C;
@@ -559,9 +718,7 @@
             flex-shrink: 0;
         }
 
-        .secondary strong {
-            color: #FFFFFF;
-        }
+        .secondary strong { color: #FFFFFF; }
 
         /* ========================
            FOOTER
@@ -572,7 +729,7 @@
         }
 
         .footer-inner {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -608,9 +765,7 @@
             transition: color 0.2s ease;
         }
 
-        .footer-links a:hover {
-            color: #FFF;
-        }
+        .footer-links a:hover { color: #FFF; }
 
         .footer-contact {
             font-size: 0.85rem;
@@ -624,9 +779,7 @@
             transition: color 0.2s ease;
         }
 
-        .footer-contact a:hover {
-            color: #FFF;
-        }
+        .footer-contact a:hover { color: #FFF; }
 
         /* ========================
            SCROLL FADE
@@ -642,7 +795,6 @@
             transform: translateY(0);
         }
 
-        /* Film grain overlay */
         body::after {
             content: '';
             position: fixed;
@@ -662,25 +814,12 @@
             background: #0C0C0C;
         }
 
-        .audit-form-section .container {
-            max-width: 500px;
-        }
+        .audit-form-section .container { max-width: 500px; }
+        .audit-form-section h2 { text-align: center; }
+        .audit-form { margin-top: 2rem; }
 
-        .audit-form-section h2 {
-            text-align: center;
-        }
-
-        .audit-form {
-            margin-top: 2rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-
-        .form-group:last-of-type {
-            margin-bottom: 1.5rem;
-        }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group:last-of-type { margin-bottom: 1.5rem; }
 
         .form-group label {
             display: block;
@@ -705,13 +844,9 @@
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: #444;
-        }
+        .form-group textarea:focus { border-color: #444; }
 
-        .form-group textarea {
-            resize: vertical;
-        }
+        .form-group textarea { resize: vertical; }
 
         .btn-full {
             width: 100%;
@@ -722,30 +857,38 @@
            RESPONSIVE
            ======================== */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
 
-            .hamburger {
-                display: flex;
-            }
-
-            section {
-                padding: 4rem 1.5rem;
-            }
+            section { padding: 4rem 1.5rem; }
 
             .hero {
                 padding-top: 8rem;
                 padding-bottom: 3rem;
             }
 
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .brand-card-img { height: 300px; }
+
             .process-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
 
-            .pricing-card {
-                padding: 2rem 1.5rem;
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .pricing-card { padding: 2rem 1.5rem; }
+
+            .gallery-modal-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
             }
 
             .footer-inner {
@@ -758,9 +901,24 @@
                 gap: 0.8rem;
             }
         }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-grid .pricing-card:last-child {
+                grid-column: 1 / -1;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
     </style>
 
-    <!-- Schema.org -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -768,7 +926,7 @@
         "name": "LoopWorker",
         "description": "Done-for-you social media content that brings in customers.",
         "url": "https://www.loopworker.com",
-        "priceRange": "$300 - $500"
+        "priceRange": "$300 - $1,500"
     }
     </script>
 </head>
@@ -779,6 +937,7 @@
         <div class="nav-inner">
             <a href="#" class="nav-logo">LoopWorker</a>
             <ul class="nav-links">
+                <li><a href="#examples">Examples</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#what-you-get">What You Get</a></li>
                 <li><a href="#pricing">Pricing</a></li>
@@ -792,8 +951,8 @@
         </div>
     </nav>
 
-    <!-- MOBILE NAV -->
     <div class="mobile-nav" id="mobileNav">
+        <a href="#examples" onclick="toggleMenu()">Examples</a>
         <a href="#how-it-works" onclick="toggleMenu()">How It Works</a>
         <a href="#what-you-get" onclick="toggleMenu()">What You Get</a>
         <a href="#pricing" onclick="toggleMenu()">Pricing</a>
@@ -842,12 +1001,93 @@
         </div>
     </section>
 
+    <!-- PORTFOLIO / EXAMPLES -->
+    <section class="portfolio" id="examples">
+        <div class="container-wide">
+            <h2 class="fade-up">Content Built for Real Businesses</h2>
+            <p class="fade-up">Every style is designed for a specific type of business. Click to see more.</p>
+
+            <div class="portfolio-grid">
+
+                <div class="brand-card fade-up" onclick="openGallery(this)">
+                    <img class="brand-card-img" src="images/cards/card_02.webp" alt="Cult Brand content example" loading="lazy">
+                    <div class="brand-name">Cult Brand</div>
+                    <div class="brand-type">Restaurants, Food Trucks, Nightlife</div>
+                    <div class="brand-spec">Direct flash photography with analog grit. Built for brands that want a cult following.</div>
+                    <div class="brand-gallery">
+                        <img src="images/cards/card_03.webp" alt="Cult Brand"><img src="images/cards/card_04.webp" alt="Cult Brand"><img src="images/cards/card_05.webp" alt="Cult Brand"><img src="images/cards/card_06.webp" alt="Cult Brand"><img src="images/cards/card_07.webp" alt="Cult Brand"><img src="images/cards/card_08.webp" alt="Cult Brand"><img src="images/cards/card_09.webp" alt="Cult Brand"><img src="images/cards/card_10.webp" alt="Cult Brand"><img src="images/cards/card_11.webp" alt="Cult Brand">
+                    </div>
+                </div>
+
+                <div class="brand-card fade-up" onclick="openGallery(this)">
+                    <img class="brand-card-img" src="images/cards/card_12.webp" alt="Lux content example" loading="lazy">
+                    <div class="brand-name">Lux</div>
+                    <div class="brand-type">Real Estate, Airbnb, Architecture, Wellness</div>
+                    <div class="brand-spec">Cinematic wide shots where the space is the star. Built for premium properties and luxury brands.</div>
+                    <div class="brand-gallery">
+                        <img src="images/cards/card_13.webp" alt="Lux"><img src="images/cards/card_14.webp" alt="Lux"><img src="images/cards/card_15.webp" alt="Lux"><img src="images/cards/card_16.webp" alt="Lux"><img src="images/cards/card_17.webp" alt="Lux"><img src="images/cards/card_18.webp" alt="Lux"><img src="images/cards/card_19.webp" alt="Lux"><img src="images/cards/card_20.webp" alt="Lux"><img src="images/cards/card_21.webp" alt="Lux">
+                    </div>
+                </div>
+
+                <div class="brand-card fade-up" onclick="openGallery(this)">
+                    <img class="brand-card-img" src="images/cards/card_22.webp" alt="Clean DTC content example" loading="lazy">
+                    <div class="brand-name">Clean DTC</div>
+                    <div class="brand-type">Fashion, Skincare, DTC Products</div>
+                    <div class="brand-spec">Clean studio lighting with nothing extra in frame. Built for brands that sell through restraint.</div>
+                    <div class="brand-gallery">
+                        <img src="images/cards/card_23.webp" alt="Clean DTC"><img src="images/cards/card_24.webp" alt="Clean DTC"><img src="images/cards/card_25.webp" alt="Clean DTC"><img src="images/cards/card_26.webp" alt="Clean DTC"><img src="images/cards/card_27.webp" alt="Clean DTC"><img src="images/cards/card_28.webp" alt="Clean DTC"><img src="images/cards/card_29.webp" alt="Clean DTC"><img src="images/cards/card_30.webp" alt="Clean DTC"><img src="images/cards/card_31.webp" alt="Clean DTC"><img src="images/cards/card_32.webp" alt="Clean DTC">
+                    </div>
+                </div>
+
+                <div class="brand-card fade-up" onclick="openGallery(this)">
+                    <img class="brand-card-img" src="images/cards/card_33.webp" alt="UGC Lifestyle content example" loading="lazy">
+                    <div class="brand-name">UGC / Lifestyle</div>
+                    <div class="brand-type">Restaurants, Coffee Shops, Consumer Brands</div>
+                    <div class="brand-spec">Candid product-in-hand moments that feel like a real customer shot it. Authenticity over polish.</div>
+                    <div class="brand-gallery">
+                        <img src="images/cards/card_34.webp" alt="UGC Lifestyle"><img src="images/cards/card_35.webp" alt="UGC Lifestyle"><img src="images/cards/card_36.webp" alt="UGC Lifestyle"><img src="images/cards/card_37.webp" alt="UGC Lifestyle"><img src="images/cards/card_38.webp" alt="UGC Lifestyle"><img src="images/cards/card_39.webp" alt="UGC Lifestyle"><img src="images/cards/card_40.webp" alt="UGC Lifestyle"><img src="images/cards/card_41.webp" alt="UGC Lifestyle"><img src="images/cards/card_42.webp" alt="UGC Lifestyle">
+                    </div>
+                </div>
+
+                <div class="brand-card fade-up" onclick="openGallery(this)">
+                    <img class="brand-card-img" src="images/cards/card_43.webp" alt="Editorial content example" loading="lazy">
+                    <div class="brand-name">Editorial</div>
+                    <div class="brand-type">Fashion, Automotive, Campaigns</div>
+                    <div class="brand-spec">Dramatic lighting and intentional framing that belongs in a magazine spread. Built to be taken seriously.</div>
+                    <div class="brand-gallery">
+                        <img src="images/cards/card_44.webp" alt="Editorial"><img src="images/cards/card_45.webp" alt="Editorial"><img src="images/cards/card_46.webp" alt="Editorial"><img src="images/cards/card_47.webp" alt="Editorial"><img src="images/cards/card_48.webp" alt="Editorial"><img src="images/cards/card_49.webp" alt="Editorial"><img src="images/cards/card_50.webp" alt="Editorial"><img src="images/cards/card_51.webp" alt="Editorial"><img src="images/cards/card_52.webp" alt="Editorial">
+                    </div>
+                </div>
+
+                <div class="brand-card fade-up" onclick="openGallery(this)">
+                    <img class="brand-card-img" src="images/cards/card_53.webp" alt="Cinematic content example" loading="lazy">
+                    <div class="brand-name">Cinematic</div>
+                    <div class="brand-type">Bars, Hotels, Nightlife, Music, Events</div>
+                    <div class="brand-spec">Moody neon color grading. Built for brands that come alive after dark.</div>
+                    <div class="brand-gallery">
+                        <img src="images/cards/card_54.webp" alt="Cinematic"><img src="images/cards/card_55.webp" alt="Cinematic"><img src="images/cards/card_56.webp" alt="Cinematic"><img src="images/cards/card_57.webp" alt="Cinematic"><img src="images/cards/card_58.webp" alt="Cinematic"><img src="images/cards/card_59.webp" alt="Cinematic"><img src="images/cards/card_60.webp" alt="Cinematic"><img src="images/cards/card_61.webp" alt="Cinematic"><img src="images/cards/card_62.webp" alt="Cinematic">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div class="gallery-modal" id="galleryModal">
+        <div class="gallery-modal-header">
+            <div class="gallery-modal-title" id="galleryTitle"></div>
+            <div class="gallery-modal-close" onclick="closeGallery()">&times;</div>
+        </div>
+        <div class="gallery-modal-grid" id="galleryGrid"></div>
+    </div>
+
     <!-- WHAT YOU GET -->
-    <section class="deliverables" id="what-you-get">
+    <section id="what-you-get">
         <div class="container">
             <h2 class="fade-up">Done-For-You Content That Actually Works</h2>
             <ul class="deliverables-list fade-up">
-                <li>10 high-converting posts</li>
+                <li>High-converting posts tailored to your business</li>
                 <li>Scroll-stopping hooks that grab attention</li>
                 <li>Captions written to drive action</li>
                 <li>Content structured to bring in real customers</li>
@@ -858,7 +1098,7 @@
     </section>
 
     <!-- HOW IT WORKS -->
-    <section id="how-it-works">
+    <section id="how-it-works" style="background: #0C0C0C;">
         <div class="container-wide">
             <h2 class="fade-up">Simple. Clear. No Guesswork.</h2>
             <div class="process-grid">
@@ -896,20 +1136,66 @@
     </section>
 
     <!-- PRICING -->
-    <section id="pricing">
-        <div class="container">
-            <h2 class="fade-up">Done-For-You Content Package</h2>
-            <p class="fade-up">Everything you need to start getting results from your social media.</p>
-            <div class="pricing-card fade-up">
-                <ul class="pricing-includes">
-                    <li>10 Custom Posts</li>
-                    <li>Captions + Hooks Included</li>
-                    <li>Built for Your Business + Audience</li>
-                    <li>Delivered Ready to Post</li>
-                </ul>
-                <div class="pricing-amount">$300 – $500</div>
-                <p class="pricing-note">Limited spots available to keep quality high.</p>
+    <section class="pricing-section" id="pricing">
+        <div class="container-wide">
+            <h2 class="fade-up">Choose Your Package</h2>
+            <p class="fade-up">Every package is built for one thing: getting you more customers.</p>
+
+            <div class="pricing-grid">
+
+                <!-- STARTER -->
+                <div class="pricing-card fade-up">
+                    <div class="pricing-tier">Starter</div>
+                    <div class="pricing-name">Content Kickstart</div>
+                    <div class="pricing-amount">$300</div>
+                    <div class="pricing-desc">Get your first batch of content that actually converts.</div>
+                    <ul class="pricing-includes">
+                        <li>10 Custom Posts</li>
+                        <li>Captions + Hooks</li>
+                        <li>Built for Your Business</li>
+                        <li>Delivered Ready to Post</li>
+                        <li>Simple Posting Plan</li>
+                    </ul>
+                    <a href="#audit" class="btn btn-outline" style="width:100%;text-align:center;">Get Started</a>
+                </div>
+
+                <!-- GROWTH -->
+                <div class="pricing-card featured fade-up">
+                    <div class="pricing-tier">Growth</div>
+                    <div class="pricing-name">Full Content System</div>
+                    <div class="pricing-amount">$750</div>
+                    <div class="pricing-desc">A complete month of content designed to drive real results.</div>
+                    <ul class="pricing-includes">
+                        <li>25 Custom Posts</li>
+                        <li>Captions + Hooks</li>
+                        <li>30-Day Content Calendar</li>
+                        <li>Custom Visual Style</li>
+                        <li>Hashtag + Posting Strategy</li>
+                        <li>1 Round of Revisions</li>
+                    </ul>
+                    <a href="#audit" class="btn btn-primary" style="width:100%;text-align:center;">Get Started</a>
+                </div>
+
+                <!-- FULL BUILD -->
+                <div class="pricing-card fade-up">
+                    <div class="pricing-tier">Full Build</div>
+                    <div class="pricing-name">Brand Content Engine</div>
+                    <div class="pricing-amount">$1,500</div>
+                    <div class="pricing-desc">Everything you need to turn your social media into a customer machine.</div>
+                    <ul class="pricing-includes">
+                        <li>50+ Custom Posts</li>
+                        <li>Captions + Hooks</li>
+                        <li>60-Day Content Calendar</li>
+                        <li>Full Visual Brand System</li>
+                        <li>Posting Strategy + Automation</li>
+                        <li>2 Rounds of Revisions</li>
+                        <li>Priority Support</li>
+                    </ul>
+                    <a href="#audit" class="btn btn-outline" style="width:100%;text-align:center;">Get Started</a>
+                </div>
+
             </div>
+            <p class="pricing-note fade-up" style="text-align:center;margin-top:1.5rem;">Limited spots available to keep quality high.</p>
         </div>
     </section>
 
@@ -988,6 +1274,7 @@
                 <div class="footer-tagline">Helping businesses turn content into customers.</div>
             </div>
             <ul class="footer-links">
+                <li><a href="#examples">Examples</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#audit">Get Free Audit</a></li>
@@ -1000,15 +1287,12 @@
     </footer>
 
     <script>
-        // Scroll fade-in
+        // Scroll fade
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
         // Mobile menu
@@ -1017,6 +1301,36 @@
             document.getElementById('mobileNav').classList.toggle('active');
             document.body.style.overflow = document.getElementById('mobileNav').classList.contains('active') ? 'hidden' : '';
         }
+
+        // Gallery modal
+        function openGallery(card) {
+            const name = card.querySelector('.brand-name').textContent;
+            const imgs = card.querySelector('.brand-gallery').querySelectorAll('img');
+            const modal = document.getElementById('galleryModal');
+            const grid = document.getElementById('galleryGrid');
+            document.getElementById('galleryTitle').textContent = name;
+            grid.innerHTML = '';
+            imgs.forEach(img => {
+                const clone = img.cloneNode(true);
+                clone.loading = 'lazy';
+                grid.appendChild(clone);
+            });
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery() {
+            document.getElementById('galleryModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('galleryModal').addEventListener('click', function(e) {
+            if (e.target === this) closeGallery();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeGallery();
+        });
     </script>
 
 </body>
