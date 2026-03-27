@@ -329,6 +329,126 @@
         }
 
         /* ========================
+           BEFORE / AFTER EXAMPLES
+           ======================== */
+        .examples-section {
+            background: #0C0C0C;
+        }
+
+        .example-block {
+            margin-bottom: 3rem;
+        }
+
+        .example-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .example-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .example-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .example-card {
+            border-radius: 10px;
+            padding: 1.8rem;
+            position: relative;
+        }
+
+        .example-card.before {
+            background: #111;
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .example-card.after {
+            background: #0F1A0F;
+            border: 1px solid rgba(100,200,100,0.1);
+        }
+
+        .example-tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 3px;
+        }
+
+        .before .example-tag {
+            color: #888;
+            background: rgba(255,255,255,0.04);
+        }
+
+        .after .example-tag {
+            color: #6BCB77;
+            background: rgba(100,200,100,0.08);
+        }
+
+        .example-caption {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .before .example-caption {
+            color: #777;
+        }
+
+        .after .example-caption {
+            color: #DDD;
+        }
+
+        .example-meta {
+            font-size: 0.82rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .before .example-meta {
+            color: #555;
+        }
+
+        .after .example-meta {
+            color: #6BCB77;
+        }
+
+        .example-meta strong {
+            color: inherit;
+            font-weight: 600;
+        }
+
+        .example-why {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.04);
+            font-size: 0.9rem;
+            color: #888;
+            line-height: 1.6;
+        }
+
+        .example-why strong {
+            color: #CCC;
+        }
+
+        @media (max-width: 768px) {
+            .example-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========================
            PORTFOLIO
            ======================== */
         .portfolio {
@@ -1007,6 +1127,68 @@
             <p class="fade-up">I don't just give you ideas or strategy.</p>
             <p class="fade-up">I build content designed to turn viewers into customers.</p>
             <p class="fade-up">This is done-for-you, built specifically for your business, and focused on results.</p>
+        </div>
+    </section>
+
+    <!-- BEFORE / AFTER EXAMPLES -->
+    <section class="examples-section">
+        <div class="container">
+            <h2 class="fade-up">Example Content That Converts</h2>
+            <p class="fade-up">Here's the difference between content that gets ignored and content that brings in customers.</p>
+
+            <!-- Restaurant -->
+            <div class="example-block fade-up">
+                <div class="example-label">Restaurant</div>
+                <div class="example-comparison">
+                    <div class="example-card before">
+                        <div class="example-tag">Before</div>
+                        <div class="example-caption">"Come try our new burger!"</div>
+                        <div class="example-meta"><strong>Problem:</strong> Generic, no reason to act, no urgency.</div>
+                    </div>
+                    <div class="example-card after">
+                        <div class="example-tag">After</div>
+                        <div class="example-caption">"This burger has been selling out by 7pm every night this week. If you're coming in tonight, get it early."</div>
+                        <div class="example-meta"><strong>Hook:</strong> "Selling out every night..."<br><strong>CTA:</strong> "Come in before it's gone."</div>
+                    </div>
+                </div>
+                <div class="example-why"><strong>Why it works:</strong> Creates urgency and gives people a reason to act now instead of later.</div>
+            </div>
+
+            <!-- Med Spa -->
+            <div class="example-block fade-up">
+                <div class="example-label">Med Spa</div>
+                <div class="example-comparison">
+                    <div class="example-card before">
+                        <div class="example-tag">Before</div>
+                        <div class="example-caption">"Botox appointments available. Book now!"</div>
+                        <div class="example-meta"><strong>Problem:</strong> Feels like every other post, no differentiation.</div>
+                    </div>
+                    <div class="example-card after">
+                        <div class="example-tag">After</div>
+                        <div class="example-caption">"Most clients wait too long before starting Botox. The best results actually come from starting earlier and maintaining consistency."</div>
+                        <div class="example-meta"><strong>Hook:</strong> "Most clients wait too long..."<br><strong>CTA:</strong> "DM us to see if it's the right time for you."</div>
+                    </div>
+                </div>
+                <div class="example-why"><strong>Why it works:</strong> Builds curiosity, authority, and encourages direct messages.</div>
+            </div>
+
+            <!-- Gym -->
+            <div class="example-block fade-up">
+                <div class="example-label">Gym / Fitness</div>
+                <div class="example-comparison">
+                    <div class="example-card before">
+                        <div class="example-tag">Before</div>
+                        <div class="example-caption">"New class schedule is out!"</div>
+                        <div class="example-meta"><strong>Problem:</strong> Informational only, no emotional pull.</div>
+                    </div>
+                    <div class="example-card after">
+                        <div class="example-tag">After</div>
+                        <div class="example-caption">"If you've been saying 'I'll start next week'... this is your sign to stop waiting."</div>
+                        <div class="example-meta"><strong>Hook:</strong> "This is your sign..."<br><strong>CTA:</strong> "Join us this week."</div>
+                    </div>
+                </div>
+                <div class="example-why"><strong>Why it works:</strong> Connects emotionally and pushes people to take action.</div>
+            </div>
         </div>
     </section>
 
