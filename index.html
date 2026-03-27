@@ -6,24 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
-    <title>AI Brand Photography & Content Systems | LoopWorker</title>
-    <meta name="description" content="Done-for-you AI brand photography systems. 50+ images, content calendar, and automation — delivered in 7 days. 6 visual styles built for brands that want to look like $10M companies.">
-    <meta name="keywords" content="AI brand photography, AI content system, brand photography automation, DFY brand system, AI generated product photos, content calendar automation">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Get More Customers From Your Social Media | LoopWorker</title>
+    <meta name="description" content="Done-for-you social media content that actually brings in customers. 10 high-converting posts, hooks, captions, and a posting plan — delivered ready to go.">
     <link rel="canonical" href="https://www.loopworker.com/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.loopworker.com/">
-    <meta property="og:title" content="AI Brand Photography & Content Systems | LoopWorker">
-    <meta property="og:description" content="Done-for-you AI brand photography systems. 50+ images, content calendar, and automation — delivered in 7 days.">
+    <meta property="og:title" content="Get More Customers From Your Social Media | LoopWorker">
+    <meta property="og:description" content="Done-for-you social media content that actually brings in customers. 10 high-converting posts delivered ready to go.">
     <meta property="og:site_name" content="LoopWorker">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AI Brand Photography & Content Systems | LoopWorker">
-    <meta name="twitter:description" content="Done-for-you AI brand photography systems. 50+ images, content calendar, and automation — delivered in 7 days.">
+    <meta name="twitter:title" content="Get More Customers From Your Social Media | LoopWorker">
+    <meta name="twitter:description" content="Done-for-you social media content that actually brings in customers.">
 
     <!-- Google Verification -->
     <meta name="google-site-verification" content="google9258fb3826a9df03">
@@ -59,47 +58,172 @@
         }
 
         h1 {
-            font-size: clamp(2.4rem, 5vw, 4.2rem);
-            line-height: 1.05;
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            line-height: 1.08;
             font-weight: 800;
         }
 
         h2 {
-            font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+            font-size: clamp(1.6rem, 3.5vw, 2.4rem);
             line-height: 1.15;
             margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        h3 {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: #666;
-            font-weight: 500;
-            margin-bottom: 1rem;
         }
 
         p {
             color: #B0B0B0;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             max-width: 640px;
         }
 
         /* --- Layout --- */
         section {
-            padding: 7rem 2rem;
+            padding: 6rem 2rem;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .divider {
-            border: none;
-            border-top: 1px solid rgba(255,255,255,0.04);
-            margin: 0;
+        .container-wide {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* --- Nav --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(8, 8, 8, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 0 2rem;
+        }
+
+        .nav-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .nav-logo {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #FFF;
+            letter-spacing: 0.06em;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.85rem;
+            color: #888;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            letter-spacing: 0.01em;
+        }
+
+        .nav-links a:hover {
+            color: #FFF;
+        }
+
+        .nav-cta {
+            background: #FFFFFF;
+            color: #0A0A0A !important;
+            padding: 0.55rem 1.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.8rem !important;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            background: #F0F0F0;
+            transform: translateY(-1px);
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1002;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: #FFF;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile nav overlay */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(8, 8, 8, 0.98);
+            z-index: 1001;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .mobile-nav.active {
+            display: flex;
+        }
+
+        .mobile-nav a {
+            font-size: 1.3rem;
+            color: #CCC;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .mobile-nav a:hover {
+            color: #FFF;
+        }
+
+        .mobile-nav .nav-cta {
+            font-size: 1rem !important;
+            padding: 0.8rem 2rem;
+            margin-top: 1rem;
+            display: inline-block;
         }
 
         /* --- Buttons --- */
@@ -112,7 +236,7 @@
             border-radius: 4px;
             letter-spacing: 0.04em;
             text-transform: uppercase;
-            transition: all 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             cursor: pointer;
             border: none;
         }
@@ -120,8 +244,6 @@
         .btn-primary {
             background: #FFFFFF;
             color: #0A0A0A;
-            box-shadow: 0 0 0 0 rgba(255,255,255,0);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .btn-primary:hover {
@@ -130,31 +252,19 @@
             transform: translateY(-1px);
         }
 
-        .btn-outline {
-            background: transparent;
-            color: #999;
-            border: 1px solid #222;
-        }
-
-        .btn-outline:hover {
-            border-color: #444;
-            color: #FFF;
-            background: rgba(255,255,255,0.03);
+        .btn-sub {
+            display: block;
+            margin-top: 0.75rem;
+            font-size: 0.8rem;
+            color: #666;
         }
 
         /* ========================
            HERO
            ======================== */
         .hero {
-            min-height: auto;
-            display: flex;
-            align-items: center;
-            padding-top: 3rem;
-            padding-bottom: 2rem;
-        }
-
-        .hero .container {
-            max-width: 900px;
+            padding-top: 10rem;
+            padding-bottom: 5rem;
         }
 
         .hero h1 {
@@ -167,1636 +277,747 @@
             color: #999;
         }
 
-        .hero-tag {
-            display: inline-block;
-            font-size: 0.65rem;
+        /* ========================
+           TRUST STRIP
+           ======================== */
+        .trust-strip {
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .trust-strip p {
+            max-width: 100%;
+            font-size: 0.9rem;
+            color: #666;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
-            letter-spacing: 0.25em;
-            color: #888;
-            border: 1px solid rgba(255,255,255,0.08);
-            padding: 0.5rem 1.4rem;
-            border-radius: 100px;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(4px);
-            background: rgba(255,255,255,0.02);
+            font-weight: 500;
+            margin: 0 auto;
         }
 
         /* ========================
            PROBLEM
            ======================== */
         .problem {
-            background: #0E0E0E;
+            background: #0C0C0C;
         }
 
-        .problem-text {
-            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-            line-height: 1.5;
-            color: #C8C8C8;
-            max-width: 800px;
-            font-weight: 400;
+        .problem-list {
+            list-style: none;
+            margin: 2rem 0 2.5rem;
         }
 
-        .problem-text strong {
-            color: #FFFFFF;
-            font-weight: 600;
-        }
-
-        /* ========================
-           PORTFOLIO
-           ======================== */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
-            align-items: start;
-        }
-
-        .brand-card {
-            background: #0E0E0E;
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 12px;
-            padding: 1.4rem;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .brand-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .brand-card:hover {
-            border-color: rgba(255,255,255,0.1);
-            transform: translateY(-6px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05);
-        }
-
-        .brand-card:hover::before {
-            opacity: 1;
-        }
-
-        .brand-name {
-            font-size: 1.3rem;
-            font-weight: 800;
-            letter-spacing: 0.12em;
-            margin-bottom: 0.3rem;
-            text-transform: uppercase;
-        }
-
-        .brand-type {
-            font-size: 0.8rem;
-            color: #555;
-            margin-bottom: 1rem;
-            letter-spacing: 0.02em;
-        }
-
-        .brand-spec {
-            font-size: 0.85rem;
-            color: #444;
-            margin-bottom: 1.2rem;
-            line-height: 1.6;
-        }
-
-        .color-swatch-row {
+        .problem-list li {
+            padding: 0.7rem 0;
+            font-size: 1.05rem;
+            color: #999;
             display: flex;
-            gap: 0.5rem;
-            align-items: center;
+            align-items: flex-start;
+            gap: 0.8rem;
         }
 
-        .color-swatch {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            border: 2px solid #222;
+        .problem-list li::before {
+            content: '\2715';
+            color: #555;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            margin-top: 3px;
         }
 
-            font-size: 0.75rem;
-            color: #444;
-            letter-spacing: 0.06em;
-            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+        .problem-kicker {
+            font-size: 1.15rem;
+            color: #B0B0B0;
+            margin-top: 1rem;
+        }
+
+        .problem-kicker strong {
+            color: #FFFFFF;
         }
 
         /* ========================
-           DELIVERABLES
+           SOLUTION
            ======================== */
+        .solution p {
+            font-size: 1.15rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ========================
+           WHAT YOU GET
+           ======================== */
+        .deliverables {
+            background: #0C0C0C;
+        }
+
         .deliverables-list {
             list-style: none;
-            margin-top: 2.5rem;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0;
+            margin: 2.5rem 0 2rem;
         }
 
-        .deliverable-item {
+        .deliverables-list li {
             display: flex;
             align-items: flex-start;
-            gap: 1.2rem;
-            padding: 1.6rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.03);
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 1.05rem;
+            color: #CCC;
         }
 
-        .deliverable-item:last-child {
+        .deliverables-list li:last-child {
             border-bottom: none;
         }
 
-        .deliverable-check {
-            flex-shrink: 0;
-            width: 20px;
-            height: 20px;
-            border: 1.5px solid #333;
-            border-radius: 3px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 2px;
-        }
-
-        .deliverable-check::after {
+        .deliverables-list li::before {
             content: '';
-            width: 6px;
-            height: 6px;
+            flex-shrink: 0;
+            width: 8px;
+            height: 8px;
             background: #FFF;
             border-radius: 50%;
+            margin-top: 8px;
         }
 
-        .deliverable-title {
-            font-size: 1.05rem;
+        .deliverables-goal {
+            font-size: 1.1rem;
+            color: #999;
+            margin-top: 1rem;
+        }
+
+        .deliverables-goal strong {
             color: #FFFFFF;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .deliverable-desc {
-            font-size: 0.9rem;
-            color: #666;
         }
 
         /* ========================
-           PRICING
-           ======================== */
-        .pricing {
-            background: #0E0E0E;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .pricing-card {
-            background: #0E0E0E;
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 12px;
-            padding: 3rem 2.2rem;
-            position: relative;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .pricing-card:hover {
-            border-color: rgba(255,255,255,0.1);
-            transform: translateY(-4px);
-            box-shadow: 0 16px 48px rgba(0,0,0,0.4);
-        }
-
-        .pricing-card.featured {
-            border-color: rgba(255,255,255,0.12);
-            background: linear-gradient(180deg, #121212 0%, #0E0E0E 100%);
-        }
-
-        .pricing-card.featured::before {
-            content: 'MOST POPULAR';
-            position: absolute;
-            top: -1px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #FFFFFF;
-            color: #0A0A0A;
-            font-size: 0.6rem;
-            font-weight: 700;
-            letter-spacing: 0.18em;
-            padding: 0.4rem 1.2rem;
-            border-radius: 0 0 6px 6px;
-        }
-
-        .pricing-tier {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-
-        .pricing-amount {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: #FFFFFF;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        .pricing-features {
-            list-style: none;
-        }
-
-        .pricing-features li {
-            padding: 0.5rem 0;
-            font-size: 0.92rem;
-            color: #888;
-            border-bottom: 1px solid #151515;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.6rem;
-        }
-
-        .pricing-features li:last-child {
-            border-bottom: none;
-        }
-
-        .pricing-features li::before {
-            content: '\2014';
-            color: #333;
-            flex-shrink: 0;
-        }
-
-        /* ========================
-           PROCESS
+           HOW IT WORKS
            ======================== */
         .process-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
             margin-top: 3rem;
         }
 
         .process-step {
-            padding: 2rem 0;
+            padding: 0;
         }
 
         .step-number {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 900;
-            color: rgba(255,255,255,0.04);
+            color: rgba(255,255,255,0.06);
             line-height: 1;
             margin-bottom: 1rem;
             letter-spacing: -0.04em;
         }
 
         .step-title {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: #FFFFFF;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
         }
 
         .step-desc {
-            font-size: 0.92rem;
+            font-size: 0.95rem;
+            color: #777;
+            line-height: 1.6;
+        }
+
+        /* ========================
+           RESULTS
+           ======================== */
+        .results {
+            background: #0C0C0C;
+        }
+
+        .results-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .results-list li {
+            padding: 0.7rem 0;
+            font-size: 1.05rem;
+            color: #CCC;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+
+        .results-list li::before {
+            content: '\2192';
+            color: #FFF;
+            flex-shrink: 0;
+        }
+
+        .results-closer {
+            font-size: 1.1rem;
+            color: #999;
+        }
+
+        .results-closer strong {
+            color: #FFFFFF;
+        }
+
+        /* ========================
+           PRICING
+           ======================== */
+        .pricing-card {
+            background: #0E0E0E;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 3rem 2.5rem;
+            margin-top: 2.5rem;
+            max-width: 500px;
+        }
+
+        .pricing-includes {
+            list-style: none;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .pricing-includes li {
+            padding: 0.55rem 0;
+            font-size: 1rem;
+            color: #AAA;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .pricing-includes li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-includes li::before {
+            content: '\2014';
+            color: #444;
+            flex-shrink: 0;
+        }
+
+        .pricing-amount {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.02em;
+        }
+
+        .pricing-note {
+            font-size: 0.9rem;
             color: #666;
         }
 
         /* ========================
-           PROOF
+           CTA SECTIONS
            ======================== */
-        .proof {
-            background: #0E0E0E;
-        }
-
-        .proof-stats {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3rem;
-            margin-top: 2.5rem;
-        }
-
-        .proof-stat {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .proof-number {
-            font-size: 3rem;
-            font-weight: 900;
-            color: #FFFFFF;
-            margin-bottom: 0.4rem;
-            letter-spacing: -0.04em;
-            background: linear-gradient(180deg, #FFFFFF 0%, #888888 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .proof-label {
-            font-size: 0.85rem;
-            color: #444;
-            line-height: 1.5;
-        }
-
-        /* ========================
-           FINAL CTA
-           ======================== */
-        .final-cta {
+        .cta-section {
             text-align: center;
-            padding: 8rem 1.5rem;
         }
 
-        .final-cta h2 {
+        .cta-section .container {
+            max-width: 600px;
+        }
+
+        .cta-section h2 {
             margin-bottom: 1rem;
         }
 
-        .final-cta p {
-            margin: 0 auto 2.5rem auto;
+        .cta-section p {
+            margin: 0 auto 2rem;
             text-align: center;
         }
 
-        .cta-links {
+        /* ========================
+           SECONDARY / UPSELL
+           ======================== */
+        .secondary {
+            background: #0C0C0C;
+        }
+
+        .secondary-list {
+            list-style: none;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .secondary-list li {
+            padding: 0.5rem 0;
+            font-size: 1rem;
+            color: #999;
             display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
+            align-items: flex-start;
+            gap: 0.7rem;
         }
 
-        .contact-line {
-            font-size: 0.85rem;
+        .secondary-list li::before {
+            content: '\2014';
             color: #444;
-            margin-top: 3rem;
+            flex-shrink: 0;
         }
 
-        .contact-line a {
-            color: #888;
-            text-decoration: none;
-            border-bottom: 1px solid #333;
-            transition: color 0.2s ease, border-color 0.2s ease;
-        }
-
-        .contact-line a:hover {
-            color: #FFF;
-            border-color: #666;
+        .secondary strong {
+            color: #FFFFFF;
         }
 
         /* ========================
            FOOTER
            ======================== */
         footer {
-            text-align: center;
-            padding: 2rem 1.5rem;
-            border-top: 1px solid #111;
+            padding: 4rem 2rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
         }
 
-        footer p {
-            font-size: 0.8rem;
-            color: #333;
+        .footer-inner {
+            max-width: 1000px;
             margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-brand {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #FFF;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            font-size: 0.85rem;
+            color: #666;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFF;
+        }
+
+        .footer-contact {
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .footer-contact a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-contact a:hover {
+            color: #FFF;
+        }
+
+        /* ========================
+           SCROLL FADE
+           ======================== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Film grain overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: 0.02;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+        }
+
+        /* ========================
+           AUDIT FORM
+           ======================== */
+        .audit-form-section {
+            background: #0C0C0C;
+        }
+
+        .audit-form-section .container {
+            max-width: 500px;
+        }
+
+        .audit-form-section h2 {
+            text-align: center;
+        }
+
+        .audit-form {
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group:last-of-type {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.02em;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: #151515;
+            border: 1px solid #222;
+            border-radius: 4px;
+            color: #FFF;
+            font-size: 1rem;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #444;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .btn-full {
+            width: 100%;
+            text-align: center;
         }
 
         /* ========================
            RESPONSIVE
            ======================== */
         @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
             section {
-                padding: 4rem 1.25rem;
+                padding: 4rem 1.5rem;
             }
 
             .hero {
-                min-height: 80vh;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-grid {
-                grid-template-columns: 1fr;
+                padding-top: 8rem;
+                padding-bottom: 3rem;
             }
 
             .process-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .proof-stats {
-                flex-direction: column;
                 gap: 2rem;
             }
 
-            .final-cta {
-                padding: 5rem 1.25rem;
+            .pricing-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 0.8rem;
             }
         }
+    </style>
 
-        /* ========================
-           HERO IMAGE STRIP
-           ======================== */
-
-        /* ========================
-           BRAND CARD IMAGES
-           ======================== */
-        .brand-card-img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 1.4rem;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .brand-card:hover .brand-card-img {
-            transform: scale(1.02);
-        }
-
-
-        /* ========================
-           LIGHTBOX
-           ======================== */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.92);
-            z-index: 9999;
-            cursor: zoom-out;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90vh;
-            object-fit: contain;
-            border-radius: 6px;
-            box-shadow: 0 0 60px rgba(0,0,0,0.5);
-        }
-
-
-        /* ========================
-
-        /* ========================
-           TESTIMONIALS
-           ======================== */
-        .testimonials { background: #0A0A0A; }
-        .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
-        .testimonial-card { background: #0E0E0E; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 2.2rem; position: relative; transition: all 0.3s ease; }
-        .testimonial-card:hover { border-color: rgba(255,255,255,0.1); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.4); }
-        .testimonial-quote { font-size: 1rem; color: #B0B0B0; line-height: 1.7; margin-bottom: 1.5rem; font-style: italic; max-width: none; }
-        .testimonial-quote::before { content: '\201C'; font-size: 3rem; color: rgba(255,255,255,0.08); font-family: 'Playfair Display', Georgia, serif; line-height: 0; display: block; margin-bottom: 0.5rem; }
-        .testimonial-author { display: flex; align-items: center; gap: 0.8rem; }
-        .testimonial-avatar { width: 40px; height: 40px; border-radius: 50%; background: #1A1A1A; border: 1px solid #222; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 700; color: #555; }
-        .testimonial-name { font-size: 0.9rem; color: #FFF; font-weight: 600; }
-        .testimonial-role { font-size: 0.75rem; color: #555; }
-        @media (max-width: 768px) { .testimonial-grid { grid-template-columns: 1fr; } }
-
-           BRAND REFERENCE CARDS
-           ======================== */
-        .brand-ref-section { background: #0A0A0A; }
-        .brand-ref-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; margin-top: 3rem; }
-        .brand-ref-card { background: #0E0E0E; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; overflow: hidden; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-        .brand-ref-card:hover { border-color: rgba(255,255,255,0.1); transform: translateY(-6px); box-shadow: 0 24px 64px rgba(0,0,0,0.5); }
-        .brand-ref-hero { position: relative; width: 100%; height: 420px; overflow: hidden; }
-        .brand-ref-hero img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-        .brand-ref-card:hover .brand-ref-hero img { transform: scale(1.03); }
-        .brand-ref-hero .brand-ref-badge { position: absolute; bottom: 1.2rem; left: 1.2rem; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px); padding: 0.5rem 1rem; border-radius: 6px; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: #999; }
-        .brand-ref-thumbs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
-        .brand-ref-thumbs img { width: 100%; height: 180px; object-fit: cover; transition: opacity 0.3s ease; }
-        .brand-ref-thumbs img:hover { opacity: 0.85; }
-        .brand-ref-info { padding: 1.8rem; }
-        .brand-ref-name { font-size: 1.6rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #FFF; margin-bottom: 0.3rem; }
-        .brand-ref-type { font-size: 0.85rem; color: #555; margin-bottom: 1.5rem; }
-        .brand-ref-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
-        .brand-ref-meta-item { display: flex; flex-direction: column; gap: 0.35rem; }
-        .brand-ref-meta-label { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.18em; color: #444; }
-        .brand-ref-meta-value { font-size: 0.85rem; color: #CCC; font-weight: 500; }
-        .brand-ref-palette { display: flex; gap: 0.5rem; align-items: center; }
-        .brand-ref-swatch { width: 22px; height: 22px; border-radius: 50%; border: 2px solid #222; }
-        .brand-ref-hex { font-size: 0.7rem; color: #555; font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; letter-spacing: 0.04em; }
-        @media (max-width: 768px) { .brand-ref-grid { grid-template-columns: 1fr; } .brand-ref-hero { height: 300px; } .brand-ref-thumbs img { height: 120px; } }
-
-        .lightbox-close {
-            position: absolute;
-            top: 1.5rem;
-            right: 2rem;
-            font-size: 2rem;
-            color: #666;
-            cursor: pointer;
-            line-height: 1;
-            transition: color 0.2s ease;
-            z-index: 10000;
-        }
-
-        .lightbox-close:hover {
-            color: #FFF;
-        }
-
-        
-    
-/* ========================
-   BRAND GALLERY MODAL
-   ======================== */
-.brand-card {
-    cursor: pointer;
-}
-.brand-gallery {
-    display: none;
-}
-.gallery-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(2, 2, 2, 0.97);
-    z-index: 9999;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-}
-.gallery-modal.active {
-    display: block;
-}
-.gallery-modal-header {
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 2rem;
-    background: rgba(5, 5, 5, 0.9);
-    backdrop-filter: blur(10px);
-    z-index: 10001;
-    border-bottom: 1px solid #1A1A1A;
-}
-.gallery-modal-title {
-    font-size: 1.3rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    color: #FFF;
-}
-.gallery-modal-close {
-    font-size: 1.8rem;
-    color: #666;
-    cursor: pointer;
-    line-height: 1;
-    padding: 0.5rem;
-    transition: color 0.2s ease;
-}
-.gallery-modal-close:hover {
-    color: #FFF;
-}
-.gallery-modal-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1rem;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.gallery-modal-grid img {
-    width: 100%;
-    border-radius: 8px;
-    object-fit: cover;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-}
-.gallery-modal-grid img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
-}
-@media (max-width: 768px) {
-    .gallery-modal-grid {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-    }
-}
-
-/* ========================
-   LUX PASS
-   ======================== */
-
-/* Film grain texture overlay */
-body::after {
-    content: '';
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 9998;
-    opacity: 0.025;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    background-repeat: repeat;
-}
-
-/* Scroll-triggered fade in */
-.fade-up {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Stagger children */
-.fade-up:nth-child(2) { transition-delay: 0.1s; }
-.fade-up:nth-child(3) { transition-delay: 0.2s; }
-.fade-up:nth-child(4) { transition-delay: 0.3s; }
-
-/* Serif accent for h2 */
-h2 {
-    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-}
-
-/* Keep sans-serif for everything else */
-h1, h3, h4, .brand-name, .pricing-amount, .proof-number, .step-number {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-/* Warm accent for key elements */
-.hero-tag {
-    border-color: rgba(196, 166, 108, 0.2);
-    color: #C4A66C;
-    background: rgba(196, 166, 108, 0.04);
-}
-
-/* Gold accent line under section labels */
-h3::after {
-    content: '';
-    display: block;
-    width: 32px;
-    height: 1px;
-    background: #C4A66C;
-    margin-top: 0.75rem;
-    opacity: 0.5;
-}
-
-/* Problem section - bigger, more editorial */
-.problem-text {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(1.4rem, 2.8vw, 2rem);
-    font-weight: 400;
-    font-style: italic;
-    line-height: 1.6;
-    color: #999;
-}
-.problem-text strong {
-    font-style: normal;
-    color: #FFF;
-    font-weight: 700;
-}
-
-/* Brand card "View Gallery" hint */
-.brand-card::after {
-    content: 'View Gallery \2192';
-    position: absolute;
-    bottom: 1.4rem;
-    right: 1.4rem;
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0);
-    transition: color 0.3s ease;
-}
-.brand-card:hover::after {
-    color: rgba(255,255,255,0.4);
-}
-
-/* Pricing amount with warm accent */
-.pricing-card.featured .pricing-amount {
-    background: linear-gradient(135deg, #FFF 0%, #C4A66C 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* Pricing feature list refinement */
-.pricing-features li {
-    border-bottom-color: rgba(255,255,255,0.03);
-    padding: 0.65rem 0;
-}
-.pricing-features li::before {
-    content: '';
-    width: 4px;
-    height: 4px;
-    background: #C4A66C;
-    border-radius: 50%;
-    flex-shrink: 0;
-    margin-top: 0.5rem;
-}
-
-/* Process steps - subtle left border */
-.process-step {
-    border-left: 1px solid rgba(255,255,255,0.04);
-    padding-left: 2rem;
-    padding-top: 0;
-    padding-bottom: 0;
-}
-.process-step:first-child {
-    border-left: 1px solid rgba(196, 166, 108, 0.2);
-}
-
-/* Gallery modal refinement */
-.gallery-modal-header {
-    border-bottom-color: rgba(255,255,255,0.04);
-}
-.gallery-modal-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    letter-spacing: 0.02em;
-    font-weight: 700;
-}
-
-/* Footer elevation */
-footer {
-    border-top-color: rgba(255,255,255,0.04);
-    padding: 3rem 1.5rem;
-}
-footer p {
-    color: #444;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-size: 0.65rem;
-}
-
-/* Final CTA glow */
-.final-cta {
-    position: relative;
-}
-.final-cta::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(196,166,108,0.03) 0%, transparent 70%);
-    pointer-events: none;
-}
-.final-cta h2 {
-    font-size: clamp(2rem, 4vw, 3.2rem);
-}
-
-/* Deliverable check with gold */
-.deliverable-check {
-    border-color: rgba(196,166,108,0.3);
-}
-.deliverable-check::after {
-    background: #C4A66C;
-}
-
-/* Hero subtext refinement */
-.hero p {
-    font-size: 1.1rem;
-    color: #666;
-    letter-spacing: 0.01em;
-    line-height: 1.8;
-}
-
-/* Smooth scrollbar */
-::-webkit-scrollbar {
-    width: 6px;
-}
-::-webkit-scrollbar-track {
-    background: #080808;
-}
-::-webkit-scrollbar-thumb {
-    background: #222;
-    border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #333;
-}
-
-/* ========================
-   LUX PASS 2
-   ======================== */
-
-/* Wider portfolio */
-#portfolio .container {
-    max-width: 1400px;
-}
-
-/* Card padding refinement */
-.brand-card {
-    padding: 1.6rem;
-    border-radius: 16px;
-}
-
-/* Subtle image vignette */
-.brand-card-img {
-    position: relative;
-}
-
-/* Brand name with thin rule */
-.brand-name::after {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 1px;
-    background: rgba(196, 166, 108, 0.4);
-    margin-top: 0.5rem;
-}
-
-/* Section heading centered for portfolio */
-#portfolio h3,
-#portfolio h2 {
-    text-align: center;
-}
-#portfolio h3::after {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Pricing amount larger */
-.pricing-amount {
-    font-size: 3.2rem;
-    font-weight: 900;
-}
-
-/* Process steps with number glow */
-.step-number {
-    font-size: 5rem;
-    background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.01) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* Hero container wider */
-.hero .container {
-    max-width: 1100px;
-}
-
-/* Problem text with left border accent */
-.problem-text {
-    border-left: 2px solid rgba(196, 166, 108, 0.3);
-    padding-left: 2rem;
-}
-
-/* Deliverables two-column on desktop */
-@media (min-width: 769px) {
-    .deliverables-list {
-        grid-template-columns: 1fr 1fr;
-        gap: 0 3rem;
-    }
-}
-
-/* Smooth page entrance */
-@keyframes pageIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-body {
-    animation: pageIn 0.8s ease-out;
-}
-
-/* Hero image subtle parallax feel */
-.hero img {
-    transition: transform 0.6s ease-out;
-}
-
-/* Gallery modal improvements */
-.gallery-modal-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem;
-    padding: 2rem 3rem 3rem;
-    max-width: 1400px;
-}
-.gallery-modal-grid img {
-    aspect-ratio: 3/4;
-    object-fit: cover;
-    border-radius: 10px;
-}
-.gallery-modal-header {
-    padding: 2rem 3rem;
-}
-.gallery-modal-title {
-    font-size: 1.5rem;
-}
-
-/* "View Gallery" arrow with count */
-.brand-card {
-    position: relative;
-}
-
-/* Pricing section centered headings */
-.pricing h3,
-.pricing h2 {
-    text-align: center;
-}
-.pricing h3::after {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Process centered headings */
-section:has(.process-grid) h3,
-section:has(.process-grid) h2 {
-    text-align: center;
-}
-section:has(.process-grid) h3::after {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Proof centered headings */
-.proof h3,
-.proof h2 {
-    text-align: center;
-}
-.proof h3::after {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Proof stats centered */
-.proof-stats {
-    justify-content: center;
-    text-align: center;
-}
-
-/* What You Get centered headings */
-section:has(.deliverables-list) h3,
-section:has(.deliverables-list) h2 {
-    text-align: center;
-}
-section:has(.deliverables-list) h3::after {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* CTA button refinement */
-.btn {
-    border-radius: 100px;
-    padding: 1.1rem 3rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-}
-
-/* Responsive 6-card grid */
-@media (max-width: 768px) {
-    .portfolio-grid {
-        grid-template-columns: 1fr !important;
-    }
-    .gallery-modal-grid {
-        grid-template-columns: 1fr !important;
-    }
-}
-@media (min-width: 769px) and (max-width: 1100px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-}
-
-/* Subtle selection color */
-::selection {
-    background: rgba(196, 166, 108, 0.3);
-    color: #FFF;
-}
-
-/* Link hover glow */
-a {
-    transition: all 0.3s ease;
-}
-
-
-/* Mobile Nav */
-.site-nav { position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(8,8,8,0.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06); }
-.nav-logo { font-size:0.8rem;font-weight:700;letter-spacing:0.15em;color:#FFF;text-transform:uppercase;text-decoration:none; }
-.nav-links { display:flex;gap:2rem;align-items:center; }
-.nav-links a { font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:#888;text-decoration:none;transition:color 0.2s; }
-.nav-links a:hover { color:#FFF; }
-.nav-cta { font-weight:600!important;letter-spacing:0.08em!important;color:#0A0A0A!important;background:#FFF;padding:0.55rem 1.4rem;border-radius:4px; }
-.nav-cta:hover { color:#0A0A0A!important;opacity:0.9; }
-.nav-toggle-checkbox { display:none; }
-.nav-toggle-label { display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101; }
-.nav-toggle-label span { display:block;width:22px;height:2px;background:#FFF;border-radius:2px;transition:all 0.3s ease; }
-@media(max-width:768px){
-  .nav-toggle-label{display:flex;}
-  .nav-links{position:fixed;top:0;right:0;width:100%;height:100dvh;flex-direction:column;justify-content:center;align-items:center;gap:2.5rem;background:rgba(8,8,8,0.97);backdrop-filter:blur(30px);transform:translateX(100%);transition:transform 0.35s cubic-bezier(0.16,1,0.3,1);}
-  .nav-links a{font-size:1rem;letter-spacing:0.15em;}
-  .nav-toggle-checkbox:checked~.nav-links{transform:translateX(0);}
-  .nav-toggle-checkbox:checked~.nav-toggle-label span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
-  .nav-toggle-checkbox:checked~.nav-toggle-label span:nth-child(2){opacity:0;}
-  .nav-toggle-checkbox:checked~.nav-toggle-label span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
-}
-
-</style>
-</head>
-<body>
-    <nav class="site-nav">
-    <a href="/" class="nav-logo">LoopWorker</a>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Toggle navigation">
-    <label for="nav-toggle" class="nav-toggle-label"><span></span><span></span><span></span></label>
-    <div class="nav-links">
-        <a href="/blog/">Blog</a>
-        <a href="/services.html">Services</a>
-        <a href="/about.html">About</a>
-        <a href="https://linkedin.com/in/alexlamb" target="_blank" rel="noopener" class="nav-cta">Book a Call</a>
-    </div>
-</nav>
-<div style="position:fixed;top:-50%;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(255,255,255,0.015) 0%,transparent 70%);pointer-events:none;z-index:0;"></div>
-<!-- ===== HERO ===== -->
-    <section class="hero" style="padding-top:5rem;">
-        <div class="container">
-            <div style="font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:#333;margin-bottom:1.5rem;text-align:center;">Alex Lamb &mdash; Creative Direction &amp; AI Systems</div>
-            <div style="text-align:center;"><div class="hero-tag" style="display:inline-block;">DFY Brand System</div></div>
-<div style="width:100%;max-width:1200px;margin:0 auto 2.5rem auto;border-radius:16px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04);">
-                <img src="images/cards/card_01.webp" alt="I Build AI Brand Systems That Look Like $10M Companies" style="width:100%;display:block;">
-            </div>
-<p style="text-align:center;margin-left:auto;margin-right:auto;">Complete brand identity. AI-generated photography that doesn't look like AI. Content calendar. Automated posting. Delivered in 7 days.</p>
-            <div style="text-align:center;"><a href="#portfolio" class="btn btn-primary">See The Portfolio</a></div>
-
-        </div>
-    </section>
-
-    <hr class="divider">
-
-    <!-- ===== THE PROBLEM ===== -->
-    <section class="problem">
-        <div class="container">
-            <h3 class="fade-up">The Problem</h3>
-            <p class="problem-text fade-up">
-                You need content. <strong>Real content costs $15&ndash;50K per photoshoot.</strong> AI slop looks like AI slop. You need someone who makes AI look real.
-            </p>
-        </div>
-    </section>
-
-    <hr class="divider">
-
-    <!-- ===== PORTFOLIO ===== -->
-    <section id="portfolio">
-        <div class="container">
-            <h3 class="fade-up">Portfolio</h3>
-            <h2 class="fade-up">6 Brand Styles. Built and Running.</h2>
-
-            <div class="portfolio-grid">
-
-                <div class="brand-card fade-up">
-                    <img class="brand-card-img" src="images/cards/card_02.webp" alt="CULT BRAND">
-                    <div class="brand-name">CULT BRAND</div>
-                    <div class="brand-type">Restaurants, Food Trucks, Nightlife</div>
-                    <div class="brand-spec">Direct flash photography with analog grit. Built for brands that want a cult following, not a corporate look.</div>
-                    <div class="brand-gallery"><img src="images/cards/card_03.webp" alt="CULT BRAND"><img src="images/cards/card_04.webp" alt="CULT BRAND"><img src="images/cards/card_05.webp" alt="CULT BRAND"><img src="images/cards/card_06.webp" alt="CULT BRAND"><img src="images/cards/card_07.webp" alt="CULT BRAND"><img src="images/cards/card_08.webp" alt="CULT BRAND"><img src="images/cards/card_09.webp" alt="CULT BRAND"><img src="images/cards/card_10.webp" alt="CULT BRAND"><img src="images/cards/card_11.webp" alt="CULT BRAND"></div>
-                </div>
-
-                <div class="brand-card fade-up">
-                    <img class="brand-card-img" src="images/cards/card_12.webp" alt="LUX">
-                    <div class="brand-name">LUX</div>
-                    <div class="brand-type">Real Estate, Airbnb, Architecture, Wellness</div>
-                    <div class="brand-spec">Cinematic wide shots where the space is the star. Built for premium properties, listings, and luxury brands.</div>
-                    <div class="brand-gallery"><img src="images/cards/card_13.webp" alt="LUX"><img src="images/cards/card_14.webp" alt="LUX"><img src="images/cards/card_15.webp" alt="LUX"><img src="images/cards/card_16.webp" alt="LUX"><img src="images/cards/card_17.webp" alt="LUX"><img src="images/cards/card_18.webp" alt="LUX"><img src="images/cards/card_19.webp" alt="LUX"><img src="images/cards/card_20.webp" alt="LUX"><img src="images/cards/card_21.webp" alt="LUX"></div>
-                </div>
-
-                <div class="brand-card fade-up">
-                    <img class="brand-card-img" src="images/cards/card_22.webp" alt="CLEAN DTC">
-                    <div class="brand-name">CLEAN DTC</div>
-                    <div class="brand-type">Fashion, Skincare, DTC Products</div>
-                    <div class="brand-spec">Clean studio lighting with nothing extra in frame. Built for brands that sell through restraint, not noise.</div>
-                    <div class="brand-gallery"><img src="images/cards/card_23.webp" alt="CLEAN DTC"><img src="images/cards/card_24.webp" alt="CLEAN DTC"><img src="images/cards/card_25.webp" alt="CLEAN DTC"><img src="images/cards/card_26.webp" alt="CLEAN DTC"><img src="images/cards/card_27.webp" alt="CLEAN DTC"><img src="images/cards/card_28.webp" alt="CLEAN DTC"><img src="images/cards/card_29.webp" alt="CLEAN DTC"><img src="images/cards/card_30.webp" alt="CLEAN DTC"><img src="images/cards/card_31.webp" alt="CLEAN DTC"><img src="images/cards/card_32.webp" alt="CLEAN DTC"></div>
-                </div>
-
-                <div class="brand-card fade-up">
-                    <img class="brand-card-img" src="images/cards/card_33.webp" alt="UGC / LIFESTYLE">
-                    <div class="brand-name">UGC / LIFESTYLE</div>
-                    <div class="brand-type">Restaurants, Coffee Shops, Consumer Brands</div>
-                    <div class="brand-spec">Candid product-in-hand moments that feel like a real customer shot it. Built for brands that sell through authenticity, not polish.</div>
-                    <div class="brand-gallery"><img src="images/cards/card_34.webp" alt="UGC / LIFESTYLE"><img src="images/cards/card_35.webp" alt="UGC / LIFESTYLE"><img src="images/cards/card_36.webp" alt="UGC / LIFESTYLE"><img src="images/cards/card_37.webp" alt="UGC / LIFESTYLE"><img src="images/cards/card_38.webp" alt="UGC / LIFESTYLE"><img src="images/cards/card_39.webp" alt="UGC / LIFESTYLE"><img src="images/cards/card_40.webp" alt="UGC / LIFESTYLE"><img src="images/cards/card_41.webp" alt="UGC / LIFESTYLE"><img src="images/cards/card_42.webp" alt="UGC / LIFESTYLE"></div>
-                </div>
-
-                <div class="brand-card fade-up">
-                    <img class="brand-card-img" src="images/cards/card_43.webp" alt="EDITORIAL">
-                    <div class="brand-name">EDITORIAL</div>
-                    <div class="brand-type">Fashion, Automotive, Campaigns, Magazines</div>
-                    <div class="brand-spec">Dramatic lighting and intentional framing that belongs in a magazine spread. Built for brands that want to be taken seriously.</div>
-                    <div class="brand-gallery"><img src="images/cards/card_44.webp" alt="EDITORIAL"><img src="images/cards/card_45.webp" alt="EDITORIAL"><img src="images/cards/card_46.webp" alt="EDITORIAL"><img src="images/cards/card_47.webp" alt="EDITORIAL"><img src="images/cards/card_48.webp" alt="EDITORIAL"><img src="images/cards/card_49.webp" alt="EDITORIAL"><img src="images/cards/card_50.webp" alt="EDITORIAL"><img src="images/cards/card_51.webp" alt="EDITORIAL"><img src="images/cards/card_52.webp" alt="EDITORIAL"></div>
-                </div>
-
-                <div class="brand-card fade-up">
-                    <img class="brand-card-img" src="images/cards/card_53.webp" alt="CINEMATIC">
-                    <div class="brand-name">CINEMATIC</div>
-                    <div class="brand-type">Bars, Hotels, Nightlife, Music, Events</div>
-                    <div class="brand-spec">CineStill 800T neon and moody color grading. Built for brands that come alive after dark.</div>
-                    <div class="brand-gallery"><img src="images/cards/card_54.webp" alt="CINEMATIC"><img src="images/cards/card_55.webp" alt="CINEMATIC"><img src="images/cards/card_56.webp" alt="CINEMATIC"><img src="images/cards/card_57.webp" alt="CINEMATIC"><img src="images/cards/card_58.webp" alt="CINEMATIC"><img src="images/cards/card_59.webp" alt="CINEMATIC"><img src="images/cards/card_60.webp" alt="CINEMATIC"><img src="images/cards/card_61.webp" alt="CINEMATIC"><img src="images/cards/card_62.webp" alt="CINEMATIC"></div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <hr class="divider">
-
-    <!-- ===== BRAND REFERENCES ===== -->
-    <section class="brand-ref-section">
-        <div class="container">
-            <h3 class="fade-up">Brand Builds</h3>
-            <h2 class="fade-up">What a Complete Brand System Looks Like</h2>
-
-            <div class="brand-ref-grid">
-
-                <!-- NORTH -->
-                <div class="brand-ref-card fade-up">
-                    <div class="brand-ref-hero">
-                        <img src="images/north/north_hero_01.webp" alt="NORTH — ski goggles close-up in snow" loading="lazy">
-                        <div class="brand-ref-badge">25 images delivered</div>
-                    </div>
-                    <div class="brand-ref-thumbs">
-                        <img src="images/north/north_hero_02.webp" alt="NORTH — ski suit with helmet" loading="lazy" style="object-position: center 20%;">
-                        <img src="images/north/north_hero_03.webp" alt="NORTH — mountain peaks snowboarder" loading="lazy">
-                    </div>
-                    <div class="brand-ref-info">
-                        <div class="brand-ref-name">NORTH</div>
-                        <div class="brand-ref-type">Performance Ski &amp; Snow Gear</div>
-                        <div class="brand-ref-meta">
-                            <div class="brand-ref-meta-item">
-                                <div class="brand-ref-meta-label">Palette</div>
-                                <div class="brand-ref-meta-value">
-                                    <div class="brand-ref-palette">
-                                        <div class="brand-ref-swatch" style="background:#F4F4F4;"></div>
-                                        <div class="brand-ref-swatch" style="background:#2B2B2B;"></div>
-                                        <div class="brand-ref-swatch" style="background:#E8651A;"></div>
-                                    </div>
-                                    <div class="brand-ref-hex" style="margin-top:0.4rem;">#F4F4F4 · #2B2B2B · #E8651A</div>
-                                </div>
-                            </div>
-                            <div class="brand-ref-meta-item">
-                                <div class="brand-ref-meta-label">Camera</div>
-                                <div class="brand-ref-meta-value">Sony A7IV<br>Natural light &amp; flash</div>
-                            </div>
-                            <div class="brand-ref-meta-item">
-                                <div class="brand-ref-meta-label">Mission</div>
-                                <div class="brand-ref-meta-value">Built for the mountain. Clean, cold, engineered.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PRIMO TACOS -->
-                <div class="brand-ref-card fade-up">
-                    <div class="brand-ref-hero">
-                        <img src="images/primo/primo_hero_01.webp" alt="PRIMO TACOS — taco close-up with flash" loading="lazy">
-                        <div class="brand-ref-badge">25 images delivered</div>
-                    </div>
-                    <div class="brand-ref-thumbs">
-                        <img src="images/primo/primo_hero_02.webp" alt="PRIMO TACOS — truck at golden hour" loading="lazy">
-                        <img src="images/primo/primo_hero_03.webp" alt="PRIMO TACOS — night crowd scene" loading="lazy">
-                    </div>
-                    <div class="brand-ref-info">
-                        <div class="brand-ref-name">PRIMO TACOS</div>
-                        <div class="brand-ref-type">LA Taco Truck</div>
-                        <div class="brand-ref-meta">
-                            <div class="brand-ref-meta-item">
-                                <div class="brand-ref-meta-label">Palette</div>
-                                <div class="brand-ref-meta-value">
-                                    <div class="brand-ref-palette">
-                                        <div class="brand-ref-swatch" style="background:#E84420;"></div>
-                                        <div class="brand-ref-swatch" style="background:#F5D547;"></div>
-                                        <div class="brand-ref-swatch" style="background:#1A1A1A;"></div>
-                                    </div>
-                                    <div class="brand-ref-hex" style="margin-top:0.4rem;">#E84420 · #F5D547 · #1A1A1A</div>
-                                </div>
-                            </div>
-                            <div class="brand-ref-meta-item">
-                                <div class="brand-ref-meta-label">Camera</div>
-                                <div class="brand-ref-meta-value">Portra 400<br>Direct flash</div>
-                            </div>
-                            <div class="brand-ref-meta-item">
-                                <div class="brand-ref-meta-label">Mission</div>
-                                <div class="brand-ref-meta-value">Street food with cult energy. Late-night, no filter.</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ===== WHAT YOU GET ===== -->
-    <section>
-        <div class="container">
-            <h3 class="fade-up">What You Get</h3>
-            <h2 class="fade-up">Everything You Need to Launch</h2>
-            <ul class="deliverables-list">
-                <li class="deliverable-item">
-                    <div class="deliverable-check"></div>
-                    <div>
-                        <div class="deliverable-title">Brand DNA Document</div>
-                        <div class="deliverable-desc">Colors, typography, photography style, lighting specification, visual identity system.</div>
-                    </div>
-                </li>
-                <li class="deliverable-item">
-                    <div class="deliverable-check"></div>
-                    <div>
-                        <div class="deliverable-title">50+ AI-Generated Images</div>
-                        <div class="deliverable-desc">Hero shots, product photography, lifestyle, environmental, and detail frames. Production-ready.</div>
-                    </div>
-                </li>
-                <li class="deliverable-item">
-                    <div class="deliverable-check"></div>
-                    <div>
-                        <div class="deliverable-title">30-Day Content Calendar</div>
-                        <div class="deliverable-desc">Scripted captions, hashtag strategy, and a posting schedule built around your audience.</div>
-                    </div>
-                </li>
-                <li class="deliverable-item">
-                    <div class="deliverable-check"></div>
-                    <div>
-                        <div class="deliverable-title">Content Automation Setup</div>
-                        <div class="deliverable-desc">Airtable content queue with auto-posting integration. Optional add-on for full autopilot.</div>
-                    </div>
-                </li>
-                <li class="deliverable-item">
-                    <div class="deliverable-check"></div>
-                    <div>
-                        <div class="deliverable-title">Brand Style Guide</div>
-                        <div class="deliverable-desc">Film stock references, camera settings, prompt formulas, and visual rules your team can follow.</div>
-                    </div>
-                </li>
-                <li class="deliverable-item">
-                    <div class="deliverable-check"></div>
-                    <div>
-                        <div class="deliverable-title">Lead Magnet Pack</div>
-                        <div class="deliverable-desc">10-20 prompt cards as a branded PDF, ready to use for list building and lead capture.</div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <hr class="divider">
-
-    <!-- ===== PRICING ===== -->
-    <section class="pricing">
-        <div class="container">
-            <h3 class="fade-up">Pricing</h3>
-            <h2 class="fade-up">Three Tiers. One Standard.</h2>
-            <div class="pricing-grid">
-
-                <div class="pricing-card fade-up">
-                    <div class="pricing-tier">Starter</div>
-                    <div class="pricing-amount">$5,000</div>
-                    <ul class="pricing-features">
-                        <li>Brand DNA Document</li>
-                        <li>50+ AI-Generated Images</li>
-                        <li>30-Day Content Calendar</li>
-                        <li>Brand Style Guide</li>
-                        <li>7-Day Delivery</li>
-                    </ul>
-                </div>
-
-                <div class="pricing-card featured fade-up">
-                    <div class="pricing-tier">Growth</div>
-                    <div class="pricing-amount">$7,500</div>
-                    <ul class="pricing-features">
-                        <li>Everything in Starter</li>
-                        <li>Content Automation Setup</li>
-                        <li>Lead Magnet Pack</li>
-                        <li>Airtable + Auto-Posting</li>
-                        <li>7-Day Delivery</li>
-                    </ul>
-                </div>
-
-                <div class="pricing-card fade-up">
-                    <div class="pricing-tier">Scale</div>
-                    <div class="pricing-amount">$10,000</div>
-                    <ul class="pricing-features">
-                        <li>Everything in Growth</li>
-                        <li>90-Day Content Strategy</li>
-                        <li>Monthly Retainer Option</li>
-                        <li>Priority Support</li>
-                        <li>7-Day Delivery</li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <hr class="divider">
-
-    <!-- ===== HOW IT WORKS ===== -->
-    <section>
-        <div class="container">
-            <h3 class="fade-up">How It Works</h3>
-            <h2 class="fade-up">Three Steps. Seven Days. Done.</h2>
-            <div class="process-grid">
-
-                <div class="process-step fade-up">
-                    <div class="step-number">01</div>
-                    <div class="step-title">Discovery Call</div>
-                    <div class="step-desc">15 minutes. Tell me about your brand, your audience, and what you need. I handle the rest.</div>
-                </div>
-
-                <div class="process-step fade-up">
-                    <div class="step-number">02</div>
-                    <div class="step-title">I Build Your System</div>
-                    <div class="step-desc">7 days. Brand DNA, image generation, content calendar, and automation infrastructure. All built to spec.</div>
-                </div>
-
-                <div class="process-step fade-up">
-                    <div class="step-number">03</div>
-                    <div class="step-title">You Launch</div>
-                    <div class="step-desc">Day 8. Start posting. Your content runs on autopilot. You focus on the business.</div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <hr class="divider">
-
-    <!-- ===== PROOF ===== -->
-    <section class="proof">
-        <div class="container">
-            <h3 class="fade-up">Track Record</h3>
-            <h2 class="fade-up">Built on Real Experience. Not Tutorials.</h2>
-            <div class="proof-stats">
-                <div class="proof-stat fade-up">
-                    <div class="proof-number">17</div>
-                    <div class="proof-label">Years in creative direction, advertising, and visual production</div>
-                </div>
-                <div class="proof-stat fade-up">
-                    <div class="proof-number">$2M+</div>
-                    <div class="proof-label">In paid media managed across Meta, Google, and TikTok Ads</div>
-                </div>
-                <div class="proof-stat fade-up">
-                    <div class="proof-number">50+</div>
-                    <div class="proof-label">Brands built — from restaurant launches to DTC product lines</div>
-                </div>
-                <div class="proof-stat fade-up">
-                    <div class="proof-number">24/7</div>
-                    <div class="proof-label">Automated content systems running around the clock</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <hr class="divider">
-
-
-    <!-- ===== TESTIMONIALS ===== -->
-    <section class="testimonials">
-        <div class="container">
-            <h3 class="fade-up">What Clients Say</h3>
-            <h2 class="fade-up">Built for Real Brands. Reviewed by Real People.</h2>
-
-            <div class="testimonial-grid">
-
-                <div class="testimonial-card fade-up">
-                    <p class="testimonial-quote">We went from zero visual identity to a full content system in under two weeks. The images look like we hired a photographer and a creative director — except it runs on autopilot.</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">MR</div>
-                        <div>
-                            <div class="testimonial-name">Marco R.</div>
-                            <div class="testimonial-role">Owner, Street Food Franchise</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card fade-up">
-                    <p class="testimonial-quote">I was spending $3K a month on content creation and still not happy with the results. Alex built us a system that produces better work for a fraction of the cost — and it actually looks like our brand.</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">JT</div>
-                        <div>
-                            <div class="testimonial-name">Jessica T.</div>
-                            <div class="testimonial-role">Founder, DTC Skincare Brand</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card fade-up">
-                    <p class="testimonial-quote">The brand build blew us away. 25 images, a full content calendar, and automated posting — all dialed into our exact aesthetic. Our Instagram went from dead to consistent overnight.</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">DK</div>
-                        <div>
-                            <div class="testimonial-name">Daniel K.</div>
-                            <div class="testimonial-role">GM, Boutique Hotel Group</div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FINAL CTA ===== -->
-    <section class="final-cta">
-        <div class="container">
-            <h2 class="fade-up">Ready to Build Your Brand System?</h2>
-            <p class="fade-up">One call. Seven days. A complete brand that looks like it cost ten times what you paid.</p>
-            <div class="cta-links">
-                <a href="mailto:alex@loopworker.com" class="btn btn-primary">Book a Discovery Call</a>
-                <a href="https://linkedin.com/in/alexlamb" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
-            </div>
-            <p class="contact-line">
-                <a href="mailto:alex@loopworker.com">alex@loopworker.com</a>
-                &nbsp;&nbsp;/&nbsp;&nbsp;
-                <a href="https://linkedin.com/in/alexlamb" target="_blank" rel="noopener">linkedin.com/in/alexlamb</a>
-            </p>
-        </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <p>Alex Lamb. AI Brand Systems.</p>
-    </footer>
-
-    <!-- ===== GALLERY MODAL ===== -->
-    <div class="gallery-modal" id="galleryModal">
-        <div class="gallery-modal-header">
-            <div class="gallery-modal-title" id="galleryTitle"></div>
-            <span class="gallery-modal-close" id="galleryClose">&times;</span>
-        </div>
-        <div class="gallery-modal-grid" id="galleryGrid"></div>
-    </div>
-
-    <!-- ===== LIGHTBOX ===== -->
-    <div class="lightbox" id="lightbox">
-        <span class="lightbox-close">&times;</span>
-        <img id="lightbox-img" src="" alt="">
-    </div>
-
-    <script>
-        (function() {
-            var lb = document.getElementById('lightbox');
-            var lbImg = document.getElementById('lightbox-img');
-            // Card thumbnails expand inline instead
-
-            lb.addEventListener('click', function() {
-                lb.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    lb.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            });
-        
-// Brand gallery modal
-var gModal = document.getElementById('galleryModal');
-var gTitle = document.getElementById('galleryTitle');
-var gGrid = document.getElementById('galleryGrid');
-var gClose = document.getElementById('galleryClose');
-
-var cards = document.querySelectorAll('.brand-card');
-console.log('Found cards:', cards.length);
-cards.forEach(function(card) {
-    card.style.cursor = 'pointer';
-    card.addEventListener('click', function(e) {
-        e.stopPropagation();
-        var name = this.querySelector('.brand-name').textContent;
-        var gallery = this.querySelector('.brand-gallery');
-        if (!gallery) { console.log('No gallery for', name); return; }
-
-        gTitle.textContent = name;
-        gGrid.innerHTML = '';
-
-        var imgs = gallery.querySelectorAll('img');
-        imgs.forEach(function(img) {
-            var el = document.createElement('img');
-            el.src = img.src;
-            el.alt = img.alt;
-            gGrid.appendChild(el);
-        });
-
-        gModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
-});
-
-gClose.addEventListener('click', function() {
-    gModal.classList.remove('active');
-    document.body.style.overflow = '';
-});
-
-gModal.addEventListener('click', function(e) {
-    if (e.target === gModal) {
-        gModal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-});
-
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && gModal.classList.contains('active')) {
-        gModal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-});
-
-})();
-    </script>
-
-
-
-    <script>
-    // Scroll fade-in
-    var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.fade-up').forEach(function(el) {
-        observer.observe(el);
-    });
-    </script>
-    <!-- JSON-LD Structured Data -->
+    <!-- Schema.org -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "LoopWorker",
+        "description": "Done-for-you social media content that brings in customers.",
         "url": "https://www.loopworker.com",
-        "description": "Done-for-you AI brand photography and content systems. 50+ images, content calendar, and automation delivered in 7 days.",
-        "founder": {
-            "@type": "Person",
-            "name": "Alex Lamb",
-            "url": "https://linkedin.com/in/alexlamb"
-        },
-        "sameAs": [
-            "https://www.instagram.com/loop.worker",
-            "https://linkedin.com/in/alexlamb"
-        ],
-        "serviceType": ["AI Brand Photography", "Content System Automation", "Brand Identity Design"],
-        "areaServed": "Worldwide",
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "AI Brand System Packages",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "name": "Starter",
-                    "price": "5000",
-                    "priceCurrency": "USD",
-                    "description": "AI brand photography system with 50+ images, brand DNA document, and 30-day content calendar"
-                },
-                {
-                    "@type": "Offer",
-                    "name": "Growth",
-                    "price": "7500",
-                    "priceCurrency": "USD",
-                    "description": "Full brand system with content automation setup, style guide, and lead magnet pack"
-                },
-                {
-                    "@type": "Offer",
-                    "name": "Scale",
-                    "price": "10000",
-                    "priceCurrency": "USD",
-                    "description": "Complete brand production system with ongoing automation and advanced content pipeline"
+        "priceRange": "$300 - $500"
+    }
+    </script>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">LoopWorker</a>
+            <ul class="nav-links">
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#what-you-get">What You Get</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#audit" class="nav-cta">Get Free Audit</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE NAV -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#how-it-works" onclick="toggleMenu()">How It Works</a>
+        <a href="#what-you-get" onclick="toggleMenu()">What You Get</a>
+        <a href="#pricing" onclick="toggleMenu()">Pricing</a>
+        <a href="#audit" class="nav-cta" onclick="toggleMenu()">Get Free Audit</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="fade-up">Get More Customers From Your Social Media in 14 Days</h1>
+            <p class="fade-up">Your content shouldn't just get views. It should bring in customers. I create high-converting posts for your business so your social media actually drives real results.</p>
+            <div class="fade-up">
+                <a href="#audit" class="btn btn-primary">Get Free Content Audit</a>
+                <span class="btn-sub">Free. No pressure. I'll show you exactly what's not working.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <div class="trust-strip">
+        <p>Helping businesses turn content into customers, not just followers.</p>
+    </div>
+
+    <!-- PROBLEM -->
+    <section class="problem">
+        <div class="container">
+            <h2 class="fade-up">Your Social Media Isn't Bringing in Customers</h2>
+            <p class="fade-up">You're putting in effort, but nothing is changing.</p>
+            <ul class="problem-list fade-up">
+                <li>You're posting consistently but not seeing results</li>
+                <li>You're getting views but no real inquiries or sales</li>
+                <li>You don't know what content actually works</li>
+                <li>You feel like you're guessing every time you post</li>
+            </ul>
+            <p class="problem-kicker fade-up">Most businesses don't have a content problem.<br>They have a <strong>conversion problem</strong>.</p>
+        </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="solution">
+        <div class="container">
+            <h2 class="fade-up">I Fix That — Fast</h2>
+            <p class="fade-up">I don't just give you ideas or strategy.</p>
+            <p class="fade-up">I build content designed to turn viewers into customers.</p>
+            <p class="fade-up">This is done-for-you, built specifically for your business, and focused on results.</p>
+        </div>
+    </section>
+
+    <!-- WHAT YOU GET -->
+    <section class="deliverables" id="what-you-get">
+        <div class="container">
+            <h2 class="fade-up">Done-For-You Content That Actually Works</h2>
+            <ul class="deliverables-list fade-up">
+                <li>10 high-converting posts</li>
+                <li>Scroll-stopping hooks that grab attention</li>
+                <li>Captions written to drive action</li>
+                <li>Content structured to bring in real customers</li>
+                <li>A simple posting plan you can follow immediately</li>
+            </ul>
+            <p class="deliverables-goal fade-up">Everything is built around one goal: <strong>Getting you more customers.</strong></p>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works">
+        <div class="container-wide">
+            <h2 class="fade-up">Simple. Clear. No Guesswork.</h2>
+            <div class="process-grid">
+                <div class="process-step fade-up">
+                    <div class="step-number">01</div>
+                    <div class="step-title">Free Audit</div>
+                    <div class="step-desc">I review your current social media and identify exactly what's costing you customers.</div>
+                </div>
+                <div class="process-step fade-up">
+                    <div class="step-number">02</div>
+                    <div class="step-title">Content Creation</div>
+                    <div class="step-desc">I create your custom content package, tailored to your business and audience.</div>
+                </div>
+                <div class="process-step fade-up">
+                    <div class="step-number">03</div>
+                    <div class="step-title">You Post + See Results</div>
+                    <div class="step-desc">You start posting content that actually drives engagement, interest, and customer action.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="results">
+        <div class="container">
+            <h2 class="fade-up">This Isn't About Going Viral</h2>
+            <p class="fade-up">It's about getting real people to take action.</p>
+            <ul class="results-list fade-up">
+                <li>More customers walking through your door</li>
+                <li>More messages and inquiries</li>
+                <li>More people actually interested in what you offer</li>
+            </ul>
+            <p class="results-closer fade-up">Your content should work for your business.<br><strong>Not just sit there.</strong></p>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+        <div class="container">
+            <h2 class="fade-up">Done-For-You Content Package</h2>
+            <p class="fade-up">Everything you need to start getting results from your social media.</p>
+            <div class="pricing-card fade-up">
+                <ul class="pricing-includes">
+                    <li>10 Custom Posts</li>
+                    <li>Captions + Hooks Included</li>
+                    <li>Built for Your Business + Audience</li>
+                    <li>Delivered Ready to Post</li>
+                </ul>
+                <div class="pricing-amount">$300 – $500</div>
+                <p class="pricing-note">Limited spots available to keep quality high.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="audit">
+        <div class="container">
+            <h2 class="fade-up">Want to See What's Missing From Your Content?</h2>
+            <p class="fade-up">I'll show you exactly what's not working — and how to fix it. No pressure. No fluff. Just clarity.</p>
+            <div class="fade-up">
+                <a href="#audit-form" class="btn btn-primary">Get Free Content Audit</a>
+                <span class="btn-sub">Takes less than 5 minutes to get started.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECONDARY -->
+    <section class="secondary">
+        <div class="container">
+            <h2 class="fade-up">Need More Than Content?</h2>
+            <p class="fade-up">Once we get results, I also help businesses build full systems for:</p>
+            <ul class="secondary-list fade-up">
+                <li>Lead generation</li>
+                <li>Automation</li>
+                <li>Content engines</li>
+            </ul>
+            <p class="fade-up">But first, we focus on what matters: <strong>Getting you customers.</strong></p>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="fade-up">Ready to Turn Your Content Into Customers?</h2>
+            <p class="fade-up">Let's fix what's not working.</p>
+            <div class="fade-up">
+                <a href="#audit" class="btn btn-primary">Get Free Content Audit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUDIT FORM -->
+    <section id="audit-form" class="audit-form-section">
+        <div class="container">
+            <h2 class="fade-up">Get Your Free Content Audit</h2>
+            <form name="audit" method="POST" class="audit-form fade-up">
+                <div class="form-group">
+                    <label for="audit-name">Name</label>
+                    <input type="text" id="audit-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="audit-business">Business Name</label>
+                    <input type="text" id="audit-business" name="business" required>
+                </div>
+                <div class="form-group">
+                    <label for="audit-website">Website or Instagram</label>
+                    <input type="text" id="audit-website" name="website" required>
+                </div>
+                <div class="form-group">
+                    <label for="audit-type">What type of business are you?</label>
+                    <input type="text" id="audit-type" name="business_type" required>
+                </div>
+                <div class="form-group">
+                    <label for="audit-challenge">What's your biggest challenge with social media right now?</label>
+                    <textarea id="audit-challenge" name="challenge" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Get My Free Audit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <div class="footer-brand">LoopWorker</div>
+                <div class="footer-tagline">Helping businesses turn content into customers.</div>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#audit">Get Free Audit</a></li>
+            </ul>
+            <div class="footer-contact">
+                <a href="mailto:alex@loopworker.com">alex@loopworker.com</a><br>
+                <a href="https://instagram.com/loop.worker" target="_blank" rel="noopener">@loop.worker</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll fade-in
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
                 }
-            ]
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Mobile menu
+        function toggleMenu() {
+            document.querySelector('.hamburger').classList.toggle('active');
+            document.getElementById('mobileNav').classList.toggle('active');
+            document.body.style.overflow = document.getElementById('mobileNav').classList.contains('active') ? 'hidden' : '';
         }
-    }
     </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "LoopWorker",
-        "url": "https://www.loopworker.com",
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://www.loopworker.com/?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.loopworker.com/"},
-            {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.loopworker.com/services.html"},
-            {"@type": "ListItem", "position": 3, "name": "Blog", "item": "https://www.loopworker.com/blog/"},
-            {"@type": "ListItem", "position": 4, "name": "Case Studies", "item": "https://www.loopworker.com/case-studies.html"},
-            {"@type": "ListItem", "position": 5, "name": "Free Resources", "item": "https://www.loopworker.com/free-resources.html"},
-            {"@type": "ListItem", "position": 6, "name": "FAQ", "item": "https://www.loopworker.com/faq.html"},
-            {"@type": "ListItem", "position": 7, "name": "About", "item": "https://www.loopworker.com/about.html"}
-        ]
-    }
-    </script>
+
 </body>
 </html>
