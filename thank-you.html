@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>You're In | LoopWorker</title>
+    <meta name="description" content="Your free content audit is on the way. Check your inbox within 24 hours.">
+    <link rel="canonical" href="https://www.loopworker.com/thank-you.html">
+    <meta name="robots" content="noindex">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #080808;
+            color: #D4D4D4;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4 {
+            color: #FFFFFF;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        p {
+            color: #B0B0B0;
+            font-size: 1.1rem;
+            max-width: 640px;
+        }
+
+        /* --- Nav --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(8, 8, 8, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 0 2rem;
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .nav-logo {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #FFF;
+            letter-spacing: 0.06em;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.85rem;
+            color: #888;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #FFF;
+        }
+
+        .nav-cta {
+            background: #FFFFFF;
+            color: #0A0A0A !important;
+            padding: 0.55rem 1.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.8rem !important;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            background: #F0F0F0;
+            transform: translateY(-1px);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1002;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: #FFF;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(8, 8, 8, 0.98);
+            z-index: 1001;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .mobile-nav.active { display: flex; }
+
+        .mobile-nav a {
+            font-size: 1.3rem;
+            color: #CCC;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .mobile-nav .nav-cta {
+            font-size: 1rem !important;
+            padding: 0.8rem 2rem;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        /* --- Thank You Content --- */
+        .thank-you {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .thank-you-inner {
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .thank-you-inner h1 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            line-height: 1.15;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .thank-you-inner > p {
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .steps {
+            text-align: left;
+            margin: 0 auto 3rem;
+            max-width: 480px;
+        }
+
+        .steps h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .step-num {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #FFF;
+            margin-top: 2px;
+        }
+
+        .step p {
+            font-size: 1rem;
+            color: #B0B0B0;
+            max-width: none;
+        }
+
+        .blog-link {
+            display: inline-block;
+            color: #FFF;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 0.8rem 2rem;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .blog-link:hover {
+            border-color: rgba(255,255,255,0.4);
+            transform: translateY(-1px);
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 4rem 2rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-brand {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #FFF;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            font-size: 0.85rem;
+            color: #666;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover { color: #FFF; }
+
+        .footer-contact {
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .footer-contact a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-contact a:hover { color: #FFF; }
+
+        /* --- Film grain overlay --- */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9998;
+            opacity: 0.02;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+
+            .thank-you {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .steps {
+                max-width: 100%;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">LoopWorker</a>
+            <ul class="nav-links">
+                <li><a href="/#examples">Examples</a></li>
+                <li><a href="/#how-it-works">How It Works</a></li>
+                <li><a href="/#pricing">Pricing</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/#audit-form" class="nav-cta">Get Free Audit</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="/#examples" onclick="toggleMenu()">Examples</a>
+        <a href="/#how-it-works" onclick="toggleMenu()">How It Works</a>
+        <a href="/#pricing" onclick="toggleMenu()">Pricing</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#audit-form" class="nav-cta" onclick="toggleMenu()">Get Free Audit</a>
+    </div>
+
+    <section class="thank-you">
+        <div class="thank-you-inner">
+            <h1>You're in. I'll send your audit within 24 hours.</h1>
+            <p>I'm going to look at your content, identify what's not working, and show you exactly what I'd fix first. Check your inbox.</p>
+
+            <div class="steps">
+                <h2>What happens next?</h2>
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <p>I review your social media and website</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <p>I put together a custom breakdown of what's costing you customers</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <p>I send it to your inbox within 24 hours</p>
+                </div>
+            </div>
+
+            <a href="/blog/" class="blog-link">While you wait, check out the blog &rarr;</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <div class="footer-brand">LoopWorker</div>
+                <div class="footer-tagline">Helping businesses turn content into customers.</div>
+            </div>
+            <ul class="footer-links">
+                <li><a href="/#examples">Examples</a></li>
+                <li><a href="/#how-it-works">How It Works</a></li>
+                <li><a href="/#pricing">Pricing</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/#audit-form">Get Free Audit</a></li>
+            </ul>
+            <div class="footer-contact">
+                <a href="mailto:alex@loopworker.com">alex@loopworker.com</a><br>
+                <a href="https://instagram.com/loop.worker" target="_blank" rel="noopener">@loop.worker</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.hamburger').classList.toggle('active');
+            document.getElementById('mobileNav').classList.toggle('active');
+            document.body.style.overflow = document.getElementById('mobileNav').classList.contains('active') ? 'hidden' : '';
+        }
+    </script>
+
+</body>
+</html>
