@@ -196,6 +196,49 @@ Use this in every audit. Find the client's industry, show them who's doing it ri
 
 ---
 
+## ENGAGEMENT BENCHMARKS (Scraped March 2026)
+
+Real data from competitor accounts. Use these to benchmark client performance.
+
+### Restaurants / Food
+| Account | Followers | Avg Likes | Engagement Rate | Top Post |
+|---------|-----------|-----------|----------------|----------|
+| @tartinebakery | 488K | 8,185 | 1.68% | 28K likes — bakery product shot |
+| @eggslut | 257K | 621 | 0.24% | 1,004 likes — food close-up |
+| @frankprisinzano | 198K | 112 | 0.06% | 106 likes — kitchen content |
+
+**Benchmark:** A local restaurant with 1K-10K followers should target **3-5% engagement rate**. Under 1% means content isn't resonating.
+
+### Med Spas / Aesthetics
+| Account | Followers | Avg Likes | Engagement Rate | Top Post |
+|---------|-----------|-----------|----------------|----------|
+| @beautyboostmedspa | 94K | 2,782 | 2.96% | 11K likes — before/after transformation |
+| @bestyoumedspa | 22K | 547 | 2.49% | 547 likes — client reaction |
+| @tribecamedspa | 33K | 189 | 0.57% | 873 likes — treatment content |
+| @skinlaundry | 313K | 30 | 0.01% | 50 likes — educational post |
+
+**Benchmark:** Med spas should target **2-4% engagement rate**. Before/after content drives the highest engagement. @skinlaundry has 313K followers but 0.01% ER — proof that followers without engagement are worthless.
+
+### Gyms / Fitness
+| Account | Followers | Avg Likes | Engagement Rate | Top Post |
+|---------|-----------|-----------|----------------|----------|
+| @solidcore | 260K | 1,938 | 0.75% | 2,826 likes — workout content |
+| @crossfit_nyc | 11K | 48 | 0.44% | 58 likes — community WOD |
+
+**Benchmark:** Gyms should target **1-3% engagement rate**. Community content (member spotlights, class energy) outperforms facility shots.
+
+### Salons / Barbershops
+| Account | Followers | Avg Likes | Engagement Rate | Top Post |
+|---------|-----------|-----------|----------------|----------|
+| @staygold31 | 455K | 814 | 0.18% | 1,935 likes — finished cut reveal |
+
+**Benchmark:** Salons should target **2-5% engagement rate**. Transformation Reels (before/after) are the #1 engagement driver.
+
+### Key Insight
+**Smaller accounts often have HIGHER engagement rates.** @bestyoumedspa (22K, 2.49% ER) outperforms @skinlaundry (313K, 0.01% ER) by 250x on engagement rate. When auditing a client, compare their ER to these benchmarks — not their follower count.
+
+---
+
 ## UNIVERSAL PATTERNS (Across All Industries)
 
 1. **Reels drive growth. Static photography anchors the feed.** Use both.
