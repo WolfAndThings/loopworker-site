@@ -29,10 +29,8 @@ AUTO_REPLY_HTML = """
   <ol style="line-height: 2;">
     <li>I review your social media and website</li>
     <li>I put together a custom breakdown of what's costing you customers</li>
-    <li>I send it to your inbox within 24 hours</li>
+    <li>I send it to your inbox within 24-48 hours</li>
   </ol>
-
-  <p>No fluff, no generic advice — just a clear look at what's not working and what I'd fix first.</p>
 
   <p>Talk soon,<br><strong>Alex Lamb</strong><br>LoopWorker<br><a href="https://www.loopworker.com" style="color: #555;">loopworker.com</a></p>
 </div>
@@ -55,7 +53,7 @@ NOTIFY_HTML = """
 </div>
 """
 
-ALEX_EMAIL = "hello@wolvescreative.com"
+ALEX_EMAIL = "lambsbrown@gmail.com"
 
 
 def send_email(smtp_user, smtp_pass, to_email, subject, html_body, from_name="Alex Lamb"):
@@ -105,21 +103,7 @@ def audit_webhook(data: dict):
     if not smtp_pass:
         return {"error": "GMAIL_APP_PASSWORD not set in Modal secrets", **fmt}
 
-    # 1. Send auto-reply to submitter
-    if email:
-        try:
-            send_email(
-                smtp_user,
-                smtp_pass,
-                email,
-                AUTO_REPLY_SUBJECT,
-                AUTO_REPLY_HTML.format(**fmt),
-            )
-            results["auto_reply"] = "sent"
-        except Exception as e:
-            results["auto_reply"] = f"error: {e}"
-
-    # 2. Notify Alex
+    # 1. Notify Alex immediately
     try:
         send_email(
             smtp_user,
@@ -132,5 +116,22 @@ def audit_webhook(data: dict):
         results["notification"] = "sent"
     except Exception as e:
         results["notification"] = f"error: {e}"
+
+    # 2. Wait 90 seconds then send auto-reply (feels more human than instant)
+    import time
+    time.sleep(90)
+
+    if email:
+        try:
+            send_email(
+                smtp_user,
+                smtp_pass,
+                email,
+                AUTO_REPLY_SUBJECT,
+                AUTO_REPLY_HTML.format(**fmt),
+            )
+            results["auto_reply"] = "sent"
+        except Exception as e:
+            results["auto_reply"] = f"error: {e}"
 
     return {"status": "ok", **results, "name": name, "business": business}
