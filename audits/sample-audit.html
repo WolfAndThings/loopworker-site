@@ -390,12 +390,78 @@
             text-decoration: none;
         }
 
+        /* Visual comparison */
+        .visual-section-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #555;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .visual-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.8rem;
+            margin: 1rem 0;
+        }
+
+        .visual-grid img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .visual-grid.before img {
+            filter: saturate(0.7) brightness(0.9);
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .visual-grid.after img {
+            border: 1px solid rgba(100,200,100,0.15);
+        }
+
+        .visual-compare {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .visual-compare-side h3 {
+            margin-bottom: 0.8rem;
+        }
+
+        .visual-callout {
+            background: #0E0E0E;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .visual-callout p {
+            font-size: 1rem;
+            color: #CCC;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .visual-callout strong {
+            color: #FFF;
+        }
+
         /* Responsive */
         @media (max-width: 640px) {
             .audit-container { padding: 2rem 1.2rem 4rem; }
             .stat-row { grid-template-columns: 1fr; }
             .before-after { grid-template-columns: 1fr; }
             .audit-header h1 { font-size: 1.6rem; }
+            .visual-compare { grid-template-columns: 1fr; }
+            .visual-grid { grid-template-columns: repeat(3, 1fr); }
         }
     </style>
 </head>
@@ -583,6 +649,56 @@
 
     <hr class="audit-divider">
 
+    <!-- VISUAL TRANSFORMATION -->
+    <div class="audit-section">
+        <h2>What Your Content Could Look Like</h2>
+        <p>This is the difference between what you're posting now and what we'd create for you. Same business, same food — completely different energy.</p>
+
+        <div class="visual-compare">
+            <div class="visual-compare-side">
+                <h3 style="color:#666;">Your Current Feed</h3>
+                <div class="visual-grid before">
+                    <img src="../images/case_studies/references/myburger/01.jpg" alt="Current post example" loading="lazy">
+                    <img src="../images/case_studies/references/myburger/02.jpg" alt="Current post example" loading="lazy">
+                    <img src="../images/case_studies/references/myburger/03.jpg" alt="Current post example" loading="lazy">
+                    <img src="../images/case_studies/references/myburger/04.jpg" alt="Current post example" loading="lazy">
+                    <img src="../images/case_studies/references/myburger/05.jpg" alt="Current post example" loading="lazy">
+                    <img src="../images/case_studies/references/myburger/06.jpg" alt="Current post example" loading="lazy">
+                </div>
+                <p style="font-size:0.8rem;color:#555;margin-top:0.5rem;">Decent food photos. Generic captions. No visual identity. No consistency. Blends in with every other restaurant.</p>
+            </div>
+
+            <div class="visual-compare-side">
+                <h3 style="color:#6BCB77;">What We'd Build</h3>
+                <div class="visual-grid after">
+                    <img src="../images/cards/card_02.webp" alt="Created content example" loading="lazy">
+                    <img src="../images/cards/card_03.webp" alt="Created content example" loading="lazy">
+                    <img src="../images/cards/card_04.webp" alt="Created content example" loading="lazy">
+                    <img src="../images/cards/card_05.webp" alt="Created content example" loading="lazy">
+                    <img src="../images/cards/card_06.webp" alt="Created content example" loading="lazy">
+                    <img src="../images/cards/card_07.webp" alt="Created content example" loading="lazy">
+                </div>
+                <p style="font-size:0.8rem;color:#6BCB77;margin-top:0.5rem;">Intentional lighting. Consistent visual identity. Scroll-stopping compositions. Every image has a job. Looks like a real brand.</p>
+            </div>
+        </div>
+
+        <div class="visual-callout">
+            <p><strong>This is what we do.</strong> We don't just write captions — we create the visuals, the hooks, the full content system. Your feed should look like the right side, not the left.</p>
+        </div>
+
+        <h3>What Changes Visually</h3>
+        <ul class="audit-list fix">
+            <li><strong>Lighting direction</strong> — direct flash or warm tungsten instead of flat phone flash</li>
+            <li><strong>Composition</strong> — intentional framing, not centered snapshots</li>
+            <li><strong>Color consistency</strong> — every image lives in the same brand palette</li>
+            <li><strong>Texture and detail</strong> — close-ups that show the sear, the melt, the grain</li>
+            <li><strong>Human moments</strong> — people in frame, not just empty plates</li>
+            <li><strong>Campaign thinking</strong> — images work as a set, not random singles</li>
+        </ul>
+    </div>
+
+    <hr class="audit-divider">
+
     <!-- COMPETITOR COMPARISON -->
     <div class="audit-section">
         <h2>What Top Restaurants Are Doing</h2>
@@ -633,7 +749,7 @@
 
     <!-- 10 POST IDEAS -->
     <div class="audit-section">
-        <h2>10 Posts You Can Make This Week</h2>
+        <h2>10 Posts We'd Create For You</h2>
 
         <div class="post-idea">
             <div class="post-idea-num">Post 1</div>
@@ -711,7 +827,7 @@
     <!-- CTA -->
     <div class="audit-cta">
         <h2>Want Me to Build This For You?</h2>
-        <p>I can create your full content package — posts, captions, hooks, videos, and a posting plan — all done for you.</p>
+        <p>I create the visuals, write the captions, build the hooks, and deliver everything ready to post. Done for you.</p>
         <a href="https://www.loopworker.com/#audit-form" class="btn">Let's Go</a>
         <div class="pricing">
             Starter $300 · Growth $750 · Full Build $1,500
