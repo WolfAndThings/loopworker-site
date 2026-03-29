@@ -1686,6 +1686,10 @@
                     <input type="text" id="audit-name" name="name" required>
                 </div>
                 <div class="form-group">
+                    <label for="audit-email">Email</label>
+                    <input type="email" id="audit-email" name="email" required>
+                </div>
+                <div class="form-group">
                     <label for="audit-business">Business Name</label>
                     <input type="text" id="audit-business" name="business" required>
                 </div>
@@ -1737,6 +1741,20 @@
     </footer>
 
     <script>
+        // Audit form — submit to both Formspree + Modal webhook for auto-reply
+        document.querySelector('.audit-form').addEventListener('submit', function(e) {
+            const form = e.target;
+            const data = {};
+            new FormData(form).forEach((v, k) => { if (!k.startsWith('_')) data[k] = v; });
+            // Fire-and-forget to Modal webhook (sends auto-reply email)
+            fetch('https://lambsbrown--loopworker-audit-audit-webhook.modal.run', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            }).catch(() => {});
+            // Form still submits to Formspree normally via default action
+        });
+
         // Scroll fade
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
