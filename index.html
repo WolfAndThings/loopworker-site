@@ -421,15 +421,19 @@
         }
 
         .proof-logo-wrap {
-            height: 44px;
-            display: flex;
+            min-height: 58px;
+            display: inline-flex;
             align-items: center;
+            justify-content: center;
+            padding: 0.7rem 0.95rem;
+            background: #f1eeeb;
+            border-radius: 12px;
             margin-bottom: 1rem;
         }
 
         .proof-logo {
-            max-width: 150px;
-            max-height: 36px;
+            max-width: 180px;
+            max-height: 42px;
             width: auto;
             height: auto;
             opacity: 0.92;
@@ -1153,10 +1157,21 @@
         }
 
         .workflow-logo {
-            width: auto;
-            max-width: 100%;
-            height: 54px;
+            width: 100%;
+            max-width: 250px;
+            height: auto;
             object-fit: contain;
+        }
+
+        .workflow-logo-frame {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 94px;
+            padding: 1rem 1.1rem;
+            background: linear-gradient(180deg, #f3f0ed 0%, #e6e0d8 100%);
+            border-radius: 12px;
             margin-bottom: 0.85rem;
         }
 
@@ -2237,7 +2252,7 @@
             <div class="proof-grid">
                 <div class="proof-card fade-up">
                     <div class="proof-logo-wrap">
-                        <img class="proof-logo" src="images/case_studies/logos/myburger_logo.png" alt="My Burger logo" loading="lazy">
+                        <img class="proof-logo" src="images/case_studies/logos/myburger-horizontal-real.png" alt="My Burger logo" loading="lazy">
                     </div>
                     <div class="proof-card-name">My Burger</div>
                     <div class="proof-card-copy">Shifted from generic menu posts to sellout-driven hooks, same-day visit CTAs, and captions built to create a reason to come in tonight.</div>
@@ -2352,7 +2367,9 @@
                     <div class="workflow-source-top">
                         <div class="workflow-source-card">
                             <strong>Logo</strong>
-                            <img class="workflow-logo" src="images/case_studies/logos/myburger-horizontal-real.png" alt="My Burger logo" loading="lazy" decoding="async">
+                            <div class="workflow-logo-frame">
+                                <img class="workflow-logo" src="images/case_studies/logos/myburger-horizontal-real.png" alt="My Burger logo" loading="lazy" decoding="async">
+                            </div>
                             <p>Brand mark, colors, and the basic feel of the business.</p>
                         </div>
                         <div class="workflow-source-card">
