@@ -1,12 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+    <script defer src="/site-pages.js"></script>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0;url=/">
-    <link rel="canonical" href="https://www.loopworker.com/">
-    <title>LoopWorker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/site-pages.css">
+    <title>Portfolio | LoopWorker</title>
+    <meta name="description" content="Portfolio directions for restaurant, luxury property, lifestyle, editorial, cinematic, and ecommerce content.">
+    <link rel="canonical" href="https://www.loopworker.com/portfolio.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
 </head>
 <body>
-    <p>Redirecting to <a href="/">loopworker.com</a>...</p>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">LoopWorker</a>
+            <ul class="nav-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/#audit-form" class="nav-cta" data-track="Portfolio Nav Audit CTA">Get Free Audit</a></li>
+            </ul>
+            <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="/services.html">Services</a>
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/case-studies.html">Case Studies</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#audit-form" class="nav-cta" data-track="Portfolio Mobile Audit CTA">Get Free Audit</a>
+    </div>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <span class="eyebrow">Portfolio</span>
+                <h1>Visual directions that can be adapted to different business models.</h1>
+                <p>The goal is not style for style’s sake. The visual language has to support what the business is trying to make someone feel, trust, or do next.</p>
+            </div>
+        </section>
+
+        <section class="section-alt">
+            <div class="container">
+                <div class="grid-3">
+                    <div class="card">
+                        <img src="/images/cards/card_05.webp" alt="Cult brand example">
+                        <div class="kicker">Cult Brand</div>
+                        <h3>Restaurant and nightlife</h3>
+                        <p>Direct flash, texture, and immediacy for brands that need energy and same-day pull.</p>
+                    </div>
+                    <div class="card">
+                        <img src="/images/cards/card_13.webp" alt="Lux example">
+                        <div class="kicker">Lux</div>
+                        <h3>Real estate and premium spaces</h3>
+                        <p>Cinematic wide shots that make the space feel aspirational and worth saving.</p>
+                    </div>
+                    <div class="card">
+                        <img src="/images/cards/card_22.webp" alt="Clean DTC example">
+                        <div class="kicker">Clean DTC</div>
+                        <h3>Product brands</h3>
+                        <p>Clean composition and restraint for products that need clarity more than noise.</p>
+                    </div>
+                    <div class="card">
+                        <img src="/images/cards/card_33.webp" alt="Lifestyle example">
+                        <div class="kicker">Lifestyle</div>
+                        <h3>UGC and local brands</h3>
+                        <p>Casual, believable content built to feel closer to real customer behavior.</p>
+                    </div>
+                    <div class="card">
+                        <img src="/images/cards/card_43.webp" alt="Editorial example">
+                        <div class="kicker">Editorial</div>
+                        <h3>Premium campaigns</h3>
+                        <p>Dramatic framing and more intentional art direction when the brand needs gravitas.</p>
+                    </div>
+                    <div class="card">
+                        <img src="/images/cards/card_53.webp" alt="Cinematic example">
+                        <div class="kicker">Cinematic</div>
+                        <h3>Hotels, music, events</h3>
+                        <p>Moody lighting and atmosphere-led storytelling for nightlife and hospitality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-tight">
+            <div class="container">
+                <div class="cta-box">
+                    <span class="eyebrow">Next Step</span>
+                    <h2>If you know the visual direction you want, the audit will make the strategy clearer.</h2>
+                    <p>Send the business plus your current Instagram or site and I will show you the first changes I would make.</p>
+                    <div class="hero-actions">
+                        <a href="/#audit-form" class="btn btn-primary" data-track="Portfolio Bottom Audit CTA">Get Free Audit</a>
+                        <a href="/services.html" class="btn btn-outline" data-track="Portfolio Bottom Services CTA">See Services</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <div class="footer-brand">LoopWorker</div>
+                <div class="footer-meta">Helping businesses turn content into customers.</div>
+            </div>
+            <ul class="footer-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/free-resources.html">Free Resources</a></li>
+                <li><a href="/faq.html">FAQ</a></li>
+            </ul>
+            <div class="footer-contact">
+                <a href="mailto:alex@loopworker.com">alex@loopworker.com</a><br>
+                <a href="https://instagram.com/loop.worker" target="_blank" rel="noopener">@loop.worker</a>
+                <div class="footer-legal"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
