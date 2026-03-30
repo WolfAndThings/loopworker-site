@@ -269,31 +269,42 @@
             transform: translateY(-1px);
         }
 
-        .action-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin: 0 auto 2rem;
-            max-width: 640px;
+        .while-you-wait {
+            margin: 0 auto 2.5rem;
+            max-width: 480px;
         }
 
-        .action-card {
+        .while-you-wait h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .blog-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .blog-list li a {
+            display: block;
             background: #111;
             border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 12px;
-            padding: 1.2rem;
-            text-align: left;
-        }
-
-        .action-card h3 {
-            font-size: 1rem;
-            margin-bottom: 0.55rem;
-        }
-
-        .action-card p {
+            border-radius: 8px;
+            padding: 0.9rem 1.2rem;
+            color: #D4D4D4;
+            text-decoration: none;
             font-size: 0.95rem;
-            color: #9B9B9B;
-            max-width: 100%;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .blog-list li a:hover {
+            border-color: rgba(255,255,255,0.2);
+            color: #FFF;
+            transform: translateY(-1px);
         }
 
         .support-note {
@@ -475,23 +486,21 @@
                 </div>
             </div>
 
+            <div class="while-you-wait">
+                <h2>While you wait</h2>
+                <ul class="blog-list">
+                    <li><a href="/blog/social-media-content-strategy-small-business.html" data-track="Thank You Blog Strategy">Social Media Content Strategy</a></li>
+                    <li><a href="/blog/how-to-write-instagram-captions.html" data-track="Thank You Blog Captions">How to Write Instagram Captions</a></li>
+                    <li><a href="/blog/how-to-grow-instagram-followers-organically.html" data-track="Thank You Blog Followers">How to Grow Instagram Followers</a></li>
+                </ul>
+            </div>
+
             <div class="cta-row">
                 <a href="/services.html" class="blog-link" data-track="Thank You Services Click">See the service pages &rarr;</a>
-                <a href="/free-resources.html" class="secondary-link" data-track="Thank You Resources Click">Free resources</a>
+                <a href="/#pricing" class="secondary-link" data-track="Thank You Pricing Click">Or explore our packages &rarr;</a>
             </div>
 
-            <div class="action-grid">
-                <div class="action-card">
-                    <h3>While you wait</h3>
-                    <p>Review the service page closest to your business type so the audit lands with more context.</p>
-                </div>
-                <div class="action-card">
-                    <h3>If you need to follow up</h3>
-                    <p>Email <a href="mailto:alex@loopworker.com" data-track="Thank You Email Click" style="color:#FFF;text-decoration:none;">alex@loopworker.com</a> if you do not see the audit within 24 to 48 hours.</p>
-                </div>
-            </div>
-
-            <p class="support-note">Want more context first? Browse the <a href="/blog/" data-track="Thank You Blog Click">blog</a> or the <a href="/case-studies.html" data-track="Thank You Case Studies Click">case studies page</a>.</p>
+            <p class="support-note">Don't see your audit within 24 hours? Email <a href="mailto:alex@loopworker.com" data-track="Thank You Email Click">alex@loopworker.com</a>.</p>
         </div>
     </section>
 
