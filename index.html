@@ -1091,6 +1091,150 @@
             margin-top: 3rem;
         }
 
+        .workflow-showcase {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(240px, 0.7fr) minmax(0, 0.95fr);
+            gap: 1.25rem;
+            margin-top: 2.75rem;
+            align-items: stretch;
+        }
+
+        .workflow-panel {
+            background: #0E0E0E;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 1.25rem;
+        }
+
+        .workflow-panel-label {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.68rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #727272;
+        }
+
+        .workflow-source-top {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.85rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .workflow-source-card {
+            background: #111;
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        .workflow-source-card strong,
+        .workflow-feed-label,
+        .workflow-output-meta strong,
+        .workflow-build-item strong {
+            display: block;
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #F1F1F1;
+            margin-bottom: 0.65rem;
+        }
+
+        .workflow-source-card p,
+        .workflow-output-copy,
+        .workflow-build-item p {
+            max-width: 100%;
+            font-size: 0.88rem;
+            color: #8A8A8A;
+            margin-bottom: 0;
+        }
+
+        .workflow-logo {
+            width: auto;
+            max-height: 42px;
+            margin-bottom: 0.85rem;
+        }
+
+        .workflow-location-shot {
+            width: 100%;
+            height: 92px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 0.85rem;
+        }
+
+        .workflow-feed-label {
+            color: #8B8B8B;
+            margin-bottom: 0.75rem;
+        }
+
+        .workflow-source-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.75rem;
+        }
+
+        .workflow-source-grid img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .workflow-bridge {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.8rem;
+            background: linear-gradient(180deg, #101010 0%, #0B0B0B 100%);
+        }
+
+        .workflow-build-item {
+            background: #111;
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        .workflow-build-item strong {
+            margin-bottom: 0.45rem;
+            color: #FFFFFF;
+        }
+
+        .workflow-output-image {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .workflow-output-meta {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.65rem;
+            margin-bottom: 1rem;
+        }
+
+        .workflow-output-meta div {
+            background: #111;
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 0.8rem;
+        }
+
+        .workflow-output-meta span {
+            display: block;
+            font-size: 0.82rem;
+            color: #9C9C9C;
+            line-height: 1.5;
+        }
+
         .step-number {
             font-size: 3.5rem;
             font-weight: 900;
@@ -1707,7 +1851,10 @@
             .service-link-grid,
             .audit-preview-grid,
             .faq-grid,
-            .pricing-quick-grid {
+            .pricing-quick-grid,
+            .workflow-showcase,
+            .workflow-source-top,
+            .workflow-output-meta {
                 grid-template-columns: 1fr;
             }
 
@@ -1729,6 +1876,10 @@
             .process-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+
+            .workflow-source-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
             .pricing-grid {
@@ -2188,22 +2339,86 @@
     <!-- HOW IT WORKS -->
     <section id="how-it-works" style="background: #0C0C0C;">
         <div class="container-wide">
-            <h2 class="fade-up">Simple. Clear. No Guesswork.</h2>
+            <div class="proof-intro fade-up">
+                <div class="proof-eyebrow">Show The Process</div>
+                <h2>What you send me, and what it turns into</h2>
+                <p>Usually I do not need a huge production to build a branded direction. A logo, a feel for the location, and a handful of recent posts are enough to turn the feed into something more intentional.</p>
+            </div>
+            <div class="workflow-showcase fade-up">
+                <div class="workflow-panel">
+                    <div class="workflow-panel-label">What you already have</div>
+                    <div class="workflow-source-top">
+                        <div class="workflow-source-card">
+                            <strong>Logo</strong>
+                            <img class="workflow-logo" src="images/case_studies/logos/myburger_logo.png" alt="My Burger logo" loading="lazy" decoding="async">
+                            <p>Brand mark, colors, and the basic feel of the business.</p>
+                        </div>
+                        <div class="workflow-source-card">
+                            <strong>Location</strong>
+                            <img class="workflow-location-shot" src="images/case_studies/references/myburger/09.jpg" alt="My Burger location and signage" loading="lazy" decoding="async">
+                            <p>Space cues, signage, textures, and the in-person personality.</p>
+                        </div>
+                    </div>
+                    <div class="workflow-feed-label">Six recent Instagram-style shots or references</div>
+                    <div class="workflow-source-grid">
+                        <img src="images/case_studies/references/myburger/01.jpg" alt="My Burger content reference one" loading="lazy" decoding="async">
+                        <img src="images/case_studies/references/myburger/02.jpg" alt="My Burger content reference two" loading="lazy" decoding="async">
+                        <img src="images/case_studies/references/myburger/03.jpg" alt="My Burger content reference three" loading="lazy" decoding="async">
+                        <img src="images/case_studies/references/myburger/04.jpg" alt="My Burger content reference four" loading="lazy" decoding="async">
+                        <img src="images/case_studies/references/myburger/05.jpg" alt="My Burger content reference five" loading="lazy" decoding="async">
+                        <img src="images/case_studies/references/myburger/06.jpg" alt="My Burger content reference six" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="workflow-panel workflow-bridge">
+                    <div class="workflow-panel-label">What I build</div>
+                    <div class="workflow-build-item">
+                        <strong>Positioning</strong>
+                        <p>What the brand should feel like when someone lands on the feed.</p>
+                    </div>
+                    <div class="workflow-build-item">
+                        <strong>Visual Direction</strong>
+                        <p>Which colors, crops, textures, and moments should repeat so it starts to look branded.</p>
+                    </div>
+                    <div class="workflow-build-item">
+                        <strong>Hooks + CTA</strong>
+                        <p>What makes the post worth stopping on, and what the viewer should do next.</p>
+                    </div>
+                </div>
+                <div class="workflow-panel">
+                    <div class="workflow-panel-label">What comes out</div>
+                    <img class="workflow-output-image" src="images/case_studies/references/myburger/12.jpg" alt="Branded My Burger promotional post" loading="lazy" decoding="async">
+                    <div class="workflow-output-meta">
+                        <div>
+                            <strong>Look</strong>
+                            <span>Bright, direct, appetite-first, unmistakably My Burger.</span>
+                        </div>
+                        <div>
+                            <strong>Offer</strong>
+                            <span>Specific promo or item-led post instead of generic food shots.</span>
+                        </div>
+                        <div>
+                            <strong>Result</strong>
+                            <span>Something clearer to save, share, ask about, or come in for.</span>
+                        </div>
+                    </div>
+                    <p class="workflow-output-copy">Same business. Stronger post structure. More branded. More reason to act.</p>
+                </div>
+            </div>
             <div class="process-grid">
                 <div class="process-step fade-up">
                     <div class="step-number">01</div>
-                    <div class="step-title">Free Audit</div>
-                    <div class="step-desc">I review your current social media, profile, and offer so the first fixes are obvious instead of vague.</div>
+                    <div class="step-title">Send The Raw Pieces</div>
+                    <div class="step-desc">Logo, screenshots, location feel, recent posts, or whatever you already have.</div>
                 </div>
                 <div class="process-step fade-up">
                     <div class="step-number">02</div>
-                    <div class="step-title">Content Creation</div>
-                    <div class="step-desc">I build the visual direction, hooks, captions, and content structure around how your buyers actually decide.</div>
+                    <div class="step-title">I Build The Angle</div>
+                    <div class="step-desc">Visual direction, hooks, captions, and the structure that makes the brand feel more intentional.</div>
                 </div>
                 <div class="process-step fade-up">
                     <div class="step-number">03</div>
-                    <div class="step-title">You Post With A Clear Reason</div>
-                    <div class="step-desc">You publish content that makes the next step clearer: visit, book, inquire, follow, or come back.</div>
+                    <div class="step-title">You Post Something Clearer</div>
+                    <div class="step-desc">The output looks branded and gives the viewer a sharper reason to visit, book, inquire, or follow.</div>
                 </div>
             </div>
         </div>
