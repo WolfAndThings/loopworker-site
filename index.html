@@ -1152,10 +1152,46 @@
             margin-bottom: 0;
         }
 
-        .workflow-logo {
-            width: auto;
-            max-height: 42px;
+        .workflow-logo-badge {
+            width: 74px;
+            height: 74px;
+            display: grid;
+            place-items: center;
+            background: #ff5a1f;
+            border-radius: 14px;
             margin-bottom: 0.85rem;
+            padding: 10px 12px;
+        }
+
+        .workflow-logo-stack {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .workflow-logo-bun {
+            width: 100%;
+            height: 16px;
+            background: #fff7ef;
+            border-radius: 999px;
+        }
+
+        .workflow-logo-fill {
+            width: 80%;
+            height: 7px;
+            background: #4d2608;
+            border-radius: 999px;
+        }
+
+        .workflow-logo-cheese {
+            width: 28px;
+            height: 12px;
+            background: #ffba2f;
+            clip-path: polygon(50% 100%, 0 0, 100% 0);
+            margin-top: -4px;
+            margin-bottom: -4px;
         }
 
         .workflow-location-shot {
@@ -2350,12 +2386,19 @@
                     <div class="workflow-source-top">
                         <div class="workflow-source-card">
                             <strong>Logo</strong>
-                            <img class="workflow-logo" src="images/case_studies/logos/myburger_logo.png" alt="My Burger logo" loading="lazy" decoding="async">
+                            <div class="workflow-logo-badge" aria-label="My Burger brand icon">
+                                <div class="workflow-logo-stack" aria-hidden="true">
+                                    <div class="workflow-logo-bun"></div>
+                                    <div class="workflow-logo-cheese"></div>
+                                    <div class="workflow-logo-fill"></div>
+                                    <div class="workflow-logo-bun"></div>
+                                </div>
+                            </div>
                             <p>Brand mark, colors, and the basic feel of the business.</p>
                         </div>
                         <div class="workflow-source-card">
                             <strong>Location</strong>
-                            <img class="workflow-location-shot" src="images/case_studies/references/myburger/09.jpg" alt="My Burger location and signage" loading="lazy" decoding="async">
+                            <img class="workflow-location-shot" src="images/case_studies/references/myburger/11.jpg" alt="My Burger restaurant interior" loading="lazy" decoding="async">
                             <p>Space cues, signage, textures, and the in-person personality.</p>
                         </div>
                     </div>
@@ -2386,7 +2429,7 @@
                 </div>
                 <div class="workflow-panel">
                     <div class="workflow-panel-label">What comes out</div>
-                    <img class="workflow-output-image" src="images/case_studies/references/myburger/12.jpg" alt="Branded My Burger promotional post" loading="lazy" decoding="async">
+                    <img class="workflow-output-image" src="images/case_studies/references/myburger/10.jpg" alt="My Burger branded product shot" loading="lazy" decoding="async">
                     <div class="workflow-output-meta">
                         <div>
                             <strong>Look</strong>
