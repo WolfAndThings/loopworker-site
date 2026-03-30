@@ -421,22 +421,47 @@
         }
 
         .proof-logo-wrap {
-            min-height: 58px;
-            display: inline-flex;
+            width: 100%;
+            min-height: 84px;
+            display: flex;
             align-items: center;
             justify-content: center;
-            padding: 0.7rem 0.95rem;
-            background: #f1eeeb;
-            border-radius: 12px;
+            padding: 0.95rem 1.1rem;
+            background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 100%);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 14px;
             margin-bottom: 1rem;
         }
 
+        .proof-logo-wrap.light {
+            background: #f1eeeb;
+            border-color: rgba(255,255,255,0.04);
+        }
+
+        .proof-logo-wrap.badge {
+            min-height: 92px;
+        }
+
         .proof-logo {
-            max-width: 180px;
-            max-height: 42px;
+            display: block;
             width: auto;
             height: auto;
-            opacity: 0.92;
+            opacity: 1;
+        }
+
+        .proof-logo.myburger {
+            max-width: 188px;
+            max-height: 38px;
+        }
+
+        .proof-logo.marina {
+            max-width: 214px;
+            max-height: 46px;
+        }
+
+        .proof-logo.bouldering {
+            width: 72px;
+            height: 72px;
         }
 
         .proof-card-name {
@@ -2251,8 +2276,8 @@
             </div>
             <div class="proof-grid">
                 <div class="proof-card fade-up">
-                    <div class="proof-logo-wrap">
-                        <img class="proof-logo" src="images/case_studies/logos/myburger-horizontal-real.png" alt="My Burger logo" loading="lazy">
+                    <div class="proof-logo-wrap light">
+                        <img class="proof-logo myburger" src="images/case_studies/logos/myburger-horizontal-real.png" alt="My Burger logo" loading="lazy">
                     </div>
                     <div class="proof-card-name">My Burger</div>
                     <div class="proof-card-copy">Shifted from generic menu posts to sellout-driven hooks, same-day visit CTAs, and captions built to create a reason to come in tonight.</div>
@@ -2261,7 +2286,7 @@
                 </div>
                 <div class="proof-card fade-up">
                     <div class="proof-logo-wrap">
-                        <img class="proof-logo" src="images/case_studies/logos/marina_logo.svg" alt="Marina Med Spa logo" loading="lazy">
+                        <img class="proof-logo marina" src="images/case_studies/logos/marina_logo.svg" alt="Marina Med Spa logo" loading="lazy">
                     </div>
                     <div class="proof-card-name">Marina Med Spa</div>
                     <div class="proof-card-copy">Shifted from generic booking posts to education-first content that builds authority, creates better DM conversations, and attracts stronger-fit leads.</div>
@@ -2269,8 +2294,8 @@
                     <a class="proof-card-link" href="/med-spa.html" data-track="Med Spa Page Click">See med spa page</a>
                 </div>
                 <div class="proof-card fade-up">
-                    <div class="proof-logo-wrap">
-                        <img class="proof-logo" src="images/case_studies/logos/bouldering_logo.svg" alt="Bouldering Project logo" loading="lazy">
+                    <div class="proof-logo-wrap badge">
+                        <img class="proof-logo bouldering" src="images/case_studies/logos/bouldering_logo.svg" alt="Bouldering Project logo" loading="lazy">
                     </div>
                     <div class="proof-card-name">Bouldering Project</div>
                     <div class="proof-card-copy">Reframed the content from facility updates to beginner-friendly stories and first-visit prompts that make the gym feel easier to try.</div>
