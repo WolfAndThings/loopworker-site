@@ -1299,84 +1299,6 @@
             line-height: 1.6;
         }
 
-        .founder-strip {
-            background: #080808;
-            padding-top: 0;
-            padding-bottom: 4rem;
-        }
-
-        .founder-card {
-            background: #111;
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 14px;
-            padding: 1.8rem;
-        }
-
-        .founder-card h2 {
-            margin-bottom: 0.9rem;
-        }
-
-        .founder-card p {
-            max-width: 760px;
-            font-size: 1rem;
-            color: #9A9A9A;
-        }
-
-        .founder-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-top: 1.2rem;
-        }
-
-        .founder-meta span {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.55rem 0.85rem;
-            background: #0B0B0B;
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 999px;
-            color: #AEAEAE;
-            font-size: 0.78rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-
-        /* ========================
-           RESULTS
-           ======================== */
-        .results {
-            background: #0C0C0C;
-        }
-
-        .results-list {
-            list-style: none;
-            margin: 2rem 0;
-        }
-
-        .results-list li {
-            padding: 0.7rem 0;
-            font-size: 1.05rem;
-            color: #CCC;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.8rem;
-        }
-
-        .results-list li::before {
-            content: '\2192';
-            color: #FFF;
-            flex-shrink: 0;
-        }
-
-        .results-closer {
-            font-size: 1.1rem;
-            color: #999;
-        }
-
-        .results-closer strong { color: #FFFFFF; }
-
         /* ========================
            PRICING
            ======================== */
@@ -1492,34 +1414,6 @@
 
         .pricing-includes li strong {
             color: #FFF;
-        }
-
-        .pricing-quick-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-top: 1.75rem;
-        }
-
-        .pricing-quick-card {
-            background: #111;
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 10px;
-            padding: 1rem;
-        }
-
-        .pricing-quick-card strong {
-            display: block;
-            color: #FFF;
-            margin-bottom: 0.35rem;
-            font-size: 0.95rem;
-        }
-
-        .pricing-quick-card span {
-            display: block;
-            color: #8C8C8C;
-            font-size: 0.88rem;
-            line-height: 1.55;
         }
 
         .pricing-help {
@@ -1893,7 +1787,6 @@
             .service-link-grid,
             .audit-preview-grid,
             .faq-grid,
-            .pricing-quick-grid,
             .workflow-showcase,
             .workflow-source-top,
             .workflow-output-meta {
@@ -1980,8 +1873,7 @@
 
             .hero-visuals,
             .audit-preview-grid,
-            .service-link-grid,
-            .pricing-quick-grid {
+            .service-link-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -2468,17 +2360,37 @@
         </div>
     </section>
 
-    <section class="founder-strip">
+    <!-- CASE STUDY -->
+    <section class="featured-case-study">
         <div class="container-wide">
-            <div class="founder-card fade-up">
-                <div class="proof-eyebrow">Why LoopWorker</div>
-                <h2>You are not hiring a content mill.</h2>
-                <p>I build the content around the way customers actually pick a business: what catches attention, what builds trust fast, and what creates a reason to act right now. That usually matters more than posting more often.</p>
-                <div class="founder-meta">
-                    <span>Hooks + captions included</span>
-                    <span>Built around buyer intent</span>
-                    <span>Designed for local demand</span>
-                    <span>Audit-first process</span>
+            <div class="proof-intro fade-up">
+                <div class="proof-eyebrow">Featured Example</div>
+                <h2>One Example, End to End</h2>
+                <p>A shorter look at how the content changes from something people scroll past into something that gives them a reason to act.</p>
+            </div>
+            <div class="featured-case-study-card fade-up">
+                <div class="featured-case-study-media">
+                    <img src="images/cards/card_05.webp" alt="My Burger restaurant content example" loading="lazy" decoding="async">
+                </div>
+                <div class="featured-case-study-body">
+                    <div class="featured-case-study-label">Restaurant · My Burger</div>
+                    <h3>From generic menu posts to same-day visit content.</h3>
+                    <p>The goal was not more random reach. It was making the post feel specific enough that someone nearby had a reason to come in tonight.</p>
+                    <div class="featured-case-study-grid">
+                        <div class="featured-case-study-block before">
+                            <div class="featured-case-study-kicker">Before</div>
+                            <p>Good food visuals, but generic captions and no urgency tied to the visit.</p>
+                        </div>
+                        <div class="featured-case-study-block shift">
+                            <div class="featured-case-study-kicker">Shift</div>
+                            <p>Hooks built around sellout items, story-led captions, and same-day CTAs.</p>
+                        </div>
+                        <div class="featured-case-study-block outcome">
+                            <div class="featured-case-study-kicker">Outcome</div>
+                            <p>More saves, more shares, more “where is this?” comments, and stronger repeat intent.</p>
+                        </div>
+                    </div>
+                    <div class="featured-case-study-note">The same framework is what I adapt for med spas, gyms, and other local service businesses.</div>
                 </div>
             </div>
         </div>
@@ -2537,86 +2449,8 @@
                 </div>
 
             </div>
-            <div class="pricing-quick-grid fade-up">
-                <div class="pricing-quick-card">
-                    <strong>Starter</strong>
-                    <span>Best when you want to test one offer, one angle, or one faster content reset.</span>
-                </div>
-                <div class="pricing-quick-card">
-                    <strong>Growth</strong>
-                    <span>Best when you need a dependable monthly content baseline without overbuilding too early.</span>
-                </div>
-                <div class="pricing-quick-card">
-                    <strong>Full Build</strong>
-                    <span>Best when the content, positioning, and publishing system all need to be tightened together.</span>
-                </div>
-            </div>
             <p class="pricing-note fade-up pricing-note-center">Limited spots available to keep quality high.</p>
             <div class="pricing-help fade-up">Not sure which one fits? Start with the audit, or email <a href="mailto:alex@loopworker.com" data-track="Pricing Email Click">alex@loopworker.com</a> if you already know the scope.</div>
-        </div>
-    </section>
-
-    <section class="faq-section">
-        <div class="container-wide">
-            <div class="proof-intro fade-up">
-                <div class="proof-eyebrow">Quick FAQ</div>
-                <h2>Questions that usually block the decision</h2>
-                <p>The point of the audit is to remove guesswork before you spend anything.</p>
-            </div>
-            <div class="faq-grid">
-                <div class="faq-item fade-up">
-                    <h3>How fast do I get the free audit?</h3>
-                    <p>Usually within 24 to 48 hours. It is short, specific, and focused on the first fixes that should matter most.</p>
-                </div>
-                <div class="faq-item fade-up">
-                    <h3>Do you only give strategy, or do you create the content too?</h3>
-                    <p>The audit is the entry point. Paid packages include the content direction, hooks, captions, plan, and short-form deliverables.</p>
-                </div>
-                <div class="faq-item fade-up">
-                    <h3>What if I already post consistently?</h3>
-                    <p>That is usually the best starting point. The issue is often not effort. It is weak positioning, low-urgency hooks, or unclear CTAs.</p>
-                </div>
-                <div class="faq-item fade-up">
-                    <h3>What if I do not know which package fits?</h3>
-                    <p>Start with the audit. That is the fastest way to see whether you need a quick reset, a monthly system, or a fuller rebuild.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CASE STUDIES -->
-    <section class="featured-case-study">
-        <div class="container-wide">
-            <div class="proof-intro fade-up">
-                <div class="proof-eyebrow">Featured Example</div>
-                <h2>One Example, End to End</h2>
-                <p>A shorter look at how the content changes from something people scroll past into something that gives them a reason to act.</p>
-            </div>
-            <div class="featured-case-study-card fade-up">
-                <div class="featured-case-study-media">
-                    <img src="images/cards/card_05.webp" alt="My Burger restaurant content example" loading="lazy" decoding="async">
-                </div>
-                <div class="featured-case-study-body">
-                    <div class="featured-case-study-label">Restaurant · My Burger</div>
-                    <h3>From generic menu posts to same-day visit content.</h3>
-                    <p>The goal was not more random reach. It was making the post feel specific enough that someone nearby had a reason to come in tonight.</p>
-                    <div class="featured-case-study-grid">
-                        <div class="featured-case-study-block before">
-                            <div class="featured-case-study-kicker">Before</div>
-                            <p>Good food visuals, but generic captions and no urgency tied to the visit.</p>
-                        </div>
-                        <div class="featured-case-study-block shift">
-                            <div class="featured-case-study-kicker">Shift</div>
-                            <p>Hooks built around sellout items, story-led captions, and same-day CTAs.</p>
-                        </div>
-                        <div class="featured-case-study-block outcome">
-                            <div class="featured-case-study-kicker">Outcome</div>
-                            <p>More saves, more shares, more “where is this?” comments, and stronger repeat intent.</p>
-                        </div>
-                    </div>
-                    <div class="featured-case-study-note">The same framework is what I adapt for med spas, gyms, and other local service businesses.</div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -2657,25 +2491,34 @@
     <section class="faq-section">
         <div class="container-wide">
             <div class="proof-intro fade-up">
-                <div class="proof-eyebrow">Before You Submit</div>
-                <h2>Common questions about the audit</h2>
+                <div class="proof-eyebrow">Quick FAQ</div>
+                <h2>Questions that usually block the decision</h2>
+                <p>The point of the audit is to remove guesswork before you spend anything.</p>
             </div>
             <div class="faq-grid">
+                <div class="faq-item fade-up">
+                    <h3>How fast do I get the free audit?</h3>
+                    <p>Usually within 24 to 48 hours. It is short, specific, and focused on the first fixes that should matter most.</p>
+                </div>
                 <div class="faq-item fade-up">
                     <h3>What do I get in a content audit?</h3>
                     <p>A profile and positioning check, a content angle breakdown, CTA and conversion fixes, and a first-priority action list with specific things to change right away.</p>
                 </div>
                 <div class="faq-item fade-up">
-                    <h3>How long does it take to get my content?</h3>
-                    <p>The free audit comes back within 24 to 48 hours. Paid content packages are typically delivered within 5 to 10 business days depending on the scope.</p>
+                    <h3>Do you only give strategy, or do you create the content too?</h3>
+                    <p>The audit is the entry point. Paid packages include the content direction, hooks, captions, plan, and short-form deliverables.</p>
+                </div>
+                <div class="faq-item fade-up">
+                    <h3>What if I already post consistently?</h3>
+                    <p>That is usually the best starting point. The issue is often not effort. It is weak positioning, low-urgency hooks, or unclear CTAs.</p>
                 </div>
                 <div class="faq-item fade-up">
                     <h3>Do I need to be on Instagram?</h3>
                     <p>Instagram is the most common starting point, but the content strategy and deliverables work across any visual platform including TikTok, Facebook, and LinkedIn.</p>
                 </div>
                 <div class="faq-item fade-up">
-                    <h3>What if I'm not happy with the content?</h3>
-                    <p>The Growth and Full Build packages include revision rounds. The audit is free, so there is no risk in starting there to see if the approach fits before committing to a paid package.</p>
+                    <h3>What if I do not know which package fits?</h3>
+                    <p>Start with the audit. That is the fastest way to see whether you need a quick reset, a monthly system, or a fuller rebuild.</p>
                 </div>
             </div>
         </div>
