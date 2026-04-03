@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Vidyfy Phase One Growth Options</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #081217;
+      --bg-soft: #0d1d24;
+      --panel: rgba(12, 29, 36, 0.88);
+      --panel-strong: rgba(9, 23, 29, 0.96);
+      --ink: #eaf4ef;
+      --muted: #9fb4ae;
+      --line: rgba(200, 229, 220, 0.12);
+      --lime: #daf06c;
+      --sea: #77d1c8;
+      --amber: #ffbf69;
+      --rose: #ff9178;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 15%, rgba(218, 240, 108, 0.16), transparent 28%),
+        radial-gradient(circle at 85% 10%, rgba(119, 209, 200, 0.15), transparent 26%),
+        radial-gradient(circle at 80% 78%, rgba(255, 191, 105, 0.11), transparent 22%),
+        linear-gradient(180deg, #071015 0%, #081217 40%, #09161d 100%);
+      font-family: "IBM Plex Sans", "Helvetica Neue", sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.55), transparent 85%);
+      opacity: 0.5;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .topline {
+      padding: 1.15rem 0 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      padding: 4rem 0 2.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+      gap: 2rem;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 0.55rem;
+      align-items: center;
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(218, 240, 108, 0.1);
+      color: var(--lime);
+      border: 1px solid rgba(218, 240, 108, 0.16);
+      font-size: 0.77rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1,
+    .section h2,
+    .plan-card h3,
+    .callout h3,
+    .metric h4 {
+      font-family: "Space Grotesk", sans-serif;
+      letter-spacing: -0.04em;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5.4vw, 5.2rem);
+      line-height: 0.95;
+      max-width: 11ch;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 58ch;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .hero-note {
+      background: linear-gradient(180deg, rgba(11, 28, 35, 0.9), rgba(9, 22, 28, 0.98));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-note::after {
+      content: "";
+      position: absolute;
+      inset: auto -20% -20% auto;
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(119, 209, 200, 0.25), transparent 70%);
+      filter: blur(8px);
+    }
+
+    .hero-note h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-note p {
+      color: #c5d8d1;
+      font-size: 0.98rem;
+      margin-bottom: 1rem;
+      max-width: 34ch;
+    }
+
+    .hero-note ul {
+      list-style: none;
+      display: grid;
+      gap: 0.7rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-note li {
+      color: #d7e5df;
+      font-size: 0.95rem;
+      padding-left: 1.05rem;
+      position: relative;
+    }
+
+    .hero-note li::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--lime);
+      position: absolute;
+      left: 0;
+      top: 0.52rem;
+      box-shadow: 0 0 0 4px rgba(218, 240, 108, 0.12);
+    }
+
+    .section {
+      padding: 1rem 0 3rem;
+    }
+
+    .section h2 {
+      font-size: clamp(1.7rem, 3vw, 2.7rem);
+      margin-bottom: 0.7rem;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 70ch;
+      margin-bottom: 1.75rem;
+      font-size: 1rem;
+    }
+
+    .logic-grid,
+    .decision-grid,
+    .metric-grid,
+    .option-grid,
+    .deliverable-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .logic-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .decision-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .logic-card,
+    .decision-card,
+    .metric,
+    .assumption-card,
+    .plan-card,
+    .footer-note {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .logic-card {
+      padding: 1.2rem;
+      min-height: 170px;
+    }
+
+    .decision-card {
+      padding: 1.3rem;
+      min-height: 250px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(11, 29, 36, 0.96), rgba(9, 22, 28, 0.98));
+    }
+
+    .decision-card::after {
+      content: "";
+      position: absolute;
+      right: -30px;
+      top: -30px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(218, 240, 108, 0.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    .decision-card h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.15rem;
+      margin-bottom: 0.55rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .decision-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .decision-kicker {
+      display: inline-flex;
+      margin-bottom: 0.8rem;
+      padding: 0.36rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(119, 209, 200, 0.09);
+      color: var(--sea);
+      border: 1px solid rgba(119, 209, 200, 0.18);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+    }
+
+    .decision-list {
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
+      margin: 1rem 0 1.1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .decision-list li {
+      color: #dce9e4;
+      font-size: 0.92rem;
+      padding-left: 0.95rem;
+      position: relative;
+    }
+
+    .decision-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--lime);
+    }
+
+    .decision-answer {
+      margin-top: auto;
+      padding-top: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #f0f8f4;
+      font-size: 0.9rem;
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logic-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2rem;
+      height: 2rem;
+      border-radius: 999px;
+      background: rgba(255, 191, 105, 0.12);
+      color: var(--amber);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .logic-card h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.1rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .logic-card p,
+    .metric p,
+    .assumption-card p,
+    .plan-card p,
+    .footer-note p,
+    .comparison-table td,
+    .comparison-table th {
+      color: var(--muted);
+    }
+
+    .assumption-card {
+      padding: 1.35rem;
+      margin-top: 1rem;
+    }
+
+    .assumption-card ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem 1rem;
+      margin-top: 1rem;
+    }
+
+    .assumption-card li {
+      padding-left: 1rem;
+      position: relative;
+      color: #dbe8e4;
+      font-size: 0.95rem;
+    }
+
+    .assumption-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--sea);
+    }
+
+    .option-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: start;
+    }
+
+    .plan-card {
+      padding: 1.45rem;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(11, 29, 36, 0.96), rgba(9, 22, 28, 0.98));
+    }
+
+    .plan-card.recommended {
+      border-color: rgba(218, 240, 108, 0.45);
+      transform: translateY(-8px);
+      background:
+        radial-gradient(circle at top right, rgba(218, 240, 108, 0.12), transparent 28%),
+        linear-gradient(180deg, rgba(15, 32, 34, 0.98), rgba(10, 22, 24, 0.98));
+    }
+
+    .plan-card::after {
+      content: "";
+      position: absolute;
+      right: -52px;
+      top: -52px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(119, 209, 200, 0.16), transparent 70%);
+      pointer-events: none;
+    }
+
+    .plan-badge {
+      display: inline-flex;
+      margin-bottom: 1rem;
+      padding: 0.38rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #d7e5df;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .plan-card.recommended .plan-badge {
+      color: #111b0e;
+      background: var(--lime);
+      border-color: transparent;
+    }
+
+    .plan-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: start;
+      margin-bottom: 1rem;
+    }
+
+    .plan-card h3 {
+      font-size: 1.5rem;
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .plan-hours {
+      color: #e7f3ed;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .plan-price {
+      text-align: right;
+      position: relative;
+      z-index: 1;
+    }
+
+    .price {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2rem, 3vw, 2.6rem);
+      line-height: 0.92;
+      display: block;
+    }
+
+    .plan-price small {
+      display: block;
+      color: var(--muted);
+      margin-top: 0.25rem;
+      font-size: 0.82rem;
+    }
+
+    .plan-subtitle {
+      margin-bottom: 1rem;
+      max-width: 28ch;
+    }
+
+    .focus-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin: 0 0 1.2rem;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 0.45rem 0.7rem;
+      background: rgba(255,255,255,0.05);
+      color: #dbe8e4;
+      font-size: 0.8rem;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .split-label {
+      margin: 1.1rem 0 0.7rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      color: #bfd3cd;
+      font-weight: 700;
+    }
+
+    .allocation {
+      display: grid;
+      gap: 0.65rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .allocation-item {
+      display: grid;
+      gap: 0.3rem;
+    }
+
+    .allocation-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.86rem;
+      color: #dbe8e4;
+    }
+
+    .bar {
+      height: 9px;
+      width: 100%;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      overflow: hidden;
+    }
+
+    .bar > span {
+      display: block;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--sea), var(--lime));
+    }
+
+    .plan-card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.62rem;
+    }
+
+    .plan-card li {
+      position: relative;
+      padding-left: 1rem;
+      color: #dce9e4;
+      font-size: 0.92rem;
+    }
+
+    .plan-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.56rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--amber);
+      box-shadow: 0 0 0 4px rgba(255, 191, 105, 0.1);
+    }
+
+    .callout {
+      margin-top: 1.1rem;
+      padding: 1rem;
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .callout h3 {
+      font-size: 1rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .comparison-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--panel-strong);
+      box-shadow: var(--shadow);
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 900px;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 1rem 1.1rem;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.92rem;
+    }
+
+    .comparison-table th {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.95rem;
+      color: var(--ink);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .comparison-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .metric-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .metric {
+      padding: 1.1rem;
+      min-height: 156px;
+    }
+
+    .metric h4 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .metric-number {
+      display: block;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 2rem;
+      line-height: 1;
+      color: var(--lime);
+      margin-bottom: 0.45rem;
+    }
+
+    .footer-note {
+      padding: 1.25rem;
+      margin: 0 0 4rem;
+    }
+
+    .footer-note strong {
+      color: var(--ink);
+    }
+
+    .footer-note p + p {
+      margin-top: 0.65rem;
+    }
+
+    @media (max-width: 1100px) {
+      .option-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .plan-card.recommended {
+        transform: none;
+      }
+
+      .metric-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 820px) {
+      .hero,
+      .logic-grid,
+      .decision-grid,
+      .assumption-card ul {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+
+      .hero h1 {
+        max-width: 12ch;
+      }
+
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .plan-card,
+      .logic-card,
+      .metric {
+        animation: rise 0.55s ease both;
+      }
+
+      .plan-card:nth-child(2) { animation-delay: 0.08s; }
+      .plan-card:nth-child(3) { animation-delay: 0.16s; }
+      .logic-card:nth-child(2) { animation-delay: 0.04s; }
+      .logic-card:nth-child(3) { animation-delay: 0.08s; }
+
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        color: #111;
+      }
+
+      body::before {
+        display: none;
+      }
+
+      .logic-card,
+      .metric,
+      .assumption-card,
+      .plan-card,
+      .footer-note,
+      .comparison-wrap,
+      .hero-note {
+        background: #fff;
+        color: #111;
+        box-shadow: none;
+        border-color: #ccc;
+      }
+
+      .logic-card p,
+      .metric p,
+      .assumption-card p,
+      .plan-card p,
+      .footer-note p,
+      .comparison-table td,
+      .comparison-table th,
+      .section-intro,
+      .hero p,
+      .topline,
+      .plan-price small {
+        color: #444;
+      }
+
+      .bar {
+        border: 1px solid #bbb;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topline">Draft Monthly Retainer Options • Vidyfy Phase One Creator Growth</div>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Current Objective, Not Future Vision</div>
+        <h1>Get the first good creators in and help them succeed.</h1>
+        <p>
+          Phase one is not broad brand marketing. It is creator education, targeted outreach, white-glove onboarding,
+          and a proof loop that turns early wins into credible momentum. These options keep the work centered on Instagram,
+          TikTok, and direct creator recruitment.
+        </p>
+      </div>
+
+      <aside class="hero-note">
+        <h2>What this proposal assumes</h2>
+        <p>
+          Vidyfy grows now by becoming useful to early creators before it has network effects. The work needs to be
+          disciplined, practical, and easy to repeat.
+        </p>
+        <ul>
+          <li>Primary channels: Instagram, TikTok, and direct outreach</li>
+          <li>LinkedIn stays light and founder-led, or gets skipped</li>
+          <li>Goal is creator acquisition plus activation, not vanity reach</li>
+          <li>Automation supports the team internally so the process does not become manual chaos</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="section">
+      <h2>Phase One Logic</h2>
+      <p class="section-intro">
+        The growth loop is simple on purpose: useful creator-facing content earns attention, direct outreach turns that
+        attention into conversations, white-glove onboarding increases the chance of first posts, and those first wins
+        become the proof that makes the next wave easier.
+      </p>
+
+      <div class="logic-grid">
+        <article class="logic-card">
+          <div class="logic-tag">01</div>
+          <h3>Creator education first</h3>
+          <p>
+            Use universal creator tips, filming examples, hook breakdowns, and workflow content to attract the right
+            kind of early creator before asking them to join anything.
+          </p>
+        </article>
+        <article class="logic-card">
+          <div class="logic-tag">02</div>
+          <h3>Recruit with personal outreach</h3>
+          <p>
+            Growth comes from direct DMs, curated invite lists, and early collaboration pitches, not from waiting for a
+            cold audience to discover the platform on its own.
+          </p>
+        </article>
+        <article class="logic-card">
+          <div class="logic-tag">03</div>
+          <h3>Activate, then prove</h3>
+          <p>
+            The job is not done at signup. The real win is getting creators to post, stay active, and generate enough
+            proof that the next creators have a reason to say yes.
+          </p>
+        </article>
+      </div>
+
+      <div class="assumption-card">
+        <p><strong>Shared assumptions across all options</strong></p>
+        <ul>
+          <li>Monthly retainer structure instead of hourly ambiguity</li>
+          <li>Existing editor and designer can be used when available</li>
+          <li>No paid media buying, ad spend, or creator incentive budget included</li>
+          <li>Focus stays on current creator-platform growth, not future B2B roadmap positioning</li>
+          <li>Automation work supports internal ops, tracking, prompts, and follow-up systems</li>
+          <li>Deliverables emphasize consistency and learning, not inflated volume for its own sake</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Three Ways To Structure The Work</h2>
+      <p class="section-intro">
+        The cleanest way to price this is by stage, not by visible hourly math. The first option is a setup month.
+        The second is the core ongoing engine. The third adds the hybrid layer, stronger proof output, and more
+        internal systems support.
+      </p>
+
+      <div class="decision-grid" style="margin-bottom: 1.25rem;">
+        <article class="decision-card">
+          <div class="decision-kicker">Decide By Bottleneck</div>
+          <h3>If the real problem is clarity</h3>
+          <p>
+            Use this if the team still does not have a sharp answer to why early creators should care right now.
+          </p>
+          <ul class="decision-list">
+            <li>The offer feels broad or muddy</li>
+            <li>The content direction is not locked</li>
+            <li>There is no clean outreach story yet</li>
+          </ul>
+          <div class="decision-answer">Focus: Strategy + Setup</div>
+        </article>
+
+        <article class="decision-card">
+          <div class="decision-kicker">Most Likely Current Need</div>
+          <h3>If the real problem is pipeline</h3>
+          <p>
+            Use this if the team broadly knows what to say, but there are not enough creator conversations, replies,
+            or onboarding starts happening every month.
+          </p>
+          <ul class="decision-list">
+            <li>Need consistent creator education content</li>
+            <li>Need direct outreach running every week</li>
+            <li>Need a real recruiting loop, not scattered effort</li>
+          </ul>
+          <div class="decision-answer">Focus: Content + Outreach</div>
+        </article>
+
+        <article class="decision-card">
+          <div class="decision-kicker">Only After Early Traction</div>
+          <h3>If the real problem is proof and trust</h3>
+          <p>
+            Use this if creators are already entering the funnel, but Vidyfy now needs stronger proof, better support,
+            and a more human trust layer to help the next wave convert.
+          </p>
+          <ul class="decision-list">
+            <li>Need more creator spotlights and proof assets</li>
+            <li>Need hybrid face-led trust content</li>
+            <li>Need more internal leverage and automation</li>
+          </ul>
+          <div class="decision-answer">Focus: Hybrid Growth</div>
+        </article>
+      </div>
+
+      <div class="option-grid">
+        <article class="plan-card">
+          <div class="plan-badge">Month 1 / Setup</div>
+          <div class="plan-head">
+            <div>
+              <h3>Strategy + Setup</h3>
+              <div class="plan-hours">Built to establish the foundation fast</div>
+            </div>
+            <div class="plan-price">
+              <span class="price">$3,000</span>
+              <small>per month</small>
+            </div>
+          </div>
+          <p class="plan-subtitle">
+            Best as the first month. This is where the creator pitch, content pillars, automated content look and feel,
+            and outreach foundation get built before heavier execution starts.
+          </p>
+
+          <div class="focus-row">
+            <span class="chip">Strategy</span>
+            <span class="chip">Content system</span>
+            <span class="chip">Outreach foundation</span>
+          </div>
+
+          <div class="split-label">Where the time goes</div>
+          <div class="allocation">
+            <div class="allocation-item">
+              <div class="allocation-meta"><span>Positioning + creator strategy</span><span>35%</span></div>
+              <div class="bar"><span style="width: 35%;"></span></div>
+            </div>
+            <div class="allocation-item">
+              <div class="allocation-meta"><span>IG/TikTok content look + post system</span><span>35%</span></div>
+              <div class="bar"><span style="width: 35%;"></span></div>
+            </div>
+            <div class="allocation-item">
+              <div class="allocation-meta"><span>Targeting + outreach infrastructure</span><span>20%</span></div>
+              <div class="bar"><span style="width: 20%;"></span></div>
+            </div>
+            <div class="allocation-item">
+              <div class="allocation-meta"><span>Automation + tracker setup</span><span>10%</span></div>
+              <div class="bar"><span style="width: 10%;"></span></div>
+            </div>
+          </div>
+
+          <div class="split-label">Monthly deliverables</div>
+          <ul>
+            <li>Phase-one creator growth strategy with messaging, content pillars, and channel priorities</li>
+            <li>First-look creative direction for automated IG and TikTok content</li>
+            <li>6 sample short-form concepts with hooks, scripts, and caption direction</li>
+            <li>Creator targeting criteria plus first outreach list of 40 to 60 qualified prospects</li>
+            <li>Outreach templates, follow-up structure, and simple tracking system</li>
+            <li>One end-of-month recommendation memo for what to scale next</li>
+          </ul>
+
+          <div class="callout">
+            <h3>Best use case</h3>
+            <p>Use this as the setup month if the main need is to get the strategy right, define the content system, and avoid wasting time on unfocused execution.</p>
+          </div>
+        </article>
+
+        <article class="plan-card recommended">
+          <div class="plan-badge">Core Ongoing Option</div>
+          <div class="plan-head">
+            <div>
+              <h3>Content + Outreach</h3>
+              <div class="plan-hours">Recommended ongoing monthly retainer</div>
+            </div>
+            <div class="plan-price">
+              <span class="price">$4,000</span>
+              <small>per month</small>
+            </div>
+          </div>
+          <p class="plan-subtitle">
+            Best balance of creator education, direct recruitment, and activation support once the foundation is in place.
+            This is the real phase-one engine.
+          </p>
+
+          <div class="focus-row">
+            <span class="chip">Content + outreach</span>
+            <span class="chip">Activation support</span>
+            <span class="chip">Lean systems</span>
+          </div>
+
+          <div class="split-label">Where the time goes</div>
+          <div class="allocation">
+            <div class="allocation-item">
+              <div class="allocation-meta"><span>Educational content + hook testing</span><span>40%</span></div>
+              <div class="bar"><span style="width: 40%;"></span></div>
+            </div>
+            <div class="allocation-item">
+              <div class="allocation-meta"><span>Outreach + recruiting</span><span>35%</span></div>
+              <div class="bar"><span style="width: 35%;"></span></div>
+            </div>
+            <div class="allocation-item">
+              <div class="allocation-meta"><span>Onboarding + activation</span><span>15%</span></div>
+              <div class="bar"><span style="width: 15%;"></span></div>
+            </div>
+            <div class="allocation-item">
+              <div class="allocation-meta"><span>Reporting + light ops</span><span>10%</span></div>
+              <div class="bar"><span style="width: 10%;"></span></div>
+            </div>
+          </div>
+
+          <div class="split-label">Monthly deliverables</div>
+          <ul>
+            <li>8 short-form creator education posts for Instagram and TikTok</li>
+            <li>1 monthly hook bank and light content calendar</li>
+            <li>60 to 90 qualified creator targets added or maintained in the pipeline</li>
+            <li>50 to 75 personalized outreach touches and follow-ups</li>
+            <li>4 to 6 onboarding or creator follow-up conversations</li>
+            <li>Weekly progress check-in plus monthly insights and next-step recommendations</li>
+          </ul>
+
+          <div class="callout">
+            <h3>Best use case</h3>
+            <p>Use this if the goal is to run a sustainable creator recruitment loop every month without overcommitting to too much output too early.</p>
+          </div>
+        </article>
+
+        <article class="plan-card">
+          <div class="plan-badge">Expanded / Hybrid</div>
+          <div class="plan-head">
+            <div>
+              <h3>Hybrid Growth</h3>
+              <div class="plan-hours">Best once the core engine is working</div>
+            </div>
+            <div class="plan-price">
+              <span class="price">$5,000</span>
+              <small>per month</small>
+            </div>
+          </div>
+          <p class="plan-subtitle">
+            Best if the priority is to add the hybrid trust layer, produce more visible proof, and build more internal
+            automation support around the same creator growth motion.
+          </p>
+
+          <div class="focus-row">
+            <span class="chip">Hybrid trust layer</span>
+            <span class="chip">Proof content</span>
+            <span class="chip">Automation build-out</span>
+          </div>
+
+          <div class="split-label">Where the time goes</div>
+          <div class="allocation">
+            <div class="allocation-item">
+              <div class="allocation-meta"><span>Educational content + proof</span><span>35%</span></div>
+              <div class="bar"><span style="width: 35%;"></span></div>
+            </div>
+            <div class="allocation-item">
+              <div class="allocation-meta"><span>Outreach + recruiting</span><span>30%</span></div>
+              <div class="bar"><span style="width: 30%;"></span></div>
+            </div>
+            <div class="allocation-item">
+              <div class="allocation-meta"><span>Hybrid face-led or trust content</span><span>15%</span></div>
+              <div class="bar"><span style="width: 15%;"></span></div>
+            </div>
+            <div class="allocation-item">
+              <div class="allocation-meta"><span>Onboarding + creator success</span><span>10%</span></div>
+              <div class="bar"><span style="width: 10%;"></span></div>
+            </div>
+            <div class="allocation-item">
+              <div class="allocation-meta"><span>Automation + systems</span><span>10%</span></div>
+              <div class="bar"><span style="width: 10%;"></span></div>
+            </div>
+          </div>
+
+          <div class="split-label">Monthly deliverables</div>
+          <ul>
+            <li>10 short-form creator education posts for Instagram and TikTok</li>
+            <li>2 proof assets, creator spotlights, or trust-building hybrid pieces</li>
+            <li>80 to 110 qualified creator targets in a maintained outreach pipeline</li>
+            <li>70 to 100 personalized outreach touches and structured follow-up</li>
+            <li>4 to 6 onboarding or creator success conversations</li>
+            <li>Expanded internal templates, tracker upgrades, prompt packs, and automation support</li>
+            <li>Weekly operating summary plus monthly optimization roadmap</li>
+          </ul>
+
+          <div class="callout">
+            <h3>Best use case</h3>
+            <p>Use this if Vidyfy wants the stronger trust layer, more proof content, and better internal leverage without jumping to a much bigger retainer.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Quick Comparison</h2>
+      <p class="section-intro">
+        The options are intentionally staged. The real difference is whether Vidyfy needs setup only, a sustainable
+        ongoing creator engine, or a more built-out hybrid system with stronger internal leverage.
+      </p>
+
+      <div class="comparison-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Strategy + Setup</th>
+              <th>Content + Outreach</th>
+              <th>Hybrid Growth</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Monthly retainer</th>
+              <td>$3,000</td>
+              <td>$4,000</td>
+              <td>$5,000</td>
+            </tr>
+            <tr>
+              <th>Best timing</th>
+              <td>First month only</td>
+              <td>Best ongoing monthly option</td>
+              <td>Best after early traction starts to appear</td>
+            </tr>
+            <tr>
+              <th>Main emphasis</th>
+              <td>Strategy, creator pitch, automated content look and outreach setup</td>
+              <td>Run the actual creator content and recruiting engine</td>
+              <td>Add hybrid trust content, proof, and stronger systems support</td>
+            </tr>
+            <tr>
+              <th>Choose this if</th>
+              <td>The team needs a clear creator story and a better setup before execution</td>
+              <td>The main gap is not enough creator conversations and not enough consistent output</td>
+              <td>The base engine is running, but Vidyfy needs more trust, proof, and internal leverage</td>
+            </tr>
+            <tr>
+              <th>Content output</th>
+              <td>6 sample concepts and visual direction</td>
+              <td>8 short-form posts</td>
+              <td>10 short-form posts + 2 proof assets</td>
+            </tr>
+            <tr>
+              <th>Recruiting intensity</th>
+              <td>Foundational list building and outreach setup</td>
+              <td>Steady monthly recruiting and follow-up</td>
+              <td>Steady recruiting plus stronger proof and support layers</td>
+            </tr>
+            <tr>
+              <th>Automation layer</th>
+              <td>Tracker, templates, and basic system design</td>
+              <td>Light ops, tracker maintenance, repeatable templates</td>
+              <td>Stronger templates, prompt packs, and internal leverage</td>
+            </tr>
+            <tr>
+              <th>Recommended if</th>
+              <td>You want to start clean and avoid wasted execution</td>
+              <td>You want the best balance of scope and price</td>
+              <td>You want more proof and a stronger hybrid presence</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What Success Looks Like</h2>
+      <p class="section-intro">
+        These are not hard promises. They are the signals the work should be improving if the phase-one strategy is actually working.
+      </p>
+
+      <div class="metric-grid">
+        <article class="metric">
+          <span class="metric-number">01</span>
+          <h4>Qualified creators contacted</h4>
+          <p>Curated creators who actually fit the platform, not inflated lead lists.</p>
+        </article>
+        <article class="metric">
+          <span class="metric-number">02</span>
+          <h4>Reply rate</h4>
+          <p>Whether the invite angle, proof, and creator pitch are strong enough to start real conversations.</p>
+        </article>
+        <article class="metric">
+          <span class="metric-number">03</span>
+          <h4>Onboarding conversations</h4>
+          <p>Signals that early creators see enough value to move beyond passive curiosity.</p>
+        </article>
+        <article class="metric">
+          <span class="metric-number">04</span>
+          <h4>First-post rate</h4>
+          <p>The clearest sign that signup friction is low enough and the onboarding support is working.</p>
+        </article>
+        <article class="metric">
+          <span class="metric-number">05</span>
+          <h4>Repeat-post proof</h4>
+          <p>If creators come back and post again, the platform starts to become usable proof instead of a pitch deck idea.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Recommendation</h2>
+      <p class="section-intro">
+        The cleanest structure is usually staged. Use the first month to get the system right, then move into the
+        ongoing engine. Only step into the hybrid layer once the base motion is actually working.
+      </p>
+
+      <div class="footer-note">
+        <p><strong>Recommended path:</strong> start with <strong>Strategy + Setup</strong> at <strong>$3,000</strong> for month one, then move into <strong>Content + Outreach</strong> at <strong>$4,000/month</strong>. Move to <strong>Hybrid Growth</strong> at <strong>$5,000/month</strong> only if Vidyfy wants the extra trust layer, proof content, and internal systems support.</p>
+        <p><strong>Decision shortcut:</strong> if they are still debating what to say, choose setup. If they know what to say but need creator conversations, choose content plus outreach. If creators are entering but not enough trust or proof exists yet, choose hybrid growth.</p>
+        <p><strong>Pricing note:</strong> This version is more honest for the stage. The lower pricing works only if the deliverables stay tight, the process gets leveraged through templates and automation, and the scope does not quietly turn into a full marketing department.</p>
+        <p><strong>Scope note:</strong> Creator incentive budget, paid media, platform ad spend, and heavy daily community moderation are not included in these numbers.</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
