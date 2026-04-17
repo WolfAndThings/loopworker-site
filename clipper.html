@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+    <script defer src="/site-pages.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/site-pages.css">
+    <title>Video Clipper — Cut Clips Instantly | LoopWorker</title>
+    <meta name="description" content="Upload a video, paste timecodes or let AI find the best moments. Download clips instantly. Free tool from LoopWorker.">
+    <link rel="canonical" href="https://www.loopworker.com/clipper.html">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+
+    <style>
+        /* Clipper-specific styles */
+        .clipper-container { max-width: 720px; margin: 0 auto; }
+
+        .drop-zone {
+            border: 2px dashed rgba(255,255,255,0.12);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+            background: #0E0E0E;
+        }
+        .drop-zone:hover, .drop-zone.dragover {
+            border-color: rgba(255,255,255,0.35);
+            background: #111;
+        }
+        .drop-zone-label { color: #A7A7A7; font-size: 1rem; }
+        .drop-zone-label strong { color: #FFF; display: block; margin-bottom: 0.4rem; font-size: 1.1rem; }
+        .drop-zone-formats { color: #6F6F6F; font-size: 0.78rem; margin-top: 0.6rem; }
+        .drop-zone input[type="file"] { display: none; }
+
+        .divider {
+            text-align: center; color: #6F6F6F; font-size: 0.78rem;
+            margin: 1.2rem 0; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700;
+        }
+
+        .gdrive-row {
+            display: flex; gap: 0.6rem;
+        }
+        .gdrive-row input {
+            flex: 1; background: #111; border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px; padding: 0.75rem 1rem; color: #FFF; font-size: 0.92rem;
+            font-family: inherit; outline: none; transition: border-color 0.2s;
+        }
+        .gdrive-row input:focus { border-color: rgba(255,255,255,0.25); }
+        .gdrive-row input::placeholder { color: #6F6F6F; }
+
+        .btn-sm {
+            background: #FFF; color: #0A0A0A; border: none; border-radius: 10px;
+            padding: 0.75rem 1.4rem; font-weight: 700; font-size: 0.85rem;
+            text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .btn-sm:hover { background: #F0F0F0; transform: translateY(-1px); }
+        .btn-sm:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+        /* Progress bar */
+        .progress-wrap {
+            margin-top: 1.2rem; display: none;
+        }
+        .progress-wrap.visible { display: block; }
+        .progress-bar-outer {
+            background: #1A1A1A; border-radius: 6px; height: 6px; overflow: hidden;
+        }
+        .progress-bar-inner {
+            background: #FFF; height: 100%; width: 0%; border-radius: 6px;
+            transition: width 0.3s ease;
+        }
+        .progress-label {
+            color: #A7A7A7; font-size: 0.82rem; margin-top: 0.5rem; text-align: center;
+        }
+
+        /* Mode selector */
+        .mode-selector {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem;
+        }
+        .mode-card {
+            background: #0E0E0E; border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 14px; padding: 1.6rem; cursor: pointer;
+            transition: border-color 0.2s, transform 0.15s; text-align: center;
+        }
+        .mode-card:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-1px); }
+        .mode-card.selected { border-color: rgba(255,255,255,0.35); }
+        .mode-card h3 { color: #FFF; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem; }
+        .mode-card p { color: #A7A7A7; font-size: 0.88rem; line-height: 1.4; }
+
+        /* Panels */
+        .panel { display: none; margin-top: 1.5rem; }
+        .panel.active { display: block; }
+
+        .timecode-input {
+            width: 100%; min-height: 160px; background: #111;
+            border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;
+            padding: 1rem; color: #FFF; font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.88rem; line-height: 1.6; resize: vertical; outline: none;
+            transition: border-color 0.2s;
+        }
+        .timecode-input:focus { border-color: rgba(255,255,255,0.25); }
+        .timecode-input::placeholder { color: #6F6F6F; }
+
+        /* AI controls */
+        .ai-controls { display: flex; flex-direction: column; gap: 1.2rem; }
+        .control-group label {
+            display: block; color: #A7A7A7; font-size: 0.82rem;
+            text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;
+            margin-bottom: 0.6rem;
+        }
+        .slider-wrap { position: relative; }
+        .slider-wrap input[type="range"] {
+            -webkit-appearance: none; width: 100%; height: 4px;
+            background: #1A1A1A; border-radius: 4px; outline: none;
+        }
+        .slider-wrap input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none; width: 20px; height: 20px;
+            background: #FFF; border-radius: 50%; cursor: pointer;
+        }
+        .slider-labels {
+            display: flex; justify-content: space-between;
+            margin-top: 0.5rem; color: #6F6F6F; font-size: 0.75rem;
+        }
+        .slider-value {
+            color: #FFF; font-size: 1rem; font-weight: 700;
+            text-align: center; margin-top: 0.4rem;
+        }
+
+        .action-row {
+            margin-top: 1.2rem; display: flex; gap: 0.8rem; align-items: center;
+        }
+        .btn-action {
+            background: #FFF; color: #0A0A0A; border: none; border-radius: 999px;
+            padding: 0.95rem 2rem; font-weight: 700; font-size: 0.88rem;
+            text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .btn-action:hover { background: #F0F0F0; transform: translateY(-1px); }
+        .btn-action:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+        /* Results */
+        .results { margin-top: 2rem; }
+        .clip-card {
+            background: #0E0E0E; border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px; padding: 1rem 1.2rem; margin-bottom: 0.8rem;
+        }
+        .clip-card-header {
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .clip-card-title { color: #FFF; font-weight: 700; font-size: 0.95rem; }
+        .clip-card-time { color: #6F6F6F; font-size: 0.82rem; font-family: monospace; }
+        .clip-card-reason { color: #A7A7A7; font-size: 0.85rem; margin-top: 0.4rem; line-height: 1.4; }
+
+        .download-row { margin-top: 1.5rem; text-align: center; }
+        .btn-download {
+            display: inline-block; background: #FFF; color: #0A0A0A; border: none;
+            border-radius: 999px; padding: 1rem 2.5rem; font-weight: 700;
+            font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em;
+            cursor: pointer; text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+        }
+        .btn-download:hover { background: #F0F0F0; transform: translateY(-1px); }
+        .expiry-note {
+            color: #6F6F6F; font-size: 0.8rem; margin-top: 0.8rem;
+        }
+
+        /* Status messages */
+        .status-msg {
+            text-align: center; padding: 2rem; color: #A7A7A7; font-size: 0.95rem;
+        }
+        .status-msg .spinner {
+            display: inline-block; width: 20px; height: 20px;
+            border: 2px solid rgba(255,255,255,0.15); border-top-color: #FFF;
+            border-radius: 50%; animation: spin 0.8s linear infinite;
+            margin-right: 0.6rem; vertical-align: middle;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .error-msg { color: #E55; text-align: center; margin-top: 1rem; font-size: 0.88rem; }
+
+        /* Hidden helper */
+        .hidden { display: none !important; }
+
+        @media (max-width: 900px) {
+            .mode-selector { grid-template-columns: 1fr; }
+            .gdrive-row { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">LoopWorker</a>
+            <ul class="nav-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/#audit-form" class="nav-cta" data-track="Clipper Nav Audit CTA">Get Free Audit</a></li>
+            </ul>
+            <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="/services.html">Services</a>
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/case-studies.html">Case Studies</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#audit-form" class="nav-cta" data-track="Clipper Mobile Audit CTA">Get Free Audit</a>
+    </div>
+
+    <main>
+        <!-- HERO -->
+        <section class="page-hero">
+            <div class="container clipper-container" style="text-align:center; padding-top:9rem; padding-bottom:3rem;">
+                <span class="eyebrow">Free Tool</span>
+                <h1>Cut clips from any video in seconds.</h1>
+                <p style="color:#A7A7A7; max-width:560px; margin:1rem auto 0;">Upload a video or paste a Google Drive link. Paste your timecodes or let AI find the best moments. Download instantly.</p>
+            </div>
+        </section>
+
+        <!-- UPLOAD -->
+        <section id="step-upload">
+            <div class="container clipper-container">
+                <div class="drop-zone" id="dropZone">
+                    <div class="drop-zone-label">
+                        <strong>Drop a video or click to upload</strong>
+                        Upload from your computer
+                    </div>
+                    <div class="drop-zone-formats">.mp4 .mov .mkv .webm — max 2GB</div>
+                    <input type="file" id="fileInput" accept=".mp4,.mov,.mkv,.webm,.avi">
+                </div>
+
+                <div class="divider">or</div>
+
+                <div class="gdrive-row">
+                    <input type="text" id="gdriveInput" placeholder="Paste a Google Drive link (must be set to 'Anyone with the link')">
+                    <button class="btn-sm" id="gdriveBtn">Load</button>
+                </div>
+
+                <div class="progress-wrap" id="progressWrap">
+                    <div class="progress-bar-outer">
+                        <div class="progress-bar-inner" id="progressBar"></div>
+                    </div>
+                    <div class="progress-label" id="progressLabel">Uploading...</div>
+                </div>
+
+                <div class="error-msg hidden" id="uploadError"></div>
+            </div>
+        </section>
+
+        <!-- MODE SELECTOR -->
+        <section id="step-mode" class="hidden">
+            <div class="container clipper-container">
+                <div class="mode-selector">
+                    <div class="mode-card" id="modeManual" data-track="Clipper Mode Manual">
+                        <h3>Paste Timecodes</h3>
+                        <p>Already have your timecodes? Paste them in any format — we'll find the start and end times.</p>
+                    </div>
+                    <div class="mode-card" id="modeAI" data-track="Clipper Mode AI">
+                        <h3>AI-Assisted</h3>
+                        <p>Let AI analyze the transcript and find the strongest, most hooky moments automatically.</p>
+                    </div>
+                </div>
+
+                <!-- Manual panel -->
+                <div class="panel" id="panelManual">
+                    <textarea class="timecode-input" id="timecodeInput" placeholder="Paste timecodes in any format. Examples:&#10;&#10;00:29:11:19 - 00:30:05:08&#10;00:31:13:23 - 00:32:11:10&#10;&#10;Or paste your full edit notes — we'll find the time pairs."></textarea>
+                    <div class="action-row">
+                        <button class="btn-action" id="btnCutManual">Cut Clips</button>
+                    </div>
+                </div>
+
+                <!-- AI panel -->
+                <div class="panel" id="panelAI">
+                    <div class="ai-controls">
+                        <div class="control-group">
+                            <label>Clip Length</label>
+                            <div class="slider-wrap">
+                                <input type="range" id="clipLengthSlider" min="0" max="5" step="1" value="1">
+                                <div class="slider-labels">
+                                    <span>30s</span><span>60s</span><span>90s</span><span>2m</span><span>3m</span><span>5m</span>
+                                </div>
+                            </div>
+                            <div class="slider-value" id="clipLengthValue">60 seconds</div>
+                        </div>
+                        <div class="control-group">
+                            <label>Number of Clips</label>
+                            <div style="color:#FFF; font-size:1rem; font-weight:700;">Top 5</div>
+                        </div>
+                    </div>
+                    <div class="action-row">
+                        <button class="btn-action" id="btnCutAI">Find Best Clips</button>
+                    </div>
+                </div>
+
+                <div class="error-msg hidden" id="clipError"></div>
+            </div>
+        </section>
+
+        <!-- PROCESSING -->
+        <section id="step-processing" class="hidden">
+            <div class="container clipper-container">
+                <div class="status-msg">
+                    <span class="spinner"></span>
+                    <span id="processingLabel">Cutting clips...</span>
+                </div>
+                <div class="progress-wrap visible">
+                    <div class="progress-bar-outer">
+                        <div class="progress-bar-inner" id="processingBar"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESULTS -->
+        <section id="step-results" class="hidden">
+            <div class="container clipper-container">
+                <div class="results" id="clipResults"></div>
+                <div class="download-row">
+                    <a class="btn-download" id="downloadBtn" href="#" data-track="Clipper Download">Download All (.zip)</a>
+                    <div class="expiry-note">Files auto-delete in <span id="expiryTime">60</span> minutes</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <div class="footer-brand">LoopWorker</div>
+                <div class="footer-meta">Helping businesses turn content into customers.</div>
+            </div>
+            <ul class="footer-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/free-resources.html">Free Resources</a></li>
+            </ul>
+            <div class="footer-contact">
+                <a href="mailto:alex@loopworker.com">alex@loopworker.com</a><br>
+                <a href="https://instagram.com/loop.worker" target="_blank" rel="noopener">@loop.worker</a>
+                <div class="footer-legal"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    (function() {
+        // ── Config ──
+        const API = 'https://clipper-api.loopworker.com';
+        // For local dev, uncomment:
+        // const API = 'http://localhost:3333';
+
+        const CLIP_LENGTHS = [30, 60, 90, 120, 180, 300];
+
+        // ── Elements ──
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+        const gdriveInput = document.getElementById('gdriveInput');
+        const gdriveBtn = document.getElementById('gdriveBtn');
+        const progressWrap = document.getElementById('progressWrap');
+        const progressBar = document.getElementById('progressBar');
+        const progressLabel = document.getElementById('progressLabel');
+        const uploadError = document.getElementById('uploadError');
+
+        const stepUpload = document.getElementById('step-upload');
+        const stepMode = document.getElementById('step-mode');
+        const stepProcessing = document.getElementById('step-processing');
+        const stepResults = document.getElementById('step-results');
+
+        const modeManual = document.getElementById('modeManual');
+        const modeAI = document.getElementById('modeAI');
+        const panelManual = document.getElementById('panelManual');
+        const panelAI = document.getElementById('panelAI');
+
+        const timecodeInput = document.getElementById('timecodeInput');
+        const btnCutManual = document.getElementById('btnCutManual');
+        const btnCutAI = document.getElementById('btnCutAI');
+        const clipError = document.getElementById('clipError');
+
+        const clipLengthSlider = document.getElementById('clipLengthSlider');
+        const clipLengthValue = document.getElementById('clipLengthValue');
+
+        const processingLabel = document.getElementById('processingLabel');
+        const processingBar = document.getElementById('processingBar');
+
+        const clipResults = document.getElementById('clipResults');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const expiryTime = document.getElementById('expiryTime');
+
+        let currentJobId = null;
+        let pollInterval = null;
+        let jobCreatedAt = null;
+
+        // ── Helpers ──
+        function showError(el, msg) {
+            el.textContent = msg;
+            el.classList.remove('hidden');
+        }
+        function hideError(el) { el.classList.add('hidden'); }
+
+        function showStep(step) {
+            [stepUpload, stepMode, stepProcessing, stepResults].forEach(s => s.classList.add('hidden'));
+            step.classList.remove('hidden');
+        }
+
+        function setProgress(bar, wrap, pct, label) {
+            bar.style.width = pct + '%';
+            if (wrap) wrap.classList.add('visible');
+            if (label && typeof label === 'string') {
+                const labelEl = bar.closest('section')?.querySelector('.progress-label');
+                if (labelEl) labelEl.textContent = label;
+            }
+        }
+
+        function formatClipLength(val) {
+            const secs = CLIP_LENGTHS[val];
+            if (secs < 60) return secs + ' seconds';
+            if (secs === 60) return '1 minute';
+            if (secs < 120) return secs + ' seconds';
+            return (secs / 60) + ' minutes';
+        }
+
+        // ── Upload: Drag & Drop ─��
+        dropZone.addEventListener('click', () => fileInput.click());
+
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+        dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            if (e.dataTransfer.files.length) uploadFile(e.dataTransfer.files[0]);
+        });
+
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length) uploadFile(fileInput.files[0]);
+        });
+
+        // ── Upload: File ──
+        function uploadFile(file) {
+            hideError(uploadError);
+            progressWrap.classList.add('visible');
+            progressLabel.textContent = 'Uploading...';
+            progressBar.style.width = '0%';
+
+            const xhr = new XMLHttpRequest();
+            const formData = new FormData();
+            formData.append('file', file);
+
+            xhr.upload.addEventListener('progress', (e) => {
+                if (e.lengthComputable) {
+                    const pct = Math.round((e.loaded / e.total) * 100);
+                    progressBar.style.width = pct + '%';
+                    const mb = (e.loaded / 1048576).toFixed(0);
+                    const totalMb = (e.total / 1048576).toFixed(0);
+                    progressLabel.textContent = `Uploading... ${mb}MB / ${totalMb}MB (${pct}%)`;
+                }
+            });
+
+            xhr.addEventListener('load', () => {
+                try {
+                    const data = JSON.parse(xhr.responseText);
+                    if (xhr.status >= 400) {
+                        showError(uploadError, data.error || 'Upload failed');
+                        return;
+                    }
+                    currentJobId = data.jobId;
+                    jobCreatedAt = Date.now();
+                    progressLabel.textContent = 'Transcribing...';
+                    startPolling();
+                } catch (e) {
+                    showError(uploadError, 'Upload failed — unexpected response');
+                }
+            });
+
+            xhr.addEventListener('error', () => showError(uploadError, 'Upload failed — network error'));
+            xhr.open('POST', API + '/upload');
+            xhr.send(formData);
+        }
+
+        // ── Upload: Google Drive ──
+        gdriveBtn.addEventListener('click', async () => {
+            const url = gdriveInput.value.trim();
+            if (!url) return;
+            hideError(uploadError);
+            gdriveBtn.disabled = true;
+            progressWrap.classList.add('visible');
+            progressLabel.textContent = 'Loading from Google Drive...';
+            progressBar.style.width = '0%';
+
+            try {
+                const res = await fetch(API + '/upload-gdrive', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url })
+                });
+                const data = await res.json();
+                if (!res.ok) throw new Error(data.error || 'Failed');
+                currentJobId = data.jobId;
+                jobCreatedAt = Date.now();
+                startPolling();
+            } catch (e) {
+                showError(uploadError, e.message);
+            } finally {
+                gdriveBtn.disabled = false;
+            }
+        });
+
+        // ── Polling ──
+        function startPolling() {
+            if (pollInterval) clearInterval(pollInterval);
+            pollInterval = setInterval(pollStatus, 2500);
+            pollStatus();
+        }
+
+        async function pollStatus() {
+            if (!currentJobId) return;
+
+            try {
+                const res = await fetch(API + '/status/' + currentJobId);
+                const data = await res.json();
+
+                if (data.status === 'error') {
+                    clearInterval(pollInterval);
+                    showError(uploadError, data.error || 'Something went wrong');
+                    return;
+                }
+
+                if (data.status === 'downloading' || data.status === 'uploading') {
+                    progressBar.style.width = (data.progress || 0) + '%';
+                    progressLabel.textContent = data.status === 'downloading'
+                        ? 'Downloading from Google Drive...'
+                        : 'Uploading...';
+                }
+
+                if (data.status === 'transcribing') {
+                    progressBar.style.width = (data.progress || 0) + '%';
+                    progressLabel.textContent = `Transcribing... ${data.progress || 0}%`;
+                }
+
+                if (data.status === 'ready') {
+                    clearInterval(pollInterval);
+                    progressWrap.classList.remove('visible');
+                    showStep(stepMode);
+                }
+
+                if (data.status === 'clipping') {
+                    showStep(stepProcessing);
+                    processingBar.style.width = (data.progress || 50) + '%';
+                    processingLabel.textContent = 'Cutting clips...';
+                }
+
+                if (data.status === 'done') {
+                    clearInterval(pollInterval);
+                    showResults(data);
+                }
+            } catch (e) {
+                // Network error, keep polling
+            }
+        }
+
+        // ── Mode Selection ──
+        modeManual.addEventListener('click', () => {
+            modeManual.classList.add('selected');
+            modeAI.classList.remove('selected');
+            panelManual.classList.add('active');
+            panelAI.classList.remove('active');
+        });
+
+        modeAI.addEventListener('click', () => {
+            modeAI.classList.add('selected');
+            modeManual.classList.remove('selected');
+            panelAI.classList.add('active');
+            panelManual.classList.remove('active');
+        });
+
+        // ── Clip Length Slider ──
+        clipLengthSlider.addEventListener('input', () => {
+            clipLengthValue.textContent = formatClipLength(clipLengthSlider.value);
+        });
+
+        // ── Cut: Manual ──
+        btnCutManual.addEventListener('click', async () => {
+            const tc = timecodeInput.value.trim();
+            if (!tc) return;
+            hideError(clipError);
+            btnCutManual.disabled = true;
+
+            try {
+                const res = await fetch(API + '/clip/manual', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ jobId: currentJobId, timecodes: tc })
+                });
+                const data = await res.json();
+                if (!res.ok) throw new Error(data.error || 'Failed');
+
+                showStep(stepProcessing);
+                processingLabel.textContent = `Cutting ${data.clipCount || ''} clips...`;
+                startPolling();
+            } catch (e) {
+                showError(clipError, e.message);
+            } finally {
+                btnCutManual.disabled = false;
+            }
+        });
+
+        // ── Cut: AI ──
+        btnCutAI.addEventListener('click', async () => {
+            hideError(clipError);
+            btnCutAI.disabled = true;
+
+            const clipLength = CLIP_LENGTHS[clipLengthSlider.value];
+
+            try {
+                const res = await fetch(API + '/clip/ai', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        jobId: currentJobId,
+                        clipLength,
+                        clipCount: 5
+                    })
+                });
+                const data = await res.json();
+                if (!res.ok) throw new Error(data.error || 'Failed');
+
+                showStep(stepProcessing);
+                processingLabel.textContent = 'AI is analyzing your transcript...';
+                startPolling();
+            } catch (e) {
+                showError(clipError, e.message);
+            } finally {
+                btnCutAI.disabled = false;
+            }
+        });
+
+        // ── Results ──
+        function showResults(data) {
+            showStep(stepResults);
+
+            clipResults.innerHTML = '';
+            if (data.clips) {
+                data.clips.forEach(clip => {
+                    const card = document.createElement('div');
+                    card.className = 'clip-card';
+                    card.innerHTML = `
+                        <div class="clip-card-header">
+                            <span class="clip-card-title">${clip.title}</span>
+                            <span class="clip-card-time">${clip.start} — ${clip.end}</span>
+                        </div>
+                        ${clip.reason ? `<div class="clip-card-reason">${clip.reason}</div>` : ''}
+                    `;
+                    clipResults.appendChild(card);
+                });
+            }
+
+            downloadBtn.href = API + data.downloadUrl;
+            downloadBtn.setAttribute('download', 'clips.zip');
+
+            // Expiry countdown
+            updateExpiry();
+        }
+
+        function updateExpiry() {
+            if (!jobCreatedAt) return;
+            const elapsed = Date.now() - jobCreatedAt;
+            const remaining = Math.max(0, Math.floor((3600000 - elapsed) / 60000));
+            expiryTime.textContent = remaining;
+            if (remaining > 0) setTimeout(updateExpiry, 60000);
+        }
+    })();
+    </script>
+</body>
+</html>
