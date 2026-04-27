@@ -38,11 +38,17 @@
         a:hover { text-decoration: underline; }
         .top-link { display: inline-block; margin-bottom: 2rem; font-size: 0.85rem; color: #888; }
         .muted { color: #777; }
+        .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+        .top-bar .book-cta { display: inline-block; background: #FFF; color: #0A0A0A; padding: 0.5rem 1.1rem; border-radius: 4px; font-weight: 600; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; }
+        .top-bar .book-cta:hover { background: #F0F0F0; text-decoration: none; }
     </style>
 </head>
 <body>
     <div class="container">
-        <a class="top-link" href="/">← Back to LoopWorker</a>
+        <div class="top-bar">
+            <a class="top-link" href="/" style="margin-bottom:0;">← Back to LoopWorker</a>
+            <a class="book-cta" href="/book.html">Book a Call</a>
+        </div>
         <div class="eyebrow">Privacy Policy</div>
         <h1>Privacy Policy</h1>
         <p class="muted">Effective March 29, 2026</p>

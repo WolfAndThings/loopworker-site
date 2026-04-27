@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+    <script defer src="/site-pages.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/site-pages.css">
+    <title>Book a Brand Discovery Call | LoopWorker</title>
+    <meta name="description" content="Free discovery call. We look at your current content, identify the conversion gaps, and show you what your brand could look like with a directed AI photography system.">
+    <link rel="canonical" href="https://www.loopworker.com/book.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.loopworker.com/book.html">
+    <meta property="og:title" content="Book a Brand Discovery Call | LoopWorker">
+    <meta property="og:description" content="Free brand walkthrough — see exactly how your social media content could convert customers, not just earn views.">
+    <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+
+    <style>
+        .booking-shell {
+            padding: 8rem 1.5rem 6rem;
+            background: linear-gradient(180deg, #080808 0%, #0a0a0a 100%);
+        }
+
+        .booking-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            width: min(1100px, calc(100% - 3rem));
+            margin: 0 auto;
+        }
+
+        @media (max-width: 880px) {
+            .booking-grid { grid-template-columns: 1fr; gap: 3rem; }
+        }
+
+        .booking-copy h1 {
+            font-size: clamp(2rem, 4.4vw, 3.4rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .booking-copy .eyebrow {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: #888;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .booking-copy .lead {
+            font-size: 1.15rem;
+            color: #C7C7C7;
+            margin-bottom: 2rem;
+            max-width: 480px;
+        }
+
+        .promise-list {
+            list-style: none;
+            display: grid;
+            gap: 1.1rem;
+            margin: 2rem 0 2.5rem;
+        }
+
+        .promise-list li {
+            position: relative;
+            padding-left: 2rem;
+            color: #A7A7A7;
+            font-size: 0.98rem;
+        }
+
+        .promise-list li::before {
+            content: '◉';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #6CC57A;
+            font-size: 0.85rem;
+            line-height: 1.7;
+        }
+
+        .promise-list li strong {
+            color: #FFF;
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+
+        .what-not {
+            margin-top: 3rem;
+            padding: 1.4rem 1.6rem;
+            border-left: 2px solid rgba(255,255,255,0.18);
+            background: rgba(255,255,255,0.02);
+            color: #999;
+            font-size: 0.9rem;
+            max-width: 480px;
+        }
+
+        .what-not strong {
+            color: #FFF;
+            display: block;
+            font-weight: 600;
+            font-size: 0.78rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .booking-form-shell {
+            background: rgba(255,255,255,0.025);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 2.4rem;
+        }
+
+        .booking-form-shell h2 {
+            font-size: 1.45rem;
+            margin-bottom: 0.5rem;
+            color: #FFF;
+        }
+
+        .booking-form-shell .form-sub {
+            color: #888;
+            font-size: 0.92rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .field {
+            display: block;
+            margin-bottom: 1.3rem;
+        }
+
+        .field label {
+            display: block;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #888;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .field input,
+        .field select,
+        .field textarea {
+            width: 100%;
+            background: #0F0F0F;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            padding: 0.85rem 1rem;
+            color: #FFF;
+            font-family: inherit;
+            font-size: 0.97rem;
+            transition: border-color 0.2s ease;
+        }
+
+        .field input:focus,
+        .field select:focus,
+        .field textarea:focus {
+            outline: none;
+            border-color: rgba(255,255,255,0.32);
+        }
+
+        .field textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            display: inline-block;
+            width: 100%;
+            background: #FFF;
+            color: #0A0A0A;
+            border: 0;
+            padding: 1rem 1.6rem;
+            border-radius: 6px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 0.15s ease, background 0.15s ease;
+            font-family: inherit;
+            margin-top: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            background: #F0F0F0;
+            transform: translateY(-1px);
+        }
+
+        .booking-direct {
+            margin-top: 1.4rem;
+            font-size: 0.85rem;
+            color: #777;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .booking-direct a {
+            color: #BBB;
+            text-decoration: underline;
+            text-decoration-color: rgba(255,255,255,0.25);
+            text-underline-offset: 3px;
+        }
+
+        .booking-direct a:hover { color: #FFF; }
+
+        /* Cal.com embed alternative */
+        .cal-embed {
+            background: #0F0F0F;
+            border: 1px dashed rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 1.4rem;
+            margin-bottom: 1.8rem;
+            color: #888;
+            font-size: 0.88rem;
+            text-align: center;
+        }
+
+        .cal-embed strong {
+            display: block;
+            color: #FFF;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            font-size: 0.92rem;
+        }
+
+        /* Social proof strip */
+        .proof-strip {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 2.5rem 1.5rem;
+            background: rgba(255,255,255,0.015);
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            width: min(900px, 100%);
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        @media (max-width: 720px) {
+            .proof-grid { grid-template-columns: repeat(2, 1fr); gap: 1.6rem; }
+        }
+
+        .proof-stat .num {
+            display: block;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #FFF;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .proof-stat .label {
+            font-size: 0.74rem;
+            color: #888;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .faq-strip {
+            padding: 5rem 1.5rem;
+        }
+
+        .faq-grid {
+            width: min(800px, 100%);
+            margin: 0 auto;
+            display: grid;
+            gap: 1.4rem;
+        }
+
+        .faq-grid h2 {
+            margin-bottom: 1rem;
+        }
+
+        .faq-item {
+            padding: 1.2rem 1.4rem;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 8px;
+        }
+
+        .faq-item h3 {
+            font-size: 1rem;
+            color: #FFF;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+        }
+
+        .faq-item p {
+            color: #A7A7A7;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .footer-cta {
+            text-align: center;
+            padding: 5rem 1.5rem 6rem;
+        }
+
+        .footer-cta h2 {
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-cta p {
+            margin: 0 auto 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">LoopWorker</a>
+            <ul class="nav-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/book.html" class="nav-cta" data-track="Book Nav Self CTA">Book a Call</a></li>
+            </ul>
+            <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="/services.html">Services</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/case-studies.html">Case Studies</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/blog/">Blog</a>
+        <a href="/book.html" class="nav-cta" data-track="Book Mobile Self CTA">Book a Call</a>
+    </div>
+
+    <main>
+        <section class="booking-shell">
+            <div class="booking-grid">
+                <div class="booking-copy">
+                    <span class="eyebrow">Discovery Call · Free</span>
+                    <h1>Show me your page. I'll tell you why it isn't bringing in customers.</h1>
+                    <p class="lead">Most local businesses have decent content and almost no customer action. The reason isn't the photos. It's the structure underneath them. Book a free discovery call and I'll show you exactly what's missing — live, on the call.</p>
+
+                    <ul class="promise-list">
+                        <li><strong>A 5-point audit of your current content</strong>What's working, what's costing you customers, what's invisible to algorithms.</li>
+                        <li><strong>Your brand re-imagined in 3 sample shots</strong>I'll generate live during the call so you see the difference, not just hear about it.</li>
+                        <li><strong>A specific path forward</strong>If we're a fit, you'll know the cost and the timeline. If we're not, you'll leave with a stronger plan anyway.</li>
+                    </ul>
+
+                    <div class="what-not">
+                        <strong>What this is NOT</strong>
+                        A pitch call dressed up as a discovery call. If it's not the right fit on either side, we both move on. I'd rather pass than sell you something that won't move your business.
+                    </div>
+                </div>
+
+                <div class="booking-form-shell">
+                    <h2>Pick a time.</h2>
+                    <p class="form-sub">Free discovery call. Zoom. No prep needed — just have your IG or website handy.</p>
+
+                    <!-- Calendly inline widget -->
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/loopworker/30min?hide_gdpr_banner=1&background_color=0f0f0f&text_color=d4d4d4&primary_color=ffffff" style="min-width:320px;height:680px;margin-bottom:1rem;border-radius:8px;overflow:hidden;"></div>
+                    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+                    <p class="form-sub" style="margin-top:1.6rem;">Or fill this form if you'd rather have me send 3 time options:</p>
+
+                    <form id="bookingForm" action="https://formspree.io/f/xbdpddrn" method="POST" data-track="Book Form Submit">
+                        <input type="hidden" name="_subject" value="New Booking Request — loopworker.com/book">
+                        <input type="hidden" name="_next" value="https://www.loopworker.com/thank-you.html?source=book">
+                        <input type="hidden" name="source" value="loopworker.com/book">
+                        <!-- UTM + referrer auto-captured by JS at bottom -->
+                        <input type="hidden" name="utm_source" id="utm_source" value="">
+                        <input type="hidden" name="utm_medium" id="utm_medium" value="">
+                        <input type="hidden" name="utm_campaign" id="utm_campaign" value="">
+                        <input type="hidden" name="referrer" id="referrer" value="">
+                        <input type="hidden" name="landing_url" id="landing_url" value="">
+                        <input type="hidden" name="vertical_pre" id="vertical_pre" value="">
+                        <!-- honeypot — bots fill, humans skip -->
+                        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+                        <div class="field">
+                            <label for="name">Your name</label>
+                            <input type="text" id="name" name="name" required autocomplete="name">
+                        </div>
+
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required autocomplete="email">
+                        </div>
+
+                        <div class="field">
+                            <label for="company">Business or brand</label>
+                            <input type="text" id="company" name="company" required autocomplete="organization">
+                        </div>
+
+                        <div class="field">
+                            <label for="instagram">Instagram or website</label>
+                            <input type="text" id="instagram" name="instagram" placeholder="@yourbrand or yourbrand.com" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="industry">Industry</label>
+                            <select id="industry" name="industry" required>
+                                <option value="">Select one</option>
+                                <option>Restaurant / cafe / bar</option>
+                                <option>Med spa / aesthetics</option>
+                                <option>Gym / fitness studio</option>
+                                <option>Hotel / hospitality</option>
+                                <option>Real estate / development</option>
+                                <option>Salon / beauty</option>
+                                <option>Ecommerce / DTC</option>
+                                <option>Marketing agency</option>
+                                <option>Personal brand / coach</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="decision_maker">Are you the decision-maker on marketing/content spend?</label>
+                            <select id="decision_maker" name="decision_maker" required>
+                                <option value="">Select one</option>
+                                <option>Yes — I make the call</option>
+                                <option>Need to align with partner / team</option>
+                                <option>Just researching for someone else</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="urgency">Timeline + budget reality?</label>
+                            <select id="urgency" name="urgency" required>
+                                <option value="">Select one</option>
+                                <option>Ready now — $5K+ available</option>
+                                <option>Next 30 days — exploring numbers</option>
+                                <option>60-90 days out — early planning</option>
+                                <option>Just curious / DIY-leaning</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="goal">What's the #1 thing you want to fix?</label>
+                            <textarea id="goal" name="goal" placeholder="One sentence is fine."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Booking Request</button>
+                    </form>
+
+                    <div class="booking-direct">
+                        Prefer email? Reach out directly at <a href="mailto:alex@loopworker.com?subject=Booking%20Request">alex@loopworker.com</a>.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="proof-strip">
+            <div class="proof-grid">
+                <div class="proof-stat"><span class="num">7</span><span class="label">Industries served</span></div>
+                <div class="proof-stat"><span class="num">14d</span><span class="label">Avg. delivery time</span></div>
+                <div class="proof-stat"><span class="num">50+</span><span class="label">Custom shots per build</span></div>
+                <div class="proof-stat"><span class="num">$5K–10K</span><span class="label">Investment range</span></div>
+            </div>
+        </section>
+
+        <section class="faq-strip">
+            <div class="faq-grid">
+                <h2>Quick questions before booking</h2>
+
+                <div class="faq-item">
+                    <h3>How long is the call?</h3>
+                    <p>Discovery call. No upsells, no follow-up sequence designed to wear you down. If we go long, it's because the conversation got useful for you.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do I need to prepare anything?</h3>
+                    <p>Nothing. Have your Instagram handle or website ready. That's it.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What happens after the call?</h3>
+                    <p>If we're a fit, I'll send a tailored proposal within 24 hours. If we're not, you'll have a clearer plan you can run yourself — and that's fine too.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What does it cost to work together?</h3>
+                    <p>Brand Photography System is $5,000. Full Visual System (photo + video + retainer-ready) is $10,000. Quarterly content refresh runs $2,500. We'll talk fit before we talk price.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What if I just want the audit, not the call?</h3>
+                    <p>Use <a href="/#audit-form" style="color:#BBB;text-decoration:underline;">the free 5-point audit form</a> on the homepage. We'll send a written audit within 48 hours.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer-cta">
+            <h2>Or skip the call. Start with $0.</h2>
+            <p>Grab a free industry playbook — restaurant, hotel, fashion, or venue — and see exactly how the system would work for your business before we ever talk.</p>
+            <a href="/free-resources.html" class="btn btn-outline" data-track="Book Footer Free Resources">Browse Free Playbooks</a>
+        </section>
+    </main>
+
+    <script>
+      // UTM + referrer capture + Plausible event firing
+      (function(){
+        const params = new URLSearchParams(location.search);
+        const set = (id, v) => { const el = document.getElementById(id); if (el && v) el.value = v; };
+        set('utm_source', params.get('utm_source') || '');
+        set('utm_medium', params.get('utm_medium') || '');
+        set('utm_campaign', params.get('utm_campaign') || '');
+        set('referrer', document.referrer || '');
+        set('landing_url', location.href);
+        // Pre-select vertical via ?tier= or ?vertical=
+        const tier = params.get('tier');
+        const vertical = params.get('vertical');
+        if (vertical) set('vertical_pre', vertical);
+        if (tier) set('vertical_pre', 'tier:' + tier);
+
+        const form = document.getElementById('bookingForm');
+        if (form) {
+          form.addEventListener('submit', function(){
+            try {
+              const tier = document.getElementById('vertical_pre').value || 'unknown';
+              if (window.plausible) {
+                window.plausible('Booking Submitted', { props: {
+                  vertical: tier,
+                  utm_source: document.getElementById('utm_source').value || 'direct',
+                  utm_campaign: document.getElementById('utm_campaign').value || ''
+                }});
+              }
+            } catch(e) { /* swallow */ }
+          });
+        }
+      })();
+    </script>
+
+    <footer style="border-top:1px solid rgba(255,255,255,0.06);padding:3rem 1.5rem;text-align:center;color:#666;font-size:0.85rem;">
+        <p style="color:#666;max-width:none;margin:0 auto 0.6rem;">© 2026 LoopWorker · <a href="/" style="color:#999;">Home</a> · <a href="/services.html" style="color:#999;">Services</a> · <a href="/case-studies.html" style="color:#999;">Case Studies</a> · <a href="/blog/" style="color:#999;">Blog</a> · <a href="/privacy.html" style="color:#999;">Privacy</a> · <a href="/terms.html" style="color:#999;">Terms</a></p>
+        <p style="color:#666;max-width:none;margin:0 auto;">alex@loopworker.com · <a href="https://instagram.com/loop.worker" style="color:#999;">@loop.worker</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+    <script defer src="/site-pages.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/site-pages.css">
+    <title>Pricing — DFY Brand Photography Systems | LoopWorker</title>
+    <meta name="description" content="Three tiers from $5K to $10K plus retainers, VIP days, and Brand-DNA-only sprints. Transparent pricing for AI-powered brand photography systems.">
+    <link rel="canonical" href="https://www.loopworker.com/pricing.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.loopworker.com/pricing.html">
+    <meta property="og:title" content="Pricing — DFY Brand Photography Systems | LoopWorker">
+    <meta property="og:description" content="Three tiers from $5K to $10K plus retainers and entry packages.">
+    <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+
+    <style>
+      .pricing-shell { padding: 7rem 1.5rem 4rem; }
+      .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 3rem 0; }
+      @media (max-width: 900px) { .pricing-grid { grid-template-columns: 1fr; } }
+      .pricing-card { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 2rem 1.8rem; display: flex; flex-direction: column; }
+      .pricing-card.featured { border-color: rgba(255,255,255,0.32); background: rgba(255,255,255,0.045); position: relative; }
+      .pricing-card.featured::before { content: 'Most chosen'; position: absolute; top: -10px; left: 1.8rem; background: #FFF; color: #0A0A0A; padding: 0.18rem 0.7rem; border-radius: 4px; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+      .pricing-card .tier-name { font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: #888; margin-bottom: 0.4rem; }
+      .pricing-card .tier-price { font-size: 2.5rem; font-weight: 800; color: #FFF; line-height: 1; margin-bottom: 0.3rem; letter-spacing: -0.02em; }
+      .pricing-card .tier-sub { font-size: 0.88rem; color: #999; margin-bottom: 1.4rem; }
+      .pricing-card ul { list-style: none; margin: 0 0 2rem; padding: 0; }
+      .pricing-card ul li { padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); color: #B5B5B5; font-size: 0.92rem; padding-left: 1.6rem; position: relative; }
+      .pricing-card ul li::before { content: '◉'; position: absolute; left: 0; color: #6CC57A; font-size: 0.8rem; top: 0.55rem; }
+      .pricing-card ul li:last-child { border-bottom: 0; }
+      .pricing-card .pick-btn { display: inline-block; text-align: center; background: #FFF; color: #0A0A0A; padding: 0.95rem 1.4rem; border-radius: 6px; font-weight: 700; font-size: 0.84rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; margin-top: auto; transition: transform 0.15s, background 0.15s; }
+      .pricing-card .pick-btn:hover { background: #F0F0F0; transform: translateY(-1px); }
+      .pricing-card.outline .pick-btn { background: transparent; color: #FFF; border: 1px solid rgba(255,255,255,0.4); }
+      .pricing-card.outline .pick-btn:hover { background: rgba(255,255,255,0.08); }
+
+      .compare-table { width: 100%; border-collapse: collapse; margin: 4rem 0; font-size: 0.92rem; }
+      .compare-table th, .compare-table td { padding: 0.95rem 1.2rem; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .compare-table th { color: #FFF; font-weight: 600; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; }
+      .compare-table td { color: #A7A7A7; }
+      .compare-table td:first-child { color: #888; }
+      .compare-table .yes { color: #6CC57A; }
+      .compare-table .no { color: #555; }
+
+      .alt-tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin: 4rem 0 3rem; }
+      @media (max-width: 720px) { .alt-tiers { grid-template-columns: 1fr; } }
+      .alt-tier { padding: 1.6rem 1.8rem; background: rgba(255,255,255,0.018); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; }
+      .alt-tier .alt-name { color: #FFF; font-weight: 600; font-size: 1.05rem; margin-bottom: 0.25rem; }
+      .alt-tier .alt-price { color: #6CC57A; font-size: 0.85rem; letter-spacing: 0.06em; margin-bottom: 0.7rem; }
+      .alt-tier p { color: #A7A7A7; font-size: 0.9rem; margin: 0 0 0.9rem; }
+      .alt-tier a { color: #BBB; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+      .enterprise-strip { padding: 2.5rem 2rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; display: flex; justify-content: space-between; align-items: center; gap: 2rem; margin: 3rem 0; }
+      @media (max-width: 720px) { .enterprise-strip { flex-direction: column; align-items: flex-start; } }
+      .enterprise-strip .ent-copy h3 { color: #FFF; font-size: 1.25rem; margin-bottom: 0.4rem; }
+      .enterprise-strip .ent-copy p { color: #888; font-size: 0.9rem; margin: 0; max-width: 540px; }
+      .enterprise-strip .ent-cta { white-space: nowrap; }
+
+      .faq-block { padding: 4rem 0 5rem; }
+      .faq-block h2 { font-size: 1.4rem; margin-bottom: 1.5rem; }
+      .faq-q { padding: 1.3rem 1.5rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; margin-bottom: 1rem; }
+      .faq-q h3 { color: #FFF; font-size: 1rem; margin-bottom: 0.4rem; font-weight: 600; }
+      .faq-q p { color: #A7A7A7; font-size: 0.93rem; margin: 0; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">LoopWorker</a>
+            <ul class="nav-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/book.html" class="nav-cta" data-track="Pricing Nav Book CTA">Book a Call</a></li>
+            </ul>
+            <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="/services.html">Services</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/case-studies.html">Case Studies</a>
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/blog/">Blog</a>
+        <a href="/book.html" class="nav-cta">Book a Call</a>
+    </div>
+
+    <main>
+        <section class="pricing-shell">
+            <div class="container">
+                <span class="eyebrow">Pricing</span>
+                <h1>Transparent pricing. Pay-in-2 available. No retainers required.</h1>
+                <p>Three core tiers below. Plus three entry packages for budget-conscious starts and an enterprise track for agencies + multi-location operators.</p>
+
+                <div class="pricing-grid">
+                    <div class="pricing-card outline">
+                        <span class="tier-name">Tier 1 · Starter</span>
+                        <div class="tier-price">$5,000</div>
+                        <div class="tier-sub">Brand Photography System · 14 days</div>
+                        <ul>
+                            <li>Brand DNA session (Zoom, 30 min)</li>
+                            <li>Custom shot list (6 shot types)</li>
+                            <li>50 art-directed brand photographs</li>
+                            <li>Content library by platform (social, web, ads, print)</li>
+                            <li>2 rounds of revision</li>
+                            <li>Brand Visual DNA document</li>
+                            <li>Pay-in-2 option ($2.5K + $2.5K on delivery)</li>
+                        </ul>
+                        <a href="/book.html" class="pick-btn" data-track="Pricing Tier1 CTA">Start with Tier 1</a>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <span class="tier-name">Tier 2 · Growth</span>
+                        <div class="tier-price">$7,500</div>
+                        <div class="tier-sub">Full Brand Visual System · 21 days</div>
+                        <ul>
+                            <li>Everything in Starter</li>
+                            <li>100 photographs (expanded shot list)</li>
+                            <li>15–20 short-form video clips</li>
+                            <li>Voiceover + music integration</li>
+                            <li>Reels / TikTok / Shorts formats</li>
+                            <li>Quarterly refresh option ($2,500/qtr)</li>
+                            <li>Pay-in-2 option ($3.75K + $3.75K)</li>
+                        </ul>
+                        <a href="/book.html" class="pick-btn" data-track="Pricing Tier2 CTA">Pick Growth</a>
+                    </div>
+
+                    <div class="pricing-card outline">
+                        <span class="tier-name">Tier 3 · Scale</span>
+                        <div class="tier-price">$10,000</div>
+                        <div class="tier-sub">Scale Package · 21 days + retainer ready</div>
+                        <ul>
+                            <li>Everything in Growth</li>
+                            <li>Brand DNA Bible (full style guide)</li>
+                            <li>3 lead-magnet PDFs in your brand</li>
+                            <li>Posting + scheduling setup</li>
+                            <li>90-day strategy roadmap</li>
+                            <li>Monthly retainer-ready ($2,500/mo for 25 fresh images + ops)</li>
+                            <li>Pay-in-2 option ($5K + $5K)</li>
+                        </ul>
+                        <a href="/book.html" class="pick-btn" data-track="Pricing Tier3 CTA">Scale with Tier 3</a>
+                    </div>
+                </div>
+
+                <div class="enterprise-strip">
+                    <div class="ent-copy">
+                        <h3>Enterprise · $25,000+ <span style="color:#888;font-size:0.85rem;font-weight:400;margin-left:0.5rem;">— waitlist</span></h3>
+                        <p>White-label brand systems for agencies, multi-location operators, or franchises building 3+ brands at once. Annual contracts only. Currently accepting 2 partners per quarter.</p>
+                    </div>
+                    <a href="/book.html?tier=enterprise" class="pick-btn" data-track="Pricing Enterprise Waitlist">Join Enterprise Waitlist</a>
+                </div>
+
+                <h2 style="font-size:1.5rem;margin:4rem 0 1.5rem;">Or start smaller.</h2>
+                <p>Not ready for $5K? Three ways in:</p>
+
+                <div class="alt-tiers">
+                    <div class="alt-tier">
+                        <div class="alt-name">Brand DNA Sprint</div>
+                        <div class="alt-price">$1,500 · 5 days</div>
+                        <p>Just the strategy doc. Brand DNA, shot list, prompt formulas. You handle production. Upgrades to full DFY: $3,500 credit.</p>
+                        <a href="/book.html?tier=dna">Book Brand DNA →</a>
+                    </div>
+                    <div class="alt-tier">
+                        <div class="alt-name">VIP Day</div>
+                        <div class="alt-price">$3,500 · 1 day</div>
+                        <p>One full day with you on Zoom. We build 10 final images live, lock the brand DNA, ship a 30-day calendar. Done in 8 hours.</p>
+                        <a href="/book.html?tier=vip">Book VIP Day →</a>
+                    </div>
+                    <div class="alt-tier">
+                        <div class="alt-name">Micro Audit</div>
+                        <div class="alt-price">$49 · 7 days</div>
+                        <p>Loom video + 1-page PDF. 5 specific fixes for your current content, prioritized. Credits to any tier above.</p>
+                        <a href="/book.html?tier=audit">Book Micro Audit →</a>
+                    </div>
+                </div>
+
+                <h2 style="font-size:1.5rem;margin:5rem 0 1rem;">Compare tiers</h2>
+
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Starter $5K</th>
+                            <th>Growth $7.5K</th>
+                            <th>Scale $10K</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Brand DNA session</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+                        <tr><td>Custom shot list</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+                        <tr><td>Brand photographs</td><td>50</td><td>100</td><td>100</td></tr>
+                        <tr><td>Short-form video clips</td><td class="no">—</td><td>15–20</td><td>15–20</td></tr>
+                        <tr><td>Brand Visual DNA doc</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+                        <tr><td>Brand DNA Bible (full guide)</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+                        <tr><td>Lead-magnet PDFs</td><td class="no">—</td><td class="no">—</td><td>3</td></tr>
+                        <tr><td>Posting + scheduling setup</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+                        <tr><td>90-day strategy roadmap</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+                        <tr><td>Quarterly refresh option</td><td class="no">—</td><td class="yes">$2,500/qtr</td><td class="yes">included Q1</td></tr>
+                        <tr><td>Retainer-ready ($2,500/mo)</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+                        <tr><td>Revisions included</td><td>2 rounds</td><td>2 rounds</td><td>3 rounds</td></tr>
+                        <tr><td>Delivery time</td><td>14 days</td><td>21 days</td><td>21 days</td></tr>
+                        <tr><td>Pay-in-2</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+                    </tbody>
+                </table>
+
+                <h2 style="font-size:1.5rem;margin:5rem 0 1rem;">What's NOT included</h2>
+                <ul style="color:#A7A7A7;line-height:1.9;">
+                    <li>Generic AI slop. Stock photo replacements. Anything that looks like Canva.</li>
+                    <li>Unlimited revisions. After round 2 (or 3), revisions billed at $250/hr.</li>
+                    <li>Logo + identity design. Bring your existing logo. We work with what you have.</li>
+                    <li>Hosting, domains, ad spend. Production only.</li>
+                    <li>Retouching of real client photos. AI generation only.</li>
+                </ul>
+
+                <section class="faq-block">
+                    <h2>Pricing FAQ</h2>
+                    <div class="faq-q">
+                        <h3>Why is this cheaper than a real photographer?</h3>
+                        <p>Production pipeline + AI = 80% less time. Same art direction quality. Different cost structure. We're not undercutting — we're rebuilt from the ground up.</p>
+                    </div>
+                    <div class="faq-q">
+                        <h3>Is the Pay-in-2 a payment plan or a deposit?</h3>
+                        <p>Half upfront kicks off the project. Half on delivery. No interest. No financing partner. Bank transfer or Stripe.</p>
+                    </div>
+                    <div class="faq-q">
+                        <h3>Can I upgrade mid-project?</h3>
+                        <p>Yes. Pay the difference, we extend scope. Most common: Starter → Growth at the Day 7 checkpoint.</p>
+                    </div>
+                    <div class="faq-q">
+                        <h3>What if I'm not happy with the work?</h3>
+                        <p>The Day 7 checkpoint is the protection. After 25 images, you give feedback or call it. If you call it, you pay 50% and we part ways. Has not happened yet, but the safety net exists.</p>
+                    </div>
+                    <div class="faq-q">
+                        <h3>Do you do month-to-month retainers without a build?</h3>
+                        <p>Not currently. The build creates the brand DNA the retainer runs against. Without it, retainer work is generic.</p>
+                    </div>
+                    <div class="faq-q">
+                        <h3>Refund policy?</h3>
+                        <p>50% refund up to Day 7 if the direction misses. Zero refunds after Day 7 (production has happened).</p>
+                    </div>
+                </section>
+
+                <div style="text-align:center;padding:3rem 0 1rem;">
+                    <h2 style="margin-bottom:1rem;">Still deciding?</h2>
+                    <p style="margin:0 auto 2rem;">Book the discovery call. We'll talk fit before we talk price. Worst case, you leave with a stronger plan.</p>
+                    <a href="/book.html" class="btn btn-primary" data-track="Pricing Footer Book CTA">Book a Discovery Call</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <div class="footer-brand">LoopWorker</div>
+                <div class="footer-meta">Helping businesses turn content into customers.</div>
+            </div>
+            <ul class="footer-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="/free-resources.html">Free Resources</a></li>
+                <li><a href="/faq.html">FAQ</a></li>
+            </ul>
+            <div class="footer-contact">
+                <a href="mailto:alex@loopworker.com">alex@loopworker.com</a><br>
+                <a href="https://instagram.com/loop.worker" target="_blank" rel="noopener">@loop.worker</a>
+                <div class="footer-legal"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "DFY Brand Photography Systems",
+      "brand": "LoopWorker",
+      "description": "AI-powered done-for-you brand photography systems with three pricing tiers and entry packages.",
+      "offers": [
+        { "@type": "Offer", "name": "Starter", "price": "5000", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Growth", "price": "7500", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Scale", "price": "10000", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Brand DNA Sprint", "price": "1500", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "VIP Day", "price": "3500", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Micro Audit", "price": "49", "priceCurrency": "USD" }
+      ]
+    }
+    </script>
+</body>
+</html>

@@ -988,6 +988,48 @@
             color: #8C8C8C;
         }
 
+        .service-link-grid--thumbs {
+            gap: 1.25rem;
+        }
+
+        .service-link-card--thumb {
+            padding: 0;
+            overflow: hidden;
+            background: #0D0D0D;
+        }
+
+        .service-link-thumb {
+            aspect-ratio: 4 / 5;
+            background: #151515;
+            overflow: hidden;
+        }
+
+        .service-link-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.35s ease;
+        }
+
+        .service-link-card--thumb:hover .service-link-thumb img {
+            transform: scale(1.02);
+        }
+
+        .service-link-body {
+            padding: 0.95rem 1rem 1.05rem;
+        }
+
+        .service-link-card--thumb .service-link-title {
+            margin-bottom: 0.45rem;
+        }
+
+        .service-link-card--thumb .service-link-copy {
+            font-size: 0.88rem;
+            line-height: 1.55;
+            color: #9A9A9A;
+        }
+
         /* ========================
            FORM SELECT
            ======================== */
@@ -1980,7 +2022,8 @@
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="/services.html">Services</a></li>
                 <li><a href="/blog/">Blog</a></li>
-                <li><a href="#audit-form" class="nav-cta" data-track="Nav Audit CTA">Get Free Audit</a></li>
+                <li><a href="#audit-form" data-track="Nav Audit Link">Free Audit</a></li>
+                <li><a href="/book.html" class="nav-cta" data-track="Nav Book CTA">Book a Call</a></li>
             </ul>
             <button type="button" class="hamburger" onclick="toggleMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
                 <span></span>
@@ -1996,7 +2039,8 @@
         <a href="#pricing" onclick="toggleMenu()">Pricing</a>
         <a href="/services.html" onclick="toggleMenu()">Services</a>
         <a href="/blog/" onclick="toggleMenu()">Blog</a>
-        <a href="#audit-form" class="nav-cta" onclick="toggleMenu()" data-track="Mobile Nav Audit CTA">Get Free Audit</a>
+        <a href="#audit-form" onclick="toggleMenu()" data-track="Mobile Nav Audit Link">Free Audit</a>
+        <a href="/book.html" class="nav-cta" onclick="toggleMenu()" data-track="Mobile Nav Book CTA">Book a Call</a>
     </div>
 
     <!-- HERO -->
@@ -2006,10 +2050,10 @@
                 <h1 class="fade-up">Social Media Content Built to Bring In Customers</h1>
                 <p class="fade-up">Built first for restaurants, med spas, and gyms that need content people actually act on. The same conversion-first system also adapts for real estate, hotels, and other local brands.</p>
                 <div class="hero-actions fade-up">
-                    <a href="#audit-form" class="btn btn-primary" data-track="Hero Audit CTA">Get My Free 5-Point Audit</a>
-                    <a href="#pricing" class="btn btn-outline" data-track="Hero Pricing CTA">See Pricing</a>
+                    <a href="/book.html" class="btn btn-primary" data-track="Hero Book CTA">Book a Discovery Call</a>
+                    <a href="#audit-form" class="btn btn-outline" data-track="Hero Audit CTA">Or Get a Free Audit</a>
                 </div>
-                <div class="hero-note fade-up">Get 3 specific fixes for your content. Takes 2 minutes. If you already know the scope, email <a href="mailto:alex@loopworker.com" data-track="Hero Email Click">alex@loopworker.com</a>.</div>
+                <div class="hero-note fade-up">discovery call on your page, or a written audit in 48h. If you already know the scope, email <a href="mailto:alex@loopworker.com" data-track="Hero Email Click">alex@loopworker.com</a>.</div>
                 <div class="hero-chip-row fade-up">
                     <span class="hero-chip">Restaurants</span>
                     <span class="hero-chip">Med Spas</span>
@@ -2164,30 +2208,60 @@
                 <h2>Start with the page closest to your business</h2>
                 <p>These pages tighten the offer around the way each business type actually gets chosen.</p>
             </div>
-            <div class="service-link-grid">
-                <a class="service-link-card fade-up" href="/restaurants.html" data-track="Homepage Restaurants Page">
-                    <div class="service-link-title">Restaurants</div>
-                    <div class="service-link-copy">Menu drops, same-day visit content, repeat customer angles, and local demand hooks.</div>
+            <div class="service-link-grid service-link-grid--thumbs">
+                <a class="service-link-card service-link-card--thumb fade-up" href="/restaurants.html" data-track="Homepage Restaurants Page">
+                    <div class="service-link-thumb">
+                        <img src="/images/primo/primo_hero_01.webp" alt="Restaurant food content example" loading="lazy" decoding="async">
+                    </div>
+                    <div class="service-link-body">
+                        <div class="service-link-title">Restaurants</div>
+                        <div class="service-link-copy">Real food shots, menu pushes, and same-day visit hooks.</div>
+                    </div>
                 </a>
-                <a class="service-link-card fade-up" href="/med-spa.html" data-track="Homepage Med Spa Page">
-                    <div class="service-link-title">Med Spas</div>
-                    <div class="service-link-copy">Provider-trust content, before-and-after strategy, education hooks, and more consult-ready inquiries.</div>
+                <a class="service-link-card service-link-card--thumb fade-up" href="/med-spa.html" data-track="Homepage Med Spa Page">
+                    <div class="service-link-thumb">
+                        <img src="/images/case_studies/references/marina/11.jpg" alt="Med spa provider content example" loading="lazy" decoding="async">
+                    </div>
+                    <div class="service-link-body">
+                        <div class="service-link-title">Med Spas</div>
+                        <div class="service-link-copy">Provider trust, results framing, and consultation-ready angles.</div>
+                    </div>
                 </a>
-                <a class="service-link-card fade-up" href="/fitness.html" data-track="Homepage Fitness Page">
-                    <div class="service-link-title">Gyms / Fitness</div>
-                    <div class="service-link-copy">Community-first content, beginner-friendly hooks, and trial-class or membership conversion angles.</div>
+                <a class="service-link-card service-link-card--thumb fade-up" href="/fitness.html" data-track="Homepage Fitness Page">
+                    <div class="service-link-thumb">
+                        <img src="/images/explore/remi-gym-ugc.webp" alt="Gym UGC mirror content example" loading="lazy" decoding="async">
+                    </div>
+                    <div class="service-link-body">
+                        <div class="service-link-title">Gyms / Fitness</div>
+                        <div class="service-link-copy">UGC-style workouts, first-visit proof, and join-now energy.</div>
+                    </div>
                 </a>
-                <a class="service-link-card fade-up" href="/real-estate.html" data-track="Homepage Real Estate Page">
-                    <div class="service-link-title">Real Estate</div>
-                    <div class="service-link-copy">Property-first visuals, listing differentiation, and content that earns saves and showings.</div>
+                <a class="service-link-card service-link-card--thumb fade-up" href="/real-estate.html" data-track="Homepage Real Estate Page">
+                    <div class="service-link-thumb">
+                        <img src="/images/explore/real-estate-thumb.webp" alt="Real estate property content example" loading="lazy" decoding="async">
+                    </div>
+                    <div class="service-link-body">
+                        <div class="service-link-title">Real Estate</div>
+                        <div class="service-link-copy">Listing-first framing that makes the space feel worth touring.</div>
+                    </div>
                 </a>
-                <a class="service-link-card fade-up" href="/hotels.html" data-track="Homepage Hotels Page">
-                    <div class="service-link-title">Hotels</div>
-                    <div class="service-link-copy">Atmosphere-led content built to make the stay feel worth booking before a guest arrives.</div>
+                <a class="service-link-card service-link-card--thumb fade-up" href="/hotels.html" data-track="Homepage Hotels Page">
+                    <div class="service-link-thumb">
+                        <img src="/images/explore/hotel-thumb.webp" alt="Hotel room content example" loading="lazy" decoding="async">
+                    </div>
+                    <div class="service-link-body">
+                        <div class="service-link-title">Hotels</div>
+                        <div class="service-link-copy">Room, view, and atmosphere content that sells the stay early.</div>
+                    </div>
                 </a>
-                <a class="service-link-card fade-up" href="/ecommerce.html" data-track="Homepage Ecommerce Page">
-                    <div class="service-link-title">Ecommerce</div>
-                    <div class="service-link-copy">Product content with cleaner positioning, stronger objections handling, and higher intent.</div>
+                <a class="service-link-card service-link-card--thumb fade-up" href="/ecommerce.html" data-track="Homepage Ecommerce Page">
+                    <div class="service-link-thumb">
+                        <img src="/images/cards/card_39.webp" alt="Ecommerce product in hand example" loading="lazy" decoding="async">
+                    </div>
+                    <div class="service-link-body">
+                        <div class="service-link-title">Ecommerce</div>
+                        <div class="service-link-copy">Product-in-hand, cleaner hooks, and stronger buying intent.</div>
+                    </div>
                 </a>
             </div>
         </div>

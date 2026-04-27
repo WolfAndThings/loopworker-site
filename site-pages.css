@@ -537,3 +537,91 @@ button:focus-visible {
         height: 300px;
     }
 }
+
+/* ── Case Study Pages ─────────────────────────────────── */
+.cs-shell { padding: 7rem 1.5rem 4rem; }
+.cs-meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.4rem;
+  margin: 2.5rem 0 3rem;
+  padding: 1.6rem 1.8rem;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+}
+@media (max-width: 720px) { .cs-meta { grid-template-columns: repeat(2, 1fr); } }
+.cs-meta div span {
+  display: block;
+  font-size: 0.72rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.3rem;
+}
+.cs-meta div strong { color: #FFF; font-size: 1.05rem; font-weight: 600; }
+.cs-section { padding: 3rem 0; border-top: 1px solid rgba(255,255,255,0.05); }
+.cs-section h2 { font-size: 1.6rem; margin-bottom: 1.5rem; }
+.cs-section p { margin-bottom: 1.2rem; max-width: 760px; }
+.cs-section ul { margin: 1rem 0 1.5rem 1.5rem; color: #A7A7A7; }
+.cs-section ul li { margin-bottom: 0.5rem; }
+.cs-section ul li strong { color: #FFF; font-weight: 600; }
+.cs-pull {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: #FFF;
+  padding: 2rem 0 2rem 1.6rem;
+  border-left: 2px solid #FFF;
+  margin: 2rem 0;
+  max-width: 720px;
+}
+.cs-footer-cta { text-align: center; padding: 5rem 1.5rem; }
+.cs-footer-cta h2 { margin-bottom: 1rem; }
+.cs-footer-cta p { margin: 0 auto 2rem; }
+.cs-related {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+  margin-top: 2rem;
+}
+@media (max-width: 800px) { .cs-related { grid-template-columns: 1fr; } }
+.cs-related a {
+  display: block;
+  padding: 1.4rem;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+.cs-related a:hover { border-color: rgba(255,255,255,0.2); }
+.cs-related strong { color: #FFF; font-weight: 600; display: block; margin-bottom: 0.4rem; }
+.cs-related span { color: #888; font-size: 0.88rem; }
+
+/* Kirahri-specific compare grid */
+.cs-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 1.6rem 0; }
+@media (max-width: 720px) { .cs-compare { grid-template-columns: 1fr; } }
+.cs-compare > div {
+  padding: 1.2rem 1.4rem;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.cs-compare strong { display: block; color: #FFF; margin-bottom: 0.4rem; font-weight: 600; }
+.cs-compare .label-bad { color: #C57A6C; font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.4rem; display: block; }
+.cs-compare .label-good { color: #6CC57A; font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.4rem; display: block; }
+
+/* Bubble pillar grid */
+.cs-pillar-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin: 1.5rem 0; }
+@media (max-width: 720px) { .cs-pillar-grid { grid-template-columns: 1fr; } }
+.cs-pillar-card {
+  padding: 1.4rem 1.6rem;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+}
+.cs-pillar-card strong { color: #FFF; display: block; margin-bottom: 0.5rem; font-weight: 600; }
+
+.cs-lead { font-size: 1.15rem; color: #C7C7C7; margin-top: 1rem; }
+.cs-related-h { margin-top: 3rem; }

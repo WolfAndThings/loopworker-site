@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+    <script defer src="/site-pages.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/site-pages.css">
+    <title>Book a Restaurant Content Walkthrough — Discovery Call | LoopWorker</title>
+    <meta name="description" content="Free discovery call on your restaurant's content. Why your menu posts aren't bringing people in, and what to fix first.">
+    <link rel="canonical" href="https://www.loopworker.com/book/restaurant.html">
+    <meta property="og:image" content="https://www.loopworker.com/images/case_studies/references/myburger/01.jpg">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+
+    <style>
+      .vert-shell { padding: 7rem 1.5rem 5rem; }
+      .vert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; width: min(1100px, calc(100% - 3rem)); margin: 0 auto; }
+      @media (max-width: 880px) { .vert-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+      .vert-copy h1 { font-size: clamp(2rem, 4.4vw, 3.4rem); margin-bottom: 1.4rem; }
+      .vert-copy .lead { font-size: 1.1rem; color: #C7C7C7; margin-bottom: 2rem; max-width: 480px; }
+      .vert-copy .eyebrow { display: inline-block; font-size: 0.75rem; color: #888; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1rem; }
+      .pain-list { list-style: none; display: grid; gap: 0.7rem; margin: 1.6rem 0 2.5rem; }
+      .pain-list li { padding-left: 1.6rem; position: relative; color: #999; font-size: 0.95rem; }
+      .pain-list li::before { content: '✕'; position: absolute; left: 0; color: #C57A6C; font-weight: 700; }
+      .what-list { list-style: none; display: grid; gap: 0.7rem; margin: 1.6rem 0 2.5rem; }
+      .what-list li { padding-left: 1.6rem; position: relative; color: #C7C7C7; font-size: 0.95rem; }
+      .what-list li::before { content: '◉'; position: absolute; left: 0; color: #6CC57A; }
+      .form-shell { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 2.4rem; }
+      .form-shell h2 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+      .form-shell .form-sub { color: #888; font-size: 0.9rem; margin-bottom: 1.8rem; }
+      .vert-shell .field { display: block; margin-bottom: 1.3rem; }
+      .vert-shell .field label { display: block; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: #888; font-weight: 600; margin-bottom: 0.5rem; }
+      .vert-shell .field input, .vert-shell .field textarea { width: 100%; background: #0F0F0F; border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 0.85rem 1rem; color: #FFF; font-family: inherit; font-size: 0.97rem; }
+      .vert-shell .field textarea { min-height: 80px; resize: vertical; }
+      .submit-btn { display: block; width: 100%; background: #FFF; color: #0A0A0A; border: 0; padding: 1rem 1.6rem; border-radius: 6px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; font-family: inherit; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">LoopWorker</a>
+            <ul class="nav-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/book.html" class="nav-cta">Book a Call</a></li>
+            </ul>
+            <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="/services.html">Services</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/case-studies.html">Case Studies</a>
+        <a href="/blog/">Blog</a>
+        <a href="/book.html" class="nav-cta">Book a Call</a>
+    </div>
+
+    <main>
+        <section class="vert-shell">
+            <div class="vert-grid">
+                <div class="vert-copy">
+                    <span class="eyebrow">For Restaurants · Discovery Call · Free</span>
+                    <h1>Your food looks great. Your content isn't selling it.</h1>
+                    <p class="lead">discovery call on your restaurant's content. We'll look at your last 9 posts and identify why people are watching but not walking in.</p>
+
+                    <h3 style="font-size:0.85rem;letter-spacing:0.14em;color:#FFF;text-transform:uppercase;margin-bottom:0.8rem;">Sound familiar?</h3>
+                    <ul class="pain-list">
+                        <li>You're posting menu items but nobody's coming in tonight</li>
+                        <li>People like the photos but don't tag friends or save</li>
+                        <li>Specials don't move the dial</li>
+                        <li>You don't know which posts actually fill seats</li>
+                        <li>Your content looks like every other restaurant on the same block</li>
+                    </ul>
+
+                    <h3 style="font-size:0.85rem;letter-spacing:0.14em;color:#FFF;text-transform:uppercase;margin-bottom:0.8rem;">What I'll show you on the call:</h3>
+                    <ul class="what-list">
+                        <li>The "menu vs demand" framework — why menu posts kill restaurant content</li>
+                        <li>Three specific hooks for your next 7 posts</li>
+                        <li>The hard-flash food formula that wins on Instagram in 2026</li>
+                        <li>What your competitors aren't doing that you can</li>
+                        <li>A live mockup of one of your current posts redone</li>
+                    </ul>
+
+                    <p style="color:#888;font-size:0.88rem;margin-top:2rem;">No pitch. Worst case: you walk away with three things to test next week.</p>
+                </div>
+
+                <div class="form-shell">
+                    <h2>Lock a slot.</h2>
+                    <!-- Calendly inline widget -->
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/loopworker/30min?hide_gdpr_banner=1&background_color=0f0f0f&text_color=d4d4d4&primary_color=ffffff" style="min-width:320px;height:680px;margin-bottom:1.4rem;border-radius:8px;overflow:hidden;"></div>
+                    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+                    <p class="form-sub">Or fill the form below if calendar isn't available:</p>
+
+                    <form id="bookingForm" action="https://formspree.io/f/xbdpddrn" method="POST" data-track="Vert Restaurant Book Submit">
+                        <input type="hidden" name="_subject" value="Restaurant Booking Request — loopworker.com/book/restaurant">
+                        <input type="hidden" name="_next" value="https://www.loopworker.com/thank-you.html?source=book-restaurant">
+                        <input type="hidden" name="source" value="loopworker.com/book/restaurant">
+                        <input type="hidden" name="vertical" value="restaurant">
+                        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+                        <div class="field"><label for="name">Your name</label><input type="text" id="name" name="name" required></div>
+                        <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
+                        <div class="field"><label for="restaurant">Restaurant name</label><input type="text" id="restaurant" name="restaurant" required></div>
+                        <div class="field"><label for="ig">Instagram handle</label><input type="text" id="ig" name="ig" placeholder="@yourrestaurant" required></div>
+                        <div class="field"><label for="city">City</label><input type="text" id="city" name="city" required></div>
+                                                <div class="field"><label for="decision_maker">Are you the decision-maker on marketing/content spend?</label>
+                            <select id="decision_maker" name="decision_maker" required>
+                                <option value="">Select one</option>
+                                <option>Yes — I make the call</option>
+                                <option>Need to align with partner / team</option>
+                                <option>Just researching for someone else</option>
+                            </select>
+                        </div>
+                        <div class="field"><label for="urgency">Timeline + budget reality?</label>
+                            <select id="urgency" name="urgency" required>
+                                <option value="">Select one</option>
+                                <option>Ready now — $5K+ available</option>
+                                <option>Next 30 days — exploring numbers</option>
+                                <option>60-90 days out — early planning</option>
+                                <option>Just curious / DIY-leaning</option>
+                            </select>
+                        </div>
+                        <div class="field"><label for="goal">Biggest content frustration?</label><textarea id="goal" name="goal" placeholder="One sentence is fine."></textarea></div>
+                        <button type="submit" class="submit-btn">Send Booking Request</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <div class="footer-brand">LoopWorker</div>
+                <div class="footer-meta">Helping businesses turn content into customers.</div>
+            </div>
+            <ul class="footer-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/restaurants.html">For Restaurants</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+            </ul>
+            <div class="footer-contact">
+                <a href="mailto:alex@loopworker.com">alex@loopworker.com</a><br>
+                <a href="https://instagram.com/loop.worker" target="_blank" rel="noopener">@loop.worker</a>
+                <div class="footer-legal"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+      (function(){
+        const f = document.getElementById('bookingForm');
+        if (f) f.addEventListener('submit', function(){ try { if (window.plausible) window.plausible('Booking Submitted', { props: { vertical: 'restaurant' }}); } catch(e) {} });
+      })();
+    </script>
+</body>
+</html>
