@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phase 2 Proposal — Bubble Therapist | LoopWorker</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#080808;color:#D4D4D4;font-family:'Inter',sans-serif;line-height:1.65;padding:3rem 1.5rem 5rem;-webkit-font-smoothing:antialiased}
+.wrap{max-width:780px;margin:0 auto}
+h1,h2,h3{color:#FFF;font-weight:800;letter-spacing:-0.02em}
+h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(2.2rem,5vw,3.4rem);margin-bottom:0.6rem;line-height:1.05}
+h1 em{font-style:italic;color:#D4A017;font-weight:400}
+h2{font-size:1.4rem;margin:3rem 0 1rem;letter-spacing:-0.01em}
+h3{font-size:1rem;text-transform:uppercase;letter-spacing:0.1em;color:#888;margin-bottom:0.7rem;font-weight:700}
+.eyebrow{display:inline-block;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:#D4A017;margin-bottom:1.2rem}
+.eyebrow::before{content:'◆';display:inline-block;margin-right:0.6rem;color:#D4A017;font-size:0.6em;vertical-align:0.2em;opacity:0.7}
+.stamp{color:#666;font-size:0.85rem;margin:0.5rem 0 2.5rem}
+p,li{color:#B5B5B5;font-size:1rem}
+p{margin-bottom:1rem;max-width:680px}
+ul,ol{margin:0.8rem 0 1.4rem 1.4rem}
+li{margin-bottom:0.5rem}
+li strong{color:#FFF;font-weight:600}
+.brief-box{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:2rem;margin:2rem 0}
+.brief-box h3{color:#888;font-size:0.78rem;letter-spacing:0.14em;margin-bottom:0.8rem}
+.scope-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin:1.5rem 0}
+@media (max-width:680px){.scope-grid{grid-template-columns:1fr}}
+.scope-card{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:1.4rem 1.5rem}
+.scope-card h4{color:#FFF;font-size:1rem;font-weight:600;margin-bottom:0.6rem;letter-spacing:0;text-transform:none}
+.scope-card ul{margin:0.4rem 0 0 1.2rem}
+.scope-card ul li{font-size:0.9rem;color:#A7A7A7;margin-bottom:0.3rem}
+.pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:1.4rem;line-height:1.4;color:#F0E6CC;border-left:3px solid #D4A017;padding:1.2rem 0 1.2rem 1.6rem;margin:2rem 0;background:linear-gradient(90deg,rgba(212,160,23,0.045),transparent 70%)}
+.price-box{background:rgba(255,255,255,0.04);border:1px solid rgba(212,160,23,0.32);border-radius:16px;padding:2.4rem 2rem;margin:2.5rem 0;text-align:center}
+.price-box .total-label{color:#888;font-size:0.75rem;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:0.4rem}
+.price-box .total-amt{font-size:3.2rem;font-weight:800;color:#FFF;line-height:1;letter-spacing:-0.02em;margin-bottom:0.5rem}
+.price-box .terms{color:#A7A7A7;font-size:0.95rem;margin:0.7rem 0 0}
+.cta-row{display:flex;gap:1rem;justify-content:center;margin-top:1.6rem;flex-wrap:wrap}
+.btn-pay{display:inline-block;background:linear-gradient(180deg,#FFF 0%,#F4F4F4 100%);color:#0A0A0A;padding:1.1rem 2.2rem;border-radius:6px;font-weight:700;font-size:0.92rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:all 0.18s}
+.btn-pay:hover{background:linear-gradient(180deg,#D4A017 0%,#B58915 100%);color:#1A0F00;transform:translateY(-1px);box-shadow:0 8px 28px -6px rgba(212,160,23,0.3)}
+.btn-call{display:inline-block;background:transparent;color:#FFF;padding:1.1rem 2.2rem;border-radius:6px;font-weight:600;font-size:0.92rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,0.25);transition:all 0.18s}
+.btn-call:hover{border-color:#D4A017;color:#D4A017}
+.timeline{margin:2rem 0}
+.timeline-row{display:grid;grid-template-columns:140px 1fr;gap:1.5rem;align-items:flex-start;padding:0.95rem 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.timeline-row:last-child{border-bottom:0}
+.timeline-row .day{color:#D4A017;font-weight:700;font-size:0.84rem;letter-spacing:0.06em}
+.timeline-row .desc{color:#B5B5B5;font-size:0.95rem}
+.timeline-row .desc strong{color:#FFF;font-weight:600;display:block;margin-bottom:0.2rem;font-size:1rem}
+.expires{background:rgba(232,68,32,0.06);border-left:2px solid #E84420;padding:1rem 1.2rem;border-radius:4px;margin:2rem 0;color:#E8B0A0;font-size:0.92rem}
+.expires strong{color:#E84420;display:block;font-weight:700;margin-bottom:0.3rem;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em}
+.signed-by{margin-top:4rem;padding-top:2rem;border-top:1px solid rgba(212,160,23,0.22);color:#888;font-size:0.85rem}
+.faq-q{padding:1.2rem 1.4rem;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.05);border-left:2px solid transparent;border-radius:8px;margin-bottom:0.8rem;transition:border-color 0.3s}
+.faq-q:hover{border-left-color:#D4A017}
+.faq-q h4{color:#FFF;font-size:0.95rem;font-weight:600;margin-bottom:0.3rem}
+.faq-q p{color:#A7A7A7;font-size:0.9rem;margin:0}
+.pillar-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:1.5rem 0}
+@media (max-width:680px){.pillar-grid{grid-template-columns:1fr}}
+.pillar-card{padding:1.2rem 1.4rem;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06);border-radius:8px}
+.pillar-card strong{color:#FFF;display:block;margin-bottom:0.4rem;font-weight:600}
+.pillar-card span{color:#A7A7A7;font-size:0.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<span class="eyebrow">LoopWorker · Phase 2 Proposal · Confidential</span>
+<h1>Bubble Therapist · <em>Execution Retainer</em></h1>
+<div class="stamp">Prepared for the Bubble Therapist team · 2026-04-27 · Project Code: LW-2604-BUBBLE-P2</div>
+
+<h2>The brief, in a sentence</h2>
+<div class="brief-box">
+<h3>What Phase 1 surfaced</h3>
+<p>Sensory therapy practice with bubbles as the medium, an investor backing the build, and a real volume of session footage. The strategy sprint locked the position ("Bubble therapist for kids and the stars") and the four content pillars — Education, Big Feelings / Regulation, Authority / Proof, Parent Connection. What the practice needs now is a content engine that runs without the founder lifting it.</p>
+</div>
+
+<div class="pull">"Most therapists' content sounds like a website footer. Hers needs to sound like the calm voice that a panicked parent at 3am would actually trust. That's not content style. It's a decision about who you're for."</div>
+
+<h2>What Phase 2 builds</h2>
+<p>This is the <strong>90-day Execution Retainer</strong>. Phase 1 (the strategy sprint) was the door; this is the room. Locked monthly cadence, sales-focused outputs, no vanity metrics.</p>
+
+<div class="scope-grid">
+<div class="scope-card">
+<h4>Monthly content production</h4>
+<ul>
+<li><strong>12–16 short-form videos/month</strong> edited from existing session footage</li>
+<li>Hooks + captions written for sales (not engagement bait)</li>
+<li>On-screen text + cuts handled</li>
+<li>Sound design, audio leveling, vertical export</li>
+</ul>
+</div>
+<div class="scope-card">
+<h4>Pillar discipline</h4>
+<ul>
+<li>Locked 4-pillar mix per month</li>
+<li>Each post tagged for one of: build authority · build trust · surface demand · convert</li>
+<li>Zero engagement-bait pillar</li>
+<li>Pillar weights re-balanced quarterly</li>
+</ul>
+</div>
+<div class="scope-card">
+<h4>Posting + scheduling</h4>
+<ul>
+<li>Queue managed end-to-end via Blotato</li>
+<li>You approve the week. We ship.</li>
+<li>No "where's my post" emails</li>
+<li>Holiday + launch sequencing built in</li>
+</ul>
+</div>
+<div class="scope-card">
+<h4>Weekly + monthly review</h4>
+<ul>
+<li>Weekly Slack pulse — what saved, what DM'd, what skipped</li>
+<li>Monthly 30-min Zoom: what to push, what to drop</li>
+<li>Quarterly recalibration of pillar mix</li>
+<li>Direct line to Alex (not a ticket queue)</li>
+</ul>
+</div>
+</div>
+
+<h2>The four content pillars (locked from Phase 1)</h2>
+<div class="pillar-grid">
+<div class="pillar-card"><strong>Bubble education</strong><span>Why bubbles matter as a sensory tool. Fast, factual, the kind of clip a parent saves to send a partner.</span></div>
+<div class="pillar-card"><strong>Big feelings / regulation</strong><span>Calming kids on camera. Real moments of emotional processing. The "you can do this with my kid?" pillar.</span></div>
+<div class="pillar-card"><strong>Authority / proof</strong><span>Sessions, outcomes, parent reactions, on-camera testimonials. The pillar that turns trust into bookings.</span></div>
+<div class="pillar-card"><strong>Parent connection</strong><span>Relatable, shareable, soft-educational. The pillar that fills the top of the funnel and earns saves.</span></div>
+</div>
+
+<h3>Out of scope (in case it comes up)</h3>
+<ul>
+<li>Original on-site filming (we work from existing footage; new shoots quotable separately)</li>
+<li>Paid ad management (organic content only — paid ads quotable separately)</li>
+<li>Logo or identity design (existing brand assets used as-is)</li>
+<li>Long-form (YouTube > 3 min) editing</li>
+<li>Hosting / domain / website work</li>
+</ul>
+
+<h2>Timeline</h2>
+<div class="timeline">
+<div class="timeline-row"><div class="day">Day 0</div><div class="desc"><strong>Subscription kicks off</strong>Welcome email + Slack channel + footage drop folder set up.</div></div>
+<div class="timeline-row"><div class="day">Day 1–3</div><div class="desc"><strong>Footage intake</strong>You drop 30-60 mins of session footage in the Drive folder. We pull clips.</div></div>
+<div class="timeline-row"><div class="day">Day 4–10</div><div class="desc"><strong>Edit + write</strong>12-16 videos cut. Hooks + captions written. Pillar tagged.</div></div>
+<div class="timeline-row"><div class="day">Day 10</div><div class="desc"><strong>You review</strong>Single review pass via Loom. Approve or swap.</div></div>
+<div class="timeline-row"><div class="day">Day 11–15</div><div class="desc"><strong>Refinement + scheduling</strong>Approved videos scheduled across the month via Blotato.</div></div>
+<div class="timeline-row"><div class="day">Day 16</div><div class="desc"><strong>Monthly review call</strong>30-min Zoom. What worked, what to adjust, next month's themes.</div></div>
+<div class="timeline-row"><div class="day">Day 17–30</div><div class="desc"><strong>Posts go live</strong>Schedule runs. Slack pulse mid-month with early signals.</div></div>
+<div class="timeline-row"><div class="day">Month 4</div><div class="desc"><strong>Quarterly recalibration</strong>Pillar mix adjusted based on what's actually moving the practice forward.</div></div>
+</div>
+
+<h2>Investment</h2>
+
+<div class="price-box">
+<div class="total-label">90-Day Execution Retainer</div>
+<div class="total-amt">$5,000<span style="font-size:1rem;color:#888;font-weight:500;letter-spacing:0;text-transform:none;">/month</span></div>
+<p class="terms">Monthly subscription · 30-day cancellation notice · Pause for up to 60 days without canceling</p>
+<p class="terms" style="color:#6CC57A;">Phase 1 strategy sprint ($700) credits applied — first month effectively $4,300.</p>
+
+<div class="cta-row">
+<a href="https://buy.stripe.com/8x29AS2UfbltbVMdjKcEw0p" class="btn-pay">Subscribe — Start Month 1</a>
+<a href="https://www.loopworker.com/book.html?tier=bubble-phase2" class="btn-call">Book a Phase 2 Kickoff Call</a>
+</div>
+</div>
+
+<div class="expires">
+<strong>Proposal Expires</strong>
+This proposal is valid until <strong>2026-05-04 (7 days)</strong>. After that, monthly cadence and pricing may change as my retainer slots fill.
+</div>
+
+<h2>Frequently answered before sign-off</h2>
+
+<div class="faq-q">
+<h4>What if a month is light on footage?</h4>
+<p>We have a buffer of 30+ b-roll clips from Phase 1 to fill any gap. If footage runs critically low, we trigger a "footage refresh week" — you record 60 min in one sitting, we cut from that for 6+ weeks.</p>
+</div>
+<div class="faq-q">
+<h4>What if I want to pause?</h4>
+<p>Pause for up to 60 days without canceling. Subscription resumes at the same rate. No "we already lost your slot" pressure.</p>
+</div>
+<div class="faq-q">
+<h4>Can I scale up if it's working?</h4>
+<p>Yes. After Month 3, we can move to "Pillar+" — same scope plus paid ads creative direction (+$1,500/mo) or to "Full Studio" (16-24 videos/month, +$2K/mo).</p>
+</div>
+<div class="faq-q">
+<h4>How are revisions handled?</h4>
+<p>One review pass per month included. Beyond that, $300/round. Brand DNA changes after Phase 1 sign-off = scope change, quoted separately.</p>
+</div>
+<div class="faq-q">
+<h4>Do I own the videos?</h4>
+<p>Yes. Non-exclusive perpetual worldwide license on each delivery. We retain the right to use anonymized clips in our portfolio (with permission).</p>
+</div>
+<div class="faq-q">
+<h4>What if it's not working after 30 days?</h4>
+<p>Cancel anytime — 30-day notice. Month 1 work delivered before cancellation is yours. No claw-back.</p>
+</div>
+
+<h2>The full agreement</h2>
+<p>The full Service Agreement covers IP, confidentiality, dispute resolution, and termination terms. Sent alongside this proposal — sign both before kickoff.</p>
+
+<div class="signed-by">
+<p>Prepared by: <strong style="color:#FFF">Alex Lamb · LoopWorker</strong></p>
+<p>alex@loopworker.com · loopworker.com/book</p>
+<p style="margin-top:1rem">Questions before you sign? <a href="https://www.loopworker.com/book.html" style="color:#FFF;text-decoration:underline">Book a quick call</a> or reply to my last email.</p>
+</div>
+
+</div>
+</body>
+</html>
