@@ -1,0 +1,150 @@
+# Blog Schema And Support Gaps
+
+## Counts
+
+- `missing_faq`: 4
+- `missing_breadcrumb`: 4
+- `missing_speakable`: 46
+- `missing_related`: 0
+- `zero_question_h2`: 101
+
+## Remaining Gaps By Post
+
+- `blog/ai-brand-photography-cost.html`: missing speakable
+- `blog/build-brand-identity-with-ai.html`: missing speakable
+- `blog/ai-vs-traditional-product-photography.html`: missing speakable
+- `blog/ecommerce-ai-product-photos.html`: missing speakable
+- `blog/hiring-photographer-vs-ai-photography.html`: missing speakable
+- `blog/how-to-write-instagram-captions.html`: missing speakable
+- `blog/restaurant-ai-photography.html`: missing speakable
+- `blog/small-business-branding-mistakes.html`: missing FAQ, missing speakable, no question H2s
+- `blog/how-to-get-more-google-reviews.html`: missing speakable
+- `blog/n8n-vs-zapier-vs-make-automation.html`: missing speakable
+- `blog/google-business-profile-optimization.html`: missing speakable
+- `blog/how-to-increase-instagram-engagement.html`: missing speakable
+- `blog/midjourney-vs-chatgpt-brand-photography.html`: missing speakable
+- `blog/how-to-get-clients-on-instagram.html`: missing speakable
+- `blog/diy-branding-vs-hiring-agency.html`: missing speakable
+- `blog/social-media-manager-vs-ai-automation.html`: missing speakable
+- `blog/how-to-take-product-photos-with-phone.html`: missing speakable
+- `blog/email-marketing-for-small-business.html`: missing speakable
+- `blog/website-vs-social-media-small-business.html`: missing speakable
+- `blog/social-media-post-ideas-small-business.html`: missing speakable
+- `blog/how-to-build-a-brand-from-scratch.html`: missing speakable
+- `blog/how-to-grow-instagram-followers-organically.html`: missing speakable
+- `blog/ai-photography-for-salons-barbershops.html`: missing speakable
+- `blog/ai-video-production-for-brands.html`: missing speakable
+- `blog/small-business-seo-checklist.html`: missing FAQ, missing speakable, no question H2s
+- `blog/instagram-vs-tiktok-small-business.html`: missing speakable
+- `blog/how-to-get-testimonials-from-clients.html`: missing breadcrumb, missing speakable
+- `blog/ai-tools-for-photographers.html`: missing speakable
+- `blog/ai-photography-for-gyms-fitness.html`: missing speakable
+- `blog/canva-vs-custom-brand-design.html`: missing speakable
+- `blog/ai-photography-for-interior-designers.html`: missing speakable
+- `blog/ai-photography-for-wedding-vendors.html`: missing speakable
+- `blog/ai-photography-for-med-spas.html`: missing speakable
+- `blog/branding-checklist-small-business.html`: missing speakable
+- `blog/fiverr-vs-professional-brand-design.html`: missing speakable
+- `blog/pinterest-marketing-small-business.html`: missing breadcrumb, missing speakable
+- `blog/ai-photography-for-dental-practices.html`: missing speakable
+- `blog/small-business-marketing-budget.html`: missing speakable
+- `blog/how-to-create-social-media-graphics.html`: missing speakable
+- `blog/social-media-image-sizes-2026.html`: no question H2s
+- `blog/ai-photography-for-etsy-sellers.html`: missing breadcrumb, missing speakable, no question H2s
+- `blog/edit-photos-on-phone-workflow.html`: no question H2s
+- `blog/website-copywriting-templates.html`: no question H2s
+- `blog/email-welcome-sequence-templates.html`: no question H2s
+- `blog/social-proof-strategies-small-business.html`: no question H2s
+- `blog/food-influencer-collaboration-guide.html`: no question H2s
+- `blog/instagram-hashtag-strategy-2026.html`: no question H2s
+- `blog/iphone-video-settings-social-media.html`: no question H2s
+- `blog/business-description-templates.html`: no question H2s
+- `blog/how-to-rebrand-your-small-business.html`: missing speakable, no question H2s
+- `blog/spa-social-media-strategy.html`: no question H2s
+- `blog/instagram-bio-ideas-small-business.html`: no question H2s
+- `blog/client-onboarding-checklist.html`: no question H2s
+- `blog/client-retention-strategies.html`: no question H2s
+- `blog/how-to-start-a-service-business.html`: no question H2s
+- `blog/ai-image-upscaling-guide.html`: no question H2s
+- `blog/ai-photography-for-pet-businesses.html`: missing breadcrumb, missing speakable, no question H2s
+- `blog/cafe-marketing-ideas.html`: no question H2s
+- `blog/ecommerce-instagram-strategy.html`: no question H2s
+- `blog/food-delivery-app-optimization.html`: no question H2s
+- `blog/food-truck-marketing-guide.html`: no question H2s
+- `blog/hotel-marketing-content-strategy.html`: no question H2s
+- `blog/real-estate-social-media-guide.html`: no question H2s
+- `blog/restaurant-event-marketing.html`: no question H2s
+- `blog/restaurant-review-management.html`: no question H2s
+- `blog/ai-photography-for-chiropractors.html`: missing speakable, no question H2s
+- `blog/ai-photography-for-lawyers.html`: missing speakable, no question H2s
+- `blog/ai-tools-for-restaurant-owners.html`: no question H2s
+- `blog/auto-detailing-marketing.html`: no question H2s
+- `blog/bakery-instagram-content-ideas.html`: missing FAQ, missing speakable, no question H2s
+- `blog/bar-nightclub-marketing.html`: no question H2s
+- `blog/barbershop-social-media-guide.html`: no question H2s
+- `blog/bbq-restaurant-marketing.html`: no question H2s
+- `blog/boutique-hotel-instagram.html`: no question H2s
+- `blog/brand-name-generator-tips.html`: no question H2s
+- `blog/brunch-restaurant-marketing.html`: no question H2s
+- `blog/canva-templates-small-business.html`: no question H2s
+- `blog/catering-business-marketing.html`: no question H2s
+- `blog/chiropractor-marketing-ideas.html`: no question H2s
+- `blog/cleaning-business-marketing.html`: no question H2s
+- `blog/cocktail-photography-guide.html`: no question H2s
+- `blog/coffee-shop-social-media-guide.html`: no question H2s
+- `blog/content-calendar-generator.html`: no question H2s
+- `blog/content-creation-setup-home.html`: no question H2s
+- `blog/contractor-marketing-ideas.html`: no question H2s
+- `blog/dental-practice-marketing.html`: no question H2s
+- `blog/dropshipping-product-photography.html`: no question H2s
+- `blog/fitness-trainer-content-strategy.html`: no question H2s
+- `blog/florist-marketing-ideas.html`: no question H2s
+- `blog/food-photography-editing-lightroom.html`: no question H2s
+- `blog/food-truck-instagram-content.html`: no question H2s
+- `blog/google-business-profile-posts.html`: no question H2s
+- `blog/gym-marketing-strategies.html`: no question H2s
+- `blog/gym-member-retention-strategies.html`: no question H2s
+- `blog/how-to-create-a-media-kit.html`: no question H2s
+- `blog/how-to-get-more-clients-as-a-hairstylist.html`: no question H2s
+- `blog/how-to-get-more-restaurant-customers.html`: no question H2s
+- `blog/how-to-get-press-coverage.html`: no question H2s
+- `blog/ice-cream-shop-marketing.html`: no question H2s
+- `blog/instagram-story-ideas-small-business.html`: no question H2s
+- `blog/interior-photography-phone.html`: no question H2s
+- `blog/iphone-food-photography-restaurant.html`: no question H2s
+- `blog/landscaping-marketing-guide.html`: no question H2s
+- `blog/lightroom-mobile-presets-small-business.html`: no question H2s
+- `blog/meal-prep-business-marketing.html`: no question H2s
+- `blog/medspa-client-retention-strategies.html`: no question H2s
+- `blog/menu-design-tips-restaurants.html`: no question H2s
+- `blog/nail-salon-instagram-ideas.html`: no question H2s
+- `blog/pet-grooming-marketing.html`: no question H2s
+- `blog/photo-editing-apps-small-business.html`: no question H2s
+- `blog/pizza-shop-marketing-guide.html`: no question H2s
+- `blog/pricing-page-design-guide.html`: no question H2s
+- `blog/product-photography-white-background.html`: no question H2s
+- `blog/real-estate-instagram-strategy.html`: no question H2s
+- `blog/restaurant-branding-guide.html`: no question H2s
+- `blog/restaurant-catering-marketing.html`: no question H2s
+- `blog/restaurant-email-marketing.html`: no question H2s
+- `blog/restaurant-grand-opening-marketing.html`: no question H2s
+- `blog/restaurant-instagram-aesthetic.html`: no question H2s
+- `blog/restaurant-instagram-reels-ideas.html`: no question H2s
+- `blog/restaurant-loyalty-program.html`: no question H2s
+- `blog/restaurant-partnership-marketing.html`: no question H2s
+- `blog/restaurant-photography-on-budget.html`: no question H2s
+- `blog/restaurant-photography-shot-list.html`: missing FAQ, missing speakable, no question H2s
+- `blog/restaurant-social-media-mistakes.html`: no question H2s
+- `blog/restaurant-staff-as-content-creators.html`: no question H2s
+- `blog/restaurant-website-essentials.html`: no question H2s
+- `blog/salon-instagram-strategy.html`: no question H2s
+- `blog/social-media-analytics-guide.html`: no question H2s
+- `blog/sushi-restaurant-marketing.html`: no question H2s
+- `blog/tattoo-shop-marketing.html`: no question H2s
+- `blog/threads-marketing-guide.html`: no question H2s
+- `blog/tiktok-for-restaurants.html`: no question H2s
+- `blog/vegan-restaurant-marketing.html`: no question H2s
+- `blog/video-content-ideas-small-business.html`: no question H2s
+- `blog/wedding-vendor-content-strategy.html`: no question H2s
+- `blog/yoga-studio-marketing.html`: no question H2s
+- `blog/youtube-shorts-small-business.html`: no question H2s
