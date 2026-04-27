@@ -7,7 +7,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="preload" as="image" href="images/cards/card_02.webp">
+    <!-- Visual polish layer — overlays inline styles with editorial accent (amber) -->
+    <style>
+      :root { --accent: #D4A017; --accent-soft: #B58915; --accent-glow: rgba(212, 160, 23, 0.18); --rule: rgba(212, 160, 23, 0.22); }
+      body { background: radial-gradient(ellipse 1200px 800px at 50% 100%, rgba(212,160,23,0.025), transparent 60%), #080808 !important; }
+      h1.fade-up { font-family: 'Cormorant Garamond', 'Inter', serif !important; font-weight: 500 !important; letter-spacing: -0.02em !important; line-height: 1.06 !important; }
+      h1 em { font-style: italic; color: var(--accent); font-weight: 400; }
+      .hero { position: relative; overflow: hidden; }
+      .hero::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 800px 500px at 15% 0%, rgba(212,160,23,0.08), transparent 60%), radial-gradient(ellipse 700px 600px at 100% 30%, rgba(108,197,122,0.04), transparent 70%); z-index: 0; }
+      .hero > * { position: relative; z-index: 1; }
+      .hero-chip { background: linear-gradient(135deg, rgba(212,160,23,0.08), rgba(255,255,255,0.03)) !important; border: 1px solid var(--rule) !important; color: #E8D8B0 !important; transition: all 0.18s ease; }
+      .hero-chip:hover { border-color: var(--accent) !important; transform: translateY(-1px); }
+      .nav-cta { background: linear-gradient(180deg, #FFFFFF 0%, #F4F4F4 100%) !important; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 8px 20px -8px rgba(0,0,0,0.4); transition: all 0.18s ease; }
+      .nav-cta:hover { background: linear-gradient(180deg, var(--accent) 0%, var(--accent-soft) 100%) !important; color: #1A0F00 !important; transform: translateY(-1px); }
+      .btn-primary { background: linear-gradient(180deg, #FFFFFF 0%, #F4F4F4 100%); transition: all 0.18s ease; }
+      .btn-primary:hover { background: linear-gradient(180deg, var(--accent) 0%, var(--accent-soft) 100%) !important; color: #1A0F00 !important; transform: translateY(-1px); box-shadow: 0 8px 28px -6px var(--accent-glow); }
+      .btn-outline:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
+      .service-link-card { transition: transform 0.2s ease, box-shadow 0.25s ease; }
+      .service-link-card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -20px rgba(0,0,0,0.5), 0 0 28px var(--accent-glow); }
+      .audit-form-section { border-top: 1px solid var(--rule); }
+      .nav-logo:hover { color: var(--accent) !important; }
+      .audit-form input:focus, .audit-form textarea:focus, .audit-form select:focus { border-color: var(--accent) !important; box-shadow: 0 0 0 3px var(--accent-glow) !important; outline: none; }
+      .footer-brand { background: linear-gradient(90deg, #FFFFFF, var(--accent)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
     <title>Social Media Content That Brings In Customers | LoopWorker</title>
     <meta name="description" content="Done-for-you social media content for restaurants, med spas, gyms, real estate, and local brands that need more customers, not just more views.">
     <link rel="canonical" href="https://www.loopworker.com/">
@@ -2047,7 +2071,7 @@
     <section class="hero">
         <div class="container-wide hero-shell">
             <div>
-                <h1 class="fade-up">Social Media Content Built to Bring In Customers</h1>
+                <h1 class="fade-up">Social Media Content Built to Bring In <em>Customers</em></h1>
                 <p class="fade-up">Built first for restaurants, med spas, and gyms that need content people actually act on. The same conversion-first system also adapts for real estate, hotels, and other local brands.</p>
                 <div class="hero-actions fade-up">
                     <a href="/book.html" class="btn btn-primary" data-track="Hero Book CTA">Book a Discovery Call</a>

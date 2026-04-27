@@ -625,3 +625,280 @@ button:focus-visible {
 
 .cs-lead { font-size: 1.15rem; color: #C7C7C7; margin-top: 1rem; }
 .cs-related-h { margin-top: 3rem; }
+
+/* ────────────────────────────────────────────────────────────────────
+   VISUAL POLISH LAYER  ·  added 2026-04-27
+   Editorial warmth on top of dark practitioner base.
+   No structural changes — additive only.
+   ──────────────────────────────────────────────────────────────────── */
+
+/* Editorial display serif (load on demand) */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* Brand accent palette */
+:root {
+  --accent: #D4A017;          /* burnt amber — film/gold */
+  --accent-soft: #B58915;
+  --accent-glow: rgba(212, 160, 23, 0.18);
+  --warm-1: #1a1410;          /* deep warm shadow */
+  --warm-2: #221813;          /* mid warm */
+  --cool-1: #0A0E14;          /* cool deep blue-black */
+  --rule: rgba(212, 160, 23, 0.22);
+}
+
+/* ── Stronger film grain ── */
+body::after {
+  opacity: 0.045 !important;
+  background-blend-mode: overlay;
+}
+
+/* ── Editorial display headlines ── */
+.page-hero h1,
+.cs-shell h1,
+.audit-shell h1,
+.booking-shell h1,
+.vert-shell h1,
+.pricing-shell h1 {
+  font-family: 'Cormorant Garamond', 'Inter', serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+/* Italicize one keyword for editorial cadence — opt-in via class */
+.page-hero h1 em,
+.cs-shell h1 em,
+.audit-shell h1 em,
+.booking-shell h1 em,
+.vert-shell h1 em,
+.pricing-shell h1 em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+/* ── Hero gradient mesh (subtle) ── */
+.page-hero,
+.cs-shell,
+.audit-shell,
+.booking-shell,
+.vert-shell,
+.pricing-shell {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before,
+.cs-shell::before,
+.audit-shell::before,
+.booking-shell::before,
+.vert-shell::before,
+.pricing-shell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 800px 500px at 15% 0%, rgba(212, 160, 23, 0.08), transparent 60%),
+    radial-gradient(ellipse 700px 600px at 100% 30%, rgba(108, 197, 122, 0.04), transparent 70%),
+    radial-gradient(ellipse 900px 700px at 50% 100%, rgba(212, 160, 23, 0.05), transparent 65%);
+  z-index: 0;
+}
+
+.page-hero > *,
+.cs-shell > *,
+.audit-shell > *,
+.booking-shell > *,
+.vert-shell > *,
+.pricing-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Eyebrow accent ── */
+.eyebrow {
+  color: var(--accent) !important;
+}
+
+/* ── Chips polished ── */
+.chip,
+.hero-chip {
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.08), rgba(255,255,255,0.03)) !important;
+  border: 1px solid var(--rule) !important;
+  color: #E8D8B0 !important;
+  letter-spacing: 0.06em;
+  transition: all 0.18s ease;
+}
+
+.chip:hover,
+.hero-chip:hover {
+  border-color: var(--accent) !important;
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.18), rgba(255,255,255,0.05)) !important;
+  transform: translateY(-1px);
+}
+
+/* ── Card lift + accent glow on hover ── */
+.card {
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.25s ease;
+  background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01)) !important;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--rule) !important;
+  box-shadow:
+    0 18px 40px -20px rgba(0,0,0,0.5),
+    0 0 0 1px var(--rule),
+    0 0 28px var(--accent-glow);
+}
+
+.card .kicker {
+  color: var(--accent) !important;
+  letter-spacing: 0.12em;
+}
+
+/* ── Primary CTA polish ── */
+.btn-primary,
+.nav-cta,
+.submit-btn,
+.pick-btn {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F4F4F4 100%) !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 8px 20px -8px rgba(0,0,0,0.4);
+  transition: all 0.18s ease;
+}
+
+.btn-primary:hover,
+.nav-cta:hover,
+.submit-btn:hover,
+.pick-btn:hover {
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-soft) 100%) !important;
+  color: #1A0F00 !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.3) inset, 0 8px 28px -6px var(--accent-glow);
+  transform: translateY(-1px);
+}
+
+/* Outline CTA polish */
+.btn-outline {
+  border-color: rgba(212, 160, 23, 0.3) !important;
+  color: #E8D8B0 !important;
+  transition: all 0.18s ease;
+}
+
+.btn-outline:hover {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+  background: rgba(212, 160, 23, 0.04) !important;
+}
+
+/* ── Section dividers — thin amber rule ── */
+.section-alt {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ── Pricing card featured tier — premium glow ── */
+.pricing-card.featured {
+  box-shadow: 0 0 0 1px var(--accent), 0 24px 60px -28px var(--accent-glow);
+  border-color: var(--accent) !important;
+}
+
+.pricing-card.featured::before {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-soft) 100%) !important;
+  color: #1A0F00 !important;
+  box-shadow: 0 4px 14px -4px var(--accent-glow);
+}
+
+.pricing-card .tier-price {
+  background: linear-gradient(180deg, #FFFFFF 0%, #E8D8B0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Case study pull-quote with accent rule ── */
+.cs-pull {
+  border-left-color: var(--accent) !important;
+  background: linear-gradient(90deg, rgba(212, 160, 23, 0.03), transparent 50%);
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+/* ── Promise list / what-list bullets gold ── */
+.promise-list li::before,
+.delivers li::before,
+.what-list li::before,
+.cs-section ul li strong + br ~ *::before {
+  color: var(--accent) !important;
+}
+
+/* ── Form focus state — amber glow ── */
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px var(--accent-glow) !important;
+}
+
+/* ── Footer warmer tone ── */
+footer {
+  background: linear-gradient(180deg, transparent, rgba(212, 160, 23, 0.025));
+  border-top: 1px solid var(--rule) !important;
+}
+
+.footer-brand {
+  background: linear-gradient(90deg, #FFFFFF, var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+/* ── Nav logo accent on hover ── */
+.nav-logo {
+  transition: color 0.2s ease;
+}
+
+.nav-logo:hover {
+  color: var(--accent) !important;
+}
+
+/* ── Body ambient gradient — subtle warmth bottom ── */
+body {
+  background:
+    radial-gradient(ellipse 1200px 800px at 50% 100%, rgba(212, 160, 23, 0.025), transparent 60%),
+    #080808 !important;
+}
+
+/* ── Mobile readability bumps ── */
+@media (max-width: 720px) {
+  .page-hero h1,
+  .cs-shell h1,
+  .audit-shell h1,
+  .booking-shell h1,
+  .vert-shell h1,
+  .pricing-shell h1 {
+    font-size: clamp(1.9rem, 7vw, 2.6rem);
+  }
+}
+
+/* ── Reduced motion respect ── */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .btn-primary,
+  .btn-outline,
+  .nav-cta,
+  .submit-btn,
+  .pick-btn,
+  .chip,
+  .hero-chip {
+    transition: none !important;
+  }
+  .card:hover,
+  .btn-primary:hover,
+  .nav-cta:hover,
+  .submit-btn:hover,
+  .pick-btn:hover {
+    transform: none !important;
+  }
+}
