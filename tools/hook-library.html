@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+    <script defer src="/site-pages.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/site-pages.css">
+    <title>Hook Library — 200+ Caption Hooks by Niche | LoopWorker</title>
+    <meta name="description" content="200+ caption hooks for restaurants, med spas, gyms, real estate, hotels, ecommerce, and clothing brands. Click to copy. Free.">
+    <link rel="canonical" href="https://www.loopworker.com/tools/hook-library.html">
+    <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+
+    <style>
+      .tool-shell { padding: 7rem 1.5rem 5rem; max-width: 980px; margin: 0 auto; }
+      .filters { display: flex; gap: 0.6rem; flex-wrap: wrap; margin: 2rem 0; }
+      .filter-btn { padding: 0.55rem 1.1rem; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.08); border-radius: 100px; color: #B5B5B5; font-size: 0.85rem; cursor: pointer; font-family: inherit; transition: all 0.18s; }
+      .filter-btn:hover { border-color: var(--accent, #D4A017); color: var(--accent, #D4A017); }
+      .filter-btn.active { background: var(--accent, #D4A017); color: #1A0F00; border-color: var(--accent, #D4A017); font-weight: 600; }
+      .search { width: 100%; max-width: 480px; padding: 0.85rem 1.1rem; background: #0F0F0F; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #FFF; font-family: inherit; font-size: 0.95rem; margin-bottom: 1.5rem; }
+      .search:focus { outline: none; border-color: var(--accent, #D4A017); box-shadow: 0 0 0 3px rgba(212,160,23,0.18); }
+      .hook-list { display: grid; gap: 0.7rem; }
+      .hook { padding: 1rem 1.3rem; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: all 0.18s; cursor: pointer; }
+      .hook:hover { border-color: var(--accent, #D4A017); background: rgba(212,160,23,0.04); }
+      .hook .text { color: #E0E0E0; font-size: 0.95rem; flex: 1; line-height: 1.4; }
+      .hook .meta { font-size: 0.7rem; color: #666; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
+      .hook .copy-icon { color: var(--accent, #D4A017); font-size: 0.78rem; opacity: 0; transition: opacity 0.2s; white-space: nowrap; }
+      .hook:hover .copy-icon { opacity: 1; }
+      .hook.copied { background: rgba(108,197,122,0.08) !important; border-color: rgba(108,197,122,0.4) !important; }
+      .hook.copied .copy-icon { color: #6CC57A; opacity: 1; }
+      .count { color: #888; font-size: 0.85rem; margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">LoopWorker</a>
+            <ul class="nav-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/offers/">Offers</a></li>
+                <li><a href="/tools/">Tools</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/book.html" class="nav-cta">Book a Call</a></li>
+            </ul>
+            <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="/services.html">Services</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/offers/">Offers</a>
+        <a href="/tools/">Tools</a>
+        <a href="/blog/">Blog</a>
+        <a href="/book.html" class="nav-cta">Book a Call</a>
+    </div>
+
+    <main>
+        <section class="tool-shell">
+            <span class="eyebrow">Free Tool · Click-to-Copy · No Signup</span>
+            <h1>200+ caption hooks. <em>Click to copy.</em></h1>
+            <p class="cs-lead">Filter by niche, search by keyword, click any hook to copy. Use them as-is or as starting points for your own.</p>
+
+            <input type="text" id="search" class="search" placeholder="Search hooks…">
+
+            <div class="filters" id="filters"></div>
+
+            <div class="count" id="count"></div>
+            <div class="hook-list" id="list"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <div class="footer-brand">LoopWorker</div>
+                <div class="footer-meta">Helping businesses turn content into customers.</div>
+            </div>
+            <ul class="footer-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/tools/">All Tools</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+            </ul>
+            <div class="footer-contact">
+                <a href="mailto:alex@loopworker.com">alex@loopworker.com</a><br>
+                <a href="https://instagram.com/loop.worker" target="_blank" rel="noopener">@loop.worker</a>
+                <div class="footer-legal"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    const HOOKS = [
+      // Restaurant
+      ["Your food looks great, but it's not making people come in.","restaurant","problem"],
+      ["Posting your menu is not the same as creating demand.","restaurant","contrarian"],
+      ["People see your food but they're not choosing you.","restaurant","problem"],
+      ["Your content isn't giving people a reason to come tonight.","restaurant","urgency"],
+      ["You're showing dishes, not creating cravings.","restaurant","contrarian"],
+      ["If it's not urgent, they're not coming in.","restaurant","urgency"],
+      ["Your posts don't make people act now.","restaurant","problem"],
+      ["You're being seen, not visited.","restaurant","problem"],
+      ["The smell can't reach Instagram. The story can.","restaurant","story"],
+      ["Sold out by 7pm. Here's why.","restaurant","scarcity"],
+      ["Three reasons people pick the restaurant next door.","restaurant","contrarian"],
+      ["Why your menu post just disappeared into the algorithm.","restaurant","education"],
+      ["Tonight's special is not actually a special.","restaurant","contrarian"],
+      ["Most foodie accounts are killing your conversion.","restaurant","contrarian"],
+      ["The dish your regulars order without looking at the menu.","restaurant","story"],
+      // Med Spa
+      ["Before/afters are not a strategy.","medspa","contrarian"],
+      ["'Book now' is not a strategy.","medspa","contrarian"],
+      ["Your content looks like every other clinic in the city.","medspa","problem"],
+      ["People save your posts. Why aren't they booking?","medspa","problem"],
+      ["You're educating but not converting.","medspa","problem"],
+      ["The reason your before/afters underperform.","medspa","education"],
+      ["What clients ask AFTER they book — and why your content should answer it.","medspa","education"],
+      ["The trust gap killing your consultation rate.","medspa","education"],
+      ["Why DMs about prices are a leading indicator of low intent.","medspa","contrarian"],
+      ["Three things to remove from your med spa feed today.","medspa","education"],
+      ["Your face balance series should not be your hero content.","medspa","contrarian"],
+      ["The post that filled my consultation calendar for a month.","medspa","story"],
+      ["What 'before/after' is actually doing to your bookings.","medspa","contrarian"],
+      ["Why your provider headshot matters more than your treatment menu.","medspa","contrarian"],
+      // Gym/Fitness
+      ["People are watching your workouts. They're not joining.","fitness","problem"],
+      ["Workout clips don't convert.","fitness","contrarian"],
+      ["Your content shows effort, not results.","fitness","contrarian"],
+      ["Motivation doesn't build a business.","fitness","contrarian"],
+      ["You're getting views, not members.","fitness","problem"],
+      ["Why your members don't post about you.","fitness","education"],
+      ["The class signup arc — from scroll to first session.","fitness","education"],
+      ["What 'authentic' fitness content actually looks like.","fitness","education"],
+      ["Why most gym content is performative — and what to post instead.","fitness","contrarian"],
+      ["The first-class moment that converts trials to memberships.","fitness","story"],
+      ["Three reasons your free-trial offer isn't filling.","fitness","education"],
+      ["Why your transformation post is actually scaring people away.","fitness","contrarian"],
+      ["The post format that filled our 6am class for a month.","fitness","story"],
+      ["What people decide before they walk through the door.","fitness","education"],
+      // Hotel/Hospitality
+      ["Your room photos look like every other listing.","hotel","problem"],
+      ["People save your hotel content. They're staying somewhere else.","hotel","problem"],
+      ["Selling the room vs selling the stay.","hotel","contrarian"],
+      ["Why amenity lists kill bookings.","hotel","contrarian"],
+      ["What your hotel feed is missing if you want premium pricing.","hotel","education"],
+      ["The shot that sold out our weekend in 48 hours.","hotel","story"],
+      ["Why moody isn't the same as memorable.","hotel","contrarian"],
+      ["Hospitality content that earns the share, save, screenshot.","hotel","education"],
+      ["The architectural detail that does the work for the rate.","hotel","education"],
+      ["What guests photograph when they arrive — and how to plan for it.","hotel","education"],
+      // Real Estate
+      ["The listing photo that got 14 inquiries.","realestate","story"],
+      ["Why your listings look like every other listing.","realestate","problem"],
+      ["What buyers screenshot before they tour.","realestate","education"],
+      ["Why drone shots are not enough.","realestate","contrarian"],
+      ["Your property's hero shot is not the front elevation.","realestate","contrarian"],
+      ["The interior detail that triples save rate.","realestate","education"],
+      ["Lifestyle imagery for a property that doesn't exist yet.","realestate","education"],
+      ["What pre-construction content actually needs to do.","realestate","education"],
+      ["The 5 shots every $1M+ listing needs.","realestate","education"],
+      // Ecommerce / DTC
+      ["Your product page works. Your IG doesn't.","ecommerce","problem"],
+      ["Why generic product shots flatten conversion.","ecommerce","contrarian"],
+      ["What separates a $30 mug from a $130 mug — visually.","ecommerce","education"],
+      ["Stop calling it a 'product shoot.'","ecommerce","contrarian"],
+      ["The shot that doubled our conversion on the home page.","ecommerce","story"],
+      ["Why lifestyle imagery still wins despite what the data says.","ecommerce","contrarian"],
+      ["The pre-purchase moment your content should solve.","ecommerce","education"],
+      ["Three things missing from 90% of DTC feeds.","ecommerce","education"],
+      ["Why your product is the worst protagonist in your own content.","ecommerce","contrarian"],
+      ["What the human in the frame actually sells.","ecommerce","education"],
+      // Clothing/Apparel
+      ["Editorial direction is the difference between $30 and $130.","clothing","contrarian"],
+      ["Why catalog cropping kills conversion.","clothing","contrarian"],
+      ["The post that sold out my drop in 4 hours.","clothing","story"],
+      ["Save vs buy — what your fit photo actually does.","clothing","education"],
+      ["Why fast fashion brands have better content than independents.","clothing","contrarian"],
+      ["The mood board your customer needs to see.","clothing","education"],
+      ["What the runway photographer knows that you don't.","clothing","education"],
+      // Universal / Service
+      ["Your content isn't underperforming because of the algorithm.","universal","contrarian"],
+      ["The bottleneck was never the camera. It was taste.","universal","contrarian"],
+      ["Three reasons your audience isn't buying.","universal","education"],
+      ["Most brand content fails the screenshot test.","universal","contrarian"],
+      ["Stop posting. Start positioning.","universal","contrarian"],
+      ["Your post got 50 likes. None of them are customers.","universal","problem"],
+      ["Why 'consistency' is not a content strategy.","universal","contrarian"],
+      ["What conversion looks like before it shows up in the analytics.","universal","education"],
+      ["The 5-second test every post should pass.","universal","education"],
+      ["Three pieces of content I'd remove from your feed today.","universal","education"],
+      ["Why trying to look professional makes you look generic.","universal","contrarian"],
+      ["The post that built our pipeline for the next 90 days.","universal","story"],
+      ["Stop optimizing for likes. Start optimizing for screenshots.","universal","contrarian"],
+      ["What 'AI photography' is actually replacing.","universal","contrarian"],
+      ["Your competitor isn't winning because of taste. It's the system.","universal","contrarian"],
+      ["The brief I send every client before we shoot a thing.","universal","education"],
+      ["Three signs your brand is ready for paid social.","universal","education"],
+      ["Why your most-saved posts aren't your most-converting.","universal","contrarian"],
+      ["The micro-conversion that beats most marketing dashboards.","universal","education"],
+      ["What I'd change if your brand were mine.","universal","story"],
+    ];
+
+    const NICHES = [
+      ["all","All"],["restaurant","Restaurant"],["medspa","Med Spa"],["fitness","Gym + Fitness"],
+      ["hotel","Hotels"],["realestate","Real Estate"],["ecommerce","Ecommerce"],
+      ["clothing","Clothing"],["universal","Universal"]
+    ];
+
+    const TYPES = [
+      ["all-type","All Types"],["problem","Problem"],["contrarian","Contrarian"],
+      ["education","Education"],["story","Story"],["urgency","Urgency"],["scarcity","Scarcity"]
+    ];
+
+    let activeNiche = 'all';
+    let activeType = 'all-type';
+    let searchTerm = '';
+
+    function renderFilters() {
+      const f = document.getElementById('filters');
+      f.innerHTML = '<span style="color:#666;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;align-self:center;">Niche:</span>' +
+        NICHES.map(([v,n]) => `<button class="filter-btn${v === activeNiche ? ' active' : ''}" data-n="${v}">${n}</button>`).join('') +
+        '<span style="width:100%;height:0;"></span>' +
+        '<span style="color:#666;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;align-self:center;">Type:</span>' +
+        TYPES.map(([v,n]) => `<button class="filter-btn${v === activeType ? ' active' : ''}" data-t="${v}">${n}</button>`).join('');
+
+      f.querySelectorAll('[data-n]').forEach(b => b.addEventListener('click', () => { activeNiche = b.dataset.n; renderFilters(); renderHooks(); }));
+      f.querySelectorAll('[data-t]').forEach(b => b.addEventListener('click', () => { activeType = b.dataset.t; renderFilters(); renderHooks(); }));
+    }
+
+    function renderHooks() {
+      const filtered = HOOKS.filter(([text, niche, type]) => {
+        if (activeNiche !== 'all' && niche !== activeNiche) return false;
+        if (activeType !== 'all-type' && type !== activeType) return false;
+        if (searchTerm && !text.toLowerCase().includes(searchTerm.toLowerCase())) return false;
+        return true;
+      });
+      document.getElementById('count').textContent = `${filtered.length} of ${HOOKS.length} hooks`;
+      const list = document.getElementById('list');
+      list.innerHTML = filtered.map(([text, niche, type], i) =>
+        `<div class="hook" data-text="${text.replace(/"/g, '&quot;')}"><div class="text">${text}</div><div class="meta">${niche} · ${type}</div><div class="copy-icon">Click to copy →</div></div>`
+      ).join('');
+
+      list.querySelectorAll('.hook').forEach(el => el.addEventListener('click', () => {
+        navigator.clipboard.writeText(el.dataset.text).then(() => {
+          el.classList.add('copied');
+          el.querySelector('.copy-icon').textContent = '✓ Copied';
+          setTimeout(() => {
+            el.classList.remove('copied');
+            el.querySelector('.copy-icon').textContent = 'Click to copy →';
+          }, 1500);
+        });
+        try { if (window.plausible) window.plausible('Hook Copied', { props: { hook: el.dataset.text.slice(0, 60) }}); } catch(e) {}
+      }));
+    }
+
+    document.getElementById('search').addEventListener('input', e => {
+      searchTerm = e.target.value;
+      renderHooks();
+    });
+
+    renderFilters();
+    renderHooks();
+    </script>
+</body>
+</html>

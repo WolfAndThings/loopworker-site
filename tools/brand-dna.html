@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+    <script defer src="/site-pages.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/site-pages.css">
+    <title>Brand DNA Quiz — Free Personality + Palette Generator | LoopWorker</title>
+    <meta name="description" content="12 questions → your brand's locked personality, color palette, film stock, and shot list direction. Free. No signup.">
+    <link rel="canonical" href="https://www.loopworker.com/tools/brand-dna.html">
+    <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+
+    <style>
+      .tool-shell { padding: 7rem 1.5rem 5rem; max-width: 760px; margin: 0 auto; }
+      .quiz-card { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 2.5rem; margin-top: 2.5rem; }
+      .question { display: none; }
+      .question.active { display: block; }
+      .question h3 { color: #FFF; font-size: 1.4rem; margin-bottom: 1.6rem; line-height: 1.3; }
+      .options { display: grid; gap: 0.8rem; }
+      .option { padding: 1.1rem 1.4rem; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; cursor: pointer; color: #D4D4D4; font-size: 0.96rem; transition: all 0.18s; }
+      .option:hover { border-color: var(--accent, #D4A017); background: rgba(212,160,23,0.05); transform: translateY(-1px); }
+      .option.selected { border-color: var(--accent, #D4A017); background: rgba(212,160,23,0.08); color: #FFF; }
+      .progress-bar { height: 4px; background: rgba(255,255,255,0.08); border-radius: 2px; margin-bottom: 2rem; overflow: hidden; }
+      .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent, #D4A017), var(--accent-soft, #B58915)); border-radius: 2px; transition: width 0.4s ease; width: 8%; }
+      .quiz-nav { display: flex; justify-content: space-between; gap: 1rem; margin-top: 2rem; }
+      .quiz-nav button { background: transparent; border: 1px solid rgba(255,255,255,0.18); color: #D4D4D4; padding: 0.75rem 1.4rem; border-radius: 6px; cursor: pointer; font-family: inherit; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; transition: all 0.18s; }
+      .quiz-nav button:hover { border-color: var(--accent, #D4A017); color: var(--accent, #D4A017); }
+      .quiz-nav button:disabled { opacity: 0.3; cursor: not-allowed; }
+      .quiz-nav button.primary { background: #FFF; color: #0A0A0A; border-color: #FFF; }
+      .quiz-nav button.primary:hover { background: var(--accent, #D4A017); color: #1A0F00; }
+      #result { display: none; }
+      .result-block { padding: 1.6rem 1.8rem; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; margin-bottom: 1rem; }
+      .result-block h4 { color: var(--accent, #D4A017); font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.6rem; }
+      .result-block .value { color: #FFF; font-size: 1.15rem; font-weight: 600; line-height: 1.4; }
+      .result-block .desc { color: #A7A7A7; font-size: 0.92rem; margin-top: 0.5rem; }
+      .palette { display: flex; gap: 0.5rem; margin-top: 0.8rem; }
+      .swatch { width: 60px; height: 60px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); position: relative; }
+      .swatch::after { content: attr(data-hex); position: absolute; bottom: -22px; left: 0; font-size: 0.68rem; color: #888; font-family: monospace; letter-spacing: 0.04em; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">LoopWorker</a>
+            <ul class="nav-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/offers/">Offers</a></li>
+                <li><a href="/tools/">Tools</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/book.html" class="nav-cta">Book a Call</a></li>
+            </ul>
+            <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="/services.html">Services</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/offers/">Offers</a>
+        <a href="/tools/">Tools</a>
+        <a href="/blog/">Blog</a>
+        <a href="/book.html" class="nav-cta">Book a Call</a>
+    </div>
+
+    <main>
+        <section class="tool-shell">
+            <span class="eyebrow">Free Tool · 2 Minutes · No Signup</span>
+            <h1>Twelve questions. <em>One locked Brand DNA.</em></h1>
+            <p class="cs-lead">The same Brand DNA framework I use on $5K-$10K client builds — surfaced as a free quiz. Answer 12 questions, get your personality archetype, color palette, film stock, and shot-list emphasis.</p>
+
+            <div class="quiz-card" id="quiz">
+                <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+                <div id="questions"></div>
+                <div class="quiz-nav">
+                    <button id="back" disabled>← Back</button>
+                    <button id="next" class="primary">Next →</button>
+                </div>
+            </div>
+
+            <div class="quiz-card" id="result">
+                <h2 style="margin-bottom:1.5rem;">Your Brand DNA</h2>
+
+                <div class="result-block">
+                    <h4>Brand Archetype</h4>
+                    <div class="value" id="r-archetype"></div>
+                    <div class="desc" id="r-archetype-desc"></div>
+                </div>
+
+                <div class="result-block">
+                    <h4>Color Palette</h4>
+                    <div class="palette" id="r-palette"></div>
+                </div>
+
+                <div class="result-block">
+                    <h4>Film Stock + Camera</h4>
+                    <div class="value" id="r-film"></div>
+                    <div class="desc" id="r-film-desc"></div>
+                </div>
+
+                <div class="result-block">
+                    <h4>Shot Type Emphasis</h4>
+                    <div class="value" id="r-shots"></div>
+                    <div class="desc">From the 6 LoopWorker shot types (Ritual / Crew / Artifact / Empty Space / In-Between / Approach).</div>
+                </div>
+
+                <div class="result-block">
+                    <h4>Banned Words for Your Prompts</h4>
+                    <div class="value" id="r-banned" style="font-size:0.95rem;font-weight:400;color:#C57A6C;"></div>
+                </div>
+
+                <div style="margin-top:2rem;padding:1.6rem 1.8rem;background:rgba(212,160,23,0.05);border:1px dashed rgba(212,160,23,0.3);border-radius:10px;text-align:center;">
+                    <strong style="color:var(--accent,#D4A017);display:block;margin-bottom:0.5rem;letter-spacing:0.1em;text-transform:uppercase;font-size:0.78rem;">Want this turned into 50 final brand images?</strong>
+                    <p style="margin:0 auto 1.2rem;color:#C7C7C7;">Book a discovery call. I'll show you exactly what your Brand DNA looks like in production.</p>
+                    <a href="/book.html?tier=brand-dna-quiz" class="btn btn-primary">Book a Discovery Call</a>
+                </div>
+
+                <div style="text-align:center;margin-top:1.5rem;">
+                    <button onclick="location.reload()" style="background:transparent;border:0;color:#888;font-family:inherit;font-size:0.85rem;cursor:pointer;text-decoration:underline;">Take the quiz again</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <div class="footer-brand">LoopWorker</div>
+                <div class="footer-meta">Helping businesses turn content into customers.</div>
+            </div>
+            <ul class="footer-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/tools/">All Tools</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+            </ul>
+            <div class="footer-contact">
+                <a href="mailto:alex@loopworker.com">alex@loopworker.com</a><br>
+                <a href="https://instagram.com/loop.worker" target="_blank" rel="noopener">@loop.worker</a>
+                <div class="footer-legal"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    const Q = [
+      {q:"Who is your customer at their core?",a:[{t:"Loyal regulars who want consistency",v:"loyalist"},{t:"Trend-chasers who want to be early",v:"explorer"},{t:"Discerning buyers who want the best",v:"connoisseur"},{t:"Busy people who want it easy",v:"pragmatist"}]},
+      {q:"How does your brand want to feel in one word?",a:[{t:"Warm + grounded",v:"warm"},{t:"Sharp + premium",v:"sharp"},{t:"Raw + chaotic",v:"raw"},{t:"Calm + composed",v:"calm"}]},
+      {q:"What time of day fits your brand best?",a:[{t:"Morning light, soft + golden",v:"morning"},{t:"Mid-day, harsh shadows + clarity",v:"midday"},{t:"Magic hour, low + warm",v:"goldenhour"},{t:"Night, neon + flash",v:"night"}]},
+      {q:"Pick the closest reference brand:",a:[{t:"Aesop / Le Labo (minimal lux)",v:"aesop"},{t:"Stüssy / Carhartt (streetwear)",v:"stussy"},{t:"In-N-Out / Shake Shack (cult food)",v:"innout"},{t:"Aman / Soho House (hospitality lux)",v:"aman"}]},
+      {q:"Where does your customer encounter you first?",a:[{t:"Walking past in real life",v:"walkby"},{t:"Scrolling Instagram",v:"ig"},{t:"Searching on Google / TikTok",v:"search"},{t:"Word-of-mouth referral",v:"referral"}]},
+      {q:"What's your price relative to competitors?",a:[{t:"Below — accessibility is the play",v:"below"},{t:"Average — quality at fair price",v:"average"},{t:"Premium — paying for the experience",v:"premium"},{t:"Luxury — paying to be seen with it",v:"luxury"}]},
+      {q:"Who do you NOT want as a customer?",a:[{t:"People who only care about price",v:"price"},{t:"People who don't care about aesthetics",v:"aesthetic"},{t:"People who want generic / safe choices",v:"safe"},{t:"People who want trendy / fast turnover",v:"trendy"}]},
+      {q:"Pick a film aesthetic:",a:[{t:"Kodak Gold 200 — warm + nostalgic",v:"gold200"},{t:"Kodak Portra 400 — natural + neutral",v:"portra400"},{t:"Hasselblad medium-format — clean + lux",v:"hasselblad"},{t:"On-camera flash + Ektachrome — raw + saturated",v:"flash"}]},
+      {q:"What feeling do you want to create in your customer?",a:[{t:"Trust + safety",v:"trust"},{t:"Excitement + FOMO",v:"excitement"},{t:"Aspiration + envy",v:"aspiration"},{t:"Belonging + community",v:"belonging"}]},
+      {q:"How often does your customer interact with your brand?",a:[{t:"Daily / weekly (consumable)",v:"daily"},{t:"Monthly (regular service)",v:"monthly"},{t:"Quarterly (seasonal)",v:"quarterly"},{t:"Once or rarely (special purchase)",v:"once"}]},
+      {q:"Should people be IN your brand photography?",a:[{t:"Always — humans drive the story",v:"always"},{t:"Mix — sometimes the product, sometimes the people",v:"mix"},{t:"Rarely — focus on the object/space",v:"rarely"},{t:"Never — product is the hero",v:"never"}]},
+      {q:"Where will the content live primarily?",a:[{t:"Instagram + TikTok (vertical)",v:"social"},{t:"Website + ads (multi-format)",v:"web"},{t:"Print + signage (physical)",v:"print"},{t:"All of the above",v:"all"}]}
+    ];
+
+    let answers = [];
+    let current = 0;
+
+    function render() {
+      const c = document.getElementById('questions');
+      const q = Q[current];
+      const selected = answers[current];
+      c.innerHTML = `<div class="question active"><h3>${current + 1} of 12 · ${q.q}</h3><div class="options">${q.a.map((opt,i) => `<div class="option${selected === opt.v ? ' selected' : ''}" data-v="${opt.v}">${opt.t}</div>`).join('')}</div></div>`;
+      document.querySelectorAll('.option').forEach(el => el.addEventListener('click', () => {
+        answers[current] = el.dataset.v;
+        document.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+        el.classList.add('selected');
+      }));
+      document.getElementById('progress').style.width = Math.round((current + 1) / Q.length * 100) + '%';
+      document.getElementById('back').disabled = current === 0;
+      document.getElementById('next').textContent = current === Q.length - 1 ? 'See My Brand DNA →' : 'Next →';
+    }
+
+    document.getElementById('next').onclick = () => {
+      if (!answers[current]) return alert('Pick one to continue.');
+      if (current < Q.length - 1) { current++; render(); }
+      else compute();
+    };
+    document.getElementById('back').onclick = () => { if (current > 0) { current--; render(); } };
+
+    function compute() {
+      // Simple scoring → archetype clusters
+      const a = answers;
+      let arche, archeDesc, palette, film, filmDesc, shots, banned;
+
+      // Archetype = function of Q1 + Q2 + Q4 + Q9
+      const t = a[3] + '|' + a[1] + '|' + a[8];
+      if (a[3] === 'aman' || a[5] === 'luxury') {
+        arche = 'The Architect';
+        archeDesc = 'Quiet luxury. Restraint signals taste. Aman / Le Labo / Aesop reference set.';
+        palette = ['#1A1A1A', '#FAF9F6', '#8B7E66', '#3D3530'];
+      } else if (a[3] === 'innout' || a[1] === 'warm') {
+        arche = 'The Local Legend';
+        archeDesc = 'Warmth + ritual + cult-of-personality. In-N-Out / Joe & The Juice / neighborhood diner.';
+        palette = ['#D62828', '#F7B801', '#2A1810', '#FAF0E1'];
+      } else if (a[3] === 'stussy' || a[1] === 'raw') {
+        arche = 'The Rebel';
+        archeDesc = 'Streetwear DNA. Editorial chaos. Stüssy / Carhartt / Brain Dead reference set.';
+        palette = ['#0A0A0A', '#C41E3A', '#FFD700', '#3A5F8C'];
+      } else if (a[1] === 'sharp' || a[5] === 'premium') {
+        arche = 'The Editor';
+        archeDesc = 'Editorial fashion / minimal DTC. Hasselblad clean. Stop-scroll precision.';
+        palette = ['#1A1A1A', '#FAF9F6', '#9B8B70', '#C0392B'];
+      } else {
+        arche = 'The Insider';
+        archeDesc = 'Approachable + knowing. Customer feels they belong. Soft luxury without distance.';
+        palette = ['#2D2926', '#E8DDC9', '#967259', '#9C2A2A'];
+      }
+
+      // Film stock = function of Q3 + Q8
+      if (a[7] === 'flash' || a[2] === 'night') {
+        film = 'Kodak Ektachrome E100 + on-camera flash · Yashica T4';
+        filmDesc = 'Saturated, raw, grain visible. The streetwear / cult-food look.';
+      } else if (a[7] === 'gold200' || a[2] === 'goldenhour') {
+        film = 'Kodak Gold 200 · Contax G2';
+        filmDesc = 'Warm, nostalgic, slight halation. Hospitality + slow brands.';
+      } else if (a[7] === 'hasselblad') {
+        film = 'Hasselblad medium format · Phase One';
+        filmDesc = 'Clean, sharp, editorial. Fashion + DTC + premium product.';
+      } else {
+        film = 'Kodak Portra 400 · Leica Q2';
+        filmDesc = 'Natural skin tones, real light. The most flexible option.';
+      }
+
+      // Shot type emphasis = function of Q10 + Q11
+      if (a[10] === 'always' || a[10] === 'mix') {
+        shots = 'Crew (30%) → Ritual (25%) → In-Between (20%) → Empty Space (10%) → Approach (10%) → Artifact (5%)';
+      } else if (a[10] === 'never') {
+        shots = 'Artifact (40%) → Ritual (25%) → Empty Space (15%) → In-Between (10%) → Approach (10%) → Crew (0%)';
+      } else {
+        shots = 'Ritual (25%) → Artifact (20%) → Crew (20%) → Empty Space (15%) → In-Between (15%) → Approach (5%)';
+      }
+
+      // Banned words always
+      banned = '"beautiful" · "stunning" · "perfect" · "8K" · "hyperrealistic" · "amazing" · "world-class"';
+
+      document.getElementById('r-archetype').textContent = arche;
+      document.getElementById('r-archetype-desc').textContent = archeDesc;
+      document.getElementById('r-film').textContent = film;
+      document.getElementById('r-film-desc').textContent = filmDesc;
+      document.getElementById('r-shots').textContent = shots;
+      document.getElementById('r-banned').textContent = banned;
+
+      const palDiv = document.getElementById('r-palette');
+      palDiv.innerHTML = palette.map(c => `<div class="swatch" data-hex="${c}" style="background:${c}"></div>`).join('');
+
+      document.getElementById('quiz').style.display = 'none';
+      document.getElementById('result').style.display = 'block';
+      document.getElementById('result').scrollIntoView({behavior:'smooth'});
+
+      try { if (window.plausible) window.plausible('Brand DNA Quiz Complete', { props: { archetype: arche }}); } catch(e) {}
+    }
+
+    render();
+    </script>
+</body>
+</html>

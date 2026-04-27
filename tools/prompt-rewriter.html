@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+    <script defer src="/site-pages.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/site-pages.css">
+    <title>Prompt Rewriter — Banned Words + Engine Structure Check | LoopWorker</title>
+    <meta name="description" content="Paste any AI image prompt. Get banned-word check, missing-element flags, and engine-specific structure recommendations. Free.">
+    <link rel="canonical" href="https://www.loopworker.com/tools/prompt-rewriter.html">
+    <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <style>
+      .tool-shell { padding: 7rem 1.5rem 5rem; max-width: 880px; margin: 0 auto; }
+      .input-card { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 2rem; margin: 2rem 0; }
+      .input-card label { display: block; color: #888; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 600; }
+      .input-card input, .input-card select, .input-card textarea { width: 100%; padding: 0.95rem 1.1rem; background: #0F0F0F; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #FFF; font-family: inherit; font-size: 0.95rem; margin-bottom: 1.2rem; }
+      .input-card textarea { min-height: 100px; resize: vertical; }
+      .input-card button { background: #FFF; color: #0A0A0A; border: 0; padding: 1rem 2rem; border-radius: 8px; font-family: inherit; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; font-size: 0.88rem; }
+      .input-card button:hover { background: var(--accent, #D4A017); }
+      .check { padding: 1rem 1.3rem; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; margin-bottom: 0.8rem; }
+      .check.fail { border-left: 3px solid #C57A6C; }
+      .check.pass { border-left: 3px solid #6CC57A; }
+      .check.warn { border-left: 3px solid #D4A017; }
+      .check h4 { color: #FFF; font-size: 0.95rem; margin-bottom: 0.3rem; font-weight: 600; }
+      .check p { color: #A7A7A7; font-size: 0.88rem; margin: 0; }
+      .waitlist { padding: 2rem; background: rgba(212,160,23,0.04); border: 1px dashed rgba(212,160,23,0.3); border-radius: 12px; text-align: center; margin: 2rem 0; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">LoopWorker</a>
+            <ul class="nav-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/offers/">Offers</a></li>
+                <li><a href="/tools/">Tools</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/book.html" class="nav-cta">Book a Call</a></li>
+            </ul>
+            <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="/services.html">Services</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/offers/">Offers</a>
+        <a href="/tools/">Tools</a>
+        <a href="/blog/">Blog</a>
+        <a href="/book.html" class="nav-cta">Book a Call</a>
+    </div>
+    <main>
+        <section class="tool-shell">
+            <span class="eyebrow">Free Tool · Prompt Analyzer · Instant</span>
+            <h1>Paste any prompt. <em>See where it fails.</em></h1>
+            <p class="cs-lead">Heuristic prompt analyzer. Detects banned words (the ones that train AI to look like AI), missing film/camera/human anchors, and recommends engine-specific structure. For full brand-locked prompt formulas, see the Brand DNA Sprint.</p>
+            
+<div class="input-card">
+  <label for="prompt">Paste your AI image prompt</label>
+  <textarea id="prompt" placeholder="e.g., 'A beautiful, stunning, hyperrealistic 8K photo of a burger'"></textarea>
+
+  <label for="engine">Engine</label>
+  <select id="engine">
+    <option value="midjourney">Midjourney v7</option>
+    <option value="chatgpt">ChatGPT / GPT Image</option>
+    <option value="nb2">NanoBanana 2</option>
+  </select>
+
+  <button onclick="rewrite()">Analyze + Rewrite</button>
+</div>
+
+<div id="result"></div>
+
+<div style="margin-top:3rem;padding:1.6rem 1.8rem;background:rgba(212,160,23,0.05);border:1px dashed rgba(212,160,23,0.3);border-radius:10px;text-align:center;display:none;" id="cta">
+  <strong style="color:var(--accent,#D4A017);display:block;margin-bottom:0.5rem;letter-spacing:0.1em;text-transform:uppercase;font-size:0.78rem;">Want full prompt formulas locked for your brand?</strong>
+  <p style="margin:0 auto 1.2rem;color:#C7C7C7;">Brand DNA Sprint includes engine-specific prompt formulas tailored to your brand voice.</p>
+  <a href="/offers/brand-dna.html" class="btn btn-primary">See Brand DNA Sprint</a>
+</div>
+
+<script>
+const BANNED = ["beautiful","stunning","perfect","8K","hyperrealistic","amazing","incredible","breathtaking","masterpiece","ultra-detailed","photorealistic","mind-blowing","epic","gorgeous"];
+
+const RULES_BY_ENGINE = {
+  midjourney: {
+    structure: "[scene] · [camera + lens] · [film stock] · [light direction] · [composition note] · --ar 9:16 --style raw --s 170 --v 7",
+    notes: "Dense prose. Comma-separated phrases. Always include --style raw and --s 170 for editorial work. Add --sref for style consistency."
+  },
+  chatgpt: {
+    structure: "[scene action, 1 sentence]. [camera + film + lens, 1 sentence]. [light, 1 sentence]. [3 specific details, comma-separated].",
+    notes: "Three short sentences > one long one. Aspect ratio in plain English ('9:16 vertical'). ChatGPT has its own 'look' to fight — add specific film stock + grain mentions."
+  },
+  nb2: {
+    structure: "[image refs ratio] + [scene 15-30 words] + [realism suffix]",
+    notes: "Reference images carry 60% of weight. Realism suffix: 'Shot on iPhone 15 Pro, natural skin texture with pores, not retouched, no airbrushing, no smooth skin filter, candid, warm tones, film grain, real photography'"
+  }
+};
+
+function rewrite() {
+  const p = document.getElementById('prompt').value;
+  const engine = document.getElementById('engine').value;
+  const r = RULES_BY_ENGINE[engine];
+  if (!p) return alert("Paste a prompt first.");
+
+  const found = BANNED.filter(b => p.toLowerCase().includes(b.toLowerCase()));
+  let html = `<h2 style="margin:1rem 0 1rem;">Analysis</h2>`;
+
+  if (found.length) {
+    html += `<div class="check fail"><h4>Banned words detected (${found.length})</h4><p style="color:#C57A6C;">Found: <strong>${found.join(", ")}</strong>. These train the engine to default to its average "trying to look real" output — which IS the AI tell.</p></div>`;
+  } else {
+    html += `<div class="check pass"><h4>No banned words ✓</h4><p>Your prompt avoids the obvious AI-tell triggers.</p></div>`;
+  }
+
+  // Check for film stock
+  const filmStocks = /portra|gold|ektachrome|ektar|cinestill|ilford|tri-x|hp5|fp4|delta/i.test(p);
+  html += `<div class="check ${filmStocks ? 'pass' : 'fail'}"><h4>Film stock specificity</h4><p>${filmStocks ? "Specific film stock named — the engine has something to anchor to." : "No film stock named. Add one (Kodak Portra 400, Kodak Gold 200, Ektachrome E100, Cinestill 800T) — this is the single biggest realism unlock."}</p></div>`;
+
+  // Check for camera
+  const camera = /leica|hasselblad|contax|nikon|canon|fuji|iphone|sony/i.test(p);
+  html += `<div class="check ${camera ? 'pass' : 'warn'}"><h4>Camera spec</h4><p>${camera ? "Camera referenced — adds technical anchor." : "Add a specific camera (Leica Q2, Hasselblad H6D, Contax G2, iPhone 15 Pro) for compositional anchoring."}</p></div>`;
+
+  // Check for human
+  const human = /person|man|woman|hand|customer|chef|model|guest|patient|crew/i.test(p);
+  html += `<div class="check ${human ? 'pass' : 'warn'}"><h4>Human in frame</h4><p>${human ? "Human element present — implies story." : "No human reference. LoopWorker rule: every brand image should have a human in frame OR clearly imply one. Pure object shots feel sterile."}</p></div>`;
+
+  html += `<h2 style="margin:2rem 0 1rem;">${engine === 'midjourney' ? 'Midjourney' : engine === 'chatgpt' ? 'ChatGPT' : 'NanoBanana 2'} structure</h2>
+    <div class="check warn"><h4>Recommended structure</h4><p style="font-family:monospace;color:#C7C7C7;">${r.structure}</p></div>
+    <div class="check"><h4>Engine note</h4><p>${r.notes}</p></div>`;
+
+  document.getElementById('result').innerHTML = html;
+  document.getElementById('cta').style.display = 'block';
+  document.getElementById('result').scrollIntoView({behavior:'smooth'});
+
+  try { if (window.plausible) window.plausible('Prompt Analyzed', { props: { engine: engine, banned_count: found.length }}); } catch(e) {}
+}
+</script>
+
+        </section>
+    </main>
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <div class="footer-brand">LoopWorker</div>
+                <div class="footer-meta">Helping businesses turn content into customers.</div>
+            </div>
+            <ul class="footer-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/tools/">All Tools</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+            </ul>
+            <div class="footer-contact">
+                <a href="mailto:alex@loopworker.com">alex@loopworker.com</a><br>
+                <a href="https://instagram.com/loop.worker" target="_blank" rel="noopener">@loop.worker</a>
+                <div class="footer-legal"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

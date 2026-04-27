@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+    <script defer src="/site-pages.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/site-pages.css">
+    <title>Audit This Page — 5-Point Heuristic Audit | LoopWorker</title>
+    <meta name="description" content="Paste your URL or IG handle, get a 5-point heuristic audit instantly. Free. Or upgrade to a written audit with sample shots.">
+    <link rel="canonical" href="https://www.loopworker.com/tools/audit-this.html">
+    <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <style>
+      .tool-shell { padding: 7rem 1.5rem 5rem; max-width: 880px; margin: 0 auto; }
+      .input-card { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 2rem; margin: 2rem 0; }
+      .input-card label { display: block; color: #888; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 600; }
+      .input-card input, .input-card select, .input-card textarea { width: 100%; padding: 0.95rem 1.1rem; background: #0F0F0F; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #FFF; font-family: inherit; font-size: 0.95rem; margin-bottom: 1.2rem; }
+      .input-card textarea { min-height: 100px; resize: vertical; }
+      .input-card button { background: #FFF; color: #0A0A0A; border: 0; padding: 1rem 2rem; border-radius: 8px; font-family: inherit; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; font-size: 0.88rem; }
+      .input-card button:hover { background: var(--accent, #D4A017); }
+      .check { padding: 1rem 1.3rem; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; margin-bottom: 0.8rem; }
+      .check.fail { border-left: 3px solid #C57A6C; }
+      .check.pass { border-left: 3px solid #6CC57A; }
+      .check.warn { border-left: 3px solid #D4A017; }
+      .check h4 { color: #FFF; font-size: 0.95rem; margin-bottom: 0.3rem; font-weight: 600; }
+      .check p { color: #A7A7A7; font-size: 0.88rem; margin: 0; }
+      .waitlist { padding: 2rem; background: rgba(212,160,23,0.04); border: 1px dashed rgba(212,160,23,0.3); border-radius: 12px; text-align: center; margin: 2rem 0; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">LoopWorker</a>
+            <ul class="nav-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/offers/">Offers</a></li>
+                <li><a href="/tools/">Tools</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/book.html" class="nav-cta">Book a Call</a></li>
+            </ul>
+            <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="/services.html">Services</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/offers/">Offers</a>
+        <a href="/tools/">Tools</a>
+        <a href="/blog/">Blog</a>
+        <a href="/book.html" class="nav-cta">Book a Call</a>
+    </div>
+    <main>
+        <section class="tool-shell">
+            <span class="eyebrow">Free Tool · Heuristic Audit · Instant</span>
+            <h1>Paste your URL. <em>Get five fixes</em> in five seconds.</h1>
+            <p class="cs-lead">Heuristic-based audit using LoopWorker's 6-axis framework. Paste your IG handle or website URL, pick your industry, and get five specific fixes ranked by impact. For a deeper written audit with sample shots, use the free 5-point audit form.</p>
+            
+<div class="input-card">
+  <label for="url">Page URL or Instagram handle</label>
+  <input id="url" placeholder="https://yourbrand.com OR @yourbrand">
+
+  <label for="industry">Industry</label>
+  <select id="industry">
+    <option value="restaurant">Restaurant / Cafe</option>
+    <option value="medspa">Med Spa / Aesthetics</option>
+    <option value="fitness">Gym / Fitness</option>
+    <option value="hotel">Hotel / Hospitality</option>
+    <option value="realestate">Real Estate</option>
+    <option value="clothing">Clothing / Apparel</option>
+    <option value="ecommerce">DTC / Ecommerce</option>
+    <option value="other">Other</option>
+  </select>
+
+  <label for="lastposts">What did your last 3 posts feature? (one line)</label>
+  <textarea id="lastposts" placeholder="e.g., menu items, before/afters, workout clips"></textarea>
+
+  <button onclick="audit()">Run Audit</button>
+</div>
+
+<div id="result"></div>
+
+<div style="margin-top:3rem;padding:1.6rem 1.8rem;background:rgba(212,160,23,0.05);border:1px dashed rgba(212,160,23,0.3);border-radius:10px;text-align:center;display:none;" id="cta">
+  <strong style="color:var(--accent,#D4A017);display:block;margin-bottom:0.5rem;letter-spacing:0.1em;text-transform:uppercase;font-size:0.78rem;">Want a deeper, written audit with sample shots?</strong>
+  <p style="margin:0 auto 1.2rem;color:#C7C7C7;">Free 5-point audit, 48-hour turnaround. Or skip to the discovery call.</p>
+  <div style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;">
+    <a href="/audit.html" class="btn btn-primary">Get Free Audit</a>
+    <a href="/book.html" class="btn btn-outline">Book Discovery Call</a>
+  </div>
+</div>
+
+<script>
+const RULES = {
+  restaurant: [
+    {h:"Menu post overuse", p:"If your last 3 posts are menu items with 'come try this', you're showing dishes not creating cravings. Add a Ritual or Crew shot."},
+    {h:"Same-day urgency missing", p:"Restaurant posts should give people a reason to come TONIGHT. Specials end, sellouts happen, time-bound moments work."},
+    {h:"No human in frame", p:"Empty plates kill conversion. Always show a hand, a server, a customer mid-bite."},
+  ],
+  medspa: [
+    {h:"Before/after overuse", p:"Most med spas post 70%+ before/afters. Shift to education + provider trust content. Save B/A for 2 of 10 posts max."},
+    {h:"\'Book now\' instead of strategy", p:"\'Book now\' is not a CTA. Posts should build trust and answer pre-purchase questions before a CTA fires."},
+    {h:"No provider face/voice", p:"People book providers, not clinics. Where are you in the content?"},
+  ],
+  fitness: [
+    {h:"Workout-clip overuse", p:"Workout clips entertain. They don't convert to memberships. Add Crew + first-class moments."},
+    {h:"Generic motivation", p:"Motivation doesn't sell memberships. Specific commitment-driving stories do."},
+    {h:"No member-of-week / proof", p:"Real members in real moments outperform stock-quality workout videos."},
+  ],
+  hotel: [
+    {h:"Room-photo overuse", p:"Room photos look like every Booking.com listing. Sell atmosphere, not amenities."},
+    {h:"Time-of-day uniformity", p:"If every shot is golden hour, nothing pops. Mix dawn/midday/dusk/night."},
+    {h:"No human warmth", p:"Empty hotel rooms feel sterile. Add a guest, a staffer, a candle being lit."},
+  ],
+  realestate: [
+    {h:"Drone-shot overuse", p:"Aerials are commodity. Add lifestyle imagery — what living there feels like."},
+    {h:"Front-elevation as hero", p:"Front of the house is rarely the most emotional shot. Lead with kitchen, view, or detail."},
+    {h:"No 'lived-in' shots", p:"Empty staged rooms convert worse than 'here\'s morning coffee on this island'."},
+  ],
+  clothing: [
+    {h:"Catalog-cropping kills conversion", p:"E-com cutouts work for product pages. Editorial wins on social. Show the fit moving, the human wearing."},
+    {h:"No fit context", p:"Saved-for-later requires the customer imagining themselves in it. Generic flatlays don't trigger that."},
+    {h:"Material/process invisible", p:"Premium pricing requires premium signaling. Show the texture, the detail, the maker."},
+  ],
+  ecommerce: [
+    {h:"Generic product shots", p:"Studio cutouts work for PDP. They flatten on social. Add lifestyle + use case."},
+    {h:"Missing pre-purchase questions", p:"Customers have specific objections. Content should answer them BEFORE they hit the page."},
+    {h:"Post-purchase content invisible", p:"Unboxing, real customers, testimonials — your most valuable content rarely makes the feed."},
+  ],
+  other: [
+    {h:"Generic content treatment", p:"Most service businesses post generic content because they don't have a locked Brand DNA."},
+    {h:"No specific positioning", p:"\'We help X with Y\' is not positioning. Specific enemy + specific outcome is."},
+    {h:"Weak first frames", p:"On Reels, the first 0.3s decides everything. Most pages don't optimize for that."},
+  ]
+};
+
+const UNIVERSAL = [
+  {h:"H1 / hook test", p:"Read your bio out loud. If it sounds like a corporate tagline, rewrite it."},
+  {h:"CTA ladder", p:"Every post should have ONE clear next step. Not 'follow + book + DM + share'."},
+  {h:"Save vs like ratio", p:"Posts that get more saves than likes convert better. Optimize for save-worthy content."},
+];
+
+function audit() {
+  const url = document.getElementById('url').value;
+  const industry = document.getElementById('industry').value;
+  const last = document.getElementById('lastposts').value;
+
+  const rules = RULES[industry] || RULES.other;
+  let html = `<h2 style="margin:1rem 0 1.5rem;">5-point audit · <em style="color:var(--accent,#D4A017);">${url || 'your page'}</em></h2>`;
+
+  rules.concat(UNIVERSAL.slice(0, 2)).forEach((r, i) => {
+    const cls = i < 2 ? 'fail' : (i < 4 ? 'warn' : 'pass');
+    html += `<div class="check ${cls}"><h4>#${i+1} · ${r.h}</h4><p>${r.p}</p></div>`;
+  });
+
+  html += `<p style="color:#888;margin-top:1.5rem;font-size:0.88rem;">This audit uses heuristic rules. For a deeper written audit with sample shots in your brand style, use the free 5-point audit form.</p>`;
+
+  document.getElementById('result').innerHTML = html;
+  document.getElementById('cta').style.display = 'block';
+  document.getElementById('result').scrollIntoView({behavior:'smooth'});
+
+  try { if (window.plausible) window.plausible('Audit Tool Used', { props: { industry: industry }}); } catch(e) {}
+}
+</script>
+
+        </section>
+    </main>
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <div class="footer-brand">LoopWorker</div>
+                <div class="footer-meta">Helping businesses turn content into customers.</div>
+            </div>
+            <ul class="footer-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/tools/">All Tools</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+            </ul>
+            <div class="footer-contact">
+                <a href="mailto:alex@loopworker.com">alex@loopworker.com</a><br>
+                <a href="https://instagram.com/loop.worker" target="_blank" rel="noopener">@loop.worker</a>
+                <div class="footer-legal"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

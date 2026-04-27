@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+    <script defer src="/site-pages.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/site-pages.css">
+    <title>Shot List Generator — 50 Shots Across 6 Types | LoopWorker</title>
+    <meta name="description" content="Type your business → get a 50-shot list across 6 LoopWorker shot types (Ritual, Crew, Artifact, Empty Space, In-Between, Approach). Free.">
+    <link rel="canonical" href="https://www.loopworker.com/tools/shot-list.html">
+    <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+
+    <style>
+      .tool-shell { padding: 7rem 1.5rem 5rem; max-width: 980px; margin: 0 auto; }
+      .input-card { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 2rem; margin: 2rem 0; }
+      .input-card label { display: block; color: #888; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 600; }
+      .input-card input, .input-card select { width: 100%; padding: 0.95rem 1.1rem; background: #0F0F0F; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #FFF; font-family: inherit; font-size: 0.95rem; margin-bottom: 1.2rem; }
+      .input-card button { background: #FFF; color: #0A0A0A; border: 0; padding: 1rem 2rem; border-radius: 8px; font-family: inherit; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; font-size: 0.88rem; }
+      .input-card button:hover { background: var(--accent, #D4A017); }
+      .shot-result { display: none; }
+      .shot-group { margin: 2rem 0; padding: 1.6rem 1.8rem; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; }
+      .shot-group h3 { color: var(--accent, #D4A017); font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.8rem; }
+      .shot-group h4 { color: #FFF; font-size: 1.15rem; margin-bottom: 0.4rem; font-weight: 600; }
+      .shot-group .desc { color: #A7A7A7; font-size: 0.92rem; margin-bottom: 1.2rem; }
+      .shot-group ol { margin: 0 0 0 1.4rem; color: #C7C7C7; }
+      .shot-group ol li { padding: 0.45rem 0; font-size: 0.93rem; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">LoopWorker</a>
+            <ul class="nav-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/offers/">Offers</a></li>
+                <li><a href="/tools/">Tools</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/book.html" class="nav-cta">Book a Call</a></li>
+            </ul>
+            <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="/services.html">Services</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/offers/">Offers</a>
+        <a href="/tools/">Tools</a>
+        <a href="/blog/">Blog</a>
+        <a href="/book.html" class="nav-cta">Book a Call</a>
+    </div>
+
+    <main>
+        <section class="tool-shell">
+            <span class="eyebrow">Free Tool · Shot List Generator</span>
+            <h1>50 shots across 6 types. <em>Tailored to your business.</em></h1>
+            <p class="cs-lead">The same shot-list framework I use on $5K-$10K client builds. Type your business + industry, get a complete 50-shot list mapped across the 6 LoopWorker shot types.</p>
+
+            <div class="input-card">
+                <label for="biz">Your business / brand name</label>
+                <input id="biz" placeholder="e.g., Bar Eleven, Stay Joshua Tree, Salt Flat Goods">
+
+                <label for="industry">Industry</label>
+                <select id="industry">
+                    <option value="restaurant">Restaurant / Cafe / Bar</option>
+                    <option value="medspa">Med Spa / Aesthetics</option>
+                    <option value="fitness">Gym / Fitness Studio</option>
+                    <option value="hotel">Hotel / Hospitality</option>
+                    <option value="realestate">Real Estate / Property</option>
+                    <option value="clothing">Clothing / Apparel</option>
+                    <option value="ecommerce">DTC / Ecommerce</option>
+                    <option value="salon">Salon / Beauty</option>
+                </select>
+
+                <label for="vibe">Vibe</label>
+                <select id="vibe">
+                    <option value="warm">Warm + nostalgic</option>
+                    <option value="sharp">Sharp + premium</option>
+                    <option value="raw">Raw + editorial</option>
+                    <option value="calm">Calm + composed</option>
+                </select>
+
+                <button onclick="generate()">Generate 50-Shot List</button>
+            </div>
+
+            <div id="result" class="shot-result"></div>
+
+            <div style="margin-top:3rem;padding:1.6rem 1.8rem;background:rgba(212,160,23,0.05);border:1px dashed rgba(212,160,23,0.3);border-radius:10px;text-align:center;display:none;" id="cta">
+                <strong style="color:var(--accent,#D4A017);display:block;margin-bottom:0.5rem;letter-spacing:0.1em;text-transform:uppercase;font-size:0.78rem;">Want me to actually shoot this list?</strong>
+                <p style="margin:0 auto 1.2rem;color:#C7C7C7;">50 final brand images delivered in 14 days from this list. Tier 1 Starter: $5,000.</p>
+                <a href="/offers/starter.html" class="btn btn-primary">See Starter Tier</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <div class="footer-brand">LoopWorker</div>
+                <div class="footer-meta">Helping businesses turn content into customers.</div>
+            </div>
+            <ul class="footer-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/tools/">All Tools</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+            </ul>
+            <div class="footer-contact">
+                <a href="mailto:alex@loopworker.com">alex@loopworker.com</a><br>
+                <a href="https://instagram.com/loop.worker" target="_blank" rel="noopener">@loop.worker</a>
+                <div class="footer-legal"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    const TEMPLATES = {
+      restaurant: {
+        ritual: ["The first plate down at 5pm","Espresso pull, slow-mo","The pour — house cocktail mid-fall","Plating the signature dish","First slice of the loaf","Service line at peak rush","Lighting the candle on table 4"],
+        crew: ["Chef plating, hands only, top-down","Server mid-laugh with regular","Bartender garnishing","Owner explaining the menu to a four-top","Kitchen crew family meal","Dishwasher working through the rush","Hostess seating a couple"],
+        artifact: ["The signature dish, hero","The cocktail, hero","Dessert plate, low-angle","Bread basket, top-down","Wine list page, detail","Hand-written specials board","The merch — t-shirt or hat"],
+        empty: ["Tables set, before service","Bar at 4:55pm","Empty walkway with neon signage","Kitchen prep area, golden hour","Patio at night, candles only","Bathroom mirror, brand-stamped","Coffee station mid-prep"],
+        between: ["Person checking the menu outside","Pre-bite, spoon to mouth","Cocktail to lips","Walking past the window","Phone photographing the dessert","Looking up at the menu board","Conversation, half-eaten plate"],
+        approach: ["Outside the door at dusk","Walking up to the host stand","Crossing the street toward the place","Entering through the patio gate","Side alley entrance, neon sign"],
+      },
+      medspa: {
+        ritual: ["Provider preparing the tray","Lights coming on at 8am","Welcome glass of water + cucumber","First face cleanse","Calendar marked with the day's bookings","Sterilizing the room","Fresh towel layered"],
+        crew: ["Provider mid-treatment, hands only","Provider laughing with client (post-treatment)","Front desk smile","Patient in waiting area, magazine open","Provider on phone consult","Team huddle, morning briefing","Owner-operator at front desk"],
+        artifact: ["Hero injectable kit, top-down","Skincare line, neat row","Gua sha, on marble","Result photo close-up (post-treatment glow)","Branded robe, folded","Treatment chart, hand-written","Vitamin shot bottle"],
+        empty: ["Treatment room before patient","Welcome bench, fresh flowers","Front desk at 7:55am","Hallway in soft light","Recovery lounge, untouched","Window view from the chair"],
+        between: ["Patient checking in","Provider walking patient to room","Client looking in mirror, post-treatment","Coffee handed across the desk","Phone glance during recovery","Booking screen, mid-tap"],
+        approach: ["Outside the building, brand sign","Walking up the path","Elevator door opening","First view of the lobby","Hand reaching for the door"],
+      },
+      fitness: {
+        ritual: ["First class of the day, lights on","Coach demonstrating the move","Counting reps out loud","Cooldown stretch, full class","Whiteboard write-up of the workout","Locking in PR on the board","High-five between members"],
+        crew: ["Coach correcting form","Members laughing mid-rest","Coach on the floor doing the workout","Front desk welcome","Member-of-the-month wall","Spotter on bench press","Class fist-bump after"],
+        artifact: ["Logo on the wall","Member shirt close-up","Programming whiteboard, full","Equipment, freshly racked","Water bottle with brand sticker","Awards / PR plates","Gym founder's tattoo (if relevant)"],
+        empty: ["Floor at 5:55am, lights low","Equipment racked, post-class","Locker room, towels stacked","Storefront window at dawn","Main lifting platform, alone"],
+        between: ["Tying shoes pre-class","Walking through the door","Hand on barbell, pre-set","Catching breath between rounds","Stretching alone, post-class"],
+        approach: ["Front of building, sign lit","Member walking in, gym bag","Pulling into the parking lot","Hand on the front door","Stairs up to the studio"],
+      },
+      hotel: {
+        ritual: ["Welcome drink at check-in","Turn-down service","Breakfast tray to room","Pool umbrella opened","First pour at the bar","Concierge greeting","Lighting the patio fire pit"],
+        crew: ["Bartender pouring at sunset","Hostess at front desk, mid-laugh","Housekeeper folding towels","Chef plating room service","Pool attendant arranging chairs","Owner walking the property"],
+        artifact: ["Key card + welcome card","Branded robe + slippers","Mini bar curated","Local product on bedside","Logo embossed pillow","Welcome book, open page"],
+        empty: ["Pool deck pre-guests","Lobby at 6am","Suite turned down for the night","Restaurant before service","Path to the room, lights on"],
+        between: ["Guest checking in, key in hand","Walking down the hall, suitcase","Sliding into pool","Opening the patio door","Sunset on the balcony"],
+        approach: ["Driveway, valet ready","Front entrance at golden hour","Walking up the path","Gate from the road"],
+      },
+      realestate: {
+        ritual: ["Open-house sign goes up","First viewing of the day","Owner unlocking the front door","Walk-through with broker","Sunlight hitting the kitchen","Closing handshake (anonymized)"],
+        crew: ["Agent showing the kitchen","Couple looking at each other in the living room","Family deciding on the porch","Agent on phone, exterior","Closing meeting"],
+        artifact: ["Front door detail, key in lock","Kitchen island, hero","Master bath detail","Architectural detail (beam, molding)","Window view","Built-in shelf curated"],
+        empty: ["Living room before staging","Empty pool at sunset","Master suite turned down","Backyard pre-evening","Hallway with light pouring"],
+        between: ["Walking through entryway","Coffee on the kitchen island","Looking out the window","Setting the table","Reading on the back porch"],
+        approach: ["Driveway from the street","Walking up to the front door","Aerial of the property","Side path to the back"],
+      },
+      clothing: {
+        ritual: ["First fit on the rack","Steamer pass on a piece","Hanging the day's drop","Folding into shipping bag","Customer try-on, mirror"],
+        crew: ["Designer at the cutting table","Model laughing between shots","Friends styling each other","Tailor making an alteration","Pattern maker mid-cut"],
+        artifact: ["Hero piece of the drop","Material close-up (texture, weave)","Hardware detail (button, zip)","Hangtag close-up","Stack of folded pieces","Logo embroidered close-up"],
+        empty: ["Studio between shoots","Rack at 8am","Empty fitting room","Outdoor location pre-cast","Steamer + iron, ready"],
+        between: ["Pulling the piece off the rack","Trying on, mid-zip","Walking in the fit","Friends checking each other","Looking in the mirror"],
+        approach: ["Walking up to the storefront","Opening the front door","Hand reaching for the rack"],
+      },
+      ecommerce: {
+        ritual: ["Packing the day's orders","First product off the line","Customer unboxing (POV)","Tape gun, repeat motion","Quality check, hand inspection"],
+        crew: ["Founder packing orders","Team huddle in the warehouse","Customer service rep on call","Product designer at the bench","Photographer on set"],
+        artifact: ["Hero product, dramatic light","Product detail, macro","Packaging hero","Branded box, opened","Inserts + thank-you card","Limited edition tag"],
+        empty: ["Warehouse aisle at dawn","Photo studio, empty stage","Storefront window","Shipping table pre-rush"],
+        between: ["Picking from the shelf","Mid-packing","Customer opening the box","Photographing the product on a phone","Reading the thank-you card"],
+        approach: ["Walking up to the front of the store/warehouse","Hand on the doorbell"],
+      },
+      salon: {
+        ritual: ["Mixing color","First blowout of the day","Steaming + conditioning","Final mirror reveal","Trimming the bangs","Setting up the chair"],
+        crew: ["Stylist mid-cut, hands only","Stylist + client mid-laugh","Front desk welcome","Color tech mixing","Junior sweeping the floor"],
+        artifact: ["Color formula card","Brushes, neatly arranged","Hair product line","Branded smock","Mirror with brand logo","Tip jar"],
+        empty: ["Chairs in a row, lights on","Color station mid-prep","Front desk at 9am","Wash basins, ready"],
+        between: ["Walking back from the wash basin","Mid-blowdry","Tipping the stylist","Looking in the mirror, post-cut"],
+        approach: ["Walking through the front door","Storefront with brand signage","Hand on the door handle"],
+      }
+    };
+
+    const SHOT_TYPES = {
+      ritual: { label: "Ritual", desc: "The thing the brand always does. The pour. The drop. The light coming on. (25%)", count: 13 },
+      crew: { label: "Crew", desc: "The people. Real expressions, mid-moment. Not headshots. (20%)", count: 10 },
+      artifact: { label: "Artifact", desc: "The product. The thing they made. Hero or detail. (15%)", count: 8 },
+      empty: { label: "Empty Space", desc: "The room without anyone in it. Anticipation. (15%)", count: 7 },
+      between: { label: "In-Between", desc: "The moment before or after. The walk-up. The cleanup. (15%)", count: 7 },
+      approach: { label: "Approach", desc: "The door. The path in. The first impression. (10%)", count: 5 }
+    };
+
+    function generate() {
+      const biz = document.getElementById('biz').value || 'Your Brand';
+      const industry = document.getElementById('industry').value;
+      const vibe = document.getElementById('vibe').value;
+      const t = TEMPLATES[industry];
+      if (!t) return;
+
+      let html = `<h2 style="margin-top:1rem;">50-shot list for <span style="color:var(--accent,#D4A017);">${biz}</span></h2><p style="color:#A7A7A7;">${industry} · ${vibe} aesthetic</p>`;
+
+      const VIBE_NOTE = {
+        warm: "Kodak Gold 200 / Portra 400 · golden hour or soft daylight · warm color cast",
+        sharp: "Hasselblad medium format · clean studio light · neutral color, sharp shadows",
+        raw: "Ektachrome + on-camera flash · grain visible · saturated, slightly off-balance",
+        calm: "Natural light · Leica Q2 / iPhone Pro · neutral palette, controlled composition"
+      };
+      html += `<p style="color:#888;font-size:0.88rem;margin-bottom:1.5rem;font-style:italic;">Aesthetic note: ${VIBE_NOTE[vibe]}</p>`;
+
+      Object.keys(SHOT_TYPES).forEach(k => {
+        const cfg = SHOT_TYPES[k];
+        const shots = (t[k] || []).slice(0, cfg.count);
+        // pad if not enough
+        while (shots.length < cfg.count && t[k]) shots.push(t[k][shots.length % t[k].length] + ' (variation)');
+        html += `<div class="shot-group"><h3>${cfg.label} · ${cfg.count} shots</h3><h4>${cfg.label}</h4><p class="desc">${cfg.desc}</p><ol>${shots.map(s => `<li>${s}</li>`).join('')}</ol></div>`;
+      });
+
+      document.getElementById('result').innerHTML = html;
+      document.getElementById('result').style.display = 'block';
+      document.getElementById('cta').style.display = 'block';
+      document.getElementById('result').scrollIntoView({behavior:'smooth'});
+
+      try { if (window.plausible) window.plausible('Shot List Generated', { props: { industry: industry, vibe: vibe }}); } catch(e) {}
+    }
+    </script>
+</body>
+</html>
