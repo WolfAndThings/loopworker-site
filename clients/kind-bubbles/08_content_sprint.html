@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>30-Day Content Sprint — Kind Bubbles | LoopWorker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased; }
+.audit-container { max-width:820px; margin:0 auto; padding:3rem 2rem 6rem; }
+
+.cover { min-height:100vh; display:flex; flex-direction:column; justify-content:space-between; padding:4rem 0 2rem; }
+.cover-badge { display:inline-block; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.22em; color:#888; border:1px solid rgba(255,255,255,0.1); padding:0.45rem 1rem; border-radius:100px; margin-bottom:2rem; }
+.cover-eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.24em; color:#D4A017; margin-bottom:1.2rem; font-weight:600; }
+.cover-title { font-family:'Cormorant Garamond', serif; font-size:clamp(2.8rem, 7vw, 4.4rem); font-weight:500; color:#FFF; line-height:1.02; letter-spacing:-0.02em; margin-bottom:1.5rem; }
+.cover-title em { font-style:italic; color:#D4A017; font-weight:400; }
+.cover-lede { font-size:1.15rem; color:#AAA; line-height:1.55; max-width:580px; margin-bottom:2rem; }
+.cover-meta { font-size:0.9rem; color:#777; line-height:1.8; margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.06); }
+.cover-meta strong { color:#BBB; font-weight:600; }
+.cover-bottom { font-size:0.7rem; color:#555; letter-spacing:0.15em; text-transform:uppercase; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.04); }
+
+.audit-section { margin-bottom:4rem; }
+.audit-section .eyebrow { font-size:0.65rem; text-transform:uppercase; letter-spacing:0.22em; color:#D4A017; font-weight:600; margin-bottom:0.7rem; }
+.audit-section h2 { font-family:'Cormorant Garamond', serif; font-size:2.2rem; font-weight:500; color:#FFF; margin-bottom:1.2rem; letter-spacing:-0.02em; line-height:1.15; }
+.audit-section h2 em { font-style:italic; color:#D4A017; font-weight:400; }
+.audit-section h3 { font-size:1.05rem; font-weight:600; color:#FFF; margin:1.4rem 0 0.5rem; letter-spacing:-0.01em; }
+.audit-section p { margin-bottom:1rem; color:#B5B5B5; font-size:0.97rem; }
+.audit-section p strong { color:#FFF; font-weight:600; }
+.audit-divider { border:none; border-top:1px solid rgba(255,255,255,0.06); margin:4rem 0; }
+
+.pull { border-left:2px solid #D4A017; padding:0.6rem 0 0.6rem 1.4rem; margin:1.8rem 0; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.25rem; line-height:1.45; color:#E8E8E8; }
+
+/* CALENDAR GRID */
+.cal { display:grid; grid-template-columns:repeat(7,1fr); gap:0.4rem; margin:1.5rem 0; }
+.cal-day { background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.05); border-radius:8px; padding:0.6rem 0.5rem; min-height:90px; display:flex; flex-direction:column; }
+.cal-day .cd-num { font-size:0.6rem; color:#777; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:0.3rem; font-weight:600; }
+.cal-day .cd-type { font-size:0.6rem; color:#D4A017; font-weight:600; line-height:1.3; margin-bottom:0.2rem; letter-spacing:0.06em; text-transform:uppercase; }
+.cal-day .cd-title { font-size:0.7rem; color:#FFF; line-height:1.3; font-weight:500; }
+.cal-day.reel { background:rgba(212,160,23,0.08); border-color:rgba(212,160,23,0.25); }
+.cal-day.carousel { background:rgba(125,184,138,0.08); border-color:rgba(125,184,138,0.25); }
+.cal-day.story { background:rgba(255,255,255,0.025); }
+.cal-day.rest { background:rgba(0,0,0,0.3); }
+.cal-day.rest .cd-title { color:#555; font-style:italic; }
+
+.cal-key { display:flex; gap:1rem; flex-wrap:wrap; margin:1rem 0 0; font-size:0.78rem; color:#888; }
+.cal-key span { display:inline-flex; align-items:center; gap:0.4rem; }
+.cal-key span::before { content:''; width:10px; height:10px; border-radius:3px; }
+.cal-key .k-reel::before { background:rgba(212,160,23,0.4); }
+.cal-key .k-carousel::before { background:rgba(125,184,138,0.4); }
+.cal-key .k-story::before { background:rgba(255,255,255,0.15); }
+
+/* REEL CARD */
+.reel-card { background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:0; margin-bottom:1.4rem; overflow:hidden; }
+.reel-head { background:rgba(212,160,23,0.06); border-bottom:1px solid rgba(212,160,23,0.18); padding:1.2rem 1.5rem; display:grid; grid-template-columns:auto 1fr auto; gap:1rem; align-items:center; }
+.reel-num { font-family:'Cormorant Garamond', serif; font-size:2rem; color:#D4A017; line-height:1; font-weight:500; }
+.reel-title-block .reel-title { font-family:'Cormorant Garamond', serif; font-size:1.4rem; color:#FFF; font-weight:500; line-height:1.15; letter-spacing:-0.01em; }
+.reel-title-block .reel-meta { font-size:0.65rem; letter-spacing:0.16em; text-transform:uppercase; color:#888; margin-top:0.3rem; }
+.reel-pillar { font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; padding:0.35rem 0.8rem; border-radius:5px; font-weight:700; }
+.reel-pillar.science { background:rgba(125,184,138,0.15); color:#7DB88A; }
+.reel-pillar.founder { background:rgba(212,160,23,0.15); color:#D4A017; }
+.reel-pillar.event { background:rgba(232,68,32,0.12); color:#E87E3A; }
+.reel-pillar.parent { background:rgba(120,160,220,0.15); color:#7AA8DC; }
+
+.reel-body { padding:1.4rem 1.5rem; }
+.reel-section { margin-bottom:1.2rem; padding-bottom:1.2rem; border-bottom:1px solid rgba(255,255,255,0.04); }
+.reel-section:last-child { margin-bottom:0; padding-bottom:0; border-bottom:none; }
+.reel-section .label { font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:#888; font-weight:600; margin-bottom:0.5rem; }
+.reel-section .label.hook { color:#D4A017; }
+.reel-section .label.shoot { color:#7DB88A; }
+.reel-section .label.vo { color:#7AA8DC; }
+.reel-section .label.caption { color:#E8C75C; }
+
+.hook-line { font-family:'Cormorant Garamond', serif; font-size:1.25rem; color:#FFF; font-style:italic; line-height:1.4; padding:0.6rem 0; }
+
+.shoot-list { list-style:none; padding:0; margin:0; }
+.shoot-list li { padding:0.4rem 0 0.4rem 1.6rem; position:relative; font-size:0.9rem; color:#CCC; line-height:1.55; border-bottom:1px dashed rgba(255,255,255,0.04); }
+.shoot-list li:last-child { border-bottom:none; }
+.shoot-list li::before { content:counter(beat); counter-increment:beat; position:absolute; left:0; top:0.4rem; font-family:'Cormorant Garamond', serif; font-size:0.85rem; color:#D4A017; font-style:italic; font-weight:500; }
+.shoot-list { counter-reset:beat; }
+.shoot-list li strong { color:#FFF; font-weight:600; }
+
+.vo-script { background:rgba(122,168,220,0.06); border-left:2px solid #7AA8DC; padding:0.8rem 1rem; font-family:'Cormorant Garamond', serif; font-style:italic; color:#D8E4F4; font-size:1.05rem; line-height:1.55; border-radius:0 6px 6px 0; }
+
+.caption-text { background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.06); border-radius:8px; padding:0.9rem 1.1rem; font-size:0.92rem; color:#DDD; line-height:1.6; }
+.caption-text .hashtags { color:#888; font-size:0.85rem; margin-top:0.6rem; }
+
+.tips-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.6rem; margin-top:0.8rem; font-size:0.78rem; }
+.tips-row > div { background:rgba(0,0,0,0.3); border-radius:6px; padding:0.5rem 0.7rem; }
+.tips-row > div span { color:#D4A017; font-size:0.6rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; display:block; margin-bottom:0.2rem; }
+.tips-row > div p { color:#CCC; margin:0; line-height:1.5; font-size:0.82rem; }
+
+/* ANCHOR PINNED POST */
+.anchor-block { background:linear-gradient(180deg, rgba(212,160,23,0.10), rgba(212,160,23,0.02)); border:2px solid rgba(212,160,23,0.35); border-radius:14px; padding:2rem 1.8rem; margin:2rem 0; }
+.anchor-block .anchor-eyebrow { color:#D4A017; font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:700; margin-bottom:0.8rem; }
+.anchor-block h3 { font-family:'Cormorant Garamond', serif; font-size:1.7rem; color:#FFF; font-weight:500; margin-bottom:1rem; letter-spacing:-0.01em; }
+.anchor-block h3 em { color:#D4A017; font-style:italic; }
+.anchor-block .anchor-script { font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.1rem; color:#E8E8E8; line-height:1.5; padding:0.8rem 1rem; background:rgba(0,0,0,0.4); border-radius:8px; border-left:2px solid #D4A017; margin:0.6rem 0; }
+.anchor-block .anchor-script strong { color:#D4A017; font-style:normal; font-weight:600; }
+
+/* CAROUSEL */
+.carousel { background:rgba(125,184,138,0.04); border:1px solid rgba(125,184,138,0.18); border-radius:12px; padding:1.4rem 1.5rem; margin-bottom:1rem; }
+.carousel .car-num { font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:#7DB88A; font-weight:600; margin-bottom:0.4rem; }
+.carousel h4 { font-family:'Cormorant Garamond', serif; font-size:1.3rem; color:#FFF; font-weight:500; line-height:1.2; margin-bottom:0.6rem; letter-spacing:-0.01em; }
+.carousel h4 em { color:#D4A017; font-style:italic; }
+.carousel .slides { list-style:none; padding:0; margin:0.8rem 0 0; }
+.carousel .slides li { padding:0.4rem 0 0.4rem 2rem; position:relative; font-size:0.88rem; color:#CCC; line-height:1.5; border-bottom:1px dashed rgba(255,255,255,0.04); }
+.carousel .slides li:last-child { border-bottom:none; }
+.carousel .slides li::before { content:counter(slide); counter-increment:slide; position:absolute; left:0; top:0.4rem; font-family:'Cormorant Garamond', serif; font-size:0.85rem; color:#7DB88A; font-style:italic; font-weight:600; padding:0 0.5rem; background:rgba(125,184,138,0.1); border-radius:4px; min-width:1.6rem; text-align:center; }
+.carousel .slides { counter-reset:slide; }
+.carousel .slides li strong { color:#FFF; font-weight:600; }
+
+/* STORY PROMPTS */
+.story-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin:1.2rem 0; }
+@media (max-width:600px){ .story-grid { grid-template-columns:1fr; } }
+.story-card { background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.05); border-radius:8px; padding:0.8rem 1rem; }
+.story-card .sc-num { font-family:'Cormorant Garamond', serif; font-size:0.95rem; color:#D4A017; font-style:italic; font-weight:500; margin-bottom:0.3rem; }
+.story-card p { font-size:0.85rem; color:#CCC; margin:0; line-height:1.45; }
+
+/* PRODUCTION TIPS */
+.tips { background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.4rem 1.6rem; margin:1.4rem 0; }
+.tips h3 { font-family:'Cormorant Garamond', serif; font-size:1.3rem; color:#FFF; font-weight:500; margin-bottom:0.8rem; letter-spacing:-0.01em; }
+.tips ul { list-style:none; padding:0; margin:0; }
+.tips ul li { padding:0.3rem 0 0.3rem 1.4rem; position:relative; font-size:0.92rem; color:#CCC; line-height:1.55; }
+.tips ul li::before { content:'→'; position:absolute; left:0; top:0.3rem; color:#D4A017; font-weight:600; }
+.tips ul li strong { color:#FFF; font-weight:600; }
+
+.audit-footer { text-align:center; margin-top:4rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.05); font-size:0.8rem; color:#555; letter-spacing:0.1em; text-transform:uppercase; }
+</style>
+</head>
+<body>
+<div class="audit-container">
+
+<!-- COVER -->
+<div class="cover">
+    <div>
+        <span class="cover-badge">Bonus Deliverable · 08 · Production-Ready</span>
+        <div class="cover-eyebrow">30-Day Content Sprint</div>
+        <h1 class="cover-title">Strategy<br>becomes<br><em>shoots.</em></h1>
+        <p class="cover-lede">Eight reels with full beat-by-beat shoot lists. Four educational carousels. One pinned-post anchor. Twenty-eight daily Story prompts. Plus a 30-day calendar mapping it all together. Every piece ladders into the four pillars from D03. Every script is voiceable in your actual voice — biochemist single dad, not influencer guy.</p>
+
+        <div class="cover-meta">
+            <strong>For:</strong> Chris Steele · Kind Bubbles<br>
+            <strong>Format:</strong> 8 reels · 4 carousels · 1 pinned post · 28 stories<br>
+            <strong>Output:</strong> Production-ready · paste-and-shoot
+        </div>
+    </div>
+    <div class="cover-bottom">Pairs with D03 (Pillars) + D04 (Hooks)</div>
+</div>
+
+
+<!-- 30-DAY CALENDAR -->
+<section class="audit-section">
+    <div class="eyebrow">The 30-day shape</div>
+    <h2>Two reels per week.<br>One carousel per week.<br><em>Daily story texture.</em></h2>
+    <p>Two reels per week is the sustainable cadence — not five, not seven. <strong>Reels are the growth lever; carousels are the trust lever; stories are the heartbeat.</strong> If a week falls behind, drop the story texture first, the carousel second, and protect the reels at all costs. The calendar below assumes a Monday start.</p>
+
+    <div class="cal">
+        <div class="cal-day"><div class="cd-num">M 01</div><div class="cd-type">Reel</div><div class="cd-title">R01 · 9pm Bubble Reset</div></div>
+        <div class="cal-day rest"><div class="cd-num">T 02</div><div class="cd-title">rest / story</div></div>
+        <div class="cal-day story"><div class="cd-num">W 03</div><div class="cd-type">Story</div><div class="cd-title">Behind a booking</div></div>
+        <div class="cal-day reel"><div class="cd-num">Th 04</div><div class="cd-type">Reel</div><div class="cd-title">R02 · Slow-mo pop</div></div>
+        <div class="cal-day rest"><div class="cd-num">F 05</div><div class="cd-title">rest</div></div>
+        <div class="cal-day story"><div class="cd-num">Sa 06</div><div class="cd-type">Story</div><div class="cd-title">Pre-event POV</div></div>
+        <div class="cal-day carousel"><div class="cd-num">Su 07</div><div class="cd-type">Carousel</div><div class="cd-title">C01 · Why Bubbles?</div></div>
+
+        <div class="cal-day reel"><div class="cd-num">M 08</div><div class="cd-type">Reel</div><div class="cd-title">R03 · Reaction face</div></div>
+        <div class="cal-day rest"><div class="cd-num">T 09</div><div class="cd-title">rest</div></div>
+        <div class="cal-day story"><div class="cd-num">W 10</div><div class="cd-type">Story</div><div class="cd-title">Daughter quote</div></div>
+        <div class="cal-day reel"><div class="cd-num">Th 11</div><div class="cd-type">Reel</div><div class="cd-title">R04 · Founder dad</div></div>
+        <div class="cal-day rest"><div class="cd-num">F 12</div><div class="cd-title">rest</div></div>
+        <div class="cal-day story"><div class="cd-num">Sa 13</div><div class="cd-type">Story</div><div class="cd-title">Bay Area location</div></div>
+        <div class="cal-day carousel"><div class="cd-num">Su 14</div><div class="cd-type">Carousel</div><div class="cd-title">C02 · 5 lines for shy kids</div></div>
+
+        <div class="cal-day reel"><div class="cd-num">M 15</div><div class="cd-type">Reel</div><div class="cd-title">R05 · Shy kid moment</div></div>
+        <div class="cal-day rest"><div class="cd-num">T 16</div><div class="cd-title">rest</div></div>
+        <div class="cal-day story"><div class="cd-num">W 17</div><div class="cd-type">Story</div><div class="cd-title">Bubble juice mix</div></div>
+        <div class="cal-day reel"><div class="cd-num">Th 18</div><div class="cd-type">Reel</div><div class="cd-title">R06 · Corporate pop-up</div></div>
+        <div class="cal-day rest"><div class="cd-num">F 19</div><div class="cd-title">rest</div></div>
+        <div class="cal-day story"><div class="cd-num">Sa 20</div><div class="cd-type">Story</div><div class="cd-title">Saturday set-up</div></div>
+        <div class="cal-day carousel"><div class="cd-num">Su 21</div><div class="cd-type">Carousel</div><div class="cd-title">C03 · The Science</div></div>
+
+        <div class="cal-day reel"><div class="cd-num">M 22</div><div class="cd-type">Reel</div><div class="cd-title">R07 · 12-photo recap</div></div>
+        <div class="cal-day rest"><div class="cd-num">T 23</div><div class="cd-title">rest</div></div>
+        <div class="cal-day story"><div class="cd-num">W 24</div><div class="cd-type">Story</div><div class="cd-title">Parent testimonial</div></div>
+        <div class="cal-day reel"><div class="cd-num">Th 25</div><div class="cd-type">Reel</div><div class="cd-title">R08 · School assembly</div></div>
+        <div class="cal-day rest"><div class="cd-num">F 26</div><div class="cd-title">rest</div></div>
+        <div class="cal-day story"><div class="cd-num">Sa 27</div><div class="cd-type">Story</div><div class="cd-title">Booking next week</div></div>
+        <div class="cal-day carousel"><div class="cd-num">Su 28</div><div class="cd-type">Carousel</div><div class="cd-title">C04 · For the parents</div></div>
+
+        <div class="cal-day rest"><div class="cd-num">M 29</div><div class="cd-title">rest</div></div>
+        <div class="cal-day rest"><div class="cd-num">T 30</div><div class="cd-title">rest · review month</div></div>
+    </div>
+
+    <div class="cal-key">
+        <span class="k-reel">Reel (8 total)</span>
+        <span class="k-carousel">Carousel (4 total)</span>
+        <span class="k-story">Story (16 total · paste prompts)</span>
+    </div>
+</section>
+
+<hr class="audit-divider">
+
+
+<!-- PINNED POST ANCHOR -->
+<section class="audit-section">
+    <div class="eyebrow">Anchor · pin this first</div>
+    <h2>One reel becomes<br>the <em>top of your feed.</em></h2>
+    <p>Every other reel here is acquisition. <strong>This one is the conversion.</strong> When a parent finds Kind Bubbles for the first time, the pinned post is what they see. It needs to do three things in 30 seconds: tell them you're a real person, tell them why this exists, tell them why their kid needs it. Shoot this <em>once</em>, do it well, pin it forever, change only when you have a better one.</p>
+
+    <div class="anchor-block">
+        <div class="anchor-eyebrow">Pinned Post · Founder Voice</div>
+        <h3>The dad who started Kind Bubbles<br><em>over a kitchen sink.</em></h3>
+
+        <div style="font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:#888; margin:1rem 0 0.4rem; font-weight:600;">Shoot setup</div>
+        <p>Saturday morning. Kitchen sink at home. Gear: iPhone on tripod, eye-level. One natural-light angle from a window. No lav mic — phone audio is fine for this format. Daughter at the kitchen table in the background, drawing or eating breakfast, NOT looking at camera.</p>
+
+        <div style="font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:#888; margin:1rem 0 0.4rem; font-weight:600;">Voiceover script · 30 seconds</div>
+
+        <div class="anchor-script"><strong>0:00 · </strong>Three years ago, I left my job and my marriage in the same month.</div>
+        <div class="anchor-script"><strong>0:05 · </strong>I had a six-year-old who didn't know what to make of me.</div>
+        <div class="anchor-script"><strong>0:09 · </strong>So we made bubbles. At this sink. For an hour. And another hour.</div>
+        <div class="anchor-script"><strong>0:15 · </strong>I'm a biochemist. I know why bubbles work — the surfactants, the glycerin, the way light bends through the soap film.</div>
+        <div class="anchor-script"><strong>0:21 · </strong>But that's not what happened in our kitchen.</div>
+        <div class="anchor-script"><strong>0:25 · </strong>What happened is, my daughter and I figured out how to be friends again.</div>
+        <div class="anchor-script"><strong>0:30 · </strong>That's what Kind Bubbles is. It's that.</div>
+
+        <div style="font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:#888; margin:1rem 0 0.4rem; font-weight:600;">Caption (paste verbatim)</div>
+        <div class="caption-text">
+            Three years ago I quit my job and ended my marriage in the same month. My daughter was six. I didn't know how to be her dad in this new shape of our family.<br><br>
+            So we made bubbles. At our kitchen sink. For hours.<br><br>
+            Kind Bubbles is what came out of that. It's not a kids' party brand. It's the company I built so other parents could give their kids what we gave each other in those weekends.<br><br>
+            🫧 Book a private experience or pop-up at the link in bio. Bay Area only for now.<br><br>
+            <span class="hashtags">#kindbubbles #mindfulplay #singleparent #healing #bayarea #sensoryplay #bubbleparty #fatherhood</span>
+        </div>
+    </div>
+</section>
+
+<hr class="audit-divider">
+
+
+<!-- 8 REELS -->
+<section class="audit-section">
+    <div class="eyebrow">The 8 reels</div>
+    <h2>Two per week. <em>Forty days of momentum.</em></h2>
+    <p>Each reel below has: hook line, beat-by-beat shoot list, voiceover script (where applicable), paste-ready caption, hashtag set, and production tips. Pillar is locked at the top of each so every post laddered into the strategy.</p>
+</section>
+
+<!-- REEL 01 -->
+<div class="reel-card">
+    <div class="reel-head">
+        <div class="reel-num">R01</div>
+        <div class="reel-title-block">
+            <div class="reel-title">9pm Bubble Reset</div>
+            <div class="reel-meta">Day 1 · Founder + parent crossover · 25-second reel</div>
+        </div>
+        <span class="reel-pillar parent">Parent Connection</span>
+    </div>
+    <div class="reel-body">
+        <div class="reel-section">
+            <div class="label hook">Hook (first 1.5 sec)</div>
+            <div class="hook-line">"This is the only thing that gets my kid off the iPad."</div>
+        </div>
+
+        <div class="reel-section">
+            <div class="label shoot">Shoot list</div>
+            <ol class="shoot-list">
+                <li><strong>0:00</strong> · Dim living room. iPad screen glow on a kid's face. (Kid is not visible — only the glow.)</li>
+                <li><strong>0:02</strong> · Cut to: kitchen sink overhead. Hand pours bubble juice into a tray. Slow.</li>
+                <li><strong>0:06</strong> · Same kid (now visible) at the sink, picking up a giant bubble wand. Eyes wide.</li>
+                <li><strong>0:10</strong> · Wide shot: backyard or park, kid running through a cloud of giant bubbles, laughing.</li>
+                <li><strong>0:18</strong> · Final shot: bubble pops on camera lens. Cut to black.</li>
+                <li><strong>0:22</strong> · Text overlay only: "Kind Bubbles · Bay Area"</li>
+            </ol>
+        </div>
+
+        <div class="reel-section">
+            <div class="label vo">Voiceover (in your actual voice)</div>
+            <div class="vo-script">"This is the only thing that gets my kid off the iPad. It's not a toy. It's not a screen. It's not even mine. It's just bubbles — and the eight minutes of attention they buy back every night. That's what I do now."</div>
+        </div>
+
+        <div class="reel-section">
+            <div class="label caption">Caption</div>
+            <div class="caption-text">
+                The screen wins most nights. Some nights — the bubbles do.<br><br>
+                Bring the eight-minute reset to your living room, your party, your school. Link in bio.<br>
+                <span class="hashtags">#screenfree #bayareakids #mindfulplay #cleantok #parentingwin #kindbubbles</span>
+            </div>
+        </div>
+
+        <div class="tips-row">
+            <div><span>Sound</span><p>Original voice-over, no licensed music. Quiet.</p></div>
+            <div><span>Length</span><p>22–25 seconds. Not longer.</p></div>
+            <div><span>Aspect</span><p>9:16. Phone vertical.</p></div>
+        </div>
+    </div>
+</div>
+
+<!-- REEL 02 -->
+<div class="reel-card">
+    <div class="reel-head">
+        <div class="reel-num">R02</div>
+        <div class="reel-title-block">
+            <div class="reel-title">240fps · Surface Tension Lets Go</div>
+            <div class="reel-meta">Day 4 · Bubble science + slow-mo · 18-second reel</div>
+        </div>
+        <span class="reel-pillar science">Bubble Science</span>
+    </div>
+    <div class="reel-body">
+        <div class="reel-section">
+            <div class="label hook">Hook (first 1.5 sec)</div>
+            <div class="hook-line">"This is what surface tension looks like when it lets go."</div>
+        </div>
+
+        <div class="reel-section">
+            <div class="label shoot">Shoot list</div>
+            <ol class="shoot-list">
+                <li><strong>0:00</strong> · Phone in 240fps slow-mo mode. Black tile or marble surface. Black bg behind.</li>
+                <li><strong>0:01</strong> · Single giant bubble drifting onto frame from the right.</li>
+                <li><strong>0:04</strong> · Pop in extreme slow motion. Catch the rainbow film stretching, breaking.</li>
+                <li><strong>0:10</strong> · Cut to: text-only frame on black. White serif type. <em>"That's surface tension. That's chemistry. That's what your kid is watching."</em></li>
+                <li><strong>0:16</strong> · End frame: kindbubbles.com</li>
+            </ol>
+        </div>
+
+        <div class="reel-section">
+            <div class="label vo">Voiceover</div>
+            <div class="vo-script">"Most kids ask why bubbles pop. The answer is — surface tension. The water molecules can't hold each other anymore. They let go. And the rainbow film that stretches and breaks? That's chemistry your kid is watching for fun. That's what we do."</div>
+        </div>
+
+        <div class="reel-section">
+            <div class="label caption">Caption</div>
+            <div class="caption-text">
+                Three minutes to shoot. Three months of reach.<br><br>
+                Bubbles aren't magic — they're chemistry that <em>looks</em> like magic. That's the gateway.<br><br>
+                Curious about the science behind Kind Bubbles? Link in bio for the full breakdown.<br>
+                <span class="hashtags">#stem #scienceforkids #bubblescience #slowmo #stemforkids #kidssci #cleantok #bayareafamily</span>
+            </div>
+        </div>
+
+        <div class="tips-row">
+            <div><span>Sound</span><p>Voice over OR ambient pop sound. Both work.</p></div>
+            <div><span>Length</span><p>15–20 sec. Slo-mo is the magic — don't rush.</p></div>
+            <div><span>Best time</span><p>Shoot in shade, no direct sun. Backlight the bubble.</p></div>
+        </div>
+    </div>
+</div>
+
+<!-- REEL 03 -->
+<div class="reel-card">
+    <div class="reel-head">
+        <div class="reel-num">R03</div>
+        <div class="reel-title-block">
+            <div class="reel-title">The Reaction, Not the Bubble</div>
+            <div class="reel-meta">Day 8 · Event recap (Borrow #1 from D06) · 20-second reel</div>
+        </div>
+        <span class="reel-pillar event">Event Magic</span>
+    </div>
+    <div class="reel-body">
+        <div class="reel-section">
+            <div class="label hook">Hook</div>
+            <div class="hook-line">"What if the post wasn't the bubble?"</div>
+        </div>
+
+        <div class="reel-section">
+            <div class="label shoot">Shoot list</div>
+            <ol class="shoot-list">
+                <li><strong>0:00</strong> · Wide shot: a kid's face. Eyes wide. Mouth open. Bubble out-of-focus in foreground.</li>
+                <li><strong>0:02</strong> · Cut to second kid. Different reaction. Hand reaching out.</li>
+                <li><strong>0:04</strong> · Third kid. Laughing. Head tilted up.</li>
+                <li><strong>0:06</strong> · Fourth kid. Quiet. Watching. Not chasing.</li>
+                <li><strong>0:08</strong> · Cut faster — five more reaction faces in 5 seconds.</li>
+                <li><strong>0:13</strong> · Final 4 seconds: pull back to wide of full party. Bubbles everywhere. Parents laughing.</li>
+                <li><strong>0:17</strong> · End text: "We don't sell bubbles. We sell their faces."</li>
+            </ol>
+        </div>
+
+        <div class="reel-section">
+            <div class="label vo">Voiceover (optional — try with and without)</div>
+            <div class="vo-script">"Ten minutes into a Kind Bubbles party, the bubbles aren't even the show anymore. The kids are. We just hand them the wonder and step back."</div>
+        </div>
+
+        <div class="reel-section">
+            <div class="label caption">Caption</div>
+            <div class="caption-text">
+                Justin Willman taught me this: <em>the reaction shot, not the trick, is the post.</em><br><br>
+                Spent half of last weekend's pop-up filming faces, not bubbles. This is what we got.<br><br>
+                Next pop-up: link in bio.<br>
+                <span class="hashtags">#kidsparty #kindbubbles #bayareakids #partytime #magicofchildhood #facesofjoy</span>
+            </div>
+        </div>
+
+        <div class="tips-row">
+            <div><span>Permission</span><p>Get parental sign-off before posting kids' faces.</p></div>
+            <div><span>Length</span><p>18–22 sec. Reaction cuts hit fast.</p></div>
+            <div><span>Music</span><p>Soft instrumental piano OR no music. Avoid trending pop.</p></div>
+        </div>
+    </div>
+</div>
+
+<!-- REEL 04 -->
+<div class="reel-card">
+    <div class="reel-head">
+        <div class="reel-num">R04</div>
+        <div class="reel-title-block">
+            <div class="reel-title">Pre-Event POV · Mixing the Solution</div>
+            <div class="reel-meta">Day 11 · Founder behind-the-scenes · 30-second reel</div>
+        </div>
+        <span class="reel-pillar founder">Founder Story</span>
+    </div>
+    <div class="reel-body">
+        <div class="reel-section">
+            <div class="label hook">Hook</div>
+            <div class="hook-line">"This is the part nobody books. But it's the part I love."</div>
+        </div>
+
+        <div class="reel-section">
+            <div class="label shoot">Shoot list</div>
+            <ol class="shoot-list">
+                <li><strong>0:00</strong> · Saturday 7am. Kitchen. Phone on tripod, eye-level.</li>
+                <li><strong>0:03</strong> · Glass jugs lined up on counter. Bottles of glycerin, dish soap, distilled water.</li>
+                <li><strong>0:08</strong> · You measuring solution into a clean bucket. Slow, deliberate. Daughter at table eating cereal in background.</li>
+                <li><strong>0:14</strong> · Stir. Test bubble with a wand. Bubble flies up — pop on the ceiling fan. Laugh.</li>
+                <li><strong>0:20</strong> · Pack the kit into the car. Bucket, wands, towels, speaker.</li>
+                <li><strong>0:25</strong> · Final shot: looking back at house from the driveway. Loading the car. "See you in three hours."</li>
+            </ol>
+        </div>
+
+        <div class="reel-section">
+            <div class="label vo">Voiceover</div>
+            <div class="vo-script">"This is the part nobody books — but it's the part I love. Saturday mornings, the kitchen smells like glycerin, my daughter is eating cereal, and I'm pretending to be a chemist again. Then I pack the car and drive to the next family. Today it's a sixth birthday in Marin."</div>
+        </div>
+
+        <div class="reel-section">
+            <div class="label caption">Caption</div>
+            <div class="caption-text">
+                Saturday morning, before any party, this is what it looks like.<br><br>
+                Glycerin, distilled water, dish soap, the right ratio. My daughter eating cereal. Music low.<br><br>
+                Then I drive to your house and bring the magic.<br>
+                <span class="hashtags">#behindthescenes #saturdaymorning #singleparent #kindbubbles #bayareadad #foundedbyadad</span>
+            </div>
+        </div>
+
+        <div class="tips-row">
+            <div><span>Pillar</span><p>This is your highest-leverage reel. Pin it after R01.</p></div>
+            <div><span>Length</span><p>28–32 sec. Slower pace works for founder content.</p></div>
+            <div><span>Audio</span><p>Real ambient — kitchen sounds + voiceover. No music.</p></div>
+        </div>
+    </div>
+</div>
+
+<!-- REEL 05 -->
+<div class="reel-card">
+    <div class="reel-head">
+        <div class="reel-num">R05</div>
+        <div class="reel-title-block">
+            <div class="reel-title">The Shy Kid Who Came In</div>
+            <div class="reel-meta">Day 15 · Calm-parenting + emotional (Borrow #4 from D06) · 25-second reel</div>
+        </div>
+        <span class="reel-pillar parent">Parent Connection</span>
+    </div>
+    <div class="reel-body">
+        <div class="reel-section">
+            <div class="label hook">Hook</div>
+            <div class="hook-line">"Five things I say when a kid is too shy to come into the bubble circle."</div>
+        </div>
+
+        <div class="reel-section">
+            <div class="label shoot">Shoot list</div>
+            <ol class="shoot-list">
+                <li><strong>0:00</strong> · Talking head — you, in front of a soft outdoor backdrop. Park or backyard.</li>
+                <li><strong>0:02</strong> · Say each line on screen with a quick cut + text overlay each time.</li>
+                <li><strong>0:05</strong> · "1. <em>'I'm just going to make some over here. Watch if you want.'</em>"</li>
+                <li><strong>0:09</strong> · "2. <em>'You don't have to come close. The bubbles will come to you.'</em>"</li>
+                <li><strong>0:13</strong> · "3. <em>'This one's just for you. I'm aiming.'</em>"</li>
+                <li><strong>0:17</strong> · "4. <em>'Want to know the secret? It's in the wand.'</em>"</li>
+                <li><strong>0:21</strong> · "5. <em>(Nothing. Just sit on the grass. Wait.)</em>"</li>
+                <li><strong>0:24</strong> · End text: "Most shy kids come in within 8 minutes."</li>
+            </ol>
+        </div>
+
+        <div class="reel-section">
+            <div class="label caption">Caption</div>
+            <div class="caption-text">
+                Every Kind Bubbles party has at least one kid who won't come in.<br><br>
+                Five things I've learned to say. None of them are "come on in!"<br><br>
+                If you've got a shy one — or a sensory-sensitive one — these are for you. Save for the next playdate.<br>
+                <span class="hashtags">#mindfulparenting #shykid #emotionaldevelopment #parentingtips #kindbubbles #sensoryplay #SEL</span>
+            </div>
+        </div>
+
+        <div class="tips-row">
+            <div><span>Format</span><p>Talking head. No fancy edit. Calm voice.</p></div>
+            <div><span>Save rate</span><p>This format is built for saves and shares.</p></div>
+            <div><span>Cross-post</span><p>Cut to 60-sec for LinkedIn (school + corp buyers).</p></div>
+        </div>
+    </div>
+</div>
+
+<!-- REEL 06 -->
+<div class="reel-card">
+    <div class="reel-head">
+        <div class="reel-num">R06</div>
+        <div class="reel-title-block">
+            <div class="reel-title">Corporate Pop-Up · Wellness Day</div>
+            <div class="reel-meta">Day 18 · B2B-tilted recap · 22-second reel</div>
+        </div>
+        <span class="reel-pillar event">Event Magic</span>
+    </div>
+    <div class="reel-body">
+        <div class="reel-section">
+            <div class="label hook">Hook</div>
+            <div class="hook-line">"This is what your wellness day looks like with bubbles."</div>
+        </div>
+
+        <div class="reel-section">
+            <div class="label shoot">Shoot list</div>
+            <ol class="shoot-list">
+                <li><strong>0:00</strong> · Establishing shot: a tech company courtyard or rooftop. Casual employees + bubble setup visible.</li>
+                <li><strong>0:03</strong> · Adults. Not kids. Holding bubble wands. Smiling. Some laughing too hard.</li>
+                <li><strong>0:08</strong> · Closeup: a bubble drifting between two laptops on a rooftop table.</li>
+                <li><strong>0:11</strong> · Wide of the courtyard, bubbles everywhere. Colleagues taking photos.</li>
+                <li><strong>0:15</strong> · Cut to text frame: "For 60 minutes, no one looked at their phone."</li>
+                <li><strong>0:20</strong> · End: kindbubbles.com/corporate (or whatever URL you settle on)</li>
+            </ol>
+        </div>
+
+        <div class="reel-section">
+            <div class="label caption">Caption</div>
+            <div class="caption-text">
+                Employee wellness budgets bought another lunch yoga session, another mindfulness app subscription, another box of mediocre swag.<br><br>
+                Or — they could buy 60 minutes of grown adults laughing in a parking lot.<br><br>
+                Kind Bubbles for corporate wellness days, team retreats, founder events, and wellness-coded HR programs.<br><br>
+                Bay Area only. DM or email for rates.<br>
+                <span class="hashtags">#corporatewellness #teambuilding #bayareatech #wellnessatwork #bubbleparty #playatwork</span>
+            </div>
+        </div>
+
+        <div class="tips-row">
+            <div><span>B2B angle</span><p>Lead the captions with budgets, not feelings.</p></div>
+            <div><span>LinkedIn</span><p>This is the LinkedIn cross-post.</p></div>
+            <div><span>Crop</span><p>Have a 1:1 version for LinkedIn feed.</p></div>
+        </div>
+    </div>
+</div>
+
+<!-- REEL 07 -->
+<div class="reel-card">
+    <div class="reel-head">
+        <div class="reel-num">R07</div>
+        <div class="reel-title-block">
+            <div class="reel-title">12-Photo Recap · The Birthday That Worked</div>
+            <div class="reel-meta">Day 22 · Booking magnet (Borrow from @karaspartyideas) · 30-second carousel-style reel</div>
+        </div>
+        <span class="reel-pillar event">Event Magic</span>
+    </div>
+    <div class="reel-body">
+        <div class="reel-section">
+            <div class="label hook">Hook</div>
+            <div class="hook-line">"Twelve photos from one Kind Bubbles party."</div>
+        </div>
+
+        <div class="reel-section">
+            <div class="label shoot">12-photo shot list (capture at every booking)</div>
+            <ol class="shoot-list">
+                <li><strong>Setup</strong> · The bucket + wands lined up before guests arrive.</li>
+                <li><strong>The first kid</strong> · The first kid to spot the bubbles. Wide-eye reaction.</li>
+                <li><strong>The crowd</strong> · Wide shot of all kids running through the bubble cloud.</li>
+                <li><strong>Hero bubble</strong> · One giant bubble, perfectly lit, mid-air.</li>
+                <li><strong>Hands reaching</strong> · Multiple kids' hands reaching up to pop one.</li>
+                <li><strong>Parent laughing</strong> · An adult laughing at their own kid's reaction.</li>
+                <li><strong>The shy kid</strong> · The quietest kid, finally smiling, watching from the side.</li>
+                <li><strong>Founder + birthday kid</strong> · You giving a giant wand to the birthday child.</li>
+                <li><strong>Cake / table</strong> · The party setup, bubbles drifting through it.</li>
+                <li><strong>Detail</strong> · A close-up of soap film stretching on the wand.</li>
+                <li><strong>Group photo</strong> · Kids + you in the middle, all smiling.</li>
+                <li><strong>Strike + thank you</strong> · The empty backyard, gear packed, wave goodbye.</li>
+            </ol>
+        </div>
+
+        <div class="reel-section">
+            <div class="label caption">Caption</div>
+            <div class="caption-text">
+                Twelve photos from Mira's 6th birthday in Walnut Creek. Dad's only request: "make her cry happy tears."<br><br>
+                We did. Then we packed up and drove home.<br><br>
+                Want twelve like these from your kid's next birthday? Link in bio.<br>
+                <span class="hashtags">#kidsbirthdayparty #birthdayrecap #kindbubbles #walnutcreek #bayareaparty #bubbleparty</span>
+            </div>
+        </div>
+
+        <div class="tips-row">
+            <div><span>Recurring</span><p>Shoot all 12 at every booking. Build a library.</p></div>
+            <div><span>Permission</span><p>Get parental sign-off — same flow as R03.</p></div>
+            <div><span>Music</span><p>Soft acoustic. NOT trending audio.</p></div>
+        </div>
+    </div>
+</div>
+
+<!-- REEL 08 -->
+<div class="reel-card">
+    <div class="reel-head">
+        <div class="reel-num">R08</div>
+        <div class="reel-title-block">
+            <div class="reel-title">School Assembly · 200 Kids, One Quiet Moment</div>
+            <div class="reel-meta">Day 25 · Schools-as-buyer pitch · 25-second reel</div>
+        </div>
+        <span class="reel-pillar event">Event Magic</span>
+    </div>
+    <div class="reel-body">
+        <div class="reel-section">
+            <div class="label hook">Hook</div>
+            <div class="hook-line">"200 kids in a gym. The principal asked for 'something different.'"</div>
+        </div>
+
+        <div class="reel-section">
+            <div class="label shoot">Shoot list</div>
+            <ol class="shoot-list">
+                <li><strong>0:00</strong> · Wide shot: school gym. Kids cross-legged on the floor, waiting.</li>
+                <li><strong>0:03</strong> · You walking in with the bucket and wands. Kids notice. Murmur.</li>
+                <li><strong>0:07</strong> · First giant bubble released into the gym. The whole crowd <em>quietens</em>.</li>
+                <li><strong>0:11</strong> · One bubble drifts the length of the gym. Cuts to faces tracking it.</li>
+                <li><strong>0:17</strong> · The bubble pops. Cheers, applause.</li>
+                <li><strong>0:21</strong> · Cut to text: "200 kids quiet. For 8 seconds. That's the science of wonder."</li>
+            </ol>
+        </div>
+
+        <div class="reel-section">
+            <div class="label caption">Caption</div>
+            <div class="caption-text">
+                Wonder is what happens when a kid forgets to be loud.<br><br>
+                Kind Bubbles school assemblies — Bay Area private + public schools. SEL-aligned, science-grounded, screen-free. 30-min show or 60-min show + interactive workshop.<br><br>
+                Booking spring/summer 2026 now. DM your school's name.<br>
+                <span class="hashtags">#schoolassembly #SEL #scienceofwonder #bayareaschools #stem #stemforkids #kindbubbles</span>
+            </div>
+        </div>
+
+        <div class="tips-row">
+            <div><span>Buyer</span><p>This reel converts principals + DEI leads.</p></div>
+            <div><span>Crop</span><p>Make a 60-second LinkedIn version with subtitles.</p></div>
+            <div><span>Stills</span><p>Pull 4 stills as standalone IG posts.</p></div>
+        </div>
+    </div>
+</div>
+
+
+<hr class="audit-divider">
+
+
+<!-- 4 CAROUSELS -->
+<section class="audit-section">
+    <div class="eyebrow">The 4 carousels</div>
+    <h2>Sundays.<br><em>Educational. Save-worthy.</em></h2>
+    <p>Carousels do what reels can't — they get saved, shared in DMs, and re-read. <strong>One per Sunday</strong>. Build them in Canva or Figma using a 1080×1350 vertical template, dark cream background, big serif headline, single sentence per slide, photo on slide 1, photo on last slide.</p>
+</section>
+
+<div class="carousel">
+    <div class="car-num">Carousel 01 · Sunday Day 7 · Bubble Science</div>
+    <h4>Why Bubbles?<br><em>The science behind why kids stop running.</em></h4>
+    <ol class="slides">
+        <li><strong>Slide 1 (cover)</strong> · Photo of a giant bubble. Headline: "Why bubbles?"</li>
+        <li><strong>Slide 2</strong> · "A bubble is three layers of soap and water, stretched into a sphere by surface tension."</li>
+        <li><strong>Slide 3</strong> · "When light hits the soap film, it bends. That's why we see rainbows."</li>
+        <li><strong>Slide 4</strong> · "Kids' brains process moving rainbows differently than static ones. The eye stays."</li>
+        <li><strong>Slide 5</strong> · "When the eye stays, breathing slows. Heart rate drops. The kid quiets."</li>
+        <li><strong>Slide 6</strong> · "That's why bubbles work in classrooms, sensory therapy, and the eight minutes before bed."</li>
+        <li><strong>Slide 7 (CTA)</strong> · "Book a Kind Bubbles experience for your next birthday, school, or wellness day. Link in bio."</li>
+    </ol>
+</div>
+
+<div class="carousel">
+    <div class="car-num">Carousel 02 · Sunday Day 14 · Parent Connection</div>
+    <h4>5 things to say<br><em>when a kid is too shy to come in.</em></h4>
+    <ol class="slides">
+        <li><strong>Slide 1 (cover)</strong> · "5 things I say when a kid is too shy."</li>
+        <li><strong>Slide 2</strong> · "1. <em>'I'm just going to make some over here. Watch if you want.'</em>"</li>
+        <li><strong>Slide 3</strong> · "2. <em>'You don't have to come close. The bubbles will come to you.'</em>"</li>
+        <li><strong>Slide 4</strong> · "3. <em>'This one's just for you. I'm aiming.'</em>"</li>
+        <li><strong>Slide 5</strong> · "4. <em>'Want to know the secret? It's in the wand.'</em>"</li>
+        <li><strong>Slide 6</strong> · "5. <em>(Nothing. Just sit on the grass. Wait.)</em>"</li>
+        <li><strong>Slide 7 (CTA)</strong> · "Save this for the next playdate. Or book a Kind Bubbles pop-up where I do this for you."</li>
+    </ol>
+</div>
+
+<div class="carousel">
+    <div class="car-num">Carousel 03 · Sunday Day 21 · Bubble Science</div>
+    <h4>The chemistry of joy.<br><em>What's actually in a Kind Bubbles bubble.</em></h4>
+    <ol class="slides">
+        <li><strong>Slide 1 (cover)</strong> · Lab-aesthetic photo: glass jugs, beaker, bubble wand. "What's in our bubbles?"</li>
+        <li><strong>Slide 2</strong> · "Distilled water. So minerals don't break the film."</li>
+        <li><strong>Slide 3</strong> · "Glycerin. So the surface tension holds 3× longer."</li>
+        <li><strong>Slide 4</strong> · "Plant-based dish soap. So the film is durable and safe to touch."</li>
+        <li><strong>Slide 5</strong> · "No fragrance. No dye. No artificial anything."</li>
+        <li><strong>Slide 6</strong> · "I tested the ratio for 6 months at my kitchen sink. We use 3.2 parts water to 1 part soap to 0.4 parts glycerin."</li>
+        <li><strong>Slide 7 (CTA)</strong> · "Built by a biochemist. Trusted by parents. Bay Area only. Link in bio."</li>
+    </ol>
+</div>
+
+<div class="carousel">
+    <div class="car-num">Carousel 04 · Sunday Day 28 · Parent Connection</div>
+    <h4>For the parents<br><em>who are tired.</em></h4>
+    <ol class="slides">
+        <li><strong>Slide 1 (cover)</strong> · Photo: a hand mixing bubble juice in soft morning light. "For the parents."</li>
+        <li><strong>Slide 2</strong> · "I get it. The screen is winning most nights."</li>
+        <li><strong>Slide 3</strong> · "You don't need another app. Or another sensory-bin Pinterest project."</li>
+        <li><strong>Slide 4</strong> · "You need 8 minutes where you both forget to be tired together."</li>
+        <li><strong>Slide 5</strong> · "Bubbles do that. That's why my daughter and I started Kind Bubbles."</li>
+        <li><strong>Slide 6</strong> · "Book a private experience. Or come to a public pop-up. Or just buy bubble juice. Whatever helps."</li>
+        <li><strong>Slide 7 (CTA)</strong> · "Bay Area only for now. We'll come to you. Link in bio."</li>
+    </ol>
+</div>
+
+
+<hr class="audit-divider">
+
+
+<!-- STORY PROMPTS -->
+<section class="audit-section">
+    <div class="eyebrow">Daily story prompts · 16 of them</div>
+    <h2>Stories every other day.<br>Two minutes to record.<br><em>Heartbeat content.</em></h2>
+    <p>Stories don't grow followers. They <strong>retain</strong> the ones you have. Post one every other day on the days marked in the calendar. Format: a single phone-shot Story, hand-typed text overlay, no editing. Two minutes total.</p>
+
+    <div class="story-grid">
+        <div class="story-card"><div class="sc-num">Story 01</div><p>Kitchen sink, bubble juice ingredients lined up. Text: "Saturday morning prep."</p></div>
+        <div class="story-card"><div class="sc-num">Story 02</div><p>Daughter at the kitchen table eating cereal. Text: "She approves."</p></div>
+        <div class="story-card"><div class="sc-num">Story 03</div><p>Car loaded for a booking. Text: "Off to a 6th birthday in Marin."</p></div>
+        <div class="story-card"><div class="sc-num">Story 04</div><p>Driving + voice memo: "Today's party is sensory-themed. We'll see."</p></div>
+        <div class="story-card"><div class="sc-num">Story 05</div><p>Setting up at the venue. Text: "First wand out. Eight more to go."</p></div>
+        <div class="story-card"><div class="sc-num">Story 06</div><p>The first bubble of the show. No text. Just the bubble.</p></div>
+        <div class="story-card"><div class="sc-num">Story 07</div><p>A kid's reaction. Text: "This is why."</p></div>
+        <div class="story-card"><div class="sc-num">Story 08</div><p>Pack-up shot. Text: "Bubble juice doesn't pack itself."</p></div>
+        <div class="story-card"><div class="sc-num">Story 09</div><p>Parent thank-you text screenshot. Text: "These keep me going."</p></div>
+        <div class="story-card"><div class="sc-num">Story 10</div><p>You + daughter at home, post-event. Text: "Daddy time after Daddy time."</p></div>
+        <div class="story-card"><div class="sc-num">Story 11</div><p>Park bench, bottle of water. Text: "Between two parties. Quick reset."</p></div>
+        <div class="story-card"><div class="sc-num">Story 12</div><p>Photo of the bubble bucket on the kitchen counter. Text: "It's never empty for long."</p></div>
+        <div class="story-card"><div class="sc-num">Story 13</div><p>Quote screenshot from a 6yo: <em>"It tasted like sky."</em> Text: "Said by a kid yesterday."</p></div>
+        <div class="story-card"><div class="sc-num">Story 14</div><p>Voice memo: "Just realized I haven't shown you this." Walking outdoors with phone.</p></div>
+        <div class="story-card"><div class="sc-num">Story 15</div><p>A photo of your daughter making bubbles. Text: "The boss inspects the product."</p></div>
+        <div class="story-card"><div class="sc-num">Story 16</div><p>Sunday evening, calendar with next week filled in. Text: "Five bookings. See you out there."</p></div>
+    </div>
+</section>
+
+
+<hr class="audit-divider">
+
+
+<!-- PRODUCTION TIPS -->
+<section class="audit-section">
+    <div class="eyebrow">Production tips · the things that matter</div>
+    <h2>Don't optimize.<br><em>Just don't break it.</em></h2>
+
+    <div class="tips">
+        <h3>Gear (you already own)</h3>
+        <ul>
+            <li><strong>Phone</strong> — iPhone 12 or newer. 240fps slow-mo for R02. Vertical 9:16 for IG/TikTok, square 1:1 for LinkedIn carousels.</li>
+            <li><strong>Tripod</strong> — any phone tripod with a remote shutter. ~$25 on Amazon.</li>
+            <li><strong>Lav mic</strong> — RØDE SmartLav+ ($65) for any voiceover sit-down. Phone audio is fine for ambient.</li>
+            <li><strong>That's it</strong> — no camera, no editor, no light kit. The brand is "biochemist single dad." Don't shoot like a brand.</li>
+        </ul>
+    </div>
+
+    <div class="tips">
+        <h3>What to avoid</h3>
+        <ul>
+            <li><strong>Trending audio</strong> — kills the founder voice. Use your own audio + voiceover ~80% of the time.</li>
+            <li><strong>Heavy edits</strong> — fast cuts and motion graphics signal "agency made this." You're not that brand. Stay one step rougher than you think you should.</li>
+            <li><strong>Watermarks / logos in corner</strong> — signal "ad." Skip.</li>
+            <li><strong>Caption too long</strong> — under 100 words. Hook in line 1. CTA in last line.</li>
+            <li><strong>Posting daily</strong> — 2 reels/week + 1 carousel + stories is enough. More burns you out + dilutes signal.</li>
+        </ul>
+    </div>
+
+    <div class="tips">
+        <h3>What to repeat</h3>
+        <ul>
+            <li><strong>Pin R01 (anchor) until R04 (founder kitchen) is shot</strong> — then pin R04 instead. Founder content always converts higher than promotional content.</li>
+            <li><strong>Shoot the 12-photo recap at every single booking</strong> — even if you don't post all 12. Build the library.</li>
+            <li><strong>Voiceover yourself</strong> — your voice is the unfair advantage. Don't hire a narrator. Don't use AI voice.</li>
+            <li><strong>End every reel with the same 1-second outro</strong> — text only: "Kind Bubbles · Bay Area · link in bio." Consistency = brand recall.</li>
+        </ul>
+    </div>
+</section>
+
+
+<div class="audit-footer">Kind Bubbles × LoopWorker · 30-Day Content Sprint · May 2026</div>
+
+</div>
+</body>
+</html>

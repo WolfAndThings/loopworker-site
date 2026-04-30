@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>What We Want To Build · 12-Month Plan — Kind Bubbles | LoopWorker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased; }
+.audit-container { max-width:820px; margin:0 auto; padding:3rem 2rem 6rem; }
+
+.cover { min-height:100vh; display:flex; flex-direction:column; justify-content:space-between; padding:4rem 0 2rem; }
+.cover-badge { display:inline-block; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.22em; color:#888; border:1px solid rgba(255,255,255,0.1); padding:0.45rem 1rem; border-radius:100px; margin-bottom:2rem; }
+.cover-eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.24em; color:#D4A017; margin-bottom:1.2rem; font-weight:600; }
+.cover-title { font-family:'Cormorant Garamond', serif; font-size:clamp(2.8rem, 7vw, 4.4rem); font-weight:500; color:#FFF; line-height:1.02; letter-spacing:-0.02em; margin-bottom:1.5rem; }
+.cover-title em { font-style:italic; color:#D4A017; font-weight:400; }
+.cover-lede { font-size:1.15rem; color:#AAA; line-height:1.55; max-width:580px; margin-bottom:2rem; }
+.cover-meta { font-size:0.9rem; color:#777; line-height:1.8; margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.06); }
+.cover-meta strong { color:#BBB; font-weight:600; }
+.cover-bottom { font-size:0.7rem; color:#555; letter-spacing:0.15em; text-transform:uppercase; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.04); }
+
+.audit-section { margin-bottom:4rem; }
+.audit-section .eyebrow { font-size:0.65rem; text-transform:uppercase; letter-spacing:0.22em; color:#D4A017; font-weight:600; margin-bottom:0.7rem; }
+.audit-section h2 { font-family:'Cormorant Garamond', serif; font-size:2.2rem; font-weight:500; color:#FFF; margin-bottom:1.2rem; letter-spacing:-0.02em; line-height:1.15; }
+.audit-section h2 em { font-style:italic; color:#D4A017; font-weight:400; }
+.audit-section h3 { font-size:1.05rem; font-weight:600; color:#FFF; margin:1.4rem 0 0.5rem; letter-spacing:-0.01em; }
+.audit-section p { margin-bottom:1rem; color:#B5B5B5; font-size:0.97rem; }
+.audit-section p strong { color:#FFF; font-weight:600; }
+.audit-divider { border:none; border-top:1px solid rgba(255,255,255,0.06); margin:4rem 0; }
+
+.pull { border-left:2px solid #D4A017; padding:0.6rem 0 0.6rem 1.4rem; margin:1.8rem 0; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.25rem; line-height:1.45; color:#E8E8E8; }
+.pull span { color:#D4A017; font-style:normal; font-family:'Inter', sans-serif; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; display:block; margin-top:0.6rem; font-weight:600; }
+
+.baseline { background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:1.8rem 2rem; margin:1.5rem 0; }
+.baseline h3 { font-family:'Cormorant Garamond', serif; font-size:1.3rem; color:#FFF; font-weight:500; margin-bottom:1rem; letter-spacing:-0.01em; }
+.baseline-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
+@media(max-width:680px){ .baseline-grid { grid-template-columns:repeat(2,1fr); } }
+.baseline-stat { padding:0.5rem 0; }
+.baseline-stat .num { font-family:'Cormorant Garamond', serif; font-size:1.8rem; color:#D4A017; line-height:1; font-weight:500; letter-spacing:-0.01em; margin-bottom:0.4rem; }
+.baseline-stat .label { font-size:0.62rem; letter-spacing:0.16em; text-transform:uppercase; color:#888; line-height:1.4; font-weight:600; }
+
+/* WHAT WE FOUND */
+.found { background:rgba(212,160,23,0.04); border:1px solid rgba(212,160,23,0.18); border-radius:12px; padding:1.6rem 1.8rem; margin:1.2rem 0; }
+.found h3 { font-family:'Cormorant Garamond', serif; font-size:1.4rem; color:#FFF; font-weight:500; margin-bottom:0.6rem; letter-spacing:-0.01em; }
+.found h3 em { color:#D4A017; font-style:italic; }
+.found ul { list-style:none; padding:0; margin:0.8rem 0 0; }
+.found ul li { padding:0.55rem 0 0.55rem 1.6rem; position:relative; font-size:0.92rem; color:#CCC; line-height:1.55; border-bottom:1px dashed rgba(255,255,255,0.04); }
+.found ul li:last-child { border-bottom:none; }
+.found ul li::before { content:'→'; position:absolute; left:0; top:0.55rem; color:#D4A017; font-weight:700; }
+.found ul li strong { color:#FFF; font-weight:600; }
+.found ul li em { color:#D4A017; font-style:italic; font-weight:600; }
+
+/* SCENARIO BLOCK */
+.scenario { background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:14px; overflow:hidden; margin-bottom:1.4rem; }
+.scenario.conservative { border-color:rgba(125,184,138,0.22); }
+.scenario.realistic { border-color:rgba(212,160,23,0.3); border-width:2px; }
+.scenario.aggressive { border-color:rgba(232,68,32,0.22); }
+
+.scenario-head { padding:1.4rem 1.6rem; display:grid; grid-template-columns:auto 1fr auto; gap:1rem; align-items:center; border-bottom:1px solid rgba(255,255,255,0.06); }
+.scenario.conservative .scenario-head { background:rgba(125,184,138,0.04); }
+.scenario.realistic .scenario-head { background:rgba(212,160,23,0.05); }
+.scenario.aggressive .scenario-head { background:rgba(232,68,32,0.04); }
+.scenario-tag { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; padding:0.35rem 0.8rem; border-radius:5px; font-weight:700; }
+.scenario.conservative .scenario-tag { background:rgba(125,184,138,0.15); color:#7DB88A; }
+.scenario.realistic .scenario-tag { background:rgba(212,160,23,0.18); color:#D4A017; }
+.scenario.aggressive .scenario-tag { background:rgba(232,68,32,0.18); color:#E87E3A; }
+.scenario-name { font-family:'Cormorant Garamond', serif; font-size:1.5rem; color:#FFF; font-weight:500; line-height:1.1; letter-spacing:-0.01em; }
+.scenario-revenue { font-family:'Cormorant Garamond', serif; font-size:1.7rem; color:#D4A017; font-weight:500; line-height:1; letter-spacing:-0.01em; }
+.scenario-revenue small { font-size:0.6rem; color:#888; letter-spacing:0.16em; text-transform:uppercase; display:block; margin-top:0.3rem; font-family:'Inter', sans-serif; font-weight:600; }
+
+.scenario-body { padding:1.4rem 1.6rem; }
+.scenario-body .body-row { display:grid; grid-template-columns:1fr 2fr; gap:1.2rem; padding:0.8rem 0; border-bottom:1px dashed rgba(255,255,255,0.05); align-items:start; }
+.scenario-body .body-row:last-child { border-bottom:none; }
+.scenario-body .body-row .label { font-size:0.65rem; letter-spacing:0.16em; text-transform:uppercase; color:#888; font-weight:600; }
+.scenario-body .body-row .val { color:#DDD; font-size:0.95rem; line-height:1.55; }
+.scenario-body .body-row .val strong { color:#FFF; font-weight:600; }
+.scenario-body .body-row .val em { color:#D4A017; font-style:italic; }
+
+/* COMPOUND EFFECTS */
+.compound { background:rgba(125,184,138,0.04); border:1px solid rgba(125,184,138,0.18); border-radius:12px; padding:1.6rem 1.8rem; margin:1.2rem 0; }
+.compound h3 { font-family:'Cormorant Garamond', serif; font-size:1.3rem; color:#FFF; font-weight:500; margin-bottom:0.8rem; letter-spacing:-0.01em; }
+.compound h3 em { color:#7DB88A; font-style:italic; }
+.compound ul { list-style:none; padding:0; margin:0; }
+.compound ul li { padding:0.5rem 0 0.5rem 1.6rem; position:relative; font-size:0.92rem; color:#CCC; line-height:1.55; border-bottom:1px dashed rgba(255,255,255,0.04); }
+.compound ul li:last-child { border-bottom:none; }
+.compound ul li::before { content:'+'; position:absolute; left:0; top:0.5rem; color:#7DB88A; font-weight:700; font-size:1.1rem; }
+.compound ul li strong { color:#FFF; font-weight:600; }
+.compound ul li em { color:#7DB88A; font-style:italic; font-weight:600; }
+
+/* ASSUMPTIONS */
+.assumptions { background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.05); border-radius:10px; padding:1.4rem 1.6rem; margin:1.2rem 0; font-size:0.85rem; color:#999; line-height:1.6; }
+.assumptions h4 { color:#D4A017; font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:600; margin-bottom:0.6rem; }
+.assumptions p { margin:0 0 0.5rem; font-size:0.85rem; }
+.assumptions p:last-child { margin-bottom:0; }
+.assumptions strong { color:#CCC; font-weight:600; }
+
+.audit-footer { text-align:center; margin-top:4rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.05); font-size:0.8rem; color:#555; letter-spacing:0.1em; text-transform:uppercase; }
+</style>
+</head>
+<body>
+<div class="audit-container">
+
+<!-- COVER -->
+<div class="cover">
+    <div>
+        <span class="cover-badge">Bonus Deliverable · 09</span>
+        <div class="cover-eyebrow">What we want to build · 12-month plan</div>
+        <h1 class="cover-title">We want to take<br>Kind Bubbles<br><em>here.</em></h1>
+        <p class="cover-lede">This is the picture we have in our heads when we talk about what's next for Kind Bubbles. Where we want to take the audience. Where we want the booking pipeline to land. Where we want the founder narrative to live by month 12. <strong>It's our shared target — not a forecast.</strong> Built from real Bay Area pricing benchmarks, Apify-verified peer data, and the strategic foundation in deliverables 01–08.</p>
+
+        <div class="cover-meta">
+            <strong>For:</strong> Chris Steele · Kind Bubbles<br>
+            <strong>Built from:</strong> D01 audit baseline + D07 competitor pricing + Apify peer benchmarks<br>
+            <strong>Built:</strong> May 1, 2026 — what we're aiming at, together
+        </div>
+    </div>
+    <div class="cover-bottom">Targets we're aiming at · ranges assume execution holds</div>
+</div>
+
+
+<!-- WHERE WE START -->
+<section class="audit-section">
+    <div class="eyebrow">The starting line · May 1, 2026</div>
+    <h2>Where we're<br><em>starting from.</em></h2>
+    <p>Pulled live from Apify on May 1. This is the baseline every target on the next pages is measured against. <strong>This is what we want to grow.</strong></p>
+
+    <div class="baseline">
+        <h3>Current state · @kind.bubbles</h3>
+        <div class="baseline-grid">
+            <div class="baseline-stat"><div class="num">1,518</div><div class="label">IG followers</div></div>
+            <div class="baseline-stat"><div class="num">73</div><div class="label">Posts to date</div></div>
+            <div class="baseline-stat"><div class="num">~30</div><div class="label">Avg likes / post</div></div>
+            <div class="baseline-stat"><div class="num">~2</div><div class="label">Avg comments / post</div></div>
+        </div>
+    </div>
+
+    <div class="pull">
+        Most service businesses with 1,500 followers and 30 likes per post book through word-of-mouth. The IG account isn't a sales tool — it's a placeholder. <strong>We want to turn it into the pipeline.</strong>
+        <span>What we're trying to do · May 2026</span>
+    </div>
+</section>
+
+<hr class="audit-divider">
+
+
+<!-- WHAT WE FOUND -->
+<section class="audit-section">
+    <div class="eyebrow">What we found in the data</div>
+    <h2>Six findings shaped<br><em>where we want to go.</em></h2>
+    <p>Each finding below shifted the picture. Together, they're the reason the targets on the next pages look the way they do. <strong>We didn't make these up — they came out of the Apify scrapes.</strong></p>
+
+    <div class="found">
+        <h3>The findings shaping our shared target</h3>
+        <ul>
+            <li><strong>Bay Area going rate is $390–$500/hour</strong> — verified from Apify scrape of SF Bubble Man, The Bubble Lady, Miss Molly Bubbles. <em>Premium tier ($475–$650) is defensible given Kind Bubbles' science + healing positioning.</em></li>
+            <li><strong>Mike Ashe's 14-year client list is the playbook</strong> — Google, Facebook, Twitter, Genentech, Agilent, Cisco, JCC. Same companies, contacted via wellness/DEI lead instead of events coordinator, becomes a corporate-tier pipeline.</li>
+            <li><strong>The Bubble Lady gave up South Bay + San Jose</strong> — explicit on her site. <em>That geography is uncovered, low-friction expansion territory.</em></li>
+            <li><strong>Kind Bubbles already ranks #1 for "sensory play bubble bay area"</strong> — meaning organic search is already working at small scale. Phase 2 cements it and expands to 10–30 queries.</li>
+            <li><strong>@bayarea_toddlerexplorer at 37K followers is the realistic Bay Area parent ceiling</strong> — same exact niche, slightly different angle. Kind Bubbles can credibly reach 60–80% of that in 12 months with consistent founder-on-camera content.</li>
+            <li><strong>Bubble TikTok content does massive numbers</strong> — @kieronthemighty got 1.2M likes on a single bubble video with the "quit my job to follow my passion" hook. Chris's actual story (biochemist → single-dad → healing) is structurally similar, more specific, more credible.</li>
+        </ul>
+    </div>
+</section>
+
+<hr class="audit-divider">
+
+
+<!-- WHAT CHANGES -->
+<section class="audit-section">
+    <div class="eyebrow">What we want to move</div>
+    <h2>Three levers,<br><em>moved at the same time.</em></h2>
+    <p>The targets on the next pages assume we move <strong>three levers in parallel</strong> over 12 months: founder-on-camera content cadence (2 reels per week minimum), proactive B2B outreach to Mike Ashe's client list (Google, Cisco, Genentech), and a pricing shift to the premium tier ($475–$650). None of these alone gets us there. Together, they compound.</p>
+
+    <p>Here's what we want to make happen:</p>
+
+    <div class="found">
+        <h3>The three things we want to grow</h3>
+        <ul>
+            <li><strong>Audience grows 5–50× from baseline</strong> · we want 1,518 followers to become 8K–75K depending on scenario. Each follower is a Bay Area parent or buyer — the same people you already serve.</li>
+            <li><strong>Inbound bookings replace word-of-mouth bookings</strong> · we want the IG account to become the sales channel. The target: 30–280 inquiries land in your inbox per year instead of 0.</li>
+            <li><strong>Pricing shifts upmarket</strong> · we want to use the founder narrative + booking demand to justify premium tier rates. Target avg booking moves from current rate to $486–$651 depending on scenario.</li>
+        </ul>
+    </div>
+</section>
+
+<hr class="audit-divider">
+
+
+<!-- THE THREE SCENARIOS -->
+<section class="audit-section">
+    <div class="eyebrow">Three targets we're aiming at · 12 months</div>
+    <h2>Conservative.<br>Realistic.<br><em>Aggressive.</em></h2>
+    <p>Each scenario uses the same strategy — the difference is execution quality and luck. Conservative is the floor we want to clear. Realistic is the goalpost we're aiming for. Aggressive is what we'd celebrate. <strong>None are guaranteed. All three are plausible.</strong></p>
+</section>
+
+
+<!-- CONSERVATIVE -->
+<div class="scenario conservative">
+    <div class="scenario-head">
+        <div>
+            <span class="scenario-tag">Scenario 01</span>
+            <div class="scenario-name" style="margin-top:0.3rem;">Conservative</div>
+        </div>
+        <div></div>
+        <div style="text-align:right;">
+            <div class="scenario-revenue">~$19–23K</div>
+            <small>Year 1 booking revenue</small>
+        </div>
+    </div>
+    <div class="scenario-body">
+        <div class="body-row">
+            <div class="label">Audience growth</div>
+            <div class="val"><strong>1.5K → 8K followers</strong> over 12 months. Modest, sustainable, no viral hits required. <em>Steady ~550 new followers / month from consistent content.</em></div>
+        </div>
+        <div class="body-row">
+            <div class="label">Booking inquiries from content</div>
+            <div class="val"><strong>~60 inquiries / year</strong> (5/month). Roughly 1 inquiry per 3 reels. <em>50% close rate = 30 bookings.</em></div>
+        </div>
+        <div class="body-row">
+            <div class="label">Booking mix</div>
+            <div class="val">85% private parties at <strong>$475</strong> · 10% school assemblies at <strong>$500</strong> · 5% corporate at <strong>$650</strong>. Avg booking <strong>$486</strong>.</div>
+        </div>
+        <div class="body-row">
+            <div class="label">Direct booking revenue</div>
+            <div class="val">30 bookings × $486 = <strong>$14,580</strong></div>
+        </div>
+        <div class="body-row">
+            <div class="label">+ One annual school district contract</div>
+            <div class="val">1 contract for assembly series at a Bay Area private school = <strong>$3,500–6,000</strong>. Realistic Year 1 from "200 kids quiet" reel (R08).</div>
+        </div>
+        <div class="body-row">
+            <div class="label">+ One corporate wellness day pitch wins</div>
+            <div class="val">1 corporate booking at premium tier = <strong>$1,200–2,500</strong>. From R06 reach.</div>
+        </div>
+        <div class="body-row">
+            <div class="label">Conservative total · Year 1</div>
+            <div class="val"><strong style="color:#D4A017; font-size:1.1rem;">$19K – $23K</strong> · plus Year 2 residual growth on retained audience</div>
+        </div>
+    </div>
+</div>
+
+
+<!-- REALISTIC -->
+<div class="scenario realistic">
+    <div class="scenario-head">
+        <div>
+            <span class="scenario-tag">Scenario 02 · Most likely</span>
+            <div class="scenario-name" style="margin-top:0.3rem;">Realistic</div>
+        </div>
+        <div></div>
+        <div style="text-align:right;">
+            <div class="scenario-revenue">~$54–65K</div>
+            <small>Year 1 booking revenue</small>
+        </div>
+    </div>
+    <div class="scenario-body">
+        <div class="body-row">
+            <div class="label">Audience growth</div>
+            <div class="val"><strong>1.5K → 22K followers</strong> over 12 months. Includes 2–3 modestly viral hits. <em>Reference: @bayarea_toddlerexplorer (37K) is the Bay Area parent ceiling — Kind Bubbles realistically reaches 60% of that in Year 1.</em></div>
+        </div>
+        <div class="body-row">
+            <div class="label">Booking inquiries</div>
+            <div class="val"><strong>~120 inquiries / year</strong> (10/mo). <em>60% close rate = 72 bookings.</em></div>
+        </div>
+        <div class="body-row">
+            <div class="label">Booking mix</div>
+            <div class="val">70% private at $475 · 18% school at $500 · 12% corporate at $650. Avg booking <strong>$504</strong>.</div>
+        </div>
+        <div class="body-row">
+            <div class="label">Direct booking revenue</div>
+            <div class="val">72 × $504 = <strong>$36,288</strong></div>
+        </div>
+        <div class="body-row">
+            <div class="label">+ School + camp contracts</div>
+            <div class="val">2 school assembly contracts + 1 summer camp series = <strong>$8,000–14,000</strong></div>
+        </div>
+        <div class="body-row">
+            <div class="label">+ Corporate wellness pipeline activates</div>
+            <div class="val">2–3 corporate clients (Cisco / Genentech-tier from Mike Ashe's known list) = <strong>$8,000–12,000</strong>. Each at premium $650–800/event tier.</div>
+        </div>
+        <div class="body-row">
+            <div class="label">+ Speaking / workshop fees from authority</div>
+            <div class="val">1–2 paid wellness-conference panels or speaker slots = <strong>$1,500–3,000</strong>. From founder content traction.</div>
+        </div>
+        <div class="body-row">
+            <div class="label">Realistic total · Year 1</div>
+            <div class="val"><strong style="color:#D4A017; font-size:1.1rem;">$54K – $65K</strong> · adds ~$50K of compound asset value (audience, brand, IP)</div>
+        </div>
+    </div>
+</div>
+
+
+<!-- AGGRESSIVE -->
+<div class="scenario aggressive">
+    <div class="scenario-head">
+        <div>
+            <span class="scenario-tag">Scenario 03</span>
+            <div class="scenario-name" style="margin-top:0.3rem;">Aggressive</div>
+        </div>
+        <div></div>
+        <div style="text-align:right;">
+            <div class="scenario-revenue">~$148–193K</div>
+            <small>Year 1 booking revenue</small>
+        </div>
+    </div>
+    <div class="scenario-body">
+        <div class="body-row">
+            <div class="label">Audience growth</div>
+            <div class="val"><strong>1.5K → 75K followers</strong> over 12 months. Requires <strong>1–2 truly viral hits</strong> in the #cleantok / #sundayreset / #kidsentertainment ecosystem. <em>Reference: @kieronthemighty hit 1.2M likes on a single bubble TikTok with the "quit my job to follow my passion" hook — Chris's actual story is stronger.</em></div>
+        </div>
+        <div class="body-row">
+            <div class="label">Booking inquiries</div>
+            <div class="val"><strong>~280 inquiries / year</strong> (23/mo). Capacity-constrained — Chris physically can't do more than ~150/year solo.</div>
+        </div>
+        <div class="body-row">
+            <div class="label">Booking mix shifts upmarket</div>
+            <div class="val">50% private at $550 (premium rate justified) · 25% school at $600 · 25% corporate at $850. Avg booking <strong>$651</strong>.</div>
+        </div>
+        <div class="body-row">
+            <div class="label">Direct booking revenue (capped at 150)</div>
+            <div class="val">150 × $651 = <strong>$97,650</strong></div>
+        </div>
+        <div class="body-row">
+            <div class="label">+ Annual contracts (school + corporate)</div>
+            <div class="val">3–5 annual contracts from districts and tech companies = <strong>$25,000–40,000</strong></div>
+        </div>
+        <div class="body-row">
+            <div class="label">+ Speaking, books, courses, partnerships</div>
+            <div class="val">Speaker fees + book deal advance + wellness brand partnership + sustainable-toy line collab = <strong>$15,000–35,000</strong></div>
+        </div>
+        <div class="body-row">
+            <div class="label">+ Capacity expansion · 2nd performer trained</div>
+            <div class="val">Hire and train a second performer mid-year. 50 additional bookings × $500 net (after pay) = <strong>$10,000–20,000</strong> incremental.</div>
+        </div>
+        <div class="body-row">
+            <div class="label">Aggressive total · Year 1</div>
+            <div class="val"><strong style="color:#D4A017; font-size:1.1rem;">$148K – $193K</strong> · brand worth $300K+ as an asset</div>
+        </div>
+    </div>
+</div>
+
+
+<hr class="audit-divider">
+
+
+<!-- COMPOUND EFFECTS -->
+<section class="audit-section">
+    <div class="eyebrow">What we're really building</div>
+    <h2>The asset is bigger than<br><em>the Year 1 cash.</em></h2>
+    <p>Every number above is direct cash from bookings. The bigger thing we want to build is the asset — what exists at month 13 that didn't exist at month 0. <strong>Most of the real value lands in Year 2 and beyond.</strong></p>
+
+    <div class="compound">
+        <h3>What we want Kind Bubbles to <em>own</em> by month 13</h3>
+        <ul>
+            <li><strong>An audience asset of 8K – 75K engaged Bay Area parents</strong> · ranges $40K – $400K in valuation depending on engagement quality. Sellable, leverageable, recurring.</li>
+            <li><strong>A founder personal brand</strong> · Chris becomes the named expert in the Bay Area sensory-play / wellness-coded children's experiences niche. <em>Press, podcasts, panels, partnerships.</em></li>
+            <li><strong>A library of 192 reels + 48 carousels + 192 stories + an evergreen blog</strong> · re-runnable, repurposable, recoverable as Year 2 content backbone with <em>zero new shoot cost</em>.</li>
+            <li><strong>A booking pipeline that runs on inbound</strong> · stop chasing leads. Inquiries fill the inbox without paid ads. <em>Pipeline value alone &gt;$50K/yr.</em></li>
+            <li><strong>SEO + Google ranking on Bay Area kids' party queries</strong> · Kind Bubbles already ranks #1 for "sensory play bubble bay area" (D07 finding). Phase 2 cements this and expands to 10–30 queries.</li>
+            <li><strong>Corporate gifting and B2B contract foundations</strong> · once Cisco, Genentech, or a tech company books once, they often book annually. <em>Corporate accounts are the highest LTV in this category.</em></li>
+            <li><strong>Optionality on adjacent products</strong> · with audience + brand, the door opens for: bubble juice line, sensory-play toy line, online course for parents, book deal, retreat program. <em>Each one is its own revenue stream Year 2+.</em></li>
+        </ul>
+    </div>
+
+    <div class="pull">
+        Year 1 we want to build the audience. <strong>Year 2, we want it to mint.</strong> The Year 1 numbers are direct revenue. The Year 2+ numbers are the part most people miss.
+        <span>The compounding case</span>
+    </div>
+</section>
+
+
+<hr class="audit-divider">
+
+
+<!-- ASSUMPTIONS -->
+<section class="audit-section">
+    <div class="eyebrow">Honest assumptions</div>
+    <h2>What we'd need to be true —<br><em>and what would break it.</em></h2>
+
+    <div class="assumptions">
+        <h4>Where the numbers come from</h4>
+        <p><strong>Pricing benchmarks:</strong> Verbatim from D07 (Bay Area Competitor Map, Apify-scraped May 1). SF Bubble Man's $450 standard rate, The Bubble Lady's $390–$500 published rate card. Kind Bubbles' premium tier $475–$650 sits just above the market.</p>
+        <p><strong>Audience growth ranges:</strong> Compared to Apify-verified Bay Area peers — @bayarea_toddlerexplorer at 37K, bubble category creators @atlantabubbleshow ~12K, @kieronthemighty 1.2M likes on a single viral. Conservative = no viral. Realistic = 2–3 modest hits. Aggressive = 1–2 truly viral.</p>
+        <p><strong>Conversion rates:</strong> 0.7%–1.5% follower-to-booking annual conversion — typical for high-intent local service businesses with strong founder narrative. <em>Lower bound used in conservative case.</em></p>
+        <p><strong>Capacity ceiling:</strong> Chris is one person. Solo capacity caps at ~150 events/year (≈3 per week). Aggressive scenario assumes a 2nd-performer hire mid-Year 1.</p>
+    </div>
+
+    <div class="assumptions">
+        <h4>What would break the model</h4>
+        <p><strong>Inconsistent posting</strong> — under 8 reels/month consistently drops growth to flat. The cadence in D08 is the floor, not the ceiling.</p>
+        <p><strong>No founder-on-camera content</strong> — Chris's personal story (biochemist + single-dad + healing) is the unfair advantage. If founder content stays under 30% of feed, growth caps.</p>
+        <p><strong>No B2B outreach</strong> — D07 corporate target list (Google, Cisco, Genentech, etc.) needs to be worked. Inbound only ≠ corporate revenue.</p>
+        <p><strong>Geographic dilution</strong> — chasing national reach early dilutes the Bay Area conversion model. Stay local first 12 months.</p>
+    </div>
+
+    <div class="assumptions">
+        <h4>What we can't promise</h4>
+        <p>Specific numbers in any of the three scenarios are <strong>speculative</strong>. Content marketing depends on luck (one viral hit changes the math), execution quality (founder showing up on camera or not), market timing (a competitor launching big the same month would slow growth), and dozens of other factors. <em>What this is: our shared target, anchored to real Apify data, that says "a range like this is what we want to be aiming at."</em></p>
+    </div>
+</section>
+
+
+<div class="audit-footer">Kind Bubbles × LoopWorker · What We Want To Build · May 2026 · Speculative model</div>
+
+</div>
+</body>
+</html>
