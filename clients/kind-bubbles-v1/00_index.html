@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Delivery v1 — Kind Bubbles | LoopWorker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased; }
+.wrap { max-width:780px; margin:0 auto; padding:3rem 2rem 6rem; }
+
+.cover { min-height:100vh; display:flex; flex-direction:column; justify-content:space-between; padding:4rem 0 2rem; }
+.cover-badge { display:inline-block; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.22em; color:#888; border:1px solid rgba(255,255,255,0.1); padding:0.45rem 1rem; border-radius:100px; margin-bottom:2rem; }
+.cover-eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.24em; color:#D4A017; margin-bottom:1.2rem; font-weight:600; }
+.cover-title { font-family:'Cormorant Garamond', serif; font-size:clamp(2.8rem, 7vw, 4.6rem); font-weight:500; color:#FFF; line-height:1.02; letter-spacing:-0.02em; margin-bottom:1.5rem; }
+.cover-title em { font-style:italic; color:#D4A017; font-weight:400; }
+.cover-lede { font-size:1.15rem; color:#AAA; line-height:1.55; max-width:600px; margin-bottom:2rem; }
+.cover-meta { font-size:0.9rem; color:#777; line-height:1.8; margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.06); }
+.cover-meta strong { color:#BBB; font-weight:600; }
+.cover-bottom { font-size:0.7rem; color:#555; letter-spacing:0.15em; text-transform:uppercase; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.04); }
+
+.section { margin-bottom:4rem; }
+.eyebrow { font-size:0.65rem; text-transform:uppercase; letter-spacing:0.22em; color:#D4A017; font-weight:600; margin-bottom:0.7rem; }
+.section h2 { font-family:'Cormorant Garamond', serif; font-size:2.2rem; font-weight:500; color:#FFF; margin-bottom:1.2rem; letter-spacing:-0.02em; line-height:1.15; }
+.section h2 em { font-style:italic; color:#D4A017; font-weight:400; }
+.section p { margin-bottom:1rem; color:#B5B5B5; font-size:0.97rem; }
+.section p strong { color:#FFF; font-weight:600; }
+.section em { color:#D4D4D4; font-style:italic; }
+.divider { border:none; border-top:1px solid rgba(255,255,255,0.06); margin:4rem 0; }
+
+.letter { background:linear-gradient(180deg, rgba(212,160,23,0.04), rgba(212,160,23,0.01)); border:1px solid rgba(212,160,23,0.18); border-radius:14px; padding:2.4rem 2.2rem; margin:2rem 0; }
+.letter h3 { color:#D4A017; font-size:0.7rem; letter-spacing:0.22em; text-transform:uppercase; margin-bottom:1rem; font-weight:600; }
+.letter h2 { font-family:'Cormorant Garamond', serif; font-size:1.9rem; color:#FFF; font-weight:500; line-height:1.25; margin-bottom:1.4rem; letter-spacing:-0.01em; }
+.letter h2 em { color:#D4A017; font-style:italic; }
+.letter p { color:#C5C5C5; font-size:1.0rem; line-height:1.65; margin-bottom:1rem; }
+.letter p strong { color:#FFF; font-weight:600; }
+.letter .signoff { font-family:'Cormorant Garamond', serif; font-style:italic; color:#D4A017; font-size:1.15rem; margin-top:1.4rem; }
+
+.toc { display:grid; grid-template-columns:1fr; gap:0.7rem; margin:2rem 0; }
+.toc a { display:block; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.4rem 1.6rem; text-decoration:none; transition:all 0.15s; }
+.toc a:hover { border-color:#D4A017; background:rgba(212,160,23,0.04); transform:translateY(-1px); }
+.toc-row { display:grid; grid-template-columns:auto 1fr auto; gap:1.2rem; align-items:center; }
+.toc-num { font-family:'Cormorant Garamond', serif; font-size:2rem; color:#D4A017; line-height:1; font-weight:500; min-width:2.5rem; }
+.toc-title { font-family:'Cormorant Garamond', serif; font-size:1.35rem; color:#FFF; font-weight:500; line-height:1.2; margin-bottom:0.3rem; letter-spacing:-0.005em; }
+.toc-desc { font-size:0.88rem; color:#999; line-height:1.5; }
+.toc-arrow { font-size:1.2rem; color:#D4A017; }
+.toc a.special { background:linear-gradient(180deg, rgba(212,160,23,0.08), rgba(212,160,23,0.02)); border-color:rgba(212,160,23,0.28); }
+
+.ask-block { background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.07); border-radius:14px; padding:2rem 1.8rem; margin:2rem 0; }
+.ask-block h3 { color:#D4A017; font-size:0.7rem; letter-spacing:0.22em; text-transform:uppercase; margin-bottom:1rem; font-weight:600; }
+.ask-block h2 { font-family:'Cormorant Garamond', serif; font-size:1.6rem; color:#FFF; font-weight:500; line-height:1.25; margin-bottom:1rem; letter-spacing:-0.01em; }
+.ask-block h2 em { color:#D4A017; font-style:italic; }
+.ask-block p { color:#C5C5C5; font-size:0.95rem; line-height:1.65; }
+
+.footer { text-align:center; margin-top:4rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.05); font-size:0.8rem; color:#555; letter-spacing:0.1em; text-transform:uppercase; }
+
+@page { size:Letter; margin:0; }
+@media print {
+  html, body { background:#080808 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; color-adjust:exact; margin:0 !important; }
+  .toc a { break-inside:avoid; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="cover">
+  <div>
+    <span class="cover-badge">v1 · First Look · May 2026</span>
+    <div class="cover-eyebrow">Kind Bubbles · Foundation Sprint</div>
+    <h1 class="cover-title">Four maps<br>of where<br>Kind Bubbles<br>can <em>go.</em></h1>
+    <p class="cover-lede">A first-look package for Kind Bubbles. The audit, the competitive landscape, the four pillars, and the Bay Area competitor pricing map — Apify-verified, dated May 1, 2026. <strong>Read in order, top to bottom.</strong> If anything lands or anything feels off, just let me know — there's a deeper version waiting where any of these can be expanded.</p>
+
+    <div class="cover-meta">
+      <strong>For:</strong> Chris Steele, founder, Kind Bubbles<br>
+      <strong>From:</strong> Alex Lamb, LoopWorker<br>
+      <strong>Phase:</strong> 1 of 2 — Foundation Sprint v1<br>
+      <strong>Delivered:</strong> May 1, 2026
+    </div>
+  </div>
+
+  <div class="cover-bottom">Read in order · 1 → 4 · ~ 15 min total</div>
+</div>
+
+
+<section class="section">
+  <div class="letter">
+    <h3>Hey Chris</h3>
+    <h2>You built something <em>real.</em> Now we figure out how to make sure the world sees it.</h2>
+    <p>What you've made with Kind Bubbles isn't a kids' party brand — it's a <strong>healing-through-play brand that happens to use bubbles</strong>. Biochemist-turned-teacher-turned-single-dad isn't a backstory you're using; it's the most undervalued asset in the company. This first-look package is about putting that story on screen, on shelves, in feeds, and in front of buyers — without losing the warmth that makes it work.</p>
+    <p>Four docs in this package. Each one is short and scannable. Read them in order. <strong>Anything that stands out or feels off, ping me back</strong> — I have deeper versions of every section waiting if you want to dive into something specific.</p>
+    <p class="signoff">— Alex</p>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="eyebrow">Inside this package</div>
+  <h2>Four docs.<br><em>One brand.</em></h2>
+  <p>Each tile opens in a new tab. Sequence matters — start with the audit, then the field, then the strategy, then the local pricing map.</p>
+
+  <div class="toc">
+    <a href="01_deep_audit.html" target="_blank">
+      <div class="toc-row">
+        <div class="toc-num">01</div>
+        <div>
+          <div class="toc-title">Deep Audit</div>
+          <div class="toc-desc">Where the brand wins, where it doesn't, and which posts are pulling weight. Scorecard + post-by-post review.</div>
+        </div>
+        <div class="toc-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="02_competitor_breakdown.html" target="_blank">
+      <div class="toc-row">
+        <div class="toc-num">02</div>
+        <div>
+          <div class="toc-title">Competitor Breakdown</div>
+          <div class="toc-desc">The bubble + boutique kids' party landscape — who's winning, why, and what Kind Bubbles can own that nobody else does.</div>
+        </div>
+        <div class="toc-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="03_four_pillars.html" target="_blank">
+      <div class="toc-row">
+        <div class="toc-num">03</div>
+        <div>
+          <div class="toc-title">The Four Pillars</div>
+          <div class="toc-desc">Bubble Science · Founder Story · Event Magic · Parent Connection. The locked content pillars every post should ladder into.</div>
+        </div>
+        <div class="toc-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="07_bay_area_map.html" target="_blank" class="special">
+      <div class="toc-row">
+        <div class="toc-num">07</div>
+        <div>
+          <div class="toc-title">Bay Area Competitor Map <span style="color:#D4A017; font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; font-weight:600; margin-left:0.5rem; vertical-align:middle;">Apify-Verified</span></div>
+          <div class="toc-desc">SF Bubble Man (14yr incumbent · Google/Facebook/Twitter client list), The Bubble Lady (Marin · published rate card), Miss Molly Bubbles (San Jose). Pricing benchmarks + positioning shift to "wellness-coded sensory-experience studio."</div>
+        </div>
+        <div class="toc-arrow">→</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<section class="section">
+  <div class="ask-block">
+    <h3>The Ask</h3>
+    <h2>Read it. <em>Then talk to me.</em></h2>
+    <p>Let me know if anything stands out — good or bad — or if you want any of these dived a little deeper. There's a fuller version of this package with more layers (caption rewrites, content sprint, growth forecast, and adjacent-creator inspiration) sitting behind this first look. We open up whichever sections you want once you've read these four.</p>
+  </div>
+</section>
+
+<div class="footer">Kind Bubbles × LoopWorker · v1 First Look · May 2026</div>
+
+</div>
+</body>
+</html>
