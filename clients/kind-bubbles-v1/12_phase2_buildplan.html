@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Phase 2 Build Plan — Social · Web · Blog | Kind Bubbles | LoopWorker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased; }
+.audit-container { max-width:880px; margin:0 auto; padding:3rem 2rem 6rem; }
+
+.cover { min-height:100vh; display:flex; flex-direction:column; justify-content:space-between; padding:4rem 0 2rem; }
+.cover-badge { display:inline-block; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.22em; color:#888; border:1px solid rgba(255,255,255,0.1); padding:0.45rem 1rem; border-radius:100px; margin-bottom:2rem; }
+.cover-eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.24em; color:#D4A017; margin-bottom:1.2rem; font-weight:600; }
+.cover-title { font-family:'Cormorant Garamond', serif; font-size:clamp(2.8rem, 7vw, 5rem); font-weight:500; color:#FFF; line-height:1.0; letter-spacing:-0.02em; margin-bottom:1.5rem; }
+.cover-title em { font-style:italic; color:#D4A017; font-weight:400; }
+.cover-lede { font-size:1.15rem; color:#AAA; line-height:1.55; max-width:640px; margin-bottom:2rem; }
+.cover-meta { font-size:0.9rem; color:#777; line-height:1.8; margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.06); }
+.cover-meta strong { color:#BBB; font-weight:600; }
+.cover-bottom { font-size:0.7rem; color:#555; letter-spacing:0.15em; text-transform:uppercase; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.04); }
+
+.section { margin-bottom:4rem; }
+.eyebrow { font-size:0.65rem; text-transform:uppercase; letter-spacing:0.22em; color:#D4A017; font-weight:600; margin-bottom:0.7rem; }
+.section h2 { font-family:'Cormorant Garamond', serif; font-size:2.4rem; font-weight:500; color:#FFF; margin-bottom:1.2rem; letter-spacing:-0.02em; line-height:1.1; }
+.section h2 em { font-style:italic; color:#D4A017; font-weight:400; }
+.section h3 { font-size:1.05rem; font-weight:600; color:#FFF; margin:1.4rem 0 0.5rem; letter-spacing:-0.01em; }
+.section p { margin-bottom:1rem; color:#B5B5B5; font-size:0.97rem; }
+.section p strong { color:#FFF; font-weight:600; }
+.section em { color:#D4D4D4; font-style:italic; }
+.divider { border:none; border-top:1px solid rgba(255,255,255,0.06); margin:4rem 0; }
+
+.pull { border-left:2px solid #D4A017; padding:0.6rem 0 0.6rem 1.4rem; margin:1.8rem 0; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.4rem; line-height:1.4; color:#E8E8E8; }
+.pull span { color:#D4A017; font-style:normal; font-family:'Inter', sans-serif; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; display:block; margin-top:0.6rem; font-weight:600; }
+
+/* ENGINE BLOCK */
+.engine { background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:14px; overflow:hidden; margin-bottom:1.6rem; }
+.engine-head { padding:1.8rem 2rem; display:grid; grid-template-columns:auto 1fr auto; gap:1.2rem; align-items:center; border-bottom:1px solid rgba(255,255,255,0.06); }
+.engine.social .engine-head { background:linear-gradient(180deg, rgba(212,160,23,0.10), rgba(212,160,23,0.02)); }
+.engine.web .engine-head { background:linear-gradient(180deg, rgba(125,184,138,0.10), rgba(125,184,138,0.02)); }
+.engine.blog .engine-head { background:linear-gradient(180deg, rgba(232,68,32,0.08), rgba(232,68,32,0.02)); }
+.engine-num { font-family:'Cormorant Garamond', serif; font-size:3rem; line-height:1; font-style:italic; font-weight:500; }
+.engine.social .engine-num { color:#D4A017; }
+.engine.web .engine-num { color:#7DB88A; }
+.engine.blog .engine-num { color:#E87E3A; }
+.engine-name { font-family:'Cormorant Garamond', serif; font-size:1.9rem; color:#FFF; font-weight:500; line-height:1.1; letter-spacing:-0.01em; }
+.engine-meta { font-family:'Inter', sans-serif; font-size:0.65rem; letter-spacing:0.16em; text-transform:uppercase; color:#888; margin-top:0.4rem; }
+.engine-time { font-family:'Cormorant Garamond', serif; font-size:1.2rem; font-style:italic; }
+.engine.social .engine-time { color:#D4A017; }
+.engine.web .engine-time { color:#7DB88A; }
+.engine.blog .engine-time { color:#E87E3A; }
+
+.engine-body { padding:1.6rem 2rem; }
+.engine-row { display:grid; grid-template-columns:1fr 2fr; gap:1.2rem; padding:1rem 0; border-bottom:1px dashed rgba(255,255,255,0.04); align-items:start; }
+.engine-row:last-child { border-bottom:none; }
+.engine-row .label { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:#888; font-weight:600; }
+.engine-row .val { color:#DDD; font-size:0.95rem; line-height:1.6; }
+.engine-row .val strong { color:#FFF; font-weight:600; }
+.engine-row .val em { font-style:italic; }
+
+/* WEEK SCHEDULE */
+.weeks { display:grid; grid-template-columns:repeat(6,1fr); gap:0.4rem; margin:1.2rem 0; }
+@media(max-width:680px){ .weeks { grid-template-columns:repeat(3,1fr); } }
+.week { background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.06); border-radius:8px; padding:0.7rem 0.5rem; font-size:0.62rem; line-height:1.3; min-height:70px; display:flex; flex-direction:column; }
+.week-num { color:#888; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; margin-bottom:0.3rem; font-size:0.55rem; }
+.week-task { color:#FFF; font-weight:500; font-size:0.7rem; line-height:1.25; }
+.week.priority { border-color:rgba(212,160,23,0.4); background:rgba(212,160,23,0.06); }
+.week.web { border-color:rgba(125,184,138,0.4); background:rgba(125,184,138,0.06); }
+.week.blog { border-color:rgba(232,68,32,0.3); background:rgba(232,68,32,0.05); }
+
+/* CHANNEL TABLE */
+.channels { width:100%; border-collapse:collapse; margin:1rem 0; font-size:0.86rem; }
+.channels th { background:rgba(212,160,23,0.1); color:#D4A017; padding:0.7rem 0.9rem; text-align:left; font-size:0.6rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; border-bottom:1px solid rgba(212,160,23,0.2); }
+.channels td { padding:0.7rem 0.9rem; border-bottom:1px solid rgba(255,255,255,0.04); color:#BBB; vertical-align:top; }
+.channels td strong { color:#FFF; font-weight:600; }
+.channels td em { color:#D4A017; font-style:italic; }
+
+/* PAGE INVENTORY */
+.page-list { display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; margin:1.2rem 0; }
+@media(max-width:680px){ .page-list { grid-template-columns:1fr; } }
+.page-card { background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:1rem 1.2rem; }
+.page-card .url { font-family:'JetBrains Mono', 'Inter', monospace; font-size:0.75rem; color:#7DB88A; letter-spacing:0.02em; margin-bottom:0.4rem; word-break:break-all; }
+.page-card .name { font-family:'Cormorant Garamond', serif; font-size:1.15rem; color:#FFF; font-weight:500; line-height:1.15; margin-bottom:0.3rem; letter-spacing:-0.005em; }
+.page-card .desc { font-size:0.82rem; color:#999; line-height:1.5; }
+
+/* BLOG CALENDAR */
+.blog-row { background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:1rem 1.2rem; margin-bottom:0.6rem; display:grid; grid-template-columns:auto 1fr auto; gap:1rem; align-items:start; }
+.blog-row .week-tag { font-family:'Cormorant Garamond', serif; font-size:1.1rem; color:#E87E3A; font-style:italic; line-height:1; padding-top:0.2rem; min-width:3.5rem; }
+.blog-row .post-title { font-family:'Cormorant Garamond', serif; font-size:1.1rem; color:#FFF; font-weight:500; line-height:1.2; margin-bottom:0.25rem; letter-spacing:-0.005em; }
+.blog-row .post-meta { font-size:0.78rem; color:#999; line-height:1.45; }
+.blog-row .post-meta strong { color:#FFF; }
+.blog-row .pillar-tag { font-size:0.55rem; letter-spacing:0.16em; text-transform:uppercase; padding:0.25rem 0.6rem; border-radius:4px; font-weight:700; align-self:start; }
+.pillar-tag.science { background:rgba(125,184,138,0.15); color:#7DB88A; }
+.pillar-tag.founder { background:rgba(212,160,23,0.15); color:#D4A017; }
+.pillar-tag.event { background:rgba(232,68,32,0.12); color:#E87E3A; }
+.pillar-tag.parent { background:rgba(120,160,220,0.15); color:#7AA8DC; }
+
+.callout { background:rgba(212,160,23,0.06); border-left:3px solid #D4A017; border-radius:0 8px 8px 0; padding:1.2rem 1.4rem; margin:1.2rem 0; font-size:0.95rem; line-height:1.65; }
+.callout strong { color:#FFF; font-weight:600; }
+.callout em { color:#D4A017; font-style:italic; }
+
+.audit-footer { text-align:center; margin-top:4rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.05); font-size:0.8rem; color:#555; letter-spacing:0.1em; text-transform:uppercase; }
+</style>
+</head>
+<body>
+<div class="audit-container">
+
+<div class="cover">
+  <div>
+    <span class="cover-badge">Bonus Deliverable · 12 · Phase 2 Build Plan</span>
+    <div class="cover-eyebrow">Social · Web · Blog · sequenced</div>
+    <h1 class="cover-title">Three engines.<br>One sequence.<br><em>One brand.</em></h1>
+    <p class="cover-lede">The 90-day plan to put Phase 2 into motion. Social media first (because the founder voice anchors everything else), web second (so the inbound traffic has somewhere to land that converts), blog third (so the SEO compounds for years). <strong>Each engine is staged, each engine has owner + cost + timeline locked.</strong> Ready to start the day Phase 2 kicks off.</p>
+
+    <div class="cover-meta">
+      <strong>For:</strong> Chris Steele · Kind Bubbles<br>
+      <strong>Pairs with:</strong> D08 (Content Sprint) + D10 (KiwiCo Model) + D11 (Operator Playbook)<br>
+      <strong>Built:</strong> May 2026 — Phase 2 ignition plan
+    </div>
+  </div>
+  <div class="cover-bottom">Read top to bottom · ~14 min · 90-day execution map</div>
+</div>
+
+
+<!-- WHY THIS ORDER -->
+<section class="section">
+  <div class="eyebrow">Why this order</div>
+  <h2>Social → Web → Blog.<br><em>Not at the same time.</em></h2>
+  <p>It's tempting to try and launch all three at once — but that's the move that usually leads to a half-built site, a few half-finished blog posts, and an IG that doesn't get the love it needs. <strong>The right order is sequential</strong> — each engine sets up the next one to actually work.</p>
+
+  <div class="engine social">
+    <div class="engine-body" style="padding:1.6rem 2rem;">
+      <div class="engine-row">
+        <div class="label">Why social first</div>
+        <div class="val"><strong>Founder voice has to land before anything else gets built.</strong> The voice on IG and TikTok is the brand voice. Once it's established, every web page, every blog post, every operator pitch, every sales email rides that voice. <em>Build the voice → build the site to fit it.</em></div>
+      </div>
+      <div class="engine-row">
+        <div class="label">Why web second</div>
+        <div class="val"><strong>Web turns followers into bookings.</strong> Without a strong site, social traffic dies on landing. The site has to be built around what the social audience actually clicks toward — booking, operator-recruitment, founder authority. <em>Voice tells the site what to say.</em></div>
+      </div>
+      <div class="engine-row">
+        <div class="label">Why blog third</div>
+        <div class="val"><strong>Blog is the SEO + authority play that pays in 6–12 months.</strong> Built last because (1) it needs the founder voice locked, (2) it needs the site architecture to plug into, and (3) Google rewards depth over speed. <em>Slow burn, biggest long-term lever.</em></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pull">
+    The biggest mistake founders make is treating social, web, and blog as separate workstreams. <strong>They're one engine, started in three stages.</strong> Each one inherits the voice from the one before it.
+    <span>The sequencing principle</span>
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ENGINE 01: SOCIAL MEDIA -->
+<section class="section">
+  <div class="eyebrow">Engine 01 · weeks 1–12 (continues forever)</div>
+  <div class="engine social">
+    <div class="engine-head">
+      <div class="engine-num">01</div>
+      <div>
+        <div class="engine-name">Social Media Content Engine</div>
+        <div class="engine-meta">Founder voice anchors the brand · 4 channels · 90-day ramp</div>
+      </div>
+      <div class="engine-time">Weeks 1–12</div>
+    </div>
+    <div class="engine-body">
+      <div class="engine-row">
+        <div class="label">The thesis</div>
+        <div class="val"><strong>The founder voice is the brand voice. The brand voice is the moat.</strong> Big Little Feelings (3.5M) and Dr. Becky (3.5M) both built massive followings before launching their courses, books, and products. Founder voice, on camera, saying something true, repeatedly, for years — that's the through-line. <em>Kind Bubbles starts the same way.</em></div>
+      </div>
+
+      <div class="engine-row">
+        <div class="label">Channel mix</div>
+        <div class="val">
+          <table class="channels">
+            <thead><tr><th>Channel</th><th>Cadence</th><th>Purpose</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Instagram</strong> @kind.bubbles</td><td>2 reels / wk · 1 carousel / wk · daily stories</td><td><em>Primary brand home.</em> Parent audience. Reels = acquisition. Carousels = trust. Stories = retention.</td></tr>
+              <tr><td><strong>TikTok</strong> (new account)</td><td>3–4 short-form / wk · cross-post + native</td><td><em>National acquisition.</em> #cleantok / #sundayreset / #therapydad. Verified 5.2M-likes ceiling in this niche.</td></tr>
+              <tr><td><strong>YouTube Shorts</strong> (new channel)</td><td>2–3 / wk · same vertical content + 1 long-form / month</td><td><em>SEO + authority.</em> Longer reels live forever. Long-form establishes Therapy Dad expertise.</td></tr>
+              <tr><td><strong>LinkedIn</strong> @ChrisSteele personal</td><td>2 posts / wk · 1 reel / wk</td><td><em>B2B sales engine.</em> Corporate wellness buyers, school admins, investors. Founder voice in workplace tone.</td></tr>
+              <tr><td>Pinterest, Threads, X</td><td>auto-distribution from Blotato</td><td><em>Free incremental reach.</em> Cross-post the same content. Set and forget.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="engine-row">
+        <div class="label">Production system</div>
+        <div class="val"><strong>One shoot day per week → 8 pieces of content.</strong> Chris records 60–90 minutes of voiceovers + iPhone footage on Saturday morning. <strong>Your strategy + creative partner</strong> handles the editing, captioning, cropping for each channel, and scheduling through the week. <em>One day of your time = a full week of content across 4 channels.</em></div>
+      </div>
+
+      <div class="engine-row">
+        <div class="label">Tech stack</div>
+        <div class="val"><strong>Airtable</strong> (content calendar + status tracker) → <strong>Weavy.ai or ChatGPT</strong> (caption + hook drafting) → <strong>CapCut</strong> (mobile editing, fast) → <strong>Blotato</strong> (multi-platform scheduler — already in your toolkit). All standard tools, lightweight monthly run.</div>
+      </div>
+
+      <div class="engine-row">
+        <div class="label">12-week ramp</div>
+        <div class="val">
+          <div class="weeks">
+            <div class="week priority"><div class="week-num">W 01</div><div class="week-task">Pin R01 (founder anchor reel)</div></div>
+            <div class="week priority"><div class="week-num">W 02</div><div class="week-task">R02–R03 ship + IG bio rewrite</div></div>
+            <div class="week priority"><div class="week-num">W 03</div><div class="week-task">TikTok account live · first 3 posts</div></div>
+            <div class="week priority"><div class="week-num">W 04</div><div class="week-task">R04 founder kitchen · pin replaces R01</div></div>
+            <div class="week"><div class="week-num">W 05</div><div class="week-task">YouTube Shorts channel live</div></div>
+            <div class="week"><div class="week-num">W 06</div><div class="week-task">LinkedIn 2x/wk cadence starts</div></div>
+            <div class="week"><div class="week-num">W 07</div><div class="week-task">First creator collab outreach (10)</div></div>
+            <div class="week"><div class="week-num">W 08</div><div class="week-task">First viral attempt: 240fps science reel push</div></div>
+            <div class="week"><div class="week-num">W 09</div><div class="week-task">First "city scout" reel for LA launch tease</div></div>
+            <div class="week"><div class="week-num">W 10</div><div class="week-task">Therapy Dad content series begins</div></div>
+            <div class="week"><div class="week-num">W 11</div><div class="week-task">Press list activation: Dr. Becky podcast pitch</div></div>
+            <div class="week"><div class="week-num">W 12</div><div class="week-task">90-day review · double down on what hit</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="engine-row">
+        <div class="label">Owner split</div>
+        <div class="val"><strong>Chris (4 hrs/week):</strong> 1 weekly shoot day + caption review + Therapy Dad voice on long-form — <em>the parts only you can do</em>. <strong>Strategy + creative partner:</strong> content theme planning, editing, captioning, scheduling, hashtag research, cross-channel adaptation, weekly performance review, monthly recap deck.</div>
+      </div>
+
+      <div class="engine-row">
+        <div class="label">Tooling</div>
+        <div class="val"><strong>Chris's iPhone + free editing tools to start.</strong> Phase 2 partnership covers production execution. Optional: lav mic (RØDE SmartLav+) for cleaner founder voiceovers — recommend adding month 1.</div>
+      </div>
+
+      <div class="engine-row">
+        <div class="label">Success bar at week 12</div>
+        <div class="val"><strong>2,500 → 5K IG followers.</strong> 1 reel ≥ 50K views. 100+ TikTok followers built from zero. 5 inbound bookings attributed to social. <em>If those hit, the engine works. Double down on it.</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ENGINE 02: WEB DESIGN -->
+<section class="section">
+  <div class="eyebrow">Engine 02 · weeks 5–10</div>
+  <div class="engine web">
+    <div class="engine-head">
+      <div class="engine-num">02</div>
+      <div>
+        <div class="engine-name">Web Design + Architecture</div>
+        <div class="engine-meta">Rebuild for the network model · operator + booking + authority</div>
+      </div>
+      <div class="engine-time">Weeks 5–10</div>
+    </div>
+    <div class="engine-body">
+      <div class="engine-row">
+        <div class="label">The thesis</div>
+        <div class="val"><strong>The current site speaks to local SF bookings. The next version of the site can stretch to support the national brand + operator network you're building.</strong> Architecture has to support: founder authority (Therapy Dad voice + book + courses), city-specific operator pages, school + corporate B2B buyers, and parent bookings. <em>Same warm tone. Bigger ambition.</em></div>
+      </div>
+
+      <div class="engine-row">
+        <div class="label">Page inventory · what needs to exist</div>
+        <div class="val">
+          <div class="page-list">
+            <div class="page-card">
+              <div class="url">/</div>
+              <div class="name">Home</div>
+              <div class="desc">Founder-led hero. Reset the brand around national presence + therapy-dad authority. CTAs to: book SF, find your city, become a facilitator.</div>
+            </div>
+            <div class="page-card">
+              <div class="url">/founder</div>
+              <div class="name">Founder · Chris Steele</div>
+              <div class="desc">Therapy Dad authority hub. Story, credentials, podcast appearances, press, future book.</div>
+            </div>
+            <div class="page-card">
+              <div class="url">/cities/san-francisco</div>
+              <div class="name">City · San Francisco (template)</div>
+              <div class="desc">Per-city booking page. Operator name + photo, local availability calendar, local social proof, local CTA. <em>Replicates per city as operators come online.</em></div>
+            </div>
+            <div class="page-card">
+              <div class="url">/cities/los-angeles</div>
+              <div class="name">City · Los Angeles</div>
+              <div class="desc">Same template. Goes live when operator #1 onboards. <em>Page exists in skeleton + waitlist mode before that.</em></div>
+            </div>
+            <div class="page-card">
+              <div class="url">/become-a-facilitator</div>
+              <div class="name">Operator recruitment</div>
+              <div class="desc">D11 deliverable. Application funnel. Founder voice video. Income lift table. FAQ.</div>
+            </div>
+            <div class="page-card">
+              <div class="url">/private-events</div>
+              <div class="name">Private bookings</div>
+              <div class="desc">Birthdays + small private events. Pricing (transparent). Calendar. Inquiry form.</div>
+            </div>
+            <div class="page-card">
+              <div class="url">/schools</div>
+              <div class="name">School assemblies</div>
+              <div class="desc">SEL-coded pitch. Science angle. Pricing tiers (under 75 / 75+ / 100+). Approval-friendly safety + curriculum doc downloadable.</div>
+            </div>
+            <div class="page-card">
+              <div class="url">/corporate</div>
+              <div class="name">Corporate wellness</div>
+              <div class="desc">B2B page. "Wellness day with bubbles." Tech-company-targeted. Sample client list (TBD as wins come). Inquiry → 24hr response promise.</div>
+            </div>
+            <div class="page-card">
+              <div class="url">/the-philosophy</div>
+              <div class="name">The Philosophy</div>
+              <div class="desc">Mindful play. Generational trauma. The science of wonder. <em>The brand thesis page. Investors land here.</em></div>
+            </div>
+            <div class="page-card">
+              <div class="url">/blog</div>
+              <div class="name">Blog hub</div>
+              <div class="desc">Engine 03 lives here. SEO-optimized parenting + science content. Powered by founder voice.</div>
+            </div>
+            <div class="page-card">
+              <div class="url">/press</div>
+              <div class="name">Press / Media</div>
+              <div class="desc">Logo wall (as wins come). Press kit download. Speaking bookings inquiry. Podcast appearances list.</div>
+            </div>
+            <div class="page-card">
+              <div class="url">/community</div>
+              <div class="name">Community Outreach</div>
+              <div class="desc">Donations to underserved communities. Equity-in-play mission. Mailing-list signup for community partners.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="engine-row">
+        <div class="label">Tech stack recommendation</div>
+        <div class="val"><strong>Webflow.</strong> Best balance of design control, Chris being able to edit content himself, blog CMS, SEO, performance. <em>Avoid:</em> Squarespace (too rigid for the city pages), WordPress (too maintenance-heavy), pure custom code (too slow to iterate). Webflow CMS handles city pages + blog as templated collections.</div>
+      </div>
+
+      <div class="engine-row">
+        <div class="label">Design direction</div>
+        <div class="val"><strong>Editorial. Calm. Founder-centric.</strong> Bigger photos, fewer columns, more white space. Cormorant Garamond serif headlines + Inter body (already in the deliverables you've seen). Color palette: warm cream, deep ink, single gold accent. <em>Less "kids' party site" — more "national parenting brand" → think Lovevery + The Atlantic.</em></div>
+      </div>
+
+      <div class="engine-row">
+        <div class="label">6-week build sprint</div>
+        <div class="val">
+          <div class="weeks">
+            <div class="week web"><div class="week-num">W 05</div><div class="week-task">Wireframes · all 12 pages</div></div>
+            <div class="week web"><div class="week-num">W 06</div><div class="week-task">Visual design · home + founder + cities template</div></div>
+            <div class="week web"><div class="week-num">W 07</div><div class="week-task">Build pages 1–6 in Webflow</div></div>
+            <div class="week web"><div class="week-num">W 08</div><div class="week-task">Build pages 7–12 + CMS</div></div>
+            <div class="week web"><div class="week-num">W 09</div><div class="week-task">Booking flow integration · Calendly + Stripe</div></div>
+            <div class="week web"><div class="week-num">W 10</div><div class="week-task">Launch · 301 redirects · analytics live</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="engine-row">
+        <div class="label">Booking flow integration</div>
+        <div class="val"><strong>Calendly</strong> for operator availability per city. <strong>Stripe</strong> for deposits + final payment. <strong>HoneyBook</strong> or <strong>Dubsado</strong> for the contract / waiver / parent intake form flow. Each city's Calendly is owned by the operator; payments route through corporate and reconcile monthly under whatever partnership terms are set in Phase 2.</div>
+      </div>
+
+      <div class="engine-row">
+        <div class="label">Tooling</div>
+        <div class="val"><strong>Stack:</strong> Webflow CMS · Calendly · Stripe · HoneyBook (or Dubsado). All standard SaaS, all predictable monthly tools you'd already use. <em>Build is included in the Phase 2 partnership — about a month of allocated time.</em></div>
+      </div>
+
+      <div class="engine-row">
+        <div class="label">Success bar at week 10</div>
+        <div class="val"><strong>Site live · all 12 pages · Webflow CMS handling cities + blog · booking flow accepting payment.</strong> First paid booking from organic site traffic within 14 days of launch. Inbound from social media converts at 3%+ — or it's a copy problem to fix.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ENGINE 03: BLOG / SEO -->
+<section class="section">
+  <div class="eyebrow">Engine 03 · weeks 9–24+</div>
+  <div class="engine blog">
+    <div class="engine-head">
+      <div class="engine-num">03</div>
+      <div>
+        <div class="engine-name">Blog · SEO · Long-Form Authority</div>
+        <div class="engine-meta">Therapy Dad content compounds for years · 1 post / week · evergreen</div>
+      </div>
+      <div class="engine-time">Weeks 9–24+</div>
+    </div>
+    <div class="engine-body">
+      <div class="engine-row">
+        <div class="label">The thesis</div>
+        <div class="val"><strong>SEO is the only marketing channel that compounds.</strong> Reels die in 7 days. Blog posts rank for years. The right blog strategy makes Kind Bubbles the answer when a parent in Atlanta searches <em>"how to talk to a shy kid at a birthday party"</em> three years from now — and the operator in Atlanta gets the booking. <em>Slow burn. Biggest long-term lever.</em></div>
+      </div>
+
+      <div class="engine-row">
+        <div class="label">Keyword strategy</div>
+        <div class="val">
+          <strong>Three keyword tiers, ranked by intent.</strong>
+          <table class="channels">
+            <thead><tr><th>Tier</th><th>Examples</th><th>Why</th></tr></thead>
+            <tbody>
+              <tr><td><strong>High intent</strong></td><td>"bubble party san francisco" · "kids birthday entertainer marin" · "school assembly bay area"</td><td>Direct booking. Operator-routable. Lower volume but converts.</td></tr>
+              <tr><td><strong>Authority intent</strong></td><td>"how to handle a shy kid at a party" · "sensory play activities for toddlers" · "single dad parenting"</td><td>Builds Therapy Dad authority. Pulls parent audience. Indirect booking driver.</td></tr>
+              <tr><td><strong>Adjacent intent</strong></td><td>"science behind bubbles" · "non-toxic bubble solution recipe" · "best birthday party themes for 6 year olds"</td><td>Wide net. SEO traffic that converts to email signups, then to bookings.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="engine-row">
+        <div class="label">12-post Q1 calendar</div>
+        <div class="val">
+          <div class="blog-row"><div class="week-tag">W 09</div><div><div class="post-title">Why a Biochemist Started a Bubble Company</div><div class="post-meta"><strong>1,800 words</strong> · founder origin essay. Anchor post pinned forever. Pulls authority + brand-name searches.</div></div><span class="pillar-tag founder">Founder</span></div>
+          <div class="blog-row"><div class="week-tag">W 10</div><div><div class="post-title">5 Things to Say When a Kid Won't Come Into the Bubble Circle</div><div class="post-meta"><strong>1,200 words</strong> · expanded version of D08 carousel #2. Shareable. Saved. Linkable.</div></div><span class="pillar-tag parent">Parent</span></div>
+          <div class="blog-row"><div class="week-tag">W 11</div><div><div class="post-title">The Surface Tension of Wonder</div><div class="post-meta"><strong>1,500 words</strong> · the science of bubbles, written for parents. Authority + curiosity + share-worthy.</div></div><span class="pillar-tag science">Science</span></div>
+          <div class="blog-row"><div class="week-tag">W 12</div><div><div class="post-title">How to Plan a Birthday Party in the Bay Area That Your Kid Will Remember</div><div class="post-meta"><strong>2,200 words</strong> · long-tail SEO play. Local-buyer-intent post. Includes Kind Bubbles + 4 other vendor recommendations (we play fair).</div></div><span class="pillar-tag event">Event</span></div>
+          <div class="blog-row"><div class="week-tag">W 13</div><div><div class="post-title">Generational Trauma, Bubbles, and the Eight Minutes That Saved Me</div><div class="post-meta"><strong>1,600 words</strong> · vulnerable Therapy Dad piece. Highest-converting authority content. Pinterest + LinkedIn distribution.</div></div><span class="pillar-tag founder">Founder</span></div>
+          <div class="blog-row"><div class="week-tag">W 14</div><div><div class="post-title">What Is Sensory Play, Actually? (And Why It's Not Just for Toddlers)</div><div class="post-meta"><strong>1,400 words</strong> · evergreen authority. Ranks for "sensory play" searches.</div></div><span class="pillar-tag science">Science</span></div>
+          <div class="blog-row"><div class="week-tag">W 15</div><div><div class="post-title">The 9pm Reset: Why a 5-Minute Ritual Is the Most Underrated Parenting Tool</div><div class="post-meta"><strong>1,300 words</strong> · ritual-themed. Pulls Sunday Reset / wellness audience. Cross-posts to LinkedIn for B2B wellness buyers.</div></div><span class="pillar-tag parent">Parent</span></div>
+          <div class="blog-row"><div class="week-tag">W 16</div><div><div class="post-title">A Parent's Guide to Choosing a Kids' Birthday Party Entertainer</div><div class="post-meta"><strong>1,500 words</strong> · buyer-research post. Ranks for high-intent searches. Positions Kind Bubbles as the answer.</div></div><span class="pillar-tag event">Event</span></div>
+          <div class="blog-row"><div class="week-tag">W 17</div><div><div class="post-title">The Best School Assembly Programs in the Bay Area in 2026</div><div class="post-meta"><strong>1,700 words</strong> · school-decision-maker SEO. We rank for our buyers' search terms.</div></div><span class="pillar-tag event">Event</span></div>
+          <div class="blog-row"><div class="week-tag">W 18</div><div><div class="post-title">Non-Toxic Bubble Solution Recipes — And Why Most Recipes Are Wrong</div><div class="post-meta"><strong>1,400 words</strong> · viral-able authority. Pinterest gold. Repurposable as 8 reels.</div></div><span class="pillar-tag science">Science</span></div>
+          <div class="blog-row"><div class="week-tag">W 19</div><div><div class="post-title">Why Corporate Wellness Programs Are Buying Bubble Shows in 2026</div><div class="post-meta"><strong>1,600 words</strong> · LinkedIn-targeted. Pulls B2B HR buyer searches. Reframes the category.</div></div><span class="pillar-tag event">Event</span></div>
+          <div class="blog-row"><div class="week-tag">W 20</div><div><div class="post-title">The Therapy Dad Manifesto: 10 Things I've Learned About Healing Through Play</div><div class="post-meta"><strong>2,500 words</strong> · cornerstone authority post. The blueprint for Chris's eventual book proposal. Pillar-page status.</div></div><span class="pillar-tag founder">Founder</span></div>
+        </div>
+      </div>
+
+      <div class="engine-row">
+        <div class="label">Distribution per post</div>
+        <div class="val">
+          <ul style="list-style:none; padding:0; margin:0;">
+            <li style="padding:0.3rem 0 0.3rem 1.4rem; position:relative; font-size:0.92rem;"><span style="position:absolute; left:0; color:#E87E3A; font-weight:700;">→</span> 3 IG carousels pulled from each post (visual highlights)</li>
+            <li style="padding:0.3rem 0 0.3rem 1.4rem; position:relative; font-size:0.92rem;"><span style="position:absolute; left:0; color:#E87E3A; font-weight:700;">→</span> 1 Pinterest pin per post — Pinterest is parent-search central, recommended pin every Tue/Thu</li>
+            <li style="padding:0.3rem 0 0.3rem 1.4rem; position:relative; font-size:0.92rem;"><span style="position:absolute; left:0; color:#E87E3A; font-weight:700;">→</span> 1 LinkedIn long-form repost (founder voice on professional channel)</li>
+            <li style="padding:0.3rem 0 0.3rem 1.4rem; position:relative; font-size:0.92rem;"><span style="position:absolute; left:0; color:#E87E3A; font-weight:700;">→</span> 1 newsletter blast (Klaviyo, segmented per audience)</li>
+            <li style="padding:0.3rem 0 0.3rem 1.4rem; position:relative; font-size:0.92rem;"><span style="position:absolute; left:0; color:#E87E3A; font-weight:700;">→</span> 1 founder voice-over reel summarizing the key takeaway</li>
+          </ul>
+          <p style="margin-top:0.6rem;"><em>One blog post → 7+ pieces of content across 5 channels. The blog is the atomic unit of the content engine.</em></p>
+        </div>
+      </div>
+
+      <div class="engine-row">
+        <div class="label">SEO infrastructure</div>
+        <div class="val"><strong>Webflow CMS native SEO</strong> covers 80%. Add: a keyword-research tool (SemRush / Ahrefs / similar). Schema markup for Local Business + Event types per city. Robots.txt + sitemap.xml on launch. <em>Search Console + GA4 hooked up week 10 with the site launch.</em></div>
+      </div>
+
+      <div class="engine-row">
+        <div class="label">Tooling</div>
+        <div class="val"><strong>Stack:</strong> SEO keyword tool · Klaviyo for newsletter (free tier covers the first hundreds of contacts). <em>Writing time is included in the Phase 2 partnership — about a day per week.</em></div>
+      </div>
+
+      <div class="engine-row">
+        <div class="label">Success bar at week 24</div>
+        <div class="val"><strong>12 posts published.</strong> 5K monthly organic site visits by month 6. 3 posts ranking on page 1 of Google for target queries. Newsletter at 500+ subs. <em>One blog post drives a —+ corporate booking — that's the SEO ROI proof.</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- THE WHOLE 90-DAY MAP -->
+<section class="section">
+  <div class="eyebrow">The whole map · weeks 1–24</div>
+  <h2>What ships when.<br><em>One brand. Three engines. Six months.</em></h2>
+
+  <div class="weeks" style="grid-template-columns:repeat(8,1fr); gap:0.4rem;">
+    <div class="week priority"><div class="week-num">W 01</div><div class="week-task">Social ramps</div></div>
+    <div class="week priority"><div class="week-num">W 02</div><div class="week-task">Voice locked</div></div>
+    <div class="week priority"><div class="week-num">W 03</div><div class="week-task">TikTok live</div></div>
+    <div class="week priority"><div class="week-num">W 04</div><div class="week-task">Founder reel</div></div>
+    <div class="week priority web"><div class="week-num">W 05</div><div class="week-task">Wireframes</div></div>
+    <div class="week priority web"><div class="week-num">W 06</div><div class="week-task">Visual design</div></div>
+    <div class="week web"><div class="week-num">W 07</div><div class="week-task">Build sprint A</div></div>
+    <div class="week web"><div class="week-num">W 08</div><div class="week-task">Build sprint B</div></div>
+    <div class="week web blog"><div class="week-num">W 09</div><div class="week-task">Site live · blog #1</div></div>
+    <div class="week web blog"><div class="week-num">W 10</div><div class="week-task">Site analytics + blog #2</div></div>
+    <div class="week blog"><div class="week-num">W 11</div><div class="week-task">Blog #3 + first PR push</div></div>
+    <div class="week blog"><div class="week-num">W 12</div><div class="week-task">90-day review</div></div>
+    <div class="week blog"><div class="week-num">W 13</div><div class="week-task">Therapy Dad essay #1</div></div>
+    <div class="week blog"><div class="week-num">W 14</div><div class="week-task">Sensory play guide</div></div>
+    <div class="week blog"><div class="week-num">W 15</div><div class="week-task">9pm reset post</div></div>
+    <div class="week blog"><div class="week-num">W 16</div><div class="week-task">Buyer-guide post</div></div>
+    <div class="week blog"><div class="week-num">W 17</div><div class="week-task">School assembly post</div></div>
+    <div class="week blog"><div class="week-num">W 18</div><div class="week-task">Bubble recipe post</div></div>
+    <div class="week blog"><div class="week-num">W 19</div><div class="week-task">Corporate wellness post</div></div>
+    <div class="week blog"><div class="week-num">W 20</div><div class="week-task">Therapy Dad Manifesto</div></div>
+    <div class="week"><div class="week-num">W 21</div><div class="week-task">Operator #1 onboards</div></div>
+    <div class="week"><div class="week-num">W 22</div><div class="week-task">LA city page live</div></div>
+    <div class="week"><div class="week-num">W 23</div><div class="week-task">First LA bookings</div></div>
+    <div class="week"><div class="week-num">W 24</div><div class="week-task">6-month review · Operator #2 search opens</div></div>
+  </div>
+</section>
+
+
+<!-- TIME + OWNERSHIP -->
+<section class="section">
+  <div class="eyebrow">Time + ownership · who does what</div>
+  <h2>Six months.<br><em>The founder ships voice. The partner ships the rest.</em></h2>
+
+  <table class="channels">
+    <thead><tr><th>Engine</th><th>Chris's time</th><th>Strategy partner ships</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Social</strong> (forever)</td><td>4 hrs / week</td><td>Production + scheduling + measurement</td></tr>
+      <tr><td><strong>Web</strong> (one-time build, weeks 5–10)</td><td>Approve content · 2 hrs/week during build window</td><td>Wireframe → design → build → launch</td></tr>
+      <tr><td><strong>Blog</strong> (forever)</td><td>1 hr/week voiceover review</td><td>Writing + SEO + distribution + email</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>~5–7 hrs/week from Chris</strong></td><td>Phase 2 partnership</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>Chris's biggest investment is the founder voice — the part that nobody else can do.</strong> Everything else (editing, scheduling, writing first drafts, SEO, distribution) is partnership territory. <em>The model is: founder voice ships once a week. The brand engine ships every day.</em>
+  </div>
+</section>
+
+
+<div class="audit-footer">Kind Bubbles × LoopWorker · Phase 2 Build Plan · May 2026</div>
+
+</div>
+</body>
+</html>

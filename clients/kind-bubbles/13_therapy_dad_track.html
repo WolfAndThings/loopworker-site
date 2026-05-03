@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Therapy Dad Authority Track — Kind Bubbles | LoopWorker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased; }
+.audit-container { max-width:840px; margin:0 auto; padding:3rem 2rem 6rem; }
+
+.cover { min-height:100vh; display:flex; flex-direction:column; justify-content:space-between; padding:4rem 0 2rem; }
+.cover-badge { display:inline-block; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.22em; color:#888; border:1px solid rgba(255,255,255,0.1); padding:0.45rem 1rem; border-radius:100px; margin-bottom:2rem; }
+.cover-eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.24em; color:#D4A017; margin-bottom:1.2rem; font-weight:600; }
+.cover-title { font-family:'Cormorant Garamond', serif; font-size:clamp(2.8rem, 7vw, 5rem); font-weight:500; color:#FFF; line-height:1.0; letter-spacing:-0.02em; margin-bottom:1.5rem; }
+.cover-title em { font-style:italic; color:#D4A017; font-weight:400; }
+.cover-lede { font-size:1.15rem; color:#AAA; line-height:1.55; max-width:640px; margin-bottom:2rem; }
+.cover-meta { font-size:0.9rem; color:#777; line-height:1.8; margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.06); }
+.cover-meta strong { color:#BBB; font-weight:600; }
+.cover-bottom { font-size:0.7rem; color:#555; letter-spacing:0.15em; text-transform:uppercase; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.04); }
+
+.section { margin-bottom:4rem; }
+.eyebrow { font-size:0.65rem; text-transform:uppercase; letter-spacing:0.22em; color:#D4A017; font-weight:600; margin-bottom:0.7rem; }
+.section h2 { font-family:'Cormorant Garamond', serif; font-size:2.4rem; font-weight:500; color:#FFF; margin-bottom:1.2rem; letter-spacing:-0.02em; line-height:1.1; }
+.section h2 em { font-style:italic; color:#D4A017; font-weight:400; }
+.section h3 { font-size:1.05rem; font-weight:600; color:#FFF; margin:1.4rem 0 0.5rem; letter-spacing:-0.01em; }
+.section p { margin-bottom:1rem; color:#B5B5B5; font-size:0.97rem; }
+.section p strong { color:#FFF; font-weight:600; }
+.section em { color:#D4D4D4; font-style:italic; }
+.divider { border:none; border-top:1px solid rgba(255,255,255,0.06); margin:4rem 0; }
+
+.pull { border-left:2px solid #D4A017; padding:0.6rem 0 0.6rem 1.4rem; margin:1.8rem 0; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.4rem; line-height:1.4; color:#E8E8E8; }
+.pull span { color:#D4A017; font-style:normal; font-family:'Inter', sans-serif; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; display:block; margin-top:0.6rem; font-weight:600; }
+
+.asset { background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:14px; overflow:hidden; margin-bottom:1.4rem; }
+.asset-head { padding:1.5rem 1.8rem; display:grid; grid-template-columns:auto 1fr auto; gap:1rem; align-items:center; border-bottom:1px solid rgba(255,255,255,0.06); background:rgba(212,160,23,0.04); }
+.asset-num { font-family:'Cormorant Garamond', serif; font-size:2.4rem; color:#D4A017; line-height:1; font-weight:500; font-style:italic; }
+.asset-name { font-family:'Cormorant Garamond', serif; font-size:1.6rem; color:#FFF; font-weight:500; line-height:1.1; letter-spacing:-0.01em; }
+.asset-meta { font-family:'Inter', sans-serif; font-size:0.65rem; letter-spacing:0.16em; text-transform:uppercase; color:#888; margin-top:0.3rem; }
+.asset-when { font-family:'Cormorant Garamond', serif; font-size:1.05rem; color:#D4A017; font-style:italic; }
+
+.asset-body { padding:1.5rem 1.8rem; }
+.asset-row { display:grid; grid-template-columns:1fr 2fr; gap:1.2rem; padding:0.9rem 0; border-bottom:1px dashed rgba(255,255,255,0.04); align-items:start; }
+.asset-row:last-child { border-bottom:none; }
+.asset-row .label { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:#888; font-weight:600; }
+.asset-row .val { color:#DDD; font-size:0.95rem; line-height:1.6; }
+.asset-row .val strong { color:#FFF; font-weight:600; }
+.asset-row .val em { color:#D4A017; font-style:italic; }
+
+.outline-block { background:rgba(0,0,0,0.4); border-radius:10px; padding:1.2rem 1.4rem; margin:1rem 0; }
+.outline-block ol { padding-left:1.4rem; }
+.outline-block ol li { padding:0.35rem 0; color:#CCC; font-size:0.9rem; line-height:1.55; }
+.outline-block ol li strong { color:#FFF; font-weight:600; }
+.outline-block ol li em { color:#D4A017; font-style:italic; }
+
+.show-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.7rem; margin:1rem 0; }
+@media(max-width:680px){ .show-grid { grid-template-columns:1fr; } }
+.show-card { background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:0.9rem 1.1rem; }
+.show-card .show-name { font-family:'Cormorant Garamond', serif; font-size:1.05rem; color:#FFF; font-weight:500; line-height:1.15; margin-bottom:0.2rem; }
+.show-card .show-host { font-size:0.78rem; color:#D4A017; font-style:italic; margin-bottom:0.3rem; }
+.show-card .show-why { font-size:0.78rem; color:#999; line-height:1.5; }
+
+.callout { background:rgba(212,160,23,0.06); border-left:3px solid #D4A017; border-radius:0 8px 8px 0; padding:1.1rem 1.3rem; margin:1.2rem 0; font-size:0.93rem; line-height:1.65; }
+.callout strong { color:#FFF; font-weight:600; }
+.callout em { color:#D4A017; font-style:italic; }
+
+.audit-footer { text-align:center; margin-top:4rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.05); font-size:0.8rem; color:#555; letter-spacing:0.1em; text-transform:uppercase; }
+</style>
+</head>
+<body>
+<div class="audit-container">
+
+<div class="cover">
+  <div>
+    <span class="cover-badge">Bonus Deliverable · 13 · Founder Authority</span>
+    <div class="cover-eyebrow">Therapy Dad Authority Track</div>
+    <h1 class="cover-title">Five assets.<br>One <em>founder voice.</em></h1>
+    <p class="cover-lede">A book proposal outline. A course concept. A podcast circuit list. A speaking + retreat path. A newsletter cadence. <strong>Five compounding founder assets that orbit the Kind Bubbles brand</strong> — each one growing the audience for the next, each one defending the moat, each one serving the families you already care about. <em>Built around what's already true about you.</em></p>
+
+    <div class="cover-meta">
+      <strong>For:</strong> Chris Steele · Kind Bubbles<br>
+      <strong>Pairs with:</strong> D10 (KiwiCo Model) · D12 (Phase 2 Build Plan)<br>
+      <strong>Built:</strong> May 2026 — founder authority is the moat
+    </div>
+  </div>
+  <div class="cover-bottom">Read top to bottom · ~10 min · five assets, sequenced</div>
+</div>
+
+
+<section class="section">
+  <div class="eyebrow">The thesis</div>
+  <h2>The brand grows because<br><em>the founder grows.</em></h2>
+  <p>The "Therapy Dad" voice is the unfair advantage you already have. The point of this track isn't to invent a public persona — it's to <strong>build the asset stack around the voice that already exists in how you talk about your daughter, your work, and what bubbles taught you</strong>. Each asset below feeds the next.</p>
+
+  <div class="pull">
+    Big Little Feelings sold their first course off the back of two years of free Instagram posts. Dr. Becky's first book deal was the same path. <strong>Audience first. Asset second. Authority is what the audience builds for you when the voice is real.</strong>
+    <span>The pattern</span>
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ASSET 01 — NEWSLETTER -->
+<section class="section">
+  <div class="eyebrow">Asset 01 · Newsletter</div>
+  <div class="asset">
+    <div class="asset-head">
+      <div class="asset-num">01</div>
+      <div>
+        <div class="asset-name">The Therapy Dad Letter</div>
+        <div class="asset-meta">Substack or Klaviyo · weekly · founder long-form</div>
+      </div>
+      <div class="asset-when">Start: Month 1</div>
+    </div>
+    <div class="asset-body">
+      <div class="asset-row">
+        <div class="label">What it is</div>
+        <div class="val"><strong>One letter from Chris, every Sunday.</strong> 600–900 words. Personal. Specific. Real moment from the week — what a kid said, what a parent emailed, what came up between you and your daughter. Always closes with one thing the reader can do this week.</div>
+      </div>
+      <div class="asset-row">
+        <div class="label">Why first</div>
+        <div class="val">A newsletter is the only owned channel — algorithm can't kill it. Even at 200 subscribers, it's the highest-leverage place to lock in voice. <em>Every other asset on this list pulls from the newsletter eventually.</em></div>
+      </div>
+      <div class="asset-row">
+        <div class="label">Format options</div>
+        <div class="val"><strong>Substack</strong> — built-in audience discovery, paid tier optional, profile lives at <em>chrissteele.substack.com</em>.<br><strong>Klaviyo</strong> (or similar) — owned subscriber list, integrates with Kind Bubbles site directly. <em>Recommendation:</em> Substack first 6 months for audience growth, then port to Klaviyo for full ownership.</div>
+      </div>
+      <div class="asset-row">
+        <div class="label">Working letter titles</div>
+        <div class="val">
+          <em>"What my daughter said in the car this week"</em><br>
+          <em>"The five-minute reset I should've taught myself sooner"</em><br>
+          <em>"What a parent emailed me after Saturday's pop-up"</em><br>
+          <em>"Generational trauma doesn't ask for permission to show up"</em><br>
+          <em>"A bubble pops in 2 seconds. The memory of it lasts longer."</em>
+        </div>
+      </div>
+      <div class="asset-row">
+        <div class="label">Voice goal</div>
+        <div class="val"><strong>The same warmth that's in your IG captions, just longer.</strong> Don't try to write like a parenting book. Write like you'd text a friend who's a new parent — vulnerable, specific, useful, never preachy.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ASSET 02 — PODCAST CIRCUIT -->
+<section class="section">
+  <div class="eyebrow">Asset 02 · Podcast circuit</div>
+  <div class="asset">
+    <div class="asset-head">
+      <div class="asset-num">02</div>
+      <div>
+        <div class="asset-name">The Podcast Tour</div>
+        <div class="asset-meta">Guest on 12 shows in 12 months · founder voice on tape</div>
+      </div>
+      <div class="asset-when">Start: Month 2</div>
+    </div>
+    <div class="asset-body">
+      <div class="asset-row">
+        <div class="label">Why this matters</div>
+        <div class="val"><strong>Podcasts are the highest-trust content format.</strong> An hour of you talking to the right host = better than 100 reels. The book deal, the speaking gigs, the corporate inbound — they all start with someone hearing you on a podcast they already trust.</div>
+      </div>
+      <div class="asset-row">
+        <div class="label">Target shows · 12 to pitch</div>
+        <div class="val">
+          <div class="show-grid">
+            <div class="show-card"><div class="show-name">Good Inside Podcast</div><div class="show-host">Dr. Becky Kennedy</div><div class="show-why">Therapy-parent flagship. The dream booking. Realistic after 6 months of audience growth.</div></div>
+            <div class="show-card"><div class="show-name">Big Little Feelings (BLF) Podcast</div><div class="show-host">Kristin Gallant + Deena Margolin</div><div class="show-why">Toddler/early-childhood expert audience. Therapist-led.</div></div>
+            <div class="show-card"><div class="show-name">Janet Lansbury — Unruffled</div><div class="show-host">Janet Lansbury</div><div class="show-why">Respectful parenting heritage. Older audience but deeply engaged.</div></div>
+            <div class="show-card"><div class="show-name">The Modern Dad Podcast</div><div class="show-host">Various male-led parenting shows</div><div class="show-why">Therapy Dad = open lane. Easy yes for niche dad shows.</div></div>
+            <div class="show-card"><div class="show-name">The One You Feed</div><div class="show-host">Eric Zimmer</div><div class="show-why">Mental health + meaning. Healing arc lands.</div></div>
+            <div class="show-card"><div class="show-name">Sounds True Insights at the Edge</div><div class="show-host">Tami Simon</div><div class="show-why">Mindfulness + healing audience.</div></div>
+            <div class="show-card"><div class="show-name">Solo Dad Survival Podcast</div><div class="show-host">Dad-specific</div><div class="show-why">Niche, high-conversion. Perfect early booking.</div></div>
+            <div class="show-card"><div class="show-name">Tinyhood Podcast / Solid Starts</div><div class="show-host">Modern parenting brands</div><div class="show-why">Adjacent audience. Brand-to-brand path.</div></div>
+            <div class="show-card"><div class="show-name">Local SF / Bay Area parenting</div><div class="show-host">SF Parents Magazine, Marin Mommies</div><div class="show-why">Geographic warmup. Easy yes.</div></div>
+            <div class="show-card"><div class="show-name">The Shift</div><div class="show-host">Various mindfulness/coaching</div><div class="show-why">Generational trauma angle is strong.</div></div>
+            <div class="show-card"><div class="show-name">Kara Loewentheil — Unf*ck Your Brain</div><div class="show-host">Kara Loewentheil</div><div class="show-why">Reframing childhood patterns.</div></div>
+            <div class="show-card"><div class="show-name">Real Pod with Victoria Garrick</div><div class="show-host">Victoria Garrick</div><div class="show-why">Mental health + younger Gen Z parent audience.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="asset-row">
+        <div class="label">Pitch angle</div>
+        <div class="val"><strong>Always lead with the story — never the brand.</strong> "Biochemist who became a single dad and started Kind Bubbles in his kitchen sink as a way to reconnect with his daughter." That's the pitch. Brand mention is the bio at the end, not the hook.</div>
+      </div>
+      <div class="asset-row">
+        <div class="label">Cadence</div>
+        <div class="val"><strong>Pitch 5 shows / month.</strong> Aim for 1 booking / month. By month 12 = 12 podcast appearances on tape. That's the body of work that justifies the next assets on this list.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ASSET 03 — COURSE -->
+<section class="section">
+  <div class="eyebrow">Asset 03 · Course</div>
+  <div class="asset">
+    <div class="asset-head">
+      <div class="asset-num">03</div>
+      <div>
+        <div class="asset-name">"The 8-Minute Reset" — Parent Course</div>
+        <div class="asset-meta">Online · self-paced · 6 modules · — entry tier</div>
+      </div>
+      <div class="asset-when">Start: Month 6</div>
+    </div>
+    <div class="asset-body">
+      <div class="asset-row">
+        <div class="label">What it is</div>
+        <div class="val"><strong>A short, well-built parenting course on how to use 8 minutes of mindful play to reset a hard day with your kid.</strong> Not therapy. Not a system. A simple framework grounded in what actually worked for you and your daughter — backed by science, demoed on camera, repeatable any night.</div>
+      </div>
+      <div class="asset-row">
+        <div class="label">6-module outline</div>
+        <div class="val">
+          <div class="outline-block">
+            <ol>
+              <li><strong>Why 8 minutes works</strong> · the science of attention reset, brief play, and how a parent's regulated state creates the kid's regulated state.</li>
+              <li><strong>The setup</strong> · how to design the moment before the moment. What to clear, what to bring, how to lower the temperature.</li>
+              <li><strong>The play</strong> · five reset rituals demoed on video — bubble play, sensory play, slow motion, body-listening, the "I see you" check-in.</li>
+              <li><strong>What to do when your kid won't engage</strong> · the shy-kid playbook, the dysregulated-kid playbook, the hostile-teen playbook.</li>
+              <li><strong>The repair</strong> · how to use the 8 minutes after a hard moment to actually heal it, not paper it over.</li>
+              <li><strong>The pattern break</strong> · using the daily reset to interrupt generational cycles. <em>This is the one that lands hardest.</em></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="asset-row">
+        <div class="label">Pricing tier</div>
+        <div class="val"><strong>— entry / — with workbook + community access.</strong> Industry-standard for first founder course. <em>Higher pricing waits until book lands.</em></div>
+      </div>
+      <div class="asset-row">
+        <div class="label">Hosting</div>
+        <div class="val">Kajabi, Teachable, or Skool for full integration. ConvertKit Commerce or Stan Store for simpler launch. <em>Recommendation: simpler platform first, migrate to Kajabi when subscriber base &gt; 1K.</em></div>
+      </div>
+      <div class="asset-row">
+        <div class="label">Why month 6</div>
+        <div class="val"><strong>Audience needs ~4–6 months of newsletter + podcast presence before the course converts.</strong> Launching too early sells to friends and family. Launching at month 6 sells to people who actually trust the voice.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ASSET 04 — BOOK PROPOSAL -->
+<section class="section">
+  <div class="eyebrow">Asset 04 · Book proposal</div>
+  <div class="asset">
+    <div class="asset-head">
+      <div class="asset-num">04</div>
+      <div>
+        <div class="asset-name">"Eight Minutes" — A Therapy Dad Memoir/Manifesto</div>
+        <div class="asset-meta">Trade book · narrative + framework · agent + publisher path</div>
+      </div>
+      <div class="asset-when">Start: Month 9 · publish: Year 2</div>
+    </div>
+    <div class="asset-body">
+      <div class="asset-row">
+        <div class="label">Why a book</div>
+        <div class="val"><strong>A book is the credential that makes every other asset 10× more valuable.</strong> Speaker fees go from — to —. Corporate clients sign annual contracts. The brand becomes "the company built around the book" instead of "the company built around bubbles." <em>The book is the narrative anchor for the next 5 years.</em></div>
+      </div>
+      <div class="asset-row">
+        <div class="label">Working title + structure</div>
+        <div class="val">
+          <strong>Working title:</strong> <em>Eight Minutes: How a Single Dad and His Daughter Found Their Way Back Through Bubbles</em><br>
+          <strong>Structure:</strong> half memoir (you and your daughter, the chapters of the healing) + half manifesto (the philosophy, the framework, the call to action for parents). <em>Same structure as Glennon Doyle's "Untamed", or Brené Brown's early work.</em>
+        </div>
+      </div>
+      <div class="asset-row">
+        <div class="label">Working chapter outline</div>
+        <div class="val">
+          <div class="outline-block">
+            <ol>
+              <li><strong>The Sink</strong> · the kitchen scene. The day you started.</li>
+              <li><strong>The Science</strong> · why bubbles. Surface tension as metaphor.</li>
+              <li><strong>The Pattern</strong> · what your dad gave you. What you didn't want to give her.</li>
+              <li><strong>The Frame</strong> · the eight-minute reset, and why this much time is the right amount.</li>
+              <li><strong>The Shy Kid</strong> · the kid who won't come in. What that taught you about all kids.</li>
+              <li><strong>The Crew</strong> · the parents who emailed. The stories you couldn't make up.</li>
+              <li><strong>The Network</strong> · why a kitchen ritual became a national brand.</li>
+              <li><strong>The Reset</strong> · what an 8-minute practice can actually do for a generation.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="asset-row">
+        <div class="label">Path to publication</div>
+        <div class="val"><strong>3 paths.</strong> (1) Find a literary agent who specializes in parenting + memoir — query in month 9 with sample chapters from the newsletter. (2) Get an offer from a trade press based on audience + 12 podcast appearances. (3) Self-publish via a hybrid press for full control + speed (longer-term lower ceiling but faster launch). <em>Recommendation: pursue agent + traditional path first; hybrid as backup.</em></div>
+      </div>
+      <div class="asset-row">
+        <div class="label">Realistic timeline</div>
+        <div class="val">Month 9 = book proposal + 2 sample chapters drafted. Month 11 = agent query season. Month 13 = book deal target. Month 18–22 = manuscript delivery. Month 24 = publication. <em>Aggressive but doable if newsletter + podcast keep building.</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ASSET 05 — SPEAKING + RETREAT -->
+<section class="section">
+  <div class="eyebrow">Asset 05 · Speaking + retreats</div>
+  <div class="asset">
+    <div class="asset-head">
+      <div class="asset-num">05</div>
+      <div>
+        <div class="asset-name">Speaking Circuit + Retreats</div>
+        <div class="asset-meta">Paid keynotes · school assemblies · founder retreats · once book is live</div>
+      </div>
+      <div class="asset-when">Start: Year 2</div>
+    </div>
+    <div class="asset-body">
+      <div class="asset-row">
+        <div class="label">Three lanes</div>
+        <div class="val"><strong>Lane 1 · Corporate keynotes.</strong> Wellness conferences, family-friendly company offsites, parent-focused ERG events. — per booking once book is out. Pre-book: —.<br><strong>Lane 2 · Education conferences.</strong> School board events, ASCD, NAEYC, ISTE. Authority lane for the school + assembly business.<br><strong>Lane 3 · Hosted retreats.</strong> Twice-yearly Kind Bubbles parent retreats — small group (12–18 parents), 3 days, — per person. <em>Highest margin, highest brand bond.</em></div>
+      </div>
+      <div class="asset-row">
+        <div class="label">Why year 2</div>
+        <div class="val"><strong>Speaking fees scale with credibility, and credibility scales with the book.</strong> Pre-book speaking pays modestly; post-book speaking is a real revenue line. Retreats need an audience that's already committed — that's the newsletter at 5K+ subscribers.</div>
+      </div>
+      <div class="asset-row">
+        <div class="label">Bureau path</div>
+        <div class="val">Once book is announced, sign with a parenting-specialty speakers bureau (e.g., the kind that already represents Dr. Becky-tier voices). They handle inbound, you focus on the message. <em>Standard split: 25–30% to bureau, you keep the rest.</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<hr class="divider">
+
+
+<section class="section">
+  <div class="eyebrow">Sequencing the five</div>
+  <h2>Each asset earns<br><em>the next.</em></h2>
+  <p>Don't try to launch all five at once. Sequence is the whole game. Newsletter is what unlocks podcast yeses. Podcast is what builds the audience the course converts. Course is what funds the book proposal time. Book is what turns the speaking into a real revenue line. <strong>Each asset compounds the next — one founder, five compounding revenue streams, one through-line.</strong></p>
+
+  <div class="callout">
+    <strong>What to do this week:</strong> set up the newsletter. Even if you only write to 50 people for the first month — the act of writing weekly is what locks the voice in. The other four assets <em>cannot exist</em> until the voice is locked.
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="eyebrow">What your strategy partner takes off your plate</div>
+  <h2>You write. You speak.<br><em>Someone else handles the rest.</em></h2>
+  <p>The founder voice is the part nobody else can do. Everything else — the production, the pitch list, the agent intros, the course tech, the podcast outreach — gets owned by your <strong>brand + content strategy partner</strong>. Specifically:</p>
+
+  <div class="outline-block" style="background:rgba(212,160,23,0.05); border:1px solid rgba(212,160,23,0.2);">
+    <ol>
+      <li><strong>Newsletter cadence + edits</strong> — you write the draft, partner sharpens, schedules, manages list.</li>
+      <li><strong>Podcast pitch operations</strong> — researching the right shows, writing custom pitches per host, managing the inbound bookings calendar.</li>
+      <li><strong>Course production</strong> — workbook design, video editing, platform setup, launch sequence in Klaviyo or ConvertKit.</li>
+      <li><strong>Book proposal drafting</strong> — pulling from your newsletter + podcast transcripts to assemble the proposal package, agent query letter, sample chapter polish.</li>
+      <li><strong>Speaking funnel</strong> — speaker page on the site, bureau outreach support, post-event content recap.</li>
+      <li><strong>Quarterly authority review</strong> — what's working, what's plateauing, what to double down on next quarter.</li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <strong>The model is the same as a serious creator's team:</strong> the founder is the voice + face + writer. The strategy partner is everything else. <em>You stay in the work that compounds. The systems run around you.</em>
+  </div>
+</section>
+
+
+<div class="audit-footer">Kind Bubbles × LoopWorker · Therapy Dad Authority Track · May 2026</div>
+
+</div>
+</body>
+</html>

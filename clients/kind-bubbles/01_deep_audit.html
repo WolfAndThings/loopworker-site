@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Deep Content Audit — Kind Bubbles | LoopWorker</title>
+<title>Deep Content Audit — Kind Bubbles</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -14,7 +14,6 @@ html { scroll-behavior: smooth; }
 body { background: #080808; color: #D4D4D4; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.7; -webkit-font-smoothing: antialiased; }
 .audit-container { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 6rem; }
 
-/* COVER */
 .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding: 4rem 0 2rem; }
 .cover-badge { display: inline-block; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.22em; color: #888; border: 1px solid rgba(255,255,255,0.1); padding: 0.45rem 1rem; border-radius: 100px; margin-bottom: 2rem; }
 .cover-eyebrow { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.24em; color: #D4A017; margin-bottom: 1.2rem; font-weight: 600; }
@@ -29,7 +28,6 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', -apple-system,
 .cover-toc div span:first-child { color: #CCC; }
 .cover-toc div span:last-child { color: #555; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; }
 
-/* SECTIONS */
 .audit-section { margin-bottom: 4rem; }
 .audit-section .eyebrow { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.22em; color: #D4A017; font-weight: 600; margin-bottom: 0.7rem; }
 .audit-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 500; color: #FFF; margin-bottom: 1.2rem; letter-spacing: -0.02em; line-height: 1.15; }
@@ -40,17 +38,9 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', -apple-system,
 .audit-section em { color: #D4D4D4; font-style: italic; }
 .audit-divider { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 4rem 0; }
 
-/* PULL QUOTE */
 .pull { border-left: 2px solid #D4A017; padding: 0.6rem 0 0.6rem 1.4rem; margin: 1.8rem 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.25rem; line-height: 1.45; color: #E8E8E8; }
 .pull span { color: #D4A017; font-style: normal; font-family: 'Inter', sans-serif; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; display: block; margin-top: 0.6rem; font-weight: 600; }
 
-/* OBSERVATION */
-.observation { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 10px; padding: 1.4rem 1.5rem; margin-bottom: 1rem; }
-.observation-tag { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.18em; color: #D4A017; margin-bottom: 0.5rem; font-weight: 600; }
-.observation h3 { margin-top: 0; font-size: 1.05rem; }
-.observation p { font-size: 0.94rem; margin-bottom: 0; color: #AAA; }
-
-/* TWO COL CARDS — winner / loser */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
 @media (max-width: 600px) { .split { grid-template-columns: 1fr; } }
 .split-card { padding: 1.3rem 1.4rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); }
@@ -62,7 +52,6 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', -apple-system,
 .split-card h4 { color: #FFF; font-size: 0.98rem; font-weight: 600; margin-bottom: 0.5rem; }
 .split-card p { font-size: 0.92rem; color: #BBB; margin: 0; }
 
-/* POST CARDS */
 .post-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 10px; padding: 1.3rem 1.5rem; margin-bottom: 0.8rem; }
 .post-card .pc-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem; }
 .post-card .pc-num { font-size: 0.65rem; color: #D4A017; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; }
@@ -70,12 +59,13 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', -apple-system,
 .post-card .pc-format.format-reel { color: #7DB88A; }
 .post-card .pc-format.format-carousel { color: #C9D17A; }
 .post-card .pc-format.format-still { color: #888; }
-.post-card .pc-caption { font-size: 0.9rem; color: #999; font-style: italic; margin: 0.5rem 0 0.7rem; padding-left: 0.8rem; border-left: 2px solid rgba(212,160,23,0.2); }
-.post-card .pc-meta { font-size: 0.82rem; color: #777; }
-.post-card .pc-verdict { font-size: 0.85rem; color: #BBB; margin-top: 0.5rem; }
+.post-card .pc-caption { font-size: 0.9rem; color: #CCC; margin: 0.5rem 0 0.7rem; padding: 0.7rem 0.9rem; border-left: 2px solid rgba(212,160,23,0.3); background: rgba(0,0,0,0.2); border-radius: 0 6px 6px 0; }
+.post-card .pc-caption.empty { color: #777; font-style: italic; }
+.post-card .pc-meta { font-size: 0.78rem; color: #777; }
+.post-card .pc-meta a { color: #888; text-decoration: none; border-bottom: 1px dashed rgba(255,255,255,0.15); }
+.post-card .pc-verdict { font-size: 0.88rem; color: #B5B5B5; margin-top: 0.6rem; }
 .post-card .pc-verdict strong { color: #FFF; }
 
-/* PILLAR/HOOK MIX TABLE */
 .mix-grid { display: grid; grid-template-columns: 1fr; gap: 0.6rem; margin: 1.5rem 0; }
 .mix-row { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem 1.2rem; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem; align-items: center; }
 @media (max-width: 600px) { .mix-row { grid-template-columns: 1fr; } }
@@ -86,7 +76,6 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', -apple-system,
 .mix-row .mix-current strong { color: #555; }
 .mix-row .mix-target strong { color: #B8841A; }
 
-/* SCORECARD */
 .scorecard { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin: 1.4rem 0; }
 @media (max-width: 600px) { .scorecard { grid-template-columns: 1fr; } }
 .score-row { display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 10px; padding: 0.95rem 1.2rem; }
@@ -98,13 +87,11 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', -apple-system,
 .grade-d { color: #E87E3A; }
 .grade-f { color: #E84420; }
 
-/* HOOK ARCHETYPE LIST */
 .archetype { padding: 1rem 1.2rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; margin-bottom: 0.6rem; }
 .archetype .at-name { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: #D4A017; font-weight: 600; margin-bottom: 0.4rem; }
 .archetype p { font-size: 0.92rem; color: #BBB; margin: 0; }
 .archetype .at-eg { color: #888; font-style: italic; font-size: 0.88rem; margin-top: 0.4rem; }
 
-/* PRIORITY BLOCK */
 .priority { background: linear-gradient(180deg, rgba(212,160,23,0.06), rgba(212,160,23,0.015)); border: 1px solid rgba(212,160,23,0.22); border-radius: 14px; padding: 2rem 1.8rem; margin: 2rem 0; }
 .priority h3 { color: #D4A017; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.8rem; font-weight: 600; }
 .priority h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: #FFF; font-weight: 500; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -0.01em; }
@@ -112,6 +99,9 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', -apple-system,
 .priority ol { padding-left: 1.2rem; margin-top: 0.8rem; }
 .priority li { color: #CCC; font-size: 0.95rem; padding: 0.4rem 0; }
 .priority li strong { color: #FFF; }
+
+.source-note { background: rgba(125,184,138,0.04); border: 1px solid rgba(125,184,138,0.18); border-radius: 10px; padding: 1.1rem 1.3rem; margin: 1.5rem 0; font-size: 0.86rem; color: #BBB; }
+.source-note strong { color: #7DB88A; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; display: block; margin-bottom: 0.4rem; font-weight: 700; }
 
 .audit-footer { text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.8rem; color: #555; letter-spacing: 0.1em; text-transform: uppercase; }
 
@@ -123,10 +113,9 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', -apple-system,
     .audit-section { page-break-inside: avoid; break-inside: avoid; margin-bottom: 1.8rem; }
     .audit-section h2 { font-size: 1.7rem; }
     .audit-section p { font-size: 0.9rem; }
-    .observation, .split, .split-card, .post-card, .mix-row, .archetype, .priority, .pull { page-break-inside: avoid; break-inside: avoid; }
+    .split, .split-card, .post-card, .mix-row, .archetype, .priority, .pull, .source-note { page-break-inside: avoid; break-inside: avoid; }
     .audit-divider { margin: 1.5rem 0; }
     .post-card { padding: 0.9rem 1.1rem; margin-bottom: 0.6rem; }
-    .post-card .pc-caption { font-size: 0.85rem; }
     .priority { page-break-before: auto; }
     a { color: inherit; text-decoration: none; }
 }
@@ -138,478 +127,355 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', -apple-system,
 <!-- COVER -->
 <div class="cover">
     <div>
-        <div class="cover-badge">LoopWorker · Deep Audit · Module 01 of 05</div>
+        <div class="cover-badge">Deep Audit · Module 01</div>
         <div class="cover-eyebrow">Instagram Read · @kind.bubbles</div>
-        <h1 class="cover-title">A 30-post read on what the<br>algorithm <em>quietly</em> rewards.</h1>
-        <p class="cover-lede">Most accounts post and hope. This audit reverse-engineers the last ~30 posts on <strong style="color:#CCC">@kind.bubbles</strong> — what the algorithm boosted, what it buried, and the hidden pattern across both. Then it tells you exactly what to make next.</p>
+        <h1 class="cover-title">A read on what your<br>feed <em>quietly</em> rewards.</h1>
+        <p class="cover-lede">A complete pass through the last 55 posts on <strong style="color:#CCC">@kind.bubbles</strong> — what the algorithm boosted, what it buried, and the patterns that decide which way a future post goes. Then five moves that change the slope.</p>
         <div class="cover-toc">
             <div><span>01 · The Read</span><span>Diagnosis</span></div>
-            <div><span>02 · 12-Dimension Scorecard</span><span>Grades</span></div>
-            <div><span>03 · 30-Post Breakdown</span><span>Each Post Read</span></div>
-            <div><span>04 · Winners vs Buried</span><span>Algorithmic Pattern</span></div>
-            <div><span>05 · Hook Archetypes</span><span>What's Used</span></div>
-            <div><span>06 · Format Mix</span><span>Reels/Carousels/Stills</span></div>
-            <div><span>07 · Pillar Coverage</span><span>The 4-Pillar Map</span></div>
-            <div><span>08 · Caption Open-Line Audit</span><span>First-Line Patterns</span></div>
-            <div><span>09 · Save / Share / DM Signals</span><span>Algorithmic Trust</span></div>
-            <div><span>10 · The 5 Highest-Leverage Moves</span><span>Action Stack</span></div>
+            <div><span>02 · Twelve-Dimension Scorecard</span><span>Grades</span></div>
+            <div><span>03 · The Top 10 — What Worked</span><span>Real Posts</span></div>
+            <div><span>04 · The Bottom 5 — What Got Buried</span><span>Real Posts</span></div>
+            <div><span>05 · Format Mix · Reality vs Target</span><span>Numbers</span></div>
+            <div><span>06 · Pillar Coverage</span><span>Where the Feed Lives</span></div>
+            <div><span>07 · Hook Patterns Across 55</span><span>Open-Line Audit</span></div>
+            <div><span>08 · Save / Share / DM Signals</span><span>Algorithmic Trust</span></div>
+            <div><span>09 · The Five Highest-Leverage Moves</span><span>Action Stack</span></div>
         </div>
     </div>
     <div>
         <div class="cover-meta">
             <strong>Prepared for</strong> Chris Steele · Founder, Kind Bubbles<br>
-            <strong>Scope</strong> @kind.bubbles · last ~30 posts (Reels, Carousels, Stills)<br>
-            <strong>Service Area</strong> SF · Palo Alto · Walnut Creek · San Mateo · Marin<br>
-            <strong>Prepared by</strong> Alex Lamb · LoopWorker<br>
-            <strong>Delivered</strong> May 2026
+            <strong>Source</strong> Public IG feed @kind.bubbles · 55 posts · May 2024 → Feb 2026<br>
+            <strong>Method</strong> Apify scrape · every metric below is measured, not estimated<br>
+            <strong>Service Area</strong> Bay Area + Sacramento
         </div>
-        <div class="cover-bottom">LoopWorker · loopworker.com</div>
+        <div class="cover-bottom">Strategy Partner · Phase 1 Sprint</div>
     </div>
 </div>
+
+<!-- DATA SOURCE NOTE -->
+<div class="source-note">
+    <strong>Data Source · Read This First</strong>
+    Every number, caption, and post link in this audit comes from a fresh public scrape of @kind.bubbles run for this report. 55 posts from your live feed. No estimates. No paraphrasing. Where a caption appears, it's quoted verbatim from the post. Where a number appears, it's measured from the scrape.
+</div>
+
+<hr class="audit-divider">
 
 <!-- 01 OPENING -->
 <div class="audit-section">
     <div class="eyebrow">01 · The Read</div>
-    <h2>You're shipping <em>product photography</em> in a market that pays for <em>parental relief</em>.</h2>
-    <p>Pop-up bubble events in 2026 are not bought on aesthetic. They're bought on a parent's quiet hope: <em>that someone has thought about this so I don't have to.</em> Your audience is decision-fatigued — they have already bought four birthday parties this year, all of them mediocre. They are scrolling at 11pm with one thumb. The post that books them is the post that says <strong>I see you, and I've handled it.</strong></p>
-    <p>Right now @kind.bubbles is doing something most local services do — showing the bubble. The flash, the kid, the wand. It's pretty. It performs okay. But it's interchangeable with three other bubble vendors in the Bay. The algorithm reads "interchangeable" as "ignorable" and routes the post to a smaller audience.</p>
-    <p>The fix isn't producing more content. It's producing <strong>different content, in a known ratio, with a known opening line</strong>. That's what this audit gives you.</p>
-    <div class="pull">"You don't have a content problem. You have a <em>thumbnail-and-first-line</em> problem. Everything past that is already working harder than you think."<span>— The TL;DR</span></div>
+    <h2>The feed is shipping <em>event recaps</em> in a market that books on <em>parental relief</em>.</h2>
+    <p>Across 55 posts in 21 months, the dominant pattern is <strong>recap content</strong> — bubbles in the air, kids in motion, captions that describe what's already on screen. It's pretty. It performs at a baseline (median 12 likes, median 147 video views). But almost none of it gives a scrolling parent a reason to stop.</p>
+    <p>The two posts that broke through the baseline did one of two things: they showed a <em>face</em> (the 370-like still from Sept 2024 — a kid mid-reaction), or they made a <em>founder claim</em> ("Why did we start Kind Bubbles?" — 55 likes, 1,046 views, the highest-watched founder post in the feed).</p>
+    <p>The fix isn't more posts. It's <strong>pulling more of the feed toward the two patterns that already work</strong> — and cutting the recap volume that the algorithm has learned to ignore.</p>
+    <div class="pull">"Your two best posts in 21 months were a kid's face and a founder claim. Everything else is variations on a recap. The leverage is to stop hiding the two things that already work."<span>— The TL;DR</span></div>
 </div>
 
 <hr class="audit-divider">
 
 <!-- 02 SCORECARD -->
 <div class="audit-section">
-    <div class="eyebrow">02 · The 12-Dimension Scorecard</div>
-    <h2>The full grade sheet — <em>twelve</em> places content can leak.</h2>
-    <p>The free audit graded six. Here are all twelve, with each dimension's score against best-in-class kids' creators (Big Little Feelings, Busy Toddler, etc.) and best-in-class local services.</p>
+    <div class="eyebrow">02 · The Twelve-Dimension Scorecard</div>
+    <h2>The full grade sheet.</h2>
+    <p>Twelve dimensions where content can leak. Grades are based on the 55-post sample compared to best-in-class kids' creators (Big Little Feelings, Busy Toddler) and best-in-class local services.</p>
 
     <div class="scorecard">
         <div class="score-row"><span class="score-label">01 Visual Quality</span><span class="score-grade grade-b">B</span></div>
         <div class="score-row"><span class="score-label">02 Hook Strength (first 1.5s)</span><span class="score-grade grade-c">C–</span></div>
         <div class="score-row"><span class="score-label">03 Feed Visual Consistency</span><span class="score-grade grade-c">C+</span></div>
-        <div class="score-row"><span class="score-label">04 Founder / Story Voice</span><span class="score-grade grade-d">D</span></div>
+        <div class="score-row"><span class="score-label">04 Founder / Story Voice</span><span class="score-grade grade-c">C–</span></div>
         <div class="score-row"><span class="score-label">05 CTA &amp; Conversion Path</span><span class="score-grade grade-c">C</span></div>
-        <div class="score-row"><span class="score-label">06 Reaction Capture</span><span class="score-grade grade-c">C–</span></div>
-        <div class="score-row"><span class="score-label">07 Algorithmic Format Fit</span><span class="score-grade grade-c">C+</span></div>
+        <div class="score-row"><span class="score-label">06 Reaction Capture</span><span class="score-grade grade-c">C</span></div>
+        <div class="score-row"><span class="score-label">07 Algorithmic Format Fit</span><span class="score-grade grade-b">B–</span></div>
         <div class="score-row"><span class="score-label">08 Save Triggers (parent-utility)</span><span class="score-grade grade-d">D+</span></div>
         <div class="score-row"><span class="score-label">09 Share Triggers (tag-a-friend)</span><span class="score-grade grade-c">C</span></div>
-        <div class="score-row"><span class="score-label">10 SEO-in-Captions (Bay Area, kids' party)</span><span class="score-grade grade-d">D+</span></div>
-        <div class="score-row"><span class="score-label">11 Carousel Architecture (slide 1 vs slide N)</span><span class="score-grade grade-c">C–</span></div>
+        <div class="score-row"><span class="score-label">10 SEO-in-Captions (Bay Area, kids' party)</span><span class="score-grade grade-c">C</span></div>
+        <div class="score-row"><span class="score-label">11 Carousel Architecture</span><span class="score-grade grade-d">D+</span></div>
         <div class="score-row"><span class="score-label">12 Reel First-3-Second Performance</span><span class="score-grade grade-c">C</span></div>
     </div>
 
-    <p style="margin-top:1.5rem;">The pattern: <strong>every dimension that depends on the bubble is fine. Every dimension that depends on the human, the parent, or the founder is failing.</strong> That's not a content gap. That's a <em>positioning</em> gap showing up in the content.</p>
+    <p style="margin-top:1.5rem;">The pattern: <strong>format fit is fine — Reels are 81% of the feed, which is correct for 2026. What's missing is the human in the first frame.</strong> Saves and carousel architecture are the lowest grades because the feed has almost no parent-utility carousels (3 of 55). That's the biggest single gap.</p>
 </div>
 
 <hr class="audit-divider">
 
-<!-- 03 — 30 POST BREAKDOWN -->
+<!-- 03 — TOP 10 -->
 <div class="audit-section">
-    <div class="eyebrow">03 · 30-Post Breakdown</div>
-    <h2>Every post, read on its own terms — what worked, what got buried, why.</h2>
-    <p>These are reconstructed from the public feed of @kind.bubbles. Caption snippets are paraphrased where the source caption was long; format and pillar tags are based on what the post is doing, not what it claims to do.</p>
+    <div class="eyebrow">03 · The Top 10 — What Worked</div>
+    <h2>Your ten best-performing posts, read on their own terms.</h2>
+    <p>Sorted by likes. Captions are quoted verbatim from the post. Verdicts are about what the post actually did — and what to repeat from each one.</p>
 
     <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 01 · Reel</span><span class="pc-format format-reel">Event Magic</span></div>
-        <div class="pc-caption">"Bubbles + sunshine + smiles ✨ tap to book your party"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Generic open. The caption tells me what I'm already seeing. Reel hero is the bubble, not the kid's face. Bury risk: high.</p>
+        <div class="pc-head"><span class="pc-num">#1 · 370 likes</span><span class="pc-format format-still">Still · Sept 21, 2024</span></div>
+        <div class="pc-caption empty">[No caption — image only]</div>
+        <p class="pc-meta"><a href="https://www.instagram.com/p/DAMWDe_Slm_/" target="_blank">instagram.com/p/DAMWDe_Slm_</a></p>
+        <p class="pc-verdict"><strong>Read:</strong> The single highest-engagement post in 21 months has zero caption — meaning the image alone did 100% of the work. That's a signal: when you give the algorithm a strong face/visual, captions can be optional. Repeat: post one captionless reaction-shot still per month and let it work.</p>
     </div>
+
     <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 02 · Carousel</span><span class="pc-format format-carousel">Event Magic</span></div>
-        <div class="pc-caption">"What a magical day at [park] for [name]'s 5th birthday!"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Slide 1 is the wide shot. Wide shots lose. Lead with a face mid-laugh; bury the wide as slide 4.</p>
+        <div class="pc-head"><span class="pc-num">#2 · 280 likes · 158 views</span><span class="pc-format format-reel">Reel · Nov 15, 2024</span></div>
+        <div class="pc-caption">"Magical Birthday. Bubbles and Balloons! @fabricated.fantasy #family #kidsparty #sacramento #fyp"</div>
+        <p class="pc-meta"><a href="https://www.instagram.com/p/DCaS7DWSclv/" target="_blank">instagram.com/p/DCaS7DWSclv</a></p>
+        <p class="pc-verdict"><strong>Read:</strong> Mostly carried by the @fabricated.fantasy collab tag — that account's audience is what spiked the likes. Note the like-to-view ratio (280 / 158) is unusually high; this likely got distributed inside her audience, not yours. Lesson: <strong>cross-account tags with established creators move more numbers than any caption rewrite.</strong> Run more of these.</p>
     </div>
+
     <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 03 · Still</span><span class="pc-format format-still">Bubble Science</span></div>
-        <div class="pc-caption">"Did you know bubbles are actually three layers? 🫧"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Best caption open in the last 30. This is the lane. But the image is a stock-feeling product still — should be a kid's hand inside a giant bubble.</p>
+        <div class="pc-head"><span class="pc-num">#3 · 78 likes · 71 comments</span><span class="pc-format format-reel">Reel · May 22, 2025</span></div>
+        <div class="pc-caption">"🎉 Get ready for a BUBBLE-TASTIC day of fun! Join us May 31st… 🫧 Comment 'BUBBLE' for the registration link. 🫧"</div>
+        <p class="pc-meta"><a href="https://www.instagram.com/p/DJ8AnToP5Q4/" target="_blank">instagram.com/p/DJ8AnToP5Q4</a></p>
+        <p class="pc-verdict"><strong>Read:</strong> 71 comments — by far the highest comment count in the feed — because the post explicitly asked for one ("Comment 'BUBBLE'"). Comment-trigger CTAs are the single fastest way to push a post into more feeds. Use this pattern on every event-launch post.</p>
     </div>
+
     <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 04 · Reel</span><span class="pc-format format-reel">Event Magic</span></div>
-        <div class="pc-caption">"Pop-up at [school] today — what a turnout!"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Time-of-day-of-event content. Almost never saves or shares. Convert these to story-only, free up feed slots.</p>
+        <div class="pc-head"><span class="pc-num">#4 · 63 likes · 210 views</span><span class="pc-format format-reel">Reel · Apr 29, 2025</span></div>
+        <div class="pc-caption">"Dm for collabs and bookings"</div>
+        <p class="pc-meta"><a href="https://www.instagram.com/p/DJA04Tjvw6e/" target="_blank">instagram.com/p/DJA04Tjvw6e</a></p>
+        <p class="pc-verdict"><strong>Read:</strong> 8-word caption. It worked because the visual carried. Lesson: when the video is strong, the caption shouldn't compete with it. The current default in your feed is the opposite — long, paragraph-heavy captions on visuals that need to breathe.</p>
     </div>
+
     <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 05 · Carousel</span><span class="pc-format format-carousel">Parent Connection</span></div>
-        <div class="pc-caption">"Tips for screen-free birthday parties 🌿"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Strongest concept in the last 30. Save-bait. But text-on-photo design is busy — clean this up and it can do 5x what it's doing.</p>
+        <div class="pc-head"><span class="pc-num">#5 · 63 likes</span><span class="pc-format format-carousel">Carousel · May 8, 2025</span></div>
+        <div class="pc-caption">"💬 DM us for the ticket link! ✨ Sacramento's First-Ever Daddy–Daughter Bubble Pop-Up… Giant Bubble Stations · Toddler Bubble Zone · Kid-in-a-Bubble Photo Booth…"</div>
+        <p class="pc-meta"><a href="https://www.instagram.com/p/DJZw9XVSDjC/" target="_blank">instagram.com/p/DJZw9XVSDjC</a></p>
+        <p class="pc-verdict"><strong>Read:</strong> Daddy-Daughter framing did the work. This is the only post in 55 that names the founder relationship as the offer. It performed. Replicate the angle: more events explicitly framed around the dad-daughter / family-as-experience hook.</p>
     </div>
+
     <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 06 · Reel</span><span class="pc-format format-reel">Event Magic</span></div>
-        <div class="pc-caption">"Saturday vibes 🫧"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Caption is doing zero work. First frame shows setup, not reaction. Algorithm reads as "low-info filler". Buried.</p>
+        <div class="pc-head"><span class="pc-num">#6 · 57 likes · 52 comments</span><span class="pc-format format-reel">Reel · May 28, 2025</span></div>
+        <div class="pc-caption">"Early Bird Pricing Ends Today! Comment 'bubble' and we'll send you a link!"</div>
+        <p class="pc-meta"><a href="https://www.instagram.com/p/DKNbq4ghAS2/" target="_blank">instagram.com/p/DKNbq4ghAS2</a></p>
+        <p class="pc-verdict"><strong>Read:</strong> Same comment-trigger formula as #3 — same result. Two of your top six posts use this pattern. <strong>This is a measured win.</strong> Add a comment-trigger to every post that's selling a date-bound thing.</p>
     </div>
+
     <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 07 · Still</span><span class="pc-format format-still">Founder Story</span></div>
-        <div class="pc-caption">"From biochem lab to bubble shows — wild ride 🧪→🫧"</div>
-        <p class="pc-verdict"><strong>Read:</strong> The strongest founder beat in the feed. Get this out of a single still and into a 90-second reel — it's the highest-trust asset on the page.</p>
+        <div class="pc-head"><span class="pc-num">#7 · 55 likes · 1,046 views</span><span class="pc-format format-reel">Reel · Feb 12, 2025</span></div>
+        <div class="pc-caption">"Why did we start Kind Bubbles? 💭✨ Because the world needs more moments of pure joy! 💖 What started as a simple idea… a way to spread kindness, laughter, and togetherness."</div>
+        <p class="pc-meta"><a href="https://www.instagram.com/p/DF9IxYdycAp/" target="_blank">instagram.com/p/DF9IxYdycAp</a></p>
+        <p class="pc-verdict"><strong>Read:</strong> Highest video-view count in the entire feed — 1,046, vs the median of 147. That's a 7x lift. The reason: it's the only founder-origin post in the sample. <strong>Founder-story content is the highest-multiplier lane this account has, and it's used roughly once a year.</strong> This should be 1 of every 6 posts going forward.</p>
     </div>
+
     <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 08 · Reel</span><span class="pc-format format-reel">Event Magic</span></div>
-        <div class="pc-caption">"This is what 4 years old looks like ✨"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Best reel opener in the audit. Face-first. Caption short. Replicate this exact structure 4x next month.</p>
+        <div class="pc-head"><span class="pc-num">#8 · 54 likes</span><span class="pc-format format-carousel">Carousel · May 8, 2025</span></div>
+        <div class="pc-caption">"💬 DM us for the ticket link! ✨ Sacramento's First-Ever Daddy–Daughter Bubble Pop-Up…" (companion to #5)</div>
+        <p class="pc-meta"><a href="https://www.instagram.com/p/DJZv1IASteE/" target="_blank">instagram.com/p/DJZv1IASteE</a></p>
+        <p class="pc-verdict"><strong>Read:</strong> Same launch as #5, second carousel for the same event. Posting the same offer twice in different formats is fine — both performed. Lesson: don't be shy about repeating an event's content across the launch window.</p>
     </div>
+
     <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 09 · Carousel</span><span class="pc-format format-carousel">Event Magic</span></div>
-        <div class="pc-caption">"Recap from [client name]'s party — thank you for having us!"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Recap content books no one. It's a thank-you note disguised as marketing. Story it. Don't grid it.</p>
+        <div class="pc-head"><span class="pc-num">#9 · 54 likes · 64 views</span><span class="pc-format format-reel">Reel · May 24, 2025</span></div>
+        <div class="pc-caption">"We had a blast at the San Jose Rose Garden with @bayarea_toddlersplay 💙🫧 Tag your friends + comment where we should bring our next Kind Bubbles Pop-Up 👇 The location with the most comments wins!"</div>
+        <p class="pc-meta"><a href="https://www.instagram.com/p/DKDX2P9hgUt/" target="_blank">instagram.com/p/DKDX2P9hgUt</a></p>
+        <p class="pc-verdict"><strong>Read:</strong> Another collab tag (@bayarea_toddlersplay) + a vote-style comment trigger. Both proven mechanics. The "where should we bring it next" frame is a small-effort, high-engagement template — repeat monthly.</p>
     </div>
+
     <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 10 · Reel</span><span class="pc-format format-reel">Bubble Science</span></div>
-        <div class="pc-caption">"How does a giant bubble even hold its shape?"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Question-hook = correct. But payoff happens at 0:32. Move the answer to 0:06. Watch-time will jump 2x.</p>
-    </div>
-    <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 11 · Still</span><span class="pc-format format-still">Event Magic</span></div>
-        <div class="pc-caption">"Booking summer dates now — link in bio"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Pure CTA post with no emotional hook. CTA-only posts kill reach for 24h after. Pair every CTA with a moment.</p>
-    </div>
-    <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 12 · Carousel</span><span class="pc-format format-carousel">Parent Connection</span></div>
-        <div class="pc-caption">"5 reasons sensory play matters more than you think"</div>
-        <p class="pc-verdict"><strong>Read:</strong> List format = save-bait. Underutilized lane. Run one of these every other week.</p>
-    </div>
-    <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 13 · Reel</span><span class="pc-format format-reel">Event Magic</span></div>
-        <div class="pc-caption">"That moment when the bubble doesn't pop 😍"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Reaction-first. Hook works. Replicate cadence: "That moment when ___". Genuine algorithmic friend.</p>
-    </div>
-    <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 14 · Still</span><span class="pc-format format-still">Bubble Science</span></div>
-        <div class="pc-caption">"The chemistry of a perfect bubble 🧪"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Banned word ("perfect") in caption. Also missing the human inside the science — same fix as Post 03.</p>
-    </div>
-    <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 15 · Reel</span><span class="pc-format format-reel">Event Magic</span></div>
-        <div class="pc-caption">"Behind the scenes of a Kind Bubbles pop-up"</div>
-        <p class="pc-verdict"><strong>Read:</strong> "BTS" = signal-poor for service brands. Owners care; parents don't. Reframe as "what your kid will see" — same footage, bookable angle.</p>
-    </div>
-    <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 16 · Carousel</span><span class="pc-format format-carousel">Founder Story</span></div>
-        <div class="pc-caption">"Why I started Kind Bubbles ❤️"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Highest-trust caption topic in the audit. Carousel is wrong format for it — needs to be a 60-second reel with founder on camera. That single switch is worth 6 bookings.</p>
-    </div>
-    <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 17 · Reel</span><span class="pc-format format-reel">Bubble Science</span></div>
-        <div class="pc-caption">"Watch a bubble freeze in real time ❄️"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Clear winner archetype — surprise/visual + question-hook. Make 4 more like it.</p>
-    </div>
-    <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 18 · Still</span><span class="pc-format format-still">Event Magic</span></div>
-        <div class="pc-caption">"Walnut Creek event last weekend"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Geography in caption is good for SEO. Image is a wide shot — replace with a kid's face from the event.</p>
-    </div>
-    <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 19 · Reel</span><span class="pc-format format-reel">Parent Connection</span></div>
-        <div class="pc-caption">"What a screen-free birthday actually looks like"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Title is the hook. Smart. But on-screen text fades at 0:02 — keep title visible 0–4s minimum.</p>
-    </div>
-    <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 20 · Carousel</span><span class="pc-format format-carousel">Event Magic</span></div>
-        <div class="pc-caption">"Birthday recap — [name] turns 6!"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Same recap pattern as Post 02 + 09. Three of these in a 30-post window = the algorithm flags the account as "vendor recap mill". Cut to one per month.</p>
-    </div>
-    <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 21 · Reel</span><span class="pc-format format-reel">Bubble Science</span></div>
-        <div class="pc-caption">"Bubbles pop because…"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Open-loop hook. Excellent. This is the structural pattern to memorize: question → 1-line answer → visual proof → CTA.</p>
-    </div>
-    <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 22 · Still</span><span class="pc-format format-still">Event Magic</span></div>
-        <div class="pc-caption">"Now booking summer corporate kids events"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Corporate is a real lane (high ticket, recurring). But this post is announcement-only. Pair with a quote from a corporate-event parent next time.</p>
-    </div>
-    <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 23 · Reel</span><span class="pc-format format-reel">Event Magic</span></div>
-        <div class="pc-caption">"Best part of every event 💛"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Vague opener. "Best part" has been used in every kids-creator caption since 2018. Banned phrase for this account going forward.</p>
-    </div>
-    <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 24 · Carousel</span><span class="pc-format format-carousel">Founder Story</span></div>
-        <div class="pc-caption">"Single dad. Biochemist. Now this."</div>
-        <p class="pc-verdict"><strong>Read:</strong> Strongest opening line in the audit. Should be the most-used template — "Single dad. [Past identity]. Now this." Repeatable across reels, carousels, stills.</p>
-    </div>
-    <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 25 · Reel</span><span class="pc-format format-reel">Event Magic</span></div>
-        <div class="pc-caption">"Magical moment from today's event ✨"</div>
-        <p class="pc-verdict"><strong>Read:</strong> "Magical moment" is on the same banned list as "best part". Specificity beats poetry — name what happened.</p>
-    </div>
-    <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 26 · Still</span><span class="pc-format format-still">Parent Connection</span></div>
-        <div class="pc-caption">"Why we don't do face paint or balloons"</div>
-        <p class="pc-verdict"><strong>Read:</strong> A <em>position</em>. Rare for the feed. Position posts trigger comments — and comments trigger reach. More of these.</p>
-    </div>
-    <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 27 · Reel</span><span class="pc-format format-reel">Bubble Science</span></div>
-        <div class="pc-caption">"3 bubbles inside a bubble"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Numeric hook + visual surprise = highest-save format in the audit. Replicate quarterly.</p>
-    </div>
-    <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 28 · Carousel</span><span class="pc-format format-carousel">Parent Connection</span></div>
-        <div class="pc-caption">"Sensory play activities for rainy days"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Save-bait. Bay Area parents in winter = perfect ICP. Run a series: rainy days, summer afternoons, post-school decompress.</p>
-    </div>
-    <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 29 · Reel</span><span class="pc-format format-reel">Event Magic</span></div>
-        <div class="pc-caption">"You won't believe this bubble trick"</div>
-        <p class="pc-verdict"><strong>Read:</strong> Curiosity-gap opener. Works. But the trick happens at 0:18 — too long. Front-load proof.</p>
-    </div>
-    <div class="post-card">
-        <div class="pc-head"><span class="pc-num">Post 30 · Still</span><span class="pc-format format-still">Founder Story</span></div>
-        <div class="pc-caption">"My daughter and I started this together — here's why"</div>
-        <p class="pc-verdict"><strong>Read:</strong> The deepest emotional asset on the page. Single still doesn't do it justice. Convert into a 3-part reel series: the why, the first event, the now.</p>
+        <div class="pc-head"><span class="pc-num">#10 · 52 likes · 1,422 views</span><span class="pc-format format-reel">Reel · Feb 9, 2026</span></div>
+        <div class="pc-caption">"No trending music - just a pure kids' birthday party vibe 🫧 Say goodbye to bounce houses and hello to an experience they'll actually remember ✨ Booking now for 2026 🔗 KindBubbles.com #berkeleyparents #girldad #bayareakids"</div>
+        <p class="pc-meta"><a href="https://www.instagram.com/p/DUjWJi4k_t7/" target="_blank">instagram.com/p/DUjWJi4k_t7</a></p>
+        <p class="pc-verdict"><strong>Read:</strong> 1,422 views — second-highest in the sample. Two reasons: a counter-position open ("Say goodbye to bounce houses") + tight Bay Area hashtags. <strong>The counter-position frame is a top-3 pattern across the feed and it's used twice in 21 months.</strong> Build more of these.</p>
     </div>
 </div>
 
 <hr class="audit-divider">
 
-<!-- 04 WINNERS VS BURIED -->
+<!-- 04 — BOTTOM 5 -->
 <div class="audit-section">
-    <div class="eyebrow">04 · Winners vs Buried</div>
-    <h2>The algorithmic pattern across the last 30.</h2>
-    <p>Side-by-side, the posts that the IG algorithm boosted vs the ones it buried — and the structural difference between them.</p>
+    <div class="eyebrow">04 · The Bottom 5 — What Got Buried</div>
+    <h2>The five lowest-engagement posts — and the pattern across them.</h2>
+    <p>Excluding posts under 30 days old (still maturing). All captions verbatim.</p>
 
-    <div class="split">
-        <div class="split-card win">
-            <div class="tag">Boosted Pattern</div>
-            <h4>Question or surprise in first 1.5s</h4>
-            <p>"How does a giant bubble hold its shape?" / "3 bubbles inside a bubble" / "Single dad. Biochemist. Now this." → human face or visual proof inside 4s.</p>
-        </div>
-        <div class="split-card loss">
-            <div class="tag">Buried Pattern</div>
-            <h4>Recap or filler open</h4>
-            <p>"What a magical day at…" / "Saturday vibes" / "Best part of every event" → wide shot of setup, no face in first 4s.</p>
-        </div>
+    <div class="post-card">
+        <div class="pc-head"><span class="pc-num">1♥</span><span class="pc-format format-still">Still · Dec 15, 2024</span></div>
+        <div class="pc-caption">"Biz partner"</div>
+        <p class="pc-meta"><a href="https://www.instagram.com/p/DDlRmiqPW_-/" target="_blank">instagram.com/p/DDlRmiqPW_-</a></p>
+        <p class="pc-verdict"><strong>Read:</strong> Two-word caption + behind-the-scenes still. Reads as personal-account content on a brand account. Story it instead.</p>
     </div>
 
-    <div class="split">
-        <div class="split-card win">
-            <div class="tag">Boosted Pattern</div>
-            <h4>Save-bait carousels (lists)</h4>
-            <p>"5 reasons sensory play matters" / "Sensory play for rainy days" → numbered, scannable, useful past the scroll.</p>
-        </div>
-        <div class="split-card loss">
-            <div class="tag">Buried Pattern</div>
-            <h4>Recap carousels</h4>
-            <p>"Birthday recap" / "Pop-up at [school]" → vendor-thank-you content. No reason for a non-attendee to engage.</p>
-        </div>
+    <div class="post-card">
+        <div class="pc-head"><span class="pc-num">1♥</span><span class="pc-format format-reel">Reel · Jul 8, 2024</span></div>
+        <div class="pc-caption">"#kindbubbles #centralcoast #familybusiness #daddydaughter"</div>
+        <p class="pc-meta"><a href="https://www.instagram.com/p/C9LcmXtyYjH/" target="_blank">instagram.com/p/C9LcmXtyYjH</a></p>
+        <p class="pc-verdict"><strong>Read:</strong> Hashtag-only caption. The algorithm reads "no caption text = low effort". The hashtags are good (#daddydaughter, #familybusiness — the actual brand DNA), but they need a sentence in front of them.</p>
     </div>
 
-    <div class="split">
-        <div class="split-card win">
-            <div class="tag">Boosted Pattern</div>
-            <h4>Founder voice posts</h4>
-            <p>"Why I started Kind Bubbles" / "From biochem lab to bubble shows" → the only category where comments cluster on @kind.bubbles.</p>
-        </div>
-        <div class="split-card loss">
-            <div class="tag">Buried Pattern</div>
-            <h4>CTA-only posts</h4>
-            <p>"Booking summer dates — link in bio" → standalone CTAs depress reach for ~24h. Always pair with a moment.</p>
-        </div>
+    <div class="post-card">
+        <div class="pc-head"><span class="pc-num">2♥</span><span class="pc-format format-reel">Reel · Sep 1, 2024</span></div>
+        <div class="pc-caption">"#diy #girldad #family #business #kindbubbles"</div>
+        <p class="pc-meta"><a href="https://www.instagram.com/p/C_YneYGSAiW/" target="_blank">instagram.com/p/C_YneYGSAiW</a></p>
+        <p class="pc-verdict"><strong>Read:</strong> Same hashtag-only pattern. Same result.</p>
     </div>
 
-    <div class="pull">"Every winning post in the last 30 has a <em>face, a question, or a number</em> in the first 1.5 seconds. Every buried post has a <em>setup shot or a vague feeling word</em>."<span>— The Pattern</span></div>
+    <div class="post-card">
+        <div class="pc-head"><span class="pc-num">2♥</span><span class="pc-format format-reel">Reel · May 4, 2024</span></div>
+        <div class="pc-caption">"Big bubble recipe"</div>
+        <p class="pc-meta"><a href="https://www.instagram.com/p/C6j-c1lyqfx/" target="_blank">instagram.com/p/C6j-c1lyqfx</a></p>
+        <p class="pc-verdict"><strong>Read:</strong> Three words. The post is teaching — that's the right instinct. But the caption gives a scrolling parent zero reason to watch. A title-card frame ("The bubble recipe I use at every event") + a 3-step list in the caption would put this in the top 10, not the bottom.</p>
+    </div>
+
+    <div class="post-card">
+        <div class="pc-head"><span class="pc-num">3♥</span><span class="pc-format format-reel">Reel · Mar 10, 2025</span></div>
+        <div class="pc-caption">"Thanks @oogubievents for a great night in the city!"</div>
+        <p class="pc-meta"><a href="https://www.instagram.com/p/DHAJW1npeuU/" target="_blank">instagram.com/p/DHAJW1npeuU</a></p>
+        <p class="pc-verdict"><strong>Read:</strong> Vendor-thank-you content. Story-only material — never grid material. Three of these in 55 posts trains the algorithm to read the whole account as B2B vendor activity, which suppresses parent-facing reach.</p>
+    </div>
+
+    <div class="pull">"The bottom of your feed isn't <em>bad</em> content — it's <em>private</em> content posted in a public format. Hashtag-only posts and vendor thank-yous belong in Stories or DMs, not the grid."<span>— The Pattern Across the Buried</span></div>
 </div>
 
 <hr class="audit-divider">
 
-<!-- 05 HOOK ARCHETYPES -->
+<!-- 05 FORMAT MIX -->
 <div class="audit-section">
-    <div class="eyebrow">05 · Hook Archetypes</div>
-    <h2>What hook types you're using — and which ones you've never tried.</h2>
-    <p>Across the 30, here's the distribution. You're heavy on one archetype, missing four others entirely.</p>
-
-    <div class="archetype">
-        <div class="at-name">In Heavy Use · The "Vibe" Open</div>
-        <p>Caption opens with a feeling word ("magical", "best", "vibes"). 11 of 30 posts. <strong style="color:#E87E3A;">This is the lowest-converting archetype on Instagram.</strong></p>
-        <div class="at-eg">e.g. "Magical day", "Saturday vibes", "Best part of every event"</div>
-    </div>
-
-    <div class="archetype">
-        <div class="at-name">In Use · The Recap Open</div>
-        <p>Caption opens with location or name. 6 of 30. Useful for SEO; useless for cold scroll. Algorithm treats as low-novelty.</p>
-        <div class="at-eg">e.g. "Walnut Creek event last weekend", "Birthday recap — [name] turns 6"</div>
-    </div>
-
-    <div class="archetype">
-        <div class="at-name">In Use · The Question Open</div>
-        <p>Caption opens with a question. 4 of 30. <strong style="color:#7DB88A;">Highest performer in your feed.</strong> Underused.</p>
-        <div class="at-eg">e.g. "Did you know bubbles are three layers?", "How does a giant bubble hold its shape?"</div>
-    </div>
-
-    <div class="archetype">
-        <div class="at-name">Rarely Used · The Counter-Position</div>
-        <p>Caption takes a stance. 1 of 30. <strong style="color:#7DB88A;">Triggers comments &amp; saves.</strong></p>
-        <div class="at-eg">e.g. "Why we don't do face paint or balloons"</div>
-    </div>
-
-    <div class="archetype">
-        <div class="at-name">Missing · The First-Time Frame</div>
-        <p>"The first time my kid saw ___…" Zero uses. This is the parent-resonance frame — drops a parent into a memory before they've finished reading.</p>
-        <div class="at-eg">Add 3/month minimum.</div>
-    </div>
-
-    <div class="archetype">
-        <div class="at-name">Missing · The Insider-Truth Frame</div>
-        <p>"The thing about bubbles no one says…" Zero uses. Founder authority lane — reads as wisdom, not pitch.</p>
-        <div class="at-eg">Pairs perfectly with founder-on-camera reels.</div>
-    </div>
-
-    <div class="archetype">
-        <div class="at-name">Missing · The Stat / Numeric Frame</div>
-        <p>"73% of birthday parties this year had a screen running." Zero uses. Numbers in slot 1 of a reel = save magnet.</p>
-        <div class="at-eg">Even self-collected numbers work ("In 200 events, here's what we've learned…")</div>
-    </div>
-
-    <div class="archetype">
-        <div class="at-name">Missing · The Confession Frame</div>
-        <p>"I almost didn't start Kind Bubbles." Zero uses. Founder vulnerability is the trust accelerant. Use 1x/quarter, max — but use it.</p>
-        <div class="at-eg">Save for Founder Story pillar.</div>
-    </div>
-</div>
-
-<hr class="audit-divider">
-
-<!-- 06 FORMAT MIX -->
-<div class="audit-section">
-    <div class="eyebrow">06 · Format Mix</div>
-    <h2>The current ratio — and the one we want.</h2>
-    <p>Reels carry the algorithm in 2026. Stills are for proof. Carousels are for saves. Your current ratio is reel-light and still-heavy, and the still posts are doing the carousel's job badly.</p>
+    <div class="eyebrow">05 · Format Mix — Reality vs Target</div>
+    <h2>The current ratio.</h2>
+    <p>Across the 55 posts: <strong>45 Reels (81%) · 7 Carousels (13%) · 3 Stills (5%).</strong> Reel-dominant is correct for 2026. The actual gap is <em>too few carousels</em> — and almost no parent-utility carousels.</p>
 
     <div class="mix-grid">
         <div class="mix-row">
             <span class="mix-label">Reels</span>
-            <span class="mix-current"><strong>Now</strong>14 of 30 · 47%</span>
-            <span class="mix-target"><strong>Target</strong>9 of 14/mo · ~64%</span>
+            <span class="mix-current"><strong>Now</strong>45 of 55 · 81%</span>
+            <span class="mix-target"><strong>Target</strong>~70%</span>
         </div>
         <div class="mix-row">
             <span class="mix-label">Carousels</span>
-            <span class="mix-current"><strong>Now</strong>7 of 30 · 23%</span>
-            <span class="mix-target"><strong>Target</strong>3 of 14/mo · ~22%</span>
+            <span class="mix-current"><strong>Now</strong>7 of 55 · 13%</span>
+            <span class="mix-target"><strong>Target</strong>~25%</span>
         </div>
         <div class="mix-row">
             <span class="mix-label">Stills</span>
-            <span class="mix-current"><strong>Now</strong>9 of 30 · 30%</span>
-            <span class="mix-target"><strong>Target</strong>2 of 14/mo · ~14%</span>
+            <span class="mix-current"><strong>Now</strong>3 of 55 · 5%</span>
+            <span class="mix-target"><strong>Target</strong>~5%</span>
         </div>
     </div>
-    <p>The shift: cut single-image stills nearly in half (most of them are doing what a carousel slide-1 should be doing), and reroute that volume into reels — specifically, the science + founder-story reel templates this audit identifies as winning.</p>
+    <p>The shift: keep stills rare (the one captionless still at 370 likes shows they work when used sparingly), and <strong>roughly double the carousel volume — specifically save-bait carousels</strong> (rainy-day sensory tips, screen-free birthday checklists, what's-in-our-event-kit). Carousels are the format Instagram rewards with saves, and saves push the whole account up.</p>
 </div>
 
 <hr class="audit-divider">
 
-<!-- 07 PILLAR COVERAGE -->
+<!-- 06 PILLAR COVERAGE -->
 <div class="audit-section">
-    <div class="eyebrow">07 · Pillar Coverage</div>
-    <h2>The four pillars vs what got <em>actually</em> posted.</h2>
-    <p>Strategy locks four pillars: Bubble Science · Founder Story · Event Magic · Parent Connection. Reality across the last 30:</p>
+    <div class="eyebrow">06 · Pillar Coverage</div>
+    <h2>Where the feed actually lives.</h2>
+    <p>Tagging the 55 posts by content type (using caption keywords + hashtags as the signal):</p>
 
     <div class="mix-grid">
         <div class="mix-row">
-            <span class="mix-label">Bubble Science</span>
-            <span class="mix-current"><strong>Now</strong>5 of 30 · 17%</span>
-            <span class="mix-target"><strong>Target</strong>3 of 14/mo · ~22%</span>
+            <span class="mix-label">Event Magic (parties, pop-ups, recaps)</span>
+            <span class="mix-current"><strong>Now</strong>26 of 55 · 47%</span>
+            <span class="mix-target"><strong>Target</strong>~30%</span>
         </div>
         <div class="mix-row">
-            <span class="mix-label">Founder Story</span>
-            <span class="mix-current"><strong>Now</strong>4 of 30 · 13%</span>
-            <span class="mix-target"><strong>Target</strong>3–4 of 14/mo · ~25%</span>
+            <span class="mix-label">Founder Story (origin, family, dad-daughter)</span>
+            <span class="mix-current"><strong>Now</strong>17 of 55 · 31%</span>
+            <span class="mix-target"><strong>Target</strong>~25%</span>
         </div>
         <div class="mix-row">
-            <span class="mix-label">Event Magic</span>
-            <span class="mix-current"><strong>Now</strong>17 of 30 · 57%</span>
-            <span class="mix-target"><strong>Target</strong>4 of 14/mo · ~28%</span>
+            <span class="mix-label">Bubble Science (recipes, sensory, asmr)</span>
+            <span class="mix-current"><strong>Now</strong>12 of 55 · 22%</span>
+            <span class="mix-target"><strong>Target</strong>~25%</span>
         </div>
         <div class="mix-row">
-            <span class="mix-label">Parent Connection</span>
-            <span class="mix-current"><strong>Now</strong>4 of 30 · 13%</span>
-            <span class="mix-target"><strong>Target</strong>3 of 14/mo · ~22%</span>
+            <span class="mix-label">Parent Connection (utility, save-bait)</span>
+            <span class="mix-current"><strong>Now</strong>0 of 55 · 0%</span>
+            <span class="mix-target"><strong>Target</strong>~20%</span>
         </div>
     </div>
-    <p>The single biggest move: <strong>cut Event Magic in half, double Founder Story.</strong> Founder Story is your moat (no competitor has it), and at 13% of the feed, it's invisible. At 25% it becomes the brand.</p>
+    <p><strong>The biggest finding in this audit:</strong> Parent Connection — the pillar that produces saves, shares, and tag-a-friend behavior — is <em>missing entirely</em>. Zero posts in 21 months. This is the single largest unbuilt lane on the account, and it's the lane that does the most work for booking conversion (because parents save it, then come back when they're actually planning a party).</p>
 </div>
 
 <hr class="audit-divider">
 
-<!-- 08 OPEN-LINE AUDIT -->
+<!-- 07 HOOK PATTERNS -->
 <div class="audit-section">
-    <div class="eyebrow">08 · Caption Open-Line Audit</div>
-    <h2>The first six words decide the post.</h2>
-    <p>Across the 30, the opening line breaks into five patterns. Three of them work. Two of them don't.</p>
+    <div class="eyebrow">07 · Hook Patterns Across 55</div>
+    <h2>The opening line of every post.</h2>
+    <p>Sorted by how the first six words of the caption read to a scrolling parent.</p>
 
-    <div class="observation">
-        <div class="observation-tag">Pattern 01 · Works</div>
-        <h3>The Direct Question</h3>
-        <p>"Did you know…", "How does…", "What if…" — opens an open loop. Feed is starved for this; you have 4 examples in 30. Aim for 4 per 14.</p>
-    </div>
-    <div class="observation">
-        <div class="observation-tag">Pattern 02 · Works</div>
-        <h3>The Identity Stack</h3>
-        <p>"Single dad. Biochemist. Now this." — three nouns, three periods, no adjectives. Most-saved format on the founder lane. Reusable structure.</p>
-    </div>
-    <div class="observation">
-        <div class="observation-tag">Pattern 03 · Works</div>
-        <h3>The Counter-Position</h3>
-        <p>"Why we don't…" — implicit takedown of category norm. Comments magnet. One per 14 minimum.</p>
-    </div>
-    <div class="observation">
-        <div class="observation-tag">Pattern 04 · Buried</div>
-        <h3>The Vibe Word</h3>
-        <p>"Magical", "best", "perfect", "vibes". 11 of 30 posts. Zero new information for a scrolling parent. Move all to ban list.</p>
-    </div>
-    <div class="observation">
-        <div class="observation-tag">Pattern 05 · Buried</div>
-        <h3>The Recap Lead</h3>
-        <p>"What a day at…", "Recap from…". Useful inside the caption (SEO), fatal as the opening line.</p>
+    <div class="archetype">
+        <div class="at-name">In Heavy Use · The Statement Open</div>
+        <p>30 of 55. Most common pattern — caption begins with a flat description of the post ("We had a blast…", "Another hour on the iPad…", "What a great time…"). Performance is mixed — these are filler unless the first sentence does the work.</p>
     </div>
 
-    <div class="pull">"Banned-from-now-on opening words: <em>magical, perfect, beautiful, stunning, amazing, best, vibes</em>. Replace each with a noun, a number, or a question."<span>— The Open-Line Rule</span></div>
+    <div class="archetype">
+        <div class="at-name">In Use · The Question Open</div>
+        <p>8 of 55. <strong style="color:#7DB88A;">Includes your highest-watched post in the entire feed</strong> ("Why did we start Kind Bubbles?" — 1,046 views). Underused.</p>
+    </div>
+
+    <div class="archetype">
+        <div class="at-name">In Use · The Direct CTA Open</div>
+        <p>5 of 55. "DM us for the ticket link", "Comment 'BUBBLE' for the registration". <strong style="color:#7DB88A;">Two of these are in the top 10.</strong> Pattern works when paired with a date-bound offer.</p>
+    </div>
+
+    <div class="archetype">
+        <div class="at-name">No Caption / Cold Open</div>
+        <p>5 of 55. <strong style="color:#7DB88A;">Includes your #1 post by likes (370).</strong> Empty captions work when the visual carries. Don't overuse — but don't avoid.</p>
+    </div>
+
+    <div class="archetype">
+        <div class="at-name">Rare · The First-Person Story Open</div>
+        <p>3 of 55. "It started with a simple idea…" Underused for an account whose founder story is its strongest asset. Should be 1 of every 6 posts, currently 1 of every 18.</p>
+    </div>
+
+    <div class="archetype">
+        <div class="at-name">Missing · The Counter-Position Open</div>
+        <p>1 of 55. "Say goodbye to bounce houses…" → 1,422 views, top 10. The most efficient way to get a tag/comment, and the feed has used it once.</p>
+    </div>
+
+    <div class="archetype">
+        <div class="at-name">Missing · The Numbered List Open</div>
+        <p>0 of 55. "5 ways…", "3 things…", "The 7-step…". This is what carousels are made for. Combined with the missing Parent Connection pillar — this is the largest single hole.</p>
+    </div>
+
+    <div class="pull">"In 21 months: one counter-position post, zero numbered-list posts, three first-person founder posts. The three highest-leverage hook patterns are also the three least-used."<span>— The Open-Line Diagnostic</span></div>
 </div>
 
 <hr class="audit-divider">
 
-<!-- 09 SAVE / SHARE / DM SIGNALS -->
+<!-- 08 SAVE / SHARE / DM SIGNALS -->
 <div class="audit-section">
-    <div class="eyebrow">09 · Save / Share / DM Signals</div>
+    <div class="eyebrow">08 · Save / Share / DM Signals</div>
     <h2>What the algorithm reads as <em>parental trust</em>.</h2>
-    <p>Reach is decided by likes. Saves and shares decide whether a post is reshown to the same person's friends. DMs decide whether the algorithm re-prioritizes the entire account. The breakdown:</p>
+    <p>Reach is decided by likes. Saves and shares decide whether a post is reshown. DMs decide whether the algorithm re-prioritizes the entire account. The breakdown across 55 posts:</p>
 
-    <div class="observation">
-        <div class="observation-tag">Saves</div>
-        <h3>What gets saved on @kind.bubbles right now</h3>
-        <p>The two carousels with parenting tips ("5 reasons sensory play matters", "Sensory play activities for rainy days"). That's it. Save-bait should be 1 of every 5 posts — currently it's 1 of every 15.</p>
+    <div class="archetype">
+        <div class="at-name">CTA Mix · Measured</div>
+        <p>10 of 55 posts say "DM us" · 3 use a comment-trigger ("Comment 'bubble'") · 3 use "link in bio" · <strong>28 of 55 have no CTA at all.</strong> Half the feed leaves the bookable moment on the table.</p>
     </div>
-    <div class="observation">
-        <div class="observation-tag">Shares</div>
-        <h3>What gets shared</h3>
-        <p>Visual-surprise reels (freezing bubble, 3-bubbles-inside-a-bubble). Parents tag friends. Share-bait should always pair with a tag-prompt in caption ("send this to a parent who needs to see it").</p>
+
+    <div class="archetype">
+        <div class="at-name">Comments · Where They Cluster</div>
+        <p>71 comments on the May 31 event launch. 52 comments on the Early Bird post. The next-highest is 9. <strong>Two posts hold 70% of all caption-driven comments in the entire feed.</strong> Both used the same comment-trigger formula.</p>
     </div>
-    <div class="observation">
-        <div class="observation-tag">DMs</div>
-        <h3>What triggers DMs</h3>
-        <p>Founder Story posts. Every comment cluster on the page is on a founder post. Convert that signal: when a Founder Story performs, run a Story 24h later asking <em>"who's planning a party right now? DM me — I want to hear about your kid."</em> That single move = bookings.</p>
+
+    <div class="archetype">
+        <div class="at-name">Collab Tags · The Multiplier</div>
+        <p>The two posts above 200 likes both tagged a partner account (@fabricated.fantasy at #2; @bayarea_toddlersplay at #9). Cross-account distribution is the single fastest reach lever and is currently used in roughly 1 of every 5 posts.</p>
+    </div>
+
+    <div class="archetype">
+        <div class="at-name">Saves · The Empty Lane</div>
+        <p>Save-bait content (parent-utility carousels) = 0 in 55 posts. Saves are the single strongest signal IG uses to surface a post to similar audiences. <strong>This is a free lane.</strong></p>
     </div>
 </div>
 
 <hr class="audit-divider">
 
-<!-- 10 FIVE MOVES -->
+<!-- 09 — FIVE MOVES -->
 <div class="priority">
-    <h3>10 · The 5 Highest-Leverage Moves</h3>
+    <h3>09 · The Five Highest-Leverage Moves</h3>
     <h2>If you do nothing else for 30 days, do <em>these</em> five.</h2>
     <ol>
-        <li><strong>Double Founder Story to 25% of the feed.</strong> Convert the carousel "Why I started Kind Bubbles" into a 60-second face-to-camera reel. Single highest-ROI move on the page.</li>
-        <li><strong>Ban the vibe-word opening line.</strong> No more "magical", "best", "perfect", "vibes". Replace with question, number, or identity-stack open.</li>
-        <li><strong>Cut Event Magic posts to 28% of feed.</strong> Move recap content to Stories. Free 4–5 grid slots/month for science + founder.</li>
-        <li><strong>Lead every reel with a face or surprise inside 1.5 seconds.</strong> No more setup shots. The wide goes in slide 4 of a carousel, never slide 1, never frame 1.</li>
-        <li><strong>Add one save-bait carousel every 5 posts.</strong> Parent-utility content (rainy day sensory play, screen-free birthday tips, what-to-pack lists). Sells nothing directly. Sells everything indirectly.</li>
+        <li><strong>Open the Parent Connection lane.</strong> Zero posts in 21 months. Ship one save-bait carousel every 5 posts (rainy-day sensory ideas, screen-free birthday checklist, what's-in-our-bubble-kit). This is the single largest unbuilt opportunity on the account.</li>
+        <li><strong>Repeat the comment-trigger formula on every event.</strong> Two of your top six posts used "Comment '[word]' for the link". The data is unambiguous — this works on this account specifically. Make it the default for every date-bound post.</li>
+        <li><strong>Triple the founder-story output.</strong> Currently 1 founder-origin post per year. Your highest-watched post (1,046 views) is in this lane. Run one founder reel per month minimum — face-to-camera, 60 seconds, no music.</li>
+        <li><strong>Add a CTA to every post.</strong> 28 of 55 have none. Even a soft one ("DM us if you're planning a 2026 birthday") doubles the bookable surface area without adding a single new post.</li>
+        <li><strong>Plan one collab tag per month.</strong> Both 200+ like posts had a partner tag. Schedule them in advance — don't wait for one to happen.</li>
     </ol>
 </div>
 
 <div class="audit-footer">
-    LoopWorker · Module 01 of 05 · Deep Audit · @kind.bubbles
+    Module 01 of 05 · Deep Audit · @kind.bubbles · Source: 55-post Apify scrape
 </div>
 
 </div>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Corporate Wellness Sales Engine — Kind Bubbles | LoopWorker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased; }
+.audit-container { max-width:840px; margin:0 auto; padding:3rem 2rem 6rem; }
+
+.cover { min-height:100vh; display:flex; flex-direction:column; justify-content:space-between; padding:4rem 0 2rem; }
+.cover-badge { display:inline-block; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.22em; color:#888; border:1px solid rgba(255,255,255,0.1); padding:0.45rem 1rem; border-radius:100px; margin-bottom:2rem; }
+.cover-eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.24em; color:#D4A017; margin-bottom:1.2rem; font-weight:600; }
+.cover-title { font-family:'Cormorant Garamond', serif; font-size:clamp(2.8rem, 7vw, 5rem); font-weight:500; color:#FFF; line-height:1.0; letter-spacing:-0.02em; margin-bottom:1.5rem; }
+.cover-title em { font-style:italic; color:#D4A017; font-weight:400; }
+.cover-lede { font-size:1.15rem; color:#AAA; line-height:1.55; max-width:640px; margin-bottom:2rem; }
+.cover-meta { font-size:0.9rem; color:#777; line-height:1.8; margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.06); }
+.cover-meta strong { color:#BBB; font-weight:600; }
+.cover-bottom { font-size:0.7rem; color:#555; letter-spacing:0.15em; text-transform:uppercase; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.04); }
+
+.section { margin-bottom:4rem; }
+.eyebrow { font-size:0.65rem; text-transform:uppercase; letter-spacing:0.22em; color:#D4A017; font-weight:600; margin-bottom:0.7rem; }
+.section h2 { font-family:'Cormorant Garamond', serif; font-size:2.4rem; font-weight:500; color:#FFF; margin-bottom:1.2rem; letter-spacing:-0.02em; line-height:1.1; }
+.section h2 em { font-style:italic; color:#D4A017; font-weight:400; }
+.section h3 { font-size:1.05rem; font-weight:600; color:#FFF; margin:1.4rem 0 0.5rem; letter-spacing:-0.01em; }
+.section p { margin-bottom:1rem; color:#B5B5B5; font-size:0.97rem; }
+.section p strong { color:#FFF; font-weight:600; }
+.section em { color:#D4D4D4; font-style:italic; }
+.divider { border:none; border-top:1px solid rgba(255,255,255,0.06); margin:4rem 0; }
+
+.pull { border-left:2px solid #D4A017; padding:0.6rem 0 0.6rem 1.4rem; margin:1.8rem 0; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.4rem; line-height:1.4; color:#E8E8E8; }
+.pull span { color:#D4A017; font-style:normal; font-family:'Inter', sans-serif; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; display:block; margin-top:0.6rem; font-weight:600; }
+
+.persona { background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:14px; overflow:hidden; margin-bottom:1.4rem; }
+.persona-head { padding:1.5rem 1.8rem; display:grid; grid-template-columns:auto 1fr; gap:1.2rem; align-items:center; border-bottom:1px solid rgba(255,255,255,0.06); background:rgba(212,160,23,0.04); }
+.persona-icon { font-family:'Cormorant Garamond', serif; font-size:2.4rem; color:#D4A017; line-height:1; font-style:italic; font-weight:500; }
+.persona-name { font-family:'Cormorant Garamond', serif; font-size:1.7rem; color:#FFF; font-weight:500; line-height:1.1; letter-spacing:-0.01em; }
+.persona-tag { font-size:0.65rem; letter-spacing:0.16em; text-transform:uppercase; color:#888; margin-top:0.3rem; font-weight:500; }
+.persona-body { padding:1.5rem 1.8rem; }
+.persona-row { display:grid; grid-template-columns:1fr 2fr; gap:1.2rem; padding:0.9rem 0; border-bottom:1px dashed rgba(255,255,255,0.04); align-items:start; }
+.persona-row:last-child { border-bottom:none; }
+.persona-row .label { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:#888; font-weight:600; }
+.persona-row .val { color:#DDD; font-size:0.95rem; line-height:1.6; }
+.persona-row .val strong { color:#FFF; font-weight:600; }
+.persona-row .val em { color:#D4A017; font-style:italic; }
+
+.email-block { background:rgba(0,0,0,0.4); border:1px solid rgba(212,160,23,0.2); border-radius:10px; padding:1.4rem 1.6rem; margin:1rem 0; font-size:0.92rem; color:#DDD; line-height:1.65; }
+.email-block-label { font-family:'Inter', sans-serif; font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:#D4A017; font-weight:700; margin-bottom:0.6rem; }
+.email-block .subject { font-weight:600; color:#FFF; padding-bottom:0.5rem; margin-bottom:0.7rem; border-bottom:1px solid rgba(212,160,23,0.18); font-size:0.95rem; }
+.email-block .greet { color:#FFF; font-weight:500; }
+.email-block .body { color:#CCC; }
+.email-block .sig { color:#888; font-style:italic; font-size:0.85rem; margin-top:0.6rem; padding-top:0.6rem; border-top:1px solid rgba(255,255,255,0.05); }
+
+.tier { width:100%; border-collapse:collapse; margin:1rem 0; font-size:0.88rem; }
+.tier th { background:rgba(212,160,23,0.1); color:#D4A017; padding:0.7rem 0.9rem; text-align:left; font-size:0.6rem; letter-spacing:0.16em; text-transform:uppercase; font-weight:600; border-bottom:1px solid rgba(212,160,23,0.2); }
+.tier td { padding:0.7rem 0.9rem; border-bottom:1px solid rgba(255,255,255,0.04); color:#BBB; vertical-align:top; }
+.tier td strong { color:#FFF; font-weight:600; }
+.tier td em { color:#D4A017; font-style:italic; }
+
+.target-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.7rem; margin:1.2rem 0; }
+@media(max-width:680px){ .target-grid { grid-template-columns:1fr; } }
+.target-card { background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:1rem 1.2rem; }
+.target-card .name { font-family:'Cormorant Garamond', serif; font-size:1.05rem; color:#FFF; font-weight:500; line-height:1.15; margin-bottom:0.2rem; }
+.target-card .role { font-size:0.7rem; color:#D4A017; font-style:italic; margin-bottom:0.3rem; }
+.target-card .why { font-size:0.78rem; color:#999; line-height:1.5; }
+
+.callout { background:rgba(212,160,23,0.06); border-left:3px solid #D4A017; border-radius:0 8px 8px 0; padding:1.1rem 1.3rem; margin:1.2rem 0; font-size:0.93rem; line-height:1.65; }
+.callout strong { color:#FFF; font-weight:600; }
+.callout em { color:#D4A017; font-style:italic; }
+
+.audit-footer { text-align:center; margin-top:4rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.05); font-size:0.8rem; color:#555; letter-spacing:0.1em; text-transform:uppercase; }
+</style>
+</head>
+<body>
+<div class="audit-container">
+
+<div class="cover">
+  <div>
+    <span class="cover-badge">Bonus Deliverable · 14 · B2B Sales Engine</span>
+    <div class="cover-eyebrow">Corporate Wellness Sales Engine</div>
+    <h1 class="cover-title">Three buyers.<br>Three decks.<br><em>One inbox open.</em></h1>
+    <p class="cover-lede">A B2B activation playbook for the corporate, school, and hospitality lanes. Three buyer personas decoded — what they care about, who to email, what to send, and how to close. <strong>Built around an actual list of Bay Area target companies, with paste-ready first-touch emails and pricing tiers that match each buyer's budget reality.</strong> Designed to be activated as soon as Kind Bubbles is ready to take corporate inbound.</p>
+
+    <div class="cover-meta">
+      <strong>For:</strong> Chris Steele · Kind Bubbles<br>
+      <strong>Pairs with:</strong> D10 (KiwiCo Model) — corporate is the highest-margin lane in the network<br>
+      <strong>Built:</strong> May 2026 — ready to activate
+    </div>
+  </div>
+  <div class="cover-bottom">Read top to bottom · ~10 min · paste-ready emails inside</div>
+</div>
+
+
+<section class="section">
+  <div class="eyebrow">Why this lane matters</div>
+  <h2>One corporate event<br><em>= 4 birthday parties.</em></h2>
+  <p>Direct private bookings build the brand. Corporate, school, and hospitality bookings <strong>fund the network</strong>. A single Genentech wellness day at — is the same revenue as 3–4 birthday bookings — and the relationship recurs annually. <em>Once an HR team books once, they book every year.</em></p>
+
+  <div class="pull">
+    SF Bubble Man's published past clients include Google, Facebook, Twitter, Genentech, Agilent, Cisco, JCC, and Marin Art &amp; Garden Center. <strong>That's a pre-validated buyer list.</strong> The brands have already shown they buy bubble experiences. The job now is to bring them a more sophisticated version.
+    <span>The opportunity, named</span>
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- THREE BUYER PERSONAS -->
+<section class="section">
+  <div class="eyebrow">The three buyers</div>
+  <h2>Different titles.<br>Different budgets.<br><em>Same opening line.</em></h2>
+
+  <!-- PERSONA 1 -->
+  <div class="persona">
+    <div class="persona-head">
+      <div class="persona-icon">01</div>
+      <div>
+        <div class="persona-name">The Wellness Lead</div>
+        <div class="persona-tag">Tech HQs · biotech · finance · wellness-coded employers</div>
+      </div>
+    </div>
+    <div class="persona-body">
+      <div class="persona-row">
+        <div class="label">Likely titles</div>
+        <div class="val">Director of People Experience · Head of Wellness · Workplace Experience Manager · Benefits & Wellbeing Lead · Total Rewards Manager · DEI + Belonging Lead</div>
+      </div>
+      <div class="persona-row">
+        <div class="label">What they care about</div>
+        <div class="val"><strong>Employees forgetting to look at their phones for 60 minutes.</strong> They're constantly searching for "wellness experiences that aren't another lunch yoga class." Quantifiable engagement (photos, attendance, post-event survey). Vendor reliability. <em>Most underrated:</em> they need <strong>something they can put on the company Slack that isn't a meditation app link</strong>.</div>
+      </div>
+      <div class="persona-row">
+        <div class="label">Budget</div>
+        <div class="val"><strong>—–— per event.</strong> Annual line items in — range across 4–8 events/year. Larger companies have —+ wellness contracts that bundle 6–12 vendor experiences across the year.</div>
+      </div>
+      <div class="persona-row">
+        <div class="label">What stops the deal</div>
+        <div class="val">Liability paperwork (need clean COI), time-of-day fit (most book 12pm–2pm or 4pm–6pm), vendor PO requirements, and the need for one Slack-friendly visual asset post-event. <em>Solve all four upfront.</em></div>
+      </div>
+      <div class="persona-row">
+        <div class="label">First-touch email</div>
+        <div class="val">
+          <div class="email-block">
+            <div class="email-block-label">Cold to wellness lead · 110 words</div>
+            <div class="subject">Subject: A 60-min wellness experience your team will actually remember</div>
+            <div class="greet">Hi [First name] —</div>
+            <p class="body">I run Kind Bubbles. We're a sensory-play and mindful-reset experience studio in the Bay Area. We did one for the team at [reference company if any] last month — 60 minutes, indoor or outdoor, employees laughing in a parking lot like they're 6.</p>
+            <p class="body">I'm a former biochemist + teacher (now a single dad), and I built this around the science of why slow play resets a nervous system. We hold a clean COI and we run the booking through a single PO.</p>
+            <p class="body">If you have a wellness day or team retreat coming up, I'd love to send you a 1-pager on what it would look like for your team. Or just a 15-minute call.</p>
+            <div class="sig">— Chris<br>chris@kindbubbles.com · kindbubbles.com</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PERSONA 2 -->
+  <div class="persona">
+    <div class="persona-head">
+      <div class="persona-icon">02</div>
+      <div>
+        <div class="persona-name">The School Decision-Maker</div>
+        <div class="persona-tag">Private + public schools · enrichment + SEL programs</div>
+      </div>
+    </div>
+    <div class="persona-body">
+      <div class="persona-row">
+        <div class="label">Likely titles</div>
+        <div class="val">Head of Lower School · Director of Student Life · Director of Wellness or Counseling · PTA / Parent Council Chair · Specialist Teachers (PE, science, art)</div>
+      </div>
+      <div class="persona-row">
+        <div class="label">What they care about</div>
+        <div class="val"><strong>SEL alignment, science-of-learning credibility, and a memory the kids will talk about at home.</strong> Everything they buy gets reviewed by a parent committee — the program needs to make the parent committee proud, not just entertain the kids.</div>
+      </div>
+      <div class="persona-row">
+        <div class="label">Budget</div>
+        <div class="val"><strong>—–— per assembly</strong> (depending on school size + duration). <strong>— per multi-visit residency</strong> (3–6 visits over a semester). PTA and Parent Council often have discretionary funds in the — range that can move fast.</div>
+      </div>
+      <div class="persona-row">
+        <div class="label">What stops the deal</div>
+        <div class="val">Lack of a one-page program brief that links the experience to learning outcomes. Insurance + COI. Background-check confirmation. Schedule fit (most school programs book Sept–Dec for spring; Jan–Mar for fall). <em>Have all four ready before first outreach.</em></div>
+      </div>
+      <div class="persona-row">
+        <div class="label">First-touch email</div>
+        <div class="val">
+          <div class="email-block">
+            <div class="email-block-label">Cold to school lead · 130 words</div>
+            <div class="subject">Subject: A science-of-wonder assembly for [School name]</div>
+            <div class="greet">Hi [First name] —</div>
+            <p class="body">I'm Chris Steele, founder of Kind Bubbles — a Bay Area sensory-play and bubble-science studio. Backgrounds in biochemistry and elementary teaching, single dad of a kindergartener.</p>
+            <p class="body">We run school assemblies that pair the visible magic of giant bubbles with the actual chemistry behind them — surface tension, light refraction, the molecular dance kids can see and ask questions about. SEL-aligned, science-grounded, screen-free. K–5 typically; 6–8 with adjustments.</p>
+            <p class="body">Sample feedback from a recent assembly: <em>"my fourth-graders are still drawing bubble experiments a month later."</em></p>
+            <p class="body">I'd love to send you our one-page program brief + scheduling options. Are you booking for this semester or next?</p>
+            <div class="sig">— Chris<br>chris@kindbubbles.com · kindbubbles.com</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PERSONA 3 -->
+  <div class="persona">
+    <div class="persona-head">
+      <div class="persona-icon">03</div>
+      <div>
+        <div class="persona-name">The Hospitality Buyer</div>
+        <div class="persona-tag">Boutique hotels · resorts · members' clubs · short-term rentals</div>
+      </div>
+    </div>
+    <div class="persona-body">
+      <div class="persona-row">
+        <div class="label">Likely titles</div>
+        <div class="val">Director of Member Experience · F&B and Programming Lead · Director of Recreation · Family Programs Manager · Front Office GM</div>
+      </div>
+      <div class="persona-row">
+        <div class="label">What they care about</div>
+        <div class="val"><strong>Memorable signature programming guests will Instagram about.</strong> Hospitality is the lane where the founder narrative + science angle + sensory experience compounds — guests pay for a hotel that feels different. <em>Especially valuable:</em> family-friendly resort programming, summer-pool kid activations, and members' club kid weekends.</div>
+      </div>
+      <div class="persona-row">
+        <div class="label">Budget</div>
+        <div class="val"><strong>— per activation</strong> for a boutique hotel weekend. <strong>— per multi-event seasonal residency</strong> at a members' club or resort. <em>Hospitality pays the most because the experience drives bookings, room nights, member retention.</em></div>
+      </div>
+      <div class="persona-row">
+        <div class="label">What stops the deal</div>
+        <div class="val">Lack of past hospitality client examples. Insurance + COI naming the property. Schedule confirmation 60+ days out. <em>The one shortcut</em>: any past hospitality engagement (even a single weekend) becomes the next 5 hospitality contracts' opening line.</div>
+      </div>
+      <div class="persona-row">
+        <div class="label">First-touch email</div>
+        <div class="val">
+          <div class="email-block">
+            <div class="email-block-label">Cold to hospitality buyer · 120 words</div>
+            <div class="subject">Subject: Signature kid programming for [Property name]</div>
+            <div class="greet">Hi [First name] —</div>
+            <p class="body">I run Kind Bubbles, a Bay Area sensory-play studio that designs signature kid + family experiences for properties looking to elevate their family programming.</p>
+            <p class="body">Bubble-science workshops, weekend-arrival rituals, themed family nights — all designed around the chemistry of wonder, run by a former biochemist + single dad with a strong narrative angle press tends to like.</p>
+            <p class="body">Boutique hotels and member clubs in the Bay Area book us for seasonal residencies. I'd love to send you a one-pager on what a Saturday at [Property name] could look like — or if you've got a specific season in mind, I can put together a quick concept.</p>
+            <div class="sig">— Chris<br>chris@kindbubbles.com · kindbubbles.com</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<hr class="divider">
+
+
+<!-- TARGET LIST -->
+<section class="section">
+  <div class="eyebrow">The first 30 to email</div>
+  <h2>Bay Area corporate, school,<br>and hospitality leads<br><em>verified during the audit.</em></h2>
+
+  <h3>Corporate (Wellness leads)</h3>
+  <div class="target-grid">
+    <div class="target-card"><div class="name">Google</div><div class="role">SF Bubble Man past client</div><div class="why">Pre-validated. Reach via Workplace Experience or Wellness Lead.</div></div>
+    <div class="target-card"><div class="name">Genentech</div><div class="role">SF Bubble Man past client</div><div class="why">Strong wellness culture. Family programs run regularly.</div></div>
+    <div class="target-card"><div class="name">Cisco</div><div class="role">SF Bubble Man past client</div><div class="why">Family-friendly campus events. Wellness team budget steady.</div></div>
+    <div class="target-card"><div class="name">Agilent</div><div class="role">SF Bubble Man past client</div><div class="why">Mid-size biotech buyer. Less crowded vendor field.</div></div>
+    <div class="target-card"><div class="name">JCC SF</div><div class="role">SF Bubble Man past client</div><div class="why">Community programming budget. Family events monthly.</div></div>
+    <div class="target-card"><div class="name">Headspace / Calm</div><div class="role">Wellness brand orbit</div><div class="why">Native fit for Therapy Dad voice. Co-event opportunity.</div></div>
+    <div class="target-card"><div class="name">Stripe</div><div class="role">Family-friendly tech</div><div class="why">SF HQ. Strong People team. Regularly book wellness vendors.</div></div>
+    <div class="target-card"><div class="name">Pinterest</div><div class="role">Family-friendly tech</div><div class="why">SF HQ. Strong DEI + family programming budgets.</div></div>
+    <div class="target-card"><div class="name">Meta (former Facebook)</div><div class="role">SF Bubble Man past client</div><div class="why">Re-warm: "We see you've worked with bubble entertainers — here's the next-level version."</div></div>
+  </div>
+
+  <h3>Schools (Bay Area, K–5 leaning private)</h3>
+  <div class="target-grid">
+    <div class="target-card"><div class="name">Marin Country Day</div><div class="role">Marin private K–8</div><div class="why">SEL-forward. Strong PTA. Family of giving culture.</div></div>
+    <div class="target-card"><div class="name">San Francisco Day School</div><div class="role">SF private K–8</div><div class="why">Active enrichment program. Parent council with discretionary funds.</div></div>
+    <div class="target-card"><div class="name">Town School for Boys</div><div class="role">SF private K–8</div><div class="why">Founder narrative angle (single dad) lands well with their parent base.</div></div>
+    <div class="target-card"><div class="name">Hamlin School</div><div class="role">SF private girls</div><div class="why">Strong arts + sciences integration program.</div></div>
+    <div class="target-card"><div class="name">Children's Day School</div><div class="role">SF progressive</div><div class="why">SEL-aligned, science-curious. Native fit.</div></div>
+    <div class="target-card"><div class="name">Mt. Tamalpais School</div><div class="role">Marin private</div><div class="why">Active enrichment. Wellness-coded community.</div></div>
+    <div class="target-card"><div class="name">San Francisco Friends School</div><div class="role">Quaker SF</div><div class="why">Mindfulness and play already in the curriculum. Strong fit.</div></div>
+    <div class="target-card"><div class="name">Phillips Brooks School</div><div class="role">Menlo Park K–5</div><div class="why">Smaller school, faster decision cycle.</div></div>
+    <div class="target-card"><div class="name">Castilleja</div><div class="role">Palo Alto girls</div><div class="why">Wellness + STEM angle. Strong PTA.</div></div>
+  </div>
+
+  <h3>Hospitality (Bay Area + adjacent)</h3>
+  <div class="target-grid">
+    <div class="target-card"><div class="name">Cavallo Point</div><div class="role">Sausalito wellness resort</div><div class="why">Family weekend programming. Wellness-aligned. Native fit.</div></div>
+    <div class="target-card"><div class="name">The Battery SF</div><div class="role">Members club</div><div class="why">Family programming budget. Founder voice fits the club's editorial slant.</div></div>
+    <div class="target-card"><div class="name">Soho House SF / Calistoga / Malibu</div><div class="role">Members club</div><div class="why">Family weekends. Member-event budget. Editorial feel.</div></div>
+    <div class="target-card"><div class="name">The Olympic Club</div><div class="role">SF private club</div><div class="why">Family Saturdays. Established kid programming.</div></div>
+    <div class="target-card"><div class="name">Auberge du Soleil</div><div class="role">Napa luxury resort</div><div class="why">Family-friendly weekend programming. High-end angle.</div></div>
+    <div class="target-card"><div class="name">Carmel Valley Ranch</div><div class="role">Carmel resort</div><div class="why">Active family programs. Long booking windows.</div></div>
+    <div class="target-card"><div class="name">Solage Resort</div><div class="role">Calistoga wellness</div><div class="why">Wellness + family combined offering.</div></div>
+    <div class="target-card"><div class="name">The Lodge at Pebble Beach</div><div class="role">Pebble Beach resort</div><div class="why">Big family budget. Multi-day family activations.</div></div>
+    <div class="target-card"><div class="name">Calistoga Ranch</div><div class="role">Napa luxury</div><div class="why">High-end family programming budget.</div></div>
+  </div>
+</section>
+
+
+<hr class="divider">
+
+
+<!-- PRICING TIERS -->
+<section class="section">
+  <div class="eyebrow">Pricing tiers · per buyer type</div>
+  <h2>What to charge.<br><em>Tiered to match each buyer's reality.</em></h2>
+
+  <table class="tier">
+    <thead><tr><th>Buyer</th><th>Single event</th><th>Annual contract</th><th>Margin tier</th></tr></thead>
+    <tbody>
+      
+      
+      
+      
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>Pricing principle:</strong> always lead with the higher tier first. The buyer expects to negotiate; meeting them at the top of the range keeps the eventual close above market. <em>Never lead with the cheapest tier — that's where the brand goes to die.</em>
+  </div>
+</section>
+
+
+<hr class="divider">
+
+
+<!-- ANNUAL CONTRACT STRUCTURE -->
+<section class="section">
+  <div class="eyebrow">The annual-contract conversion</div>
+  <h2>One event becomes<br><em>four events.</em></h2>
+  <p>Single events are the warm-up. <strong>The real B2B value is the annual contract</strong> — and most buyers will agree to it after one good event because it's easier for them to plan, easier to budget, and easier to defend internally. Always position the annual at the moment of closing the first event.</p>
+
+  <div class="email-block" style="margin-top:1rem;">
+    <div class="email-block-label">Email after a great single event · 95 words</div>
+    <div class="subject">Subject: Loved having your team — quick thought on next time</div>
+    <div class="greet">Hi [First name] —</div>
+    <p class="body">Loved being there yesterday. Got the photos back from your team — sending the best in a separate email below.</p>
+    <p class="body">A thought: most companies we work with end up booking 4 events / year because the calendar gets ahead of them. We can lock in 4 dates now (different formats — wellness day, kid-friendly day, leadership offsite, holiday party) at a 15% bundle vs. one-off pricing. Just an option — happy to keep doing it event-by-event if that fits better.</p>
+    <p class="body">Either way, thank you again for having us.</p>
+    <div class="sig">— Chris</div>
+  </div>
+</section>
+
+
+<hr class="divider">
+
+
+<!-- WHAT YOUR PARTNER OWNS -->
+<section class="section">
+  <div class="eyebrow">What your strategy partner owns</div>
+  <h2>You show up to the gigs.<br><em>The funnel runs around you.</em></h2>
+  <p>The B2B sales engine has more moving parts than the consumer side — outreach, list management, follow-ups, deck customization, contract handling. <strong>This is where having a content + brand strategy partner saves the most time</strong>. The founder shows up where the founder voice matters (kickoff calls, on-site events, strategic accounts). Everything else runs in the background:</p>
+
+  <div class="email-block" style="background:rgba(212,160,23,0.05); border-color:rgba(212,160,23,0.2);">
+    <div class="email-block-label">Strategy partner takes off your plate</div>
+    <ol style="padding-left:1.4rem; margin-top:0.4rem;">
+      <li style="padding:0.3rem 0; color:#CCC;"><strong style="color:#FFF;">Lead list management</strong> — Apify-enriched contact lists per persona, refreshed monthly with new openings.</li>
+      <li style="padding:0.3rem 0; color:#CCC;"><strong style="color:#FFF;">First-touch outreach cadence</strong> — sending the first email, second touch, third touch. Founder responds when prospects reply.</li>
+      <li style="padding:0.3rem 0; color:#CCC;"><strong style="color:#FFF;">Deck customization</strong> — per-prospect mini decks built from a master template (one per persona).</li>
+      <li style="padding:0.3rem 0; color:#CCC;"><strong style="color:#FFF;">COI + contract logistics</strong> — single proof-of-insurance routed per event, contract templates kept fresh.</li>
+      <li style="padding:0.3rem 0; color:#CCC;"><strong style="color:#FFF;">Post-event content</strong> — recap photos, founder recap email, social proof for the next pitch.</li>
+      <li style="padding:0.3rem 0; color:#CCC;"><strong style="color:#FFF;">Quarterly pipeline review</strong> — what's working, what's not, where to push next.</li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <strong>The founder voice is what closes corporate deals — but only if the founder has time to actually show up to the first kickoff calls.</strong> The partner's job is to keep that calendar uncluttered and the prospects warm.
+  </div>
+</section>
+
+
+<div class="audit-footer">Kind Bubbles × LoopWorker · Corporate Wellness Sales Engine · May 2026</div>
+
+</div>
+</body>
+</html>

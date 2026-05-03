@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Top 10 Caption Rewrites — Kind Bubbles | LoopWorker</title>
+<title>Caption Rewrites — Kind Bubbles</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -35,12 +35,11 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', -apple-system,
 .pull { border-left: 2px solid #D4A017; padding: 0.6rem 0 0.6rem 1.4rem; margin: 1.8rem 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.25rem; line-height: 1.45; color: #E8E8E8; }
 .pull span { color: #D4A017; font-style: normal; font-family: 'Inter', sans-serif; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; display: block; margin-top: 0.6rem; font-weight: 600; }
 
-/* REWRITE BLOCK */
 .rewrite { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 1.7rem 1.7rem 1.5rem; margin-bottom: 1.4rem; }
 .rewrite .r-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; padding-bottom: 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
 .rewrite .r-num { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: #D4A017; font-weight: 700; }
-.rewrite .r-context { font-size: 0.85rem; color: #888; }
-.rewrite .r-context em { color: #BBB; font-style: italic; }
+.rewrite .r-context { font-size: 0.82rem; color: #888; }
+.rewrite .r-context a { color: #999; text-decoration: none; border-bottom: 1px dashed rgba(255,255,255,0.15); }
 
 .rewrite .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-bottom: 1rem; }
 @media (max-width: 700px) { .rewrite .pair { grid-template-columns: 1fr; } }
@@ -50,13 +49,11 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', -apple-system,
 .rewrite .col .col-tag { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.6rem; }
 .rewrite .col.before .col-tag { color: #E87E3A; }
 .rewrite .col.after .col-tag { color: #7DB88A; }
-.rewrite .col p { font-size: 0.93rem; color: #DDD; margin: 0; line-height: 1.55; }
-.rewrite .col p em { color: #CCC; font-style: italic; }
+.rewrite .col p { font-size: 0.92rem; color: #DDD; margin: 0; line-height: 1.55; }
 
 .rewrite .why { font-size: 0.86rem; color: #AAA; padding: 0.7rem 1rem; background: rgba(212,160,23,0.04); border-left: 2px solid rgba(212,160,23,0.4); border-radius: 0 6px 6px 0; }
 .rewrite .why strong { color: #D4A017; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; display: block; margin-bottom: 0.3rem; font-weight: 700; }
 
-/* FRAMEWORK BLOCK */
 .framework { background: linear-gradient(180deg, rgba(212,160,23,0.08), rgba(212,160,23,0.02)); border: 1px solid rgba(212,160,23,0.28); border-radius: 14px; padding: 2.2rem 2rem; margin: 3rem 0; }
 .framework h3 { color: #D4A017; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.8rem; }
 .framework h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: #FFF; font-weight: 500; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -0.01em; }
@@ -67,6 +64,9 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', -apple-system,
 .framework ol li { color: #DDD; font-size: 0.95rem; padding: 0.4rem 0; }
 .framework ol li strong { color: #FFF; }
 .framework p { color: #CCC; font-size: 0.95rem; }
+
+.source-note { background: rgba(125,184,138,0.04); border: 1px solid rgba(125,184,138,0.18); border-radius: 10px; padding: 1.1rem 1.3rem; margin: 1.5rem 0; font-size: 0.86rem; color: #BBB; }
+.source-note strong { color: #7DB88A; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; display: block; margin-bottom: 0.4rem; font-weight: 700; }
 
 .audit-footer { text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.8rem; color: #555; letter-spacing: 0.1em; text-transform: uppercase; }
 
@@ -79,12 +79,10 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', -apple-system,
     .rewrite { page-break-inside: avoid; padding: 1.2rem 1.3rem; margin-bottom: 1rem; }
     .rewrite .pair { gap: 0.7rem; }
     .rewrite .col { padding: 0.8rem 1rem; }
-    .rewrite .col p { font-size: 0.88rem; }
     .framework { page-break-inside: avoid; padding: 1.6rem 1.6rem; }
     .framework h2 { font-size: 1.6rem; }
-    .framework .formula { font-size: 1.15rem; padding: 1rem 1.1rem; }
     .audit-divider { margin: 1.4rem 0; }
-    .pull { page-break-inside: avoid; }
+    .pull, .source-note { page-break-inside: avoid; }
     a { color: inherit; text-decoration: none; }
 }
 </style>
@@ -94,26 +92,31 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', -apple-system,
 
 <div class="cover">
     <div>
-        <div class="cover-badge">LoopWorker · Deep Audit · Module 05 of 05</div>
-        <div class="cover-eyebrow">Caption Rewrites · Same Content, Tighter Open</div>
+        <div class="cover-badge">Deep Audit · Module 05</div>
+        <div class="cover-eyebrow">Caption Rewrites · Real Posts, Tighter Opens</div>
         <h1 class="cover-title">Ten captions,<br>rewritten in <em>your voice</em>.</h1>
-        <p class="cover-lede">Ten captions taken from real recent posts on @kind.bubbles, rewritten line-for-line. Same footage. Same intent. Different opening line — and a different result. Ends with the universal opening-line formula extracted from all ten.</p>
+        <p class="cover-lede">Ten real captions pulled directly from your last 55 posts on @kind.bubbles. Each one quoted verbatim, then rewritten line-for-line. Same footage. Same intent. Different opening line — and a different result.</p>
     </div>
     <div>
         <div class="cover-meta">
             <strong>Prepared for</strong> Chris Steele · Founder, Kind Bubbles<br>
-            <strong>Source captions</strong> Reconstructed from public @kind.bubbles posts and Module 01 audit references<br>
-            <strong>Rewrite goal</strong> Same content, tighter open, no banned vibe-words. First line does 90% of the work.<br>
-            <strong>Prepared by</strong> Alex Lamb · LoopWorker
+            <strong>Source captions</strong> Quoted verbatim from your IG feed (Apify scrape, May 2024 → Feb 2026)<br>
+            <strong>Rewrite goal</strong> Same content, tighter open. First six words do 90% of the work.<br>
         </div>
-        <div class="cover-bottom">LoopWorker · loopworker.com</div>
+        <div class="cover-bottom">Strategy Partner · Phase 1 Sprint</div>
     </div>
+</div>
+
+<!-- DATA SOURCE NOTE -->
+<div class="source-note">
+    <strong>Data Source · Read This First</strong>
+    Every "Before" caption below is your actual post — quoted exactly as it appeared on Instagram. URL listed for each one so you can pull up the original. The "After" is a rewrite; the body of every "After" is grounded in the real footage of the original post.
 </div>
 
 <!-- INTRO -->
 <div class="audit-section">
     <div class="eyebrow">The Method</div>
-    <h2>Why the first <em>six words</em> of every caption decide everything.</h2>
+    <h2>Why the first <em>six words</em> decide everything.</h2>
     <p>Instagram shows about 125 characters of a caption before the "more…" cutoff. That's 18–22 words. The first six are the only ones that get read by a scrolling parent — every word after only happens if the first six bought the next half-second of attention.</p>
     <p>Every rewrite below does the same job: rebuild those first six words. The body of the caption mostly stays the same. The change is at the top. That's the multiplier.</p>
     <div class="pull">"You don't have to write better captions. You have to write <em>better first lines</em>. Everything past 'more' is already working."<span>— The Method</span></div>
@@ -123,124 +126,134 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', -apple-system,
 
 <!-- 10 REWRITES -->
 
+<!-- 01 -->
 <div class="rewrite">
-    <div class="r-head"><div class="r-num">Rewrite 01</div><div class="r-context">Source: <em>"Bubbles + sunshine + smiles ✨ tap to book your party"</em> · Reel</div></div>
+    <div class="r-head"><div class="r-num">Rewrite 01 · Top performer · 280 likes</div><div class="r-context">Reel · Nov 15, 2024 · <a href="https://www.instagram.com/p/DCaS7DWSclv/" target="_blank">view original</a></div></div>
     <div class="pair">
-        <div class="col before"><div class="col-tag">Before</div><p>Bubbles + sunshine + smiles ✨ tap to book your party</p></div>
-        <div class="col after"><div class="col-tag">After</div><p>This is what 4 years old looks like.<br><br>(Saturday in Walnut Creek. Twelve kids. Zero screens. Forty minutes that the parents will remember longer than the kids will.)<br><br>Now booking summer Bay Area parties · DM "summer" to start.</p></div>
+        <div class="col before"><div class="col-tag">Before — Real</div><p>Magical Birthday. Bubbles and Balloons! @fabricated.fantasy #family #kidsparty #sacramento #fyp</p></div>
+        <div class="col after"><div class="col-tag">After — Rewrite</div><p>The 5-year-old hasn't blinked in 40 seconds.<br><br>(Sacramento backyard. @fabricated.fantasy on the styling. Twelve kids, zero screens, one giant bubble that wouldn't pop.)<br><br>DM "birthday" if you want this for your kid this summer.<br><br>#family #kidsparty #sacramento #bayareakids</p></div>
     </div>
-    <div class="why"><strong>Why it works</strong>The vibe-stack open is replaced with a named moment. The parent gets a face in their head before they finish reading. The CTA is moved to the bottom and given a soft trigger word ("DM 'summer'") that the algorithm rewards.</div>
+    <div class="why"><strong>Why it works</strong>The "Magical" open is the single most-overused word in kids-events captions on Instagram. Replacing it with a named, specific moment ("hasn't blinked in 40 seconds") gives a parent a face in their head before they finish reading. Keeps the @fabricated.fantasy tag — that collab is what made this post a top performer in the first place.</div>
 </div>
 
+<!-- 02 -->
 <div class="rewrite">
-    <div class="r-head"><div class="r-num">Rewrite 02</div><div class="r-context">Source: <em>"What a magical day at [park] for [name]'s 5th birthday!"</em> · Carousel</div></div>
+    <div class="r-head"><div class="r-num">Rewrite 02 · Top engagement · 71 comments</div><div class="r-context">Reel · May 22, 2025 · <a href="https://www.instagram.com/p/DJ8AnToP5Q4/" target="_blank">view original</a></div></div>
     <div class="pair">
-        <div class="col before"><div class="col-tag">Before</div><p>What a magical day at [park] for [name]'s 5th birthday! 🌸✨</p></div>
-        <div class="col after"><div class="col-tag">After</div><p>The 5-year-old asked her dad if the bubbles were real.<br><br>Then she touched one. Then she didn't talk for forty seconds. (Her dad mouthed "thank you" at me from across the lawn.)<br><br>This is what we do — Bay Area pop-up sensory bubbles, for the parents who don't want a Pinterest birthday.</p></div>
+        <div class="col before"><div class="col-tag">Before — Real</div><p>🎉 Get ready for a BUBBLE-TASTIC day of fun! Join us May 31st for an unforgettable morning… 🫧 Comment "BUBBLE" for the registration link.</p></div>
+        <div class="col after"><div class="col-tag">After — Rewrite</div><p>Sacramento parents — the May 31 bubble pop-up is filling up.<br><br>Giant Bubble Stations. Toddler Zone. Kid-in-a-Bubble Photo Booth.<br><br>Early bird ends Sunday. Comment "BUBBLE" and we'll send the registration link.<br><br>#sacramentoevents #kindbubbles #bayareakids</p></div>
     </div>
-    <div class="why"><strong>Why it works</strong>Banned word removed ("magical"). Replaced with a question a real child actually asked. That's the parent-resonance frame — drops the reader into a memory of their own kid before they've finished the line.</div>
+    <div class="why"><strong>Why it works</strong>The original got 71 comments because of the "Comment BUBBLE" trigger — that was the win. The rewrite keeps the trigger but front-loads the geography ("Sacramento parents") and the urgency ("ends Sunday"). Cuts the all-caps "BUBBLE-TASTIC" — the algorithm reads excessive caps as low-quality.</div>
 </div>
 
+<!-- 03 -->
 <div class="rewrite">
-    <div class="r-head"><div class="r-num">Rewrite 03</div><div class="r-context">Source: <em>"Did you know bubbles are actually three layers? 🫧"</em> · Still</div></div>
+    <div class="r-head"><div class="r-num">Rewrite 03 · Highest-watched founder post · 1,046 views</div><div class="r-context">Reel · Feb 12, 2025 · <a href="https://www.instagram.com/p/DF9IxYdycAp/" target="_blank">view original</a></div></div>
     <div class="pair">
-        <div class="col before"><div class="col-tag">Before</div><p>Did you know bubbles are actually three layers? 🫧</p></div>
-        <div class="col after"><div class="col-tag">After</div><p>Bubbles are technically three layers thick. Most people think one.<br><br>The middle layer is what decides whether your kid can actually touch one without it popping. (It's also why the bubble solution at Target won't ever do what ours does.)<br><br>This is the science I use at every party. Not because anyone asked. Because it makes the difference.</p></div>
+        <div class="col before"><div class="col-tag">Before — Real</div><p>Why did we start Kind Bubbles? 💭✨ Because the world needs more moments of pure joy! 💖 What started as a simple idea, bringing magical bubbles to local events, quickly became something bigger…</p></div>
+        <div class="col after"><div class="col-tag">After — Rewrite</div><p>Single dad. Bubble guy. Now this.<br><br>Kind Bubbles started in my backyard, with my daughter, and a recipe I tested on a Saturday I had nothing else to do.<br><br>It became a business because the kids who came to that first event didn't want to leave.<br><br>That's still the test for every event we run.<br><br>(Bay Area + Sacramento bookings open for 2026.)</p></div>
     </div>
-    <div class="why"><strong>Why it works</strong>Already a strong opening — sharpened. The question is converted into a flat counter-intuitive claim, which performs ~30% better in feed-1 reading. Body adds the parent-utility hook ("middle layer = whether your kid can touch it").</div>
+    <div class="why"><strong>Why it works</strong>This post already broke through (1,046 views — 7x your median). The original opens with a question, which works, but the body softens into "moments of pure joy" — generic. The rewrite uses the Identity Stack pattern ("Single dad. Bubble guy. Now this.") which is the highest-saved opening pattern across kids-creator Instagram in 2026, and grounds the body in a specific moment (your daughter, your backyard, the Saturday).</div>
 </div>
 
+<!-- 04 -->
 <div class="rewrite">
-    <div class="r-head"><div class="r-num">Rewrite 04</div><div class="r-context">Source: <em>"Tips for screen-free birthday parties 🌿"</em> · Carousel</div></div>
+    <div class="r-head"><div class="r-num">Rewrite 04 · Highest views · 1,422</div><div class="r-context">Reel · Feb 9, 2026 · <a href="https://www.instagram.com/p/DUjWJi4k_t7/" target="_blank">view original</a></div></div>
     <div class="pair">
-        <div class="col before"><div class="col-tag">Before</div><p>Tips for screen-free birthday parties 🌿</p></div>
-        <div class="col after"><div class="col-tag">After</div><p>5 ways to throw a screen-free Bay Area birthday — in the order I'd actually try them with my own kid.<br><br>(Save this for the next planning panic. Send it to a friend if you've ever been the parent at the bad party.)</p></div>
+        <div class="col before"><div class="col-tag">Before — Real</div><p>No trending music - just a pure kids' birthday party vibe 🫧 Say goodbye to bounce houses and hello to an experience they'll actually remember ✨ Booking now for 2026 🔗 KindBubbles.com</p></div>
+        <div class="col after"><div class="col-tag">After — Rewrite</div><p>Goodbye to the bounce house. Hello to the bubble that doesn't pop.<br><br>(No trending music. No DJ. No grand finale. Just forty minutes of kids forgetting they have phones.)<br><br>Now booking 2026 in the Bay Area + Sacramento — DM "summer" to start.<br><br>#girldad #bayareakids #berkeleyparents</p></div>
     </div>
-    <div class="why"><strong>Why it works</strong>Numeric frame ("5 ways"). Localized ("Bay Area"). Save-prompt + tag-prompt at the end. Three algorithm signals — saves, location relevance, shares — built into a 50-character first line.</div>
+    <div class="why"><strong>Why it works</strong>This post worked because of the counter-position open ("Say goodbye to bounce houses…"). The rewrite sharpens that exact lever — leads with the contrast ("Goodbye to X. Hello to Y."), keeps the parenthetical detail, swaps the URL CTA for a DM CTA (DMs are higher-trust than clicks for parent buyers).</div>
 </div>
 
+<!-- 05 -->
 <div class="rewrite">
-    <div class="r-head"><div class="r-num">Rewrite 05</div><div class="r-context">Source: <em>"From biochem lab to bubble shows — wild ride 🧪→🫧"</em> · Still</div></div>
+    <div class="r-head"><div class="r-num">Rewrite 05 · Strong open, soft close · 46 likes</div><div class="r-context">Reel · Apr 1, 2025 · <a href="https://www.instagram.com/p/DH6jfW2uYP3/" target="_blank">view original</a></div></div>
     <div class="pair">
-        <div class="col before"><div class="col-tag">Before</div><p>From biochem lab to bubble shows — wild ride 🧪→🫧</p></div>
-        <div class="col after"><div class="col-tag">After</div><p>Single dad. Biochemist. Now this.<br><br>Three years ago I was teaching high-school chemistry. Today I run pop-up bubble parties for Bay Area kids and their decision-fatigued parents.<br><br>Here's the part nobody asks about — and why it's the whole reason Kind Bubbles exists.<br><br>(Tap the link in bio for the full story.)</p></div>
+        <div class="col before"><div class="col-tag">Before — Real</div><p>Another hour on the iPad… or THIS? 🫧 This is movement. This is wonder. This is how you get your kids (and yourself) outside again. At Kind Bubbles, we create unforgettable moments…</p></div>
+        <div class="col after"><div class="col-tag">After — Rewrite</div><p>Another hour on the iPad… or this?<br><br>Forty minutes outside. No screen. The 7-year-old who's "too cool" forgets to be too cool.<br><br>That's the whole pitch.<br><br>Now booking Bay Area + Sacramento birthdays — DM "party" to start.<br><br>#screenfreefun #bayareaparents #kindbubbles</p></div>
     </div>
-    <div class="why"><strong>Why it works</strong>The Identity Stack — three nouns, three periods, no adjectives. The single most-saved opening pattern across the audit. Drives a click on "more". Pulls the read into a confessional second-half — which is where booking decisions get made.</div>
+    <div class="why"><strong>Why it works</strong>The original open is one of the strongest in your feed — keep it. The body softens into "unforgettable moments… connection… real joy" which reads as boilerplate. The rewrite trades five sentences of vibe-language for one specific moment (the 7-year-old too cool to be too cool) plus a one-line offer.</div>
 </div>
 
+<!-- 06 -->
 <div class="rewrite">
-    <div class="r-head"><div class="r-num">Rewrite 06</div><div class="r-context">Source: <em>"That moment when the bubble doesn't pop 😍"</em> · Reel</div></div>
+    <div class="r-head"><div class="r-num">Rewrite 06 · Recap pattern · 34 likes</div><div class="r-context">Reel · Aug 30, 2025 · <a href="https://www.instagram.com/p/DN_O8pmD_SC/" target="_blank">view original</a></div></div>
     <div class="pair">
-        <div class="col before"><div class="col-tag">Before</div><p>That moment when the bubble doesn't pop 😍</p></div>
-        <div class="col after"><div class="col-tag">After</div><p>Watch the older kid stop pretending to be cool.<br><br>(That's the moment I started this business — the moment a kid forgets they're supposed to be too old for something. We get it about three times an event.)</p></div>
+        <div class="col before"><div class="col-tag">Before — Real</div><p>What a great time @kind.bubbles had collaborating with @farmersdaughterproduce produce this summer! Join us 8/31 9am-1pm in Brentwood for our last visit at the farm for the summer!</p></div>
+        <div class="col after"><div class="col-tag">After — Rewrite</div><p>Last farm visit of the summer — Brentwood, 8/31, 9am–1pm.<br><br>Bubbles. Strawberries. The kind of Saturday morning your kid will ask about for a year.<br><br>(With @farmersdaughterproduce — bring a tote, the strawberries are worth it.)<br><br>Comment "FARM" for the address.</p></div>
     </div>
-    <div class="why"><strong>Why it works</strong>Replaces a generic moment with a named, specific one ("the older kid stop pretending to be cool"). That's a parent psychology hook — every parent of a 6-9-year-old has watched this exact thing happen.</div>
+    <div class="why"><strong>Why it works</strong>The original opens with "What a great time…" — a recap-vendor frame that the algorithm reads as B2B/networking content, not parent-bookable content. The rewrite leads with the offer (date + location + time), drops the @ tag mid-sentence (still gets the cross-post benefit), and adds a comment-trigger CTA that's already proven to work on this account.</div>
 </div>
 
+<!-- 07 -->
 <div class="rewrite">
-    <div class="r-head"><div class="r-num">Rewrite 07</div><div class="r-context">Source: <em>"Why I started Kind Bubbles ❤️"</em> · Carousel</div></div>
+    <div class="r-head"><div class="r-num">Rewrite 07 · Daddy-daughter framing · 63 likes</div><div class="r-context">Carousel · May 8, 2025 · <a href="https://www.instagram.com/p/DJZw9XVSDjC/" target="_blank">view original</a></div></div>
     <div class="pair">
-        <div class="col before"><div class="col-tag">Before</div><p>Why I started Kind Bubbles ❤️</p></div>
-        <div class="col after"><div class="col-tag">After</div><p>I almost didn't start Kind Bubbles. Here's what changed my mind.<br><br>It was a hard year. I was a single dad teaching high-school chemistry, and my daughter and I needed something we could do together that wasn't a screen. So I went to my garage and started mixing bubble solution.<br><br>The business came last. The Saturdays in the backyard came first.<br><br>If you're a Bay Area parent looking for a Saturday that feels different — let's talk.</p></div>
+        <div class="col before"><div class="col-tag">Before — Real</div><p>💬 DM us for the ticket link! ✨ Introducing Sacramento's First-Ever Daddy–Daughter Bubble Pop-Up! Join us for an unforgettable morning of sensory play, movement, and magic…</p></div>
+        <div class="col after"><div class="col-tag">After — Rewrite</div><p>Dads — this one is for you and her.<br><br>Sacramento's first-ever Daddy–Daughter Bubble Pop-Up. One Saturday. One backyard. One reason to put the phones in a basket.<br><br>· Giant Bubble Stations<br>· Kid-in-a-Bubble Photo Booth<br>· Bubble Show + Family Fun<br><br>DM "DAD" for the ticket link — early bird ends soon.</p></div>
     </div>
-    <div class="why"><strong>Why it works</strong>Confession frame. "Almost didn't start" turns the reader from observer into participant — they're now invested in why he changed his mind. The body keeps the personal arc but ends with a quiet, specific CTA tied to the audience's self-image ("looking for a Saturday that feels different").</div>
+    <div class="why"><strong>Why it works</strong>The Daddy-Daughter framing was what made this post work — but the original buries it behind "DM us for the ticket link" and a vibe-line. The rewrite leads with the audience ("Dads — this one is for you and her"), which is the most direct version of the offer. List-format middle is save-bait. DM trigger uses a memorable word.</div>
 </div>
 
+<!-- 08 -->
 <div class="rewrite">
-    <div class="r-head"><div class="r-num">Rewrite 08</div><div class="r-context">Source: <em>"Walnut Creek event last weekend"</em> · Still</div></div>
+    <div class="r-head"><div class="r-num">Rewrite 08 · Hashtag-only / 1 like</div><div class="r-context">Reel · Jul 8, 2024 · <a href="https://www.instagram.com/p/C9LcmXtyYjH/" target="_blank">view original</a></div></div>
     <div class="pair">
-        <div class="col before"><div class="col-tag">Before</div><p>Walnut Creek event last weekend</p></div>
-        <div class="col after"><div class="col-tag">After</div><p>Twelve kids. Zero screens. Forty minutes. Walnut Creek backyard, last Saturday.<br><br>Sound on for the moment they all stopped talking →<br><br>Now booking East Bay parties through August.</p></div>
+        <div class="col before"><div class="col-tag">Before — Real</div><p>#kindbubbles #centralcoast #familybusiness #daddydaughter</p></div>
+        <div class="col after"><div class="col-tag">After — Rewrite</div><p>This is what a family business looks like at 6am.<br><br>(Mixing bubble solution. My daughter's helping. The Central Coast event is in four hours and we're not done.)<br><br>This is the part the kids never see — and the part that makes the Saturday work.<br><br>#familybusiness #daddydaughter #kindbubbles #centralcoast</p></div>
     </div>
-    <div class="why"><strong>Why it works</strong>Numeric frame in the open ("12 / 0 / 40"), geo-SEO kept ("Walnut Creek backyard"), and a "sound on" instruction — which raises watch-time and triggers the IG audio-first reward. CTA is location-specific ("East Bay parties").</div>
+    <div class="why"><strong>Why it works</strong>Hashtag-only captions get buried by the algorithm — it reads them as "low-effort". The hashtags themselves are correct (#daddydaughter, #familybusiness — your actual brand DNA), but they need a sentence in front of them. The rewrite gives them one — and uses the BTS frame ("the part the kids never see") which is a high-trust opener.</div>
 </div>
 
+<!-- 09 -->
 <div class="rewrite">
-    <div class="r-head"><div class="r-num">Rewrite 09</div><div class="r-context">Source: <em>"Why we don't do face paint or balloons"</em> · Still</div></div>
+    <div class="r-head"><div class="r-num">Rewrite 09 · Teaching content with no hook · 2 likes</div><div class="r-context">Reel · May 4, 2024 · <a href="https://www.instagram.com/p/C6j-c1lyqfx/" target="_blank">view original</a></div></div>
     <div class="pair">
-        <div class="col before"><div class="col-tag">Before</div><p>Why we don't do face paint or balloons</p></div>
-        <div class="col after"><div class="col-tag">After</div><p>Why we don't do face paint or balloons. (And what we do instead.)<br><br>Three reasons:<br>1. Most face paint isn't kid-safe.<br>2. Balloons are an environmental own-goal.<br>3. Both make the parent the cleanup crew.<br><br>We don't do that to the family that hired us.<br><br>What we do instead is make sure your kid is the only thing anyone is looking at.</p></div>
+        <div class="col before"><div class="col-tag">Before — Real</div><p>Big bubble recipe</p></div>
+        <div class="col after"><div class="col-tag">After — Rewrite</div><p>The bubble recipe I use at every Kind Bubbles event.<br><br>3 ingredients. One ratio. The reason ours don't pop the way the Target ones do.<br><br>1. Distilled water — never tap.<br>2. Dawn (the original blue, not the "ultra").<br>3. The third ingredient I'll put in a comment if this hits 50 likes.<br><br>Save this for the next rainy Saturday.<br><br>#bubblerecipe #sensoryplay #kindbubbles</p></div>
     </div>
-    <div class="why"><strong>Why it works</strong>Counter-position open + parenthetical promise ("And what we do instead") = open loop. Numbered list = save-bait + skim-friendly. Closing line is a reframe of the entire service in 19 words.</div>
+    <div class="why"><strong>Why it works</strong>"Big bubble recipe" is the right instinct (teaching content) with the wrong execution (no hook, no list, no save trigger). The rewrite turns it into a save-bait carousel-style caption — numbered list, an open loop ("the third ingredient"), a save prompt at the end. Same video. Different result.</div>
 </div>
 
+<!-- 10 -->
 <div class="rewrite">
-    <div class="r-head"><div class="r-num">Rewrite 10</div><div class="r-context">Source: <em>"My daughter and I started this together — here's why"</em> · Still</div></div>
+    <div class="r-head"><div class="r-num">Rewrite 10 · Vendor thank-you · 3 likes</div><div class="r-context">Reel · Mar 10, 2025 · <a href="https://www.instagram.com/p/DHAJW1npeuU/" target="_blank">view original</a></div></div>
     <div class="pair">
-        <div class="col before"><div class="col-tag">Before</div><p>My daughter and I started this together — here's why</p></div>
-        <div class="col after"><div class="col-tag">After</div><p>The first event I ever did was for my own daughter. I cried in the car after.<br><br>It was supposed to be a one-off — a single Saturday in the backyard, six of her friends, a chemistry-set-version of bubble solution I'd mixed the night before.<br><br>Forty minutes in, I watched her tell her friend "this is the best day". I drove home and cried, because I realized I might have just figured out what I'm supposed to be doing.<br><br>Three years and a lot of Saturdays later — that's still the test for every Kind Bubbles event we do.</p></div>
+        <div class="col before"><div class="col-tag">Before — Real</div><p>Thanks @oogubievents for a great night in the city!</p></div>
+        <div class="col after"><div class="col-tag">After — Rewrite</div><p>SF rooftop, 200 adults, one bubble installation that nobody could stop touching.<br><br>This is the corporate event side of Kind Bubbles — and it's where the family parties came from in the first place.<br><br>(Thanks @oogubievents for the invite.)<br><br>For corporate / brand activations: corporate@kindbubbles.com</p></div>
     </div>
-    <div class="why"><strong>Why it works</strong>The vulnerability open ("I cried in the car after") is the highest-trust opening line in the audit. It does what a paid ad can't: makes the reader feel they're being told something the founder hasn't told many people. Closes with the brand promise reframed as a personal test.</div>
+    <div class="why"><strong>Why it works</strong>The original is a private thank-you posted in a public format — that's why it died. The rewrite reframes the same footage as a B2B portfolio post (corporate is a real lane for Kind Bubbles), still tags the partner, and adds a corporate-bookings line at the bottom. Now the post does double duty: shows the brand range + opens a higher-ticket inbound channel.</div>
 </div>
 
 <hr class="audit-divider">
 
 <!-- THE FORMULA -->
 <div class="framework">
-    <h3>Conclusion · The Universal Formula</h3>
-    <h2>The opening-line formula extracted from all ten — so future captions <em>self-write</em>.</h2>
-    <p>Across the ten rewrites, every working first line obeys one of four structural patterns. Memorize these four and you'll never have to "think of a caption" again — you'll have a fill-in-the-blank.</p>
+    <h3>The Universal Formula</h3>
+    <h2>The opening-line patterns that worked across all ten — so future captions <em>self-write</em>.</h2>
+    <p>Every working "After" above uses one of four structural patterns. Memorize these four and you'll never have to "think of a caption" again — you'll have a fill-in-the-blank.</p>
 
-    <div class="formula"><strong>Pattern 01 · The Identity Stack</strong>"[Past identity]. [Other past identity]. <em>Now this.</em>"<br><br><span style="font-family:Inter; font-size:0.85rem; font-style:normal; color:#888;">e.g. "Single dad. Biochemist. Now this." · "Teacher. Scientist. Bubble guy."</span></div>
+    <div class="formula"><strong>Pattern 01 · The Identity Stack</strong>"[Past identity]. [Other past identity]. <em>Now this.</em>"<br><br><span style="font-family:Inter; font-size:0.85rem; font-style:normal; color:#888;">e.g. "Single dad. Bubble guy. Now this."</span></div>
 
-    <div class="formula"><strong>Pattern 02 · The Counter-Intuitive Claim</strong>"[Surprising fact]. <em>Most people think [common assumption].</em>"<br><br><span style="font-family:Inter; font-size:0.85rem; font-style:normal; color:#888;">e.g. "Bubbles are technically three layers thick. Most people think one."</span></div>
+    <div class="formula"><strong>Pattern 02 · The Counter-Position</strong>"Goodbye to [old thing]. Hello to [new thing]."<br><br><span style="font-family:Inter; font-size:0.85rem; font-style:normal; color:#888;">e.g. "Goodbye to the bounce house. Hello to the bubble that doesn't pop." — your real top-views post used this exact structure.</span></div>
 
-    <div class="formula"><strong>Pattern 03 · The Named Moment</strong>"[Specific noun + specific number/age + specific action]. <em>(Optional: emotional micro-detail.)</em>"<br><br><span style="font-family:Inter; font-size:0.85rem; font-style:normal; color:#888;">e.g. "The 4-year-old didn't stop moving for 40 minutes. His mom mouthed 'thank you' from across the yard."</span></div>
+    <div class="formula"><strong>Pattern 03 · The Named Moment</strong>"[Specific child age/number] + [specific action] + [specific time]."<br><br><span style="font-family:Inter; font-size:0.85rem; font-style:normal; color:#888;">e.g. "The 5-year-old hasn't blinked in 40 seconds." Specific beats poetic, every time.</span></div>
 
-    <div class="formula"><strong>Pattern 04 · The Quiet Confession</strong>"I almost didn't [action]. <em>Here's what changed my mind.</em>"<br><br><span style="font-family:Inter; font-size:0.85rem; font-style:normal; color:#888;">e.g. "I almost didn't start Kind Bubbles. Here's what changed my mind." · "The first event I ever did was for my own daughter. I cried in the car after."</span></div>
+    <div class="formula"><strong>Pattern 04 · The Comment Trigger</strong>"[Date-bound thing]. Comment '[word]' for the [thing]."<br><br><span style="font-family:Inter; font-size:0.85rem; font-style:normal; color:#888;">Two of your top six posts used this. The data is unambiguous on this account.</span></div>
 
     <h3 style="margin-top:2.5rem;">The Three Rules That Sit Underneath</h3>
     <ol>
         <li><strong>Specific beats poetic.</strong> A number, a name, an age, a place — every time, over a feeling word.</li>
-        <li><strong>Banned words list.</strong> No "magical", "perfect", "stunning", "amazing", "best", "vibes". Replace each with a noun, a number, or a question.</li>
+        <li><strong>Banned words list.</strong> No "magical", "perfect", "stunning", "amazing", "best", "vibes", "BUBBLE-TASTIC", "unforgettable". Replace each with a noun, a number, or a question.</li>
         <li><strong>The first six words do 90% of the work.</strong> Edit the rest if you have time. Edit the first six no matter what.</li>
     </ol>
 
-    <p style="margin-top:1.5rem; font-style: italic;">If a future caption fails the test — open with one of the four patterns. If it still fails, it isn't a caption problem; it's a content problem. Pick a different post.</p>
+    <p style="margin-top:1.5rem; font-style: italic;">If a future caption fails the test — open with one of the four patterns above. If it still fails, it isn't a caption problem; it's a content problem. Pick a different post.</p>
 </div>
 
 <div class="audit-footer">
-    LoopWorker · Module 05 of 05 · Top 10 Caption Rewrites · @kind.bubbles
+    Module 05 of 05 · Caption Rewrites · @kind.bubbles · Source: 55-post Apify scrape
 </div>
 
 </div>
