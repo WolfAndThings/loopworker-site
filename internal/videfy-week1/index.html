@@ -1,0 +1,1736 @@
+<!doctype html><html><head>
+<script>
+(function(){
+  if(sessionStorage.getItem('vidfy_gate')==='1') return;
+  const p=prompt('Passcode required to view Videfy launch board:');
+  if(p==='videfy2026'){
+    sessionStorage.setItem('vidfy_gate','1');
+  } else {
+    document.documentElement.innerHTML='<body style="background:#0d1117;color:#e6edf3;font-family:-apple-system,sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0"><div style="text-align:center"><h1 style="color:#d3f85a">Access restricted</h1><p>Refresh + enter the team passcode.</p></div></body>';
+    throw new Error('gate');
+  }
+})();
+</script>
+<meta charset="utf-8">
+<title>Videfy — Week 1 Launch Board (May 2-8)</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;padding:0;background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.55}
+  .container{max-width:1280px;margin:0 auto;padding:24px 24px 80px}
+  h1{font-size:28px;margin:0 0 8px;color:#d3f85a;letter-spacing:-0.02em}
+  .sub{color:#888;margin-bottom:24px;font-size:14px}
+  .toolbar{position:sticky;top:0;background:#0d1117;padding:12px 0;border-bottom:1px solid #30363d;margin-bottom:24px;z-index:100;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .toolbar select,.toolbar input{background:#161b22;color:#e6edf3;border:1px solid #30363d;padding:6px 10px;border-radius:6px;font-size:13px}
+  .toolbar .me{background:#1f3a1f;color:#7ce38b;padding:6px 12px;border-radius:6px;font-size:13px;font-weight:600}
+  .stats{margin-left:auto;font-size:12px;color:#8b949e}
+  .day{margin-top:36px;padding-top:20px;border-top:2px solid #d3f85a}
+  .day-label{font-size:22px;font-weight:700;margin-bottom:4px;color:#fff}
+  .day-meta{color:#8b949e;font-size:13px;margin-bottom:16px}
+  .channel{margin-bottom:14px;background:#161b22;border-radius:8px;padding:14px;border-left:4px solid #444;transition:border-color 0.2s}
+  .channel.claimed-me{border-left-color:#7ce38b}
+  .channel.posted{opacity:0.5}
+  .ch-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #30363d;flex-wrap:wrap;gap:8px}
+  .ch-name{font-weight:700;font-size:14px;letter-spacing:0.04em;text-transform:uppercase}
+  .post-name{color:#8b949e;font-size:11px;font-style:italic}
+  .field{margin-top:8px}
+  .label{font-size:10px;color:#8b949e;text-transform:uppercase;letter-spacing:0.06em;font-weight:700;margin-bottom:3px}
+  .hook{font-size:15px;font-weight:600;color:#fff;background:#1c2128;padding:8px 12px;border-radius:6px;border-left:3px solid #d3f85a}
+  .copy{white-space:normal;background:#0a0e13;padding:11px;border-radius:6px;font-size:13px;line-height:1.6;color:#c9d1d9}
+  .cta{color:#3afcea;font-weight:600;font-size:13px}
+  .meta-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;align-items:center}
+  .pill{background:#21262d;color:#8b949e;font-size:11px;padding:3px 8px;border-radius:10px}
+  .pill.paused{background:#5d3818;color:#ffa657}
+  .notes{font-size:11px;color:#7d8590;margin-top:8px;padding-top:8px;border-top:1px dashed #30363d;white-space:pre-line}
+  details{margin-top:6px}
+  summary{cursor:pointer;color:#8b949e;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;font-weight:700}
+  /* Team coordination */
+  .team-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;padding:8px 10px;background:#0a0e13;border-radius:6px;align-items:center}
+  .owner-badge{padding:4px 10px;border-radius:14px;font-size:11px;font-weight:700;cursor:pointer;border:1px solid transparent;background:#21262d;color:#8b949e;transition:all 0.15s}
+  .owner-badge:hover{background:#30363d}
+  .owner-badge.active{background:#7ce38b;color:#000}
+  .status-cycle{padding:4px 12px;border-radius:14px;font-size:11px;font-weight:700;cursor:pointer;border:1px solid #30363d;background:#161b22;color:#e6edf3;letter-spacing:0.04em}
+  .status-cycle.idea{background:#21262d;color:#8b949e}
+  .status-cycle.copy{background:#1f2a3d;color:#79c0ff}
+  .status-cycle.designed{background:#3a2a4d;color:#c489ff}
+  .status-cycle.reviewed{background:#3d3320;color:#ffd266}
+  .status-cycle.scheduled{background:#1f3a3a;color:#3afcea}
+  .status-cycle.posted{background:#1f3a1f;color:#7ce38b}
+  .checklist{display:flex;gap:4px;flex-wrap:wrap;margin-left:8px}
+  .check{padding:3px 7px;background:#161b22;border:1px solid #30363d;border-radius:8px;font-size:10px;cursor:pointer;color:#8b949e;transition:all 0.15s}
+  .check.done{background:#1f3a1f;color:#7ce38b;text-decoration:line-through}
+  .check:hover{background:#21262d}
+  .toc{background:#161b22;padding:14px 18px;border-radius:8px;margin-bottom:20px}
+  .toc a{color:#d3f85a;text-decoration:none;display:inline-block;margin-right:12px;font-size:13px}
+  .toc a:hover{text-decoration:underline}
+  .summary{background:#161b22;padding:14px 18px;border-radius:8px;margin-bottom:20px;font-size:13px;color:#8b949e;border-left:3px solid #3afcea}
+  .hidden{display:none !important}
+  @media print{body{background:#fff;color:#000}.day{page-break-before:always}.channel{border:1px solid #ccc;background:#fff}.copy,.hook{background:#f5f5f5}.toolbar{display:none}.team-row{background:#fff}}
+</style></head><body><div class="container">
+<h1>Videfy · Week 1 Launch Board</h1>
+<div class="sub">May 2 – May 8, 2026 · Day +1 to +7 · 5-person team coordination · State saved in browser localStorage</div>
+
+<div class="toolbar">
+  <span style="font-size:12px;color:#8b949e">I am:</span>
+  <select id="meSelect" onchange="setMe()">
+    <option value="">— pick a name —</option>
+    <option value="Alex">Alex (Founder)</option>
+    <option value="Designer">Designer</option>
+    <option value="Editor">Editor</option>
+    <option value="Copywriter">Copywriter</option>
+    <option value="Scheduler">Scheduler</option>
+  </select>
+  <span class="me" id="meBadge"></span>
+  <span style="font-size:12px;color:#8b949e;margin-left:12px">Filter:</span>
+  <select id="ownerFilter" onchange="applyFilter()">
+    <option value="">All owners</option>
+    <option value="me">Mine only</option>
+    <option value="unclaimed">Unclaimed</option>
+    <option value="Alex">Alex</option><option value="Designer">Designer</option><option value="Editor">Editor</option><option value="Copywriter">Copywriter</option><option value="Scheduler">Scheduler</option>
+  </select>
+  <select id="statusFilter" onchange="applyFilter()">
+    <option value="">All statuses</option>
+    <option value="idea">Idea</option><option value="copy">Copy</option><option value="designed">Designed</option><option value="reviewed">Reviewed</option><option value="scheduled">Scheduled</option><option value="posted">Posted</option>
+  </select>
+  <button onclick="exportProgress()" style="background:#21262d;color:#e6edf3;border:1px solid #30363d;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:12px">Export progress</button>
+  <button onclick="clearAll()" style="background:#3d1f1f;color:#ff7b72;border:1px solid #5d3030;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:12px">Reset</button>
+  <span class="stats" id="stats"></span>
+</div>
+
+<div class="summary">
+<strong>Phase:</strong> Act 1 — Mystery (per LAUNCH_PLAN.md). Pure content drops. No framework copy. No use case mention. Captions one-line minimal. CTAs: none/save only.
+<br><strong>Channels active:</strong> X · Instagram · TikTok · YouTube · Discord (notes only). LinkedIn paused.
+<br><strong>How to use:</strong> Pick your role above. Click owner badge on a post to claim it. Click status pill to advance (Idea → Copy → Designed → Reviewed → Scheduled → Posted). Tick checklist as you complete steps. State auto-saves to your browser.
+</div>
+
+<div class="toc">
+<a href="#d2026-05-02">Day +1 · Friday</a>
+<a href="#d2026-05-03">Day +2 · Saturday</a>
+<a href="#d2026-05-04">Day +3 · Sunday</a>
+<a href="#d2026-05-05">Day +4 · Monday</a>
+<a href="#d2026-05-06">Day +5 · Tuesday</a>
+<a href="#d2026-05-07">Day +6 · Wednesday</a>
+<a href="#d2026-05-08">Day +7 · Friday — Week 1 Recap</a>
+</div>
+<div class="day" id="d2026-05-02"><div class="day-label">Day +1 · Friday</div><div class="day-meta">Publish: 2026-05-02</div>
+<div class="channel" style="border-left-color:#0A66C2" data-postid="2026-05-02_LinkedIn_[PAUSED]_Day_+1_—_5_Places_Creative_Stal" data-paused="1">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#0A66C2">LinkedIn</span> <span class="pill paused">⏸ PAUSED</span></div>
+                <div class="post-name">[PAUSED] Day +1 — 5 Places Creative Stalls</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-02_LinkedIn_[PAUSED]_Day_+1_—_5_Places_Creative_Stal','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-02_LinkedIn_[PAUSED]_Day_+1_—_5_Places_Creative_Stal','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-02_LinkedIn_[PAUSED]_Day_+1_—_5_Places_Creative_Stal','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-02_LinkedIn_[PAUSED]_Day_+1_—_5_Places_Creative_Stal','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-02_LinkedIn_[PAUSED]_Day_+1_—_5_Places_Creative_Stal','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-02_LinkedIn_[PAUSED]_Day_+1_—_5_Places_Creative_Stal')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-02_LinkedIn_[PAUSED]_Day_+1_—_5_Places_Creative_Stal','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-02_LinkedIn_[PAUSED]_Day_+1_—_5_Places_Creative_Stal','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-02_LinkedIn_[PAUSED]_Day_+1_—_5_Places_Creative_Stal','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-02_LinkedIn_[PAUSED]_Day_+1_—_5_Places_Creative_Stal','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-02_LinkedIn_[PAUSED]_Day_+1_—_5_Places_Creative_Stal','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Most video ideas do not die from being bad — they stall at 1 of 5 points</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Most video ideas do not die from being bad.<br><br>They stall at one of five points.<br><br>1. The brief is too vague to act on.<br>2. The visual direction is unclear, so the editor guesses.<br>3. The draft takes longer than the idea is exciting.<br>4. Feedback comes in scattered, late, and contradictory.<br>5. The asset gets exported but never has a clear job to do.<br><br>Map your last stuck project against these five. The bottleneck is one of them — not all.<br><br>Fix one. Watch the rest move.</div></div>
+<div class="meta-row">
+<span class="pill">Text</span>
+<span class="pill">Authority</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">PAUSED 2026-04-30 — awaiting clear goal for Garry LinkedIn before publishing.<br><br>Launch_Day: Day +1<br>Status flag: Drafted<br>Product mention: Soft<br>Visual: No Visual</div></details>
+</div>
+<div class="channel" style="border-left-color:#1DA1F2" data-postid="2026-05-02_X_Day_+1_—_5_stall_points" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#1DA1F2">X</span> </div>
+                <div class="post-name">Day +1 — 5 stall points</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-02_X_Day_+1_—_5_stall_points','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-02_X_Day_+1_—_5_stall_points','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-02_X_Day_+1_—_5_stall_points','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-02_X_Day_+1_—_5_stall_points','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-02_X_Day_+1_—_5_stall_points','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-02_X_Day_+1_—_5_stall_points')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-02_X_Day_+1_—_5_stall_points','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-02_X_Day_+1_—_5_stall_points','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-02_X_Day_+1_—_5_stall_points','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-02_X_Day_+1_—_5_stall_points','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-02_X_Day_+1_—_5_stall_points','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Most video ideas do not die from being bad</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Most video ideas do not die from being bad.<br><br>They stall at:<br>1. Vague brief<br>2. Unclear visuals<br>3. Draft drag<br>4. Scattered feedback<br>5. No clear asset job<br><br>Fix one. Rest moves.</div></div>
+<div class="meta-row">
+<span class="pill">Single</span>
+<span class="pill">Authority</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +1<br>Status flag: Drafted<br>Product mention: None<br>Visual: No Visual</div></details>
+</div>
+<div class="channel" style="border-left-color:#E4405F" data-postid="2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Carou" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#E4405F">Instagram</span> </div>
+                <div class="post-name">Day +1 — 5 Places Creative Stalls (Carousel)</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Carou','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Carou','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Carou','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Carou','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Carou','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Carou')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Carou','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Carou','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Carou','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Carou','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Carou','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">5 places creative stalls</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Slide 1: 5 places creative stalls<br>Slide 2: 1. Vague brief<br>Slide 3: 2. Unclear visuals<br>Slide 4: 3. Draft drag<br>Slide 5: 4. Scattered feedback<br>Slide 6: 5. No clear asset job<br>Slide 7: Map your last stuck project.<br>Slide 8: Fix one. Watch the rest move.<br><br>Caption: Stop blaming tools. The bottleneck is one of these five. Save the map.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Save the map.</div></div>
+<div class="meta-row">
+<span class="pill">Carousel</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +1<br>Status flag: Drafted<br>Product mention: Soft<br>Visual: Carousel Design (8 slides)</div></details>
+</div>
+<div class="channel" style="border-left-color:#E4405F" data-postid="2026-05-02_Instagram_Story_—_Where_ideas_die" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#E4405F">Instagram</span> </div>
+                <div class="post-name">Story — Where ideas die</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-02_Instagram_Story_—_Where_ideas_die','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-02_Instagram_Story_—_Where_ideas_die','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-02_Instagram_Story_—_Where_ideas_die','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-02_Instagram_Story_—_Where_ideas_die','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-02_Instagram_Story_—_Where_ideas_die','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-02_Instagram_Story_—_Where_ideas_die')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-02_Instagram_Story_—_Where_ideas_die','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-02_Instagram_Story_—_Where_ideas_die','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-02_Instagram_Story_—_Where_ideas_die','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-02_Instagram_Story_—_Where_ideas_die','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-02_Instagram_Story_—_Where_ideas_die','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Where ideas die</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Reshare carousel cover slide.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Swipe to read.</div></div>
+<div class="meta-row">
+<span class="pill">Story</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">IG Story — ephemeral, 24h. Lightweight asset.</div></details>
+</div>
+<div class="channel" style="border-left-color:#E4405F" data-postid="2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Reel" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#E4405F">Instagram</span> </div>
+                <div class="post-name">Day +1 — 5 Places Creative Stalls (Reel)</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Reel','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Reel','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Reel','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Reel','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Reel','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Reel')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Reel','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Reel','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Reel','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Reel','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-02_Instagram_Day_+1_—_5_Places_Creative_Stalls_Reel','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">5 places creative stalls</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Most video ideas do not die from being bad. They stall at one of five points.<br><br>1. The brief is vague.<br>2. The visual direction is unclear.<br>3. The draft takes too long.<br>4. Feedback is scattered.<br>5. The asset has no clear job.<br><br>Map your last stuck project. The bottleneck is one of these — not all. Fix that one.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Save</div></div>
+<div class="meta-row">
+<span class="pill">Reel</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Cross-post from TikTok — same asset upload.<br>Launch_Day: Day +1<br>Backup: BONUS — if not produced: post the IG carousel as a Reel slideshow.<br>Status flag: Bonus<br>Visual: Screen Recording + Text</div></details>
+</div>
+<div class="channel" style="border-left-color:#69C9D0" data-postid="2026-05-02_TikTok_Day_+1_—_5_Places_Creative_Stalls" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#69C9D0">TikTok</span> </div>
+                <div class="post-name">Day +1 — 5 Places Creative Stalls</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-02_TikTok_Day_+1_—_5_Places_Creative_Stalls','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-02_TikTok_Day_+1_—_5_Places_Creative_Stalls','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-02_TikTok_Day_+1_—_5_Places_Creative_Stalls','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-02_TikTok_Day_+1_—_5_Places_Creative_Stalls','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-02_TikTok_Day_+1_—_5_Places_Creative_Stalls','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-02_TikTok_Day_+1_—_5_Places_Creative_Stalls')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-02_TikTok_Day_+1_—_5_Places_Creative_Stalls','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-02_TikTok_Day_+1_—_5_Places_Creative_Stalls','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-02_TikTok_Day_+1_—_5_Places_Creative_Stalls','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-02_TikTok_Day_+1_—_5_Places_Creative_Stalls','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-02_TikTok_Day_+1_—_5_Places_Creative_Stalls','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">5 places creative stalls</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Most video ideas do not die from being bad. They stall at one of five points.<br><br>Brief. Visuals. Draft. Feedback. Asset job.<br><br>Map your last stuck project. Find the one bottleneck. Fix that. Watch the rest move.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Save</div></div>
+<div class="meta-row">
+<span class="pill">Video</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +1<br>Backup: BONUS — if not produced: post the IG carousel as a Reel slideshow.<br>Status flag: Bonus<br>Product mention: Soft<br>Visual: Screen Recording + Text<br>Internal: Week 1 still — bonus</div></details>
+</div>
+<div class="channel" style="border-left-color:#FF0000" data-postid="2026-05-02_YouTube_Day_+1_—_5_Places_Creative_Stalls" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#FF0000">YouTube</span> </div>
+                <div class="post-name">Day +1 — 5 Places Creative Stalls</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-02_YouTube_Day_+1_—_5_Places_Creative_Stalls','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-02_YouTube_Day_+1_—_5_Places_Creative_Stalls','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-02_YouTube_Day_+1_—_5_Places_Creative_Stalls','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-02_YouTube_Day_+1_—_5_Places_Creative_Stalls','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-02_YouTube_Day_+1_—_5_Places_Creative_Stalls','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-02_YouTube_Day_+1_—_5_Places_Creative_Stalls')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-02_YouTube_Day_+1_—_5_Places_Creative_Stalls','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-02_YouTube_Day_+1_—_5_Places_Creative_Stalls','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-02_YouTube_Day_+1_—_5_Places_Creative_Stalls','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-02_YouTube_Day_+1_—_5_Places_Creative_Stalls','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-02_YouTube_Day_+1_—_5_Places_Creative_Stalls','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">5 places creative stalls</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Most video ideas do not die from being bad. They stall at one of five points.<br><br>Brief. Visuals. Draft. Feedback. Asset job.<br><br>Map your last stuck project against these five. Bottleneck is one of them, not all. Fix one. Watch the rest move.</div></div>
+<div class="meta-row">
+<span class="pill">Short</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +1<br>Backup: BONUS — skip if not produced.<br>Status flag: Bonus<br>Product mention: Soft<br>Visual: Talking Head + Product Video Example</div></details>
+</div>
+</div>
+<div class="day" id="d2026-05-03"><div class="day-label">Day +2 · Saturday</div><div class="day-meta">Publish: 2026-05-03</div>
+<div class="channel" style="border-left-color:#0A66C2" data-postid="2026-05-03_LinkedIn_[PAUSED]_Day_+2_—_Before_You_Edit" data-paused="1">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#0A66C2">LinkedIn</span> <span class="pill paused">⏸ PAUSED</span></div>
+                <div class="post-name">[PAUSED] Day +2 — Before You Edit</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-03_LinkedIn_[PAUSED]_Day_+2_—_Before_You_Edit','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-03_LinkedIn_[PAUSED]_Day_+2_—_Before_You_Edit','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-03_LinkedIn_[PAUSED]_Day_+2_—_Before_You_Edit','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-03_LinkedIn_[PAUSED]_Day_+2_—_Before_You_Edit','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-03_LinkedIn_[PAUSED]_Day_+2_—_Before_You_Edit','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-03_LinkedIn_[PAUSED]_Day_+2_—_Before_You_Edit')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-03_LinkedIn_[PAUSED]_Day_+2_—_Before_You_Edit','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-03_LinkedIn_[PAUSED]_Day_+2_—_Before_You_Edit','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-03_LinkedIn_[PAUSED]_Day_+2_—_Before_You_Edit','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-03_LinkedIn_[PAUSED]_Day_+2_—_Before_You_Edit','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-03_LinkedIn_[PAUSED]_Day_+2_—_Before_You_Edit','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Before you open an editing tool decide what the video is supposed to do</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Before you open an editing tool, decide what the video is supposed to do.<br><br>Is it meant to sell? Explain? Build trust? Show taste? Start a conversation? Get feedback?<br><br>A lot of bad edits are really unclear strategy wearing a timeline.</div></div>
+<div class="meta-row">
+<span class="pill">Text</span>
+<span class="pill">Authority</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">PAUSED 2026-04-30 — awaiting clear goal for Garry LinkedIn before publishing.<br><br>Launch_Day: Day +2<br>Status flag: Drafted<br>Product mention: Soft<br>Visual: No Visual<br>Internal: Last day of week 1</div></details>
+</div>
+<div class="channel" style="border-left-color:#1DA1F2" data-postid="2026-05-03_X_Day_+2_—_Before_You_Edit" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#1DA1F2">X</span> </div>
+                <div class="post-name">Day +2 — Before You Edit</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-03_X_Day_+2_—_Before_You_Edit','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-03_X_Day_+2_—_Before_You_Edit','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-03_X_Day_+2_—_Before_You_Edit','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-03_X_Day_+2_—_Before_You_Edit','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-03_X_Day_+2_—_Before_You_Edit','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-03_X_Day_+2_—_Before_You_Edit')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-03_X_Day_+2_—_Before_You_Edit','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-03_X_Day_+2_—_Before_You_Edit','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-03_X_Day_+2_—_Before_You_Edit','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-03_X_Day_+2_—_Before_You_Edit','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-03_X_Day_+2_—_Before_You_Edit','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Before you edit answer one question</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Before you edit, answer one question: What is this video supposed to do? Sell, teach, pitch, prove, entertain, or start a conversation?<br><br>If you do not know, the edit will not save it.</div></div>
+<div class="meta-row">
+<span class="pill">Single</span>
+<span class="pill">Authority</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +2<br>Status flag: Drafted<br>Product mention: None<br>Visual: No Visual</div></details>
+</div>
+<div class="channel" style="border-left-color:#E4405F" data-postid="2026-05-03_Instagram_Day_+2_—_Before_You_Edit_Reel" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#E4405F">Instagram</span> </div>
+                <div class="post-name">Day +2 — Before You Edit (Reel)</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-03_Instagram_Day_+2_—_Before_You_Edit_Reel','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-03_Instagram_Day_+2_—_Before_You_Edit_Reel','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-03_Instagram_Day_+2_—_Before_You_Edit_Reel','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-03_Instagram_Day_+2_—_Before_You_Edit_Reel','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-03_Instagram_Day_+2_—_Before_You_Edit_Reel','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-03_Instagram_Day_+2_—_Before_You_Edit_Reel')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-03_Instagram_Day_+2_—_Before_You_Edit_Reel','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-03_Instagram_Day_+2_—_Before_You_Edit_Reel','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-03_Instagram_Day_+2_—_Before_You_Edit_Reel','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-03_Instagram_Day_+2_—_Before_You_Edit_Reel','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-03_Instagram_Day_+2_—_Before_You_Edit_Reel','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Stop editing before you know the job</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Stop editing before you know the job of the video. Walk through 6 jobs with one example each: sell, teach, pitch, prove, entertain, start a conversation.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Save</div></div>
+<div class="meta-row">
+<span class="pill">Reel</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Cross-post from TikTok — same asset upload.<br>Launch_Day: Day +2<br>Backup: BONUS — if not produced: post IG carousel as Reel slideshow with same script as voiceover.<br>Status flag: Bonus<br>Visual: Talking Head + B-Roll</div></details>
+</div>
+<div class="channel" style="border-left-color:#E4405F" data-postid="2026-05-03_Instagram_Day_+2_—_Before_You_Edit" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#E4405F">Instagram</span> </div>
+                <div class="post-name">Day +2 — Before You Edit</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-03_Instagram_Day_+2_—_Before_You_Edit','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-03_Instagram_Day_+2_—_Before_You_Edit','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-03_Instagram_Day_+2_—_Before_You_Edit','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-03_Instagram_Day_+2_—_Before_You_Edit','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-03_Instagram_Day_+2_—_Before_You_Edit','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-03_Instagram_Day_+2_—_Before_You_Edit')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-03_Instagram_Day_+2_—_Before_You_Edit','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-03_Instagram_Day_+2_—_Before_You_Edit','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-03_Instagram_Day_+2_—_Before_You_Edit','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-03_Instagram_Day_+2_—_Before_You_Edit','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-03_Instagram_Day_+2_—_Before_You_Edit','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">6 jobs a video can have</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Slide 1: 6 jobs a video can have.<br>Slide 2: Sell.<br>Slide 3: Teach.<br>Slide 4: Pitch.<br>Slide 5: Prove.<br>Slide 6: Entertain.<br>Slide 7: Start a conversation.<br><br>Caption: Decide the job before you open the timeline.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Save this</div></div>
+<div class="meta-row">
+<span class="pill">Carousel</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +2<br>Status flag: Drafted<br>Product mention: Soft<br>Visual: Carousel Design (7 slides)</div></details>
+</div>
+<div class="channel" style="border-left-color:#E4405F" data-postid="2026-05-03_Instagram_Story_—_Before_you_edit" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#E4405F">Instagram</span> </div>
+                <div class="post-name">Story — Before you edit</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-03_Instagram_Story_—_Before_you_edit','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-03_Instagram_Story_—_Before_you_edit','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-03_Instagram_Story_—_Before_you_edit','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-03_Instagram_Story_—_Before_you_edit','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-03_Instagram_Story_—_Before_you_edit','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-03_Instagram_Story_—_Before_you_edit')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-03_Instagram_Story_—_Before_you_edit','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-03_Instagram_Story_—_Before_you_edit','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-03_Instagram_Story_—_Before_you_edit','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-03_Instagram_Story_—_Before_you_edit','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-03_Instagram_Story_—_Before_you_edit','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Before you edit</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Quote story with hook only.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Swipe up.</div></div>
+<div class="meta-row">
+<span class="pill">Story</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">IG Story — ephemeral, 24h. Lightweight asset.</div></details>
+</div>
+<div class="channel" style="border-left-color:#69C9D0" data-postid="2026-05-03_TikTok_Day_+2_—_Before_You_Edit" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#69C9D0">TikTok</span> </div>
+                <div class="post-name">Day +2 — Before You Edit</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-03_TikTok_Day_+2_—_Before_You_Edit','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-03_TikTok_Day_+2_—_Before_You_Edit','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-03_TikTok_Day_+2_—_Before_You_Edit','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-03_TikTok_Day_+2_—_Before_You_Edit','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-03_TikTok_Day_+2_—_Before_You_Edit','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-03_TikTok_Day_+2_—_Before_You_Edit')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-03_TikTok_Day_+2_—_Before_You_Edit','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-03_TikTok_Day_+2_—_Before_You_Edit','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-03_TikTok_Day_+2_—_Before_You_Edit','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-03_TikTok_Day_+2_—_Before_You_Edit','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-03_TikTok_Day_+2_—_Before_You_Edit','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Stop editing before you know the job</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Stop editing before you know the job of the video. Walk through 6 jobs with one example each: sell, teach, pitch, prove, entertain, start a conversation.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Save</div></div>
+<div class="meta-row">
+<span class="pill">Video</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +2<br>Backup: BONUS — if not produced: post IG carousel as Reel slideshow with same script as voiceover.<br>Status flag: Bonus<br>Product mention: Soft<br>Visual: Talking Head + B-Roll</div></details>
+</div>
+<div class="channel" style="border-left-color:#FF0000" data-postid="2026-05-03_YouTube_Day_+2_—_Before_You_Edit" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#FF0000">YouTube</span> </div>
+                <div class="post-name">Day +2 — Before You Edit</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-03_YouTube_Day_+2_—_Before_You_Edit','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-03_YouTube_Day_+2_—_Before_You_Edit','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-03_YouTube_Day_+2_—_Before_You_Edit','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-03_YouTube_Day_+2_—_Before_You_Edit','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-03_YouTube_Day_+2_—_Before_You_Edit','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-03_YouTube_Day_+2_—_Before_You_Edit')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-03_YouTube_Day_+2_—_Before_You_Edit','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-03_YouTube_Day_+2_—_Before_You_Edit','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-03_YouTube_Day_+2_—_Before_You_Edit','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-03_YouTube_Day_+2_—_Before_You_Edit','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-03_YouTube_Day_+2_—_Before_You_Edit','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">What is the job of your video</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">What is the job of your video? Short educational breakdown of the 6 jobs with concrete examples.</div></div>
+<div class="meta-row">
+<span class="pill">Short</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +2<br>Backup: BONUS — skip if not produced.<br>Status flag: Bonus<br>Product mention: Soft<br>Visual: Talking Head</div></details>
+</div>
+</div>
+<div class="day" id="d2026-05-04"><div class="day-label">Day +3 · Sunday</div><div class="day-meta">Publish: 2026-05-04</div>
+<div class="channel" style="border-left-color:#0A66C2" data-postid="2026-05-04_LinkedIn_[PAUSED]_Day_+3_—_One-Sentence_Test" data-paused="1">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#0A66C2">LinkedIn</span> <span class="pill paused">⏸ PAUSED</span></div>
+                <div class="post-name">[PAUSED] Day +3 — One-Sentence Test</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-04_LinkedIn_[PAUSED]_Day_+3_—_One-Sentence_Test','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-04_LinkedIn_[PAUSED]_Day_+3_—_One-Sentence_Test','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-04_LinkedIn_[PAUSED]_Day_+3_—_One-Sentence_Test','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-04_LinkedIn_[PAUSED]_Day_+3_—_One-Sentence_Test','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-04_LinkedIn_[PAUSED]_Day_+3_—_One-Sentence_Test','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-04_LinkedIn_[PAUSED]_Day_+3_—_One-Sentence_Test')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-04_LinkedIn_[PAUSED]_Day_+3_—_One-Sentence_Test','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-04_LinkedIn_[PAUSED]_Day_+3_—_One-Sentence_Test','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-04_LinkedIn_[PAUSED]_Day_+3_—_One-Sentence_Test','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-04_LinkedIn_[PAUSED]_Day_+3_—_One-Sentence_Test','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-04_LinkedIn_[PAUSED]_Day_+3_—_One-Sentence_Test','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">If you cannot explain the video in one sentence</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">If you cannot explain the video in one sentence, you are probably not ready to make it.<br><br>The one-sentence test forces clarity. It should include the audience, the promise, and the angle.<br><br>Example: 'A 15-second product ad showing freelancers how this desk lamp makes late-night work feel calmer and more focused.'<br><br>That is direction.</div></div>
+<div class="meta-row">
+<span class="pill">Text</span>
+<span class="pill">Authority</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">PAUSED 2026-04-30 — awaiting clear goal for Garry LinkedIn before publishing.<br><br>Launch_Day: Day +3<br>Status flag: Drafted<br>Product mention: Soft<br>Visual: No Visual<br>Internal: Week 2 — video primary</div></details>
+</div>
+<div class="channel" style="border-left-color:#1DA1F2" data-postid="2026-05-04_X_Day_+3_—_One-Sentence_Test" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#1DA1F2">X</span> </div>
+                <div class="post-name">Day +3 — One-Sentence Test</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-04_X_Day_+3_—_One-Sentence_Test','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-04_X_Day_+3_—_One-Sentence_Test','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-04_X_Day_+3_—_One-Sentence_Test','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-04_X_Day_+3_—_One-Sentence_Test','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-04_X_Day_+3_—_One-Sentence_Test','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-04_X_Day_+3_—_One-Sentence_Test')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-04_X_Day_+3_—_One-Sentence_Test','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-04_X_Day_+3_—_One-Sentence_Test','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-04_X_Day_+3_—_One-Sentence_Test','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-04_X_Day_+3_—_One-Sentence_Test','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-04_X_Day_+3_—_One-Sentence_Test','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">One-sentence test template</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">One-sentence test:<br><br>'This video is for [audience] who want [outcome], and the angle is [creative hook].'<br><br>If you cannot fill that in, do not start editing yet.</div></div>
+<div class="meta-row">
+<span class="pill">Single</span>
+<span class="pill">Authority</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +3<br>Status flag: Drafted<br>Product mention: None<br>Visual: No Visual</div></details>
+</div>
+<div class="channel" style="border-left-color:#E4405F" data-postid="2026-05-04_Instagram_Story_—_One-sentence_test" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#E4405F">Instagram</span> </div>
+                <div class="post-name">Story — One-sentence test</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-04_Instagram_Story_—_One-sentence_test','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-04_Instagram_Story_—_One-sentence_test','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-04_Instagram_Story_—_One-sentence_test','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-04_Instagram_Story_—_One-sentence_test','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-04_Instagram_Story_—_One-sentence_test','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-04_Instagram_Story_—_One-sentence_test')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-04_Instagram_Story_—_One-sentence_test','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-04_Instagram_Story_—_One-sentence_test','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-04_Instagram_Story_—_One-sentence_test','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-04_Instagram_Story_—_One-sentence_test','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-04_Instagram_Story_—_One-sentence_test','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">One-sentence test</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Template fill-in story.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Save the template.</div></div>
+<div class="meta-row">
+<span class="pill">Story</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">IG Story — ephemeral, 24h. Lightweight asset.</div></details>
+</div>
+<div class="channel" style="border-left-color:#E4405F" data-postid="2026-05-04_Instagram_Day_+3_—_One-Sentence_Test_Reel" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#E4405F">Instagram</span> </div>
+                <div class="post-name">Day +3 — One-Sentence Test (Reel)</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test_Reel','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test_Reel','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test_Reel','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test_Reel','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test_Reel','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test_Reel')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test_Reel','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test_Reel','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test_Reel','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test_Reel','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test_Reel','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Vague idea → clear concept</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Take a vague idea ('a video about my new product') and rewrite it into a clear one-sentence concept using the audience + outcome + angle template.<br><br>Show the before and after on screen.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Try this before your next video</div></div>
+<div class="meta-row">
+<span class="pill">Reel</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Cross-post from TikTok — same asset upload.<br>Launch_Day: Day +3<br>Backup: Backup: post the IG carousel + caption if reel ships late.<br>Status flag: Planned<br>Visual: Talking Head + Text Overlay</div></details>
+</div>
+<div class="channel" style="border-left-color:#E4405F" data-postid="2026-05-04_Instagram_Day_+3_—_One-Sentence_Test" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#E4405F">Instagram</span> </div>
+                <div class="post-name">Day +3 — One-Sentence Test</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-04_Instagram_Day_+3_—_One-Sentence_Test','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">The one-sentence test for better videos</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Slide 1: The one-sentence test.<br>Slide 2: This video is for [audience].<br>Slide 3: Who want [outcome].<br>Slide 4: And the angle is [creative hook].<br>Slide 5: If you cannot fill it in — do not start editing.<br><br>Caption: Try this on your next idea.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Try the one-sentence test before your next video.</div></div>
+<div class="meta-row">
+<span class="pill">Carousel</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +3<br>Status flag: Drafted<br>Product mention: Soft<br>Visual: Carousel Design (5 slides)</div></details>
+</div>
+<div class="channel" style="border-left-color:#69C9D0" data-postid="2026-05-04_TikTok_Day_+3_—_One-Sentence_Test" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#69C9D0">TikTok</span> </div>
+                <div class="post-name">Day +3 — One-Sentence Test</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-04_TikTok_Day_+3_—_One-Sentence_Test','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-04_TikTok_Day_+3_—_One-Sentence_Test','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-04_TikTok_Day_+3_—_One-Sentence_Test','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-04_TikTok_Day_+3_—_One-Sentence_Test','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-04_TikTok_Day_+3_—_One-Sentence_Test','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-04_TikTok_Day_+3_—_One-Sentence_Test')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-04_TikTok_Day_+3_—_One-Sentence_Test','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-04_TikTok_Day_+3_—_One-Sentence_Test','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-04_TikTok_Day_+3_—_One-Sentence_Test','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-04_TikTok_Day_+3_—_One-Sentence_Test','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-04_TikTok_Day_+3_—_One-Sentence_Test','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Vague idea → clear concept</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Take a vague idea ('a video about my new product') and rewrite it into a clear one-sentence concept using the audience + outcome + angle template.<br><br>Show the before and after on screen.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Try this before your next video</div></div>
+<div class="meta-row">
+<span class="pill">Video</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +3<br>Backup: Backup: post the IG carousel + caption if reel ships late.<br>Status flag: Planned<br>Product mention: Soft<br>Visual: Talking Head + Text Overlay<br>Internal: Primary video — backup is carousel</div></details>
+</div>
+<div class="channel" style="border-left-color:#FF0000" data-postid="2026-05-04_YouTube_Day_+3_—_One-Sentence_Test" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#FF0000">YouTube</span> </div>
+                <div class="post-name">Day +3 — One-Sentence Test</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-04_YouTube_Day_+3_—_One-Sentence_Test','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-04_YouTube_Day_+3_—_One-Sentence_Test','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-04_YouTube_Day_+3_—_One-Sentence_Test','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-04_YouTube_Day_+3_—_One-Sentence_Test','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-04_YouTube_Day_+3_—_One-Sentence_Test','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-04_YouTube_Day_+3_—_One-Sentence_Test')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-04_YouTube_Day_+3_—_One-Sentence_Test','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-04_YouTube_Day_+3_—_One-Sentence_Test','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-04_YouTube_Day_+3_—_One-Sentence_Test','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-04_YouTube_Day_+3_—_One-Sentence_Test','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-04_YouTube_Day_+3_—_One-Sentence_Test','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">The one-sentence test in 45 seconds</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Teach the one-sentence test with one example. Audience + outcome + angle.</div></div>
+<div class="meta-row">
+<span class="pill">Short</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +3<br>Backup: Backup: skip and let TikTok cover.<br>Status flag: Planned<br>Product mention: Soft<br>Visual: Talking Head</div></details>
+</div>
+</div>
+<div class="day" id="d2026-05-05"><div class="day-label">Day +4 · Monday</div><div class="day-meta">Publish: 2026-05-05</div>
+<div class="channel" style="border-left-color:#0A66C2" data-postid="2026-05-05_LinkedIn_[PAUSED]_Day_+4_—_Hook_Testing" data-paused="1">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#0A66C2">LinkedIn</span> <span class="pill paused">⏸ PAUSED</span></div>
+                <div class="post-name">[PAUSED] Day +4 — Hook Testing</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-05_LinkedIn_[PAUSED]_Day_+4_—_Hook_Testing','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-05_LinkedIn_[PAUSED]_Day_+4_—_Hook_Testing','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-05_LinkedIn_[PAUSED]_Day_+4_—_Hook_Testing','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-05_LinkedIn_[PAUSED]_Day_+4_—_Hook_Testing','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-05_LinkedIn_[PAUSED]_Day_+4_—_Hook_Testing','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-05_LinkedIn_[PAUSED]_Day_+4_—_Hook_Testing')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-05_LinkedIn_[PAUSED]_Day_+4_—_Hook_Testing','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-05_LinkedIn_[PAUSED]_Day_+4_—_Hook_Testing','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-05_LinkedIn_[PAUSED]_Day_+4_—_Hook_Testing','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-05_LinkedIn_[PAUSED]_Day_+4_—_Hook_Testing','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-05_LinkedIn_[PAUSED]_Day_+4_—_Hook_Testing','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Your first hook is usually not the best one</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Your first hook is usually not the best one.<br><br>Before producing a video, write five hooks: one curiosity hook, one pain hook, one contrarian hook, one outcome hook, one visual hook.<br><br>The best creative often starts when the obvious hook gets rejected.</div></div>
+<div class="meta-row">
+<span class="pill">Text</span>
+<span class="pill">Authority</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">PAUSED 2026-04-30 — awaiting clear goal for Garry LinkedIn before publishing.<br><br>Launch_Day: Day +4<br>Status flag: Drafted<br>Product mention: Soft<br>Visual: No Visual</div></details>
+</div>
+<div class="channel" style="border-left-color:#1DA1F2" data-postid="2026-05-05_X_Day_+4_—_Hook_Testing" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#1DA1F2">X</span> </div>
+                <div class="post-name">Day +4 — Hook Testing</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-05_X_Day_+4_—_Hook_Testing','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-05_X_Day_+4_—_Hook_Testing','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-05_X_Day_+4_—_Hook_Testing','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-05_X_Day_+4_—_Hook_Testing','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-05_X_Day_+4_—_Hook_Testing','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-05_X_Day_+4_—_Hook_Testing')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-05_X_Day_+4_—_Hook_Testing','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-05_X_Day_+4_—_Hook_Testing','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-05_X_Day_+4_—_Hook_Testing','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-05_X_Day_+4_—_Hook_Testing','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-05_X_Day_+4_—_Hook_Testing','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Write 5 hooks before making the video</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Write 5 hooks before making the video: curiosity, pain, contrarian, outcome, visual.<br><br>Your first hook is usually just the warmup.</div></div>
+<div class="meta-row">
+<span class="pill">Single</span>
+<span class="pill">Authority</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +4<br>Status flag: Drafted<br>Product mention: None<br>Visual: No Visual</div></details>
+</div>
+<div class="channel" style="border-left-color:#E4405F" data-postid="2026-05-05_Instagram_Day_+4_—_Hook_Testing" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#E4405F">Instagram</span> </div>
+                <div class="post-name">Day +4 — Hook Testing</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-05_Instagram_Day_+4_—_Hook_Testing','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-05_Instagram_Day_+4_—_Hook_Testing','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-05_Instagram_Day_+4_—_Hook_Testing','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-05_Instagram_Day_+4_—_Hook_Testing','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-05_Instagram_Day_+4_—_Hook_Testing','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-05_Instagram_Day_+4_—_Hook_Testing')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-05_Instagram_Day_+4_—_Hook_Testing','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-05_Instagram_Day_+4_—_Hook_Testing','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-05_Instagram_Day_+4_—_Hook_Testing','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-05_Instagram_Day_+4_—_Hook_Testing','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-05_Instagram_Day_+4_—_Hook_Testing','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">5 hooks to test before you make the video</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Slide 1: 5 hooks to test before you make the video.<br>Slide 2: Curiosity.<br>Slide 3: Pain.<br>Slide 4: Contrarian.<br>Slide 5: Outcome.<br>Slide 6: Visual.<br>Slide 7: The first hook is usually the weakest.<br><br>Caption: Save and test on your next idea.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Save</div></div>
+<div class="meta-row">
+<span class="pill">Carousel</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +4<br>Status flag: Drafted<br>Product mention: Soft<br>Visual: Carousel Design (7 slides)</div></details>
+</div>
+<div class="channel" style="border-left-color:#E4405F" data-postid="2026-05-05_Instagram_Day_+4_—_Hook_Testing_Reel" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#E4405F">Instagram</span> </div>
+                <div class="post-name">Day +4 — Hook Testing (Reel)</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-05_Instagram_Day_+4_—_Hook_Testing_Reel','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-05_Instagram_Day_+4_—_Hook_Testing_Reel','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-05_Instagram_Day_+4_—_Hook_Testing_Reel','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-05_Instagram_Day_+4_—_Hook_Testing_Reel','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-05_Instagram_Day_+4_—_Hook_Testing_Reel','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-05_Instagram_Day_+4_—_Hook_Testing_Reel')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-05_Instagram_Day_+4_—_Hook_Testing_Reel','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-05_Instagram_Day_+4_—_Hook_Testing_Reel','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-05_Instagram_Day_+4_—_Hook_Testing_Reel','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-05_Instagram_Day_+4_—_Hook_Testing_Reel','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-05_Instagram_Day_+4_—_Hook_Testing_Reel','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Five hooks for the same product</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Show five hooks for the same product. Pick the strongest. Explain why.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Save</div></div>
+<div class="meta-row">
+<span class="pill">Reel</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Cross-post from TikTok — same asset upload.<br>Launch_Day: Day +4<br>Backup: Backup: IG carousel covers if reel doesn't ship.<br>Status flag: Planned<br>Visual: Talking Head + Product B-Roll</div></details>
+</div>
+<div class="channel" style="border-left-color:#E4405F" data-postid="2026-05-05_Instagram_Story_—_5_hooks_poll" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#E4405F">Instagram</span> </div>
+                <div class="post-name">Story — 5 hooks poll</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-05_Instagram_Story_—_5_hooks_poll','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-05_Instagram_Story_—_5_hooks_poll','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-05_Instagram_Story_—_5_hooks_poll','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-05_Instagram_Story_—_5_hooks_poll','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-05_Instagram_Story_—_5_hooks_poll','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-05_Instagram_Story_—_5_hooks_poll')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-05_Instagram_Story_—_5_hooks_poll','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-05_Instagram_Story_—_5_hooks_poll','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-05_Instagram_Story_—_5_hooks_poll','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-05_Instagram_Story_—_5_hooks_poll','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-05_Instagram_Story_—_5_hooks_poll','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">5 hooks poll</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Poll sticker — pick the strongest hook.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Vote.</div></div>
+<div class="meta-row">
+<span class="pill">Story</span>
+<span class="pill">Inspiration</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">IG Story — ephemeral, 24h. Lightweight asset.</div></details>
+</div>
+<div class="channel" style="border-left-color:#69C9D0" data-postid="2026-05-05_TikTok_Day_+4_—_Hook_Testing" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#69C9D0">TikTok</span> </div>
+                <div class="post-name">Day +4 — Hook Testing</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-05_TikTok_Day_+4_—_Hook_Testing','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-05_TikTok_Day_+4_—_Hook_Testing','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-05_TikTok_Day_+4_—_Hook_Testing','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-05_TikTok_Day_+4_—_Hook_Testing','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-05_TikTok_Day_+4_—_Hook_Testing','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-05_TikTok_Day_+4_—_Hook_Testing')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-05_TikTok_Day_+4_—_Hook_Testing','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-05_TikTok_Day_+4_—_Hook_Testing','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-05_TikTok_Day_+4_—_Hook_Testing','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-05_TikTok_Day_+4_—_Hook_Testing','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-05_TikTok_Day_+4_—_Hook_Testing','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Five hooks for the same product</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Show five hooks for the same product. Pick the strongest. Explain why.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Save</div></div>
+<div class="meta-row">
+<span class="pill">Video</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +4<br>Backup: Backup: IG carousel covers if reel doesn't ship.<br>Status flag: Planned<br>Product mention: Soft<br>Visual: Talking Head + Product B-Roll</div></details>
+</div>
+<div class="channel" style="border-left-color:#FF0000" data-postid="2026-05-05_YouTube_Day_+4_—_Hook_Testing" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#FF0000">YouTube</span> </div>
+                <div class="post-name">Day +4 — Hook Testing</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-05_YouTube_Day_+4_—_Hook_Testing','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-05_YouTube_Day_+4_—_Hook_Testing','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-05_YouTube_Day_+4_—_Hook_Testing','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-05_YouTube_Day_+4_—_Hook_Testing','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-05_YouTube_Day_+4_—_Hook_Testing','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-05_YouTube_Day_+4_—_Hook_Testing')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-05_YouTube_Day_+4_—_Hook_Testing','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-05_YouTube_Day_+4_—_Hook_Testing','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-05_YouTube_Day_+4_—_Hook_Testing','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-05_YouTube_Day_+4_—_Hook_Testing','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-05_YouTube_Day_+4_—_Hook_Testing','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Your first hook is the weakest</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Your first hook is probably the weakest. Quick hook test example with the 5 hook types.</div></div>
+<div class="meta-row">
+<span class="pill">Short</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +4<br>Backup: Backup: skip.<br>Status flag: Planned<br>Product mention: Soft<br>Visual: Talking Head</div></details>
+</div>
+</div>
+<div class="day" id="d2026-05-06"><div class="day-label">Day +5 · Tuesday</div><div class="day-meta">Publish: 2026-05-06</div>
+<div class="channel" style="border-left-color:#0A66C2" data-postid="2026-05-06_LinkedIn_[PAUSED]_Day_+5_—_Small_Teams_vs_Big_Bud" data-paused="1">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#0A66C2">LinkedIn</span> <span class="pill paused">⏸ PAUSED</span></div>
+                <div class="post-name">[PAUSED] Day +5 — Small Teams vs Big Budgets</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-06_LinkedIn_[PAUSED]_Day_+5_—_Small_Teams_vs_Big_Bud','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-06_LinkedIn_[PAUSED]_Day_+5_—_Small_Teams_vs_Big_Bud','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-06_LinkedIn_[PAUSED]_Day_+5_—_Small_Teams_vs_Big_Bud','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-06_LinkedIn_[PAUSED]_Day_+5_—_Small_Teams_vs_Big_Bud','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-06_LinkedIn_[PAUSED]_Day_+5_—_Small_Teams_vs_Big_Bud','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-06_LinkedIn_[PAUSED]_Day_+5_—_Small_Teams_vs_Big_Bud')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-06_LinkedIn_[PAUSED]_Day_+5_—_Small_Teams_vs_Big_Bud','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-06_LinkedIn_[PAUSED]_Day_+5_—_Small_Teams_vs_Big_Bud','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-06_LinkedIn_[PAUSED]_Day_+5_—_Small_Teams_vs_Big_Bud','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-06_LinkedIn_[PAUSED]_Day_+5_—_Small_Teams_vs_Big_Bud','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-06_LinkedIn_[PAUSED]_Day_+5_—_Small_Teams_vs_Big_Bud','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Small teams do not beat big budgets by pretending to be big</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Small teams do not beat big budgets by pretending to be big.<br><br>They win by moving faster, testing more ideas, and killing weak concepts earlier.<br><br>A big team may spend three weeks aligning on one campaign. A small team can test five directions before the big team finishes the meeting.<br><br>That is the advantage.</div></div>
+<div class="meta-row">
+<span class="pill">Text</span>
+<span class="pill">Authority</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">PAUSED 2026-04-30 — awaiting clear goal for Garry LinkedIn before publishing.<br><br>Launch_Day: Day +5<br>Status flag: Drafted<br>Product mention: Soft<br>Visual: No Visual</div></details>
+</div>
+<div class="channel" style="border-left-color:#1DA1F2" data-postid="2026-05-06_X_Day_+5_—_Small_Teams_vs_Big_Budgets" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#1DA1F2">X</span> </div>
+                <div class="post-name">Day +5 — Small Teams vs Big Budgets</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-06_X_Day_+5_—_Small_Teams_vs_Big_Budgets','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-06_X_Day_+5_—_Small_Teams_vs_Big_Budgets','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-06_X_Day_+5_—_Small_Teams_vs_Big_Budgets','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-06_X_Day_+5_—_Small_Teams_vs_Big_Budgets','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-06_X_Day_+5_—_Small_Teams_vs_Big_Budgets','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-06_X_Day_+5_—_Small_Teams_vs_Big_Budgets')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-06_X_Day_+5_—_Small_Teams_vs_Big_Budgets','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-06_X_Day_+5_—_Small_Teams_vs_Big_Budgets','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-06_X_Day_+5_—_Small_Teams_vs_Big_Budgets','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-06_X_Day_+5_—_Small_Teams_vs_Big_Budgets','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-06_X_Day_+5_—_Small_Teams_vs_Big_Budgets','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Small teams beat big budgets by moving faster</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Small teams do not beat big budgets by acting big.<br><br>They beat them by moving faster. More tests. Fewer meetings. Cleaner decisions. Faster creative loops.</div></div>
+<div class="meta-row">
+<span class="pill">Single</span>
+<span class="pill">Authority</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +5<br>Status flag: Drafted<br>Product mention: None<br>Visual: No Visual</div></details>
+</div>
+<div class="channel" style="border-left-color:#E4405F" data-postid="2026-05-06_Instagram_Story_—_Small_team_advantage" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#E4405F">Instagram</span> </div>
+                <div class="post-name">Story — Small team advantage</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-06_Instagram_Story_—_Small_team_advantage','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-06_Instagram_Story_—_Small_team_advantage','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-06_Instagram_Story_—_Small_team_advantage','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-06_Instagram_Story_—_Small_team_advantage','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-06_Instagram_Story_—_Small_team_advantage','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-06_Instagram_Story_—_Small_team_advantage')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-06_Instagram_Story_—_Small_team_advantage','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-06_Instagram_Story_—_Small_team_advantage','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-06_Instagram_Story_—_Small_team_advantage','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-06_Instagram_Story_—_Small_team_advantage','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-06_Instagram_Story_—_Small_team_advantage','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Small team advantage</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Quote story.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Tap to read.</div></div>
+<div class="meta-row">
+<span class="pill">Story</span>
+<span class="pill">Big Idea</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">IG Story — ephemeral, 24h. Lightweight asset.</div></details>
+</div>
+<div class="channel" style="border-left-color:#E4405F" data-postid="2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#E4405F">Instagram</span> </div>
+                <div class="post-name">Day +5 — Small Teams vs Big Budgets</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">How small teams beat big budgets</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Slide 1: How small teams beat big budgets.<br>Slide 2: Not by acting big.<br>Slide 3: By moving faster.<br>Slide 4: More tests.<br>Slide 5: Fewer meetings.<br>Slide 6: Cleaner decisions.<br><br>Caption: Speed is your unfair advantage.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Save</div></div>
+<div class="meta-row">
+<span class="pill">Carousel</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +5<br>Status flag: Drafted<br>Product mention: Soft<br>Visual: Carousel Design (6 slides)</div></details>
+</div>
+<div class="channel" style="border-left-color:#E4405F" data-postid="2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets_Ree" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#E4405F">Instagram</span> </div>
+                <div class="post-name">Day +5 — Small Teams vs Big Budgets (Reel)</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets_Ree','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets_Ree','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets_Ree','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets_Ree','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets_Ree','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets_Ree')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets_Ree','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets_Ree','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets_Ree','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets_Ree','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-06_Instagram_Day_+5_—_Small_Teams_vs_Big_Budgets_Ree','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Big agency vs lean creator workflow</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Compare 'big agency workflow' vs 'lean creator workflow.' Same brief — different decision speed. Keep it useful, not bitter.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Follow</div></div>
+<div class="meta-row">
+<span class="pill">Reel</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Cross-post from TikTok — same asset upload.<br>Launch_Day: Day +5<br>Backup: Backup: IG carousel + a static side-by-side graphic.<br>Status flag: Planned<br>Visual: Split-screen / Comparison</div></details>
+</div>
+<div class="channel" style="border-left-color:#69C9D0" data-postid="2026-05-06_TikTok_Day_+5_—_Small_Teams_vs_Big_Budgets" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#69C9D0">TikTok</span> </div>
+                <div class="post-name">Day +5 — Small Teams vs Big Budgets</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-06_TikTok_Day_+5_—_Small_Teams_vs_Big_Budgets','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-06_TikTok_Day_+5_—_Small_Teams_vs_Big_Budgets','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-06_TikTok_Day_+5_—_Small_Teams_vs_Big_Budgets','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-06_TikTok_Day_+5_—_Small_Teams_vs_Big_Budgets','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-06_TikTok_Day_+5_—_Small_Teams_vs_Big_Budgets','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-06_TikTok_Day_+5_—_Small_Teams_vs_Big_Budgets')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-06_TikTok_Day_+5_—_Small_Teams_vs_Big_Budgets','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-06_TikTok_Day_+5_—_Small_Teams_vs_Big_Budgets','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-06_TikTok_Day_+5_—_Small_Teams_vs_Big_Budgets','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-06_TikTok_Day_+5_—_Small_Teams_vs_Big_Budgets','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-06_TikTok_Day_+5_—_Small_Teams_vs_Big_Budgets','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Big agency vs lean creator workflow</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Compare 'big agency workflow' vs 'lean creator workflow.' Same brief — different decision speed. Keep it useful, not bitter.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Follow</div></div>
+<div class="meta-row">
+<span class="pill">Video</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +5<br>Backup: Backup: IG carousel + a static side-by-side graphic.<br>Status flag: Planned<br>Product mention: Soft<br>Visual: Split-screen / Comparison</div></details>
+</div>
+<div class="channel" style="border-left-color:#FF0000" data-postid="2026-05-06_YouTube_Day_+5_—_Small_Teams_Advantage" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#FF0000">YouTube</span> </div>
+                <div class="post-name">Day +5 — Small Teams Advantage</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-06_YouTube_Day_+5_—_Small_Teams_Advantage','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-06_YouTube_Day_+5_—_Small_Teams_Advantage','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-06_YouTube_Day_+5_—_Small_Teams_Advantage','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-06_YouTube_Day_+5_—_Small_Teams_Advantage','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-06_YouTube_Day_+5_—_Small_Teams_Advantage','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-06_YouTube_Day_+5_—_Small_Teams_Advantage')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-06_YouTube_Day_+5_—_Small_Teams_Advantage','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-06_YouTube_Day_+5_—_Small_Teams_Advantage','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-06_YouTube_Day_+5_—_Small_Teams_Advantage','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-06_YouTube_Day_+5_—_Small_Teams_Advantage','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-06_YouTube_Day_+5_—_Small_Teams_Advantage','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Speed of creative decisions</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Small team advantage: speed of creative decisions. Walk through one example.</div></div>
+<div class="meta-row">
+<span class="pill">Short</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +5<br>Backup: Backup: skip.<br>Status flag: Planned<br>Product mention: Soft<br>Visual: Talking Head</div></details>
+</div>
+</div>
+<div class="day" id="d2026-05-07"><div class="day-label">Day +6 · Wednesday</div><div class="day-meta">Publish: 2026-05-07</div>
+<div class="channel" style="border-left-color:#0A66C2" data-postid="2026-05-07_LinkedIn_[PAUSED]_Day_+6_—_Product_Ad_From_Anythi" data-paused="1">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#0A66C2">LinkedIn</span> <span class="pill paused">⏸ PAUSED</span></div>
+                <div class="post-name">[PAUSED] Day +6 — Product Ad From Anything</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-07_LinkedIn_[PAUSED]_Day_+6_—_Product_Ad_From_Anythi','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-07_LinkedIn_[PAUSED]_Day_+6_—_Product_Ad_From_Anythi','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-07_LinkedIn_[PAUSED]_Day_+6_—_Product_Ad_From_Anythi','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-07_LinkedIn_[PAUSED]_Day_+6_—_Product_Ad_From_Anythi','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-07_LinkedIn_[PAUSED]_Day_+6_—_Product_Ad_From_Anythi','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-07_LinkedIn_[PAUSED]_Day_+6_—_Product_Ad_From_Anythi')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-07_LinkedIn_[PAUSED]_Day_+6_—_Product_Ad_From_Anythi','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-07_LinkedIn_[PAUSED]_Day_+6_—_Product_Ad_From_Anythi','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-07_LinkedIn_[PAUSED]_Day_+6_—_Product_Ad_From_Anythi','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-07_LinkedIn_[PAUSED]_Day_+6_—_Product_Ad_From_Anythi','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-07_LinkedIn_[PAUSED]_Day_+6_—_Product_Ad_From_Anythi','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">A strong product ad starts with one clear promise</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">A strong product ad starts with one clear promise.<br><br>Not the feature list. Not the brand deck. Not the editing style. One promise.<br><br>What does this product help someone do, feel, avoid, or become?<br><br>Once that is clear, the shots get easier.</div></div>
+<div class="meta-row">
+<span class="pill">Text</span>
+<span class="pill">Authority</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">PAUSED 2026-04-30 — awaiting clear goal for Garry LinkedIn before publishing.<br><br>Launch_Day: Day +6<br>Status flag: Drafted<br>Product mention: Soft<br>Visual: No Visual</div></details>
+</div>
+<div class="channel" style="border-left-color:#1DA1F2" data-postid="2026-05-07_X_Day_+6_—_Product_Ad_From_Anything" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#1DA1F2">X</span> </div>
+                <div class="post-name">Day +6 — Product Ad From Anything</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-07_X_Day_+6_—_Product_Ad_From_Anything','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-07_X_Day_+6_—_Product_Ad_From_Anything','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-07_X_Day_+6_—_Product_Ad_From_Anything','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-07_X_Day_+6_—_Product_Ad_From_Anything','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-07_X_Day_+6_—_Product_Ad_From_Anything','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-07_X_Day_+6_—_Product_Ad_From_Anything')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-07_X_Day_+6_—_Product_Ad_From_Anything','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-07_X_Day_+6_—_Product_Ad_From_Anything','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-07_X_Day_+6_—_Product_Ad_From_Anything','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-07_X_Day_+6_—_Product_Ad_From_Anything','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-07_X_Day_+6_—_Product_Ad_From_Anything','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Start with the promise</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">A product ad does not start with the product. It starts with the promise.<br><br>What does this help someone do, feel, avoid, or become?</div></div>
+<div class="meta-row">
+<span class="pill">Single</span>
+<span class="pill">Authority</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +6<br>Status flag: Drafted<br>Product mention: None<br>Visual: No Visual</div></details>
+</div>
+<div class="channel" style="border-left-color:#E4405F" data-postid="2026-05-07_Instagram_Story_—_Promise_behind_product" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#E4405F">Instagram</span> </div>
+                <div class="post-name">Story — Promise behind product</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-07_Instagram_Story_—_Promise_behind_product','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-07_Instagram_Story_—_Promise_behind_product','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-07_Instagram_Story_—_Promise_behind_product','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-07_Instagram_Story_—_Promise_behind_product','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-07_Instagram_Story_—_Promise_behind_product','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-07_Instagram_Story_—_Promise_behind_product')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-07_Instagram_Story_—_Promise_behind_product','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-07_Instagram_Story_—_Promise_behind_product','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-07_Instagram_Story_—_Promise_behind_product','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-07_Instagram_Story_—_Promise_behind_product','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-07_Instagram_Story_—_Promise_behind_product','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Promise behind product</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Open-ended question sticker.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Drop a product.</div></div>
+<div class="meta-row">
+<span class="pill">Story</span>
+<span class="pill">Inspiration</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">IG Story — ephemeral, 24h. Lightweight asset.</div></details>
+</div>
+<div class="channel" style="border-left-color:#E4405F" data-postid="2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything_Reel" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#E4405F">Instagram</span> </div>
+                <div class="post-name">Day +6 — Product Ad From Anything (Reel)</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything_Reel','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything_Reel','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything_Reel','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything_Reel','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything_Reel','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything_Reel')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything_Reel','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything_Reel','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything_Reel','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything_Reel','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything_Reel','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Random object → product ad concept</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Pick a random object and turn it into a product ad concept. Walk through audience → promise → first shot → final line.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Follow for the workflow</div></div>
+<div class="meta-row">
+<span class="pill">Reel</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Cross-post from TikTok — same asset upload.<br>Launch_Day: Day +6<br>Backup: Backup: IG carousel + static asset.<br>Status flag: Planned<br>Visual: Pick-up + Talking Head</div></details>
+</div>
+<div class="channel" style="border-left-color:#E4405F" data-postid="2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#E4405F">Instagram</span> </div>
+                <div class="post-name">Day +6 — Product Ad From Anything</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-07_Instagram_Day_+6_—_Product_Ad_From_Anything','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">How to find the promise behind any product</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Slide 1: Find the promise behind any product.<br>Slide 2: What does it help someone do?<br>Slide 3: What does it help them feel?<br>Slide 4: What does it help them avoid?<br>Slide 5: What does it help them become?<br>Slide 6: That is the ad.<br><br>Caption: Pick a product on your desk and try it.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Try this with a product on your desk</div></div>
+<div class="meta-row">
+<span class="pill">Carousel</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +6<br>Status flag: Drafted<br>Product mention: Soft<br>Visual: Carousel Design (6 slides)</div></details>
+</div>
+<div class="channel" style="border-left-color:#69C9D0" data-postid="2026-05-07_TikTok_Day_+6_—_Product_Ad_From_Anything" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#69C9D0">TikTok</span> </div>
+                <div class="post-name">Day +6 — Product Ad From Anything</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-07_TikTok_Day_+6_—_Product_Ad_From_Anything','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-07_TikTok_Day_+6_—_Product_Ad_From_Anything','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-07_TikTok_Day_+6_—_Product_Ad_From_Anything','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-07_TikTok_Day_+6_—_Product_Ad_From_Anything','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-07_TikTok_Day_+6_—_Product_Ad_From_Anything','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-07_TikTok_Day_+6_—_Product_Ad_From_Anything')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-07_TikTok_Day_+6_—_Product_Ad_From_Anything','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-07_TikTok_Day_+6_—_Product_Ad_From_Anything','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-07_TikTok_Day_+6_—_Product_Ad_From_Anything','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-07_TikTok_Day_+6_—_Product_Ad_From_Anything','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-07_TikTok_Day_+6_—_Product_Ad_From_Anything','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Random object → product ad concept</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Pick a random object and turn it into a product ad concept. Walk through audience → promise → first shot → final line.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Follow for the workflow</div></div>
+<div class="meta-row">
+<span class="pill">Video</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +6<br>Backup: Backup: IG carousel + static asset.<br>Status flag: Planned<br>Product mention: Demo<br>Visual: Pick-up + Talking Head</div></details>
+</div>
+<div class="channel" style="border-left-color:#FF0000" data-postid="2026-05-07_YouTube_Day_+6_—_Product_Ad_From_Anything" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#FF0000">YouTube</span> </div>
+                <div class="post-name">Day +6 — Product Ad From Anything</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-07_YouTube_Day_+6_—_Product_Ad_From_Anything','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-07_YouTube_Day_+6_—_Product_Ad_From_Anything','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-07_YouTube_Day_+6_—_Product_Ad_From_Anything','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-07_YouTube_Day_+6_—_Product_Ad_From_Anything','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-07_YouTube_Day_+6_—_Product_Ad_From_Anything','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-07_YouTube_Day_+6_—_Product_Ad_From_Anything')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-07_YouTube_Day_+6_—_Product_Ad_From_Anything','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-07_YouTube_Day_+6_—_Product_Ad_From_Anything','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-07_YouTube_Day_+6_—_Product_Ad_From_Anything','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-07_YouTube_Day_+6_—_Product_Ad_From_Anything','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-07_YouTube_Day_+6_—_Product_Ad_From_Anything','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Turn any product into an ad concept</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Turn any product into an ad concept. 45-second walkthrough.</div></div>
+<div class="meta-row">
+<span class="pill">Short</span>
+<span class="pill">Tutorial</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +6<br>Backup: Backup: skip.<br>Status flag: Planned<br>Product mention: Demo<br>Visual: Talking Head + Object</div></details>
+</div>
+</div>
+<div class="day" id="d2026-05-08"><div class="day-label">Day +7 · Friday — Week 1 Recap</div><div class="day-meta">Publish: 2026-05-08</div>
+<div class="channel" style="border-left-color:#0A66C2" data-postid="2026-05-08_LinkedIn_[PAUSED]_Day_+7_—_Week_1_Recap" data-paused="1">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#0A66C2">LinkedIn</span> <span class="pill paused">⏸ PAUSED</span></div>
+                <div class="post-name">[PAUSED] Day +7 — Week 1 Recap</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-08_LinkedIn_[PAUSED]_Day_+7_—_Week_1_Recap','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-08_LinkedIn_[PAUSED]_Day_+7_—_Week_1_Recap','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-08_LinkedIn_[PAUSED]_Day_+7_—_Week_1_Recap','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-08_LinkedIn_[PAUSED]_Day_+7_—_Week_1_Recap','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-08_LinkedIn_[PAUSED]_Day_+7_—_Week_1_Recap','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-08_LinkedIn_[PAUSED]_Day_+7_—_Week_1_Recap')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-08_LinkedIn_[PAUSED]_Day_+7_—_Week_1_Recap','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-08_LinkedIn_[PAUSED]_Day_+7_—_Week_1_Recap','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-08_LinkedIn_[PAUSED]_Day_+7_—_Week_1_Recap','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-08_LinkedIn_[PAUSED]_Day_+7_—_Week_1_Recap','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-08_LinkedIn_[PAUSED]_Day_+7_—_Week_1_Recap','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Creators want workflows not hype</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">One week into launch, the clearest feedback is this — creators want workflows, not hype.<br><br>They want to know how to turn ideas into assets. How to pitch faster. How to test concepts. How to make spec work. How to move without a full production team.<br><br>That is the direction we are building toward.</div></div>
+<div class="meta-row">
+<span class="pill">Text</span>
+<span class="pill">Honest Recap</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">PAUSED 2026-04-30 — awaiting clear goal for Garry LinkedIn before publishing.<br><br>Launch_Day: Day +7<br>Status flag: Drafted<br>Product mention: Soft<br>Variables: BETA_USERS + PROJECTS_CREATED<br>Visual: Optional Stat Graphic<br>Internal: Pull real numbers from Airtable</div></details>
+</div>
+<div class="channel" style="border-left-color:#1DA1F2" data-postid="2026-05-08_X_Day_+7_—_Week_1_Recap" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#1DA1F2">X</span> </div>
+                <div class="post-name">Day +7 — Week 1 Recap</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-08_X_Day_+7_—_Week_1_Recap','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-08_X_Day_+7_—_Week_1_Recap','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-08_X_Day_+7_—_Week_1_Recap','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-08_X_Day_+7_—_Week_1_Recap','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-08_X_Day_+7_—_Week_1_Recap','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-08_X_Day_+7_—_Week_1_Recap')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-08_X_Day_+7_—_Week_1_Recap','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-08_X_Day_+7_—_Week_1_Recap','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-08_X_Day_+7_—_Week_1_Recap','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-08_X_Day_+7_—_Week_1_Recap','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-08_X_Day_+7_—_Week_1_Recap','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Early launch feedback</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Early launch feedback: creators do not want more AI hype.<br><br>They want workflows. Spec ads. Pitch videos. Hook tests. Campaign concepts. Faster creative decisions.</div></div>
+<div class="meta-row">
+<span class="pill">Single</span>
+<span class="pill">Honest Recap</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +7<br>Status flag: Drafted<br>Product mention: Soft<br>Visual: No Visual</div></details>
+</div>
+<div class="channel" style="border-left-color:#E4405F" data-postid="2026-05-08_Instagram_Day_+7_—_Week_1_Recap" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#E4405F">Instagram</span> </div>
+                <div class="post-name">Day +7 — Week 1 Recap</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-08_Instagram_Day_+7_—_Week_1_Recap','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-08_Instagram_Day_+7_—_Week_1_Recap','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-08_Instagram_Day_+7_—_Week_1_Recap','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-08_Instagram_Day_+7_—_Week_1_Recap','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-08_Instagram_Day_+7_—_Week_1_Recap','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-08_Instagram_Day_+7_—_Week_1_Recap')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-08_Instagram_Day_+7_—_Week_1_Recap','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-08_Instagram_Day_+7_—_Week_1_Recap','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-08_Instagram_Day_+7_—_Week_1_Recap','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-08_Instagram_Day_+7_—_Week_1_Recap','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-08_Instagram_Day_+7_—_Week_1_Recap','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">What creators actually want from AI video tools</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Slide 1: What creators actually want from AI video tools.<br>Slide 2: Not hype.<br>Slide 3: Workflows.<br>Slide 4: Spec ads.<br>Slide 5: Pitch videos.<br>Slide 6: Hook tests.<br>Slide 7: Campaign concepts.<br><br>Caption: One week of launch feedback. Here is what we are hearing.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Vote on what we break down next.</div></div>
+<div class="meta-row">
+<span class="pill">Carousel</span>
+<span class="pill">Big Idea</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +7<br>Status flag: Drafted<br>Product mention: Soft<br>Variables: BETA_USERS<br>Visual: Carousel Design (7 slides)</div></details>
+</div>
+<div class="channel" style="border-left-color:#E4405F" data-postid="2026-05-08_Instagram_Story_—_Week_1_recap" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#E4405F">Instagram</span> </div>
+                <div class="post-name">Story — Week 1 recap</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-08_Instagram_Story_—_Week_1_recap','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-08_Instagram_Story_—_Week_1_recap','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-08_Instagram_Story_—_Week_1_recap','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-08_Instagram_Story_—_Week_1_recap','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-08_Instagram_Story_—_Week_1_recap','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-08_Instagram_Story_—_Week_1_recap')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-08_Instagram_Story_—_Week_1_recap','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-08_Instagram_Story_—_Week_1_recap','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-08_Instagram_Story_—_Week_1_recap','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-08_Instagram_Story_—_Week_1_recap','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-08_Instagram_Story_—_Week_1_recap','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Week 1 recap</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Reshare top post performance.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Read the recap.</div></div>
+<div class="meta-row">
+<span class="pill">Story</span>
+<span class="pill">Big Idea</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">IG Story — ephemeral, 24h. Lightweight asset.</div></details>
+</div>
+<div class="channel" style="border-left-color:#E4405F" data-postid="2026-05-08_Instagram_Day_+7_—_Week_1_Recap_Reel" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#E4405F">Instagram</span> </div>
+                <div class="post-name">Day +7 — Week 1 Recap (Reel)</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-08_Instagram_Day_+7_—_Week_1_Recap_Reel','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-08_Instagram_Day_+7_—_Week_1_Recap_Reel','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-08_Instagram_Day_+7_—_Week_1_Recap_Reel','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-08_Instagram_Day_+7_—_Week_1_Recap_Reel','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-08_Instagram_Day_+7_—_Week_1_Recap_Reel','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-08_Instagram_Day_+7_—_Week_1_Recap_Reel')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-08_Instagram_Day_+7_—_Week_1_Recap_Reel','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-08_Instagram_Day_+7_—_Week_1_Recap_Reel','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-08_Instagram_Day_+7_—_Week_1_Recap_Reel','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-08_Instagram_Day_+7_—_Week_1_Recap_Reel','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-08_Instagram_Day_+7_—_Week_1_Recap_Reel','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Launch feedback themes</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Share launch feedback themes. Ask for comments on what to break down next.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Comment with what to break down next</div></div>
+<div class="meta-row">
+<span class="pill">Reel</span>
+<span class="pill">Big Idea</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Cross-post from TikTok — same asset upload.<br>Launch_Day: Day +7<br>Backup: Backup: IG carousel.<br>Status flag: Planned<br>Visual: Talking Head</div></details>
+</div>
+<div class="channel" style="border-left-color:#69C9D0" data-postid="2026-05-08_TikTok_Day_+7_—_Week_1_Recap" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#69C9D0">TikTok</span> </div>
+                <div class="post-name">Day +7 — Week 1 Recap</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-08_TikTok_Day_+7_—_Week_1_Recap','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-08_TikTok_Day_+7_—_Week_1_Recap','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-08_TikTok_Day_+7_—_Week_1_Recap','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-08_TikTok_Day_+7_—_Week_1_Recap','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-08_TikTok_Day_+7_—_Week_1_Recap','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-08_TikTok_Day_+7_—_Week_1_Recap')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-08_TikTok_Day_+7_—_Week_1_Recap','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-08_TikTok_Day_+7_—_Week_1_Recap','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-08_TikTok_Day_+7_—_Week_1_Recap','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-08_TikTok_Day_+7_—_Week_1_Recap','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-08_TikTok_Day_+7_—_Week_1_Recap','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Launch feedback themes</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Share launch feedback themes. Ask for comments on what to break down next.</div></div>
+<div class="field"><div class="label">CTA</div><div class="cta">Comment with what to break down next</div></div>
+<div class="meta-row">
+<span class="pill">Video</span>
+<span class="pill">Big Idea</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +7<br>Backup: Backup: IG carousel.<br>Status flag: Planned<br>Product mention: Soft<br>Visual: Talking Head</div></details>
+</div>
+<div class="channel" style="border-left-color:#FF0000" data-postid="2026-05-08_YouTube_Day_+7_—_Week_1_Recap" data-paused="0">
+              <div class="ch-head">
+                <div><span class="ch-name" style="color:#FF0000">YouTube</span> </div>
+                <div class="post-name">Day +7 — Week 1 Recap</div>
+              </div>
+              <div class="team-row">
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Owner:</span>
+<span class="owner-badge" data-role="Alex" onclick="setOwner('2026-05-08_YouTube_Day_+7_—_Week_1_Recap','Alex')">Alex</span>
+<span class="owner-badge" data-role="Designer" onclick="setOwner('2026-05-08_YouTube_Day_+7_—_Week_1_Recap','Designer')">Designer</span>
+<span class="owner-badge" data-role="Editor" onclick="setOwner('2026-05-08_YouTube_Day_+7_—_Week_1_Recap','Editor')">Editor</span>
+<span class="owner-badge" data-role="Copywriter" onclick="setOwner('2026-05-08_YouTube_Day_+7_—_Week_1_Recap','Copywriter')">Copywriter</span>
+<span class="owner-badge" data-role="Scheduler" onclick="setOwner('2026-05-08_YouTube_Day_+7_—_Week_1_Recap','Scheduler')">Scheduler</span>
+
+                <span style="font-size:10px;color:#8b949e;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;margin-left:12px">Status:</span>
+                <span class="status-cycle idea" onclick="cycleStatus('2026-05-08_YouTube_Day_+7_—_Week_1_Recap')">IDEA</span>
+                <div class="checklist">
+<span class="check" data-step="copy" onclick="toggleCheck('2026-05-08_YouTube_Day_+7_—_Week_1_Recap','copy')">copy</span>
+<span class="check" data-step="design" onclick="toggleCheck('2026-05-08_YouTube_Day_+7_—_Week_1_Recap','design')">design</span>
+<span class="check" data-step="review" onclick="toggleCheck('2026-05-08_YouTube_Day_+7_—_Week_1_Recap','review')">review</span>
+<span class="check" data-step="schedule" onclick="toggleCheck('2026-05-08_YouTube_Day_+7_—_Week_1_Recap','schedule')">schedule</span>
+<span class="check" data-step="post" onclick="toggleCheck('2026-05-08_YouTube_Day_+7_—_Week_1_Recap','post')">post</span>
+</div></div>
+<div class="field"><div class="label">Hook</div><div class="hook">Creators want workflows not hype</div></div>
+<div class="field"><div class="label">Post copy / script / caption</div><div class="copy">Creators want workflows, not hype. Quick recap of the top 3 themes from week 1.</div></div>
+<div class="meta-row">
+<span class="pill">Short</span>
+<span class="pill">Big Idea</span>
+</div>
+<details><summary>Notes / backup plan</summary><div class="notes">Launch_Day: Day +7<br>Backup: Backup: skip.<br>Status flag: Planned<br>Product mention: Soft<br>Visual: Talking Head</div></details>
+</div>
+</div>
+</div>
+<script>
+const STATUSES = ['idea','copy','designed','reviewed','scheduled','posted'];
+const LABELS = {idea:'IDEA',copy:'COPY',designed:'DESIGNED',reviewed:'REVIEWED',scheduled:'SCHEDULED',posted:'POSTED'};
+let me = localStorage.getItem('vidfy_me') || '';
+let state = JSON.parse(localStorage.getItem('vidfy_w1_state') || '{}');
+
+function save(){ localStorage.setItem('vidfy_w1_state', JSON.stringify(state)); }
+
+function setMe(){
+  me = document.getElementById('meSelect').value;
+  localStorage.setItem('vidfy_me', me);
+  document.getElementById('meBadge').textContent = me ? '✓ '+me : '';
+  applyFilter();
+}
+
+function setOwner(pid, role){
+  if(!state[pid]) state[pid] = {};
+  state[pid].owner = (state[pid].owner === role) ? null : role;
+  save();
+  renderPost(pid);
+  applyFilter();
+}
+
+function cycleStatus(pid){
+  if(!state[pid]) state[pid] = {};
+  const cur = state[pid].status || 'idea';
+  const idx = STATUSES.indexOf(cur);
+  state[pid].status = STATUSES[(idx + 1) % STATUSES.length];
+  save();
+  renderPost(pid);
+  applyFilter();
+}
+
+function toggleCheck(pid, step){
+  if(!state[pid]) state[pid] = {};
+  if(!state[pid].checks) state[pid].checks = {};
+  state[pid].checks[step] = !state[pid].checks[step];
+  save();
+  renderPost(pid);
+}
+
+function renderPost(pid){
+  const el = document.querySelector(`[data-postid="${pid}"]`);
+  if(!el) return;
+  const s = state[pid] || {};
+  const owner = s.owner || null;
+  el.querySelectorAll('.owner-badge').forEach(b => b.classList.toggle('active', b.dataset.role === owner));
+  el.classList.toggle('claimed-me', owner === me && me);
+  const status = s.status || 'idea';
+  const sc = el.querySelector('.status-cycle');
+  sc.className = 'status-cycle ' + status;
+  sc.textContent = LABELS[status];
+  el.classList.toggle('posted', status === 'posted');
+  const checks = s.checks || {};
+  el.querySelectorAll('.check').forEach(c => c.classList.toggle('done', !!checks[c.dataset.step]));
+}
+
+function applyFilter(){
+  const owner = document.getElementById('ownerFilter').value;
+  const stat = document.getElementById('statusFilter').value;
+  let visible = 0, total = 0;
+  document.querySelectorAll('.channel').forEach(el => {
+    total++;
+    const pid = el.dataset.postid;
+    const s = state[pid] || {};
+    let show = true;
+    if(owner === 'me') show = (s.owner === me);
+    else if(owner === 'unclaimed') show = !s.owner;
+    else if(owner) show = (s.owner === owner);
+    if(show && stat) show = (s.status || 'idea') === stat;
+    el.classList.toggle('hidden', !show);
+    if(show) visible++;
+  });
+  document.getElementById('stats').textContent = `${visible}/${total} visible`;
+  // Hide empty days
+  document.querySelectorAll('.day').forEach(d => {
+    const anyVisible = d.querySelector('.channel:not(.hidden)');
+    d.classList.toggle('hidden', !anyVisible);
+  });
+}
+
+function exportProgress(){
+  const lines = ['post_id\towner\tstatus\tchecks_done'];
+  Object.entries(state).forEach(([pid,s]) => {
+    const checks = Object.entries(s.checks||{}).filter(([,v])=>v).map(([k])=>k).join(',');
+    lines.push(`${pid}\t${s.owner||''}\t${s.status||'idea'}\t${checks}`);
+  });
+  const blob = new Blob([lines.join('\n')], {type:'text/tab-separated-values'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'videfy_week1_progress.tsv';
+  a.click();
+}
+
+function clearAll(){
+  if(confirm('Reset all team progress? This only clears your local browser state.')){
+    state = {};
+    save();
+    document.querySelectorAll('.channel').forEach(el => renderPost(el.dataset.postid));
+    applyFilter();
+  }
+}
+
+// Init
+document.getElementById('meSelect').value = me;
+document.getElementById('meBadge').textContent = me ? '✓ '+me : '';
+document.querySelectorAll('.channel').forEach(el => renderPost(el.dataset.postid));
+applyFilter();
+</script>
+</body></html>
