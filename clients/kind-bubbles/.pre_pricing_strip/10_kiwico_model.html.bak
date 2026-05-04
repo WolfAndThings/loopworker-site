@@ -123,7 +123,7 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
     <span class="cover-badge">Bonus Deliverable · 10 · Strategic Pivot</span>
     <div class="cover-eyebrow">National Brand · Local Operators · Founder-Authority</div>
     <h1 class="cover-title">The Kind Bubbles<br>Network.<br><em>National brand.<br>Local presence.</em></h1>
-    <p class="cover-lede">A reframe of the entire opportunity, built around the model you described: <strong>KiwiCo meets SF Bubble Man</strong> — a national brand with a local operator network, anchored by a founder-authority voice in the "therapy dad / generational trauma breaker" niche. <em>Local entertainers do strong work in their lane. The opportunity is to build the brand they want to be part of — and to fly the founder narrative national.</em></p>
+    <p class="cover-lede">A reframe of the entire opportunity, built around the model you described: <strong>KiwiCo meets SF Bubble Man</strong> — a national brand with a local operator network, anchored by a founder-authority voice in the "therapy dad / generational trauma breaker" niche. <em>The local entertainers do amazing work in their lane. The opportunity is to build the brand they want to be part of — and to fly the founder narrative national.</em></p>
 
     <div class="cover-meta">
       <strong>For:</strong> Chris Steele · Kind Bubbles<br>
@@ -165,42 +165,42 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
 <section class="section">
   <div class="eyebrow">Three precedents · all real · all big</div>
   <h2>Three brands.<br>One playbook.<br><em>You're combining all three.</em></h2>
-  <p>National kid-experience brands with operator-led territory networks already exist — and the closest comparables to Kind Bubbles are <em>mobile</em> service brands, not fixed-location ones. <strong>Kind Bubbles inherits a playbook from three precedents</strong>: a mobile-service operator network (Mad Science), a parenting-authority founder voice (Big Little Feelings + Dr. Becky), and a story-led product brand (KiwiCo + Lovevery).</p>
+  <p>National kid-experience brands with operator or franchise networks already exist. They built the path. <strong>Kind Bubbles inherits the playbook</strong> — a parenting-authority voice (Big Little Feelings + Dr. Becky), the local-experience operator model (Goldfish Swim School + Sky Zone), and a story-led product brand (KiwiCo + Lovevery).</p>
 
-  <!-- PRECEDENT 1: MAD SCIENCE -->
+  <!-- PRECEDENT 1: SKY ZONE -->
   <div class="precedent">
     <div class="precedent-head">
       <div class="precedent-num">01</div>
       <div>
-        <div class="precedent-name">Mad <em>Science</em></div>
-        <div class="precedent-meta">Mobile science-show franchise · founded 1985 · 200+ territories</div>
+        <div class="precedent-name">Sky <em>Zone</em></div>
+        <div class="precedent-meta">First national trampoline-park franchise · 2004</div>
       </div>
       <div class="precedent-stat">
-        <div class="num">200+</div>
-        <div class="label">Territories worldwide</div>
+        <div class="num">40M</div>
+        <div class="label">Guests / year</div>
       </div>
     </div>
     <div class="precedent-body">
       <div class="precedent-row">
         <div class="label">The model</div>
-        <div class="val"><strong>Operator-led territories — no fixed locations.</strong> Each franchisee runs a metro under the Mad Science brand. Performers travel <em>to</em> birthday parties, schools, libraries, and camps to deliver branded science demos. Corporate handles brand standards, training, and marketing assets; operators handle bookings + delivery in their territory.</div>
+        <div class="val"><strong>Wall-to-wall trampoline parks, franchised.</strong> Acquired Rockin Jump (2013) and Defy (2017) — multi-brand roll-up under one network. <em>"Active entertainment + interactive technology."</em></div>
       </div>
       <div class="precedent-row">
         <div class="label">Why it scaled</div>
-        <div class="val">A signature show format that's the same in every city, delivered by trained performers who know the script and the safety standards. Parents trust the brand because the experience is consistent. <strong>No real estate. No lease. No buildout.</strong> The unit economics work because the operator's overhead is a van and a kit, not a building.</div>
+        <div class="val">A signature physical experience that doesn't translate to digital. Kids beg parents to take them. Parents pay for the safety + supervision premium. <strong>Operators run individual locations; brand owns the IP, marketing, and tech.</strong></div>
       </div>
       <div class="precedent-row">
         <div class="label">Same as Kind Bubbles</div>
-        <div class="val">Mobile event-service. Trained performers. Branded show, delivered at the customer's location. <em>The bubble show, standardized, performed by trained operators, deployed across cities — exactly the Mad Science structure with a different content layer.</em></div>
+        <div class="val">Physical experience that can't be downloaded. Parent-trusted, kid-loved. <em>The bubble show, branded and standardized, deployed across cities.</em></div>
       </div>
       <div class="precedent-row">
-        <div class="label">What Kind Bubbles adds</div>
-        <div class="val"><strong>An emotional + sensory narrative on top of the science.</strong> Mad Science is fun. Kind Bubbles is fun + meaningful — wellness-coded, screen-free, family-bonding. Same operator scaffolding; richer story.</div>
+        <div class="label">What Kind Bubbles improves</div>
+        <div class="val"><strong>The narrative around the experience.</strong> Sky Zone proves the operator-network model can scale to 40M guests/year — that's the model proof we needed. Kind Bubbles inherits that model and layers on an emotional + science narrative — wellness-coded, science-grounded, healing-positioned. Both work. Kind Bubbles just gets to compound a story on top.</div>
       </div>
     </div>
     <div class="precedent-take">
       <span class="take-label">The borrow</span>
-      <p>The <strong>mobile-operator territory network</strong>. Mad Science proved a kids' event-service brand can scale to 200+ territories worldwide with no fixed locations — purely through trained operators delivering a branded show in their metro. <em>Kind Bubbles takes the structure and adds the heart.</em></p>
+      <p>The <strong>franchise / operator-network mechanics</strong>. Sky Zone proves a physical-play brand can scale to 40M guests/year through a local operator model. <em>Kind Bubbles takes the structure but keeps the heart.</em></p>
     </div>
   </div>
 
@@ -250,7 +250,7 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
         <div class="precedent-meta">National kid-product brands · subscription + retail · story-led</div>
       </div>
       <div class="precedent-stat">
-        <div class="num">—+</div>
+        <div class="num">$150M+</div>
         <div class="label">Lovevery valuation · KiwiCo 30M+ kits</div>
       </div>
     </div>
@@ -270,7 +270,7 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
     </div>
     <div class="precedent-take">
       <span class="take-label">The borrow</span>
-      <p>The <strong>product-line layered on top of the experience network</strong>. Year 1: experiences only. Year 2: a subscription Bubble Kit (Lovevery-style, —) sold to parents who can't book a live event. <em>Three revenue stacks instead of one.</em></p>
+      <p>The <strong>product-line layered on top of the experience network</strong>. Year 1: experiences only. Year 2: a subscription Bubble Kit (Lovevery-style, $35/mo) sold to parents who can't book a live event. <em>Three revenue stacks instead of one.</em></p>
     </div>
   </div>
 </section>
@@ -313,7 +313,7 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
 <section class="section">
   <div class="eyebrow">The voice · locked</div>
   <h2>"Therapy Dad."<br><em>The whole brand pivots here.</em></h2>
-  <p>Founder Voice (Pillar 02) is no longer "the biochemist who started a bubble company." It's <strong>"the dad who broke the cycle by playing with his daughter."</strong> Same facts. Different center of gravity.</p>
+  <p>Founder Story (Pillar 02) is no longer "the biochemist who started a bubble company." It's <strong>"the dad who broke the cycle by playing with his daughter."</strong> Same facts. Different center of gravity.</p>
 
   <div class="voice-block">
     <h3>What "Therapy Dad" actually means <em>on camera, in copy, in the brand.</em></h3>
@@ -367,13 +367,13 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
   </div>
 
   <h3>Operator hire process · the playbook</h3>
-  <p>Each new local partner goes through a 4-stage onboarding process before running events under the brand. <strong>The system protects everyone</strong> — operators get a proven playbook + brand support, families get a consistent experience, and the founder voice stays coherent across cities. Same approach Mad Science uses to onboard new territory operators.</p>
+  <p>Each new local partner goes through a 4-stage onboarding process before running events under the brand. <strong>The system protects everyone</strong> — operators get a proven playbook + brand support, families get a consistent experience, and the founder voice stays coherent across cities. Same approach Goldfish Swim School uses to onboard new franchisees.</p>
 
   <div class="voice-block">
     <ul>
       <li><strong>1 · Application</strong> — local entertainer or educator with 2+ years experience, clean record, and the warmth + skill to represent the Kind Bubbles voice well in their city.</li>
       <li><strong>2 · Training week</strong> — Chris hosts a 5-day immersion in SF. Show structure, scripts, solution-mixing, parent-handling, safety, brand voice.</li>
-      <li><strong>3 · Brand-standards agreement</strong> — licensed use of the Kind Bubbles name, mark, content. Partnership terms set with a franchise lawyer in Phase 2.</li>
+      <li><strong>3 · Brand-standards agreement</strong> — licensed use of the Kind Bubbles name, mark, content. Royalty model TBD (15–25% of bookings to corporate is industry-standard franchise rate).</li>
       <li><strong>4 · Local launch</strong> — operator gets a city-specific landing page on the brand site, 90-day content support from corporate, intro to local Bay-Area-tier parent creators.</li>
     </ul>
   </div>
@@ -388,16 +388,41 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
   <table class="econ">
     <thead><tr><th>Stack</th><th>Year 1</th><th>Year 2</th><th>Year 3</th></tr></thead>
     <tbody>
-      
-      
-      
-      
-      
+      <tr>
+        <td><strong>Direct experience bookings (SF)</strong><br><em>Founder market only Y1</em></td>
+        <td>$50–80K</td>
+        <td>$80–120K</td>
+        <td>$120K (capped solo)</td>
+      </tr>
+      <tr>
+        <td><strong>Operator royalties</strong><br><em>20% of operator bookings</em></td>
+        <td>$0</td>
+        <td>$30–80K (5 ops)</td>
+        <td>$150–400K (12 ops)</td>
+      </tr>
+      <tr>
+        <td><strong>Founder authority stack</strong><br><em>Course / book / brand deals / speaker fees</em></td>
+        <td>$5–15K</td>
+        <td>$30–80K</td>
+        <td>$80–250K</td>
+      </tr>
+      <tr>
+        <td><strong>Subscription product (Year 2 launch)</strong><br><em>Bubble Kit @ $35/mo</em></td>
+        <td>$0</td>
+        <td>$15–60K</td>
+        <td>$80–300K</td>
+      </tr>
+      <tr>
+        <td><strong>Total range</strong></td>
+        <td><strong>$55–95K</strong></td>
+        <td><strong>$155–340K</strong></td>
+        <td><strong>$430–1.07M</strong></td>
+      </tr>
     </tbody>
   </table>
 
   <div class="callout">
-    <strong>Speculative model</strong> — assumes consistent founder content cadence, 5 operators recruited and trained on schedule, and a Year-2 product launch hits modest numbers. <em>Year 3 lower bound = —. Upper bound = —. The asset (audience, brand, operator network) is worth multiples on top.</em>
+    <strong>Speculative model</strong> — assumes consistent founder content cadence, 5 operators recruited and trained on schedule, and a Year-2 product launch hits modest numbers. <em>Year 3 lower bound = $430K. Upper bound = $1.07M. The asset (audience, brand, operator network) is worth multiples on top.</em>
   </div>
 </section>
 
@@ -422,7 +447,7 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
     <h3>New Phase 2 deliverables <em>added</em></h3>
     <ul>
       <li><strong>Operator-recruitment funnel</strong> — landing page + screening flow + training curriculum outline.</li>
-      <li><strong>Brand standards manual</strong> — show structure, voice rules, IP usage, partnership mechanics.</li>
+      <li><strong>Brand standards manual</strong> — show structure, voice rules, IP usage, royalty mechanics.</li>
       <li><strong>Therapy Dad book proposal outline</strong> — even if not pitched in Year 1, having the outline locks the founder authority track.</li>
       <li><strong>Year-2 subscription product spec</strong> — Bubble Kit MVP, what's in the box, MOQ, fulfillment partner shortlist.</li>
     </ul>

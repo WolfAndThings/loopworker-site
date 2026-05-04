@@ -199,7 +199,7 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
 
       <div class="engine-row">
         <div class="label">Tech stack</div>
-        <div class="val"><strong>Airtable</strong> (content calendar + status tracker) → <strong>Weavy.ai or ChatGPT</strong> (caption + hook drafting) → <strong>CapCut</strong> (mobile editing, fast) → <strong>Blotato</strong> (multi-platform scheduler — already in your toolkit). All standard tools, lightweight monthly run.</div>
+        <div class="val"><strong>Airtable</strong> (content calendar + status tracker) → <strong>Weavy.ai or ChatGPT</strong> (caption + hook drafting) → <strong>CapCut</strong> (mobile editing, fast) → <strong>Blotato</strong> (multi-platform scheduler — already in your toolkit). Total tech cost: ~$80/month.</div>
       </div>
 
       <div class="engine-row">
@@ -228,8 +228,8 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
       </div>
 
       <div class="engine-row">
-        <div class="label">Tooling</div>
-        <div class="val"><strong>Chris's iPhone + free editing tools to start.</strong> Phase 2 partnership covers production execution. Optional: lav mic (RØDE SmartLav+) for cleaner founder voiceovers — recommend adding month 1.</div>
+        <div class="label">Cost</div>
+        <div class="val"><strong>$0 to start (Chris's iPhone + free tools).</strong> Phase 2 partnership covers the production execution. <em>$80/month software stack.</em> Optional: $65 lav mic (RØDE SmartLav+) for cleaner founder voiceovers — recommend month 1.</div>
       </div>
 
       <div class="engine-row">
@@ -355,17 +355,17 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
 
       <div class="engine-row">
         <div class="label">Booking flow integration</div>
-        <div class="val"><strong>Calendly</strong> for operator availability per city. <strong>Stripe</strong> for deposits + final payment. <strong>HoneyBook</strong> or <strong>Dubsado</strong> for the contract / waiver / parent intake form flow. Each city's Calendly is owned by the operator; payments route through corporate and reconcile monthly under whatever partnership terms are set in Phase 2.</div>
+        <div class="val"><strong>Calendly</strong> for operator availability per city. <strong>Stripe</strong> for deposits + final payment. <strong>HoneyBook</strong> or <strong>Dubsado</strong> for the contract / waiver / parent intake form flow. Each city's Calendly is owned by the operator; payments route to corporate, then royalty + payout disbursed monthly.</div>
       </div>
 
       <div class="engine-row">
-        <div class="label">Tooling</div>
-        <div class="val"><strong>Stack:</strong> Webflow CMS · Calendly · Stripe · HoneyBook (or Dubsado). All standard SaaS, all predictable monthly tools you'd already use. <em>Build is included in the Phase 2 partnership — about a month of allocated time.</em></div>
+        <div class="label">Cost</div>
+        <div class="val"><strong>Webflow CMS plan: ~$23–29/mo.</strong> Calendly: ~$12/mo. Stripe: 2.9% + $0.30/transaction. HoneyBook (or similar contract/invoice tool): ~$39+/mo. <em>Total monthly software: ~$80–100.</em> Build cost: included in Phase 2 partnership (about a month of allocated time).</div>
       </div>
 
       <div class="engine-row">
         <div class="label">Success bar at week 10</div>
-        <div class="val"><strong>Site live · all 12 pages · Webflow CMS handling cities + blog · booking flow accepting payment.</strong> First paid booking from organic site traffic within 14 days of launch. Track inbound-from-social conversion rate from week 10 onward — if it's persistently low, it's a copy problem to fix in week 14 review.</div>
+        <div class="val"><strong>Site live · all 12 pages · Webflow CMS handling cities + blog · booking flow accepting payment.</strong> First paid booking from organic site traffic within 14 days of launch. Inbound from social media converts at 3%+ — or it's a copy problem to fix.</div>
       </div>
     </div>
   </div>
@@ -441,17 +441,17 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
 
       <div class="engine-row">
         <div class="label">SEO infrastructure</div>
-        <div class="val"><strong>Webflow CMS native SEO</strong> covers 80%. Add: a keyword-research tool (SemRush / Ahrefs / similar). Schema markup for Local Business + Event types per city. Robots.txt + sitemap.xml on launch. <em>Search Console + GA4 hooked up week 10 with the site launch.</em></div>
+        <div class="val"><strong>Webflow CMS native SEO</strong> covers 80%. Add: a keyword-research tool — SemRush, Ahrefs, or similar — typically $100–150/mo on entry plans. Schema markup for Local Business + Event types per city. Robots.txt + sitemap.xml on launch. <em>Search Console + GA4 hooked up week 10 with the site launch.</em></div>
       </div>
 
       <div class="engine-row">
-        <div class="label">Tooling</div>
-        <div class="val"><strong>Stack:</strong> SEO keyword tool · Klaviyo for newsletter (free tier covers the first hundreds of contacts). <em>Writing time is included in the Phase 2 partnership — about a day per week.</em></div>
+        <div class="label">Cost</div>
+        <div class="val"><strong>Keyword tool: ~$100–150/mo</strong> (SemRush / Ahrefs / similar). <strong>Klaviyo</strong> for newsletter: free up to 250 contacts, ~$30/mo when the list grows past that. <em>Total Engine 03 monthly software: ~$130–180.</em> Writing time: included in Phase 2 partnership (about a day per week).</div>
       </div>
 
       <div class="engine-row">
         <div class="label">Success bar at week 24</div>
-        <div class="val"><strong>12 posts published.</strong> 5K monthly organic site visits by month 6. 3 posts ranking on page 1 of Google for target queries. Newsletter at 500+ subs. <em>One blog post drives a —+ corporate booking — that's the SEO ROI proof.</em></div>
+        <div class="val"><strong>12 posts published.</strong> 5K monthly organic site visits by month 6. 3 posts ranking on page 1 of Google for target queries. Newsletter at 500+ subs. <em>One blog post drives a $5K+ corporate booking — that's the SEO ROI proof.</em></div>
       </div>
     </div>
   </div>
@@ -494,23 +494,23 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
 </section>
 
 
-<!-- TIME + OWNERSHIP -->
+<!-- TOTAL COSTS + OWNERSHIP -->
 <section class="section">
-  <div class="eyebrow">Time + ownership · who does what</div>
-  <h2>Six months.<br><em>The founder ships voice. The partner ships the rest.</em></h2>
+  <div class="eyebrow">Total cost + ownership</div>
+  <h2>Six months.<br><em>$1,200 in software. Phase 2 retainer covers the rest.</em></h2>
 
   <table class="channels">
-    <thead><tr><th>Engine</th><th>Chris's time</th><th>Strategy partner ships</th></tr></thead>
+    <thead><tr><th>Engine</th><th>Software / month</th><th>Chris's time</th><th>Strategy partner</th></tr></thead>
     <tbody>
-      <tr><td><strong>Social</strong> (forever)</td><td>4 hrs / week</td><td>Production + scheduling + measurement</td></tr>
-      <tr><td><strong>Web</strong> (one-time build, weeks 5–10)</td><td>Approve content · 2 hrs/week during build window</td><td>Wireframe → design → build → launch</td></tr>
-      <tr><td><strong>Blog</strong> (forever)</td><td>1 hr/week voiceover review</td><td>Writing + SEO + distribution + email</td></tr>
-      <tr><td><strong>Total</strong></td><td><strong>~5–7 hrs/week from Chris</strong></td><td>Phase 2 partnership</td></tr>
+      <tr><td><strong>Social</strong> (forever)</td><td>$80</td><td>4 hrs / week</td><td>Production + scheduling + measurement</td></tr>
+      <tr><td><strong>Web</strong> (one-time build)</td><td>$80 (Webflow + Calendly + HoneyBook)</td><td>Approve content · 2 hrs/week W5–10</td><td>Wireframe → design → build → launch</td></tr>
+      <tr><td><strong>Blog</strong> (forever)</td><td>$140 (SemRush + Klaviyo)</td><td>1 hr/week voiceover review</td><td>Writing + SEO + distribution + email</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>~$280–360/month</strong></td><td><strong>~5–7 hrs/week</strong></td><td>Phase 2 partnership</td></tr>
     </tbody>
   </table>
 
   <div class="callout">
-    <strong>Chris's biggest investment is the founder voice — the part that nobody else can do.</strong> Everything else (editing, scheduling, writing first drafts, SEO, distribution) is partnership territory. <em>The model is: founder voice ships once a week. The brand engine ships every day.</em>
+    <strong>Chris's biggest time investment is the founder voice — the part that nobody else can do.</strong> Everything else (editing, scheduling, writing first drafts, SEO, distribution) is Phase 2 retainer territory. <em>The model is: founder voice ships once a week. The brand engine ships every day.</em>
   </div>
 </section>
 

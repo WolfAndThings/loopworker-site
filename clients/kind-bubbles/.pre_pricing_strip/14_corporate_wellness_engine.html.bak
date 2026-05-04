@@ -100,7 +100,7 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
 <section class="section">
   <div class="eyebrow">Why this lane matters</div>
   <h2>One corporate event<br><em>= 4 birthday parties.</em></h2>
-  <p>Direct private bookings build the brand. Corporate, school, and hospitality bookings <strong>fund the network</strong>. A single Genentech wellness day at — is the same revenue as 3–4 birthday bookings — and the relationship recurs annually. <em>Once an HR team books once, they book every year.</em></p>
+  <p>Direct private bookings build the brand. Corporate, school, and hospitality bookings <strong>fund the network</strong>. A single Genentech wellness day at $850–1,500 is the same revenue as 3–4 birthday bookings — and the relationship recurs annually. <em>Once an HR team books once, they book every year.</em></p>
 
   <div class="pull">
     SF Bubble Man's published past clients include Google, Facebook, Twitter, Genentech, Agilent, Cisco, JCC, and Marin Art &amp; Garden Center. <strong>That's a pre-validated buyer list.</strong> The brands have already shown they buy bubble experiences. The job now is to bring them a more sophisticated version.
@@ -136,7 +136,7 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
       </div>
       <div class="persona-row">
         <div class="label">Budget</div>
-        <div class="val"><strong>—–— per event.</strong> Annual line items in — range across 4–8 events/year. Larger companies have —+ wellness contracts that bundle 6–12 vendor experiences across the year.</div>
+        <div class="val"><strong>$650–$1,500 per event.</strong> Annual line items in $5K–25K range across 4–8 events/year. Larger companies have $50K+ wellness contracts that bundle 6–12 vendor experiences across the year.</div>
       </div>
       <div class="persona-row">
         <div class="label">What stops the deal</div>
@@ -179,7 +179,7 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
       </div>
       <div class="persona-row">
         <div class="label">Budget</div>
-        <div class="val"><strong>—–— per assembly</strong> (depending on school size + duration). <strong>— per multi-visit residency</strong> (3–6 visits over a semester). PTA and Parent Council often have discretionary funds in the — range that can move fast.</div>
+        <div class="val"><strong>$500–$1,500 per assembly</strong> (depending on school size + duration). <strong>$3K–8K per multi-visit residency</strong> (3–6 visits over a semester). PTA and Parent Council often have discretionary funds in the $1–3K range that can move fast.</div>
       </div>
       <div class="persona-row">
         <div class="label">What stops the deal</div>
@@ -223,7 +223,7 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
       </div>
       <div class="persona-row">
         <div class="label">Budget</div>
-        <div class="val"><strong>— per activation</strong> for a boutique hotel weekend. <strong>— per multi-event seasonal residency</strong> at a members' club or resort. <em>Hospitality pays the most because the experience drives bookings, room nights, member retention.</em></div>
+        <div class="val"><strong>$1,000–3,500 per activation</strong> for a boutique hotel weekend. <strong>$5K–15K per multi-event seasonal residency</strong> at a members' club or resort. <em>Hospitality pays the most because the experience drives bookings, room nights, member retention.</em></div>
       </div>
       <div class="persona-row">
         <div class="label">What stops the deal</div>
@@ -308,10 +308,30 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
   <table class="tier">
     <thead><tr><th>Buyer</th><th>Single event</th><th>Annual contract</th><th>Margin tier</th></tr></thead>
     <tbody>
-      
-      
-      
-      
+      <tr>
+        <td><strong>Wellness Lead</strong> (corporate)</td>
+        <td>$650–$1,500</td>
+        <td>$5K–$25K (4–10 events)</td>
+        <td><em>Premium · ~70% margin</em></td>
+      </tr>
+      <tr>
+        <td><strong>School</strong> (assembly)</td>
+        <td>$500–$1,500</td>
+        <td>$3K–$8K residency</td>
+        <td><em>Mid · ~55% margin</em></td>
+      </tr>
+      <tr>
+        <td><strong>Hospitality</strong> (single)</td>
+        <td>$1,000–$3,500</td>
+        <td>$5K–$15K seasonal</td>
+        <td><em>Highest · ~75% margin</em></td>
+      </tr>
+      <tr>
+        <td><strong>Hospitality</strong> (residency)</td>
+        <td>—</td>
+        <td>$15K–$40K annual</td>
+        <td><em>Highest · ~80% margin · referral-driving</em></td>
+      </tr>
     </tbody>
   </table>
 
@@ -335,7 +355,7 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
     <div class="subject">Subject: Loved having your team — quick thought on next time</div>
     <div class="greet">Hi [First name] —</div>
     <p class="body">Loved being there yesterday. Got the photos back from your team — sending the best in a separate email below.</p>
-    <p class="body">A thought: most companies we work with end up booking multiple events a year because the calendar gets ahead of them. Worth locking in a few dates now (different formats — wellness day, kid-friendly day, leadership offsite, holiday party) at bundle terms vs. one-off. Just an option — happy to keep doing it event-by-event if that fits better.</p>
+    <p class="body">A thought: most companies we work with end up booking 4 events / year because the calendar gets ahead of them. We can lock in 4 dates now (different formats — wellness day, kid-friendly day, leadership offsite, holiday party) at a 15% bundle vs. one-off pricing. Just an option — happy to keep doing it event-by-event if that fits better.</p>
     <p class="body">Either way, thank you again for having us.</p>
     <div class="sig">— Chris</div>
   </div>
