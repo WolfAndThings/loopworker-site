@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Event Capture &amp; Tag System — Kind Bubbles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased; }
+.wrap { max-width:820px; margin:0 auto; padding:3rem 2rem 6rem; }
+
+.cover { min-height:100vh; display:flex; flex-direction:column; justify-content:space-between; padding:4rem 0 2rem; }
+.cover-badge { display:inline-block; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.22em; color:#888; border:1px solid rgba(255,255,255,0.1); padding:0.45rem 1rem; border-radius:100px; margin-bottom:2rem; }
+.cover-eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.24em; color:#D4A017; margin-bottom:1.2rem; font-weight:600; }
+.cover-title { font-family:'Cormorant Garamond', serif; font-size:clamp(2.8rem, 7vw, 4.4rem); font-weight:500; color:#FFF; line-height:1.02; letter-spacing:-0.02em; margin-bottom:1.5rem; }
+.cover-title em { font-style:italic; color:#D4A017; font-weight:400; }
+.cover-lede { font-size:1.15rem; color:#AAA; line-height:1.55; max-width:600px; margin-bottom:2rem; }
+.cover-meta { font-size:0.9rem; color:#777; line-height:1.8; margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.06); }
+.cover-meta strong { color:#BBB; font-weight:600; }
+.cover-bottom { font-size:0.7rem; color:#555; letter-spacing:0.15em; text-transform:uppercase; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.04); }
+
+.section { margin-bottom:4rem; }
+.eyebrow { font-size:0.65rem; text-transform:uppercase; letter-spacing:0.22em; color:#D4A017; font-weight:600; margin-bottom:0.7rem; }
+.section h2 { font-family:'Cormorant Garamond', serif; font-size:2.2rem; font-weight:500; color:#FFF; margin-bottom:1.2rem; letter-spacing:-0.02em; line-height:1.15; }
+.section h2 em { font-style:italic; color:#D4A017; font-weight:400; }
+.section h3 { font-size:1.05rem; font-weight:600; color:#FFF; margin:1.4rem 0 0.5rem; letter-spacing:-0.01em; }
+.section p { margin-bottom:1rem; color:#B5B5B5; font-size:0.97rem; }
+.section p strong { color:#FFF; font-weight:600; }
+.divider { border:none; border-top:1px solid rgba(255,255,255,0.06); margin:4rem 0; }
+
+.pull { border-left:2px solid #D4A017; padding:0.6rem 0 0.6rem 1.4rem; margin:1.8rem 0; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.25rem; line-height:1.45; color:#E8E8E8; }
+.pull span { color:#D4A017; font-style:normal; font-family:'Inter', sans-serif; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; display:block; margin-top:0.6rem; font-weight:600; }
+
+/* TIMELINE BLOCK */
+.timeline { margin:1.5rem 0; }
+.tl-stage { background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:1.6rem 1.8rem; margin-bottom:1rem; }
+.tl-head { display:grid; grid-template-columns:auto 1fr auto; gap:1rem; align-items:baseline; padding-bottom:0.9rem; border-bottom:1px solid rgba(255,255,255,0.06); margin-bottom:1rem; }
+.tl-num { font-family:'Cormorant Garamond', serif; font-size:1.8rem; color:#D4A017; line-height:1; font-weight:500; }
+.tl-name { font-family:'Cormorant Garamond', serif; font-size:1.4rem; color:#FFF; font-weight:500; line-height:1.15; letter-spacing:-0.01em; }
+.tl-when { font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:#888; font-weight:600; }
+.tl-body ul { list-style:none; padding:0; margin:0; }
+.tl-body ul li { padding:0.5rem 0 0.5rem 1.6rem; position:relative; font-size:0.93rem; color:#CCC; line-height:1.55; border-bottom:1px dashed rgba(255,255,255,0.04); }
+.tl-body ul li:last-child { border-bottom:none; }
+.tl-body ul li::before { content:''; width:6px; height:6px; background:#D4A017; border-radius:50%; position:absolute; left:0.4rem; top:1rem; }
+.tl-body ul li strong { color:#FFF; font-weight:600; }
+.tl-body ul li em { color:#D4A017; font-style:italic; }
+
+/* CHECKLIST */
+.checklist { background:rgba(125,184,138,0.04); border:1px solid rgba(125,184,138,0.18); border-radius:12px; padding:1.6rem 1.8rem; margin:1.5rem 0; }
+.checklist h3 { color:#7DB88A; font-size:0.7rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:700; margin-bottom:1rem; }
+.checklist .h2-line { font-family:'Cormorant Garamond', serif; font-size:1.4rem; color:#FFF; font-weight:500; margin-bottom:1rem; line-height:1.2; }
+.checklist .h2-line em { color:#7DB88A; font-style:italic; }
+.checklist ul { list-style:none; padding:0; margin:0; }
+.checklist ul li { padding:0.5rem 0 0.5rem 2rem; position:relative; font-size:0.92rem; color:#DDD; line-height:1.55; }
+.checklist ul li::before { content:'☐'; position:absolute; left:0.4rem; color:#7DB88A; font-weight:600; font-size:1rem; }
+.checklist ul li strong { color:#FFF; font-weight:600; }
+
+/* SHOT GRID */
+.shot-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:0.8rem; margin:1.5rem 0; }
+@media(max-width:680px){ .shot-grid { grid-template-columns:1fr; } }
+.shot { background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:1.1rem 1.2rem; }
+.shot .sn { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:#D4A017; font-weight:700; margin-bottom:0.4rem; }
+.shot .st { font-family:'Cormorant Garamond', serif; font-size:1.15rem; color:#FFF; font-weight:500; line-height:1.2; margin-bottom:0.4rem; }
+.shot .sd { font-size:0.85rem; color:#AAA; line-height:1.5; }
+
+/* TAG STACK */
+.tag-stack { background:rgba(212,160,23,0.04); border:1px solid rgba(212,160,23,0.22); border-radius:12px; padding:1.6rem 1.8rem; margin:1.5rem 0; }
+.tag-row { display:grid; grid-template-columns:auto 1fr; gap:1.2rem; padding:0.9rem 0; border-bottom:1px dashed rgba(255,255,255,0.06); align-items:start; }
+.tag-row:last-child { border-bottom:none; }
+.tag-layer { font-family:'Cormorant Garamond', serif; font-size:1.05rem; color:#D4A017; font-style:italic; font-weight:500; min-width:90px; }
+.tag-content { font-size:0.92rem; color:#DDD; line-height:1.55; }
+.tag-content strong { color:#FFF; }
+.tag-content code { font-family:'Inter', sans-serif; background:rgba(0,0,0,0.4); padding:0.15rem 0.45rem; border-radius:4px; color:#D4A017; font-size:0.86rem; font-weight:500; }
+.tag-content em { color:#999; font-style:italic; font-size:0.86rem; display:block; margin-top:0.3rem; }
+
+/* CALL-OUT TEMPLATES */
+.callout-card { background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.07); border-radius:12px; padding:1.4rem 1.6rem; margin-bottom:1rem; }
+.callout-card .cc-tag { font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:#D4A017; font-weight:700; margin-bottom:0.5rem; }
+.callout-card .cc-name { font-family:'Cormorant Garamond', serif; font-size:1.25rem; color:#FFF; font-weight:500; margin-bottom:0.7rem; line-height:1.2; }
+.callout-card .cc-body { background:rgba(0,0,0,0.3); border-left:2px solid rgba(212,160,23,0.4); padding:0.9rem 1.1rem; border-radius:0 6px 6px 0; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1rem; color:#DDD; line-height:1.55; margin-bottom:0.6rem; }
+.callout-card .cc-when { font-size:0.85rem; color:#999; }
+.callout-card .cc-when strong { color:#D4A017; }
+
+/* HASHTAG GRID */
+.htag-grid { display:grid; grid-template-columns:1fr; gap:0.7rem; margin:1.5rem 0; }
+.htag-set { background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:1.2rem 1.4rem; }
+.htag-set .ht-name { font-family:'Cormorant Garamond', serif; font-size:1.15rem; color:#FFF; font-weight:500; margin-bottom:0.5rem; }
+.htag-set .ht-name em { color:#D4A017; font-style:italic; }
+.htag-set .ht-tags { font-size:0.86rem; color:#AAA; line-height:1.7; }
+.htag-set .ht-tags code { background:rgba(0,0,0,0.4); padding:0.12rem 0.4rem; border-radius:4px; color:#7DB88A; font-family:'Inter', sans-serif; font-size:0.84rem; margin-right:0.3rem; display:inline-block; margin-bottom:0.2rem; }
+.htag-set .ht-meta { font-size:0.78rem; color:#777; margin-top:0.6rem; padding-top:0.6rem; border-top:1px solid rgba(255,255,255,0.06); }
+
+/* PERMISSION SCRIPT */
+.permission { background:rgba(232,68,32,0.04); border:1px solid rgba(232,68,32,0.18); border-radius:12px; padding:1.6rem 1.8rem; margin:1.5rem 0; }
+.permission h3 { color:#E87E3A; font-size:0.7rem; letter-spacing:0.22em; text-transform:uppercase; font-weight:700; margin-bottom:1rem; }
+.permission p { font-size:0.93rem; color:#DDD; line-height:1.6; }
+.permission .script { background:rgba(0,0,0,0.35); border-radius:8px; padding:1rem 1.2rem; margin:0.8rem 0; font-family:'Cormorant Garamond', serif; font-style:italic; color:#E8E8E8; font-size:1.02rem; line-height:1.55; border-left:2px solid #E87E3A; }
+
+/* CTA BLOCK */
+.priority { background:linear-gradient(180deg, rgba(212,160,23,0.06), rgba(212,160,23,0.015)); border:1px solid rgba(212,160,23,0.22); border-radius:14px; padding:2rem 1.8rem; margin:2rem 0; }
+.priority h3 { color:#D4A017; font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:0.8rem; font-weight:600; }
+.priority h2 { font-family:'Cormorant Garamond', serif; font-size:1.7rem; color:#FFF; font-weight:500; line-height:1.2; margin-bottom:1rem; letter-spacing:-0.01em; }
+.priority h2 em { color:#D4A017; font-style:italic; }
+.priority ol { padding-left:1.2rem; margin-top:0.8rem; }
+.priority li { color:#CCC; font-size:0.95rem; padding:0.4rem 0; }
+.priority li strong { color:#FFF; }
+
+.footer { text-align:center; margin-top:4rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.05); font-size:0.8rem; color:#555; letter-spacing:0.1em; text-transform:uppercase; }
+
+@page { size:Letter; margin:0; }
+@media print {
+  html, body { background:#080808 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; color-adjust:exact; margin:0 !important; }
+  .wrap { padding:0.55in 0.55in 0.55in !important; max-width:100% !important; }
+  .cover { min-height:9.5in; padding:0.2in 0 0; page-break-after:always; }
+  .section { page-break-inside:avoid; break-inside:avoid; margin-bottom:1.6rem; }
+  .tl-stage, .checklist, .tag-stack, .callout-card, .permission, .priority, .htag-set, .shot { page-break-inside:avoid; break-inside:avoid; }
+  .divider { margin:1.4rem 0; }
+  .pull { page-break-inside:avoid; }
+  a { color:inherit; text-decoration:none; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- COVER -->
+<div class="cover">
+  <div>
+    <span class="cover-badge">Phase 1 · Module 09</span>
+    <div class="cover-eyebrow">Event Capture &amp; Tag System</div>
+    <h1 class="cover-title">Every show,<br>same <em>capture</em>.<br>Every post,<br>same <em>tags</em>.</h1>
+    <p class="cover-lede">A repeatable system Chris runs at every Kind Bubbles event — what to shoot, what to capture, what to tag, what to post. Built so a show in Walnut Creek and a show in Sacramento and a show in San Jose all produce content that ladders into the same four pillars (D03), uses the same call-outs, and gets the same algorithmic lift.</p>
+    <div class="cover-meta">
+      <strong>For:</strong> Chris Steele · used at every event going forward<br>
+      <strong>What it covers:</strong> Pre-show prep · 12 mandatory shots · 5 reel clips · the tag stack · call-out templates · permission flow<br>
+      <strong>Pairs with:</strong> D03 (pillars) · D04 (hooks) · D08 (sprint) — this is the operational layer underneath all three
+    </div>
+  </div>
+  <div class="cover-bottom">Built so every show generates content. Not just the special ones.</div>
+</div>
+
+
+<!-- WHY -->
+<div class="section">
+  <div class="eyebrow">Why a system</div>
+  <h2>The audit found <em>21 of 55 posts</em> are filler.</h2>
+  <p>The single biggest content leak on @kind.bubbles is the gap between <strong>events you ran</strong> and <strong>posts that came from them</strong>. Some events generate ten posts; others generate zero. The result: a feed that ships when there's time and goes silent when there isn't.</p>
+  <p>The fix is operational, not creative. <strong>One capture sheet. One tag stack. One call-out library. Every show.</strong> When the system is the same every time, the post-show content takes 20 minutes — not three hours of "what should we even post about this one."</p>
+  <div class="pull">"You've already done the hard work — you ran the show. The capture system makes sure that work compounds into content, every time, without thinking."<span>— The Job</span></div>
+</div>
+
+<hr class="divider">
+
+
+<!-- TIMELINE: THE 5-STAGE FLOW -->
+<div class="section">
+  <div class="eyebrow">The flow</div>
+  <h2>Five stages. <em>Same every show.</em></h2>
+  <p>Each stage has a small, fixed checklist. Total time investment: ~10 minutes pre-show, 5 minutes during, 20 minutes post. That's it.</p>
+
+  <div class="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-stage">
+      <div class="tl-head">
+        <div class="tl-num">01</div>
+        <div><div class="tl-name">Pre-show prep</div></div>
+        <div class="tl-when">10 min · night before or morning of</div>
+      </div>
+      <div class="tl-body">
+        <ul>
+          <li><strong>Geo-pin set on phone.</strong> Drop the location pin in your camera roll so every photo + video tags the venue automatically.</li>
+          <li><strong>Tripod + iPhone packed.</strong> Plus charger. Plus the lav mic if it's a founder-voice day.</li>
+          <li><strong>Permission slips printed</strong> (or QR code to digital form) — see the permission section below.</li>
+          <li><strong>Partner accounts noted.</strong> Who's at the show? Co-host, venue, parent creator, photographer? Get the @ handle <em>before</em> you're on site.</li>
+          <li><strong>Post intent picked.</strong> Which pillar is the post going to be? <em>Founder &amp; Family · Reaction &amp; Show · Bubble Science · Counter-Position</em>. Picking before the show changes what you shoot.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-stage">
+      <div class="tl-head">
+        <div class="tl-num">02</div>
+        <div><div class="tl-name">During the show — capture</div></div>
+        <div class="tl-when">5 min · across the event</div>
+      </div>
+      <div class="tl-body">
+        <ul>
+          <li><strong>The 12 mandatory shots</strong> (full list in next section). Get them all. Treat them like a ritual — same shots every show, even if they look the same as last week's. <em>The library compounds.</em></li>
+          <li><strong>4 video clips</strong> — 5 to 10 seconds each — covering the four content pillars: a kid's face mid-reaction, a science moment (giant bubble forming, slow-mo pop), a founder moment (you handing a wand, you talking to a kid), a counter-position moment (a parent putting their phone down, a kid choosing this over a tablet).</li>
+          <li><strong>One audio clip</strong> — kids cheering, the room going quiet, that "oh!" moment when the bubble doesn't pop. Audio is half of a reel.</li>
+          <li><strong>Permission gathered</strong> for any kid whose face you'll show in a post (see Stage 5).</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-stage">
+      <div class="tl-head">
+        <div class="tl-num">03</div>
+        <div><div class="tl-name">Within 1 hour after — quick story</div></div>
+        <div class="tl-when">5 min · while still on site or in the car</div>
+      </div>
+      <div class="tl-body">
+        <ul>
+          <li><strong>Post one Story.</strong> A 5-second clip. Geo-tag the location. Tag any partner @. <em>"That was Mira's 6th birthday. Bubbles Bay Area-style."</em> Done. Don't overthink it.</li>
+          <li><strong>Save the best 3 clips</strong> to a "post-ready" folder on your phone. These are the ones the next-day reel gets cut from.</li>
+          <li><strong>DM the host the link to your booking page</strong> with a "thank you for letting us share the day" line. Builds re-booking + referrals.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-stage">
+      <div class="tl-head">
+        <div class="tl-num">04</div>
+        <div><div class="tl-name">Within 24 hours — the post</div></div>
+        <div class="tl-when">20 min · the next day</div>
+      </div>
+      <div class="tl-body">
+        <ul>
+          <li><strong>Pick the pillar</strong> (the one you set in Stage 1) and the matching hook from D04.</li>
+          <li><strong>Cut the reel or carousel</strong> using the 12-shot library. Most reels are 15–30 seconds; carousels are 4–6 slides.</li>
+          <li><strong>Apply the tag stack</strong> (full template in the next section): location · event type · pillar · partner @ · Bay Area discovery hashtags.</li>
+          <li><strong>Apply the relevant call-out</strong> (templates below): client thank-you, venue shoutout, partner credit, geographic SEO line.</li>
+          <li><strong>Schedule, don't post live.</strong> Schedule for the right time slot per pillar (D03 sequencing).</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- STAGE 5 -->
+    <div class="tl-stage">
+      <div class="tl-head">
+        <div class="tl-num">05</div>
+        <div><div class="tl-name">Within 1 week — the second post</div></div>
+        <div class="tl-when">15 min · 4–7 days after the event</div>
+      </div>
+      <div class="tl-body">
+        <ul>
+          <li><strong>Most events should generate 2 posts, not 1.</strong> The day-after post is the reel; the week-after post is a different angle from the same event — usually a Counter-Position carousel ("Three things this birthday party didn't have, and why parents thanked us") or a Bubble Science save-bait list.</li>
+          <li><strong>Different pillar than the first post.</strong> Don't double-up. If the day-after was Reaction &amp; Show, the week-after is Counter-Position or Bubble Science.</li>
+          <li><strong>One event = at least 2 grid posts + 1 Story = 3 pieces of content.</strong> Run 4 events / month and you have 12 posts before any other source kicks in.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<hr class="divider">
+
+
+<!-- 12 SHOT CHECKLIST -->
+<div class="section">
+  <div class="eyebrow">The capture sheet</div>
+  <h2>Twelve shots. <em>Every event.</em> No exceptions.</h2>
+  <p>Borrowed from the wedding-photographer playbook — a fixed shot list that runs every time. The reason it works: you stop thinking about <em>what</em> to shoot and start thinking about <em>better versions</em> of the shots you already plan to take. Library compounds across every event.</p>
+
+  <div class="shot-grid">
+    <div class="shot"><div class="sn">Shot 01 · Setup</div><div class="st">The bucket + wands</div><div class="sd">Lined up before guests arrive. Quiet. Anticipation.</div></div>
+    <div class="shot"><div class="sn">Shot 02 · The first kid</div><div class="st">First kid to spot the bubbles</div><div class="sd">Wide-eye reaction. Often the strongest single image of the day.</div></div>
+    <div class="shot"><div class="sn">Shot 03 · The crowd</div><div class="st">All kids running through the cloud</div><div class="sd">Wide shot. Energy. Use for carousels, not feed.</div></div>
+    <div class="shot"><div class="sn">Shot 04 · Hero bubble</div><div class="st">One giant bubble, mid-air, perfectly lit</div><div class="sd">The "Bubble Science" hero asset. Build a library.</div></div>
+    <div class="shot"><div class="sn">Shot 05 · Hands reaching</div><div class="st">Multiple kids' hands reaching up</div><div class="sd">Detail shot. Reaction & Show pillar.</div></div>
+    <div class="shot"><div class="sn">Shot 06 · The parent laughing</div><div class="st">An adult laughing at their kid's reaction</div><div class="sd">The "I want my kid to be that kid" image. Booking magnet.</div></div>
+    <div class="shot"><div class="sn">Shot 07 · The shy kid</div><div class="st">The quietest kid, finally smiling</div><div class="sd">The most emotional shot. Often becomes a Founder &amp; Family caption.</div></div>
+    <div class="shot"><div class="sn">Shot 08 · Founder + birthday kid</div><div class="st">You giving a giant wand to the host child</div><div class="sd">Founder &amp; Family pillar. Always get one.</div></div>
+    <div class="shot"><div class="sn">Shot 09 · Cake / table</div><div class="st">The party setup, bubbles drifting through</div><div class="sd">Brand-context shot. For showcase + booking page.</div></div>
+    <div class="shot"><div class="sn">Shot 10 · Detail</div><div class="st">Close-up of soap film stretching on the wand</div><div class="sd">Bubble Science pillar. ASMR-friendly.</div></div>
+    <div class="shot"><div class="sn">Shot 11 · Group photo</div><div class="st">Kids + you, all smiling</div><div class="sd">For the host + for "thank you for having us" Story content.</div></div>
+    <div class="shot"><div class="sn">Shot 12 · Strike + thank-you</div><div class="st">Empty backyard, gear packed, wave goodbye</div><div class="sd">"That's a wrap" Story. Quietly emotional.</div></div>
+  </div>
+
+  <div class="checklist">
+    <h3>Plus 4 video clips per event</h3>
+    <p class="h2-line">One clip per pillar — <em>5 to 10 seconds each.</em></p>
+    <ul>
+      <li><strong>Clip A · Reaction &amp; Show</strong> — kid face mid-laugh or mid-wonder, bubble in foreground</li>
+      <li><strong>Clip B · Bubble Science</strong> — slow-mo bubble forming, popping, or floating</li>
+      <li><strong>Clip C · Founder &amp; Family</strong> — you handing a wand, talking to a kid, watching from the side</li>
+      <li><strong>Clip D · Counter-Position</strong> — a parent putting down their phone, a kid ignoring a tablet, the moment everyone goes quiet</li>
+    </ul>
+  </div>
+</div>
+
+
+<hr class="divider">
+
+
+<!-- THE TAG STACK -->
+<div class="section">
+  <div class="eyebrow">The tag stack</div>
+  <h2>Five layers. <em>Every post.</em></h2>
+  <p>Every post about an event uses the same five-layer tag stack. Builds Bay Area SEO over time and trains the algorithm to put Kind Bubbles in front of the right local audiences.</p>
+
+  <div class="tag-stack">
+
+    <div class="tag-row">
+      <div class="tag-layer">Layer 01</div>
+      <div class="tag-content"><strong>Location</strong> — three layers deep: neighborhood + city + region.<br>
+        <code>#walnutcreek</code> <code>#eastbay</code> <code>#bayareakids</code><br>
+        <em>Why three: Instagram weights specificity. A parent in Walnut Creek searches "walnut creek kids party." A parent in Oakland searches "east bay birthday." Cover both.</em>
+      </div>
+    </div>
+
+    <div class="tag-row">
+      <div class="tag-layer">Layer 02</div>
+      <div class="tag-content"><strong>Event type</strong> — pick one.<br>
+        <code>#kidsbirthday</code> · <code>#schoolassembly</code> · <code>#corporatewellness</code> · <code>#popupevent</code> · <code>#sensoryday</code><br>
+        <em>Don't combine more than one. The algorithm reads "kidsbirthday + corporatewellness" as confused targeting.</em>
+      </div>
+    </div>
+
+    <div class="tag-row">
+      <div class="tag-layer">Layer 03</div>
+      <div class="tag-content"><strong>Pillar match</strong> — tags that signal the pillar to the algorithm.<br>
+        Founder &amp; Family → <code>#girldad</code> <code>#daddydaughter</code> <code>#familybusiness</code><br>
+        Reaction &amp; Show → <code>#kidsreaction</code> <code>#kidssmile</code> <code>#magicofchildhood</code><br>
+        Bubble Science → <code>#sensoryplay</code> <code>#stemforkids</code> <code>#asmr</code><br>
+        Counter-Position → <code>#screenfree</code> <code>#mindfulparenting</code> <code>#screenfreefun</code>
+      </div>
+    </div>
+
+    <div class="tag-row">
+      <div class="tag-layer">Layer 04</div>
+      <div class="tag-content"><strong>Partner @</strong> — the multiplier (see D03).<br>
+        Tag the host, the venue, the photographer, the co-vendor, the parent creator. <em>Every collab tag is a distribution lever.</em><br>
+        <code>@bayarea_toddlersplay</code> <code>@kara_styles_parties</code> <code>@walnutcreekrec</code><br>
+        <em>Always tag in BOTH the caption AND the post mentions — they surface differently.</em>
+      </div>
+    </div>
+
+    <div class="tag-row">
+      <div class="tag-layer">Layer 05</div>
+      <div class="tag-content"><strong>Brand discovery</strong> — Bay Area parent-discovery hashtags.<br>
+        <code>#bayareaparents</code> <code>#sfkids</code> <code>#sfmoms</code> <code>#bayareamoms</code> <code>#kindbubbles</code><br>
+        <em>Always include #kindbubbles. Builds your branded hashtag library — every post on it is shoppable for repeat visitors.</em>
+      </div>
+    </div>
+
+  </div>
+
+  <p style="margin-top:1.2rem;"><strong>Total per post:</strong> ~12 hashtags. Instagram allows 30, but research shows 8–15 outperforms more. Don't fill the cap — pick the right twelve.</p>
+</div>
+
+
+<hr class="divider">
+
+
+<!-- CALL-OUT TEMPLATES -->
+<div class="section">
+  <div class="eyebrow">The call-out library</div>
+  <h2>Six paste-ready <em>shoutouts</em>.</h2>
+  <p>Drop into any caption. Each one does a specific job — saying thank you, building geographic SEO, crediting a partner, signaling brand range, framing the booking ask. Use 1–2 per post (not all six).</p>
+
+  <div class="callout-card">
+    <div class="cc-tag">Call-out 01 · Client thank-you</div>
+    <div class="cc-name">For the host that booked you</div>
+    <div class="cc-body">"Thank you to the [BIRTHDAY KID NAME] family in [NEIGHBORHOOD] for letting us bring the bubbles. [MEMORABLE MOMENT FROM THE DAY] is the kind of thing we run this for."</div>
+    <div class="cc-when"><strong>When to use:</strong> Day-after post. Always with parent's permission. Replaces "what a magical day" filler.</div>
+  </div>
+
+  <div class="callout-card">
+    <div class="cc-tag">Call-out 02 · Venue shoutout</div>
+    <div class="cc-name">For the location</div>
+    <div class="cc-body">"[VENUE NAME] in [CITY] — one of the best Bay Area backyards/parks/halls we've ever set up in. Tag your friends if you've thrown a party there."</div>
+    <div class="cc-when"><strong>When to use:</strong> Public venues only (parks, community centers). Builds SEO + invites tag-prompts.</div>
+  </div>
+
+  <div class="callout-card">
+    <div class="cc-tag">Call-out 03 · Partner credit</div>
+    <div class="cc-name">For collaborators on the day</div>
+    <div class="cc-body">"With @[PARTNER HANDLE] on [STYLING / PHOTOGRAPHY / CO-HOSTING]. Bay Area kids' party people who do it right. Follow them."</div>
+    <div class="cc-when"><strong>When to use:</strong> Any event with a co-vendor. Direct algorithmic boost — see D03 multiplier #1 (avg 100♥ on tagged posts vs 28 average).</div>
+  </div>
+
+  <div class="callout-card">
+    <div class="cc-tag">Call-out 04 · Geographic SEO line</div>
+    <div class="cc-name">For local search ranking</div>
+    <div class="cc-body">"Kind Bubbles · sensory bubble parties for [NEIGHBORHOOD], [CITY], and the [REGION] Bay Area · now booking [SEASON] [YEAR]."</div>
+    <div class="cc-when"><strong>When to use:</strong> Once per week minimum. Add at the end of the caption. Trains Instagram + Google to rank you for local searches.</div>
+  </div>
+
+  <div class="callout-card">
+    <div class="cc-tag">Call-out 05 · Booking ask (soft)</div>
+    <div class="cc-name">The booking line that doesn't sell</div>
+    <div class="cc-body">"If you're a [BAY AREA / SACRAMENTO] parent with a kid turning [AGE], DM me 'birthday' — I'd love to hear about your kid before I quote anything."</div>
+    <div class="cc-when"><strong>When to use:</strong> Post-event reels in the Founder &amp; Family or Reaction &amp; Show pillar. Pairs with a comment-trigger when the post is launching a public event.</div>
+  </div>
+
+  <div class="callout-card">
+    <div class="cc-tag">Call-out 06 · Range signal</div>
+    <div class="cc-name">For showing brand depth</div>
+    <div class="cc-body">"Kind Bubbles also runs school assemblies, corporate wellness pop-ups, and community festivals. Same show, different stage. <em>[SHORT DETAIL ABOUT WHAT HAPPENED THIS WEEK]</em>"</div>
+    <div class="cc-when"><strong>When to use:</strong> 1× per month. Reminds the audience the brand has more than birthday parties — opens corporate / school inbound.</div>
+  </div>
+</div>
+
+
+<hr class="divider">
+
+
+<!-- HASHTAG SETS -->
+<div class="section">
+  <div class="eyebrow">The hashtag sets</div>
+  <h2>Five pre-built sets. <em>Copy-paste.</em></h2>
+  <p>Each set is ~12 tags, balanced across the five-layer stack above. Save these in a phone note. Don't write hashtags from scratch every post — pick the matching set, paste, customize layer 04 (the @ partner tag).</p>
+
+  <div class="htag-grid">
+    <div class="htag-set">
+      <div class="ht-name">Set A · <em>Birthday Party</em></div>
+      <div class="ht-tags"><code>#kidsbirthdayparty</code> <code>#bayareakids</code> <code>#bayareaparents</code> <code>#kidsbirthday</code> <code>#partyideas</code> <code>#sfkids</code> <code>#walnutcreekmoms</code> <code>#girldad</code> <code>#magicofchildhood</code> <code>#sensoryplay</code> <code>#kindbubbles</code></div>
+      <div class="ht-meta">Adjust layer 01 to match the actual neighborhood (e.g., <code>#walnutcreek</code> → <code>#paloalto</code>). Add <code>#daddydaughter</code> if it's a Founder &amp; Family pillar post.</div>
+    </div>
+
+    <div class="htag-set">
+      <div class="ht-name">Set B · <em>School Assembly</em></div>
+      <div class="ht-tags"><code>#schoolassembly</code> <code>#bayareaschools</code> <code>#elementaryschool</code> <code>#schoolevent</code> <code>#stemforkids</code> <code>#sensoryday</code> <code>#educatorlife</code> <code>#kidssmile</code> <code>#magicofchildhood</code> <code>#bayareaeducation</code> <code>#kindbubbles</code></div>
+      <div class="ht-meta">Schools are a separate buyer set — these tags reach educators, PTAs, principals. Run on LinkedIn cross-posts too.</div>
+    </div>
+
+    <div class="htag-set">
+      <div class="ht-name">Set C · <em>Corporate Wellness</em></div>
+      <div class="ht-tags"><code>#corporatewellness</code> <code>#teambuilding</code> <code>#bayareatech</code> <code>#wellnessatwork</code> <code>#employeewellness</code> <code>#playatwork</code> <code>#mindfulnessatwork</code> <code>#officeculture</code> <code>#sf</code> <code>#bayareacorporate</code> <code>#kindbubbles</code></div>
+      <div class="ht-meta">B2B tags. Cross-post to LinkedIn. Lead the caption with budgets/business outcomes, not feelings.</div>
+    </div>
+
+    <div class="htag-set">
+      <div class="ht-name">Set D · <em>Public Pop-Up</em></div>
+      <div class="ht-tags"><code>#popupevent</code> <code>#bayareaevents</code> <code>#sfweekend</code> <code>#sfevents</code> <code>#bayareafamily</code> <code>#thingstodowithkids</code> <code>#bayareawithkids</code> <code>#sfkids</code> <code>#sensoryplay</code> <code>#familyfun</code> <code>#kindbubbles</code></div>
+      <div class="ht-meta">Use for ticketed events. Pair with the Comment Trigger multiplier from D03 (see also Set + the comment word in the post body).</div>
+    </div>
+
+    <div class="htag-set">
+      <div class="ht-name">Set E · <em>Founder &amp; Family</em></div>
+      <div class="ht-tags"><code>#girldad</code> <code>#daddydaughter</code> <code>#familybusiness</code> <code>#singledadlife</code> <code>#dadlife</code> <code>#smallbusinessowner</code> <code>#bayareadad</code> <code>#sfdad</code> <code>#fatherhood</code> <code>#raisingkids</code> <code>#kindbubbles</code></div>
+      <div class="ht-meta">Use on any face-to-camera Founder pillar post. Reaches the dad-creator + therapy-parent audiences (the highest-trust adjacent communities).</div>
+    </div>
+  </div>
+</div>
+
+
+<hr class="divider">
+
+
+<!-- PERMISSION FLOW -->
+<div class="section">
+  <div class="eyebrow">The permission flow</div>
+  <h2>Get the sign-off <em>before</em> the bubbles.</h2>
+
+  <div class="permission">
+    <h3>The 30-second script · use at every booked event</h3>
+    <p>Most parents say yes — they want their kid in the post. But you need the explicit ask, in writing, before any face-visible content goes up. Run this <em>at booking confirmation</em>, not on the day.</p>
+
+    <div class="script">"Hey [PARENT NAME] — quick one. We sometimes share photos and short videos from our events on Instagram and our website. Faces show up sometimes, sometimes they don't — totally up to you. Three options:<br>(a) Yes, you can show [KID NAME]'s face and tag us;<br>(b) Yes, but blur or angle around the face;<br>(c) Please don't post anything from this event.<br><br>Whichever you pick, no problem. Just hit reply."</div>
+
+    <p style="margin-top:1rem;"><strong>Save the response.</strong> A simple Airtable / Notion table with: client name · event date · permission level (a/b/c) · @ handle if they want to be tagged. Now you have a permission ledger you can check before every post.</p>
+    <p style="font-size:0.86rem; color:#999; margin-top:0.6rem;"><em>Note: at public ticketed events, include the photo-release line on the registration form. At school assemblies, the school handles permissions — get a written confirmation from the principal/PTA before posting.</em></p>
+  </div>
+</div>
+
+
+<hr class="divider">
+
+
+<!-- THE FIVE MOVES -->
+<div class="priority">
+  <h3>The five highest-leverage moves</h3>
+  <h2>If you adopt only five things from this doc, do <em>these</em>.</h2>
+  <ol>
+    <li><strong>Run the 12-shot capture sheet at every event.</strong> Build the library. Don't wait for the "special" event.</li>
+    <li><strong>Pick the pillar before the show.</strong> 60 seconds of pre-decision changes what you shoot, and the post writes itself the next day.</li>
+    <li><strong>Apply the five-layer tag stack on every post.</strong> Save the five hashtag sets in a phone note. Stop re-writing tags from scratch.</li>
+    <li><strong>Use a partner @ on at least 1 of every 4 posts.</strong> Multiplier #1 from D03 — the data showed avg 100♥ on collab-tagged posts vs ~25 elsewhere. This is free distribution.</li>
+    <li><strong>Run the permission script at booking, not at the show.</strong> Saves the awkward day-of ask. Doubles your usable footage rate.</li>
+  </ol>
+</div>
+
+<div class="footer">
+  Module 09 · Event Capture &amp; Tag System · @kind.bubbles · pairs with D03 · D04 · D08
+</div>
+
+</div>
+</body>
+</html>
