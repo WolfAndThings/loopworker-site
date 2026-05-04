@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+    <script defer src="/site-pages.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/site-pages.css">
+    <title>The Sprint — Live-Data Brand Strategy in 5 Days | LoopWorker</title>
+    <meta name="description" content="Three sprint tiers. Receipts in every line. Founder-led delivery. Sprint Lite ($700, 5 days), Sprint Pro ($1,500, 7 days), Sprint Full ($3,400, 10–14 days). Priced like a productized service, not a quote.">
+    <link rel="canonical" href="https://www.loopworker.com/sprint.html">
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://www.loopworker.com/sprint.html">
+    <meta property="og:title" content="The Sprint — Live-Data Brand Strategy in 5 Days | LoopWorker">
+    <meta property="og:description" content="Three sprint tiers from $700. Receipts in every line. Founder-led delivery. Live-data brand strategy in 5 days.">
+    <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "The Sprint — Live-Data Brand Strategy",
+      "provider": { "@type": "Organization", "name": "LoopWorker", "url": "https://www.loopworker.com/" },
+      "description": "Productized brand strategy sprint in three tiers — Lite, Pro, and Full. Live-data audits, competitor breakdowns, content pillars, hooks, caption rewrites, bonus decks, and full foundation systems for pre-launch and retail-bound brands.",
+      "offers": [
+        { "@type": "Offer", "name": "Sprint Lite", "price": "700", "priceCurrency": "USD", "url": "https://buy.stripe.com/14AfZgdyT1KTbVMfrScEw0q" },
+        { "@type": "Offer", "name": "Sprint Pro", "price": "1500", "priceCurrency": "USD", "url": "https://buy.stripe.com/6oU00i52n89h3pg7ZqcEw0t" },
+        { "@type": "Offer", "name": "Sprint Full", "price": "3400", "priceCurrency": "USD", "url": "https://buy.stripe.com/6oU9AS66r89h5xofrScEw0u" }
+      ]
+    }
+    </script>
+
+    <style>
+      .da-hero { padding: 8rem 1.5rem 3.5rem; }
+      .da-hero .container { width: min(1100px, calc(100% - 3rem)); }
+      .da-hero h1 { font-size: clamp(2.4rem, 5.6vw, 4.4rem); margin-bottom: 1.2rem; }
+      .da-hero .lead { font-size: 1.18rem; color: #C7C7C7; max-width: 720px; margin-bottom: 2rem; line-height: 1.55; }
+      .da-hero .price-row { display: flex; flex-wrap: wrap; gap: 0.85rem; align-items: center; margin: 1.6rem 0 0.6rem; }
+      .da-hero .price-tag { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: #D4A017; font-style: italic; padding-right: 1rem; border-right: 1px solid rgba(212, 160, 23, 0.3); }
+      .da-hero .price-meta { font-size: 0.88rem; color: #888; letter-spacing: 0.06em; }
+
+      .da-section { padding: 4rem 0; border-top: 1px solid rgba(255,255,255,0.05); }
+      .da-section .container { width: min(1100px, calc(100% - 3rem)); margin: 0 auto; }
+      .da-section h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 500; color: #FFF; margin-bottom: 1.4rem; letter-spacing: -0.02em; line-height: 1.15; }
+      .da-section h2 em { font-style: italic; color: #D4A017; font-weight: 400; }
+      .da-section .section-eyebrow { display: inline-block; font-size: 0.7rem; color: #D4A017; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.8rem; }
+      .da-section p { color: #B5B5B5; margin-bottom: 1rem; max-width: 760px; }
+
+      /* TIER PRICING GRID */
+      .tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 2rem; align-items: stretch; }
+      @media (max-width: 960px) { .tier-grid { grid-template-columns: 1fr; gap: 1.2rem; } }
+      .tier-card {
+        position: relative;
+        display: flex; flex-direction: column;
+        padding: 2rem 1.9rem 2.2rem;
+        background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.005));
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 14px;
+        transition: border-color 0.2s, transform 0.2s;
+      }
+      .tier-card:hover { border-color: rgba(212,160,23,0.3); transform: translateY(-3px); }
+      .tier-card.tier-pro {
+        border-color: rgba(212,160,23,0.7);
+        background: linear-gradient(180deg, rgba(212,160,23,0.08), rgba(212,160,23,0.015));
+        box-shadow: 0 18px 48px -22px var(--accent-glow);
+        transform: translateY(-6px);
+      }
+      .tier-card.tier-pro:hover { transform: translateY(-9px); }
+      @media (max-width: 960px) { .tier-card.tier-pro, .tier-card.tier-pro:hover { transform: none; } }
+      .tier-ribbon {
+        position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+        background: linear-gradient(180deg, var(--accent), var(--accent-soft));
+        color: #1A0F00; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
+        font-size: 0.66rem; padding: 0.4rem 0.9rem; border-radius: 999px;
+        box-shadow: 0 8px 24px -8px var(--accent-glow);
+      }
+      .tier-eyebrow { font-size: 0.66rem; color: #D4A017; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 800; margin-bottom: 0.7rem; display: block; }
+      .tier-name { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.9rem; font-weight: 500; color: #FFF; line-height: 1.1; margin-bottom: 0.8rem; }
+      .tier-price-row { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 0.4rem; }
+      .tier-price { font-family: 'Inter', sans-serif; font-size: 2.7rem; font-weight: 800; color: #FFF; line-height: 1; letter-spacing: -0.02em; }
+      .tier-price-suffix { font-size: 0.8rem; color: #888; letter-spacing: 0.08em; }
+      .tier-days { display: inline-block; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: #D4A017; font-weight: 700; padding: 0.4rem 0.7rem; border: 1px solid rgba(212,160,23,0.3); border-radius: 999px; margin: 0.5rem 0 1.2rem; }
+      .tier-bullets { list-style: none; padding: 0; margin: 0 0 1.6rem; flex-grow: 1; }
+      .tier-bullets li { padding: 0.45rem 0 0.45rem 1.4rem; position: relative; color: #C0C0C0; font-size: 0.92rem; line-height: 1.45; border-bottom: 1px solid rgba(255,255,255,0.05); }
+      .tier-bullets li:last-child { border-bottom: none; }
+      .tier-bullets li::before { content: '→'; position: absolute; left: 0; color: #D4A017; font-weight: 700; }
+      .tier-cta-stack { display: flex; flex-direction: column; gap: 0.6rem; margin-top: auto; }
+      .tier-cta-primary {
+        display: inline-flex; align-items: center; justify-content: center;
+        background: linear-gradient(180deg, var(--accent), var(--accent-soft));
+        color: #1A0F00 !important; font-weight: 800; letter-spacing: 0.06em;
+        text-transform: uppercase; padding: 1rem 1.4rem; border-radius: 999px;
+        text-decoration: none; font-size: 0.84rem;
+        box-shadow: 0 12px 28px -10px var(--accent-glow);
+        transition: transform 0.18s;
+      }
+      .tier-cta-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 36px -8px var(--accent-glow); }
+      .tier-cta-secondary {
+        display: inline-flex; align-items: center; justify-content: center;
+        font-size: 0.82rem; color: #B5B5B5; text-decoration: none;
+        padding: 0.65rem 0.9rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 999px;
+        letter-spacing: 0.04em; transition: border-color 0.18s, color 0.18s;
+      }
+      .tier-cta-secondary:hover { color: #FFF; border-color: rgba(212,160,23,0.5); }
+
+      /* COMPARISON DELTA TABLE */
+      .delta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+      @media (max-width: 800px) { .delta-grid { grid-template-columns: 1fr; } }
+      .delta-col { padding: 1.4rem 1.4rem 1.6rem; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; }
+      .delta-col.col-pro { border-color: rgba(212,160,23,0.35); background: rgba(212,160,23,0.04); }
+      .delta-col h4 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: #FFF; font-weight: 500; margin-bottom: 0.4rem; }
+      .delta-col .delta-tag { display: block; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: #D4A017; font-weight: 800; margin-bottom: 0.6rem; }
+      .delta-col ul { list-style: none; padding: 0; margin: 0.6rem 0 0; }
+      .delta-col ul li { padding: 0.35rem 0 0.35rem 1.2rem; position: relative; color: #B5B5B5; font-size: 0.88rem; line-height: 1.4; }
+      .delta-col ul li::before { content: '+'; position: absolute; left: 0; color: #6CC57A; font-weight: 700; }
+
+      /* Two-column for/not-for */
+      .da-fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-top: 1.5rem; }
+      @media (max-width: 720px) { .da-fit-grid { grid-template-columns: 1fr; } }
+      .da-fit-card { padding: 1.8rem 1.8rem; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; }
+      .da-fit-card.good { border-color: rgba(108,197,122,0.25); }
+      .da-fit-card.bad { border-color: rgba(197,122,108,0.20); }
+      .da-fit-card .label { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 800; margin-bottom: 0.7rem; display: block; }
+      .da-fit-card.good .label { color: #6CC57A; }
+      .da-fit-card.bad .label { color: #C57A6C; }
+      .da-fit-card h3 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; font-weight: 500; color: #FFF; margin-bottom: 1rem; line-height: 1.2; }
+      .da-fit-card ul { list-style: none; padding: 0; }
+      .da-fit-card ul li { padding: 0.4rem 0 0.4rem 1.6rem; position: relative; color: #B5B5B5; font-size: 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.04); }
+      .da-fit-card ul li:last-child { border-bottom: none; }
+      .da-fit-card.good ul li::before { content: '+'; position: absolute; left: 0; color: #6CC57A; font-weight: 700; }
+      .da-fit-card.bad ul li::before { content: '–'; position: absolute; left: 0; color: #C57A6C; font-weight: 700; }
+
+      /* Case study row */
+      .da-cases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 1.6rem; }
+      @media (max-width: 960px) { .da-cases { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 720px) { .da-cases { grid-template-columns: 1fr; } }
+      .da-case-card { display: block; padding: 1.8rem 1.9rem; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; text-decoration: none; color: inherit; transition: border-color 0.2s, transform 0.2s; }
+      .da-case-card:hover { border-color: rgba(212,160,23,0.3); transform: translateY(-2px); }
+      .da-case-card .kicker { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: #D4A017; font-weight: 800; margin-bottom: 0.7rem; display: block; }
+      .da-case-card h3 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; color: #FFF; font-weight: 500; line-height: 1.2; margin-bottom: 0.6rem; }
+      .da-case-card p { color: #A7A7A7; font-size: 0.94rem; margin-bottom: 0.9rem; }
+      .da-case-card .read { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: #D4A017; font-weight: 700; }
+
+      /* FAQ */
+      .da-faq { display: grid; grid-template-columns: 1fr; gap: 0.7rem; margin-top: 1.6rem; }
+      .da-faq details { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 0; transition: border-color 0.2s; }
+      .da-faq details[open] { border-color: rgba(212,160,23,0.25); }
+      .da-faq summary { cursor: pointer; padding: 1.2rem 1.5rem; font-weight: 600; color: #FFF; font-size: 1rem; list-style: none; position: relative; padding-right: 3rem; }
+      .da-faq summary::-webkit-details-marker { display: none; }
+      .da-faq summary::after { content: '+'; position: absolute; right: 1.4rem; top: 50%; transform: translateY(-50%); color: #D4A017; font-size: 1.4rem; font-weight: 300; transition: transform 0.2s; }
+      .da-faq details[open] summary::after { content: '–'; }
+      .da-faq details p { padding: 0 1.5rem 1.4rem; color: #B5B5B5; font-size: 0.95rem; max-width: none; }
+
+      /* Bottom CTA stack */
+      .da-cta-stack { padding: 5rem 0 2rem; text-align: center; }
+      .da-cta-stack .container { max-width: 760px; }
+      .da-cta-stack h2 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(2rem, 4vw, 3rem); color: #FFF; margin-bottom: 1rem; line-height: 1.15; }
+      .da-cta-stack h2 em { font-style: italic; color: #D4A017; font-weight: 400; }
+      .da-cta-stack .price-line { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #D4A017; font-size: 1.3rem; margin-bottom: 2rem; }
+      .da-cta-stack .stripe-btn { display: inline-block; background: linear-gradient(180deg, var(--accent), var(--accent-soft)); color: #1A0F00; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 1.2rem 2.4rem; border-radius: 999px; text-decoration: none; font-size: 0.92rem; box-shadow: 0 12px 28px -10px var(--accent-glow); transition: transform 0.18s; }
+      .da-cta-stack .stripe-btn:hover { transform: translateY(-2px); box-shadow: 0 16px 36px -8px var(--accent-glow); }
+      .da-cta-stack .alt-cta { display: block; margin-top: 1.4rem; font-size: 0.92rem; color: #999; }
+      .da-cta-stack .alt-cta a { color: #D4A017; text-decoration: none; border-bottom: 1px solid rgba(212,160,23,0.4); padding-bottom: 1px; }
+      .da-cta-stack .alt-cta a:hover { color: #FFF; border-color: #FFF; }
+
+      .da-bottom-tier-row { display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; margin-top: 1.6rem; }
+      .da-bottom-tier-row a { font-size: 0.82rem; padding: 0.85rem 1.3rem; border-radius: 999px; text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; }
+      .da-bottom-tier-row a.t-lite { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.15); color: #DDD; }
+      .da-bottom-tier-row a.t-pro { background: linear-gradient(180deg, var(--accent), var(--accent-soft)); color: #1A0F00; box-shadow: 0 12px 28px -10px var(--accent-glow); }
+      .da-bottom-tier-row a.t-full { background: rgba(212,160,23,0.05); border: 1px solid rgba(212,160,23,0.4); color: #D4A017; }
+      .da-bottom-tier-row a:hover { transform: translateY(-2px); }
+
+      .da-cal-shell { margin-top: 3rem; padding: 2rem 1.5rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; text-align: left; }
+      .da-cal-shell h3 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; font-weight: 500; color: #FFF; margin-bottom: 0.4rem; }
+      .da-cal-shell p { color: #999; font-size: 0.95rem; margin-bottom: 1.2rem; max-width: 100%; }
+
+      .da-trust { padding: 2.5rem 0 4rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+      .da-trust p { color: #888; font-size: 0.92rem; max-width: 720px; margin: 0 auto 0.8rem; }
+      .da-trust a { color: #D4A017; text-decoration: none; }
+      .da-trust a:hover { color: #FFF; }
+
+      /* Hero CTA buttons */
+      .hero-cta-row { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-top: 0.8rem; }
+      .hero-stripe-btn {
+        display: inline-flex; align-items: center; justify-content: center;
+        background: linear-gradient(180deg, var(--accent), var(--accent-soft));
+        color: #1A0F00 !important; font-weight: 800; letter-spacing: 0.06em;
+        text-transform: uppercase; padding: 1rem 1.6rem; border-radius: 999px;
+        text-decoration: none; font-size: 0.86rem;
+        box-shadow: 0 12px 28px -10px var(--accent-glow);
+        transition: transform 0.18s;
+      }
+      .hero-stripe-btn:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">LoopWorker</a>
+            <ul class="nav-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/offers/">Offers</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/book.html" class="nav-cta" data-track="Sprint Nav Book CTA">Book a Call</a></li>
+            </ul>
+            <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="/services.html">Services</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/offers/">Offers</a>
+        <a href="/case-studies.html">Case Studies</a>
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/blog/">Blog</a>
+        <a href="/book.html" class="nav-cta">Book a Call</a>
+    </div>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="da-hero">
+            <div class="container">
+                <span class="eyebrow">◆ The Sprint · Three Tiers · From $700</span>
+                <h1>The Sprint · <em>live-data brand strategy in 5 days.</em></h1>
+                <p class="lead">Three sprint tiers. Receipts in every line. Founder-led delivery. Priced like a productized service, not a quote. Whether you're hitting a content wall, growing toward retainer, or pre-launch and retail-bound — pick the lane and we kick off the same day you pay.</p>
+
+                <div class="price-row">
+                    <span class="price-tag">From $700 · 5–14 day turnaround</span>
+                    <span class="price-meta">Pay → kick off same day · No call required</span>
+                </div>
+
+                <div class="hero-cta-row">
+                    <a href="#tiers" class="hero-stripe-btn" data-track="Sprint Hero See Tiers CTA">See the 3 tiers →</a>
+                    <a href="/book.html" class="btn btn-outline" data-track="Sprint Hero Discovery CTA">Book a 15-Min Discovery Call</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIER PRICING CARDS -->
+        <section class="da-section" id="tiers">
+            <div class="container">
+                <span class="section-eyebrow">◆ Three sprint tiers</span>
+                <h2>Pick the lane. <em>We start same day.</em></h2>
+                <p>Each tier is a fixed-scope sprint with a fixed price, fixed turnaround, and fixed deliverables. No proposals. No discovery calls required. No "depending on scope." You pay, we ship.</p>
+
+                <div class="tier-grid">
+
+                    <!-- SPRINT LITE -->
+                    <div class="tier-card tier-lite">
+                        <span class="tier-eyebrow">◆ Sprint Lite</span>
+                        <h3 class="tier-name">Sprint Lite</h3>
+                        <div class="tier-price-row">
+                            <span class="tier-price">$700</span>
+                            <span class="tier-price-suffix">flat</span>
+                        </div>
+                        <span class="tier-days">5-day turnaround</span>
+                        <ul class="tier-bullets">
+                            <li>Deep audit of your last 30+ posts</li>
+                            <li>8–12 verified competitor breakdown</li>
+                            <li>Four sales-tagged content pillars</li>
+                            <li>30 pre-written hooks (10 archetypes)</li>
+                            <li>Top-10 caption rewrites with source URLs</li>
+                            <li>PDF + Notion + 30-min Loom walkthrough</li>
+                        </ul>
+                        <div class="tier-cta-stack">
+                            <a href="https://buy.stripe.com/14AfZgdyT1KTbVMfrScEw0q" class="tier-cta-primary" data-track="Sprint Lite Hero CTA">Pay $700 + Start Today →</a>
+                            <a href="/book.html" class="tier-cta-secondary" data-track="Sprint Lite Discovery CTA">Book a discovery call</a>
+                        </div>
+                    </div>
+
+                    <!-- SPRINT PRO (most popular) -->
+                    <div class="tier-card tier-pro">
+                        <span class="tier-ribbon">★ Most popular</span>
+                        <span class="tier-eyebrow">◆ Sprint Pro</span>
+                        <h3 class="tier-name">Sprint Pro</h3>
+                        <div class="tier-price-row">
+                            <span class="tier-price">$1,500</span>
+                            <span class="tier-price-suffix">flat</span>
+                        </div>
+                        <span class="tier-days">7-day turnaround</span>
+                        <ul class="tier-bullets">
+                            <li>Everything in Sprint Lite</li>
+                            <li>+ Adjacent inspiration deck (8 lanes)</li>
+                            <li>+ Verified niche scrape with pricing benchmarks</li>
+                            <li>+ ROI projection (Conservative / Realistic / Aggressive)</li>
+                            <li>+ 30-day content sprint calendar</li>
+                            <li>Founder-led delivery, written for execution</li>
+                        </ul>
+                        <div class="tier-cta-stack">
+                            <a href="https://buy.stripe.com/6oU00i52n89h3pg7ZqcEw0t" class="tier-cta-primary" data-track="Sprint Pro Hero CTA">Pay $1,500 + Start Today →</a>
+                            <a href="/book.html" class="tier-cta-secondary" data-track="Sprint Pro Discovery CTA">Book a discovery call</a>
+                        </div>
+                    </div>
+
+                    <!-- SPRINT FULL -->
+                    <div class="tier-card tier-full">
+                        <span class="tier-eyebrow">◆ Sprint Full</span>
+                        <h3 class="tier-name">Sprint Full</h3>
+                        <div class="tier-price-row">
+                            <span class="tier-price">$3,400</span>
+                            <span class="tier-price-suffix">flat</span>
+                        </div>
+                        <span class="tier-days">10–14 day turnaround</span>
+                        <ul class="tier-bullets">
+                            <li>Everything in Sprint Pro</li>
+                            <li>+ Claims guardrails + compliance review</li>
+                            <li>+ Pricing ladder + offer architecture</li>
+                            <li>+ AI roadmap (tooling, automations, content engine)</li>
+                            <li>+ 16-deck foundation system (buyer map, messaging, channels, cadence, more)</li>
+                            <li>Built for pre-launch + retail-bound brands</li>
+                        </ul>
+                        <div class="tier-cta-stack">
+                            <a href="https://buy.stripe.com/6oU9AS66r89h5xofrScEw0u" class="tier-cta-primary" data-track="Sprint Full Hero CTA">Pay $3,400 + Start Today →</a>
+                            <a href="/book.html" class="tier-cta-secondary" data-track="Sprint Full Discovery CTA">Book a discovery call</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- COMPARISON DELTA TABLE -->
+                <div class="delta-grid">
+                    <div class="delta-col col-lite">
+                        <span class="delta-tag">◆ Lite gives you</span>
+                        <h4>The audit + content engine.</h4>
+                        <ul>
+                            <li>Live-data deep audit</li>
+                            <li>Competitor breakdown</li>
+                            <li>Four content pillars</li>
+                            <li>30 hooks · 10 caption rewrites</li>
+                        </ul>
+                    </div>
+                    <div class="delta-col col-pro">
+                        <span class="delta-tag">◆ Pro adds</span>
+                        <h4>The bonus decks.</h4>
+                        <ul>
+                            <li>Adjacent inspiration map</li>
+                            <li>Verified niche scrape</li>
+                            <li>ROI projection (3 scenarios)</li>
+                            <li>30-day content calendar</li>
+                        </ul>
+                    </div>
+                    <div class="delta-col col-full">
+                        <span class="delta-tag">◆ Full adds</span>
+                        <h4>The foundation system.</h4>
+                        <ul>
+                            <li>Claims guardrails + compliance</li>
+                            <li>Pricing ladder + offer architecture</li>
+                            <li>AI roadmap</li>
+                            <li>16-deck foundation system</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHO IT'S FOR / NOT FOR -->
+        <section class="da-section">
+            <div class="container">
+                <span class="section-eyebrow">◆ Who this is for</span>
+                <h2>Built for founder-led brands. Not built for <em>everyone.</em></h2>
+                <p>We've run this system with bubble-event founders, pediatric practitioners, pre-launch DTC brands, and B2B operators. It works when you're hitting a content wall — not when you're starting from zero.</p>
+
+                <div class="da-fit-grid">
+                    <div class="da-fit-card good">
+                        <span class="label">For</span>
+                        <h3>Founders ready to stop guessing.</h3>
+                        <ul>
+                            <li>Founder-led brands, 100 to 50K followers</li>
+                            <li>At least 30 posts of content history (for Lite + Pro)</li>
+                            <li>Pre-launch + retail-bound brands welcome on Sprint Full</li>
+                            <li>Want a real strategy, not engagement-bait advice</li>
+                            <li>Ready to ship — you'll execute, we'll arm you</li>
+                        </ul>
+                    </div>
+                    <div class="da-fit-card bad">
+                        <span class="label">Not for</span>
+                        <h3>Anyone the data can't read.</h3>
+                        <ul>
+                            <li>Agencies wanting bulk pricing or white-label</li>
+                            <li>Anyone wanting "go viral" engagement tricks</li>
+                            <li>Teams that can't act on a strategy once it's delivered</li>
+                            <li>Brands looking for managed posting (separate retainer)</li>
+                            <li>Anyone who needs to negotiate the price down</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="da-section">
+            <div class="container">
+                <span class="section-eyebrow">◆ How it works</span>
+                <h2>Pay → kick off same day. <em>Delivered to inbox.</em></h2>
+                <p>Same flow across all three tiers. You pay through Stripe. The intake form lands in your email. Two questions, ten minutes. We start the scrape that day. By the deadline, you have a PDF, a Notion workspace, and a Loom walkthrough sitting in your inbox — ready to hand to a freelancer or run yourself.</p>
+                <p style="margin-top: 1rem;"><strong style="color: #D4A017;">Sprint Lite</strong> wraps in 5 business days. <strong style="color: #D4A017;">Sprint Pro</strong> in 7. <strong style="color: #D4A017;">Sprint Full</strong> in 10–14, depending on the depth of the foundation system. No revisions cycles, no slide reviews, no "next steps deck." Every doc paste-ready.</p>
+            </div>
+        </section>
+
+        <!-- WORK SAMPLES -->
+        <section class="da-section">
+            <div class="container">
+                <span class="section-eyebrow">◆ Work samples</span>
+                <h2>Three real deliveries. <em>Same system.</em></h2>
+                <p>Each ran the same research-first framework. Different industries, different stages, same operating discipline. Read any of them to see exactly what lands in your inbox.</p>
+
+                <div class="da-cases">
+                    <a href="/case-studies/kind-bubbles.html" class="da-case-card" data-track="Sprint Case Kind Bubbles">
+                        <span class="kicker">◆ Bay Area · Kids' Events · Sprint Lite</span>
+                        <h3>Kind Bubbles</h3>
+                        <p>Single-dad founder running a Bay Area bubble-events company. We mapped a $54–65K Y1 path on $700, found the founder-on-camera was the most under-used asset, and built him a four-pillar engine he could shoot from his iPhone.</p>
+                        <span class="read">Read the case study →</span>
+                    </a>
+                    <a href="/case-studies/luxury-home-brand.html" class="da-case-card" data-track="Sprint Case Luxury Home">
+                        <span class="kicker">◆ Pre-launch · Premium DTC · Sprint Full</span>
+                        <h3>Premium Home Wellness Brand</h3>
+                        <p>Pre-launch, founder-led, NDA in place. Foundation sprint delivered 16 decks — buyer map, messaging framework, pricing ladder, claims compliance, influencer targets. 350+ data points across redacted sources.</p>
+                        <span class="read">Read the case study →</span>
+                    </a>
+                    <a href="/case-studies/saas-workflow-tool.html" class="da-case-card" data-track="Sprint Case SaaS Workflow">
+                        <span class="kicker">◆ Pre-launch · AI Video SaaS · Sprint Full</span>
+                        <h3>AI video workflow SaaS</h3>
+                        <p>Founder-led pre-launch SaaS in the AI video tooling category. Round 1 delivered six strategic documents — Brief, Content, Channels, Pricing, Workflow, Weekly Cadence — locking the foundation before paid spend opened.</p>
+                        <span class="read">Read the case study →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="da-section">
+            <div class="container">
+                <span class="section-eyebrow">◆ FAQ</span>
+                <h2>Nine questions <em>before you click.</em></h2>
+
+                <div class="da-faq">
+                    <details>
+                        <summary>Which Sprint tier is right for me?</summary>
+                        <p>Quick fit guide: <strong>Under 30 posts of history, or just looking to validate the system?</strong> Sprint Lite. <strong>Founder-led, growing, want the bonus decks + 30-day calendar?</strong> Sprint Pro (the one most clients pick). <strong>Pre-launch, retail-bound, or need claims compliance + pricing architecture?</strong> Sprint Full. If you're not sure, book a 15-min discovery call and we'll point you to the right lane — no upsell pressure.</p>
+                    </details>
+                    <details>
+                        <summary>What if my account is too small?</summary>
+                        <p>Sprint Lite + Pro need at least 30 posts of history for the audit to read clean. Below 30, the data thins out and patterns get noisy. If you're truly pre-launch with no scrape-able feed, Sprint Full is the right lane — that's positioning + buyer journey + foundation work, not audit work.</p>
+                    </details>
+                    <details>
+                        <summary>Do you scrape my social profiles directly?</summary>
+                        <p>Yes. We pull from your live feed, your competitors' feeds, and a few other public sources we keep proprietary. Everything we cite is public data, pulled fresh — not from a stale third-party report. Every metric in the deck has a source link.</p>
+                    </details>
+                    <details>
+                        <summary>Do I need to film founder content?</summary>
+                        <p>You don't need to be on camera to run the deliverables — but the audit will almost certainly tell you that founder-on-camera is your highest-leverage move. About 80% of founder-led brands get that signal from their own data. We'll show you the proof; what you do with it is your call.</p>
+                    </details>
+                    <details>
+                        <summary>Can I add a Phase 2 retainer after?</summary>
+                        <p>Yes — we run a 90-day execution retainer ($3–5K/mo depending on cadence) that ships against the four pillars from the audit. It's not pitched in the sprint itself; we offer it only if you ask. Plenty of clients run a sprint, execute themselves, and never need a retainer.</p>
+                    </details>
+                    <details>
+                        <summary>Do I keep all the docs/IP?</summary>
+                        <p>Yes — full ownership. PDFs, Notion workspace, the prompt library, the hooks. You can hand them to a VA, a freelancer, an in-house team, or your nephew. We don't recycle frameworks across clients — every doc is built from your scrape.</p>
+                    </details>
+                    <details>
+                        <summary>What if I'm not satisfied?</summary>
+                        <p>If the sprint isn't useful, email us within 7 days of delivery and we'll refund in full — no questions, no clawback on the docs you keep. We've done this work for years; the goal is for you to feel like you got 5x the value, not for you to feel locked in.</p>
+                    </details>
+                    <details>
+                        <summary>Why these prices — what's the catch?</summary>
+                        <p>No catch. The prices are set so each tier is a no-brainer at its lane. Sprint Lite is a wall-breaker for founders. Sprint Pro is the sweet spot — bonus decks + calendar without the foundation overhead. Sprint Full is for brands about to spend on paid, retail, or launch — where the cost of getting positioning wrong is 10x the price.</p>
+                    </details>
+                    <details>
+                        <summary>Can I upgrade tiers later?</summary>
+                        <p>Yes. If you start with Sprint Lite and want the Pro bonus decks within 30 days, you pay the $800 delta and we ship them. Same for Pro → Full ($1,900 delta). No re-scoping, no proposal cycle.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA STACK -->
+        <section class="da-cta-stack">
+            <div class="container">
+                <h2>Three sprint tiers. <em>Pick the lane.</em></h2>
+                <p class="price-line">From $700. Same-day kickoff. PDF + Notion + Loom in your inbox by the deadline.</p>
+
+                <div class="da-bottom-tier-row">
+                    <a href="https://buy.stripe.com/14AfZgdyT1KTbVMfrScEw0q" class="t-lite" data-track="Sprint Lite Bottom CTA">Sprint Lite · $700</a>
+                    <a href="https://buy.stripe.com/6oU00i52n89h3pg7ZqcEw0t" class="t-pro" data-track="Sprint Pro Bottom CTA">Sprint Pro · $1,500 ★</a>
+                    <a href="https://buy.stripe.com/6oU9AS66r89h5xofrScEw0u" class="t-full" data-track="Sprint Full Bottom CTA">Sprint Full · $3,400</a>
+                </div>
+
+                <span class="alt-cta">Want to talk first? <a href="/book.html" data-track="Sprint Bottom Discovery CTA">Book a 15-min discovery call</a> — or email <a href="mailto:alex@loopworker.com" data-track="Sprint Bottom Email CTA">alex@loopworker.com</a></span>
+
+                <div class="da-cal-shell">
+                    <h3>Or pick a time below.</h3>
+                    <p>15-minute discovery call — same sprint, but live. No deck, no slides, just a screen-share through the framework so you can see what'll land in your inbox before you pay.</p>
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/loopworker/30min?hide_gdpr_banner=1&background_color=0f0f0f&text_color=d4d4d4&primary_color=d4a017" style="min-width:320px;height:680px;border-radius:8px;overflow:hidden;"></div>
+                    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUST FOOTER -->
+        <section class="da-trust">
+            <div class="container">
+                <p>Built by Alex Lamb · LoopWorker. Want to see how I think about strategy before you pay? <a href="https://www.loom.com/share/f9cee59f64c44e4092d97c145a4a7ccf" target="_blank" rel="noopener" data-track="Sprint Loom Intro">Watch the 3-min Loom intro →</a></p>
+                <p style="margin-top: 0.6rem; font-size: 0.85rem; color: #666;">Receipts, not vibes. Every claim sourced. Every doc paste-ready.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <div class="footer-brand">LoopWorker</div>
+                <div class="footer-meta">Helping businesses turn content into customers.</div>
+            </div>
+            <ul class="footer-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="/free-resources.html">Free Resources</a></li>
+                <li><a href="/faq.html">FAQ</a></li>
+            </ul>
+            <div class="footer-contact">
+                <a href="mailto:alex@loopworker.com">alex@loopworker.com</a><br>
+                <a href="https://instagram.com/loop.worker" target="_blank" rel="noopener">@loop.worker</a>
+                <div class="footer-legal"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
