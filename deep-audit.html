@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+    <script defer src="/site-pages.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/site-pages.css">
+    <title>Deep Audit + Content — $700 · 5-Day Sprint | LoopWorker</title>
+    <meta name="description" content="$700. 5 business days. 5 sales-ready deliverables. Deep audit, competitor breakdown, four content pillars, 30 hooks, top-10 caption rewrites — plus bonus decks. A strategy you can run, not a deck you'll never look at again.">
+    <link rel="canonical" href="https://www.loopworker.com/deep-audit.html">
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://www.loopworker.com/deep-audit.html">
+    <meta property="og:title" content="Deep Audit + Content — $700 · 5-Day Sprint | LoopWorker">
+    <meta property="og:description" content="Five sales-ready deliverables in 5 business days. Deep audit, competitor breakdown, content pillars, hooks, captions — plus bonus decks.">
+    <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Deep Audit + Content — 5-Day Sprint",
+      "provider": { "@type": "Organization", "name": "LoopWorker", "url": "https://www.loopworker.com/" },
+      "description": "Productized 5-day strategy sprint: deep audit, competitor breakdown, four content pillars, 30 pre-written hooks, top-10 caption rewrites, plus bonus decks.",
+      "offers": { "@type": "Offer", "price": "700", "priceCurrency": "USD", "url": "https://buy.stripe.com/14AfZgdyT1KTbVMfrScEw0q" }
+    }
+    </script>
+
+    <style>
+      .da-hero { padding: 8rem 1.5rem 3.5rem; }
+      .da-hero .container { width: min(1100px, calc(100% - 3rem)); }
+      .da-hero h1 { font-size: clamp(2.4rem, 5.6vw, 4.4rem); margin-bottom: 1.2rem; }
+      .da-hero .lead { font-size: 1.18rem; color: #C7C7C7; max-width: 720px; margin-bottom: 2rem; line-height: 1.55; }
+      .da-hero .price-row { display: flex; flex-wrap: wrap; gap: 0.85rem; align-items: center; margin: 1.6rem 0 0.6rem; }
+      .da-hero .price-tag { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: #D4A017; font-style: italic; padding-right: 1rem; border-right: 1px solid rgba(212, 160, 23, 0.3); }
+      .da-hero .price-meta { font-size: 0.88rem; color: #888; letter-spacing: 0.06em; }
+
+      .da-section { padding: 4rem 0; border-top: 1px solid rgba(255,255,255,0.05); }
+      .da-section .container { width: min(1100px, calc(100% - 3rem)); margin: 0 auto; }
+      .da-section h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 500; color: #FFF; margin-bottom: 1.4rem; letter-spacing: -0.02em; line-height: 1.15; }
+      .da-section h2 em { font-style: italic; color: #D4A017; font-weight: 400; }
+      .da-section .section-eyebrow { display: inline-block; font-size: 0.7rem; color: #D4A017; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.8rem; }
+      .da-section p { color: #B5B5B5; margin-bottom: 1rem; max-width: 760px; }
+
+      /* Two-column for/not-for */
+      .da-fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-top: 1.5rem; }
+      @media (max-width: 720px) { .da-fit-grid { grid-template-columns: 1fr; } }
+      .da-fit-card { padding: 1.8rem 1.8rem; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; }
+      .da-fit-card.good { border-color: rgba(108,197,122,0.25); }
+      .da-fit-card.bad { border-color: rgba(197,122,108,0.20); }
+      .da-fit-card .label { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 800; margin-bottom: 0.7rem; display: block; }
+      .da-fit-card.good .label { color: #6CC57A; }
+      .da-fit-card.bad .label { color: #C57A6C; }
+      .da-fit-card h3 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; font-weight: 500; color: #FFF; margin-bottom: 1rem; line-height: 1.2; }
+      .da-fit-card ul { list-style: none; padding: 0; }
+      .da-fit-card ul li { padding: 0.4rem 0 0.4rem 1.6rem; position: relative; color: #B5B5B5; font-size: 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.04); }
+      .da-fit-card ul li:last-child { border-bottom: none; }
+      .da-fit-card.good ul li::before { content: '+'; position: absolute; left: 0; color: #6CC57A; font-weight: 700; }
+      .da-fit-card.bad ul li::before { content: '–'; position: absolute; left: 0; color: #C57A6C; font-weight: 700; }
+
+      /* Deliverables grid */
+      .da-deliv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 1.6rem; }
+      @media (max-width: 800px) { .da-deliv-grid { grid-template-columns: 1fr; } }
+      .da-deliv-card { padding: 1.6rem 1.7rem; background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005)); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; transition: border-color 0.2s, transform 0.2s; }
+      .da-deliv-card:hover { border-color: rgba(212,160,23,0.25); transform: translateY(-2px); }
+      .da-deliv-card .num { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; color: #D4A017; line-height: 1; font-weight: 500; margin-bottom: 0.6rem; display: block; }
+      .da-deliv-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: #FFF; font-weight: 500; margin-bottom: 0.7rem; letter-spacing: -0.01em; line-height: 1.2; }
+      .da-deliv-card p { color: #A7A7A7; font-size: 0.94rem; margin-bottom: 0.6rem; }
+      .da-deliv-card .outcome { display: block; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: #D4A017; font-weight: 700; margin-top: 0.9rem; }
+
+      .da-bonus-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.6rem; }
+      @media (max-width: 720px) { .da-bonus-grid { grid-template-columns: 1fr; } }
+      .da-bonus-card { padding: 1.3rem 1.4rem; background: linear-gradient(180deg, rgba(212,160,23,0.05), rgba(212,160,23,0.01)); border: 1px solid rgba(212,160,23,0.2); border-radius: 10px; }
+      .da-bonus-card strong { font-family: 'Cormorant Garamond', serif; display: block; color: #FFF; font-size: 1.1rem; margin-bottom: 0.4rem; font-style: italic; }
+      .da-bonus-card span { color: #B5B5B5; font-size: 0.9rem; }
+      .da-bonus-tag { display: inline-block; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: #D4A017; font-weight: 800; margin-bottom: 0.5rem; }
+
+      /* Timeline */
+      .da-timeline { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.8rem; margin-top: 1.8rem; }
+      @media (max-width: 800px) { .da-timeline { grid-template-columns: 1fr; } }
+      .da-day { padding: 1.4rem 1.3rem; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; }
+      .da-day .day-num { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #D4A017; font-size: 1.6rem; font-weight: 500; line-height: 1; margin-bottom: 0.6rem; display: block; }
+      .da-day strong { display: block; color: #FFF; font-size: 0.95rem; margin-bottom: 0.4rem; font-weight: 600; }
+      .da-day span { color: #999; font-size: 0.85rem; line-height: 1.5; display: block; }
+
+      /* Case study row */
+      .da-cases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 1.6rem; }
+      @media (max-width: 960px) { .da-cases { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 720px) { .da-cases { grid-template-columns: 1fr; } }
+      .da-case-card { display: block; padding: 1.8rem 1.9rem; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; text-decoration: none; color: inherit; transition: border-color 0.2s, transform 0.2s; }
+      .da-case-card:hover { border-color: rgba(212,160,23,0.3); transform: translateY(-2px); }
+      .da-case-card .kicker { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: #D4A017; font-weight: 800; margin-bottom: 0.7rem; display: block; }
+      .da-case-card h3 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; color: #FFF; font-weight: 500; line-height: 1.2; margin-bottom: 0.6rem; }
+      .da-case-card p { color: #A7A7A7; font-size: 0.94rem; margin-bottom: 0.9rem; }
+      .da-case-card .read { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: #D4A017; font-weight: 700; }
+
+      /* FAQ */
+      .da-faq { display: grid; grid-template-columns: 1fr; gap: 0.7rem; margin-top: 1.6rem; }
+      .da-faq details { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 0; transition: border-color 0.2s; }
+      .da-faq details[open] { border-color: rgba(212,160,23,0.25); }
+      .da-faq summary { cursor: pointer; padding: 1.2rem 1.5rem; font-weight: 600; color: #FFF; font-size: 1rem; list-style: none; position: relative; padding-right: 3rem; }
+      .da-faq summary::-webkit-details-marker { display: none; }
+      .da-faq summary::after { content: '+'; position: absolute; right: 1.4rem; top: 50%; transform: translateY(-50%); color: #D4A017; font-size: 1.4rem; font-weight: 300; transition: transform 0.2s; }
+      .da-faq details[open] summary::after { content: '–'; }
+      .da-faq details p { padding: 0 1.5rem 1.4rem; color: #B5B5B5; font-size: 0.95rem; max-width: none; }
+
+      /* Bottom CTA stack */
+      .da-cta-stack { padding: 5rem 0 2rem; text-align: center; }
+      .da-cta-stack .container { max-width: 760px; }
+      .da-cta-stack h2 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(2rem, 4vw, 3rem); color: #FFF; margin-bottom: 1rem; line-height: 1.15; }
+      .da-cta-stack h2 em { font-style: italic; color: #D4A017; font-weight: 400; }
+      .da-cta-stack .price-line { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #D4A017; font-size: 1.3rem; margin-bottom: 2rem; }
+      .da-cta-stack .stripe-btn { display: inline-block; background: linear-gradient(180deg, var(--accent), var(--accent-soft)); color: #1A0F00; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 1.2rem 2.4rem; border-radius: 999px; text-decoration: none; font-size: 0.92rem; box-shadow: 0 12px 28px -10px var(--accent-glow); transition: transform 0.18s; }
+      .da-cta-stack .stripe-btn:hover { transform: translateY(-2px); box-shadow: 0 16px 36px -8px var(--accent-glow); }
+      .da-cta-stack .alt-cta { display: block; margin-top: 1.4rem; font-size: 0.92rem; color: #999; }
+      .da-cta-stack .alt-cta a { color: #D4A017; text-decoration: none; border-bottom: 1px solid rgba(212,160,23,0.4); padding-bottom: 1px; }
+      .da-cta-stack .alt-cta a:hover { color: #FFF; border-color: #FFF; }
+
+      .da-cal-shell { margin-top: 3rem; padding: 2rem 1.5rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; text-align: left; }
+      .da-cal-shell h3 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; font-weight: 500; color: #FFF; margin-bottom: 0.4rem; }
+      .da-cal-shell p { color: #999; font-size: 0.95rem; margin-bottom: 1.2rem; max-width: 100%; }
+
+      .da-trust { padding: 2.5rem 0 4rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+      .da-trust p { color: #888; font-size: 0.92rem; max-width: 720px; margin: 0 auto 0.8rem; }
+      .da-trust a { color: #D4A017; text-decoration: none; }
+      .da-trust a:hover { color: #FFF; }
+
+      /* Hero CTA buttons */
+      .hero-cta-row { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-top: 0.8rem; }
+      .hero-stripe-btn {
+        display: inline-flex; align-items: center; justify-content: center;
+        background: linear-gradient(180deg, var(--accent), var(--accent-soft));
+        color: #1A0F00 !important; font-weight: 800; letter-spacing: 0.06em;
+        text-transform: uppercase; padding: 1rem 1.6rem; border-radius: 999px;
+        text-decoration: none; font-size: 0.86rem;
+        box-shadow: 0 12px 28px -10px var(--accent-glow);
+        transition: transform 0.18s;
+      }
+      .hero-stripe-btn:hover { transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">LoopWorker</a>
+            <ul class="nav-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/offers/">Offers</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/book.html" class="nav-cta" data-track="Deep Audit Nav Book CTA">Book a Call</a></li>
+            </ul>
+            <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="/services.html">Services</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/offers/">Offers</a>
+        <a href="/case-studies.html">Case Studies</a>
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/blog/">Blog</a>
+        <a href="/book.html" class="nav-cta">Book a Call</a>
+    </div>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="da-hero">
+            <div class="container">
+                <span class="eyebrow">◆ Deep Audit + Content · 5-Day Sprint</span>
+                <h1>We map your content like a detective maps a <em>case file</em>.</h1>
+                <p class="lead">$700. Five business days. Five sales-ready deliverables. We deliver a strategy you can actually run — not a deck you'll never look at again. Every claim is backed by a fresh live-data pull of your live feed and your real competitors. Receipts in every document.</p>
+
+                <div class="price-row">
+                    <span class="price-tag">$700 flat · 5-day turnaround</span>
+                    <span class="price-meta">Pay → kick off same day · No call required</span>
+                </div>
+
+                <div class="hero-cta-row">
+                    <a href="https://buy.stripe.com/14AfZgdyT1KTbVMfrScEw0q" class="hero-stripe-btn" data-track="Deep Audit Hero Stripe CTA">Pay $700 + Start Today →</a>
+                    <a href="/book.html" class="btn btn-outline" data-track="Deep Audit Hero Discovery CTA">Book a 15-Min Discovery Call</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHO IT'S FOR / NOT FOR -->
+        <section class="da-section">
+            <div class="container">
+                <span class="section-eyebrow">◆ Who this is for</span>
+                <h2>Built for founder-led brands. Not built for <em>everyone.</em></h2>
+                <p>We've run this system with bubble-event founders, pediatric practitioners, pre-launch DTC brands, and B2B operators. It works when you're hitting a content wall — not when you're starting from zero.</p>
+
+                <div class="da-fit-grid">
+                    <div class="da-fit-card good">
+                        <span class="label">For</span>
+                        <h3>Founders ready to stop guessing.</h3>
+                        <ul>
+                            <li>Founder-led brands, 100 to 50K followers</li>
+                            <li>At least 30 posts of content history to audit</li>
+                            <li>Hitting a wall — posting consistently but not converting</li>
+                            <li>Want a real strategy, not engagement-bait advice</li>
+                            <li>Ready to ship — you'll execute, we'll arm you</li>
+                        </ul>
+                    </div>
+                    <div class="da-fit-card bad">
+                        <span class="label">Not for</span>
+                        <h3>Anyone the data can't read.</h3>
+                        <ul>
+                            <li>Pre-launch with zero posts (no scrape = no audit)</li>
+                            <li>Agencies wanting bulk pricing or white-label</li>
+                            <li>Anyone wanting "go viral" engagement tricks</li>
+                            <li>Teams that can't act on a strategy once it's delivered</li>
+                            <li>Brands looking for managed posting (separate retainer)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHAT YOU GET -->
+        <section class="da-section">
+            <div class="container">
+                <span class="section-eyebrow">◆ The 5 deliverables</span>
+                <h2>Five docs. <em>One running content system.</em></h2>
+                <p>Each delivered as a self-contained, paste-ready document. No fluff, no recap slides, no "next steps deck." You can hand any of these to a freelancer or VA tomorrow and they'll know exactly what to ship.</p>
+
+                <div class="da-deliv-grid">
+                    <div class="da-deliv-card">
+                        <span class="num">01</span>
+                        <h3>Deep Audit</h3>
+                        <p>Side-by-side winning vs losing post breakdown across 30+ of your live posts. Hook archetypes mapped. Format mix table. Pillar-coverage gaps. Save vs share signal read. Your top 10 winners and bottom 5 buried — with reasons.</p>
+                        <span class="outcome">Outcome → know exactly what's working and why</span>
+                    </div>
+                    <div class="da-deliv-card">
+                        <span class="num">02</span>
+                        <h3>Competitor Breakdown</h3>
+                        <p>8–12 verified competitors mapped across three buckets — direct, adjacent, and aspirational. What they do well, where the lane is open, what they all miss. Verified live, not hand-picked.</p>
+                        <span class="outcome">Outcome → find the open lane in your category</span>
+                    </div>
+                    <div class="da-deliv-card">
+                        <span class="num">03</span>
+                        <h3>Four Content Pillars</h3>
+                        <p>Sales-tagged: build authority, build trust, surface demand, convert. Locked monthly cadence with target ratios. Founder Story always gets the sharpest treatment — that's the pillar that buys retainers.</p>
+                        <span class="outcome">Outcome → know what to make every week</span>
+                    </div>
+                    <div class="da-deliv-card">
+                        <span class="num">04</span>
+                        <h3>30 Pre-Written Hooks</h3>
+                        <p>Tagged by pillar. Designed to stop the scroll in 1.5 seconds. Ten archetypes covered — pattern interrupt, contrarian, founder confession, list bait, before/after, micro-story, loud claim, question stack, social proof, mystery loop.</p>
+                        <span class="outcome">Outcome → never stare at a blank caption box again</span>
+                    </div>
+                    <div class="da-deliv-card" style="grid-column: 1 / -1;">
+                        <span class="num">05</span>
+                        <h3>Top-10 Caption Rewrites</h3>
+                        <p>Ten of your actual posts — quoted verbatim with original URLs — rewritten line-by-line for tighter opens, better mid-section retention, and stronger CTAs. We extract the universal opening-line formula your audience responds to so every future caption inherits it.</p>
+                        <span class="outcome">Outcome → 30 days of caption template inheritance, no copywriter required</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BONUS DELIVERABLES -->
+        <section class="da-section">
+            <div class="container">
+                <span class="section-eyebrow">◆ Bonus decks · live-data</span>
+                <h2>Real receipts. <em>Not opinion.</em></h2>
+                <p>Every brand we audit gets four bonus decks built on live data. We pull from social platforms, video reels, web, search, community, and the ad library. Every claim has a source link.</p>
+
+                <div class="da-bonus-grid">
+                    <div class="da-bonus-card">
+                        <span class="da-bonus-tag">◆ Bonus 01</span>
+                        <strong>Adjacent Creator Map</strong>
+                        <span>Eight content lanes outside your direct bracket — single-dad creators, science-on-camera, calm parenting, founder-as-brand. The lanes you should be borrowing from, not copying.</span>
+                    </div>
+                    <div class="da-bonus-card">
+                        <span class="da-bonus-tag">◆ Bonus 02</span>
+                        <strong>Verified Niche Scrape</strong>
+                        <span>Pricing benchmarks, positioning gaps, and the 3 phrases your competitors all repeat — pulled from a live web crawl of their landing pages and feeds. The data is fresh, not from a 2023 report.</span>
+                    </div>
+                    <div class="da-bonus-card">
+                        <span class="da-bonus-tag">◆ Bonus 03</span>
+                        <strong>ROI Projection</strong>
+                        <span>Three scenarios — Conservative, Realistic, Aggressive — modeled on your real DM-to-booking conversion benchmarks. Year-one revenue floor, target, and ceiling.</span>
+                    </div>
+                    <div class="da-bonus-card">
+                        <span class="da-bonus-tag">◆ Bonus 04</span>
+                        <strong>30-Day Content Sprint Calendar</strong>
+                        <span>Day-by-day calendar for the next 30 days. Reels, carousels, story prompts, founder anchor. Locked to your pillar mix from doc 03.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="da-section">
+            <div class="container">
+                <span class="section-eyebrow">◆ How it works</span>
+                <h2>5 days. <em>5 deliverables.</em> Done.</h2>
+                <p>You pay. Same day, the audit kicks off. By Friday, you have a PDF, a Notion workspace, and a 30-minute Loom walkthrough sitting in your inbox.</p>
+
+                <div class="da-timeline">
+                    <div class="da-day">
+                        <span class="day-num">D0</span>
+                        <strong>Pay → kick off</strong>
+                        <span>Stripe payment triggers the intake form. Two questions, ten minutes.</span>
+                    </div>
+                    <div class="da-day">
+                        <span class="day-num">D1</span>
+                        <strong>Audit + competitor scrape runs</strong>
+                        <span>We pull your last 30+ posts and 8–12 competitors. Raw data lands.</span>
+                    </div>
+                    <div class="da-day">
+                        <span class="day-num">D2</span>
+                        <strong>Pillars + hooks drafted</strong>
+                        <span>Four pillars locked. Thirty hooks written and tagged. First pass review.</span>
+                    </div>
+                    <div class="da-day">
+                        <span class="day-num">D3–4</span>
+                        <strong>Captions + bonus decks</strong>
+                        <span>Top-10 caption rewrites. Adjacent map, niche scrape, ROI model, sprint calendar.</span>
+                    </div>
+                    <div class="da-day">
+                        <span class="day-num">D5</span>
+                        <strong>Delivered</strong>
+                        <span>PDF + Notion workspace + 30-min Loom walkthrough in your inbox.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORK SAMPLES -->
+        <section class="da-section">
+            <div class="container">
+                <span class="section-eyebrow">◆ Work samples</span>
+                <h2>Three real deliveries. <em>Same system.</em></h2>
+                <p>Each ran the same research-first framework. Different industries, different stages, same operating discipline. Read any of them to see exactly what lands in your inbox.</p>
+
+                <div class="da-cases">
+                    <a href="/case-studies/kind-bubbles.html" class="da-case-card" data-track="Deep Audit Case Kind Bubbles">
+                        <span class="kicker">◆ Bay Area · Kids' Events</span>
+                        <h3>Kind Bubbles</h3>
+                        <p>Single-dad founder running a Bay Area bubble-events company. We mapped a $54–65K Y1 path on $700, found the founder-on-camera was the most under-used asset, and built him a four-pillar engine he could shoot from his iPhone.</p>
+                        <span class="read">Read the case study →</span>
+                    </a>
+                    <a href="/case-studies/luxury-home-brand.html" class="da-case-card" data-track="Deep Audit Case Luxury Home">
+                        <span class="kicker">◆ Pre-launch · Premium DTC</span>
+                        <h3>Premium Home Wellness Brand</h3>
+                        <p>Pre-launch, founder-led, NDA in place. Foundation sprint delivered 16 decks — buyer map, messaging framework, pricing ladder, claims compliance, influencer targets. 350+ data points across redacted sources.</p>
+                        <span class="read">Read the case study →</span>
+                    </a>
+                    <a href="/case-studies/saas-workflow-tool.html" class="da-case-card" data-track="Deep Audit Case SaaS Workflow">
+                        <span class="kicker">◆ Pre-launch · AI Video SaaS</span>
+                        <h3>AI video workflow SaaS</h3>
+                        <p>Founder-led pre-launch SaaS in the AI video tooling category. Round 1 delivered six strategic documents — Brief, Content, Channels, Pricing, Workflow, Weekly Cadence — locking the foundation before paid spend opened.</p>
+                        <span class="read">Read the case study →</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="da-section">
+            <div class="container">
+                <span class="section-eyebrow">◆ FAQ</span>
+                <h2>Eight questions <em>before you click.</em></h2>
+
+                <div class="da-faq">
+                    <details>
+                        <summary>What if my account is too small?</summary>
+                        <p>If you have at least 30 posts, the audit works. Below 30, the data thins out and the patterns get noisy. We've audited 200-follower accounts and 50K-follower accounts with the same system — what matters is post history, not vanity metrics.</p>
+                    </details>
+                    <details>
+                        <summary>Do you scrape my social profiles directly?</summary>
+                        <p>Yes. We pull from your live feed, your competitors' feeds, and a few other public sources we keep proprietary. Everything we cite is public data, pulled fresh — not from a stale third-party report. Every metric in the deck has a source link.</p>
+                    </details>
+                    <details>
+                        <summary>What if I don't post much yet?</summary>
+                        <p>If you have 30+ posts of any platform history, you're fine. If you're truly pre-launch with no scrape-able feed, the better fit is the foundation sprint (separate engagement) — that's positioning + buyer journey work, not audit work. Email us if you're not sure which lane you're in.</p>
+                    </details>
+                    <details>
+                        <summary>Do I need to film founder content?</summary>
+                        <p>You don't need to be on camera to run the deliverables — but the audit will almost certainly tell you that founder-on-camera is your highest-leverage move. About 80% of founder-led brands get that signal from their own data. We'll show you the proof; what you do with it is your call.</p>
+                    </details>
+                    <details>
+                        <summary>Can I add a Phase 2 retainer after?</summary>
+                        <p>Yes — we run a 90-day execution retainer ($3–5K/mo depending on cadence) that ships against the four pillars from the audit. It's not pitched in the audit itself; we offer it only if you ask. Plenty of clients run the audit, execute themselves, and never need a retainer.</p>
+                    </details>
+                    <details>
+                        <summary>Do I keep all the docs/IP?</summary>
+                        <p>Yes — full ownership. PDFs, Notion workspace, the prompt library, the hooks. You can hand them to a VA, a freelancer, an in-house team, or your nephew. We don't recycle frameworks across clients — every doc is built from your scrape.</p>
+                    </details>
+                    <details>
+                        <summary>What if I'm not satisfied?</summary>
+                        <p>If the audit isn't useful, email us within 7 days of delivery and we'll refund in full — no questions, no clawback on the docs you keep. We've done this work for years; the goal is for you to feel like you got 5x the value, not for you to feel locked in.</p>
+                    </details>
+                    <details>
+                        <summary>Why $700 — what's the catch?</summary>
+                        <p>No catch. The price is set so it's a no-brainer for a founder hitting a content wall — not so it's a "consulting fee." We make our money on retainers when the audit proves the gap and the client wants help executing. Most clients run the audit, execute themselves, and we never speak again. That's a feature.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA STACK -->
+        <section class="da-cta-stack">
+            <div class="container">
+                <h2>Five days. Five docs. <em>One running system.</em></h2>
+                <p class="price-line">$700 flat. Same-day kickoff. PDF + Notion + Loom in your inbox by Friday.</p>
+                <a href="https://buy.stripe.com/14AfZgdyT1KTbVMfrScEw0q" class="stripe-btn" data-track="Deep Audit Bottom Stripe CTA">Pay $700 + Start Today →</a>
+                <span class="alt-cta">Want to talk first? <a href="/book.html" data-track="Deep Audit Bottom Discovery CTA">Book a 15-min discovery call</a> — or email <a href="mailto:alex@loopworker.com" data-track="Deep Audit Bottom Email CTA">alex@loopworker.com</a></span>
+
+                <div class="da-cal-shell">
+                    <h3>Or pick a time below.</h3>
+                    <p>15-minute discovery call — same audit, but live. No deck, no slides, just a screen-share through the framework so you can see what'll land in your inbox before you pay.</p>
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/loopworker/30min?hide_gdpr_banner=1&background_color=0f0f0f&text_color=d4d4d4&primary_color=d4a017" style="min-width:320px;height:680px;border-radius:8px;overflow:hidden;"></div>
+                    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUST FOOTER -->
+        <section class="da-trust">
+            <div class="container">
+                <p>Built by Alex Lamb · LoopWorker. Want to see how I think about strategy before you pay? <a href="https://www.loom.com/share/f9cee59f64c44e4092d97c145a4a7ccf" target="_blank" rel="noopener" data-track="Deep Audit Loom Intro">Watch the 3-min Loom intro →</a></p>
+                <p style="margin-top: 0.6rem; font-size: 0.85rem; color: #666;">Receipts, not vibes. Every claim sourced. Every doc paste-ready.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <div class="footer-brand">LoopWorker</div>
+                <div class="footer-meta">Helping businesses turn content into customers.</div>
+            </div>
+            <ul class="footer-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="/free-resources.html">Free Resources</a></li>
+                <li><a href="/faq.html">FAQ</a></li>
+            </ul>
+            <div class="footer-contact">
+                <a href="mailto:alex@loopworker.com">alex@loopworker.com</a><br>
+                <a href="https://instagram.com/loop.worker" target="_blank" rel="noopener">@loop.worker</a>
+                <div class="footer-legal"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
