@@ -31,27 +31,134 @@
       .nav-logo:hover { color: var(--accent) !important; }
       .audit-form input:focus, .audit-form textarea:focus, .audit-form select:focus { border-color: var(--accent) !important; box-shadow: 0 0 0 3px var(--accent-glow) !important; outline: none; }
       .footer-brand { background: linear-gradient(90deg, #FFFFFF, var(--accent)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+      /* SPRINT-LED HERO POLISH (homepage) */
+      .hero h1.fade-up em { font-style: italic; color: var(--accent); font-weight: 400; }
+      .hero-eyebrow { display: inline-block; font-size: 0.7rem; color: var(--accent); letter-spacing: 0.22em; text-transform: uppercase; font-weight: 800; margin-bottom: 1rem; }
+
+      /* MINI TIER CARDS (homepage above-fold) */
+      .mini-tier-section { padding: 1.5rem 2rem 4rem; }
+      .mini-tier-section .container-wide { max-width: 1100px; margin: 0 auto; }
+      .mini-tier-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+        margin: 0 auto;
+      }
+      @media (max-width: 800px) { .mini-tier-grid { grid-template-columns: 1fr; gap: 1rem; } }
+      .mini-tier-card {
+        position: relative;
+        display: flex; flex-direction: column;
+        padding: 1.6rem 1.6rem 1.7rem;
+        background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.008));
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 12px;
+        text-decoration: none;
+        color: inherit;
+        transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      }
+      .mini-tier-card:hover { border-color: rgba(212,160,23,0.35); transform: translateY(-3px); box-shadow: 0 18px 40px -22px var(--accent-glow); }
+      .mini-tier-card.featured {
+        border-color: rgba(212,160,23,0.6);
+        background: linear-gradient(180deg, rgba(212,160,23,0.07), rgba(212,160,23,0.012));
+        box-shadow: 0 14px 36px -22px var(--accent-glow);
+      }
+      .mini-tier-card .mt-eyebrow { font-size: 0.66rem; color: var(--accent); letter-spacing: 0.22em; text-transform: uppercase; font-weight: 800; margin-bottom: 0.55rem; display: block; }
+      .mini-tier-card .mt-name { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.6rem; font-weight: 500; color: #FFF; line-height: 1.1; margin-bottom: 0.4rem; }
+      .mini-tier-card .mt-price { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.6rem; color: #FFF; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+      .mini-tier-card .mt-price .mt-flat { font-size: 0.78rem; color: #888; font-weight: 500; letter-spacing: 0.06em; margin-left: 0.4rem; }
+      .mini-tier-card .mt-scope { font-size: 0.92rem; color: #B0B0B0; line-height: 1.45; margin-bottom: 1.1rem; flex-grow: 1; }
+      .mini-tier-card .mt-go {
+        display: inline-flex; align-items: center; gap: 0.4rem;
+        font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
+        font-weight: 700; color: var(--accent);
+      }
+      .mini-tier-card.featured .mt-ribbon {
+        position: absolute; top: -10px; right: 14px;
+        background: linear-gradient(180deg, var(--accent), var(--accent-soft));
+        color: #1A0F00; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
+        font-size: 0.62rem; padding: 0.3rem 0.7rem; border-radius: 999px;
+      }
+
+      /* TRUST BAR (homepage) */
+      .lw-trust-bar {
+        padding: 1.6rem 2rem;
+        border-top: 1px solid rgba(212,160,23,0.18);
+        border-bottom: 1px solid rgba(212,160,23,0.18);
+        background: linear-gradient(90deg, rgba(212,160,23,0.04), rgba(212,160,23,0.01), rgba(212,160,23,0.04));
+      }
+      .lw-trust-bar .container-wide { max-width: 1100px; margin: 0 auto; }
+      .lw-trust-bar .tb-eyebrow {
+        display: block; text-align: center;
+        font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase;
+        color: #888; font-weight: 700; margin-bottom: 0.7rem;
+      }
+      .lw-trust-bar .tb-cats {
+        display: flex; flex-wrap: wrap; justify-content: center;
+        gap: 0.7rem 1.6rem;
+        font-size: 0.78rem; letter-spacing: 0.18em;
+        text-transform: uppercase; color: #C8B98E; font-weight: 600;
+      }
+      .lw-trust-bar .tb-cats span {
+        position: relative;
+        padding: 0 0.2rem;
+      }
+      .lw-trust-bar .tb-cats span::before {
+        content: '◆';
+        color: var(--accent);
+        margin-right: 0.6rem;
+        font-size: 0.7rem;
+      }
+
+      /* HOMEPAGE CHRIS QUOTE — same shape as sprint.html */
+      .home-quote-section { padding: 4.5rem 2rem 3.5rem; }
+      .home-quote-section .container-wide { max-width: 1100px; margin: 0 auto; }
+      .home-quote-block {
+        margin: 0 auto;
+        max-width: 820px;
+        padding: 2.4rem 2.2rem;
+        background: linear-gradient(180deg, rgba(212,160,23,0.05), rgba(255,255,255,0.012));
+        border: 1px solid rgba(212,160,23,0.22);
+        border-radius: 14px;
+      }
+      .home-quote-block .q-mark {
+        font-family: 'Cormorant Garamond', serif; font-style: italic;
+        color: var(--accent); font-size: 3.4rem; line-height: 0.4;
+        opacity: 0.6; display: block; margin-bottom: 0.7rem;
+      }
+      .home-quote-block blockquote {
+        font-family: 'Cormorant Garamond', serif; font-style: italic;
+        color: #FFF; font-size: clamp(1.25rem, 2.1vw, 1.6rem);
+        line-height: 1.45; margin: 0 0 1.4rem; font-weight: 500;
+      }
+      .home-quote-block .q-attr {
+        display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; align-items: center;
+        font-size: 0.86rem; color: #B5B5B5; letter-spacing: 0.04em;
+      }
+      .home-quote-block .q-attr strong { color: #FFF; font-weight: 600; }
+      .home-quote-block .q-attr a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(212,160,23,0.4); padding-bottom: 1px; }
+      .home-quote-block .q-attr a:hover { color: #FFF; border-color: #FFF; }
     </style>
-    <title>Social Media Content That Brings In Customers | LoopWorker</title>
-    <meta name="description" content="Done-for-you social media content for restaurants, med spas, gyms, real estate, and local brands that need more customers, not just more views.">
+    <title>Brand Strategy with Receipts · 5 Days · From $754 | LoopWorker</title>
+    <meta name="description" content="Live-data brand strategy in 5 days. Three productized sprint tiers from $754. Audit, competitor scrape, content pillars, hooks, ROI projection — receipts in every line.">
     <link rel="canonical" href="https://www.loopworker.com/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.loopworker.com/">
-    <meta property="og:title" content="Social Media Content That Brings In Customers | LoopWorker">
-    <meta property="og:description" content="Done-for-you social media content for restaurants, med spas, gyms, real estate, and local brands that need more customers.">
+    <meta property="og:title" content="Brand Strategy with Receipts · 5 Days · From $754 | LoopWorker">
+    <meta property="og:description" content="Live-data brand strategy in 5 days. Three productized sprint tiers from $754. Founder-led delivery. Pay → kicked off same day.">
     <meta property="og:site_name" content="LoopWorker">
     <meta property="og:locale" content="en_US">
     <meta property="og:image" content="https://www.loopworker.com/images/case_studies/references/myburger/01.jpg">
-    <meta property="og:image:alt" content="LoopWorker social media strategy and content examples for small businesses">
+    <meta property="og:image:alt" content="LoopWorker — live-data brand strategy in 5 days, three productized sprint tiers">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Social Media Content That Brings In Customers | LoopWorker">
-    <meta name="twitter:description" content="Done-for-you social media content for restaurants, med spas, gyms, real estate, and local brands that need more customers.">
+    <meta name="twitter:title" content="Brand Strategy with Receipts · 5 Days · From $754 | LoopWorker">
+    <meta name="twitter:description" content="Live-data brand strategy in 5 days. Three productized sprint tiers from $754.">
     <meta name="twitter:image" content="https://www.loopworker.com/images/case_studies/references/myburger/01.jpg">
-    <meta name="twitter:image:alt" content="LoopWorker social media strategy and content examples for small businesses">
+    <meta name="twitter:image:alt" content="LoopWorker — live-data brand strategy in 5 days, three productized sprint tiers">
 
     <!-- Google Verification -->
     <meta name="google-site-verification" content="google9258fb3826a9df03">
@@ -2075,37 +2182,89 @@
     <section class="hero">
         <div class="container-wide hero-shell">
             <div>
-                <h1 class="fade-up">Social Media Content Built to Bring In <em>Customers</em></h1>
-                <p class="fade-up">Built first for restaurants, med spas, and gyms that need content people actually act on. The same conversion-first system also adapts for real estate, hotels, and other local brands.</p>
+                <span class="hero-eyebrow fade-up">◆ The Sprint · Three Tiers · From $754</span>
+                <h1 class="fade-up">Brand strategy with <em>receipts.</em> 5 days. From $754.</h1>
+                <p class="fade-up">We pull live data on your category, your competitors, and your audience — then ship a strategy you can actually run. Three sprint tiers. Founder-led delivery.</p>
                 <div class="hero-actions fade-up">
-                    <a href="/sprint.html" class="btn btn-primary" data-track="Hero Sprint CTA">The Sprint · from $754</a>
-                    <a href="/book.html" class="btn btn-outline" data-track="Hero Book CTA">Book a Discovery Call</a>
+                    <a href="/sprint.html" class="btn btn-primary" data-track="Home Hero Sprint CTA">Pick Your Sprint · From $754</a>
+                    <a href="/book.html" class="btn btn-outline" data-track="Home Hero Book CTA">Book a Discovery Call</a>
                 </div>
-                <div class="hero-note fade-up">5-day live-data brand strategy from $754. Three tiers. Receipts in every line. Or email <a href="mailto:alex@loopworker.com" data-track="Hero Email Click">alex@loopworker.com</a>.</div>
-                <div class="hero-chip-row fade-up">
-                    <span class="hero-chip">Restaurants</span>
-                    <span class="hero-chip">Med Spas</span>
-                    <span class="hero-chip">Gyms</span>
-                    <span class="hero-chip">Real Estate</span>
-                    <span class="hero-chip">Clothing</span>
-                    <span class="hero-chip">Local Brands</span>
-                </div>
+                <div class="hero-note fade-up">Pay → kicked off same day. PDF + Notion + 30-min Loom in your inbox by the deadline. Or email <a href="mailto:alex@loopworker.com" data-track="Home Hero Email Click">alex@loopworker.com</a>.</div>
             </div>
             <div class="hero-visuals fade-up">
                 <div class="hero-visual-card">
-                    <img src="images/cards/card_05.webp" alt="Restaurant content sample" loading="eager" decoding="async">
-                    <div class="hero-visual-label">Restaurant</div>
-                    <p>Same-day visit content built around urgency, menu appeal, and shareability.</p>
+                    <img src="images/cards/card_05.webp" alt="Brand strategy and content sample" loading="eager" decoding="async">
+                    <div class="hero-visual-label">Sprint Lite · $754</div>
+                    <p>Audit + competitor scrape + four pillars + 30 hooks. The fast read.</p>
                 </div>
                 <div class="hero-visual-card">
-                    <img src="images/case_studies/references/bouldering/04.jpg" alt="Gym and fitness content sample" loading="eager" decoding="async">
-                    <div class="hero-visual-label">Gyms / Fitness</div>
-                    <p>Community-first content that makes the first visit feel less intimidating and a lot more worth trying.</p>
+                    <img src="images/case_studies/references/bouldering/04.jpg" alt="Sprint Pro deliverables" loading="eager" decoding="async">
+                    <div class="hero-visual-label">Sprint Pro · $1,334 ★</div>
+                    <p>Bonus decks + ROI projection + 30-day calendar. The most-picked tier.</p>
                 </div>
                 <div class="hero-visual-card">
-                    <img src="images/cards/card_21.webp" alt="Med spa and wellness content sample" loading="eager" decoding="async">
-                    <div class="hero-visual-label">Med Spa / Wellness</div>
-                    <p>Clean beauty direction built for trust, treatment interest, and premium positioning.</p>
+                    <img src="images/cards/card_21.webp" alt="Sprint Full foundation system" loading="eager" decoding="async">
+                    <div class="hero-visual-label">Sprint Full · $4,900</div>
+                    <p>16-deck foundation system. Pre-launch and retail-bound brands.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MINI TIER CARDS · ABOVE-FOLD -->
+    <section class="mini-tier-section">
+        <div class="container-wide">
+            <div class="mini-tier-grid">
+                <a href="/sprint.html#tier-lite" class="mini-tier-card" data-track="Home Mini Tier Lite">
+                    <span class="mt-eyebrow">◆ Sprint Lite</span>
+                    <span class="mt-name">The fast read.</span>
+                    <span class="mt-price">$754<span class="mt-flat">flat · 5 days</span></span>
+                    <span class="mt-scope">Audit + verified competitor scrape + four sales-tagged pillars + 30 hooks + caption rewrites.</span>
+                    <span class="mt-go">See Lite scope →</span>
+                </a>
+                <a href="/sprint.html#tier-pro" class="mini-tier-card featured" data-track="Home Mini Tier Pro">
+                    <span class="mt-ribbon">★ Most picked</span>
+                    <span class="mt-eyebrow">◆ Sprint Pro</span>
+                    <span class="mt-name">The wall-breaker.</span>
+                    <span class="mt-price">$1,334<span class="mt-flat">flat · 7 days</span></span>
+                    <span class="mt-scope">Everything in Lite + adjacent inspiration deck + ROI projection + 30-day content calendar.</span>
+                    <span class="mt-go">See Pro scope →</span>
+                </a>
+                <a href="/sprint.html#tier-full" class="mini-tier-card" data-track="Home Mini Tier Full">
+                    <span class="mt-eyebrow">◆ Sprint Full</span>
+                    <span class="mt-name">The foundation.</span>
+                    <span class="mt-price">$4,900<span class="mt-flat">flat · 10–14 days</span></span>
+                    <span class="mt-scope">Everything in Pro + claims compliance + pricing ladder + AI roadmap + 16-deck foundation system.</span>
+                    <span class="mt-go">See Full scope →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BAR · ANONYMIZED CATEGORIES -->
+    <div class="lw-trust-bar">
+        <div class="container-wide">
+            <span class="tb-eyebrow">Categories we've shipped a sprint into</span>
+            <div class="tb-cats">
+                <span>Bay Area Events</span>
+                <span>Premium DTC</span>
+                <span>AI Video SaaS</span>
+                <span>Creator</span>
+                <span>B2B Sales</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- DELIVERABLE EXCERPT -->
+    <section class="home-quote-section">
+        <div class="container-wide">
+            <div class="home-quote-block">
+                <span class="q-mark">“</span>
+                <blockquote>Every metric, post link, and caption excerpt came from a fresh pull of the live feed. Nothing made up, nothing paraphrased.</blockquote>
+                <div class="q-attr">
+                    <strong>— From the Kind Bubbles delivery letter</strong>
+                    <span>Bay Area kids' bubble events · paid sprint, May 2026</span>
+                    <a href="/case-studies/kind-bubbles.html" data-track="Home Quote Read CS">Read the full case study →</a>
                 </div>
             </div>
         </div>
