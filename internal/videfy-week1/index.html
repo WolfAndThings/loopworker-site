@@ -1,17 +1,4 @@
-<!doctype html><html><head>
-<script>
-(function(){
-  if(sessionStorage.getItem('vidfy_gate')==='1') return;
-  const p=prompt('Passcode required to view Videfy launch board:');
-  if(p==='videfy2026'){
-    sessionStorage.setItem('vidfy_gate','1');
-  } else {
-    document.documentElement.innerHTML='<body style="background:#0d1117;color:#e6edf3;font-family:-apple-system,sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0"><div style="text-align:center"><h1 style="color:#d3f85a">Access restricted</h1><p>Refresh + enter the team passcode.</p></div></body>';
-    throw new Error('gate');
-  }
-})();
-</script>
-<meta charset="utf-8">
+<!doctype html><html><head><meta charset="utf-8">
 <title>Videfy — Week 1 Launch Board (May 2-8)</title>
 <style>
   *{box-sizing:border-box}
