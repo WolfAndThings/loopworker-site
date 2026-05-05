@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+    <script defer src="/site-pages.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/site-pages.css">
+    <title>Sprint Kickoff — Welcome | LoopWorker</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+
+    <style>
+      .kc-hero { padding: 7rem 1.5rem 2.5rem; }
+      .kc-hero .container { width: min(900px, calc(100% - 3rem)); margin: 0 auto; }
+      .kc-hero .eyebrow { display: inline-block; font-size: 0.7rem; color: #D4A017; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 800; margin-bottom: 0.8rem; }
+      .kc-hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); margin-bottom: 1.1rem; font-family: 'Cormorant Garamond', serif; font-weight: 500; color: #FFF; line-height: 1.1; letter-spacing: -0.02em; }
+      .kc-hero h1 em { font-style: italic; color: #D4A017; font-weight: 400; }
+      .kc-hero .lead { font-size: 1.1rem; color: #C7C7C7; max-width: 760px; margin-bottom: 1.4rem; line-height: 1.55; }
+
+      .kc-tier-confirm { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.55rem 1rem; border-radius: 999px; background: rgba(108,197,122,0.08); border: 1px solid rgba(108,197,122,0.3); color: #6CC57A; font-size: 0.85rem; letter-spacing: 0.04em; margin-top: 0.4rem; }
+      .kc-tier-confirm strong { color: #FFF; font-weight: 600; }
+
+      .kc-loom-shell {
+        margin: 2.4rem auto 0;
+        background: rgba(255,255,255,0.025);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 14px;
+        padding: 1.4rem;
+      }
+      .kc-loom-shell h3 { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #FFF; font-weight: 500; font-size: 1.3rem; margin-bottom: 0.4rem; }
+      .kc-loom-shell p { color: #999; font-size: 0.9rem; margin-bottom: 1rem; }
+      .kc-loom-frame { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; background: #000; }
+      .kc-loom-frame iframe { position: absolute; top:0; left:0; width:100%; height:100%; border:0; }
+
+      .kc-section { padding: 3.4rem 0; border-top: 1px solid rgba(255,255,255,0.05); }
+      .kc-section .container { width: min(900px, calc(100% - 3rem)); margin: 0 auto; }
+      .kc-section h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 500; color: #FFF; margin-bottom: 1.4rem; letter-spacing: -0.02em; line-height: 1.15; }
+      .kc-section h2 em { font-style: italic; color: #D4A017; font-weight: 400; }
+      .kc-section .section-eyebrow { display: inline-block; font-size: 0.66rem; color: #D4A017; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 800; margin-bottom: 0.7rem; }
+
+      .kc-form { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 2rem; margin-top: 1.5rem; }
+      .kc-form-section { margin-bottom: 2rem; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+      .kc-form-section:last-of-type { border-bottom: none; padding-bottom: 0; margin-bottom: 1.4rem; }
+      .kc-form-section h3 { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #FFF; font-weight: 500; font-size: 1.4rem; margin-bottom: 0.4rem; }
+      .kc-form-section .sub { color: #888; font-size: 0.86rem; margin-bottom: 1rem; }
+
+      .kc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+      @media (max-width: 720px) { .kc-row { grid-template-columns: 1fr; } }
+
+      .kc-field { display: flex; flex-direction: column; margin-bottom: 1rem; }
+      .kc-field label { font-size: 0.78rem; color: #C7C7C7; letter-spacing: 0.06em; margin-bottom: 0.4rem; font-weight: 600; }
+      .kc-field input, .kc-field select, .kc-field textarea {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 8px;
+        padding: 0.85rem 1rem;
+        color: #FFF;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.95rem;
+        transition: border-color 0.15s;
+      }
+      .kc-field input:focus, .kc-field select:focus, .kc-field textarea:focus {
+        outline: none;
+        border-color: rgba(212,160,23,0.5);
+        background: rgba(255,255,255,0.06);
+      }
+      .kc-field textarea { resize: vertical; min-height: 90px; }
+
+      .kc-radios { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.4rem; }
+      .kc-radios label {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        padding: 0.7rem 1rem;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 999px;
+        cursor: pointer;
+        font-size: 0.88rem;
+        color: #DDD;
+        letter-spacing: 0.02em;
+        margin-bottom: 0;
+        transition: all 0.15s;
+      }
+      .kc-radios label:hover { border-color: rgba(212,160,23,0.4); }
+      .kc-radios input[type="radio"] { accent-color: #D4A017; }
+      .kc-radios input[type="radio"]:checked + span { color: #D4A017; font-weight: 600; }
+      .kc-radios label:has(input:checked) {
+        background: rgba(212,160,23,0.08);
+        border-color: rgba(212,160,23,0.5);
+      }
+
+      .kc-submit {
+        display: inline-block;
+        background: linear-gradient(180deg, var(--accent), var(--accent-soft));
+        color: #1A0F00 !important;
+        font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+        padding: 1rem 1.8rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-size: 0.88rem;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 12px 28px -10px var(--accent-glow);
+        transition: transform 0.18s;
+      }
+      .kc-submit:hover { transform: translateY(-2px); }
+
+      .kc-confirm-block {
+        display: none;
+        background: linear-gradient(180deg, rgba(108,197,122,0.06), rgba(255,255,255,0.015));
+        border: 1px solid rgba(108,197,122,0.3);
+        border-radius: 14px;
+        padding: 2rem;
+        margin-top: 2rem;
+        text-align: center;
+      }
+      .kc-confirm-block.is-visible { display: block; }
+      .kc-confirm-block h3 { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #FFF; font-weight: 500; font-size: 1.7rem; margin-bottom: 0.6rem; }
+      .kc-confirm-block p { color: #C7C7C7; font-size: 0.95rem; line-height: 1.5; max-width: 600px; margin: 0 auto 1rem; }
+
+      .kc-cal-shell { margin-top: 2rem; padding: 1.6rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; text-align: left; }
+      .kc-cal-shell h3 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.4rem; font-weight: 500; color: #FFF; margin-bottom: 0.4rem; }
+      .kc-cal-shell p { color: #999; font-size: 0.92rem; margin-bottom: 1.2rem; }
+
+      .kc-checklist { margin-top: 1.4rem; padding: 1.4rem 1.6rem; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; }
+      .kc-checklist h4 { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #FFF; font-weight: 500; font-size: 1.15rem; margin-bottom: 0.6rem; }
+      .kc-checklist ul { list-style: none; padding: 0; margin: 0; }
+      .kc-checklist li { padding: 0.4rem 0 0.4rem 1.5rem; position: relative; color: #B5B5B5; font-size: 0.92rem; }
+      .kc-checklist li::before { content: '◆'; position: absolute; left: 0; color: #D4A017; font-size: 0.7rem; top: 0.6rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">LoopWorker</a>
+            <ul class="nav-links">
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/sprint.html">The Sprint</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="mailto:alex@loopworker.com" class="nav-cta">Email Alex</a></li>
+            </ul>
+            <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="/services.html">Services</a>
+        <a href="/sprint.html">The Sprint</a>
+        <a href="/case-studies.html">Case Studies</a>
+        <a href="/portfolio.html">Portfolio</a>
+        <a href="/blog/">Blog</a>
+        <a href="mailto:alex@loopworker.com" class="nav-cta">Email Alex</a>
+    </div>
+
+    <main>
+        <!-- HERO -->
+        <section class="kc-hero">
+            <div class="container">
+                <span class="eyebrow">◆ Kickoff · Welcome to your Sprint</span>
+                <h1>We've got the payment. <em>Now we need 5 minutes of context</em> to get the audit pointed at the right things.</h1>
+                <p class="lead">This is the only intake form you'll fill out. Two screens, four sections, no fluff. Once you submit, we kick off the scrape today and you'll have a Loom intro from Alex within 24 hours.</p>
+                <span class="kc-tier-confirm" id="tierConfirm" style="display:none;">◆ Payment received · Tier: <strong id="tierName">—</strong></span>
+
+                <!-- LOOM INTRO -->
+                <div class="kc-loom-shell">
+                    <h3>Watch first: 3-min Loom from Alex</h3>
+                    <p>What happens in the next 24 hours, what we'll need from you, and how to read the deliverable when it lands.</p>
+                    <div class="kc-loom-frame">
+                        <iframe src="https://www.loom.com/embed/f9cee59f64c44e4092d97c145a4a7ccf?autoplay=0&hide_share=true&hideEmbedTopBar=true&captioned=true" allowfullscreen frameborder="0" loading="lazy" title="Sprint kickoff intro"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTAKE FORM -->
+        <section class="kc-section" id="intake">
+            <div class="container">
+                <span class="section-eyebrow">◆ The 5-min intake</span>
+                <h2>Four sections. <em>Direct answers beat polished ones.</em></h2>
+                <p style="color:#999; max-width:680px; margin-bottom:0;">If you're stuck on a question, write "skip" and move on — we'll catch it on the kickoff Zoom. Don't let the form block momentum.</p>
+
+                <form id="kickoffForm" class="kc-form" action="https://formspree.io/f/xbdpddrn" method="POST">
+                    <input type="hidden" name="_subject" value="Sprint Kickoff — Intake Submitted">
+                    <input type="hidden" name="source" value="loopworker.com/sprint/kickoff">
+                    <input type="hidden" name="tier" id="hiddenTier" value="">
+                    <input type="hidden" name="checkout_session_id" id="hiddenSession" value="">
+                    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+                    <!-- SECTION 1: BRAND BASICS -->
+                    <div class="kc-form-section">
+                        <h3>1 · Brand basics</h3>
+                        <p class="sub">Where we'll look first. Public handles only — we don't need passwords for any of this.</p>
+                        <div class="kc-row">
+                            <div class="kc-field">
+                                <label for="business_name">Business name</label>
+                                <input type="text" id="business_name" name="business_name" required>
+                            </div>
+                            <div class="kc-field">
+                                <label for="website">Website URL</label>
+                                <input type="url" id="website" name="website" placeholder="https://yourbrand.com">
+                            </div>
+                        </div>
+                        <div class="kc-row">
+                            <div class="kc-field">
+                                <label for="ig_handle">Instagram handle</label>
+                                <input type="text" id="ig_handle" name="ig_handle" placeholder="@yourbrand">
+                            </div>
+                            <div class="kc-field">
+                                <label for="tt_handle">TikTok handle</label>
+                                <input type="text" id="tt_handle" name="tt_handle" placeholder="@yourbrand">
+                            </div>
+                        </div>
+                        <div class="kc-field">
+                            <label>Primary platform (where most of your audience is)</label>
+                            <div class="kc-radios">
+                                <label><input type="radio" name="primary_platform" value="Instagram" required> <span>Instagram</span></label>
+                                <label><input type="radio" name="primary_platform" value="TikTok"> <span>TikTok</span></label>
+                                <label><input type="radio" name="primary_platform" value="LinkedIn"> <span>LinkedIn</span></label>
+                                <label><input type="radio" name="primary_platform" value="YouTube"> <span>YouTube</span></label>
+                                <label><input type="radio" name="primary_platform" value="X"> <span>X / Twitter</span></label>
+                                <label><input type="radio" name="primary_platform" value="Other"> <span>Other</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 2: SPRINT CONTEXT -->
+                    <div class="kc-form-section">
+                        <h3>2 · Sprint context</h3>
+                        <p class="sub">Confirm the tier and tell us what would make this a 5-out-of-5 sprint for you.</p>
+                        <div class="kc-field">
+                            <label>Which tier did you buy?</label>
+                            <div class="kc-radios">
+                                <label><input type="radio" name="tier_confirm" value="Sprint Lite" required> <span>Sprint Lite ($754)</span></label>
+                                <label><input type="radio" name="tier_confirm" value="Sprint Pro"> <span>Sprint Pro ($1,334)</span></label>
+                                <label><input type="radio" name="tier_confirm" value="Sprint Full"> <span>Sprint Full ($4,900)</span></label>
+                            </div>
+                        </div>
+                        <div class="kc-field">
+                            <label for="want_most">What do you want most from this audit?</label>
+                            <textarea id="want_most" name="want_most" placeholder="The honest answer. 'I want bookings,' 'I want to stop posting in the dark,' 'I want a calendar I can hand to a freelancer' — whatever it actually is."></textarea>
+                        </div>
+                        <div class="kc-field">
+                            <label for="competitors">Which competitors do you watch?</label>
+                            <textarea id="competitors" name="competitors" placeholder="3-8 handles or URLs. Doesn't have to be direct competitors — could be 'brands I admire whose feed I'd want mine to look like.'"></textarea>
+                        </div>
+                        <div class="kc-field">
+                            <label for="recent_posts">3 most recent post links you'd want analyzed</label>
+                            <textarea id="recent_posts" name="recent_posts" placeholder="One per line. Posts that worked, didn't work, or that you have questions about — anything you want our eyes on first."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: GOALS -->
+                    <div class="kc-form-section">
+                        <h3>3 · Your goals</h3>
+                        <p class="sub">What we're optimizing for. Be specific — "more bookings" is a different deck from "more reach."</p>
+                        <div class="kc-field">
+                            <label>Primary goal (pick one)</label>
+                            <div class="kc-radios">
+                                <label><input type="radio" name="primary_goal" value="More bookings/inquiries" required> <span>More bookings/inquiries</span></label>
+                                <label><input type="radio" name="primary_goal" value="More reach"> <span>More reach</span></label>
+                                <label><input type="radio" name="primary_goal" value="More shares-and-saves"> <span>More shares-and-saves</span></label>
+                                <label><input type="radio" name="primary_goal" value="More newsletter subs"> <span>More newsletter subs</span></label>
+                                <label><input type="radio" name="primary_goal" value="Other"> <span>Other</span></label>
+                            </div>
+                        </div>
+                        <div class="kc-field">
+                            <label for="secondary_goal">Secondary goal</label>
+                            <textarea id="secondary_goal" name="secondary_goal" placeholder="The next thing you want this to move. 'Build a real founder voice,' 'open a B2B lane,' 'lock my pricing tier' — whatever's underneath the primary."></textarea>
+                        </div>
+                        <div class="kc-field">
+                            <label for="blocking">What's blocking you right now?</label>
+                            <textarea id="blocking" name="blocking" placeholder="The honest list. Time, content ideas, camera shyness, no team, content fatigue, conflicting advice — anything in the way."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: PRACTICAL -->
+                    <div class="kc-form-section">
+                        <h3>4 · Practical</h3>
+                        <p class="sub">Where we'll deliver and anything we should know before we touch the work.</p>
+                        <div class="kc-row">
+                            <div class="kc-field">
+                                <label for="email">Best email for delivery</label>
+                                <input type="email" id="email" name="email" required placeholder="you@yourbrand.com">
+                            </div>
+                            <div class="kc-field">
+                                <label for="timezone">Time zone</label>
+                                <input type="text" id="timezone" name="timezone" placeholder="PT, ET, GMT+1, etc.">
+                            </div>
+                        </div>
+                        <div class="kc-field">
+                            <label for="anything_else">Anything we should know? (NDA, regulated category, partnership pending, sensitive niche, etc.)</label>
+                            <textarea id="anything_else" name="anything_else" placeholder="Optional. Flag anything that changes how we treat the data or the deck."></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="kc-submit">Submit intake → kick off the sprint</button>
+                </form>
+
+                <!-- CONFIRMATION BLOCK -->
+                <div class="kc-confirm-block" id="confirmBlock">
+                    <h3>Got it. Sprint is officially queued.</h3>
+                    <p>Intake received. We're already pulling the live feed. Within 24 hours you'll get a Loom from Alex with the first-pass read — what stood out, what we're prioritizing, where the openings are.</p>
+                    <p>Pick a slot below for the kickoff Zoom — 30 minutes, screen-share, we walk through the brief together so nothing gets lost in translation.</p>
+
+                    <div class="kc-cal-shell">
+                        <h3>Lock the kickoff Zoom</h3>
+                        <p>30-minute call. Bring nothing. We've already got everything we need from the intake.</p>
+                        <div class="calendly-inline-widget" data-url="https://calendly.com/loopworker/30min?hide_gdpr_banner=1&background_color=0f0f0f&text_color=d4d4d4&primary_color=d4a017" style="min-width:320px;height:680px;border-radius:8px;overflow:hidden;"></div>
+                        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+                    </div>
+
+                    <div class="kc-checklist">
+                        <h4>While you wait — the only 3 things to do</h4>
+                        <ul>
+                            <li>Watch the 3-min Loom intro at the top of this page (if you haven't yet).</li>
+                            <li>Whitelist <strong>alex@loopworker.com</strong> so the deliverable doesn't land in spam.</li>
+                            <li>Reply to your receipt email with anything you forgot to put in the intake.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <div>
+                <div class="footer-brand">LoopWorker</div>
+                <div class="footer-meta">Helping businesses turn content into customers.</div>
+            </div>
+            <ul class="footer-links">
+                <li><a href="/sprint.html">The Sprint</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="/free-resources.html">Free Resources</a></li>
+                <li><a href="/faq.html">FAQ</a></li>
+            </ul>
+            <div class="footer-contact">
+                <a href="mailto:alex@loopworker.com">alex@loopworker.com</a><br>
+                <a href="https://instagram.com/loop.worker" target="_blank" rel="noopener">@loop.worker</a>
+                <div class="footer-legal"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+      (function(){
+        // Read tier + session from query string and pre-fill form
+        const params = new URLSearchParams(location.search);
+        const tier = (params.get('tier') || '').toLowerCase();
+        const session = params.get('session') || '';
+        const tierMap = { lite: 'Sprint Lite', pro: 'Sprint Pro', full: 'Sprint Full' };
+        const tierLabel = tierMap[tier] || '';
+        if (tierLabel) {
+          document.getElementById('tierName').textContent = tierLabel;
+          document.getElementById('tierConfirm').style.display = 'inline-flex';
+          document.getElementById('hiddenTier').value = tierLabel;
+          // pre-check the matching radio
+          const radios = document.querySelectorAll('input[name="tier_confirm"]');
+          radios.forEach(r => { if (r.value === tierLabel) r.checked = true; });
+        }
+        if (session) document.getElementById('hiddenSession').value = session;
+
+        // AJAX submit so we can show the confirmation + Calendly inline
+        const form = document.getElementById('kickoffForm');
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const data = new FormData(form);
+          const btn = form.querySelector('.kc-submit');
+          const originalText = btn.textContent;
+          btn.textContent = 'Submitting…';
+          btn.disabled = true;
+          try {
+            const res = await fetch(form.action, {
+              method: 'POST',
+              body: data,
+              headers: { 'Accept': 'application/json' }
+            });
+            if (res.ok) {
+              form.style.display = 'none';
+              const confirm = document.getElementById('confirmBlock');
+              confirm.classList.add('is-visible');
+              confirm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              if (window.plausible) window.plausible('Sprint Kickoff Intake Submitted', { props: { tier: tierLabel || 'unknown' } });
+            } else {
+              btn.textContent = originalText;
+              btn.disabled = false;
+              alert('Submission failed. Please email alex@loopworker.com directly with your intake answers.');
+            }
+          } catch (err) {
+            btn.textContent = originalText;
+            btn.disabled = false;
+            alert('Network error. Please email alex@loopworker.com — we will sort it out.');
+          }
+        });
+      })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!--
+Subject: Sprint kicked off — 5-min intake form inside
+From: Alex Lamb <alex@loopworker.com>
+Reply-To: alex@loopworker.com
+Use-case: manual-send confirmation after Stripe payment, until Make.com wires it.
+Replace these tokens before sending:
+  {{FIRST_NAME}}, {{TIER_NAME}}, {{TIER_PRICE}}, {{TURNAROUND_DAYS}}, {{DELIVERY_DATE}}
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sprint kicked off — 5-min intake form inside</title>
+</head>
+<body style="margin:0; padding:0; background:#080808; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color:#E5E5E5;">
+
+<!-- Preheader (hidden) -->
+<div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">
+You're officially in the Sprint queue. 5-min intake form, Loom intro, and your delivery timeline below.
+</div>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#080808;">
+  <tr>
+    <td align="center" style="padding:40px 16px;">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%;">
+
+        <!-- Header / Logo -->
+        <tr>
+          <td style="padding:0 0 24px 0;">
+            <div style="font-family: 'Inter', sans-serif; font-size:20px; font-weight:800; letter-spacing:0.04em; color:#FFF;">LoopWorker</div>
+            <div style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#D4A017; margin-top:6px; font-weight:700;">◆ Sprint Kickoff Confirmation</div>
+          </td>
+        </tr>
+
+        <!-- Receipt + welcome -->
+        <tr>
+          <td style="padding:24px 28px; background:linear-gradient(180deg, rgba(212,160,23,0.06), rgba(255,255,255,0.015)); border:1px solid rgba(212,160,23,0.25); border-radius:14px;">
+            <h1 style="margin:0 0 12px 0; font-family: Georgia, 'Cormorant Garamond', serif; font-style:italic; font-weight:500; color:#FFF; font-size:28px; line-height:1.2;">
+              {{FIRST_NAME}} — you're officially in the Sprint queue.
+            </h1>
+            <p style="margin:0 0 12px 0; color:#C7C7C7; font-size:15px; line-height:1.55;">
+              Receipt for <strong style="color:#FFF;">{{TIER_NAME}} (${{TIER_PRICE}})</strong> in your inbox separately from Stripe. This is the working email — everything below is what happens next.
+            </p>
+            <p style="margin:0; color:#C7C7C7; font-size:15px; line-height:1.55;">
+              Delivery committed: <strong style="color:#D4A017;">{{DELIVERY_DATE}}</strong> ({{TURNAROUND_DAYS}}-day turnaround). Calendar it now so it doesn't sneak up.
+            </p>
+          </td>
+        </tr>
+
+        <!-- Step 1: intake form -->
+        <tr>
+          <td style="padding:32px 0 0 0;">
+            <div style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#D4A017; font-weight:700; margin-bottom:8px;">◆ Step 1 · Right now</div>
+            <h2 style="margin:0 0 10px 0; font-family: Georgia, serif; font-style:italic; font-weight:500; color:#FFF; font-size:22px; line-height:1.25;">
+              Fill out the 5-min intake form.
+            </h2>
+            <p style="margin:0 0 18px 0; color:#B5B5B5; font-size:14px; line-height:1.55;">
+              Four sections, direct answers. We start the live-feed scrape the moment this lands.
+            </p>
+            <a href="https://www.loopworker.com/sprint/kickoff.html?tier={{TIER_SLUG}}" style="display:inline-block; background:linear-gradient(180deg, #D4A017, #B8860B); color:#1A0F00; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; padding:14px 24px; border-radius:999px; text-decoration:none; font-size:13px;">
+              Open the intake form →
+            </a>
+          </td>
+        </tr>
+
+        <!-- Step 2: loom -->
+        <tr>
+          <td style="padding:32px 0 0 0;">
+            <div style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#D4A017; font-weight:700; margin-bottom:8px;">◆ Step 2 · 3 minutes</div>
+            <h2 style="margin:0 0 10px 0; font-family: Georgia, serif; font-style:italic; font-weight:500; color:#FFF; font-size:22px; line-height:1.25;">
+              Watch the Sprint intro Loom.
+            </h2>
+            <p style="margin:0 0 18px 0; color:#B5B5B5; font-size:14px; line-height:1.55;">
+              How to read the deliverable, what the 24-hr Loom from me will cover, and how to hand the docs to a freelancer or VA after.
+            </p>
+            <a href="https://www.loom.com/share/f9cee59f64c44e4092d97c145a4a7ccf" style="display:inline-block; color:#D4A017; text-decoration:none; border-bottom:1px solid rgba(212,160,23,0.4); padding-bottom:2px; font-size:14px; letter-spacing:0.04em;">
+              Watch the 3-min Loom →
+            </a>
+          </td>
+        </tr>
+
+        <!-- Timeline band -->
+        <tr>
+          <td style="padding:36px 0 0 0;">
+            <div style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#D4A017; font-weight:700; margin-bottom:10px;">◆ The 5-day arc</div>
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid rgba(255,255,255,0.08); border-radius:12px; background:rgba(255,255,255,0.02);">
+              <tr>
+                <td style="padding:14px 12px; text-align:center; border-right:1px solid rgba(255,255,255,0.05); width:20%;">
+                  <div style="font-size:10px; letter-spacing:0.14em; color:#D4A017; font-weight:800; margin-bottom:4px;">DAY 0</div>
+                  <div style="font-family:Georgia,serif; font-style:italic; color:#FFF; font-size:14px;">Pay → kickoff</div>
+                </td>
+                <td style="padding:14px 12px; text-align:center; border-right:1px solid rgba(255,255,255,0.05); width:20%;">
+                  <div style="font-size:10px; letter-spacing:0.14em; color:#D4A017; font-weight:800; margin-bottom:4px;">DAY 1</div>
+                  <div style="font-family:Georgia,serif; font-style:italic; color:#FFF; font-size:14px;">Audit + scrape</div>
+                </td>
+                <td style="padding:14px 12px; text-align:center; border-right:1px solid rgba(255,255,255,0.05); width:20%;">
+                  <div style="font-size:10px; letter-spacing:0.14em; color:#D4A017; font-weight:800; margin-bottom:4px;">DAY 2</div>
+                  <div style="font-family:Georgia,serif; font-style:italic; color:#FFF; font-size:14px;">Pillars + hooks</div>
+                </td>
+                <td style="padding:14px 12px; text-align:center; border-right:1px solid rgba(255,255,255,0.05); width:20%;">
+                  <div style="font-size:10px; letter-spacing:0.14em; color:#D4A017; font-weight:800; margin-bottom:4px;">DAY 3·4</div>
+                  <div style="font-family:Georgia,serif; font-style:italic; color:#FFF; font-size:14px;">Captions + decks</div>
+                </td>
+                <td style="padding:14px 12px; text-align:center; width:20%;">
+                  <div style="font-size:10px; letter-spacing:0.14em; color:#D4A017; font-weight:800; margin-bottom:4px;">DAY 5</div>
+                  <div style="font-family:Georgia,serif; font-style:italic; color:#FFF; font-size:14px;">Delivered</div>
+                </td>
+              </tr>
+            </table>
+            <p style="margin:10px 0 0 0; color:#888; font-size:12px; text-align:center;">
+              Sprint Lite = 5 days · Pro = 7 days · Full = 10–14 days
+            </p>
+          </td>
+        </tr>
+
+        <!-- Reply-direct band -->
+        <tr>
+          <td style="padding:36px 0 0 0;">
+            <div style="padding:18px 22px; background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.07); border-radius:12px;">
+              <h3 style="margin:0 0 6px 0; font-family:Georgia,serif; font-style:italic; font-weight:500; color:#FFF; font-size:18px; line-height:1.25;">
+                Reply directly to this email anytime.
+              </h3>
+              <p style="margin:0; color:#B5B5B5; font-size:14px; line-height:1.5;">
+                Hits my inbox at <a href="mailto:alex@loopworker.com" style="color:#D4A017; text-decoration:none;">alex@loopworker.com</a>. No tickets, no AI gatekeeping, no "we'll get back to you in 48 hours" — I read and answer myself.
+              </p>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+          <td style="padding:36px 0 0 0; text-align:center;">
+            <p style="margin:0 0 6px 0; color:#666; font-size:12px;">
+              Built by Alex Lamb · LoopWorker · Receipts, not vibes.
+            </p>
+            <p style="margin:0; color:#666; font-size:12px;">
+              <a href="https://www.loopworker.com/sprint.html" style="color:#888; text-decoration:none;">loopworker.com/sprint</a> · <a href="https://instagram.com/loop.worker" style="color:#888; text-decoration:none;">@loop.worker</a>
+            </p>
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
