@@ -27,51 +27,78 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
 .section-h em { color: #D4A017; font-style: italic; font-weight: 400; }
 .section-tag { display: inline-block; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: #888; margin-bottom: 0.8rem; }
 .section-tag::before { content: '◆'; color: #D4A017; margin-right: 0.5em; }
-.section-lede { color: #888; max-width: 620px; margin: 0 0 2.2rem; font-size: 0.97rem; }
+.section-lede { color: #888; max-width: 620px; margin: 0 0 2.4rem; font-size: 0.97rem; }
 
-/* ── DECK GALLERY ── */
-.deck-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
-@media (max-width: 880px) { .deck-grid { grid-template-columns: 1fr; } }
+/* ── DECK PREVIEW (paper-style mock pages) ── */
+.deck-stack { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; }
+@media (max-width: 1000px) { .deck-stack { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; } }
 
-.deck-card {
+.deck-page {
   position: relative;
-  aspect-ratio: 3 / 4;
-  background: linear-gradient(180deg, #0F0F0F, #050505);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(180deg, #0d0d0d, #060606);
+  border: 1px solid rgba(255,255,255,0.07);
   border-radius: 8px;
-  padding: 1.6rem 1.4rem;
+  padding: 1.4rem 1.4rem 1.2rem;
   display: flex; flex-direction: column;
-  transition: transform 0.28s cubic-bezier(.2,.7,.2,1), border-color 0.28s, box-shadow 0.28s;
-  cursor: pointer;
+  box-shadow: 0 28px 60px -36px rgba(0,0,0,0.9), 0 4px 12px -4px rgba(0,0,0,0.5);
+  transition: transform 0.32s cubic-bezier(.2,.7,.2,1), border-color 0.32s, box-shadow 0.32s;
   overflow: hidden;
+  min-height: 560px;
 }
-.deck-card::before {
+.deck-page::before {
   content: '';
   position: absolute; inset: 0;
   background:
-    radial-gradient(120% 60% at 50% -10%, rgba(212,160,23,0.07), transparent 60%),
-    repeating-linear-gradient(0deg, transparent 0 4px, rgba(255,255,255,0.012) 4px 5px);
+    radial-gradient(140% 50% at 50% -10%, rgba(212,160,23,0.05), transparent 55%);
   pointer-events: none;
 }
-.deck-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(212,160,23,0.4);
-  box-shadow: 0 24px 60px -28px rgba(212,160,23,0.35);
-}
-.deck-eyebrow { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: #D4A017; font-weight: 800; margin-bottom: 0.7rem; position: relative; z-index: 1; }
-.deck-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 1.7rem; line-height: 1.1; color: #FFF; margin-bottom: auto; position: relative; z-index: 1; }
-.deck-title em { font-style: italic; color: #D4A017; font-weight: 400; }
-.deck-meta { font-size: 0.72rem; letter-spacing: 0.06em; color: #888; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.07); position: relative; z-index: 1; }
-.deck-meta strong { color: #FFF; font-weight: 600; }
-.deck-cat-row { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 1.2rem; position: relative; z-index: 1; }
-.deck-cat { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.25em 0.55em; background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.18); border-radius: 3px; color: #D4A017; }
+.deck-page:hover { transform: translateY(-6px); border-color: rgba(212,160,23,0.32); box-shadow: 0 34px 80px -28px rgba(212,160,23,0.18), 0 4px 12px -4px rgba(0,0,0,0.5); }
 
-.deck-stamp { position: absolute; top: 1.1rem; right: 1.1rem; font-size: 0.58rem; letter-spacing: 0.18em; padding: 0.25em 0.55em; border: 1px solid rgba(255,255,255,0.18); border-radius: 999px; color: #888; z-index: 1; }
+.dp-head { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 0.7rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.08); position: relative; z-index: 1; }
+.dp-folio { font-size: 0.6rem; letter-spacing: 0.2em; color: #D4A017; font-weight: 800; text-transform: uppercase; }
+.dp-page-no { font-size: 0.6rem; letter-spacing: 0.16em; color: #555; }
+.dp-h2 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 1.45rem; line-height: 1.15; color: #FFF; margin: 0.2rem 0 0.3rem; position: relative; z-index: 1; }
+.dp-h2 em { color: #D4A017; font-weight: 400; }
+.dp-lede { font-size: 0.7rem; color: #888; line-height: 1.5; margin-bottom: 1rem; position: relative; z-index: 1; }
+
+/* AUDIT — scorecard rows */
+.audit-row { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 0.8rem; padding: 0.45rem 0; border-bottom: 1px dashed rgba(255,255,255,0.06); position: relative; z-index: 1; }
+.audit-row:last-of-type { border-bottom: none; }
+.audit-row .ar-label { font-size: 0.74rem; color: #C0C0C0; }
+.audit-row .ar-bar { width: 80px; height: 4px; background: rgba(255,255,255,0.06); border-radius: 2px; overflow: hidden; position: relative; }
+.audit-row .ar-bar::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; background: linear-gradient(90deg, #D4A017, #B58915); border-radius: 2px; }
+.audit-row[data-s="6"] .ar-bar::after { width: 60%; }
+.audit-row[data-s="3"] .ar-bar::after { width: 30%; background: linear-gradient(90deg, #c44, #922); }
+.audit-row[data-s="9"] .ar-bar::after { width: 90%; }
+.audit-row[data-s="5"] .ar-bar::after { width: 50%; background: linear-gradient(90deg, #c98, #b75); }
+.audit-row[data-s="2"] .ar-bar::after { width: 20%; background: linear-gradient(90deg, #c44, #922); }
+.audit-row[data-s="7"] .ar-bar::after { width: 70%; }
+.audit-row .ar-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.92rem; color: #FFF; min-width: 1.6em; text-align: right; font-weight: 500; }
+
+.audit-stat-row { display: flex; justify-content: space-between; padding: 0.7rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); position: relative; z-index: 1; font-size: 0.74rem; color: #888; }
+.audit-stat-row strong { color: #FFF; font-weight: 600; }
+
+/* PILLARS — 2x2 mini grid */
+.pl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem; position: relative; z-index: 1; flex-grow: 1; }
+.pl-card { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); border-radius: 5px; padding: 0.7rem 0.7rem 0.65rem; display: flex; flex-direction: column; }
+.pl-name { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.95rem; color: #FFF; line-height: 1.1; margin-bottom: 0.3rem; }
+.pl-job { font-size: 0.55rem; letter-spacing: 0.16em; text-transform: uppercase; color: #D4A017; font-weight: 700; margin-bottom: 0.4rem; }
+.pl-pct { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: #D4A017; line-height: 1; margin-top: auto; font-weight: 500; }
+.pl-pct span { font-size: 0.55rem; color: #888; letter-spacing: 0.1em; text-transform: uppercase; margin-left: 0.3em; font-family: 'Inter', sans-serif; }
+
+/* HOOKS — list */
+.hk-list { list-style: none; padding: 0; margin: 0; counter-reset: hk; flex-grow: 1; position: relative; z-index: 1; }
+.hk-item { padding: 0.5rem 0 0.5rem 1.7rem; position: relative; font-size: 0.74rem; color: #C8C8C8; line-height: 1.5; border-bottom: 1px dashed rgba(255,255,255,0.06); counter-increment: hk; }
+.hk-item:last-of-type { border-bottom: none; }
+.hk-item::before { content: counter(hk, decimal-leading-zero); position: absolute; left: 0; top: 0.55rem; font-size: 0.62rem; font-weight: 800; color: #D4A017; font-family: 'Inter', sans-serif; letter-spacing: 0.06em; }
+.hk-item .hk-tag { font-size: 0.54rem; letter-spacing: 0.16em; text-transform: uppercase; color: #888; margin-right: 0.4em; }
+
+/* footer of each page */
+.dp-foot { font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase; color: #555; margin-top: 1rem; padding-top: 0.7rem; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; position: relative; z-index: 1; }
 
 /* ── BEFORE / AFTER ── */
 .ba-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.4rem; }
 @media (max-width: 880px) { .ba-grid { grid-template-columns: 1fr; } }
-
 .ba-card { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 1.4rem; }
 .ba-row { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.8rem; align-items: center; margin-bottom: 1.2rem; }
 .ba-tile {
@@ -80,47 +107,17 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
   display: flex; align-items: center; justify-content: center;
   font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: #888;
   text-align: center; padding: 0.7rem;
-  position: relative;
-  overflow: hidden;
+  position: relative; overflow: hidden;
 }
-.ba-tile::after {
-  content: '';
-  position: absolute; inset: 0;
-  background-size: 12px 12px;
-  pointer-events: none;
-}
-.ba-tile.raw {
-  background: linear-gradient(135deg, #2a2a28, #181816);
-  border: 1px dashed rgba(255,255,255,0.14);
-  color: #888;
-}
+.ba-tile.raw { background: linear-gradient(135deg, #2a2a28, #181816); border: 1px dashed rgba(255,255,255,0.14); color: #888; }
 .ba-tile.raw::after {
+  content: ''; position: absolute; inset: 0;
   background-image: linear-gradient(45deg, rgba(255,255,255,0.02) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.02) 75%, rgba(255,255,255,0.02)), linear-gradient(45deg, rgba(255,255,255,0.02) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.02) 75%, rgba(255,255,255,0.02));
-  background-position: 0 0, 6px 6px;
+  background-size: 12px 12px; background-position: 0 0, 6px 6px; pointer-events: none;
 }
-.ba-tile.out {
-  background: linear-gradient(160deg, #181412, #0a0a0a);
-  border: 1px solid rgba(212,160,23,0.45);
-  color: #FFF;
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 0.92rem;
-  letter-spacing: 0.01em;
-  text-transform: none;
-  box-shadow: 0 12px 28px -10px rgba(212,160,23,0.25);
-}
-.ba-tile.out .out-hook {
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-size: 0.66rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #D4A017;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
+.ba-tile.out { background: linear-gradient(160deg, #181412, #0a0a0a); border: 1px solid rgba(212,160,23,0.45); color: #FFF; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.92rem; letter-spacing: 0.01em; text-transform: none; box-shadow: 0 12px 28px -10px rgba(212,160,23,0.25); }
+.ba-tile.out .out-hook { font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: #D4A017; font-weight: 700; margin-bottom: 0.5rem; }
 .ba-arrow { color: #D4A017; font-size: 1.2rem; opacity: 0.7; }
-
 .ba-label { font-size: 0.85rem; color: #C0C0C0; }
 .ba-label strong { color: #FFF; display: block; font-weight: 600; margin-bottom: 0.2rem; font-size: 0.95rem; }
 
@@ -145,60 +142,96 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
   <header class="gal-hero">
     <span class="gal-eyebrow">The Studio · Two engines</span>
     <h1 class="gal-h1">Strategy with <em>receipts.</em><br>Then content that runs on it.</h1>
-    <p class="gal-sub">First we map your brand. Then we make the work. What our audits look like, and what we make from your raw — below.</p>
+    <p class="gal-sub">Below: actual pages from a Sprint deck (sample data, real format). And what we make from your raw.</p>
   </header>
 
-  <!-- ENGINE 1: WHAT OUR AUDITS LOOK LIKE -->
+  <!-- ENGINE 1: WHAT OUR DECK PAGES LOOK LIKE -->
   <section>
     <span class="section-tag">Engine 1 · Strategy</span>
-    <h2 class="section-h">What our <em>audits</em> look like.</h2>
-    <p class="section-lede">Every Sprint ships as a polished deck — designed to read in 20 minutes, defensible to a 2-hour critical conversation. Real client covers below. Hover any deck.</p>
+    <h2 class="section-h">What our <em>deck pages</em> look like.</h2>
+    <p class="section-lede">Every Sprint ships as a polished long-form deck. Three pages from a sample deliverable — sample data, real format. Reads in 20 minutes. Defensible to a 2-hour critical conversation.</p>
 
-    <div class="deck-grid">
+    <div class="deck-stack">
 
-      <!-- DECK 1 — KIND BUBBLES (PUBLIC) -->
-      <a href="/case-studies/kind-bubbles.html" class="deck-card" data-track="Gallery Deck Kind Bubbles" style="text-decoration:none;color:inherit;">
-        <span class="deck-stamp">Public</span>
-        <span class="deck-eyebrow">Sprint Lite · 9 docs · May 2026</span>
-        <div class="deck-title">Kind Bubbles<br><em>Phase 1 Foundation</em></div>
-        <div class="deck-cat-row">
-          <span class="deck-cat">Audit</span>
-          <span class="deck-cat">Pillars</span>
-          <span class="deck-cat">Hooks</span>
-          <span class="deck-cat">ROI</span>
+      <!-- DECK PAGE 1 — DEEP AUDIT SCORECARD -->
+      <div class="deck-page">
+        <div class="dp-head">
+          <span class="dp-folio">D01 · Deep Audit</span>
+          <span class="dp-page-no">04 / 18</span>
         </div>
-        <div class="deck-meta">SF Bay Area + Sacramento · Kids' bubble events<br><strong>$54–65K Y1 path mapped</strong></div>
-      </a>
+        <h3 class="dp-h2">12-dimension <em>scorecard.</em></h3>
+        <p class="dp-lede">Pulled from 30+ live posts. Where the brand is currently winning, where it's leaking, scored 0–10.</p>
 
-      <!-- DECK 2 — LUXURY HOME (NDA) -->
-      <a href="/case-studies/luxury-home-brand.html" class="deck-card" data-track="Gallery Deck Luxury Home" style="text-decoration:none;color:inherit;">
-        <span class="deck-stamp">NDA</span>
-        <span class="deck-eyebrow">Sprint Full · 16 decks · pre-launch</span>
-        <div class="deck-title"><span class="redact" data-w="l"></span><br><em>Foundation Sprint</em></div>
-        <div class="deck-cat-row">
-          <span class="deck-cat">Status Audit</span>
-          <span class="deck-cat">Buyer Map</span>
-          <span class="deck-cat">Pricing</span>
-          <span class="deck-cat">Claims</span>
-          <span class="deck-cat">Gifting</span>
-        </div>
-        <div class="deck-meta">Premium home wellness · DTC<br><strong>350+ live-pulled data points</strong></div>
-      </a>
+        <div class="audit-row" data-s="9"><span class="ar-label">Founder presence</span><span class="ar-bar"></span><span class="ar-num">9</span></div>
+        <div class="audit-row" data-s="3"><span class="ar-label">Hook strength</span><span class="ar-bar"></span><span class="ar-num">3</span></div>
+        <div class="audit-row" data-s="6"><span class="ar-label">Pillar coverage</span><span class="ar-bar"></span><span class="ar-num">6</span></div>
+        <div class="audit-row" data-s="2"><span class="ar-label">Save / share signal</span><span class="ar-bar"></span><span class="ar-num">2</span></div>
+        <div class="audit-row" data-s="7"><span class="ar-label">Visual consistency</span><span class="ar-bar"></span><span class="ar-num">7</span></div>
+        <div class="audit-row" data-s="5"><span class="ar-label">Caption open-line</span><span class="ar-bar"></span><span class="ar-num">5</span></div>
+        <div class="audit-row" data-s="3"><span class="ar-label">CTA discipline</span><span class="ar-bar"></span><span class="ar-num">3</span></div>
 
-      <!-- DECK 3 — SAAS (NDA) -->
-      <a href="/case-studies/saas-workflow-tool.html" class="deck-card" data-track="Gallery Deck SaaS" style="text-decoration:none;color:inherit;">
-        <span class="deck-stamp">NDA</span>
-        <span class="deck-eyebrow">Sprint Full · 6 docs · pre-launch</span>
-        <div class="deck-title"><span class="redact" data-w="l"></span><br><em>Strategy Round 1</em></div>
-        <div class="deck-cat-row">
-          <span class="deck-cat">Brief</span>
-          <span class="deck-cat">Content</span>
-          <span class="deck-cat">Channels</span>
-          <span class="deck-cat">Pricing</span>
-          <span class="deck-cat">Workflow</span>
+        <div class="audit-stat-row" style="margin-top:0.8rem;"><span>Median views</span><strong>147</strong></div>
+        <div class="audit-stat-row"><span>Top post</span><strong>1,880 views</strong></div>
+        <div class="audit-stat-row"><span>Format mix</span><strong>81% reels · 13% caro</strong></div>
+
+        <div class="dp-foot"><span>The Sprint · Audit</span><span>Sample preview</span></div>
+      </div>
+
+      <!-- DECK PAGE 2 — FOUR PILLARS -->
+      <div class="deck-page">
+        <div class="dp-head">
+          <span class="dp-folio">D03 · Four Pillars</span>
+          <span class="dp-page-no">02 / 09</span>
         </div>
-        <div class="deck-meta">Vertical SaaS · founder-led<br><strong>Foundation locked before paid spend</strong></div>
-      </a>
+        <h3 class="dp-h2">Pillars <em>by sales role.</em></h3>
+        <p class="dp-lede">Each pillar tagged for the job it does. Target ratios derived from what's already winning in your scrape.</p>
+
+        <div class="pl-grid">
+          <div class="pl-card">
+            <div class="pl-job">◆ Authority</div>
+            <div class="pl-name">Founder &amp; family</div>
+            <div class="pl-pct">28<span>%</span></div>
+          </div>
+          <div class="pl-card">
+            <div class="pl-job">◆ Surface demand</div>
+            <div class="pl-name">Reaction &amp; show</div>
+            <div class="pl-pct">25<span>%</span></div>
+          </div>
+          <div class="pl-card">
+            <div class="pl-job">◆ Build trust</div>
+            <div class="pl-name">Why-this-works</div>
+            <div class="pl-pct">22<span>%</span></div>
+          </div>
+          <div class="pl-card">
+            <div class="pl-job">◆ Convert</div>
+            <div class="pl-name">Counter-position</div>
+            <div class="pl-pct">25<span>%</span></div>
+          </div>
+        </div>
+
+        <div class="dp-foot" style="margin-top:1rem;"><span>The Sprint · Pillars</span><span>Sample preview</span></div>
+      </div>
+
+      <!-- DECK PAGE 3 — 30 HOOKS -->
+      <div class="deck-page">
+        <div class="dp-head">
+          <span class="dp-folio">D04 · 30 Hooks</span>
+          <span class="dp-page-no">07 / 12</span>
+        </div>
+        <h3 class="dp-h2">Pre-written <em>hook bank.</em></h3>
+        <p class="dp-lede">Tagged by pillar. Designed to stop scroll in 1.5s. Each one paired with an on-camera frame + on-screen text.</p>
+
+        <ol class="hk-list">
+          <li class="hk-item"><span class="hk-tag">Identity</span>"What every other [category] doesn't want you to know."</li>
+          <li class="hk-item"><span class="hk-tag">Counter</span>"We don't do bounce houses. Here's why parents keep asking."</li>
+          <li class="hk-item"><span class="hk-tag">Confession</span>"I almost stopped doing this last year."</li>
+          <li class="hk-item"><span class="hk-tag">Stat</span>"3 of 4 [category] founders skip this. It's the only thing that converts."</li>
+          <li class="hk-item"><span class="hk-tag">Named moment</span>"The first time my kid saw one of these, he forgot how to talk for 6 seconds."</li>
+          <li class="hk-item"><span class="hk-tag">Question</span>"What does a [category] event actually do for a kid's nervous system?"</li>
+        </ol>
+
+        <div class="dp-foot"><span>The Sprint · Hooks</span><span>Sample preview</span></div>
+      </div>
 
     </div>
   </section>
@@ -207,11 +240,10 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
   <section>
     <span class="section-tag">Engine 2 · Production</span>
     <h2 class="section-h">What we <em>make</em> from your raw.</h2>
-    <p class="section-lede">Your iPhone footage, event photos, voice memos, half-written ideas — in. Edited reels, carousels, captions, a full month's calendar — out. Three real before/afters.</p>
+    <p class="section-lede">Your iPhone footage, event photos, voice memos, half-written ideas — in. Edited reels, carousels, captions, a full month's calendar — out.</p>
 
     <div class="ba-grid">
 
-      <!-- BA 1 — RAW PHOTO → CARO SLIDE -->
       <div class="ba-card">
         <div class="ba-row">
           <div class="ba-tile raw">Your iPhone photo<br>(unedited)</div>
@@ -224,7 +256,6 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
         <div class="ba-label"><strong>Photo → Carousel slide</strong>Hook + on-image text + caption rewrite. Designed to stop scroll in 1.5s.</div>
       </div>
 
-      <!-- BA 2 — RAW CLIP → REEL -->
       <div class="ba-card">
         <div class="ba-row">
           <div class="ba-tile raw">Your phone clip<br>(45s, no cuts)</div>
@@ -234,10 +265,9 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
             "What every other entertainer skips."
           </div>
         </div>
-        <div class="ba-label"><strong>Clip → Reel</strong>Trimmed, captioned, hooked, scored. Vertical export, posted via Blotato.</div>
+        <div class="ba-label"><strong>Clip → Reel</strong>Trimmed, captioned, hooked, scored. Vertical export, posted via your scheduler.</div>
       </div>
 
-      <!-- BA 3 — IDEA → CALENDAR -->
       <div class="ba-card">
         <div class="ba-row">
           <div class="ba-tile raw">Your loose idea<br>("post about the science")</div>
