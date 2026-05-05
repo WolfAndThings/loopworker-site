@@ -57,10 +57,20 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
 .section-tag::before { content: '◆'; color: #D4A017; margin-right: 0.5em; }
 .section-lede { color: #B5B5B5; max-width: 660px; margin: 0 0 2.4rem; font-size: 0.97rem; }
 
-/* DECK PREVIEW (paper-style mock pages) */
-.deck-stack { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; }
-@media (max-width: 1000px) { .deck-stack { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; } }
-.deck-page { position: relative; background: linear-gradient(180deg, #0d0d0d, #060606); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 1.4rem 1.4rem 1.2rem; display: flex; flex-direction: column; box-shadow: 0 28px 60px -36px rgba(0,0,0,0.9), 0 4px 12px -4px rgba(0,0,0,0.5); transition: transform 0.32s cubic-bezier(.2,.7,.2,1), border-color 0.32s, box-shadow 0.32s; overflow: hidden; min-height: 560px; }
+/* DECK PREVIEW — horizontal scroll-snap carousel */
+.deck-scroll-wrap { position: relative; margin: 0 -1.5rem; padding: 0 1.5rem; }
+.deck-scroll-wrap::before, .deck-scroll-wrap::after { content: ''; position: absolute; top: 0; bottom: 1rem; width: 60px; pointer-events: none; z-index: 2; }
+.deck-scroll-wrap::before { left: 0; background: linear-gradient(90deg, #080808 10%, transparent); }
+.deck-scroll-wrap::after { right: 0; background: linear-gradient(270deg, #080808 10%, transparent); }
+.deck-scroll-hint { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: #555; margin-top: 0.6rem; padding-left: 0.2rem; }
+.deck-scroll-hint::before { content: '→ '; color: #D4A017; }
+.deck-stack { display: flex; gap: 1.4rem; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0.5rem 0 1.2rem; scrollbar-width: thin; scrollbar-color: rgba(212,160,23,0.3) transparent; }
+.deck-stack::-webkit-scrollbar { height: 6px; }
+.deck-stack::-webkit-scrollbar-track { background: transparent; }
+.deck-stack::-webkit-scrollbar-thumb { background: rgba(212,160,23,0.28); border-radius: 3px; }
+.deck-stack::-webkit-scrollbar-thumb:hover { background: rgba(212,160,23,0.5); }
+.deck-page { position: relative; flex: 0 0 360px; scroll-snap-align: start; background: linear-gradient(180deg, #0d0d0d, #060606); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 1.4rem 1.4rem 1.2rem; display: flex; flex-direction: column; box-shadow: 0 28px 60px -36px rgba(0,0,0,0.9), 0 4px 12px -4px rgba(0,0,0,0.5); transition: transform 0.32s cubic-bezier(.2,.7,.2,1), border-color 0.32s, box-shadow 0.32s; overflow: hidden; min-height: 540px; }
+@media (max-width: 700px) { .deck-page { flex: 0 0 84vw; min-height: 500px; } }
 .deck-page::before { content: ''; position: absolute; inset: 0; background: radial-gradient(140% 50% at 50% -10%, rgba(212,160,23,0.05), transparent 55%); pointer-events: none; }
 .deck-page:hover { transform: translateY(-6px); border-color: rgba(212,160,23,0.32); box-shadow: 0 34px 80px -28px rgba(212,160,23,0.18), 0 4px 12px -4px rgba(0,0,0,0.5); }
 .dp-head { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 0.7rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.08); position: relative; z-index: 1; }
@@ -213,63 +223,126 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
     </div>
   </header>
 
-  <!-- ENGINE 1 — DECK PAGE PREVIEWS -->
+  <!-- ENGINE 1 — VALUE CARDS -->
   <section>
-    <span class="section-tag">Engine 1 · Strategy</span>
-    <h2 class="section-h">The pages that <em>actually move money.</em></h2>
-    <p class="section-lede">Three pages from a real Sprint deck — competitor map, pricing ladder, claims guardrails. The work that tells you why your competitors are winning, where to sit on the shelf, and what you can say without getting sued. Sample data, real format.</p>
+    <span class="section-tag">What you walk away knowing</span>
+    <h2 class="section-h">Eight things you'll <em>actually know</em> when this lands in your inbox.</h2>
+    <p class="section-lede">Every Sprint maps to a question you've been asking yourself for months. We answer eight of them with data, not opinion. Scroll the cards →</p>
 
-    <div class="deck-stack">
+    <div class="deck-scroll-wrap">
+      <div class="deck-stack">
 
-      <div class="deck-page">
-        <div class="dp-head"><span class="dp-folio">D02 · Competitor Map</span><span class="dp-page-no">06 / 14</span></div>
-        <h3 class="dp-h2">Why your competitors are <em>winning</em> — and where they leak.</h3>
-        <p class="dp-lede">8–12 competitors verified live. Pricing pages, IG performance, ad creative, hero copy, claims posture. What each one's doing well. Where each one's quietly bleeding.</p>
-        <div class="comp-row"><div class="comp-name">Direct comp · 32K IG</div><div class="comp-strength">Books out 6 weeks ahead</div><div class="comp-gap">Zero founder on camera</div></div>
-        <div class="comp-row"><div class="comp-name">Direct comp · 18K IG</div><div class="comp-strength">$95 avg ticket, top of cat.</div><div class="comp-gap">Brand looks 2018, no reels</div></div>
-        <div class="comp-row"><div class="comp-name">Adjacent · 410K IG</div><div class="comp-strength">Owns "premium ritual" lane</div><div class="comp-gap">2 wk wait, won't travel</div></div>
-        <div class="comp-row"><div class="comp-name">Aspirational · 2.4M IG</div><div class="comp-strength">Owns the cultural mention</div><div class="comp-gap">Priced past your buyer 4×</div></div>
-        <div class="lane-callout">
-          <div class="lane-tag">◆ The lane sitting open</div>
-          <div class="lane-thesis">Founder-on-camera + premium-ritual framing + your-buyer pricing. Three of the four miss two of those each. You can take it.</div>
+        <!-- 1 · COMPETITORS -->
+        <div class="deck-page">
+          <div class="dp-head"><span class="dp-folio">01 · Competitor Map</span><span class="dp-page-no">If you've wondered</span></div>
+          <h3 class="dp-h2">Why your competitors are <em>winning.</em></h3>
+          <p class="dp-lede">Not the surface-level "they post more." The actual structural advantages — pricing, positioning, audience, ad creative — and where each one quietly leaks.</p>
+          <div class="comp-row"><div class="comp-name">Direct comp · A</div><div class="comp-strength">Books out weeks ahead</div><div class="comp-gap">Zero founder on camera</div></div>
+          <div class="comp-row"><div class="comp-name">Direct comp · B</div><div class="comp-strength">Top-of-category pricing</div><div class="comp-gap">Brand looks dated</div></div>
+          <div class="comp-row"><div class="comp-name">Adjacent</div><div class="comp-strength">Owns the "premium ritual" lane</div><div class="comp-gap">High-touch only, slow</div></div>
+          <div class="comp-row"><div class="comp-name">Aspirational</div><div class="comp-strength">Owns cultural narrative</div><div class="comp-gap">Priced past your buyer</div></div>
+          <div class="lane-callout"><div class="lane-tag">◆ The lane sitting open</div><div class="lane-thesis">Founder-led + premium framing + your-buyer pricing. Three of the four miss two each. You take it.</div></div>
+          <div class="dp-foot"><span>You'll know</span><span>Where you fit</span></div>
         </div>
-        <div class="dp-foot"><span>The Sprint · Competitor Map</span><span>Sample preview</span></div>
+
+        <!-- 2 · PRICING -->
+        <div class="deck-page">
+          <div class="dp-head"><span class="dp-folio">02 · Pricing Ladder</span><span class="dp-page-no">If you've wondered</span></div>
+          <h3 class="dp-h2">Exactly what to <em>charge.</em></h3>
+          <p class="dp-lede">Stop guessing. Live category anchors pulled this month. Where to sit, why, what to charge for the next SKU up, when to bump.</p>
+          <div class="price-rail">
+            <div class="price-tick" style="--y: 8%;"><span class="pt-label">Aspirational anchor</span><span class="pt-amt">$$$$</span></div>
+            <div class="price-tick" style="--y: 30%;"><span class="pt-label">Premium category</span><span class="pt-amt">$$$</span></div>
+            <div class="price-tick highlight" style="--y: 52%;"><span class="pt-label">★ Recommended sit</span><span class="pt-amt">$$</span></div>
+            <div class="price-tick" style="--y: 70%;"><span class="pt-label">Mid-market avg</span><span class="pt-amt">$$</span></div>
+            <div class="price-tick" style="--y: 88%;"><span class="pt-label">Floor / commodity</span><span class="pt-amt">$</span></div>
+          </div>
+          <div class="price-note">Where you sit shapes who buys, what they expect, and how fast you scale. We give you a defensible number and the math underneath it.</div>
+          <div class="dp-foot"><span>You'll know</span><span>What to charge</span></div>
+        </div>
+
+        <!-- 3 · BUYER -->
+        <div class="deck-page">
+          <div class="dp-head"><span class="dp-folio">03 · Buyer Map</span><span class="dp-page-no">If you've wondered</span></div>
+          <h3 class="dp-h2">Who's <em>actually buying.</em></h3>
+          <p class="dp-lede">4 personas mapped — psychographics, what they currently buy, the trigger moment, what they tell their friend after.</p>
+          <ol class="hk-list">
+            <li class="hk-item"><span class="hk-tag">Persona 01</span>The high-trust buyer · researches before buying · your easiest yes if you show proof.</li>
+            <li class="hk-item"><span class="hk-tag">Persona 02</span>The reset buyer · buys when life shifts · trigger-based outreach wins.</li>
+            <li class="hk-item"><span class="hk-tag">Persona 03</span>The premium gifter · buys for someone else · packaging is the product.</li>
+            <li class="hk-item"><span class="hk-tag">Persona 04</span>The ingredient buyer · buys on substance · claims have to be airtight.</li>
+          </ol>
+          <div class="dp-foot"><span>You'll know</span><span>Who to talk to</span></div>
+        </div>
+
+        <!-- 4 · CLAIMS -->
+        <div class="deck-page">
+          <div class="dp-head"><span class="dp-folio">04 · Claims Guardrails</span><span class="dp-page-no">If you've wondered</span></div>
+          <h3 class="dp-h2">What you can <em>say</em> — without getting sued.</h3>
+          <p class="dp-lede">Three-tier system for your category. Safe to use anywhere. Conditional with proof on file. The phrases that trigger an FTC letter.</p>
+          <div class="claim-tier"><div class="ct-head safe"><span class="ct-dot"></span>SAFE · use anywhere</div><ul class="ct-list"><li>"Made without [X]"</li><li>"Thoughtfully formulated"</li><li>"Ingredient transparency"</li></ul></div>
+          <div class="claim-tier"><div class="ct-head cond"><span class="ct-dot"></span>CONDITIONAL · with proof</div><ul class="ct-list"><li>"Biodegradable" — needs sub.</li><li>"Clinically tested" — study link</li><li>"Plastic-free" — packaging spec</li></ul></div>
+          <div class="claim-tier"><div class="ct-head off"><span class="ct-dot"></span>OFF-LIMITS · never</div><ul class="ct-list"><li>"Cures / treats / prevents"</li><li>"100% non-toxic"</li><li>"Medical-grade"</li></ul></div>
+          <div class="dp-foot"><span>You'll know</span><span>What's safe to say</span></div>
+        </div>
+
+        <!-- 5 · OFFER LADDER -->
+        <div class="deck-page">
+          <div class="dp-head"><span class="dp-folio">05 · Offer Architecture</span><span class="dp-page-no">If you've wondered</span></div>
+          <h3 class="dp-h2">What your <em>full offer ladder</em> should look like.</h3>
+          <p class="dp-lede">From free entry to premium core to retainer or membership. What converts at each rung. What gates the climb.</p>
+          <div class="pl-grid">
+            <div class="pl-card"><div class="pl-job">◆ Top of funnel</div><div class="pl-name">Free / lead magnet</div><div class="pl-pct">$<span>0</span></div></div>
+            <div class="pl-card"><div class="pl-job">◆ Tripwire</div><div class="pl-name">Low-stakes entry</div><div class="pl-pct">$<span>·</span></div></div>
+            <div class="pl-card"><div class="pl-job">◆ Core offer</div><div class="pl-name">Your headline product</div><div class="pl-pct">$$<span>·</span></div></div>
+            <div class="pl-card"><div class="pl-job">◆ Retainer / VIP</div><div class="pl-name">Recurring or premium</div><div class="pl-pct">$$$<span>·</span></div></div>
+          </div>
+          <div class="dp-foot"><span>You'll know</span><span>How to scale</span></div>
+        </div>
+
+        <!-- 6 · HOOK BANK -->
+        <div class="deck-page">
+          <div class="dp-head"><span class="dp-folio">06 · Hook Bank</span><span class="dp-page-no">If you've wondered</span></div>
+          <h3 class="dp-h2">What stops the <em>scroll.</em></h3>
+          <p class="dp-lede">30 hooks tagged by archetype. Identity. Counter-position. Confession. Stat. Named moment. Question. Each one paired with on-camera direction.</p>
+          <ol class="hk-list">
+            <li class="hk-item"><span class="hk-tag">Identity</span>"What every other [X] doesn't want you to know."</li>
+            <li class="hk-item"><span class="hk-tag">Counter</span>"We don't do [obvious thing]. Here's why people keep asking."</li>
+            <li class="hk-item"><span class="hk-tag">Confession</span>"I almost stopped doing this last year."</li>
+            <li class="hk-item"><span class="hk-tag">Stat</span>"Most [your category] founders skip this. It's the only thing that converts."</li>
+            <li class="hk-item"><span class="hk-tag">Named moment</span>"The first time someone saw one of these, they forgot how to talk for 6 seconds."</li>
+            <li class="hk-item"><span class="hk-tag">Question</span>"What does [your service] actually do for a kid's nervous system?"</li>
+          </ol>
+          <div class="dp-foot"><span>You'll know</span><span>What to film tomorrow</span></div>
+        </div>
+
+        <!-- 7 · CHANNEL MIX -->
+        <div class="deck-page">
+          <div class="dp-head"><span class="dp-folio">07 · Channel Mix</span><span class="dp-page-no">If you've wondered</span></div>
+          <h3 class="dp-h2">Where to <em>actually show up.</em></h3>
+          <p class="dp-lede">Stop posting everywhere. We map your audience to the platforms where they actually buy. What to post on each. How they hand off to one another.</p>
+          <div class="comp-row"><div class="comp-name">IG · Reels-led</div><div class="comp-strength">Buyer scrolls late at night</div><div class="comp-gap">Stories drive bookings</div></div>
+          <div class="comp-row"><div class="comp-name">TikTok · Discovery</div><div class="comp-strength">First-touch reach engine</div><div class="comp-gap">Founder face wins here</div></div>
+          <div class="comp-row"><div class="comp-name">LinkedIn</div><div class="comp-strength">B2B + investor proof</div><div class="comp-gap">Long-form earns trust</div></div>
+          <div class="comp-row"><div class="comp-name">Email · Owned</div><div class="comp-strength">Convert + retain</div><div class="comp-gap">No algorithm to lose to</div></div>
+          <div class="lane-callout"><div class="lane-tag">◆ Where you don't need to be</div><div class="lane-thesis">The platforms that look fun but won't move your number. Saying no is half the strategy.</div></div>
+          <div class="dp-foot"><span>You'll know</span><span>Where to spend time</span></div>
+        </div>
+
+        <!-- 8 · ROI MODEL -->
+        <div class="deck-page">
+          <div class="dp-head"><span class="dp-folio">08 · ROI Projection</span><span class="dp-page-no">If you've wondered</span></div>
+          <h3 class="dp-h2">What <em>year one</em> could realistically look like.</h3>
+          <p class="dp-lede">Three scenarios — Conservative, Realistic, Aggressive. Modeled from category benchmarks + your existing performance. Defensible to an investor or partner.</p>
+          <div class="audit-row"><span class="ar-label">Conservative</span><span class="ar-bar" style="background:rgba(108,197,122,0.18);"><span style="display:block;height:100%;width:30%;background:#6CC57A;border-radius:2px;"></span></span><span class="ar-num">Floor</span></div>
+          <div class="audit-row"><span class="ar-label">Realistic</span><span class="ar-bar" style="background:rgba(212,160,23,0.18);"><span style="display:block;height:100%;width:65%;background:#D4A017;border-radius:2px;"></span></span><span class="ar-num">Plan</span></div>
+          <div class="audit-row"><span class="ar-label">Aggressive</span><span class="ar-bar" style="background:rgba(212,160,23,0.18);"><span style="display:block;height:100%;width:95%;background:#D4A017;border-radius:2px;"></span></span><span class="ar-num">Stretch</span></div>
+          <div class="price-note">Each scenario shows what has to be true (post cadence, conversion rate, channel mix) for the number to land. You can pick the lane you're playing in.</div>
+          <div class="dp-foot"><span>You'll know</span><span>What's possible</span></div>
+        </div>
+
       </div>
-
-      <div class="deck-page">
-        <div class="dp-head"><span class="dp-folio">D05 · Pricing Ladder</span><span class="dp-page-no">03 / 08</span></div>
-        <h3 class="dp-h2">Exactly what to <em>charge.</em> And why.</h3>
-        <p class="dp-lede">Live category anchors pulled this month. Where to sit, why that band wins, what to bump in Y2 once your trust signals fire.</p>
-        <div class="price-rail">
-          <div class="price-tick" style="--y: 8%;"><span class="pt-label">Aspirational anchor</span><span class="pt-amt">$185</span></div>
-          <div class="price-tick" style="--y: 30%;"><span class="pt-label">Premium category</span><span class="pt-amt">$120</span></div>
-          <div class="price-tick highlight" style="--y: 52%;"><span class="pt-label">★ Recommended sit</span><span class="pt-amt">$80</span></div>
-          <div class="price-tick" style="--y: 70%;"><span class="pt-label">Mid-market avg</span><span class="pt-amt">$54</span></div>
-          <div class="price-tick" style="--y: 88%;"><span class="pt-label">Floor / commodity</span><span class="pt-amt">$22</span></div>
-        </div>
-        <div class="price-note">$80 sits in the "considered, not casual" band — above commodity, below ceremony. The data supports a $20 lift in Y2 once trust signals fire.</div>
-        <div class="dp-foot"><span>The Sprint · Pricing</span><span>Sample preview</span></div>
-      </div>
-
-      <div class="deck-page">
-        <div class="dp-head"><span class="dp-folio">D09 · Claims Guardrails</span><span class="dp-page-no">04 / 11</span></div>
-        <h3 class="dp-h2">What you can <em>say.</em> What gets you sued.</h3>
-        <p class="dp-lede">Three-tier claims system for your category. Safe to use anywhere. Conditional with proof on file. The phrases that trigger an FTC letter.</p>
-        <div class="claim-tier">
-          <div class="ct-head safe"><span class="ct-dot"></span>SAFE · use anywhere</div>
-          <ul class="ct-list"><li>"Made without [X]"</li><li>"Thoughtfully formulated"</li><li>"Ingredient transparency"</li></ul>
-        </div>
-        <div class="claim-tier">
-          <div class="ct-head cond"><span class="ct-dot"></span>CONDITIONAL · with proof</div>
-          <ul class="ct-list"><li>"Biodegradable" — needs sub.</li><li>"Clinically tested" — study link</li><li>"Plastic-free" — packaging spec</li></ul>
-        </div>
-        <div class="claim-tier">
-          <div class="ct-head off"><span class="ct-dot"></span>OFF-LIMITS · never</div>
-          <ul class="ct-list"><li>"Cures / treats / prevents"</li><li>"100% non-toxic"</li><li>"Medical-grade"</li></ul>
-        </div>
-        <div class="dp-foot"><span>The Sprint · Guardrails</span><span>Sample preview</span></div>
-      </div>
-
+      <div class="deck-scroll-hint">Scroll for more</div>
     </div>
   </section>
 
@@ -373,9 +446,9 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
 
     <div class="cs-row">
       <a href="/case-studies/kind-bubbles.html" class="cs-card-mini" data-track="Sprint Case Kind Bubbles">
-        <div class="cs-kick">◆ Public · Bay Area + Sac · Sprint Lite</div>
-        <h3>Kind Bubbles · $754 mapped a $54–65K Y1 path.</h3>
-        <p>Single-dad biochemist running mobile bubble events. Founder-on-camera converts 3–4× event footage. Real client, real numbers, full case study.</p>
+        <div class="cs-kick">◆ Public · Founder-led · Sprint Lite</div>
+        <h3>Founder-led service business.</h3>
+        <p>Mobile event company run by a former biochemist. The audit found the founder was burying the most valuable asset on his feed — himself. Four pillars locked, year-one model built. Real client, public.</p>
         <span class="cs-read">Read the case study →</span>
       </a>
       <a href="/case-studies/luxury-home-brand.html" class="cs-card-mini" data-track="Sprint Case Luxury Home">
