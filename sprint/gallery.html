@@ -96,6 +96,43 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
 /* footer of each page */
 .dp-foot { font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase; color: #555; margin-top: 1rem; padding-top: 0.7rem; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; position: relative; z-index: 1; }
 
+/* COMPETITOR — rows */
+.comp-row { display: grid; grid-template-columns: 0.9fr 1fr 1fr; gap: 0.5rem; padding: 0.6rem 0; border-bottom: 1px dashed rgba(255,255,255,0.06); position: relative; z-index: 1; font-size: 0.7rem; line-height: 1.4; }
+.comp-row .comp-name { color: #FFF; font-weight: 600; font-size: 0.74rem; }
+.comp-row .comp-strength { color: #C0C0C0; }
+.comp-row .comp-strength::before { content: '✓ '; color: #6CC57A; font-weight: 700; }
+.comp-row .comp-gap { color: #B5B5B5; }
+.comp-row .comp-gap::before { content: '✗ '; color: #c66; font-weight: 700; }
+.lane-callout { margin-top: 1rem; padding: 0.85rem 0.95rem; background: linear-gradient(180deg, rgba(212,160,23,0.08), rgba(212,160,23,0.02)); border: 1px solid rgba(212,160,23,0.22); border-radius: 5px; position: relative; z-index: 1; }
+.lane-tag { font-size: 0.58rem; letter-spacing: 0.18em; color: #D4A017; font-weight: 800; text-transform: uppercase; margin-bottom: 0.35rem; }
+.lane-thesis { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.92rem; color: #FFF; line-height: 1.35; }
+
+/* PRICING — vertical rail */
+.price-rail { position: relative; height: 220px; margin: 0.4rem 0 1rem; padding: 0 0.4rem; z-index: 1; }
+.price-rail::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: linear-gradient(180deg, rgba(212,160,23,0.4), rgba(212,160,23,0.05)); transform: translateX(-50%); }
+.price-tick { position: absolute; left: 0; right: 0; top: var(--y); display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; transform: translateY(-50%); }
+.price-tick::after { content: ''; position: absolute; left: 50%; top: 50%; width: 7px; height: 7px; background: #D4A017; opacity: 0.6; border-radius: 999px; transform: translate(-50%, -50%); }
+.price-tick.highlight::after { width: 13px; height: 13px; background: #D4A017; opacity: 1; box-shadow: 0 0 0 4px rgba(212,160,23,0.18); }
+.price-tick .pt-label { color: #C0C0C0; padding-right: 1rem; text-align: right; flex: 1; }
+.price-tick.highlight .pt-label { color: #D4A017; font-weight: 700; }
+.price-tick .pt-amt { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #FFF; font-size: 0.95rem; padding-left: 1rem; flex: 1; font-weight: 500; }
+.price-tick.highlight .pt-amt { color: #D4A017; font-size: 1.15rem; }
+.price-note { font-size: 0.7rem; color: #888; line-height: 1.5; padding: 0.6rem 0.8rem; background: rgba(255,255,255,0.02); border-left: 2px solid rgba(212,160,23,0.4); border-radius: 0 5px 5px 0; position: relative; z-index: 1; }
+
+/* CLAIMS — tiers */
+.claim-tier { margin-bottom: 0.7rem; position: relative; z-index: 1; }
+.claim-tier:last-of-type { margin-bottom: 0; }
+.ct-head { font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 800; padding: 0.35rem 0.5rem; border-radius: 3px; margin-bottom: 0.4rem; display: flex; align-items: center; }
+.ct-head .ct-dot { display: inline-block; width: 6px; height: 6px; border-radius: 999px; margin-right: 0.5em; }
+.ct-head.safe { background: rgba(108,197,122,0.08); color: #6CC57A; border: 1px solid rgba(108,197,122,0.22); }
+.ct-head.safe .ct-dot { background: #6CC57A; }
+.ct-head.cond { background: rgba(212,160,23,0.08); color: #D4A017; border: 1px solid rgba(212,160,23,0.22); }
+.ct-head.cond .ct-dot { background: #D4A017; }
+.ct-head.off { background: rgba(204,68,68,0.08); color: #c66; border: 1px solid rgba(204,68,68,0.22); }
+.ct-head.off .ct-dot { background: #c66; }
+.ct-list { list-style: none; padding: 0 0 0 0.7rem; margin: 0; }
+.ct-list li { font-size: 0.7rem; color: #C0C0C0; padding: 0.2rem 0; line-height: 1.4; }
+
 /* ── BEFORE / AFTER ── */
 .ba-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.4rem; }
 @media (max-width: 880px) { .ba-grid { grid-template-columns: 1fr; } }
@@ -141,96 +178,99 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
   <!-- HERO -->
   <header class="gal-hero">
     <span class="gal-eyebrow">The Studio · Two engines</span>
-    <h1 class="gal-h1">Strategy with <em>receipts.</em><br>Then content that runs on it.</h1>
-    <p class="gal-sub">Below: actual pages from a Sprint deck (sample data, real format). And what we make from your raw.</p>
+    <h1 class="gal-h1">You'll <em>actually know</em><br>what to do for your business.</h1>
+    <p class="gal-sub">Why your competitors are killing it. Where to sit on the shelf. What you can say without getting sued. The lane that's open in your category. Real pages from a Sprint deck below.</p>
   </header>
 
   <!-- ENGINE 1: WHAT OUR DECK PAGES LOOK LIKE -->
   <section>
     <span class="section-tag">Engine 1 · Strategy</span>
-    <h2 class="section-h">What our <em>deck pages</em> look like.</h2>
-    <p class="section-lede">Every Sprint ships as a polished long-form deck. Three pages from a sample deliverable — sample data, real format. Reads in 20 minutes. Defensible to a 2-hour critical conversation.</p>
+    <h2 class="section-h">The pages that <em>actually move money.</em></h2>
+    <p class="section-lede">Three pages from a real Sprint deck — competitor map, pricing ladder, claims guardrails. The work that tells you why your competitors are winning, where to sit on the shelf, and what you can say without getting sued. Sample data, real format.</p>
 
     <div class="deck-stack">
 
-      <!-- DECK PAGE 1 — DEEP AUDIT SCORECARD -->
+      <!-- DECK PAGE 1 — COMPETITOR BREAKDOWN -->
       <div class="deck-page">
         <div class="dp-head">
-          <span class="dp-folio">D01 · Deep Audit</span>
-          <span class="dp-page-no">04 / 18</span>
+          <span class="dp-folio">D02 · Competitor Map</span>
+          <span class="dp-page-no">06 / 14</span>
         </div>
-        <h3 class="dp-h2">12-dimension <em>scorecard.</em></h3>
-        <p class="dp-lede">Pulled from 30+ live posts. Where the brand is currently winning, where it's leaking, scored 0–10.</p>
+        <h3 class="dp-h2">Why your competitors are <em>winning</em> — and where they leak.</h3>
+        <p class="dp-lede">8–12 competitors verified live. Pricing pages, IG performance, ad creative, hero copy, claims posture. What each one's actually doing well. Where each one's quietly bleeding.</p>
 
-        <div class="audit-row" data-s="9"><span class="ar-label">Founder presence</span><span class="ar-bar"></span><span class="ar-num">9</span></div>
-        <div class="audit-row" data-s="3"><span class="ar-label">Hook strength</span><span class="ar-bar"></span><span class="ar-num">3</span></div>
-        <div class="audit-row" data-s="6"><span class="ar-label">Pillar coverage</span><span class="ar-bar"></span><span class="ar-num">6</span></div>
-        <div class="audit-row" data-s="2"><span class="ar-label">Save / share signal</span><span class="ar-bar"></span><span class="ar-num">2</span></div>
-        <div class="audit-row" data-s="7"><span class="ar-label">Visual consistency</span><span class="ar-bar"></span><span class="ar-num">7</span></div>
-        <div class="audit-row" data-s="5"><span class="ar-label">Caption open-line</span><span class="ar-bar"></span><span class="ar-num">5</span></div>
-        <div class="audit-row" data-s="3"><span class="ar-label">CTA discipline</span><span class="ar-bar"></span><span class="ar-num">3</span></div>
+        <div class="comp-row"><div class="comp-name">Direct comp · 32K IG</div><div class="comp-strength">Books out 6 weeks ahead</div><div class="comp-gap">Zero founder on camera</div></div>
+        <div class="comp-row"><div class="comp-name">Direct comp · 18K IG</div><div class="comp-strength">$95 avg ticket, top of cat.</div><div class="comp-gap">Brand looks 2018, no reels</div></div>
+        <div class="comp-row"><div class="comp-name">Adjacent · 410K IG</div><div class="comp-strength">Owns "premium ritual" lane</div><div class="comp-gap">2 wk wait, won't travel</div></div>
+        <div class="comp-row"><div class="comp-name">Aspirational · 2.4M IG</div><div class="comp-strength">Owns the cultural mention</div><div class="comp-gap">Priced past your buyer 4×</div></div>
 
-        <div class="audit-stat-row" style="margin-top:0.8rem;"><span>Median views</span><strong>147</strong></div>
-        <div class="audit-stat-row"><span>Top post</span><strong>1,880 views</strong></div>
-        <div class="audit-stat-row"><span>Format mix</span><strong>81% reels · 13% caro</strong></div>
+        <div class="lane-callout">
+          <div class="lane-tag">◆ The lane sitting open</div>
+          <div class="lane-thesis">Founder-on-camera + premium-ritual framing + your-buyer pricing. Three of the four miss two of those each. You can take it.</div>
+        </div>
 
-        <div class="dp-foot"><span>The Sprint · Audit</span><span>Sample preview</span></div>
+        <div class="dp-foot"><span>The Sprint · Competitor Map</span><span>Sample preview</span></div>
       </div>
 
-      <!-- DECK PAGE 2 — FOUR PILLARS -->
+      <!-- DECK PAGE 2 — PRICING LADDER -->
       <div class="deck-page">
         <div class="dp-head">
-          <span class="dp-folio">D03 · Four Pillars</span>
-          <span class="dp-page-no">02 / 09</span>
+          <span class="dp-folio">D05 · Pricing Ladder</span>
+          <span class="dp-page-no">03 / 08</span>
         </div>
-        <h3 class="dp-h2">Pillars <em>by sales role.</em></h3>
-        <p class="dp-lede">Each pillar tagged for the job it does. Target ratios derived from what's already winning in your scrape.</p>
+        <h3 class="dp-h2">Exactly what to <em>charge.</em> And why.</h3>
+        <p class="dp-lede">Live category anchors pulled this month. Where to sit, why that band wins, what to bump in Y2 once your trust signals fire.</p>
 
-        <div class="pl-grid">
-          <div class="pl-card">
-            <div class="pl-job">◆ Authority</div>
-            <div class="pl-name">Founder &amp; family</div>
-            <div class="pl-pct">28<span>%</span></div>
-          </div>
-          <div class="pl-card">
-            <div class="pl-job">◆ Surface demand</div>
-            <div class="pl-name">Reaction &amp; show</div>
-            <div class="pl-pct">25<span>%</span></div>
-          </div>
-          <div class="pl-card">
-            <div class="pl-job">◆ Build trust</div>
-            <div class="pl-name">Why-this-works</div>
-            <div class="pl-pct">22<span>%</span></div>
-          </div>
-          <div class="pl-card">
-            <div class="pl-job">◆ Convert</div>
-            <div class="pl-name">Counter-position</div>
-            <div class="pl-pct">25<span>%</span></div>
-          </div>
+        <div class="price-rail">
+          <div class="price-tick" style="--y: 8%;"><span class="pt-label">Aspirational anchor</span><span class="pt-amt">$185</span></div>
+          <div class="price-tick" style="--y: 30%;"><span class="pt-label">Premium category</span><span class="pt-amt">$120</span></div>
+          <div class="price-tick highlight" style="--y: 52%;"><span class="pt-label">★ Recommended sit</span><span class="pt-amt">$80</span></div>
+          <div class="price-tick" style="--y: 70%;"><span class="pt-label">Mid-market avg</span><span class="pt-amt">$54</span></div>
+          <div class="price-tick" style="--y: 88%;"><span class="pt-label">Floor / commodity</span><span class="pt-amt">$22</span></div>
         </div>
 
-        <div class="dp-foot" style="margin-top:1rem;"><span>The Sprint · Pillars</span><span>Sample preview</span></div>
+        <div class="price-note">$80 sits in the "considered, not casual" band — above commodity, below ceremony. The data supports a $20 lift in Y2 once trust signals fire.</div>
+
+        <div class="dp-foot"><span>The Sprint · Pricing</span><span>Sample preview</span></div>
       </div>
 
-      <!-- DECK PAGE 3 — 30 HOOKS -->
+      <!-- DECK PAGE 3 — CLAIMS GUARDRAILS -->
       <div class="deck-page">
         <div class="dp-head">
-          <span class="dp-folio">D04 · 30 Hooks</span>
-          <span class="dp-page-no">07 / 12</span>
+          <span class="dp-folio">D09 · Claims Guardrails</span>
+          <span class="dp-page-no">04 / 11</span>
         </div>
-        <h3 class="dp-h2">Pre-written <em>hook bank.</em></h3>
-        <p class="dp-lede">Tagged by pillar. Designed to stop scroll in 1.5s. Each one paired with an on-camera frame + on-screen text.</p>
+        <h3 class="dp-h2">What you can <em>say.</em> What gets you sued.</h3>
+        <p class="dp-lede">Three-tier claims system for your category. Safe to use anywhere. Conditional with proof on file. The phrases that trigger an FTC letter.</p>
 
-        <ol class="hk-list">
-          <li class="hk-item"><span class="hk-tag">Identity</span>"What every other [category] doesn't want you to know."</li>
-          <li class="hk-item"><span class="hk-tag">Counter</span>"We don't do bounce houses. Here's why parents keep asking."</li>
-          <li class="hk-item"><span class="hk-tag">Confession</span>"I almost stopped doing this last year."</li>
-          <li class="hk-item"><span class="hk-tag">Stat</span>"3 of 4 [category] founders skip this. It's the only thing that converts."</li>
-          <li class="hk-item"><span class="hk-tag">Named moment</span>"The first time my kid saw one of these, he forgot how to talk for 6 seconds."</li>
-          <li class="hk-item"><span class="hk-tag">Question</span>"What does a [category] event actually do for a kid's nervous system?"</li>
-        </ol>
+        <div class="claim-tier">
+          <div class="ct-head safe"><span class="ct-dot"></span>SAFE · use anywhere</div>
+          <ul class="ct-list">
+            <li>"Made without [X]"</li>
+            <li>"Thoughtfully formulated"</li>
+            <li>"Ingredient transparency"</li>
+          </ul>
+        </div>
 
-        <div class="dp-foot"><span>The Sprint · Hooks</span><span>Sample preview</span></div>
+        <div class="claim-tier">
+          <div class="ct-head cond"><span class="ct-dot"></span>CONDITIONAL · with proof</div>
+          <ul class="ct-list">
+            <li>"Biodegradable" — needs sub.</li>
+            <li>"Clinically tested" — study link</li>
+            <li>"Plastic-free" — packaging spec</li>
+          </ul>
+        </div>
+
+        <div class="claim-tier">
+          <div class="ct-head off"><span class="ct-dot"></span>OFF-LIMITS · never</div>
+          <ul class="ct-list">
+            <li>"Cures / treats / prevents"</li>
+            <li>"100% non-toxic"</li>
+            <li>"Medical-grade"</li>
+          </ul>
+        </div>
+
+        <div class="dp-foot"><span>The Sprint · Guardrails</span><span>Sample preview</span></div>
       </div>
 
     </div>
