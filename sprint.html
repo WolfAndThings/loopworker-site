@@ -104,6 +104,130 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
 .price-tick.highlight .pt-amt { color: #D4A017; font-size: 1.15rem; }
 .price-note { font-size: 0.7rem; color: #888; line-height: 1.5; padding: 0.6rem 0.8rem; background: rgba(255,255,255,0.02); border-left: 2px solid rgba(212,160,23,0.4); border-radius: 0 5px 5px 0; position: relative; z-index: 1; }
 
+/* QUESTION style header (used across all 13 cards) */
+.dp-question { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #888; font-size: 0.92rem; padding: 0.35rem 0 1.1rem; margin: 0; line-height: 1.4; position: relative; z-index: 1; border-bottom: 1px dashed rgba(255,255,255,0.06); margin-bottom: 1rem; }
+.dp-question::before { content: '"'; color: #D4A017; font-size: 1.1em; margin-right: 0.15em; }
+.dp-question::after { content: '"'; color: #D4A017; font-size: 1.1em; margin-left: 0.15em; }
+
+/* SOURCE TAG row at top */
+.dp-source { font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: #555; margin-top: 0.6rem; padding-top: 0.6rem; border-top: 1px solid rgba(255,255,255,0.05); position: relative; z-index: 1; }
+.dp-source strong { color: #D4A017; font-weight: 800; margin-right: 0.5em; }
+
+/* COMPARE GRID — us vs them split */
+.cmp-split { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; position: relative; z-index: 1; flex-grow: 1; }
+.cmp-col { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); border-radius: 5px; padding: 0.7rem 0.7rem 0.65rem; }
+.cmp-col.them { border-color: rgba(212,160,23,0.28); background: rgba(212,160,23,0.04); }
+.cmp-col-h { font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: #888; font-weight: 800; margin-bottom: 0.5rem; }
+.cmp-col.them .cmp-col-h { color: #D4A017; }
+.cmp-attr { font-size: 0.7rem; color: #C0C0C0; padding: 0.32rem 0; border-bottom: 1px dashed rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; }
+.cmp-attr:last-child { border-bottom: none; }
+.cmp-attr .cmp-mark { font-weight: 700; color: #6CC57A; font-size: 0.82rem; }
+.cmp-attr .cmp-mark.x { color: #c66; }
+
+/* QUOTE STACK — review mining */
+.qs-list { position: relative; z-index: 1; flex-grow: 1; }
+.qs-item { background: rgba(255,255,255,0.025); border-left: 2px solid rgba(212,160,23,0.4); padding: 0.55rem 0.7rem; margin-bottom: 0.45rem; border-radius: 0 4px 4px 0; }
+.qs-text { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #FFF; font-size: 0.82rem; line-height: 1.35; }
+.qs-meta { font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: #D4A017; font-weight: 800; margin-top: 0.25rem; }
+
+/* OFFER LADDER */
+.ol-rungs { position: relative; z-index: 1; flex-grow: 1; padding: 0.4rem 0; }
+.ol-rung { display: grid; grid-template-columns: 60px 1fr auto; gap: 0.7rem; align-items: center; padding: 0.5rem 0.7rem; background: rgba(255,255,255,0.025); border-radius: 4px; margin-bottom: 0.45rem; border-left: 3px solid rgba(255,255,255,0.1); }
+.ol-rung.r1 { border-left-color: #6CC57A; }
+.ol-rung.r2 { border-left-color: #B5D4A0; }
+.ol-rung.r3 { border-left-color: #D4A017; background: rgba(212,160,23,0.06); }
+.ol-rung.r4 { border-left-color: #B58915; background: rgba(212,160,23,0.04); }
+.ol-rung-tier { font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: #888; font-weight: 800; }
+.ol-rung-name { font-size: 0.78rem; color: #FFF; }
+.ol-rung-price { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #D4A017; font-weight: 500; font-size: 0.95rem; }
+
+/* HEATMAP — content type x impact */
+.hm-grid { display: grid; grid-template-columns: 1.2fr 0.8fr 0.8fr 0.8fr; gap: 0.3rem; position: relative; z-index: 1; flex-grow: 1; align-content: start; }
+.hm-cell { font-size: 0.62rem; padding: 0.32rem 0.4rem; text-align: center; border-radius: 3px; color: #C0C0C0; }
+.hm-cell.label { text-align: left; color: #FFF; font-weight: 600; font-size: 0.72rem; padding-top: 0.4rem; }
+.hm-cell.head { color: #888; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; font-size: 0.55rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.hm-cell.h1 { background: rgba(108,197,122,0.32); color: #FFF; }
+.hm-cell.h2 { background: rgba(212,160,23,0.32); color: #FFF; }
+.hm-cell.h3 { background: rgba(212,160,23,0.16); }
+.hm-cell.lo { background: rgba(204,68,68,0.18); color: #ddb; }
+.hm-cell.mid { background: rgba(212,160,23,0.12); }
+
+/* SEARCH BAR mockup */
+.sb-list { position: relative; z-index: 1; flex-grow: 1; }
+.sb-row { display: grid; grid-template-columns: 1fr auto; gap: 0.5rem; align-items: center; padding: 0.45rem 0.7rem; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.05); border-radius: 999px; margin-bottom: 0.4rem; font-size: 0.7rem; }
+.sb-row::before { content: '⌕'; color: #D4A017; margin-right: 0.4em; opacity: 0.7; }
+.sb-row .sb-q { color: #FFF; flex: 1; }
+.sb-row .sb-tag { font-size: 0.52rem; letter-spacing: 0.14em; padding: 0.18em 0.5em; border-radius: 999px; text-transform: uppercase; font-weight: 800; }
+.sb-tag.buy { background: rgba(108,197,122,0.18); color: #6CC57A; }
+.sb-tag.cmp { background: rgba(212,160,23,0.18); color: #D4A017; }
+.sb-tag.problem { background: rgba(180,180,255,0.12); color: #aab; }
+
+/* WEBSITE WIREFRAME */
+.ww-frame { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 5px; padding: 0.6rem; position: relative; z-index: 1; flex-grow: 1; }
+.ww-row { display: flex; gap: 0.4rem; padding: 0.4rem 0.5rem; margin-bottom: 0.35rem; border-radius: 3px; font-size: 0.66rem; align-items: center; position: relative; }
+.ww-row.ok { background: rgba(108,197,122,0.08); color: #C0C0C0; border: 1px solid rgba(108,197,122,0.2); }
+.ww-row.leak { background: rgba(204,68,68,0.1); color: #ddb; border: 1px solid rgba(204,68,68,0.32); }
+.ww-row .ww-tag { font-weight: 800; font-size: 0.55rem; letter-spacing: 0.14em; padding: 0.14em 0.4em; border-radius: 999px; }
+.ww-row.ok .ww-tag { background: rgba(108,197,122,0.22); color: #6CC57A; }
+.ww-row.leak .ww-tag { background: rgba(204,68,68,0.22); color: #c66; }
+
+/* PROOF GRID checkbox */
+.pg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; position: relative; z-index: 1; flex-grow: 1; }
+.pg-item { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); border-radius: 4px; padding: 0.5rem 0.6rem; font-size: 0.66rem; display: flex; align-items: center; gap: 0.5rem; color: #C0C0C0; }
+.pg-item .pg-box { width: 14px; height: 14px; border-radius: 3px; border: 1.5px solid rgba(255,255,255,0.18); display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 0.7rem; font-weight: 800; }
+.pg-item.has .pg-box { background: rgba(108,197,122,0.32); border-color: #6CC57A; color: #6CC57A; }
+.pg-item.has .pg-box::after { content: '✓'; }
+.pg-item.miss .pg-box { background: rgba(204,68,68,0.18); border-color: #c66; color: #c66; }
+.pg-item.miss .pg-box::after { content: '×'; }
+
+/* TIMELINE for competitor moves */
+.tl-line { position: relative; z-index: 1; flex-grow: 1; padding: 0.4rem 0 0.4rem 1.4rem; }
+.tl-line::before { content: ''; position: absolute; left: 6px; top: 0.6rem; bottom: 0.6rem; width: 1px; background: linear-gradient(180deg, rgba(212,160,23,0.5), rgba(212,160,23,0.1)); }
+.tl-evt { position: relative; padding: 0.4rem 0; border-bottom: 1px dashed rgba(255,255,255,0.05); }
+.tl-evt:last-child { border-bottom: none; }
+.tl-evt::before { content: ''; position: absolute; left: -1.1rem; top: 0.65rem; width: 9px; height: 9px; border-radius: 999px; background: #D4A017; box-shadow: 0 0 0 3px rgba(212,160,23,0.18); }
+.tl-when { font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase; color: #D4A017; font-weight: 800; }
+.tl-what { font-size: 0.74rem; color: #FFF; line-height: 1.3; margin-top: 0.15rem; }
+.tl-meta { font-size: 0.62rem; color: #888; margin-top: 0.15rem; font-style: italic; }
+
+/* GAUGE / radar score for ad readiness */
+.gg-grid { display: grid; grid-template-columns: 1fr; gap: 0.45rem; position: relative; z-index: 1; flex-grow: 1; }
+.gg-row { display: grid; grid-template-columns: 1fr auto auto; gap: 0.5rem; align-items: center; font-size: 0.72rem; padding: 0.3rem 0; }
+.gg-bar { width: 88px; height: 5px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; position: relative; }
+.gg-bar::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; background: var(--gg-c, #D4A017); border-radius: 3px; width: var(--gg-w, 50%); }
+.gg-row .gg-label { color: #C0C0C0; }
+.gg-row .gg-num { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #FFF; font-size: 0.92rem; min-width: 1.6em; text-align: right; }
+.gg-verdict { margin-top: 0.5rem; padding: 0.6rem 0.7rem; border-radius: 4px; font-size: 0.74rem; font-family: 'Cormorant Garamond', serif; font-style: italic; }
+.gg-verdict.go { background: rgba(108,197,122,0.1); border: 1px solid rgba(108,197,122,0.3); color: #6CC57A; }
+.gg-verdict.wait { background: rgba(212,160,23,0.1); border: 1px solid rgba(212,160,23,0.3); color: #D4A017; }
+
+/* MAP-STYLE pins for local demand */
+.mp-grid { display: grid; grid-template-columns: 1fr; gap: 0.4rem; position: relative; z-index: 1; flex-grow: 1; }
+.mp-pin { display: grid; grid-template-columns: 36px 1fr auto; gap: 0.6rem; align-items: center; padding: 0.5rem 0.6rem; background: rgba(255,255,255,0.025); border-radius: 4px; border: 1px solid rgba(255,255,255,0.05); }
+.mp-pin .mp-icon { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: #D4A017; text-align: center; }
+.mp-pin .mp-name { font-size: 0.74rem; color: #FFF; font-weight: 600; }
+.mp-pin .mp-meta { font-size: 0.6rem; color: #888; margin-top: 0.1rem; }
+.mp-pin .mp-rating { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #D4A017; font-size: 0.8rem; }
+
+/* CHANNEL FIT cards */
+.cf-list { position: relative; z-index: 1; flex-grow: 1; }
+.cf-row { display: grid; grid-template-columns: 1fr auto; gap: 0.5rem; align-items: center; padding: 0.5rem 0.7rem; background: rgba(255,255,255,0.025); border-radius: 4px; margin-bottom: 0.4rem; border-left: 2px solid rgba(255,255,255,0.1); }
+.cf-row.high { border-left-color: #6CC57A; }
+.cf-row.mid { border-left-color: #D4A017; }
+.cf-row .cf-name { font-size: 0.74rem; color: #FFF; font-weight: 600; }
+.cf-row .cf-meta { font-size: 0.6rem; color: #888; margin-top: 0.15rem; font-style: italic; }
+.cf-row .cf-fit { font-size: 0.54rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.18em 0.5em; border-radius: 999px; font-weight: 800; }
+.cf-fit.f-hi { background: rgba(108,197,122,0.18); color: #6CC57A; }
+.cf-fit.f-mid { background: rgba(212,160,23,0.18); color: #D4A017; }
+
+/* FRICTION list (buyer say-yes-sooner) */
+.fr-list { position: relative; z-index: 1; flex-grow: 1; }
+.fr-item { display: grid; grid-template-columns: 1fr 24px 1fr; gap: 0.4rem; align-items: center; padding: 0.45rem 0; border-bottom: 1px dashed rgba(255,255,255,0.05); font-size: 0.7rem; }
+.fr-item:last-child { border-bottom: none; }
+.fr-item .fr-pain { color: #B5B5B5; }
+.fr-item .fr-arrow { color: #D4A017; text-align: center; opacity: 0.6; }
+.fr-item .fr-fix { color: #FFF; }
+
 /* CLAIMS */
 .claim-tier { margin-bottom: 0.7rem; position: relative; z-index: 1; }
 .claim-tier:last-of-type { margin-bottom: 0; }
@@ -241,180 +365,229 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
 
     <div class="deck-scroll-wrap">
       <div class="deck-stack">
-
-        <!-- 1 · COMPETITORS -->
+        <!-- 01 · COMPETITOR ADVANTAGE SCAN -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">01 · Competitor Map</span><span class="dp-page-no">If you've wondered</span></div>
-          <h3 class="dp-h2">The open lane in your category — and <em>how to take it.</em></h3>
-          <p class="dp-lede">We map who's winning, where they leak, and the position no one's claimed yet. You walk away with a defensible spot you can grow into — and the moves that get you there.</p>
-          <div class="comp-row"><div class="comp-name">Direct comp · A</div><div class="comp-strength">Books out weeks ahead</div><div class="comp-gap">Zero founder on camera</div></div>
-          <div class="comp-row"><div class="comp-name">Direct comp · B</div><div class="comp-strength">Top-of-category pricing</div><div class="comp-gap">Brand looks dated</div></div>
-          <div class="comp-row"><div class="comp-name">Adjacent</div><div class="comp-strength">Owns the "premium ritual" lane</div><div class="comp-gap">High-touch only, slow</div></div>
-          <div class="comp-row"><div class="comp-name">Aspirational</div><div class="comp-strength">Owns cultural narrative</div><div class="comp-gap">Priced past your buyer</div></div>
-          <div class="lane-callout"><div class="lane-tag">◆ The lane sitting open</div><div class="lane-thesis">Founder-led + premium framing + your-buyer pricing. Three of the four miss two each. You take it.</div></div>
-          <div class="dp-foot"><span>You'll know</span><span>Where you fit</span></div>
+          <div class="dp-head"><span class="dp-folio">01 · Competitor Advantage Scan</span><span class="dp-page-no">01 / 13</span></div>
+          <p class="dp-question">Why are people choosing them instead of us?</p>
+          <h3 class="dp-h2">See the <em>real reasons</em> buyers pick competitors.</h3>
+          <div class="cmp-split">
+            <div class="cmp-col">
+              <div class="cmp-col-h">YOU</div>
+              <div class="cmp-attr">Trust signals<span class="cmp-mark x">×</span></div>
+              <div class="cmp-attr">Clear offer<span class="cmp-mark x">×</span></div>
+              <div class="cmp-attr">Easy to buy<span class="cmp-mark">✓</span></div>
+              <div class="cmp-attr">Premium feel<span class="cmp-mark x">×</span></div>
+              <div class="cmp-attr">Fast response<span class="cmp-mark">✓</span></div>
+            </div>
+            <div class="cmp-col them">
+              <div class="cmp-col-h">TOP COMP</div>
+              <div class="cmp-attr">Trust signals<span class="cmp-mark">✓</span></div>
+              <div class="cmp-attr">Clear offer<span class="cmp-mark">✓</span></div>
+              <div class="cmp-attr">Easy to buy<span class="cmp-mark">✓</span></div>
+              <div class="cmp-attr">Premium feel<span class="cmp-mark">✓</span></div>
+              <div class="cmp-attr">Fast response<span class="cmp-mark x">×</span></div>
+            </div>
+          </div>
+          <div class="dp-source"><strong>Built from</strong>competitor sites · Google results · GBP · social profiles · reviews</div>
         </div>
 
-        <!-- 2 · PRICING -->
+        <!-- 02 · REVIEW + COMPLAINT MINING -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">02 · Pricing Ladder</span><span class="dp-page-no">If you've wondered</span></div>
-          <h3 class="dp-h2">Exactly what to <em>charge.</em></h3>
-          <p class="dp-lede">Stop guessing. Live category anchors pulled this month. Where to sit, why, what to charge for the next SKU up, when to bump.</p>
+          <div class="dp-head"><span class="dp-folio">02 · Review &amp; Complaint Mining</span><span class="dp-page-no">02 / 13</span></div>
+          <p class="dp-question">What are customers already complaining about?</p>
+          <h3 class="dp-h2">Turn <em>buyer complaints</em> into better offers.</h3>
+          <div class="qs-list">
+            <div class="qs-item"><div class="qs-text">"Wish it didn't take 3 weeks to hear back."</div><div class="qs-meta">Said 184× across 4 sources</div></div>
+            <div class="qs-item"><div class="qs-text">"Couldn't tell what package I needed."</div><div class="qs-meta">Said 91× — pricing-page leak</div></div>
+            <div class="qs-item"><div class="qs-text">"Front desk felt rushed and unfriendly."</div><div class="qs-meta">Said 47× — service wedge</div></div>
+            <div class="qs-item"><div class="qs-text">"No real photos, just stock."</div><div class="qs-meta">Said 38× — proof gap</div></div>
+          </div>
+          <div class="dp-source"><strong>Built from</strong>Google reviews · Reddit · forums · public review sites · comments · FAQs</div>
+        </div>
+
+        <!-- 03 · PRICING POWER SCAN -->
+        <div class="deck-page">
+          <div class="dp-head"><span class="dp-folio">03 · Pricing Power Scan</span><span class="dp-page-no">03 / 13</span></div>
+          <p class="dp-question">What should I actually charge?</p>
+          <h3 class="dp-h2">Find the <em>price room</em> your market already allows.</h3>
           <div class="price-rail">
-            <div class="price-tick" style="--y: 8%;"><span class="pt-label">Aspirational anchor</span><span class="pt-amt">$$$$</span></div>
-            <div class="price-tick" style="--y: 30%;"><span class="pt-label">Premium category</span><span class="pt-amt">$$$</span></div>
-            <div class="price-tick highlight" style="--y: 52%;"><span class="pt-label">★ Recommended sit</span><span class="pt-amt">$$</span></div>
-            <div class="price-tick" style="--y: 70%;"><span class="pt-label">Mid-market avg</span><span class="pt-amt">$$</span></div>
+            <div class="price-tick" style="--y: 8%;"><span class="pt-label">Premium ceiling</span><span class="pt-amt">$$$$</span></div>
+            <div class="price-tick" style="--y: 30%;"><span class="pt-label">Above-mid</span><span class="pt-amt">$$$</span></div>
+            <div class="price-tick highlight" style="--y: 52%;"><span class="pt-label">★ Where you fit</span><span class="pt-amt">$$</span></div>
+            <div class="price-tick" style="--y: 70%;"><span class="pt-label">Mid-market</span><span class="pt-amt">$$</span></div>
             <div class="price-tick" style="--y: 88%;"><span class="pt-label">Floor / commodity</span><span class="pt-amt">$</span></div>
           </div>
-          <div class="price-note">Where you sit shapes who buys, what they expect, and how fast you scale. We give you a defensible number and the math underneath it.</div>
-          <div class="dp-foot"><span>You'll know</span><span>What to charge</span></div>
+          <div class="price-note">Pulled from your competitors' pricing pages, menus, booking flows. Where you sit shapes who buys, what they expect, and how fast you scale.</div>
+          <div class="dp-source"><strong>Built from</strong>competitor pricing pages · menus · booking flows · product pages</div>
         </div>
 
-        <!-- 3 · BUYER -->
+        <!-- 04 · OFFER CLARITY + PACKAGING -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">03 · Buyer Map</span><span class="dp-page-no">If you've wondered</span></div>
-          <h3 class="dp-h2">Who actually <em>pays</em> — and how to talk to them so they buy.</h3>
-          <p class="dp-lede">4 personas mapped: what triggers their purchase, what they spend, what they tell a friend after, where to reach them. The audience your revenue actually comes from.</p>
-          <ol class="hk-list">
-            <li class="hk-item"><span class="hk-tag">Persona 01</span>The high-trust buyer · researches before buying · your easiest yes if you show proof.</li>
-            <li class="hk-item"><span class="hk-tag">Persona 02</span>The reset buyer · buys when life shifts · trigger-based outreach wins.</li>
-            <li class="hk-item"><span class="hk-tag">Persona 03</span>The premium gifter · buys for someone else · packaging is the product.</li>
-            <li class="hk-item"><span class="hk-tag">Persona 04</span>The ingredient buyer · buys on substance · claims have to be airtight.</li>
-          </ol>
-          <div class="dp-foot"><span>You'll know</span><span>Who to talk to</span></div>
-        </div>
-
-        <!-- 4 · LEAD-DRIVING POSTS -->
-        <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">04 · Lead-Driving Posts</span><span class="dp-page-no">If you've wondered</span></div>
-          <h3 class="dp-h2">Why posts go viral — but <em>nobody books.</em></h3>
-          <p class="dp-lede">Three post archetypes that actually drive DMs and inquiries. Three that look great but never convert. Plus the comment-trigger mechanic that turns watchers into leads.</p>
-          <div class="claim-tier"><div class="ct-head safe"><span class="ct-dot"></span>HIGH DM RATE · book this</div><ul class="ct-list"><li>Founder confession + soft ask</li><li>Comment-trigger ("Comment X to get Y")</li><li>Counter-position ("We don't do [obvious thing]")</li></ul></div>
-          <div class="claim-tier"><div class="ct-head cond"><span class="ct-dot"></span>MEDIUM · ride alongside</div><ul class="ct-list"><li>Behind-the-scenes / process</li><li>Reaction + name-the-moment</li><li>Educational ("Did you know…")</li></ul></div>
-          <div class="claim-tier"><div class="ct-head off"><span class="ct-dot"></span>LOW · pretty but quiet</div><ul class="ct-list"><li>Branded still / mood post</li><li>Generic motivational quote</li><li>"Look how cool we are" reels</li></ul></div>
-          <div class="dp-foot"><span>You'll know</span><span>What books calls</span></div>
-        </div>
-
-        <!-- 5 · OFFER LADDER -->
-        <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">05 · Offer Architecture</span><span class="dp-page-no">If you've wondered</span></div>
-          <h3 class="dp-h2">How to <em>charge more</em> from the same customers.</h3>
-          <p class="dp-lede">Your full offer ladder mapped — free entry, low-stakes tripwire, core offer, premium retainer. Where to upsell. What to put in front of returning buyers. LTV, not just first-sale revenue.</p>
-          <div class="pl-grid">
-            <div class="pl-card"><div class="pl-job">◆ Top of funnel</div><div class="pl-name">Free / lead magnet</div><div class="pl-pct">$<span>0</span></div></div>
-            <div class="pl-card"><div class="pl-job">◆ Tripwire</div><div class="pl-name">Low-stakes entry</div><div class="pl-pct">$<span>·</span></div></div>
-            <div class="pl-card"><div class="pl-job">◆ Core offer</div><div class="pl-name">Your headline product</div><div class="pl-pct">$$<span>·</span></div></div>
-            <div class="pl-card"><div class="pl-job">◆ Retainer / VIP</div><div class="pl-name">Recurring or premium</div><div class="pl-pct">$$$<span>·</span></div></div>
+          <div class="dp-head"><span class="dp-folio">04 · Offer Clarity &amp; Packaging</span><span class="dp-page-no">04 / 13</span></div>
+          <p class="dp-question">What offer would make people buy faster?</p>
+          <h3 class="dp-h2">Build the <em>first offer</em> buyers understand fast.</h3>
+          <div class="ol-rungs">
+            <div class="ol-rung r1"><div class="ol-rung-tier">Entry</div><div class="ol-rung-name">Free guide / quick win</div><div class="ol-rung-price">$0</div></div>
+            <div class="ol-rung r2"><div class="ol-rung-tier">Tripwire</div><div class="ol-rung-name">Low-stakes first buy</div><div class="ol-rung-price">$</div></div>
+            <div class="ol-rung r3"><div class="ol-rung-tier">Core</div><div class="ol-rung-name">The headline offer</div><div class="ol-rung-price">$$</div></div>
+            <div class="ol-rung r4"><div class="ol-rung-tier">Premium</div><div class="ol-rung-name">VIP · retainer · membership</div><div class="ol-rung-price">$$$</div></div>
           </div>
-          <div class="dp-foot"><span>You'll know</span><span>How to scale</span></div>
+          <div class="dp-source"><strong>Built from</strong>competitor offers · sales pages · checkout flows · service pages</div>
         </div>
 
-        <!-- 6 · HOOK BANK -->
+        <!-- 05 · LEAD-DRIVING CONTENT SCAN -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">06 · Hook Bank</span><span class="dp-page-no">If you've wondered</span></div>
-          <h3 class="dp-h2">The best hooks + content to <em>grow leads.</em></h3>
-          <p class="dp-lede">30 hooks tagged by archetype — built to drive DMs, comments, and inquiries. Not just views. Each paired with on-camera direction + a CTA that converts.</p>
-          <ol class="hk-list">
-            <li class="hk-item"><span class="hk-tag">Identity</span>"What every other [X] doesn't want you to know."</li>
-            <li class="hk-item"><span class="hk-tag">Counter</span>"We don't do [obvious thing]. Here's why people keep asking."</li>
-            <li class="hk-item"><span class="hk-tag">Confession</span>"I almost stopped doing this last year."</li>
-            <li class="hk-item"><span class="hk-tag">Stat</span>"Most [your category] founders skip this. It's the only thing that converts."</li>
-            <li class="hk-item"><span class="hk-tag">Named moment</span>"The first time someone saw one of these, they forgot how to talk for 6 seconds."</li>
-            <li class="hk-item"><span class="hk-tag">Question</span>"What does [your service] actually do for a kid's nervous system?"</li>
-          </ol>
-          <div class="dp-foot"><span>You'll know</span><span>What to film tomorrow</span></div>
+          <div class="dp-head"><span class="dp-folio">05 · Lead-Driving Content</span><span class="dp-page-no">05 / 13</span></div>
+          <p class="dp-question">What content actually brings in buyers?</p>
+          <h3 class="dp-h2">Post for <em>buyer intent</em>, not empty reach.</h3>
+          <div class="hm-grid">
+            <div class="hm-cell head">Format</div>
+            <div class="hm-cell head">Saves</div>
+            <div class="hm-cell head">DMs</div>
+            <div class="hm-cell head">Buys</div>
+            <div class="hm-cell label">Founder confession</div>
+            <div class="hm-cell h2">High</div>
+            <div class="hm-cell h1">High</div>
+            <div class="hm-cell h2">Mid</div>
+            <div class="hm-cell label">Counter-position</div>
+            <div class="hm-cell h2">High</div>
+            <div class="hm-cell h2">High</div>
+            <div class="hm-cell h1">High</div>
+            <div class="hm-cell label">Comment-trigger</div>
+            <div class="hm-cell mid">Mid</div>
+            <div class="hm-cell h1">High</div>
+            <div class="hm-cell h2">High</div>
+            <div class="hm-cell label">Pretty brand still</div>
+            <div class="hm-cell lo">Low</div>
+            <div class="hm-cell lo">Low</div>
+            <div class="hm-cell lo">Low</div>
+          </div>
+          <div class="dp-source"><strong>Built from</strong>Instagram · TikTok · LinkedIn · YouTube · captions · comments · engagement signals</div>
         </div>
 
-        <!-- 7 · CHANNEL MIX -->
+        <!-- 06 · SEARCH DEMAND MAP -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">07 · Channel Mix</span><span class="dp-page-no">If you've wondered</span></div>
-          <h3 class="dp-h2">Your <em>best channel</em> — the one that's actually going to grow you.</h3>
-          <p class="dp-lede">We rank every platform against your buyer's behavior. One usually pulls more weight than the others. We tell you which, what to post first, and how the rest hand off into it.</p>
-          <div class="comp-row"><div class="comp-name">IG · Reels-led</div><div class="comp-strength">Buyer scrolls late at night</div><div class="comp-gap">Stories drive bookings</div></div>
-          <div class="comp-row"><div class="comp-name">TikTok · Discovery</div><div class="comp-strength">First-touch reach engine</div><div class="comp-gap">Founder face wins here</div></div>
-          <div class="comp-row"><div class="comp-name">LinkedIn</div><div class="comp-strength">B2B + investor proof</div><div class="comp-gap">Long-form earns trust</div></div>
-          <div class="comp-row"><div class="comp-name">Email · Owned</div><div class="comp-strength">Convert + retain</div><div class="comp-gap">No algorithm to lose to</div></div>
-          <div class="lane-callout"><div class="lane-tag">◆ Your highest-leverage channel</div><div class="lane-thesis">The single platform best lined up with how your buyer actually decides. Spend 60% of your effort here. The others feed into it.</div></div>
-          <div class="dp-foot"><span>You'll know</span><span>Where to grow fastest</span></div>
+          <div class="dp-head"><span class="dp-folio">06 · Search Demand Map</span><span class="dp-page-no">06 / 13</span></div>
+          <p class="dp-question">What are people searching before they buy?</p>
+          <h3 class="dp-h2">Answer the <em>searches buyers</em> already make.</h3>
+          <div class="sb-list">
+            <div class="sb-row"><span class="sb-q">[your category] near me</span><span class="sb-tag buy">Buy intent</span></div>
+            <div class="sb-row"><span class="sb-q">[comp brand] vs [your brand]</span><span class="sb-tag cmp">Compare</span></div>
+            <div class="sb-row"><span class="sb-q">how much does [your service] cost</span><span class="sb-tag buy">Buy intent</span></div>
+            <div class="sb-row"><span class="sb-q">[your service] for [problem]</span><span class="sb-tag problem">Problem-aware</span></div>
+            <div class="sb-row"><span class="sb-q">best [your service] [your city]</span><span class="sb-tag buy">Buy intent</span></div>
+            <div class="sb-row"><span class="sb-q">is [your service] worth it</span><span class="sb-tag cmp">Compare</span></div>
+          </div>
+          <div class="dp-source"><strong>Built from</strong>Google results · autocomplete · People Also Ask · competitor titles · blog topics</div>
         </div>
 
-        <!-- 8 · ROI MODEL -->
+        <!-- 07 · WEBSITE CONVERSION AUDIT -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">08 · ROI Projection</span><span class="dp-page-no">If you've wondered</span></div>
-          <h3 class="dp-h2">What <em>year one</em> could realistically look like.</h3>
-          <p class="dp-lede">Three scenarios — Conservative, Realistic, Aggressive. Modeled from category benchmarks + your existing performance. Defensible to an investor or partner.</p>
-          <div class="audit-row"><span class="ar-label">Conservative</span><span class="ar-bar" style="background:rgba(108,197,122,0.18);"><span style="display:block;height:100%;width:30%;background:#6CC57A;border-radius:2px;"></span></span><span class="ar-num">Floor</span></div>
-          <div class="audit-row"><span class="ar-label">Realistic</span><span class="ar-bar" style="background:rgba(212,160,23,0.18);"><span style="display:block;height:100%;width:65%;background:#D4A017;border-radius:2px;"></span></span><span class="ar-num">Plan</span></div>
-          <div class="audit-row"><span class="ar-label">Aggressive</span><span class="ar-bar" style="background:rgba(212,160,23,0.18);"><span style="display:block;height:100%;width:95%;background:#D4A017;border-radius:2px;"></span></span><span class="ar-num">Stretch</span></div>
-          <div class="price-note">Each scenario shows what has to be true (post cadence, conversion rate, channel mix) for the number to land. You can pick the lane you're playing in.</div>
-          <div class="dp-foot"><span>You'll know</span><span>What's possible</span></div>
+          <div class="dp-head"><span class="dp-folio">07 · Website Conversion Audit</span><span class="dp-page-no">07 / 13</span></div>
+          <p class="dp-question">Where is my website losing people?</p>
+          <h3 class="dp-h2">Fix the <em>page gaps</em> costing you sales.</h3>
+          <div class="ww-frame">
+            <div class="ww-row leak"><span class="ww-tag">LEAK</span>Hero unclear — no offer above fold</div>
+            <div class="ww-row ok"><span class="ww-tag">OK</span>Visual brand reads premium</div>
+            <div class="ww-row leak"><span class="ww-tag">LEAK</span>Proof buried below the fold</div>
+            <div class="ww-row leak"><span class="ww-tag">LEAK</span>CTA uses weak verb · "learn more"</div>
+            <div class="ww-row ok"><span class="ww-tag">OK</span>Mobile speed under 2.5s</div>
+            <div class="ww-row leak"><span class="ww-tag">LEAK</span>Pricing requires 3 clicks to find</div>
+          </div>
+          <div class="dp-source"><strong>Built from</strong>your site crawl · competitor crawls · CTA paths · proof placement</div>
         </div>
 
-        <!-- 9 · LOCAL MARKET SWEEP -->
+        <!-- 08 · PROOF GAP AUDIT -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">09 · Local Market Sweep</span><span class="dp-page-no">If you've wondered</span></div>
-          <h3 class="dp-h2">How to <em>take a Saturday</em> from every comp in your zip.</h3>
-          <p class="dp-lede">Restaurants, med spas, gyms, salons — every direct competitor in a 5-mile radius mapped. Hours, ratings, photos, booking signals, weak spots. The exact slot of demand sitting unclaimed.</p>
-          <div class="comp-row"><div class="comp-name">Mario's Trattoria · 2.1 mi</div><div class="comp-strength">4.5★ · 213 rev · books out Sat</div><div class="comp-gap">Zero founder voice</div></div>
-          <div class="comp-row"><div class="comp-name">Bella's · 1.4 mi</div><div class="comp-strength">4.7★ · 487 rev · new menu Fri</div><div class="comp-gap">No Reels, carousel-only</div></div>
-          <div class="comp-row"><div class="comp-name">The Pasta Bar · 0.8 mi</div><div class="comp-strength">4.3★ · 91 rev · cheapest in radius</div><div class="comp-gap">Cluttered photos, no story</div></div>
-          <div class="comp-row"><div class="comp-name">Trattoria Roma · 3.2 mi</div><div class="comp-strength">4.8★ · 612 rev · top of search</div><div class="comp-gap">Closed Tue + Wed</div></div>
-          <div class="lane-callout"><div class="lane-tag">◆ Where you can take a Saturday</div><div class="lane-thesis">Mario's books out by Wednesday. The other three close early or have no reels. There's a 6-hour window of Saturday demand sitting unclaimed.</div></div>
-          <div class="dp-foot"><span>You'll know</span><span>Who's around you</span></div>
+          <div class="dp-head"><span class="dp-folio">08 · Proof Gap Audit</span><span class="dp-page-no">08 / 13</span></div>
+          <p class="dp-question">Do people trust us enough to buy?</p>
+          <h3 class="dp-h2">Put <em>trust signals</em> where buyers decide.</h3>
+          <div class="pg-grid">
+            <div class="pg-item has"><span class="pg-box"></span>Reviews · 4.6★</div>
+            <div class="pg-item miss"><span class="pg-box"></span>Case studies on site</div>
+            <div class="pg-item has"><span class="pg-box"></span>Founder bio</div>
+            <div class="pg-item miss"><span class="pg-box"></span>Press mentions</div>
+            <div class="pg-item has"><span class="pg-box"></span>Before / after</div>
+            <div class="pg-item miss"><span class="pg-box"></span>Named testimonials</div>
+            <div class="pg-item miss"><span class="pg-box"></span>Specific outcomes</div>
+            <div class="pg-item has"><span class="pg-box"></span>Photo of real work</div>
+          </div>
+          <div class="dp-source"><strong>Built from</strong>reviews · testimonials · case studies · social proof · press · founder bio · before/after assets</div>
         </div>
 
-        <!-- 10 · REAL CUSTOMER VOICE -->
+        <!-- 09 · COMPETITOR MOVE TRACKER -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">10 · Real Customer Voice</span><span class="dp-page-no">If you've wondered</span></div>
-          <h3 class="dp-h2">The 10 things buyers <em>actually complain about</em> in your category.</h3>
-          <p class="dp-lede">Pulled verbatim from your competitor's reviews — Yelp, Google, Amazon, App Store. The phrases your buyers already use. Your messaging just needs to use them back.</p>
-          <ol class="hk-list">
-            <li class="hk-item"><span class="hk-tag">184× said</span>"Didn't work for sensitive skin." → wedge: position around sensitivity</li>
-            <li class="hk-item"><span class="hk-tag">422× said</span>"Love the smell." → lead with scent in your top-of-feed</li>
-            <li class="hk-item"><span class="hk-tag">91× said</span>"Wish it lasted longer." → value-per-use messaging</li>
-            <li class="hk-item"><span class="hk-tag">63× said</span>"Customer service didn't reply." → your live-chat = lane</li>
-            <li class="hk-item"><span class="hk-tag">47× said</span>"Confusing instructions." → onboarding video opportunity</li>
-          </ol>
-          <div class="dp-foot"><span>You'll know</span><span>What buyers actually want</span></div>
+          <div class="dp-head"><span class="dp-folio">09 · Competitor Move Tracker</span><span class="dp-page-no">09 / 13</span></div>
+          <p class="dp-question">What are competitors doing that I missed?</p>
+          <h3 class="dp-h2">Catch the <em>quiet moves</em> before they cost you.</h3>
+          <div class="tl-line">
+            <div class="tl-evt"><div class="tl-when">Last week</div><div class="tl-what">Top comp launched a new "starter" tier</div><div class="tl-meta">Pricing page change · they lowered floor by 30%</div></div>
+            <div class="tl-evt"><div class="tl-when">2 wks ago</div><div class="tl-what">3 marketing roles posted on LinkedIn</div><div class="tl-meta">"Brand storytelling" in 2 of 3 = ramping ads</div></div>
+            <div class="tl-evt"><div class="tl-when">1 mo ago</div><div class="tl-what">Adjacent brand entered your zip</div><div class="tl-meta">New GBP listing · stealing local SEO</div></div>
+            <div class="tl-evt"><div class="tl-when">Last quarter</div><div class="tl-what">Top comp shifted to founder-led video</div><div class="tl-meta">Reels engagement up 4×</div></div>
+          </div>
+          <div class="dp-source"><strong>Built from</strong>new landing pages · job posts · social changes · ad library · website updates</div>
         </div>
 
-        <!-- 11 · TRADEMARK / NAMING LOCK -->
+        <!-- 10 · AD READINESS CHECK -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">11 · Naming Lock</span><span class="dp-page-no">If you've wondered</span></div>
-          <h3 class="dp-h2">Lock a name <em>that lets you scale</em> — across every platform.</h3>
-          <p class="dp-lede">Pre-launch? We run your top 4 name candidates through USPTO, state filings, domain availability, and IG / TikTok / YouTube handles. The one that clears every check is the one you can grow without rebrand-and-redo a year in.</p>
-          <div class="claim-tier"><div class="ct-head safe"><span class="ct-dot"></span>CLEAR · all 4 checks pass</div><ul class="ct-list"><li>"Bubble &amp; Co" · USPTO clear · .com $12 · @ available</li></ul></div>
-          <div class="claim-tier"><div class="ct-head cond"><span class="ct-dot"></span>RISK · one signal weak</div><ul class="ct-list"><li>"BubbleHQ" · USPTO clear · .com taken ($4K) · @ available</li><li>"BubbleLab" · USPTO pending · .net only · @ taken</li></ul></div>
-          <div class="claim-tier"><div class="ct-head off"><span class="ct-dot"></span>BURNED · don't use</div><ul class="ct-list"><li>"Bubble Co" · USPTO conflict (Class 41) · likely C&D within 6 mo</li></ul></div>
-          <div class="dp-foot"><span>You'll know</span><span>What's safe to launch</span></div>
+          <div class="dp-head"><span class="dp-folio">10 · Ad Readiness Check</span><span class="dp-page-no">10 / 13</span></div>
+          <p class="dp-question">Would ads work for us right now?</p>
+          <h3 class="dp-h2">Know if <em>paid traffic</em> will scale or burn.</h3>
+          <div class="gg-grid">
+            <div class="gg-row"><span class="gg-label">Offer clarity</span><span class="gg-bar" style="--gg-w:80%;--gg-c:#6CC57A;"></span><span class="gg-num">8</span></div>
+            <div class="gg-row"><span class="gg-label">Landing page</span><span class="gg-bar" style="--gg-w:50%;--gg-c:#D4A017;"></span><span class="gg-num">5</span></div>
+            <div class="gg-row"><span class="gg-label">Proof signals</span><span class="gg-bar" style="--gg-w:30%;--gg-c:#c66;"></span><span class="gg-num">3</span></div>
+            <div class="gg-row"><span class="gg-label">CTA flow</span><span class="gg-bar" style="--gg-w:60%;--gg-c:#D4A017;"></span><span class="gg-num">6</span></div>
+            <div class="gg-row"><span class="gg-label">Creative bench</span><span class="gg-bar" style="--gg-w:40%;--gg-c:#D4A017;"></span><span class="gg-num">4</span></div>
+          </div>
+          <div class="gg-verdict wait">Fix proof signals + creative bench first. Spending now would burn budget.</div>
+          <div class="dp-source"><strong>Built from</strong>Meta Ad Library · competitor ads · landing pages · offer pages · proof · CTA flow</div>
         </div>
 
-        <!-- 12 · HIRING INTEL -->
+        <!-- 11 · LOCAL DEMAND CAPTURE -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">12 · Hiring Intel</span><span class="dp-page-no">If you've wondered</span></div>
-          <h3 class="dp-h2">Where your competitors are <em>quietly betting</em> next year.</h3>
-          <p class="dp-lede">Their job page is their roadmap. Six new marketing roles = ramping ad spend. Eight engineers = product moat. Zero sales hires + four success = retention play. We read the signals.</p>
-          <div class="comp-row"><div class="comp-name">Top comp A</div><div class="comp-strength">6 marketing roles in 30 days</div><div class="comp-gap">"Brand storytelling" in 3 JDs</div></div>
-          <div class="comp-row"><div class="comp-name">Top comp B</div><div class="comp-strength">8 mobile-eng roles</div><div class="comp-gap">React Native focus = mobile launch</div></div>
-          <div class="comp-row"><div class="comp-name">Top comp C</div><div class="comp-strength">0 sales · 4 customer success</div><div class="comp-gap">Retention play — churn problem</div></div>
-          <div class="lane-callout"><div class="lane-tag">◆ Where they're not betting</div><div class="lane-thesis">None are hiring for partnerships, PR, or community. That lane sits open for you.</div></div>
-          <div class="dp-foot"><span>You'll know</span><span>What they're building next</span></div>
+          <div class="dp-head"><span class="dp-folio">11 · Local Demand Capture</span><span class="dp-page-no">11 / 13</span></div>
+          <p class="dp-question">Where are local buyers already going?</p>
+          <h3 class="dp-h2">Find the <em>nearby demand</em> still up for grabs.</h3>
+          <div class="mp-grid">
+            <div class="mp-pin"><div class="mp-icon">◆</div><div><div class="mp-name">Top comp · 2.1 mi</div><div class="mp-meta">Books out for Sat by Wed · weak photos</div></div><div class="mp-rating">4.5★</div></div>
+            <div class="mp-pin"><div class="mp-icon">◆</div><div><div class="mp-name">Adjacent · 1.4 mi</div><div class="mp-meta">New menu Friday · no Reels</div></div><div class="mp-rating">4.7★</div></div>
+            <div class="mp-pin"><div class="mp-icon">◆</div><div><div class="mp-name">Budget option · 0.8 mi</div><div class="mp-meta">Cheap · cluttered photos · no story</div></div><div class="mp-rating">4.3★</div></div>
+            <div class="mp-pin"><div class="mp-icon">◆</div><div><div class="mp-name">Top of search · 3.2 mi</div><div class="mp-meta">Closed Tue + Wed · best rating</div></div><div class="mp-rating">4.8★</div></div>
+          </div>
+          <div class="dp-source"><strong>Built from</strong>Google Maps · local listings · reviews · ratings · competitor proximity · booking signals</div>
         </div>
 
-        <!-- 13 · PR / PODCAST TRACKER -->
+        <!-- 12 · AUTHORITY CHANNEL MAP -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">13 · PR / Podcast Map</span><span class="dp-page-no">If you've wondered</span></div>
-          <h3 class="dp-h2">Five podcasts that <em>grow founders like you.</em> With the producer's email.</h3>
-          <p class="dp-lede">We map every podcast covering your category in the last 60 days. The ones who book founders at your stage. The producers who are leaning in. The pitch deadline for each. Trust + traffic on tap.</p>
-          <ol class="hk-list">
-            <li class="hk-item"><span class="hk-tag">High fit</span>"Marketing School" · had Comp A on · books 3 wk out · loves data-driven founders</li>
-            <li class="hk-item"><span class="hk-tag">High fit</span>"Lenny's" · sweet spot Series A founders · producer Sara · pitch deadline 1st of mo</li>
-            <li class="hk-item"><span class="hk-tag">Mid fit</span>"Founder's Journey" · 3 category mentions · 6-week wait list</li>
-            <li class="hk-item"><span class="hk-tag">Stretch</span>"All-In" · covered category 3× · hard to land but possible</li>
-            <li class="hk-item"><span class="hk-tag">Niche</span>"Local Founder Stories" · zip-code-relevant · books fast</li>
-          </ol>
-          <div class="dp-foot"><span>You'll know</span><span>Where to land the press</span></div>
+          <div class="dp-head"><span class="dp-folio">12 · Authority Channel Map</span><span class="dp-page-no">12 / 13</span></div>
+          <p class="dp-question">Where should I show up to get attention?</p>
+          <h3 class="dp-h2">Borrow <em>trusted attention</em> from the right places.</h3>
+          <div class="cf-list">
+            <div class="cf-row high"><div><div class="cf-name">Marketing-focused podcast</div><div class="cf-meta">Books 3 wk out · loves data founders · producer email on file</div></div><span class="cf-fit f-hi">High fit</span></div>
+            <div class="cf-row high"><div><div class="cf-name">Local newsletter · 8K subs</div><div class="cf-meta">Featured 3 founders in your category · pitch via web form</div></div><span class="cf-fit f-hi">High fit</span></div>
+            <div class="cf-row mid"><div><div class="cf-name">Niche YouTube channel</div><div class="cf-meta">12K subs · open for guests · 6-week wait list</div></div><span class="cf-fit f-mid">Mid fit</span></div>
+            <div class="cf-row mid"><div><div class="cf-name">Adjacent partner brand</div><div class="cf-meta">Email co-promo · DM open · founder is friendly</div></div><span class="cf-fit f-mid">Mid fit</span></div>
+            <div class="cf-row mid"><div><div class="cf-name">Local press · weekly</div><div class="cf-meta">Profile section · pitch deadline 1st of month</div></div><span class="cf-fit f-mid">Mid fit</span></div>
+          </div>
+          <div class="dp-source"><strong>Built from</strong>podcasts · newsletters · YouTube · local media · partner sites · creator collaborations</div>
+        </div>
+
+        <!-- 13 · BUYER DECISION MAP -->
+        <div class="deck-page">
+          <div class="dp-head"><span class="dp-folio">13 · Buyer Decision Map</span><span class="dp-page-no">13 / 13</span></div>
+          <p class="dp-question">What would make buyers say yes sooner?</p>
+          <h3 class="dp-h2">Remove the <em>buying friction</em> slowing revenue.</h3>
+          <div class="fr-list">
+            <div class="fr-item"><div class="fr-pain">"Not sure what I'm getting"</div><div class="fr-arrow">→</div><div class="fr-fix">Plain-English package list</div></div>
+            <div class="fr-item"><div class="fr-pain">"Will this work for me?"</div><div class="fr-arrow">→</div><div class="fr-fix">Outcome story for their persona</div></div>
+            <div class="fr-item"><div class="fr-pain">"Is this real?"</div><div class="fr-arrow">→</div><div class="fr-fix">Named review w/ photo + result</div></div>
+            <div class="fr-item"><div class="fr-pain">"What if it doesn't work?"</div><div class="fr-arrow">→</div><div class="fr-fix">Clear refund + guarantee line</div></div>
+            <div class="fr-item"><div class="fr-pain">"How fast can I start?"</div><div class="fr-arrow">→</div><div class="fr-fix">"Pay → kick off same day"</div></div>
+            <div class="fr-item"><div class="fr-pain">"What does it cost?"</div><div class="fr-arrow">→</div><div class="fr-fix">Price visible without a click</div></div>
+          </div>
+          <div class="dp-source"><strong>Built from</strong>reviews · sales pages · FAQs · competitor copy · objections · category conversations</div>
         </div>
 
       </div>
