@@ -228,6 +228,21 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
 .fr-item .fr-arrow { color: #D4A017; text-align: center; opacity: 0.6; }
 .fr-item .fr-fix { color: #FFF; }
 
+/* META FOOTER — 3-row structured footer per spec */
+.dp-meta-rows { margin-top: auto; padding-top: 0.8rem; border-top: 1px solid rgba(255,255,255,0.06); position: relative; z-index: 1; }
+.dp-meta-row { display: grid; grid-template-columns: 96px 1fr; gap: 0.6rem; padding: 0.22rem 0; font-size: 0.62rem; line-height: 1.45; }
+.dp-meta-k { color: #D4A017; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 800; font-size: 0.56rem; padding-top: 0.08rem; }
+.dp-meta-v { color: #a8a8a8; }
+
+/* AD STACK — mini ad-cards for Competitor Ad History */
+.ads-list { display: flex; flex-direction: column; gap: 0.5rem; position: relative; z-index: 1; flex-grow: 1; }
+.ad-mini { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); border-radius: 5px; padding: 0.55rem 0.7rem; }
+.ad-mini-h { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: #D4A017; font-weight: 800; margin-bottom: 0.3rem; }
+.ad-mini-h .ad-platform::before { content: '◆ '; opacity: 0.7; }
+.ad-mini-h .ad-runs { color: #888; }
+.ad-mini-copy { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #FFF; font-size: 0.84rem; line-height: 1.3; }
+.ad-mini-cta { font-size: 0.58rem; color: #888; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.3rem; }
+
 /* CLAIMS */
 .claim-tier { margin-bottom: 0.7rem; position: relative; z-index: 1; }
 .claim-tier:last-of-type { margin-bottom: 0; }
@@ -265,6 +280,9 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
 .flow-step .flow-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.6rem; color: #D4A017; font-weight: 500; line-height: 1; display: block; margin-bottom: 0.5rem; }
 .flow-step strong { color: #FFF; font-weight: 700; font-size: 1rem; display: block; margin-bottom: 0.4rem; letter-spacing: -0.01em; }
 .flow-step p { font-size: 0.85rem; color: #B5B5B5; line-height: 1.5; margin: 0; }
+.flow-grid.hiw-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 880px) { .flow-grid.hiw-3 { grid-template-columns: 1fr; } }
+
 
 /* TIER GRID */
 .tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 2rem; align-items: stretch; }
@@ -357,6 +375,19 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
     </div>
   </header>
 
+  <!-- HOW IT WORKS -->
+  <section>
+    <span class="section-tag">How it works</span>
+    <h2 class="section-h">Three quiet <em>moves.</em></h2>
+    <p class="section-lede">Founder-led, hand-built, evidence-only. The engagement starts with the question your business actually needs answered.</p>
+
+    <div class="flow-grid hiw-3">
+      <div class="flow-step"><span class="flow-num">01</span><strong>We start with the question.</strong><p>What do you need to know before your next move?</p></div>
+      <div class="flow-step"><span class="flow-num">02</span><strong>We crawl the public market.</strong><p>Competitors, ads, reviews, search, websites, content, pricing, comments, and buyer conversations.</p></div>
+      <div class="flow-step"><span class="flow-num">03</span><strong>We turn signals into decisions.</strong><p>You get a private brief showing what to fix, where to compete, and what to do next.</p></div>
+    </div>
+  </section>
+
   <!-- ENGINE 1 — VALUE CARDS -->
   <section>
     <span class="section-tag">References · Intelligence briefs</span>
@@ -365,143 +396,188 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
 
     <div class="deck-scroll-wrap">
       <div class="deck-stack">
-        <!-- 01 · COMPETITOR ADVANTAGE SCAN -->
+        <!-- 01 · COMPETITOR PATH RECONSTRUCTION -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">01 · Competitor Advantage Scan</span><span class="dp-page-no">Reference</span></div>
-          <p class="dp-question">Why are people choosing them instead of us?</p>
-          <h3 class="dp-h2">See the <em>real reasons</em> buyers pick competitors.</h3>
-          <div class="cmp-split">
-            <div class="cmp-col">
-              <div class="cmp-col-h">YOU</div>
-              <div class="cmp-attr">Trust signals<span class="cmp-mark x">×</span></div>
-              <div class="cmp-attr">Clear offer<span class="cmp-mark x">×</span></div>
-              <div class="cmp-attr">Easy to buy<span class="cmp-mark">✓</span></div>
-              <div class="cmp-attr">Premium feel<span class="cmp-mark x">×</span></div>
-              <div class="cmp-attr">Fast response<span class="cmp-mark">✓</span></div>
+          <div class="dp-head"><span class="dp-folio">01 · Competitor Path Reconstruction</span><span class="dp-page-no">Reference</span></div>
+          <p class="dp-question">How did our top competitors get here?</p>
+          <h3 class="dp-h2">See the visible path your competitors used to <em>earn attention, trust, and demand.</em></h3>
+          <div class="tl-line">
+            <div class="tl-evt"><div class="tl-when">Stage 01</div><div class="tl-what">Founder-led origin story · 6-month consistency</div><div class="tl-meta">Built early trust before any paid spend</div></div>
+            <div class="tl-evt"><div class="tl-when">Stage 02</div><div class="tl-what">Anchored into one repeatable offer</div><div class="tl-meta">Same package on the homepage for 18 months</div></div>
+            <div class="tl-evt"><div class="tl-when">Stage 03</div><div class="tl-what">Layered proof — press, testimonials, partner logos</div><div class="tl-meta">Trust signals stacked above pricing</div></div>
+            <div class="tl-evt"><div class="tl-when">Stage 04</div><div class="tl-what">Quiet paid push behind a single proven angle</div><div class="tl-meta">Same hook running 5+ months in ad library</div></div>
+            <div class="tl-evt"><div class="tl-when">Now</div><div class="tl-what">Hiring + new market expansion</div><div class="tl-meta">Job posts signal where the next bet is</div></div>
+          </div>
+          <div class="dp-meta-rows">
+            <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">competitor sites · landing pages · Google Business Profiles · social profiles · ad libraries · reviews · blog archives · pricing pages</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">how they appear more trusted, easier to buy from, more premium, more visible, or better positioned</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">decide what to copy, avoid, improve, attack, or reposition against</span></div>
+          </div>
+        </div>
+
+        <!-- 02 · COMPETITOR AD HISTORY BRIEF -->
+        <div class="deck-page">
+          <div class="dp-head"><span class="dp-folio">02 · Competitor Ad History Brief</span><span class="dp-page-no">Reference</span></div>
+          <p class="dp-question">What have they been paying to say for the last 6 months?</p>
+          <h3 class="dp-h2">See what your competitors keep <em>paying to say.</em></h3>
+          <div class="ads-list">
+            <div class="ad-mini">
+              <div class="ad-mini-h"><span class="ad-platform">Meta</span><span class="ad-runs">Running 5 mo · 8 variants</span></div>
+              <div class="ad-mini-copy">"The thing nobody tells you about [category]."</div>
+              <div class="ad-mini-cta">CTA · Learn more</div>
             </div>
-            <div class="cmp-col them">
-              <div class="cmp-col-h">TOP COMP</div>
-              <div class="cmp-attr">Trust signals<span class="cmp-mark">✓</span></div>
-              <div class="cmp-attr">Clear offer<span class="cmp-mark">✓</span></div>
-              <div class="cmp-attr">Easy to buy<span class="cmp-mark">✓</span></div>
-              <div class="cmp-attr">Premium feel<span class="cmp-mark">✓</span></div>
-              <div class="cmp-attr">Fast response<span class="cmp-mark x">×</span></div>
+            <div class="ad-mini">
+              <div class="ad-mini-h"><span class="ad-platform">Meta</span><span class="ad-runs">Running 3 mo · 4 variants</span></div>
+              <div class="ad-mini-copy">"Founder testimonial — short cuts only."</div>
+              <div class="ad-mini-cta">CTA · Book a call</div>
+            </div>
+            <div class="ad-mini">
+              <div class="ad-mini-h"><span class="ad-platform">TikTok</span><span class="ad-runs">Running 2 mo · 12 variants</span></div>
+              <div class="ad-mini-copy">"Day-in-the-life · founder-on-camera."</div>
+              <div class="ad-mini-cta">CTA · Shop now</div>
             </div>
           </div>
-          <div class="dp-source"><strong>Built from</strong>competitor websites · Google results · Google Business Profiles · social profiles · reviews</div>
-        </div>
-
-        <!-- 02 · REVIEW + COMPLAINT MINING -->
-        <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">02 · Review &amp; Complaint Mining</span><span class="dp-page-no">Reference</span></div>
-          <p class="dp-question">What are customers already complaining about?</p>
-          <h3 class="dp-h2">Turn <em>buyer complaints</em> into better offers.</h3>
-          <div class="qs-list">
-            <div class="qs-item"><div class="qs-text">"Wish it didn't take 3 weeks to hear back."</div><div class="qs-meta">Said 184× across 4 sources</div></div>
-            <div class="qs-item"><div class="qs-text">"Couldn't tell what package I needed."</div><div class="qs-meta">Said 91× — pricing-page leak</div></div>
-            <div class="qs-item"><div class="qs-text">"Front desk felt rushed and unfriendly."</div><div class="qs-meta">Said 47× — service wedge</div></div>
-            <div class="qs-item"><div class="qs-text">"No real photos, just stock."</div><div class="qs-meta">Said 38× — proof gap</div></div>
+          <div class="dp-meta-rows">
+            <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">Meta Ad Library · TikTok Creative Center · public ad libraries · landing pages · offer pages · ad creative · hooks · CTAs</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">repeated messages, durable offers, creative patterns, landing-page strategy, audience assumptions, seasonal pushes, angles they keep betting on</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">build better creative briefs, improve your landing pages, avoid weak angles, and learn before spending your own budget</span></div>
           </div>
-          <div class="dp-source"><strong>Built from</strong>Google reviews · public reviews · Reddit · forums · comments · FAQs</div>
         </div>
 
-        <!-- 03 · PRICING POWER SCAN -->
+        <!-- 03 · NICHE CONTENT PERFORMANCE BRIEF -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">03 · Pricing Power Scan</span><span class="dp-page-no">Reference</span></div>
-          <p class="dp-question">What should I actually charge?</p>
-          <h3 class="dp-h2">Find the <em>price room</em> your market already allows.</h3>
-          <div class="price-rail">
-            <div class="price-tick" style="--y: 8%;"><span class="pt-label">Premium ceiling</span><span class="pt-amt">$$$$</span></div>
-            <div class="price-tick" style="--y: 30%;"><span class="pt-label">Above-mid</span><span class="pt-amt">$$$</span></div>
-            <div class="price-tick highlight" style="--y: 52%;"><span class="pt-label">★ Where you fit</span><span class="pt-amt">$$</span></div>
-            <div class="price-tick" style="--y: 70%;"><span class="pt-label">Mid-market</span><span class="pt-amt">$$</span></div>
-            <div class="price-tick" style="--y: 88%;"><span class="pt-label">Floor / commodity</span><span class="pt-amt">$</span></div>
-          </div>
-          <div class="price-note">Pulled from your competitors' pricing pages, menus, booking flows. Where you sit shapes who buys, what they expect, and how fast you scale.</div>
-          <div class="dp-source"><strong>Built from</strong>competitor pricing pages · menus · booking pages · product pages · service descriptions</div>
-        </div>
-
-        <!-- 04 · OFFER CLARITY + PACKAGING -->
-        <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">04 · Offer Clarity &amp; Packaging</span><span class="dp-page-no">Reference</span></div>
-          <p class="dp-question">What offer would make people buy faster?</p>
-          <h3 class="dp-h2">Build the <em>first offer</em> buyers understand fast.</h3>
-          <div class="ol-rungs">
-            <div class="ol-rung r1"><div class="ol-rung-tier">Entry</div><div class="ol-rung-name">Free guide / quick win</div><div class="ol-rung-price">$0</div></div>
-            <div class="ol-rung r2"><div class="ol-rung-tier">Tripwire</div><div class="ol-rung-name">Low-stakes first buy</div><div class="ol-rung-price">$</div></div>
-            <div class="ol-rung r3"><div class="ol-rung-tier">Core</div><div class="ol-rung-name">The headline offer</div><div class="ol-rung-price">$$</div></div>
-            <div class="ol-rung r4"><div class="ol-rung-tier">Premium</div><div class="ol-rung-name">VIP · retainer · membership</div><div class="ol-rung-price">$$$</div></div>
-          </div>
-          <div class="dp-source"><strong>Built from</strong>competitor offers · service pages · sales pages · buying flows · product pages</div>
-        </div>
-
-        <!-- 05 · LEAD-DRIVING CONTENT SCAN -->
-        <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">05 · Lead-Driving Content Scan</span><span class="dp-page-no">Reference</span></div>
-          <p class="dp-question">What content actually brings in buyers?</p>
-          <h3 class="dp-h2">Post for <em>buyer intent</em>, not empty reach.</h3>
+          <div class="dp-head"><span class="dp-folio">03 · Niche Content Performance Brief</span><span class="dp-page-no">Reference</span></div>
+          <p class="dp-question">What content is already winning in our market?</p>
+          <h3 class="dp-h2">Find the content your <em>market is already voting for.</em></h3>
           <div class="hm-grid">
             <div class="hm-cell head">Format</div>
             <div class="hm-cell head">Saves</div>
-            <div class="hm-cell head">DMs</div>
-            <div class="hm-cell head">Buys</div>
+            <div class="hm-cell head">Comments</div>
+            <div class="hm-cell head">Shares</div>
             <div class="hm-cell label">Founder confession</div>
             <div class="hm-cell h2">High</div>
             <div class="hm-cell h1">High</div>
             <div class="hm-cell h2">Mid</div>
-            <div class="hm-cell label">Counter-position</div>
+            <div class="hm-cell label">Niche teardown</div>
             <div class="hm-cell h2">High</div>
             <div class="hm-cell h2">High</div>
             <div class="hm-cell h1">High</div>
-            <div class="hm-cell label">Comment-trigger</div>
+            <div class="hm-cell label">Behind-the-scenes</div>
             <div class="hm-cell mid">Mid</div>
-            <div class="hm-cell h1">High</div>
-            <div class="hm-cell h2">High</div>
-            <div class="hm-cell label">Pretty brand still</div>
+            <div class="hm-cell mid">Mid</div>
+            <div class="hm-cell mid">Mid</div>
+            <div class="hm-cell label">Brand still</div>
             <div class="hm-cell lo">Low</div>
             <div class="hm-cell lo">Low</div>
             <div class="hm-cell lo">Low</div>
           </div>
-          <div class="dp-source"><strong>Built from</strong>Instagram · TikTok · LinkedIn · YouTube · captions · comments · engagement signals</div>
+          <div class="dp-meta-rows">
+            <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">Instagram · TikTok · YouTube · LinkedIn · Pinterest · blogs · newsletters · public engagement metrics · captions · comments · hashtags · thumbnails</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">top-performing posts, repeated hooks, strongest formats, buyer-intent topics, creator angles, comment patterns, content gaps</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">build a content plan around proven demand instead of guessing what to post</span></div>
+          </div>
+        </div>
+
+        <!-- 04 · CUSTOMER DEMAND MINING BRIEF -->
+        <div class="deck-page">
+          <div class="dp-head"><span class="dp-folio">04 · Customer Demand Mining Brief</span><span class="dp-page-no">Reference</span></div>
+          <p class="dp-question">What do people keep asking for?</p>
+          <h3 class="dp-h2">Find what customers are <em>already asking</em> someone to make.</h3>
+          <div class="qs-list">
+            <div class="qs-item"><div class="qs-text">"Wish there was a version of this for [adjacent audience]."</div><div class="qs-meta">Repeated across 3 review platforms</div></div>
+            <div class="qs-item"><div class="qs-text">"Why does no one offer [missing service tier]?"</div><div class="qs-meta">Recurring forum thread, 2 yrs running</div></div>
+            <div class="qs-item"><div class="qs-text">"I just want a simpler version."</div><div class="qs-meta">Top complaint across category reviews</div></div>
+            <div class="qs-item"><div class="qs-text">"Does anyone make this for [use case we're missing]?"</div><div class="qs-meta">Cluster of comments on competitor posts</div></div>
+          </div>
+          <div class="dp-meta-rows">
+            <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">YouTube · TikTok · Instagram comments · Reddit · forums · App Store reviews · product reviews · competitor reviews · FAQs · public community discussions</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">feature requests, unmet needs, complaints, buying objections, product ideas, content ideas, service gaps, exact buyer language</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">turn market language into product improvements, content ideas, new offers, sales-page copy, FAQ sections, or pitch-deck proof</span></div>
+          </div>
+        </div>
+
+        <!-- 05 · MARKET GAP POSITIONING BRIEF -->
+        <div class="deck-page">
+          <div class="dp-head"><span class="dp-folio">05 · Market Gap Positioning Brief</span><span class="dp-page-no">Reference</span></div>
+          <p class="dp-question">Where does our company fit that competitors don't?</p>
+          <h3 class="dp-h2">See the opening your <em>competitors are leaving behind.</em></h3>
+          <div class="comp-row"><div class="comp-name">Direct comp · A</div><div class="comp-strength">Owns price + speed</div><div class="comp-gap">No founder voice on record</div></div>
+          <div class="comp-row"><div class="comp-name">Direct comp · B</div><div class="comp-strength">Owns brand polish</div><div class="comp-gap">No proof, no specificity</div></div>
+          <div class="comp-row"><div class="comp-name">Adjacent · category-up</div><div class="comp-strength">Owns "premium" framing</div><div class="comp-gap">Slow, high-touch only</div></div>
+          <div class="comp-row"><div class="comp-name">Aspirational · top of cat.</div><div class="comp-strength">Owns the category narrative</div><div class="comp-gap">Priced past your buyer</div></div>
+          <div class="lane-callout"><div class="lane-tag">◆ The opening sitting unclaimed</div><div class="lane-thesis">Founder-led + proof-rich + your-buyer pricing. Three of the four miss two of those signals each.</div></div>
+          <div class="dp-meta-rows">
+            <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">competitor sites · sales pages · reviews · ads · search demand · social content · pricing · offers · local listings · category conversations</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">underserved buyer, repeated frustration, proof gap, weak competitor promise, missing offer shape, messaging opportunity, positioning angle</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">rewrite your homepage, sharpen your offer, adjust pricing, brief your content, build proof, or reposition around the gap</span></div>
+          </div>
         </div>
 
         <!-- 06 · SEARCH DEMAND MAP -->
         <div class="deck-page">
           <div class="dp-head"><span class="dp-folio">06 · Search Demand Map</span><span class="dp-page-no">Reference</span></div>
-          <p class="dp-question">What are people searching before they buy?</p>
-          <h3 class="dp-h2">Answer the <em>searches buyers</em> already make.</h3>
+          <p class="dp-question">What are buyers searching before they decide?</p>
+          <h3 class="dp-h2">Answer the searches buyers <em>already make.</em></h3>
           <div class="sb-list">
             <div class="sb-row"><span class="sb-q">[your category] near me</span><span class="sb-tag buy">Buy intent</span></div>
+            <div class="sb-row"><span class="sb-q">best [your service] for [use case]</span><span class="sb-tag buy">Buy intent</span></div>
             <div class="sb-row"><span class="sb-q">[comp brand] vs [your brand]</span><span class="sb-tag cmp">Compare</span></div>
             <div class="sb-row"><span class="sb-q">how much does [your service] cost</span><span class="sb-tag buy">Buy intent</span></div>
             <div class="sb-row"><span class="sb-q">[your service] for [problem]</span><span class="sb-tag problem">Problem-aware</span></div>
-            <div class="sb-row"><span class="sb-q">best [your service] [your city]</span><span class="sb-tag buy">Buy intent</span></div>
-            <div class="sb-row"><span class="sb-q">is [your service] worth it</span><span class="sb-tag cmp">Compare</span></div>
+            <div class="sb-row"><span class="sb-q">is [your category] worth it</span><span class="sb-tag cmp">Compare</span></div>
           </div>
-          <div class="dp-source"><strong>Built from</strong>Google results · autocomplete · People Also Ask · competitor titles · blog topics</div>
+          <div class="dp-meta-rows">
+            <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">Google results · autocomplete · People Also Ask · competitor title tags · blog topics · landing pages · local search results · category keywords</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">purchase-ready searches, comparison searches, problem-aware searches, local intent, SEO gaps, content opportunities</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">create better landing pages, comparison pages, blog content, FAQs, local pages, or search-led offers</span></div>
+          </div>
         </div>
 
-        <!-- 07 · WEBSITE CONVERSION BRIEF -->
+        <!-- 07 · PRICING POWER BRIEF -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">07 · Website Conversion Brief</span><span class="dp-page-no">Reference</span></div>
-          <p class="dp-question">Where is my website losing people?</p>
-          <h3 class="dp-h2">Fix the <em>page gaps</em> costing you sales.</h3>
+          <div class="dp-head"><span class="dp-folio">07 · Pricing Power Brief</span><span class="dp-page-no">Reference</span></div>
+          <p class="dp-question">What does this market already allow us to charge?</p>
+          <h3 class="dp-h2">Find the price room your <em>market already allows.</em></h3>
+          <div class="price-rail">
+            <div class="price-tick" style="--y: 8%;"><span class="pt-label">Premium ceiling</span><span class="pt-amt">$$$$</span></div>
+            <div class="price-tick" style="--y: 30%;"><span class="pt-label">Above-mid</span><span class="pt-amt">$$$</span></div>
+            <div class="price-tick highlight" style="--y: 52%;"><span class="pt-label">★ Defensible band</span><span class="pt-amt">$$</span></div>
+            <div class="price-tick" style="--y: 70%;"><span class="pt-label">Mid-market</span><span class="pt-amt">$$</span></div>
+            <div class="price-tick" style="--y: 88%;"><span class="pt-label">Floor / commodity</span><span class="pt-amt">$</span></div>
+          </div>
+          <div class="price-note">Pulled from competitor pricing pages, menus, booking flows. Where you sit shapes who buys, what they expect, and how fast you scale.</div>
+          <div class="dp-meta-rows">
+            <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">pricing pages · menus · checkout pages · booking pages · product pages · service descriptions · recurring offers · package tiers</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">low-end, mid-market, premium, recurring, bundled, and hidden pricing patterns</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">rework your pricing, packages, offer ladder, or premium positioning</span></div>
+          </div>
+        </div>
+
+        <!-- 08 · WEBSITE CONVERSION BRIEF -->
+        <div class="deck-page">
+          <div class="dp-head"><span class="dp-folio">08 · Website Conversion Brief</span><span class="dp-page-no">Reference</span></div>
+          <p class="dp-question">Where is our site losing trust or intent?</p>
+          <h3 class="dp-h2">Fix the page gaps <em>costing you sales.</em></h3>
           <div class="ww-frame">
-            <div class="ww-row leak"><span class="ww-tag">LEAK</span>Hero unclear — no offer above fold</div>
+            <div class="ww-row leak"><span class="ww-tag">LEAK</span>Hero unclear · no offer above fold</div>
             <div class="ww-row ok"><span class="ww-tag">OK</span>Visual brand reads premium</div>
             <div class="ww-row leak"><span class="ww-tag">LEAK</span>Proof buried below the fold</div>
             <div class="ww-row leak"><span class="ww-tag">LEAK</span>CTA uses weak verb · "learn more"</div>
             <div class="ww-row ok"><span class="ww-tag">OK</span>Mobile speed under 2.5s</div>
             <div class="ww-row leak"><span class="ww-tag">LEAK</span>Pricing requires 3 clicks to find</div>
           </div>
-          <div class="dp-source"><strong>Built from</strong>client site crawl · competitor site crawl · CTA paths · page structure · proof placement. Analytics-based CR, bounce, and heatmap reads require access.</div>
+          <div class="dp-meta-rows">
+            <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">client site crawl · competitor crawls · page structure · above-the-fold copy · CTA paths · proof placement · mobile performance · form friction</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">unclear hero, weak CTA, buried proof, confusing offer, slow mobile, missing trust signals, broken buyer path</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">fix the page gaps costing you inquiries, sales, calls, or signups · analytics access optional for behavioral drop-off</span></div>
+          </div>
         </div>
 
-        <!-- 08 · PROOF GAP BRIEF -->
+        <!-- 09 · PROOF GAP BRIEF -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">08 · Proof Gap Brief</span><span class="dp-page-no">Reference</span></div>
-          <p class="dp-question">Do people trust us enough to buy?</p>
-          <h3 class="dp-h2">Put <em>trust signals</em> where buyers decide.</h3>
+          <div class="dp-head"><span class="dp-folio">09 · Proof Gap Brief</span><span class="dp-page-no">Reference</span></div>
+          <p class="dp-question">Do we look credible enough to buy from?</p>
+          <h3 class="dp-h2">Put trust signals where <em>buyers decide.</em></h3>
           <div class="pg-grid">
             <div class="pg-item has"><span class="pg-box"></span>Reviews · 4.6★</div>
             <div class="pg-item miss"><span class="pg-box"></span>Case studies on site</div>
@@ -512,50 +588,48 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
             <div class="pg-item miss"><span class="pg-box"></span>Specific outcomes</div>
             <div class="pg-item has"><span class="pg-box"></span>Photo of real work</div>
           </div>
-          <div class="dp-source"><strong>Built from</strong>reviews · testimonials · case studies · social proof · press · founder bio · before/after assets</div>
-        </div>
-
-        <!-- 09 · LOCAL DEMAND CAPTURE -->
-        <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">09 · Local Demand Capture</span><span class="dp-page-no">Reference</span></div>
-          <p class="dp-question">Where are local buyers already going?</p>
-          <h3 class="dp-h2">Find the <em>nearby demand</em> still up for grabs.</h3>
-          <div class="mp-grid">
-            <div class="mp-pin"><div class="mp-icon">◆</div><div><div class="mp-name">Top comp · 2.1 mi</div><div class="mp-meta">Books out for Sat by Wed · weak photos</div></div><div class="mp-rating">4.5★</div></div>
-            <div class="mp-pin"><div class="mp-icon">◆</div><div><div class="mp-name">Adjacent · 1.4 mi</div><div class="mp-meta">New menu Friday · no Reels</div></div><div class="mp-rating">4.7★</div></div>
-            <div class="mp-pin"><div class="mp-icon">◆</div><div><div class="mp-name">Budget option · 0.8 mi</div><div class="mp-meta">Low-price offer · cluttered photos · no story</div></div><div class="mp-rating">4.3★</div></div>
-            <div class="mp-pin"><div class="mp-icon">◆</div><div><div class="mp-name">Top of search · 3.2 mi</div><div class="mp-meta">Closed Tue + Wed · best rating</div></div><div class="mp-rating">4.8★</div></div>
+          <div class="dp-meta-rows">
+            <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">reviews · testimonials · case studies · social proof · press · founder bio · before/after assets · logos · ratings · public mentions</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">what proof exists, what's missing, where proof should appear, where competitors look safer or more established</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">add the right proof to the homepage, sales pages, landing pages, ads, pitch deck, or outreach</span></div>
           </div>
-          <div class="dp-source"><strong>Built from</strong>Google Maps · local listings · reviews · ratings · competitor proximity · booking signals</div>
         </div>
 
         <!-- 10 · AUTHORITY CHANNEL MAP -->
         <div class="deck-page">
           <div class="dp-head"><span class="dp-folio">10 · Authority Channel Map</span><span class="dp-page-no">Reference</span></div>
-          <p class="dp-question">Where should I show up to get attention?</p>
-          <h3 class="dp-h2">Borrow <em>trusted attention</em> from the right places.</h3>
+          <p class="dp-question">Where should we show up to borrow trust?</p>
+          <h3 class="dp-h2">Borrow trusted attention from <em>the right places.</em></h3>
           <div class="cf-list">
-            <div class="cf-row high"><div><div class="cf-name">Marketing-focused podcast</div><div class="cf-meta">Books 3 wk out · loves data founders · producer email on file</div></div><span class="cf-fit f-hi">High fit</span></div>
-            <div class="cf-row high"><div><div class="cf-name">Local newsletter · 8K subs</div><div class="cf-meta">Featured 3 founders in your category · pitch via web form</div></div><span class="cf-fit f-hi">High fit</span></div>
-            <div class="cf-row mid"><div><div class="cf-name">Niche YouTube channel</div><div class="cf-meta">12K subs · open for guests · 6-week wait list</div></div><span class="cf-fit f-mid">Mid fit</span></div>
-            <div class="cf-row mid"><div><div class="cf-name">Adjacent partner brand</div><div class="cf-meta">Email co-promo · DM open · founder is friendly</div></div><span class="cf-fit f-mid">Mid fit</span></div>
+            <div class="cf-row high"><div><div class="cf-name">Category podcast · 40K avg downloads</div><div class="cf-meta">Booking 3 wks out · loves data founders</div></div><span class="cf-fit f-hi">High fit</span></div>
+            <div class="cf-row high"><div><div class="cf-name">Local trade newsletter · 12K subs</div><div class="cf-meta">Featured 3 founders in your category last 6 mo</div></div><span class="cf-fit f-hi">High fit</span></div>
+            <div class="cf-row mid"><div><div class="cf-name">Niche YouTube · 18K subs</div><div class="cf-meta">Open to guests · 6-week wait list</div></div><span class="cf-fit f-mid">Mid fit</span></div>
+            <div class="cf-row mid"><div><div class="cf-name">Adjacent partner brand</div><div class="cf-meta">Co-promo open · founder is friendly</div></div><span class="cf-fit f-mid">Mid fit</span></div>
             <div class="cf-row mid"><div><div class="cf-name">Local press · weekly</div><div class="cf-meta">Profile section · pitch deadline 1st of month</div></div><span class="cf-fit f-mid">Mid fit</span></div>
           </div>
-          <div class="dp-source"><strong>Built from</strong>podcasts · newsletters · YouTube · local media · partner sites · creator collaborations</div>
+          <div class="dp-meta-rows">
+            <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">podcasts · newsletters · YouTube channels · local media · creator profiles · partner sites · communities · events · LinkedIn voices · industry blogs</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">where the founder, coach, creator, or company should pitch, post, partner, appear, or collaborate</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">build a targeted outreach list instead of posting randomly</span></div>
+          </div>
         </div>
 
-        <!-- 11 · PITCH DECK RESEARCH -->
+        <!-- 11 · PITCH DECK RESEARCH BRIEF -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">11 · Pitch Deck Research</span><span class="dp-page-no">Optional layer</span></div>
-          <p class="dp-question">What numbers should I put in my pitch deck?</p>
-          <h3 class="dp-h2">A deck that <em>holds up</em> to a 30-min Q&amp;A.</h3>
+          <div class="dp-head"><span class="dp-folio">11 · Pitch Deck Research Brief</span><span class="dp-page-no">Specialty · optional</span></div>
+          <p class="dp-question">What numbers should we put in the pitch deck?</p>
+          <h3 class="dp-h2">Build a deck that holds up to a <em>serious Q&amp;A.</em></h3>
           <div class="qs-list">
             <div class="qs-item"><div class="qs-text">TAM / SAM / SOM with named sources — not "we estimate."</div><div class="qs-meta">Government data · industry reports · trade publications</div></div>
-            <div class="qs-item"><div class="qs-text">Funded competitors · last 24 months · who raised, when, how much.</div><div class="qs-meta">Crunchbase · Pitchbook public data · press releases</div></div>
+            <div class="qs-item"><div class="qs-text">Funded competitors · last 24 months · who raised, when, how much.</div><div class="qs-meta">Crunchbase · PitchBook public data · press releases</div></div>
             <div class="qs-item"><div class="qs-text">Public-comp financials · revenue, margin, growth rate.</div><div class="qs-meta">SEC filings · 10-Ks · earnings transcripts</div></div>
             <div class="qs-item"><div class="qs-text">Adoption signal · search trends, hiring volume, press coverage.</div><div class="qs-meta">Google Trends · job listings · news scraping</div></div>
           </div>
-          <div class="dp-source"><strong>Built from</strong>SEC filings · Crunchbase · Pitchbook · competitor financials · industry reports · trade pubs · news</div>
+          <div class="dp-meta-rows">
+            <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">SEC filings · public reports · Crunchbase / PitchBook-style data · 10-Ks · Google Trends · job listings · competitor pages · market reports · news</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">TAM / SAM / SOM support, funded competitors, public comps, category trends, adoption signals, market proof, risk notes</span></div>
+            <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">strengthen the deck narrative, investor memo, partnership pitch, or internal strategy</span></div>
+          </div>
         </div>
 
       </div>
@@ -581,20 +655,6 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
         <div class="ba-row"><div class="ba-tile raw">Your loose idea<br>("post about the science")</div><div class="ba-arrow">→</div><div class="ba-tile out"><span class="out-hook">30-DAY PLAN</span>12 reels · 4 carousels · 16 stories</div></div>
         <div class="ba-label"><strong>Idea → Calendar</strong>Pillar-tagged, sales-role-tagged, scheduled. You approve once, we ship the month.</div>
       </div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section>
-    <span class="section-tag">How it works</span>
-    <h2 class="section-h">Every research round is <em>assembled</em> around the question.</h2>
-    <p class="section-lede">You're not buying canned research. The engagement starts by understanding what your business needs to know, then the research is built around that brief.</p>
-
-    <div class="flow-grid">
-      <div class="flow-step"><span class="flow-num">01</span><strong>Begin</strong><p>Choose an engagement size or start with a conversation. We keep the caseload small so the work stays private and hand-built.</p></div>
-      <div class="flow-step"><span class="flow-num">02</span><strong>Briefing call</strong><p>We clarify the business question, the market, the competitors, the audience, and what a useful answer needs to unlock.</p></div>
-      <div class="flow-step"><span class="flow-num">03</span><strong>Market signal map</strong><p>We crawl public market signals, reconstruct competitor paths, mine buyer language, and build source trails behind every claim.</p></div>
-      <div class="flow-step"><span class="flow-num">04</span><strong>Private strategy brief</strong><p>You receive the brief, the source trail, and the decision layer: what to fix first, where the money is, and what not to waste time on.</p></div>
     </div>
   </section>
 
@@ -704,24 +764,24 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
 
     <div class="faq-list">
       <details>
-        <summary>Which Sprint tier should I pick?</summary>
-        <p>If you have one narrow question, Lite is enough. If several signals need to be connected, Pro is the stronger fit. If the decision is high-stakes — launch, fundraise, retail, repositioning, regulated category — Full is the right engagement size.</p>
+        <summary>Is this an audit?</summary>
+        <p>Not in the usual sense. We use audit methods, but the output is a private market intelligence brief built around the decisions your business needs to make.</p>
       </details>
       <details>
-        <summary>How is this different from a normal strategy brief?</summary>
-        <p>We build from public market signals first: pricing, positioning, audience language, search demand, proof, content, and competitor paths. Every major claim has a source trail. The point is decision support, not a polished opinion.</p>
+        <summary>Do you need access to our accounts?</summary>
+        <p>Usually no. Most of the work comes from public market data. If you want analytics, conversion data, or funnel behavior included, we can use read-only access.</p>
       </details>
       <details>
-        <summary>What if my data is sensitive (NDA, regulated, pre-launch)?</summary>
-        <p>NDA standard, signed before kickoff. Two of three case studies on the site are NDA-protected — visible methodology, redacted brand. Regulated categories get the Claims Guardrail layer (Pro and Full). Pre-launch is what Sprint Full was built for.</p>
+        <summary>Is every brief the same?</summary>
+        <p>No. The research shape depends on the business, the category, and the question. The cards are examples — your engagement is assembled around what you actually need answered.</p>
       </details>
       <details>
-        <summary>Do I keep everything? Can you reuse it?</summary>
-        <p>Non-exclusive perpetual worldwide license on every deliverable. You own it. We retain the right to use anonymized methodology in case studies only with your permission. Raw source exports can be included when useful.</p>
+        <summary>What do we get?</summary>
+        <p>A written strategy brief with findings, screenshots, source trails, recommendations, and next actions. Source files included where useful.</p>
       </details>
       <details>
-        <summary>What if it's not useful?</summary>
-        <p>Read the brief and watch the walkthrough. If the work is not useful, email me within 7 days. We will either correct the issue or refund the engagement. You keep the material already delivered.</p>
+        <summary>Who does the work?</summary>
+        <p>Founder-led. Small caseload. No junior handoff. No generic template deck.</p>
       </details>
     </div>
   </section>
