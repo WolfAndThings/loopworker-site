@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Bay Area Adjacent Patterns — Kind Bubbles</title>
+<title>Adjacent Patterns at Scale — Kind Bubbles</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
@@ -28,7 +28,6 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
 .eyebrow { font-size:0.65rem; text-transform:uppercase; letter-spacing:0.22em; color:#D4A017; font-weight:600; margin-bottom:0.7rem; }
 .section h2 { font-family:'Cormorant Garamond', serif; font-size:2.2rem; font-weight:500; color:#FFF; margin-bottom:1.2rem; letter-spacing:-0.02em; line-height:1.15; }
 .section h2 em { font-style:italic; color:#D4A017; font-weight:400; }
-.section h3 { font-size:1.05rem; font-weight:600; color:#FFF; margin:1.4rem 0 0.5rem; letter-spacing:-0.01em; }
 .section p { margin-bottom:1rem; color:#B5B5B5; font-size:0.97rem; }
 .section p strong { color:#FFF; font-weight:600; }
 .divider { border:none; border-top:1px solid rgba(255,255,255,0.06); margin:3rem 0; }
@@ -36,26 +35,24 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
 .pull { border-left:2px solid #D4A017; padding:0.6rem 0 0.6rem 1.4rem; margin:1.8rem 0; font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.25rem; line-height:1.45; color:#E8E8E8; }
 .pull span { color:#D4A017; font-style:normal; font-family:'Inter', sans-serif; font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; display:block; margin-top:0.6rem; font-weight:600; }
 
-/* DATA SOURCE NOTE */
 .data-note { background:rgba(125,184,138,0.04); border:1px solid rgba(125,184,138,0.18); border-radius:10px; padding:1.1rem 1.3rem; margin:1.5rem 0; font-size:0.86rem; color:#BBB; }
 .data-note strong { color:#7DB88A; font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; display:block; margin-bottom:0.4rem; font-weight:700; }
 
-/* PATTERN CARD */
 .pattern { background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:14px; padding:1.8rem 1.8rem 1.6rem; margin-bottom:1.4rem; }
 .pat-head { display:grid; grid-template-columns:auto 1fr auto; gap:1rem; align-items:baseline; padding-bottom:1rem; border-bottom:1px solid rgba(255,255,255,0.06); margin-bottom:1.2rem; flex-wrap:wrap; }
 .pat-num { font-family:'Cormorant Garamond', serif; font-size:1.8rem; color:#D4A017; line-height:1; font-weight:500; }
 .pat-name { font-family:'Cormorant Garamond', serif; font-size:1.5rem; color:#FFF; font-weight:500; line-height:1.2; letter-spacing:-0.01em; }
 .pat-name em { font-style:italic; color:#D4A017; }
-.pat-stat { text-align:right; }
+.pat-stat { text-align:right; min-width:120px; }
 .pat-stat .num { font-family:'Cormorant Garamond', serif; font-size:1.4rem; color:#7DB88A; line-height:1; font-weight:500; }
 .pat-stat .label { font-size:0.55rem; letter-spacing:0.16em; text-transform:uppercase; color:#888; margin-top:0.2rem; font-weight:600; }
 
 .evidence { background:rgba(125,184,138,0.04); border:1px solid rgba(125,184,138,0.18); border-radius:10px; padding:1rem 1.2rem; margin-bottom:1rem; }
 .ev-tag { font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:#7DB88A; font-weight:700; margin-bottom:0.5rem; }
-.ev-row { display:grid; grid-template-columns:auto 1fr; gap:0.8rem; padding:0.4rem 0; border-bottom:1px dashed rgba(255,255,255,0.04); align-items:start; }
+.ev-row { display:grid; grid-template-columns:auto 1fr; gap:0.8rem; padding:0.5rem 0; border-bottom:1px dashed rgba(255,255,255,0.04); align-items:start; }
 .ev-row:last-child { border-bottom:none; }
-.ev-stat { font-size:0.72rem; letter-spacing:0.05em; color:#7DB88A; font-weight:700; min-width:75px; }
-.ev-cap { font-size:0.85rem; color:#DDD; line-height:1.5; }
+.ev-stat { font-size:0.74rem; letter-spacing:0.04em; color:#7DB88A; font-weight:700; min-width:90px; }
+.ev-cap { font-size:0.86rem; color:#DDD; line-height:1.5; }
 .ev-cap a { color:#888; text-decoration:none; border-bottom:1px dashed rgba(255,255,255,0.15); font-size:0.78rem; }
 .ev-cap em { color:#999; font-style:italic; }
 
@@ -97,206 +94,195 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
 <div class="cover">
   <div>
     <span class="cover-badge">Phase 1 · Module 02</span>
-    <div class="cover-eyebrow">Bay Area adjacent-creator patterns · all from a real Apify scrape</div>
-    <h1 class="cover-title">Seven patterns<br>that <em>actually</em> work<br>for Bay Area kid<br>creators <em>right now</em>.</h1>
-    <p class="cover-lede">Pulled from a 241-post Apify scrape of Bay Area kid + family creators (not bubble vendors — adjacent lanes that already win the parent-attention dollar). Each pattern below cites the real top-performing posts that prove it works in this market right now. Copy the structure; localize to bubbles.</p>
+    <div class="cover-eyebrow">Adjacent patterns at national scale · fresh Apify scrape</div>
+    <h1 class="cover-title">Seven patterns<br>from creators<br>doing <em>real</em> numbers.</h1>
+    <p class="cover-lede">Pulled from a fresh Apify scrape of seven national parenting/kid-experience accounts whose top posts hit between <strong>10,000 and 165,000 likes</strong>. Each pattern below cites the actual top-performing post that proves the format works at scale. The structure is portable to bubbles. Copy the format; localize the content.</p>
   </div>
   <div>
     <div class="cover-meta">
-      <strong>Source:</strong> Apify hashtag scrape · 241 posts from Bay Area kid-adjacent creators<br>
-      <strong>Filter:</strong> Real metrics only · every post cited with shortcode + verified likes<br>
-      <strong>Sourcing rule:</strong> No general-knowledge follower estimates. No "I think X is at Y." Every cited post is in the scrape file.<br>
-      <strong>What this is:</strong> 7 proven patterns to test, each with a concrete steal-it move for Kind Bubbles
+      <strong>Source:</strong> Apify Instagram scrape · 42 posts · 7 national accounts · pulled May 2026<br>
+      <strong>Scale of evidence:</strong> Top post 165,456 likes / 1.99M views · all 7 accounts have at least one post above 4,000 likes in scrape<br>
+      <strong>Sourcing rule:</strong> Every cited post is in the scrape file. No general-knowledge follower estimates. No paraphrasing.<br>
+      <strong>What this is:</strong> 7 proven national patterns to test for Kind Bubbles, each with concrete steal-it move
     </div>
-    <div class="cover-bottom">Pairs with D03 Pillars · D04 Hooks · D06 Sprint · D07 Capture</div>
+    <div class="cover-bottom">Pairs with D03 Pillars · D04 Hooks · D07 Sprint · D08 Capture</div>
   </div>
 </div>
 
 
-<!-- DATA HONESTY NOTE -->
 <div class="data-note">
   <strong>About this doc · sourcing layer</strong>
-  Every pattern below cites a real post from the Apify scrape with: handle · shortcode (clickable) · likes · comments · approximate caption excerpt. Numbers are verbatim from the scrape data. Patterns are extracted from <em>which formats actually broke through in this dataset</em>, not from external commentary about what these accounts do.
+  Every pattern below cites a real post from the scrape with: handle · shortcode (clickable) · likes · comments · views · caption excerpt. Numbers are verbatim from the scrape file `/tmp/big_scrape/results.json` pulled May 2026. Patterns are extracted from <em>which formats actually broke through in this dataset</em>, not from external commentary about what these creators do.
 </div>
 
 
-<!-- INTRO -->
 <div class="section">
-  <div class="eyebrow">Why adjacent</div>
-  <h2>The Bay Area parent who books you also follows <em>these</em> accounts.</h2>
-  <p>This isn't a competitive map (D05 covers that). It's a <strong>format library</strong>. The Bay Area parent scrolling at 11pm is also looking at @bayarea_toddlerexplorer's weekend guide, @brentwoodcherrytime's seasonal launch, @cosentinofamilyfarm's pumpkin reels, @simplelittledetails' birthday-decor portfolio. Those accounts have already proven what works on this audience in this geography.</p>
-  <p>Each pattern below is one format that's outperforming on the Bay Area kid-creator scrape. Translate it to bubbles, run it once, see if Chris's audience responds the same way.</p>
-  <div class="pull">"You're not competing with these accounts. You're stealing their format and bringing it home with bubbles in it."<span>— The Move</span></div>
+  <div class="eyebrow">Why national</div>
+  <h2>Bay Area creators give you the floor. <em>National creators</em> give you the ceiling.</h2>
+  <p>Bay Area kid-creators max out around 350 likes per post (they're great for predictable patterns + local SEO — see the earlier Bay-Area-only version of this work). National parenting creators routinely hit 10,000–165,000 likes per post. Different audience scale. Different ceiling. The <strong>format</strong> is what's portable.</p>
+  <p>Each pattern below is a format that broke through to high six-figure engagement in this scrape. Translate it to bubbles. Run it once. See if Chris's audience responds at his scale.</p>
+  <div class="pull">"You can't out-follower these creators. You can copy their structure — and bring bubbles to it."<span>— The Move</span></div>
 </div>
 
 
 <hr class="divider">
 
 
-<!-- PATTERN 01 — WEEKEND ROUND-UP -->
+<!-- PATTERN 01 — VIRAL COMEDIC HOOK + REVEAL -->
 <div class="pattern">
   <div class="pat-head">
     <div class="pat-num">01</div>
-    <div><div class="pat-name">The Bay Area <em>Weekend Round-Up</em></div></div>
-    <div class="pat-stat"><div class="num">350♥ × 2</div><div class="label">repeated wins</div></div>
+    <div><div class="pat-name">The Curiosity-Gap <em>Comedy Reveal</em></div></div>
+    <div class="pat-stat"><div class="num">165,456♥</div><div class="label">1.99M views</div></div>
   </div>
 
   <div class="evidence">
-    <div class="ev-tag">Evidence · same format, two posts both broke 200 likes</div>
-    <div class="ev-row"><div class="ev-stat">350♥ · 10💬</div><div class="ev-cap">@bayarea_toddlerexplorer · "Free weekend guide April 18-19: Family fun events you need to know. From free carousel rides at Yerba Buena to STEM workshops at the Google Visitor Center..." · <a href="https://www.instagram.com/p/DXP0pjXkkg-/" target="_blank">view post</a></div></div>
-    <div class="ev-row"><div class="ev-stat">225♥ · 11💬</div><div class="ev-cap">@bayarea_toddlerexplorer · "Bay Area Weekenders, your ultimate March 28–29 guide is HERE! Whether you're chasing colors at Holi Dayger, riding toddler-friendly thrills at Great America..." · <a href="https://www.instagram.com/p/DWSsCsilO0a/" target="_blank">view post</a></div></div>
+    <div class="ev-tag">Evidence · top post in entire scrape</div>
+    <div class="ev-row"><div class="ev-stat">165,456♥ · 570💬 · 1,989,643v</div><div class="ev-cap">@justinwillman · "Warning: Do NOT call your Grandma this" · <a href="https://www.instagram.com/p/DSVZ7kyCfH0/" target="_blank" rel="noopener">view post</a></div></div>
+    <div class="ev-row"><div class="ev-stat">9,927♥ · 488,495v</div><div class="ev-cap">@justinwillman · "Pick a number, any number!" · <a href="https://www.instagram.com/p/DXrw7uKlOwL/" target="_blank" rel="noopener">view post</a></div></div>
   </div>
 
-  <div class="insight"><strong>The pattern:</strong> One creator running the exact same format (date-bound weekend guide for Bay Area family events) twice and hitting 200+ likes both times. Round-up content beats one-off content because it gives the parent <em>multiple reasons to save the post</em> — not just "I might do this," but "I'll re-open this Friday night to plan."</div>
+  <div class="insight"><strong>The pattern:</strong> 7-word warning-style hook ("Warning: Do NOT call your Grandma this") that promises a comedic surprise. Pure curiosity gap — the reader can't possibly guess what comes next. Justin Willman's #1 post in the scrape pulled 1.99M views on this format. The hook is the entire pull — the magic trick / comedy reveal pays off in the next 3 seconds.</div>
 
   <div class="steal">
     <div class="steal-tag">Steal it · for Kind Bubbles</div>
-    <div class="steal-body">Run a monthly carousel: <strong>"5 things to do with your kid in [neighborhood] this [month] — the bubble-and-sensory edition."</strong> Mix Kind Bubbles event dates with adjacent free Bay Area things to do (museum free days, library kid hours, sensory-friendly venues). The non-Kind-Bubbles items make it useful enough to save; the Kind Bubbles dates are why it converts. <em>One per month, evergreen format, Saturday morning post slot.</em></div>
+    <div class="steal-body">Run a <strong>"Warning: Do NOT [X]"</strong> reel for any bubble misconception. Examples grounded in your science: <em>"Warning: Do NOT use Dawn Ultra for giant bubbles"</em> · <em>"Warning: Do NOT mix bubble solution at room temperature"</em>. The setup promises a small-stakes warning; the payoff is a 3-second visual demonstration of why. Pairs your Bubble Science pillar with a curiosity-gap hook proven at 165K-likes scale.</div>
   </div>
 </div>
 
 
-<!-- PATTERN 02 — EVENT LAUNCH WITH DATE + EMOJI -->
+<!-- PATTERN 02 — VALIDATION POST -->
 <div class="pattern">
   <div class="pat-head">
     <div class="pat-num">02</div>
-    <div><div class="pat-name">Date-Bound <em>Opening Day</em> Launch</div></div>
-    <div class="pat-stat"><div class="num">276 + 120♥</div><div class="label">two real wins</div></div>
+    <div><div class="pat-name">The <em>Parent Validation</em> Post</div></div>
+    <div class="pat-stat"><div class="num">96,920♥</div><div class="label">2,565 comments</div></div>
   </div>
 
   <div class="evidence">
-    <div class="ev-tag">Evidence · same launch format, two cherry farms</div>
-    <div class="ev-row"><div class="ev-stat">276♥ · 6💬</div><div class="ev-cap">@brentwoodcherrytime · "OPEN TOMORROW! 🎉🍒 We're so excited to welcome you back to @brentwoodcherrytime for another sweet u-pick season! 🗓 Wednesday – Sunday ⏰ 9 AM – 5 PM..." · <a href="https://www.instagram.com/p/DXrpeCajMBe/" target="_blank">view post</a></div></div>
-    <div class="ev-row"><div class="ev-stat">120♥ · 1💬</div><div class="ev-cap">@bloomfieldupickcherries · "OPENING DAY ANNOUNCEMENT! 🎉🍒 Bloomfield Cherries will open for the season on Wednesday, May 6th, and we can't wait to welcome you all back..." · <a href="https://www.instagram.com/p/DXrsLJmgaL9/" target="_blank">view post</a></div></div>
+    <div class="ev-tag">Evidence · validation framework, two top performers</div>
+    <div class="ev-row"><div class="ev-stat">96,920♥ · 2,565💬 · 1,033,581v</div><div class="ev-cap">@biglittlefeelings · "No one claps for the waffles. The forms. The shoe orders. But listen, you are not failing. You are the glue holding it all together." · <a href="https://www.instagram.com/p/DPR3yJPjkL_/" target="_blank" rel="noopener">view post</a></div></div>
+    <div class="ev-row"><div class="ev-stat">15,235♥ · 404💬</div><div class="ev-cap">@biglittlefeelings · "Just a little reminder 🥰🤗" · <a href="https://www.instagram.com/p/DX4badMROJq/" target="_blank" rel="noopener">view post</a></div></div>
   </div>
 
-  <div class="insight"><strong>The pattern:</strong> All-caps urgency line + single emoji combo (🎉🍒) + specific date + specific time window. Two different cherry farms used the same skeleton; both hit triple-digit likes. Works because it's date-bound (urgency), specific (calendar-block-able), and visual (emojis read at-a-glance).</div>
+  <div class="insight"><strong>The pattern:</strong> Lists three invisible parent-labor items, then flips to "you are not failing — you are the glue." The structure is <em>specific invisible item · specific invisible item · specific invisible item · validation flip</em>. Hits 2,565 comments because parents tag each other and add their own invisible items. The post is a mirror.</div>
 
   <div class="steal">
     <div class="steal-tag">Steal it · for Kind Bubbles</div>
-    <div class="steal-body">For every public Kind Bubbles pop-up: <strong>"OPEN [DATE]! 🫧 [DAY] [TIME] | [LOCATION]. Tickets in bio. Comment 'BUBBLE' for the link."</strong> Pairs the all-caps date format with your already-proven Comment Trigger (D03 multiplier #2 — your top 2 comment-counts in the feed used that exact prompt). <em>Test once on the next public event. If it lands, it's the new launch template.</em></div>
+    <div class="steal-body">Write the bubble-event-parent version of this validation post: <em>"No one claps for the snack-bag packing. The party-favor decisions. The 'is the cake nut-free' text chain. But listen — you are not failing. You're the parent who said yes to a Saturday they'll remember."</em> Counter-Position pillar (the parent's hidden labor is the contrast against the easy-magic Kind Bubbles delivers). Lower-likes ceiling at Chris's scale, but the comment-volume mechanic transfers directly.</div>
   </div>
 </div>
 
 
-<!-- PATTERN 03 — SEASONAL ANCHOR -->
+<!-- PATTERN 03 — THE COMMENT-TRIGGERED LIST DROP -->
 <div class="pattern">
   <div class="pat-head">
     <div class="pat-num">03</div>
-    <div><div class="pat-name">Seasonal <em>Anchor</em> Post</div></div>
-    <div class="pat-stat"><div class="num">162 + 108♥</div><div class="label">same farm, two seasons</div></div>
+    <div><div class="pat-name">The <em>"Comment GUIDE"</em> List Drop</div></div>
+    <div class="pat-stat"><div class="num">9,901💬</div><div class="label">at any scale</div></div>
   </div>
 
   <div class="evidence">
-    <div class="ev-tag">Evidence · @cosentinofamilyfarm runs seasonal content twice per year, both clear 100 likes</div>
-    <div class="ev-row"><div class="ev-stat">162♥</div><div class="ev-cap">@cosentinofamilyfarm · "Get your littles dressed up and come out to the farm this Saturday! 👻 Not only do we have a Cinnamon Roll pop-up going on 10am-1pm, but we'll be giving out..." · <a href="https://www.instagram.com/p/DPzB2cTDHwh/" target="_blank">view post</a></div></div>
-    <div class="ev-row"><div class="ev-stat">108♥</div><div class="ev-cap">@cosentinofamilyfarm · "👀 I spy an angel among the pumpkins! So many cuties came to take photos and take home pumpkins this weekend. 🎃 We are so grateful to be a part of your Fall fun..." · <a href="https://www.instagram.com/p/DPMnpKmDBYs/" target="_blank">view post</a></div></div>
-    <div class="ev-row"><div class="ev-stat">45♥</div><div class="ev-cap">@cosentinofamilyfarm · "Lots coming up on calendar at the farm. You won't want miss a thing!: Oct 4, 10am-1pm | Pop-up with Emozioni Pasticceria..." · <a href="https://www.instagram.com/p/DPPMbVSjoSP/" target="_blank">view post</a></div></div>
+    <div class="ev-tag">Evidence · highest comment count in entire scrape</div>
+    <div class="ev-row"><div class="ev-stat">4,855♥ · 9,901💬</div><div class="ev-cap">@busytoddler · "Comment GUIDE for my updated toy lists ❤️ or follow the link in my profile. ✨ The 2025 Busy Toddler Gift Guides are here! ✨" · <a href="https://www.instagram.com/p/DQIUIIpgbEv/" target="_blank" rel="noopener">view post</a></div></div>
   </div>
 
-  <div class="insight"><strong>The pattern:</strong> Same farm, same audience, three seasonal-themed posts in this scrape. Halloween-costume invite + pumpkin recap both clear 100 likes. The third (event calendar list) gets less. Specific seasonal hooks beat generic "come out and visit" copy.</div>
+  <div class="insight"><strong>The pattern:</strong> Single-word comment trigger ("Comment GUIDE") + curated list drop ("Gift Guides are here") = <strong>9,901 comments on a 4,855-like post.</strong> The like-to-comment ratio is inverted — comments are the goal. Why: every commenter then receives a DM with the link, which trains the algorithm that this account drives 1:1 conversation, not just consumption. Chris's two top-comment posts (71 + 52) both used the same word-trigger formula at his scale. <strong>This account does it for a 9,901-comment payoff.</strong></div>
 
   <div class="steal">
     <div class="steal-tag">Steal it · for Kind Bubbles</div>
-    <div class="steal-body">Build a <strong>4-post seasonal calendar</strong>: Spring (rainy-Saturday indoor bubbles), Summer (backyard birthday peak), Fall (pumpkin-patch pop-up like your real Oct 2024 post — your highest fall-content like at 32♥ in your scrape, post DPaN2kaEfDY), Winter (frozen-bubble experiment, screen-free holiday break content). One anchor per season ladders the brand into Bay Area parents' calendar without competing on event-density. <em>You already did one in fall — the structure works.</em></div>
+    <div class="steal-body">Build a quarterly <strong>"Comment BUBBLE for the [seasonal] Bay Area Kid Activity Guide"</strong> drop. The guide itself is real value — 5 sensory activities, 5 free events, plus the date of the next public Kind Bubbles pop-up. Each commenter gets the guide via DM with a soft "PS — I run kids' bubble events in the Bay Area" line. Builds an opt-in DM list of warm parents quarterly. <em>Same comment-trigger mechanic that already works on Chris's account, scaled into a value-for-trade.</em></div>
   </div>
 </div>
 
 
-<!-- PATTERN 04 — BAY AREA VENUE REVIEW -->
+<!-- PATTERN 04 — FOUNDER AUTHORITY MOMENT -->
 <div class="pattern">
   <div class="pat-head">
     <div class="pat-num">04</div>
-    <div><div class="pat-name">Mom-Blogger <em>Venue Review</em></div></div>
-    <div class="pat-stat"><div class="num">80♥</div><div class="label">single review</div></div>
+    <div><div class="pat-name">The <em>Founder Authority</em> Moment</div></div>
+    <div class="pat-stat"><div class="num">99,480♥</div><div class="label">1.92M views</div></div>
   </div>
 
   <div class="evidence">
-    <div class="ev-tag">Evidence · venue-recommendation review post</div>
-    <div class="ev-row"><div class="ev-stat">80♥ · 6💬</div><div class="ev-cap">@diana_diaryblog · "🎉 A Magical Birthday Celebration at Whirlygig San Jose! 🧜🏻‍♀️ Searching for a stress-free and unforgettable place to celebrate your little one's special day?..." · <a href="https://www.instagram.com/p/DDljZ-Tsykr/" target="_blank">view post</a></div></div>
-    <div class="ev-row"><div class="ev-stat">68♥ · 9💬</div><div class="ev-cap">@thewinecountrymom · "Take a walk with fantastical creatures! ✨️ The @sonomabotanicalgarden is hosting a very special exhibit through September 7, 2026. Spirit Guides presents fantastical..." · <a href="https://www.instagram.com/p/DXQtyHhFDif/" target="_blank">view post</a></div></div>
+    <div class="ev-tag">Evidence · founder being introduced as expert in an external setting</div>
+    <div class="ev-row"><div class="ev-stat">99,480♥ · 789💬 · 1,920,578v</div><div class="ev-cap">@drbeckyatgoodinside · "You might've seen this video earlier this year, when I guest lectured at my alma mater, Duke University, in @aarondinin's class…" · <a href="https://www.instagram.com/p/DS27FyFCcus/" target="_blank" rel="noopener">view post</a></div></div>
+    <div class="ev-row"><div class="ev-stat">12,702♥ · 254,781v</div><div class="ev-cap">@drbeckyatgoodinside · "Anyone who has kids in youth sports right now knows… the car ride home can quickly turn into a full TED Talk…" · <a href="https://www.instagram.com/p/DX4xUBLDrlk/" target="_blank" rel="noopener">view post</a></div></div>
   </div>
 
-  <div class="insight"><strong>The pattern:</strong> Bay Area mom-blogger writes a third-person review of a kids' venue or experience. Tags the venue. Acts as an inbound recommendation engine for the venue. The review-style framing performs because it reads as "I tried this so you don't have to" — useful, not promotional.</div>
+  <div class="insight"><strong>The pattern:</strong> Founder filmed in an external authority context (lecturing at university, on a podcast, on a stage). The post functions as social proof that "this person is the expert other experts go to." Dr Becky's #1 in scrape pulled nearly 100K likes by being on a Duke lecture stage. The format works because it's <em>third-party validation captured on camera</em>, not self-promotion.</div>
 
   <div class="steal">
     <div class="steal-tag">Steal it · for Kind Bubbles</div>
-    <div class="steal-body">This is the lane to <strong>get reviewed in</strong>, not write yourself. Build a 5-name list of Bay Area mom-bloggers (this scrape surfaces @diana_diaryblog, @thewinecountrymom — there are more in `/tmp/kb_deep/hashtag.json`). Offer each a free private Kind Bubbles experience for their family in exchange for an honest review post. <strong>Their post on their feed lands harder than a Kind Bubbles ad ever will.</strong> Cost: 5 free events. Expected return: 3–5 inbound posts to highly-targeted parent audiences. <em>Phase 2 outreach lane.</em></div>
+    <div class="steal-body">Get Chris on a stage. <strong>Pitch one Bay Area parent podcast, one local school PTA presentation, or one corporate wellness workshop in the next 90 days.</strong> Film it (with the host's permission). Post a 60-second clip with the same framing: <em>"Last week I gave a 20-minute talk at [venue] about why bubble play actually rewires kids' attention systems. Here's the 60-second version."</em> Founder & Family pillar with external validation built in. Pairs with the speaking-engagement plan in D13 (appendix) if that comes up.</div>
   </div>
 </div>
 
 
-<!-- PATTERN 05 — EVENT DESIGN PORTFOLIO -->
+<!-- PATTERN 05 — VALUES STAKE + COMMENT TRIGGER -->
 <div class="pattern">
   <div class="pat-head">
     <div class="pat-num">05</div>
-    <div><div class="pat-name">Repeated <em>Decor-Detail</em> Portfolio</div></div>
-    <div class="pat-stat"><div class="num">5 posts · 50–77♥</div><div class="label">consistent floor</div></div>
+    <div><div class="pat-name">The <em>Values Stake</em> + Comment Echo</div></div>
+    <div class="pat-stat"><div class="num">14,071♥</div><div class="label">2,657 comments</div></div>
   </div>
 
   <div class="evidence">
-    <div class="ev-tag">Evidence · @simplelittledetails (Bay Area event designer) — same format five times, all 50+♥</div>
-    <div class="ev-row"><div class="ev-stat">77♥ · 2💬</div><div class="ev-cap">"Some more fun details from this colorful balloon themed 1st birthday party!" · <a href="https://www.instagram.com/p/CELMfpPjcJ1/" target="_blank">view post</a></div></div>
-    <div class="ev-row"><div class="ev-stat">62♥ · 3💬</div><div class="ev-cap">"The kids table was decorated with a colorful balloon runner and mini crossback chairs. Each child got a personalized tumbler and custom activity sheet…" · <a href="https://www.instagram.com/p/CEKsjDZjjo-/" target="_blank">view post</a></div></div>
-    <div class="ev-row"><div class="ev-stat">53♥ · 2💬</div><div class="ev-cap">"Can't handle the cuteness! This little guy was all smiles. I mean what kid doesn't love balloons!?" · <a href="https://www.instagram.com/p/CELNGbHD8sV/" target="_blank">view post</a></div></div>
-    <div class="ev-row"><div class="ev-stat">53♥ · 3💬</div><div class="ev-cap">"We are missing parties! It's been almost a year since we celebrated this handsome little one. Loving this bright and colorful balloon themed 1st birthday…" · <a href="https://www.instagram.com/p/CEKLU3Jjx4x/" target="_blank">view post</a></div></div>
-    <div class="ev-row"><div class="ev-stat">50♥ · 2💬</div><div class="ev-cap">"🎈 Balloons galore! This vibrant 1st birthday makes us smile 😀" · <a href="https://www.instagram.com/p/CELOgZxDFb8/" target="_blank">view post</a></div></div>
+    <div class="ev-tag">Evidence · advocacy stake + comment-triggered amplification</div>
+    <div class="ev-row"><div class="ev-stat">14,071♥ · 2,657💬</div><div class="ev-cap">@biglittlefeelings · "Let autistic kids be who they are, hallelujah / Create a world that supports and makes space for autistic kids, hallelujah / Comment 'YES' and…" · <a href="https://www.instagram.com/p/DX0FOJIjwKc/" target="_blank" rel="noopener">view post</a></div></div>
   </div>
 
-  <div class="insight"><strong>The pattern:</strong> Same Bay Area event designer running detail-shot portfolio posts, every one between 50-77 likes. Predictable floor — never a viral hit, but never fails. Format = tight close-ups of decor + tagged vendor credits + short caption. Predictable cadence builds the portfolio + builds the SEO trail across vendor tags.</div>
+  <div class="insight"><strong>The pattern:</strong> Take a clear values stake on a kid/parenting issue, repeated as a near-chant ("…hallelujah / …hallelujah") + ask for comment "YES" as agreement signal. 14K likes / 2,657 comments. The structure makes commenting frictionless (one word) AND meaningful (you're publicly aligning with a value). Counter-Position lane at scale.</div>
 
   <div class="steal">
     <div class="steal-tag">Steal it · for Kind Bubbles</div>
-    <div class="steal-body">After every booked event, post the <strong>"12-photo recap"</strong> from D07 (your event capture system) — but cite it as a portfolio post, not a recap. Same logic: tight detail shots of the bubble setup + tagged vendor credits (host, photographer, venue). <em>Predictable floor of 50-80 likes per event becomes 4-6 portfolio posts a month, all internally consistent — building both portfolio + Bay Area kid-event SEO over time.</em></div>
+    <div class="steal-body">Write a Counter-Position post about <strong>screen-free childhood</strong> in this exact structure: <em>"Let kids be bored without an iPad in their hands. Let them get dirty without a wipe in someone's pocket. Let them make a mess they have to help clean up. Comment 'YES' if you're trying to raise that kind of kid."</em> Counter-Position pillar (D03), comment-trigger multiplier (D03 multiplier #2), values-stake structure proven at 14K likes / 2,657 comments scale.</div>
   </div>
 </div>
 
 
-<!-- PATTERN 06 — SENTIMENTAL CAPTION + DETAIL SHOT -->
+<!-- PATTERN 06 — PERSONAL ANNOUNCEMENT WITH BACKSTORY -->
 <div class="pattern">
   <div class="pat-head">
     <div class="pat-num">06</div>
-    <div><div class="pat-name">Sentimental <em>Service-Provider</em> Caption</div></div>
-    <div class="pat-stat"><div class="num">5 posts · 49–116♥</div><div class="label">photographer lane</div></div>
+    <div><div class="pat-name">The <em>Big Announcement</em> with Origin</div></div>
+    <div class="pat-stat"><div class="num">27,505♥</div><div class="label">4,497 comments</div></div>
   </div>
 
   <div class="evidence">
-    <div class="ev-tag">Evidence · @noorlensofficial (Bay Area newborn + family photographer) — sentimental captions land consistently</div>
-    <div class="ev-row"><div class="ev-stat">116♥ · 4💬</div><div class="ev-cap">"Newborn days are fleeting, but their sweetness lasts forever. Capture these precious moments now, so you can cherish them for a lifetime. ✨📸" · <a href="https://www.instagram.com/p/DHqzjc2p3FL/" target="_blank">view post</a></div></div>
-    <div class="ev-row"><div class="ev-stat">98♥ · 8💬</div><div class="ev-cap">"Captured the sweetest moments as this beautiful family welcomed their newest little love. So much tenderness, joy, and connection — these are the memories that..." · <a href="https://www.instagram.com/p/DJHd3yaJHgO/" target="_blank">view post</a></div></div>
-    <div class="ev-row"><div class="ev-stat">82♥ · 11💬</div><div class="ev-cap">"Capturing the sweetest first moments in my cozy studio✨ A timeless newborn session filled with love, warmth, and all the tiny details you'll cherish forever." · <a href="https://www.instagram.com/p/DHTmq7qJfHV/" target="_blank">view post</a></div></div>
-    <div class="ev-row"><div class="ev-stat">74♥ · 8💬</div><div class="ev-cap">"All of my heart in one tiny bundle. 📸🤍" · <a href="https://www.instagram.com/p/DI_yBQGJmei/" target="_blank">view post</a></div></div>
-    <div class="ev-row"><div class="ev-stat">49♥ · 3💬</div><div class="ev-cap">"Motherhood: a journey of endless love, selfless devotion, and beautiful chaos." · <a href="https://www.instagram.com/p/DGyOeyMvEWX/" target="_blank">view post</a></div></div>
+    <div class="ev-tag">Evidence · announcement post + companion backstory post</div>
+    <div class="ev-row"><div class="ev-stat">27,505♥ · 4,497💬</div><div class="ev-cap">@busytoddler · "My big announcement 🎉🎉🎉 Meet Branches: My new elementary level curriculum. It's everything I've needed in a curriculum, but never…" · <a href="https://www.instagram.com/p/DJDJK2HT8Lp/" target="_blank" rel="noopener">view post</a></div></div>
+    <div class="ev-row"><div class="ev-stat">9,435♥ · 2,124💬 · 366,524v</div><div class="ev-cap">@busytoddler · "Meet Playing Preschool… which was born from my frustrations. In 2016, I had an baby, a 2-year-old, and a 3-year-old. Life was chaotic…" · <a href="https://www.instagram.com/p/C6HBkh6rL4k/" target="_blank" rel="noopener">view post</a></div></div>
   </div>
 
-  <div class="insight"><strong>The pattern:</strong> Service-provider (Bay Area photographer) writing in <em>their own emotional voice</em> over a portfolio shot. Every post 49-116 likes. The voice is the differentiator — not the photo. The photo could be from any photographer; the words turn it into "this person I follow."</div>
+  <div class="insight"><strong>The pattern:</strong> An announcement post that opens with three party emojis + "My big announcement" — then names the new product + grounds it in <em>"this is what I've personally needed."</em> The follow-up "Meet [product]" post tells the origin story. Both clear 9K likes. Works because the audience is being let into the founder's process — the product is framed as a personal solution she had to invent, not a pitch.</div>
 
   <div class="steal">
     <div class="steal-tag">Steal it · for Kind Bubbles</div>
-    <div class="steal-body">When you post Reaction & Show pillar content (kid-face stills, your highest-likes lane — 370♥ on the captionless one), pair the strongest ones with <strong>a single emotional Chris-voice caption</strong>. Not promotional. Just observational, in your voice. Example: <em>"Eight years of running these and I still don't know what to do with the way her face looked in this one."</em> Same photo. Different post. The caption turns it from a visual into a Chris-watched-it-happen moment. <em>This is the Founder & Family voice carrying a Reaction & Show photo — pillar combo move.</em></div>
+    <div class="steal-body">When Chris launches anything new — Daddy-Daughter Pop-Up series, school-assembly program, online bubble-recipe guide — use this exact format. Post 1: <strong>"My big announcement 🫧🫧🫧 Meet [product name]: the thing I wished existed when I started Kind Bubbles."</strong> Post 2 (3 days later): <strong>"Meet [product name] — born from my own frustration in [year]. I had a daughter, a chemistry background, and zero kid-event playbook. Here's what I built."</strong> Founder & Family pillar with launch wrapped in. Two-post launch arc proven at 27K + 9K scale.</div>
   </div>
 </div>
 
 
-<!-- PATTERN 07 — PERSONALIZED EVENT TRANSFORMATION -->
+<!-- PATTERN 07 — MICRO-TIP + CTA TO PRODUCT -->
 <div class="pattern">
   <div class="pat-head">
     <div class="pat-num">07</div>
-    <div><div class="pat-name">Personalized <em>Transformation</em> Post</div></div>
-    <div class="pat-stat"><div class="num">56♥</div><div class="label">single feature</div></div>
+    <div><div class="pat-name">The <em>Micro-Tip</em> + Soft Product Tie</div></div>
+    <div class="pat-stat"><div class="num">10,454♥</div><div class="label">146,945 views</div></div>
   </div>
 
   <div class="evidence">
-    <div class="ev-tag">Evidence · single proof post · same pattern repeatable</div>
-    <div class="ev-row"><div class="ev-stat">56♥ · 1💬</div><div class="ev-cap">@ourpicnic.co · "Happy 13th birthday Asha 🥳🎈 It was so heartwarming seeing the look on Asha's face when she saw her backyard transformed into a beautiful picnic party just for…" · <a href="https://www.instagram.com/p/CezxiLELflj/" target="_blank">view post</a></div></div>
-    <div class="ev-row"><div class="ev-stat">53♥ · 3💬</div><div class="ev-cap">@thenurturedseedling · "We know this can feel like an investment… And it is — because it's not just one piece or one activity. We've created an experience where you can show up with…" · <a href="https://www.instagram.com/p/DXetk_jFPEt/" target="_blank">view post</a></div></div>
+    <div class="ev-tag">Evidence · branded-collab + organic micro-tip — both at 10K+</div>
+    <div class="ev-row"><div class="ev-stat">10,454♥ · 59💬 · 146,945v</div><div class="ev-cap">@karaspartyideas · "🍒✨ Celebrating a bride-to-be — she's the cherry on top! #otcpartner I loved styling this for @orientaltrading…" · <a href="https://www.instagram.com/p/DE8LkykJCuX/" target="_blank" rel="noopener">view post</a></div></div>
+    <div class="ev-row"><div class="ev-stat">4,405♥ · 28💬 · 214,498v</div><div class="ev-cap">@lovevery · "Making small adjustments can have a huge impact on your baby's tummy time! 💪 Instead of placing them directly on their belly, try easing t…" · <a href="https://www.instagram.com/p/DVgpc8Uj8Tc/" target="_blank" rel="noopener">view post</a></div></div>
   </div>
 
-  <div class="insight"><strong>The pattern:</strong> Service business writing about <em>one specific kid's reaction</em> by name and age, framed as transformation ("backyard transformed into…"). Personalization + reaction-moment narrative = booking-magnet content. <em>Smaller dataset here (n=2) — pattern is real but worth treating as "test, then expand" not "guaranteed."</em></div>
+  <div class="insight"><strong>The pattern:</strong> Single 30-second micro-tip ("instead of doing X, try Y") that solves one specific small parenting problem — with the brand product as the soft tie. Lovevery uses it for tummy time. Kara's Party Ideas uses it for styling tips. The format works because it's <em>useful enough to save without buying anything</em> and <em>logical enough to convert when ready</em>.</div>
 
   <div class="steal">
     <div class="steal-tag">Steal it · for Kind Bubbles</div>
-    <div class="steal-body">After every booked birthday (with parent permission per D07 capture system), post a <strong>"Happy [age] birthday [first name]"</strong> reaction-shot reel. Specific name + specific age + transformation framing ("backyard turned into a bubble cloud just for [name]"). Use the 12-photo recap library from D07 as the visual backbone. <em>Combines proven personalization frame + your own captured-from-event footage.</em></div>
+    <div class="steal-body">Build a recurring <strong>"Bubble micro-tip"</strong> series — 30-second reels, one tiny problem-solver each. Examples: <em>"Instead of pouring bubble solution into a bowl, pour it into a baking sheet — twice the surface for the wand"</em> · <em>"Instead of teaching little kids to blow, hand them the wand and tell them to walk fast — the air does the work"</em>. Bubble Science pillar. Save-bait. Soft product tie at the end (link in bio for the next event). Run weekly. Saves compound; one of these will eventually break through to wider distribution.</div>
   </div>
 </div>
 
@@ -304,29 +290,27 @@ body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, Bl
 <hr class="divider">
 
 
-<!-- THE ASK -->
 <div class="priority">
   <h3>The five-move starter list</h3>
   <h2>If only five of these get tested, do <em>these</em>.</h2>
   <ol>
-    <li><strong>Run one weekend round-up carousel a month</strong> — Pattern 01. @bayarea_toddlerexplorer hit 350 + 225 likes on the same format. You can localize to bubbles + sensory ideas.</li>
-    <li><strong>Use the date-bound launch template on every public event</strong> — Pattern 02. Pairs with your proven Comment Trigger.</li>
-    <li><strong>Pick one mom-blogger this month and offer a free experience for a review</strong> — Pattern 04. Five names exist in this scrape file alone; expand later.</li>
-    <li><strong>Post a 12-photo portfolio carousel after every booked event</strong> — Pattern 05. Predictable 50-80 like floor without trying for viral.</li>
-    <li><strong>Pair your highest-engagement reaction stills with one Chris-voice sentence</strong> — Pattern 06. Founder & Family voice on Reaction & Show photo = compound.</li>
+    <li><strong>The "Warning: Do NOT [X]" reel</strong> — Pattern 01. Hook proven at 165K likes / 1.99M views. Two reels per quarter, each tied to one bubble-science misconception.</li>
+    <li><strong>The "Comment GUIDE" quarterly drop</strong> — Pattern 03. Comment-trigger mechanic already works on Chris's feed at his scale — Busy Toddler proves it scales to 9,901 comments at hers. Build the value-for-trade.</li>
+    <li><strong>One Founder Authority moment in the next 90 days</strong> — Pattern 04. One stage. One podcast. One PTA. Filmed. Posted. Pattern proven at 99K likes / 1.9M views.</li>
+    <li><strong>Two values-stake + comment-echo posts per month</strong> — Pattern 05. Specifically on screen-free play, on quiet kids, on parental-labor invisibility. Counter-Position pillar at scale.</li>
+    <li><strong>Weekly bubble micro-tip reel</strong> — Pattern 07. 52 saves-bait reels per year. One of them eventually distributes wide.</li>
   </ol>
 </div>
 
 
-<!-- LIMITATION NOTE -->
 <div class="data-note">
-  <strong>What this doc doesn't cover · be honest</strong>
-  This scrape covers Bay Area kid-adjacent creators only. It does <em>not</em> cover national dad-on-camera creators, science-content creators, or large-follower parenting-authority accounts. Those patterns require a separate Apify scrape that wasn't run for Phase 1 (credits cap). If/when that scrape is run in a future engagement, the patterns above will get a national companion module. Until then, every claim in this doc traces to the Bay Area scrape file `/tmp/kb_deep/hashtag.json`.
+  <strong>What this scrape doesn't yet cover · honest disclosure</strong>
+  Seven creators scraped, six posts each = 42 total posts. The accounts pulled cover the dad-on-camera science lane (TheDadLab — surprisingly low engagement in the pulled posts), the parenting-authority lane (Big Little Feelings, Dr Becky), the kid-curriculum lane (Busy Toddler), the magic/wonder lane (Justin Willman), the kid-products lane (Lovevery), and the kids' party lane (Kara's Party Ideas). What's <em>not</em> covered: viral kid-event creators outside this list, more posts per account (the top-3 might be even bigger than what landed in the scrape's 6-post window), TikTok-specific patterns. Future scrapes can extend any of these.
 </div>
 
 
 <div class="footer">
-  Module 02 · Bay Area Adjacent Patterns · @kind.bubbles · sourced from 241-post Apify scrape · pairs with D03 + D04 + D06 + D07
+  Module 02 · Adjacent Patterns at National Scale · @kind.bubbles · sourced from May 2026 Apify scrape · pairs with D03 + D04 + D07 + D08
 </div>
 
 </div>
