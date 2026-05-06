@@ -64,6 +64,17 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
 .deck-scroll-wrap::after { right: 0; background: linear-gradient(270deg, #080808 10%, transparent); }
 .deck-scroll-hint { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: #555; margin-top: 0.6rem; padding-left: 0.2rem; }
 .deck-scroll-hint::before { content: '→ '; color: #D4A017; }
+
+/* POSITION INDICATOR */
+.deck-pos { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.4rem; padding: 0 0.2rem; gap: 1.4rem; }
+.deck-pos-label { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; color: #C0A878; line-height: 1; flex-shrink: 0; }
+.deck-pos-label strong { color: #FFF; font-weight: 500; font-size: 1.2rem; }
+.deck-pos-dots { display: flex; gap: 0.4rem; flex-wrap: wrap; flex: 1; justify-content: flex-end; align-items: center; }
+.deck-pos-dot { width: 22px; height: 3px; border-radius: 2px; background: rgba(255,255,255,0.14); transition: background 0.3s, width 0.3s; cursor: pointer; border: none; padding: 0; }
+.deck-pos-dot.active { background: #D4A017; width: 38px; }
+.deck-pos-dot:hover { background: rgba(212,160,23,0.55); }
+@media (max-width: 720px) { .deck-pos { flex-direction: column; align-items: flex-start; gap: 0.6rem; } .deck-pos-dots { width: 100%; justify-content: flex-start; } .deck-pos-dot { width: 16px; } .deck-pos-dot.active { width: 28px; } }
+
 .deck-stack { display: flex; gap: 1.4rem; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0.5rem 0 1.2rem; scrollbar-width: thin; scrollbar-color: rgba(212,160,23,0.3) transparent; }
 .deck-stack::-webkit-scrollbar { height: 6px; }
 .deck-stack::-webkit-scrollbar-track { background: transparent; }
@@ -420,11 +431,15 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
     <h2 class="section-h">Examples of <em>research rounds</em> we build.</h2>
     <p class="section-lede">These are examples of intelligence rounds we build, not a menu. Your engagement is assembled around the questions your business actually needs answered.</p>
 
+    <div class="deck-pos">
+      <div class="deck-pos-label"><strong id="deckPosCur">01</strong> <span style="color:#888;">/</span> 12 · <span id="deckPosName">Competitor Path Reconstruction</span></div>
+      <div class="deck-pos-dots" id="deckPosDots" role="tablist" aria-label="Card position"></div>
+    </div>
+
     <div class="deck-scroll-wrap">
       <div class="deck-stack">
         <!-- 01 · COMPETITOR PATH RECONSTRUCTION -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">01 · Competitor Path Reconstruction</span><span class="dp-page-no">Reference</span></div>
           <p class="dp-question">How did our top competitors get here?</p>
           <h3 class="dp-h2">See the visible path your competitors used to <em>earn attention, trust, and demand.</em></h3>
           <div class="tl-line">
@@ -436,14 +451,12 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
           </div>
           <div class="dp-meta-rows">
             <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">competitor sites · landing pages · Google Business Profiles · social profiles · ad libraries · reviews · blog archives · pricing pages</span></div>
-            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">how they appear more trusted, easier to buy from, more premium, more visible, or better positioned</span></div>
             <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">decide what to copy, avoid, improve, attack, or reposition against</span></div>
           </div>
         </div>
 
         <!-- 02 · COMPETITOR AD VAULT -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">02 · Competitor Ad Vault</span><span class="dp-page-no">Reference</span></div>
           <p class="dp-question">What ads are our competitors running right now?</p>
           <h3 class="dp-h2">Every paid ad your competitors are running. <em>So you can beat them.</em></h3>
           <div class="ads-list">
@@ -470,14 +483,12 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
           </div>
           <div class="dp-meta-rows">
             <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">Meta Ad Library · TikTok Creative Center · YouTube ad data · public ad libraries · landing pages · creative · hooks · CTAs · running-time signals</span></div>
-            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">every active ad, what's been running long enough to be working, repeated angles, durable offers, weak tests they killed, the message they keep coming back to</span></div>
             <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">copy the ones that have run 90+ days, beat the ones with low variant turnover, skip the angles they killed, and ship your own without burning budget on tests they already ran</span></div>
           </div>
         </div>
 
         <!-- 03 · NICHE CONTENT PERFORMANCE BRIEF -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">03 · Niche Content Performance Brief</span><span class="dp-page-no">Reference</span></div>
           <p class="dp-question">What content is already winning in our market?</p>
           <h3 class="dp-h2">Find the content your <em>market is already voting for.</em></h3>
           <div class="hm-grid">
@@ -504,14 +515,12 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
           </div>
           <div class="dp-meta-rows">
             <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">Instagram · TikTok · YouTube · LinkedIn · Pinterest · blogs · newsletters · public engagement metrics · captions · comments · hashtags · thumbnails</span></div>
-            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">top-performing posts, repeated hooks, strongest formats, buyer-intent topics, creator angles, comment patterns, content gaps</span></div>
             <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">build a content plan around proven demand instead of guessing what to post</span></div>
           </div>
         </div>
 
         <!-- 04 · CUSTOMER DEMAND MINING BRIEF -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">04 · Customer Demand Mining Brief</span><span class="dp-page-no">Reference</span></div>
           <p class="dp-question">What do people keep asking for?</p>
           <h3 class="dp-h2">Find what customers are <em>already asking</em> someone to make.</h3>
           <div class="qs-list">
@@ -522,14 +531,12 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
           </div>
           <div class="dp-meta-rows">
             <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">YouTube · TikTok · Instagram comments · Reddit · forums · App Store reviews · product reviews · competitor reviews · FAQs · public community discussions</span></div>
-            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">feature requests, unmet needs, complaints, buying objections, product ideas, content ideas, service gaps, exact buyer language</span></div>
             <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">turn market language into product improvements, content ideas, new offers, sales-page copy, FAQ sections, or pitch-deck proof</span></div>
           </div>
         </div>
 
         <!-- 05 · MARKET GAP POSITIONING BRIEF -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">05 · Market Gap Positioning Brief</span><span class="dp-page-no">Reference</span></div>
           <p class="dp-question">Where does our company fit that competitors don't?</p>
           <h3 class="dp-h2">See the opening your <em>competitors are leaving behind.</em></h3>
           <div class="comp-row"><div class="comp-name">Direct comp · A</div><div class="comp-strength">Owns price + speed</div><div class="comp-gap">No founder voice on record</div></div>
@@ -539,14 +546,12 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
           <div class="lane-callout"><div class="lane-tag">◆ The opening sitting unclaimed</div><div class="lane-thesis">Founder-led + proof-rich + your-buyer pricing. Three of the four miss two of those signals each.</div></div>
           <div class="dp-meta-rows">
             <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">competitor sites · sales pages · reviews · ads · search demand · social content · pricing · offers · local listings · category conversations</span></div>
-            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">underserved buyer, repeated frustration, proof gap, weak competitor promise, missing offer shape, messaging opportunity, positioning angle</span></div>
             <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">rewrite your homepage, sharpen your offer, adjust pricing, brief your content, build proof, or reposition around the gap</span></div>
           </div>
         </div>
 
         <!-- 06 · SEARCH DEMAND MAP -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">06 · Search Demand Map</span><span class="dp-page-no">Reference</span></div>
           <p class="dp-question">What are buyers searching before they decide?</p>
           <h3 class="dp-h2">Answer the searches buyers <em>already make.</em></h3>
           <div class="sb-list">
@@ -559,14 +564,12 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
           </div>
           <div class="dp-meta-rows">
             <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">Google results · autocomplete · People Also Ask · competitor title tags · blog topics · landing pages · local search results · category keywords</span></div>
-            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">purchase-ready searches, comparison searches, problem-aware searches, local intent, SEO gaps, content opportunities</span></div>
             <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">create better landing pages, comparison pages, blog content, FAQs, local pages, or search-led offers</span></div>
           </div>
         </div>
 
         <!-- 07 · PRICING POWER BRIEF -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">07 · Pricing Power Brief</span><span class="dp-page-no">Reference</span></div>
           <p class="dp-question">What does this market already allow us to charge?</p>
           <h3 class="dp-h2">Find the price room your <em>market already allows.</em></h3>
           <div class="price-rail">
@@ -579,14 +582,12 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
           <div class="price-note">Pulled from competitor pricing pages, menus, booking flows. Where you sit shapes who buys, what they expect, and how fast you scale.</div>
           <div class="dp-meta-rows">
             <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">pricing pages · menus · checkout pages · booking pages · product pages · service descriptions · recurring offers · package tiers</span></div>
-            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">low-end, mid-market, premium, recurring, bundled, and hidden pricing patterns</span></div>
             <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">rework your pricing, packages, offer ladder, or premium positioning</span></div>
           </div>
         </div>
 
         <!-- 08 · WEBSITE CONVERSION BRIEF -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">08 · Website Conversion Brief</span><span class="dp-page-no">Reference</span></div>
           <p class="dp-question">Where is our site losing trust or intent?</p>
           <h3 class="dp-h2">Fix the page gaps <em>costing you sales.</em></h3>
           <div class="ww-frame">
@@ -599,14 +600,12 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
           </div>
           <div class="dp-meta-rows">
             <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">client site crawl · competitor crawls · page structure · above-the-fold copy · CTA paths · proof placement · mobile performance · form friction</span></div>
-            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">unclear hero, weak CTA, buried proof, confusing offer, slow mobile, missing trust signals, broken buyer path</span></div>
             <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">fix the page gaps costing you inquiries, sales, calls, or signups · analytics access optional for behavioral drop-off</span></div>
           </div>
         </div>
 
         <!-- 09 · PROOF GAP BRIEF -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">09 · Proof Gap Brief</span><span class="dp-page-no">Reference</span></div>
           <p class="dp-question">Do we look credible enough to buy from?</p>
           <h3 class="dp-h2">Put trust signals where <em>buyers decide.</em></h3>
           <div class="pg-grid">
@@ -621,14 +620,12 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
           </div>
           <div class="dp-meta-rows">
             <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">reviews · testimonials · case studies · social proof · press · founder bio · before/after assets · logos · ratings · public mentions</span></div>
-            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">what proof exists, what's missing, where proof should appear, where competitors look safer or more established</span></div>
             <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">add the right proof to the homepage, sales pages, landing pages, ads, pitch deck, or outreach</span></div>
           </div>
         </div>
 
         <!-- 10 · AUTHORITY CHANNEL MAP -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">10 · Authority Channel Map</span><span class="dp-page-no">Reference</span></div>
           <p class="dp-question">Where should we show up to borrow trust?</p>
           <h3 class="dp-h2">Borrow trusted attention from <em>the right places.</em></h3>
           <div class="cf-list">
@@ -640,14 +637,12 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
           </div>
           <div class="dp-meta-rows">
             <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">podcasts · newsletters · YouTube channels · local media · creator profiles · partner sites · communities · events · LinkedIn voices · industry blogs</span></div>
-            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">where the founder, coach, creator, or company should pitch, post, partner, appear, or collaborate</span></div>
             <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">build a targeted outreach list instead of posting randomly</span></div>
           </div>
         </div>
 
         <!-- 11 · LIVE SOCIAL DIRECTION -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">11 · Live Social Direction</span><span class="dp-page-no">Reference</span></div>
           <p class="dp-question">What should we be posting this week?</p>
           <h3 class="dp-h2">Today's content moves — pulled from <em>trends, competitors, and what's actually working.</em></h3>
           <div class="tp-list">
@@ -694,14 +689,12 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
           </div>
           <div class="dp-meta-rows">
             <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">your category's trending audios · competitor reels last 30 days · creator engagement signals · TikTok / IG / YouTube performance shifts · live comment + caption patterns</span></div>
-            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">what's spiking right now, what's still steady, what's cooling, exact format / length / hook / on-screen text patterns winning this week in your niche</span></div>
             <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">film the spiking formats while the wave is still up, skip the cooling ones, lean on the steady winners as your evergreen base</span></div>
           </div>
         </div>
 
         <!-- 12 · PITCH DECK RESEARCH BRIEF -->
         <div class="deck-page">
-          <div class="dp-head"><span class="dp-folio">12 · Pitch Deck Research Brief</span><span class="dp-page-no">Specialty · optional</span></div>
           <p class="dp-question">What numbers should we put in the pitch deck?</p>
           <h3 class="dp-h2">Build a deck that holds up to a <em>serious Q&amp;A.</em></h3>
           <div class="pd-slides">
@@ -752,7 +745,6 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
           </div>
           <div class="dp-meta-rows">
             <div class="dp-meta-row"><span class="dp-meta-k">Built from</span><span class="dp-meta-v">SEC filings · public reports · Crunchbase / PitchBook-style data · 10-Ks · Google Trends · job listings · competitor pages · market reports · news</span></div>
-            <div class="dp-meta-row"><span class="dp-meta-k">What we show</span><span class="dp-meta-v">TAM / SAM / SOM support, funded competitors, public comps, category trends, adoption signals, market proof, risk notes</span></div>
             <div class="dp-meta-row"><span class="dp-meta-k">What you do next</span><span class="dp-meta-v">strengthen the deck narrative, investor memo, partnership pitch, or internal strategy</span></div>
           </div>
         </div>
@@ -925,5 +917,64 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
 
 </div>
 </main>
+
+<script>
+(function(){
+  var stack = document.querySelector('.deck-stack');
+  var dotsContainer = document.getElementById('deckPosDots');
+  var posCur = document.getElementById('deckPosCur');
+  var posName = document.getElementById('deckPosName');
+  if (!stack || !dotsContainer) return;
+
+  var cards = stack.querySelectorAll('.deck-page');
+  var names = [];
+  cards.forEach(function(c){
+    var h = c.querySelector('.dp-h2');
+    // Strip "em" tags for clean label
+    var t = h ? h.innerText.replace(/\s+/g,' ').trim() : '';
+    // Take first 6-8 words for the label
+    var words = t.split(' ');
+    names.push(words.slice(0, 7).join(' ') + (words.length > 7 ? '…' : ''));
+  });
+
+  // Build dots
+  cards.forEach(function(c, i){
+    var b = document.createElement('button');
+    b.className = 'deck-pos-dot' + (i === 0 ? ' active' : '');
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-label', 'Card ' + (i+1) + ': ' + names[i]);
+    b.addEventListener('click', function(){
+      c.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'start'});
+    });
+    dotsContainer.appendChild(b);
+  });
+
+  var dots = dotsContainer.querySelectorAll('.deck-pos-dot');
+
+  function updateActive(){
+    var stackRect = stack.getBoundingClientRect();
+    var stackLeft = stackRect.left;
+    var bestIdx = 0;
+    var bestDist = Infinity;
+    cards.forEach(function(c, i){
+      var r = c.getBoundingClientRect();
+      var d = Math.abs(r.left - stackLeft);
+      if (d < bestDist){ bestDist = d; bestIdx = i; }
+    });
+    dots.forEach(function(d, i){ d.classList.toggle('active', i === bestIdx); });
+    if (posCur) posCur.textContent = String(bestIdx + 1).padStart(2, '0');
+    if (posName) posName.textContent = names[bestIdx] || '';
+  }
+
+  var raf = null;
+  stack.addEventListener('scroll', function(){
+    if (raf) cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(updateActive);
+  }, {passive: true});
+
+  // Initial update
+  updateActive();
+})();
+</script>
 </body>
 </html>
