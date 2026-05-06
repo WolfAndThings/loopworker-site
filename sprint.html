@@ -40,6 +40,120 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
 
 .sp-shell { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem 2rem; }
 
+/* ─── FEATURE SPREADS — full-width, alternating, magazine ─── */
+.fs-wrap { margin: 4rem -1.5rem; padding: 0; }
+.fs-intro { max-width: 880px; margin: 0 auto 3rem; padding: 0 1.5rem; }
+.fs-spread { padding: 5rem 1.5rem; border-top: 1px solid rgba(255,255,255,0.06); }
+.fs-spread.fs-dark { background: #080808; color: #D4D4D4; }
+.fs-spread.fs-light { background: linear-gradient(180deg, #F7F2E5, #ECE4D2); color: #1A1816; }
+.fs-row { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 4rem; max-width: 1200px; margin: 0 auto; align-items: center; }
+.fs-row-rev { grid-template-columns: 1.05fr 0.95fr; }
+.fs-row-rev .fs-copy { order: 2; }
+.fs-row-rev .fs-visual { order: 1; }
+@media (max-width: 920px) { .fs-row, .fs-row-rev { grid-template-columns: 1fr; gap: 2.5rem; } .fs-row-rev .fs-copy { order: 1; } .fs-row-rev .fs-visual { order: 2; } }
+.fs-copy .fs-eye { display: block; font-size: 0.66rem; letter-spacing: 0.28em; text-transform: uppercase; color: #8C6A12; font-weight: 800; margin-bottom: 1.4rem; }
+.fs-spread.fs-dark .fs-eye { color: #D4A017; }
+.fs-h { font-family: 'Inter', sans-serif; font-weight: 200; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.08; letter-spacing: -0.025em; margin: 0 0 1.4rem; color: #0A0908; }
+.fs-spread.fs-dark .fs-h { color: #FFF; }
+.fs-h em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; color: #8C6A12; letter-spacing: -0.015em; }
+.fs-spread.fs-dark .fs-h em { color: #D4A017; }
+.fs-sub { font-size: 1.05rem; line-height: 1.55; max-width: 540px; margin: 0 0 2rem; color: #2A2826; }
+.fs-spread.fs-dark .fs-sub { color: #B5B5B5; }
+.fs-stats { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 540px; }
+@media (max-width: 540px) { .fs-stats { grid-template-columns: 1fr; } }
+.fs-stats li { padding: 0.7rem 0.9rem; background: rgba(0,0,0,0.04); border-left: 2px solid #8C6A12; }
+.fs-spread.fs-dark .fs-stats li { background: rgba(255,255,255,0.03); border-left-color: #D4A017; }
+.fs-stats strong { display: block; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.2rem; color: #0A0908; letter-spacing: -0.01em; line-height: 1.1; }
+.fs-spread.fs-dark .fs-stats strong { color: #FFF; }
+.fs-stats span { display: block; font-size: 0.72rem; color: #555; margin-top: 0.25rem; line-height: 1.35; }
+.fs-spread.fs-dark .fs-stats span { color: #888; }
+/* AD WALL */
+.fs-adwall { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; }
+.fs-adwall-legend { font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: #888; margin-top: 0.9rem; text-align: center; }
+.fs-spread.fs-light .fs-adwall-legend { color: #555; }
+.fs-ad { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; }
+.fs-spread.fs-light .fs-ad { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.08); }
+.fs-ad-img { aspect-ratio: 1 / 1; background: #2a2a28; }
+.fs-ad-img[data-color="a"] { background: linear-gradient(135deg, #6e3a1e, #2d1709); }
+.fs-ad-img[data-color="b"] { background: linear-gradient(135deg, #4a3a85, #1a1228); }
+.fs-ad-img[data-color="c"] { background: linear-gradient(135deg, #b58915, #5a4209); }
+.fs-ad-img[data-color="d"] { background: linear-gradient(135deg, #a13e3e, #2e1010); }
+.fs-ad-img[data-color="e"] { background: linear-gradient(135deg, #2c5b6e, #0e2530); }
+.fs-ad-img[data-color="f"] { background: linear-gradient(135deg, #6e6e2c, #2c2c10); }
+.fs-ad-img[data-color="g"] { background: linear-gradient(135deg, #8c2b5a, #2a0d1a); }
+.fs-ad-img[data-color="h"] { background: linear-gradient(135deg, #5a8c2b, #1c2a0d); }
+.fs-ad-img[data-color="i"] { background: linear-gradient(135deg, #2b3f8c, #0d142a); }
+.fs-ad-img[data-color="j"] { background: linear-gradient(135deg, #8c5a2b, #2a1a0d); }
+.fs-ad-img[data-color="k"] { background: linear-gradient(135deg, #2b8c8c, #0d2a2a); }
+.fs-ad-img[data-color="l"] { background: linear-gradient(135deg, #8c2b8c, #2a0d2a); }
+.fs-ad-meta { display: flex; justify-content: space-between; padding: 0.32rem 0.45rem; font-size: 0.55rem; letter-spacing: 0.08em; }
+.fs-ad-meta .fs-ad-platform { color: #FFF; font-weight: 700; }
+.fs-spread.fs-light .fs-ad-meta .fs-ad-platform { color: #0A0908; }
+.fs-ad-meta .fs-ad-runs { color: #888; }
+.fs-spread.fs-light .fs-ad-meta .fs-ad-runs { color: #555; }
+/* QUOTE STACK */
+.fs-quotes blockquote { background: #FFF; border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; padding: 1rem 1.2rem; margin: 0 0 0.7rem; box-shadow: 0 6px 16px -10px rgba(0,0,0,0.2); }
+.fs-spread.fs-dark .fs-quotes blockquote { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.07); }
+.fs-quotes blockquote p { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 1.02rem; color: #0A0908; line-height: 1.4; margin: 0 0 0.5rem; }
+.fs-spread.fs-dark .fs-quotes blockquote p { color: #FFF; }
+.fs-quotes blockquote cite { font-size: 0.66rem; color: #555; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; font-style: normal; }
+.fs-spread.fs-dark .fs-quotes blockquote cite { color: #888; }
+.fs-quotes blockquote.fs-q-hi { border-color: rgba(212,160,23,0.5); border-left: 3px solid #B58915; background: rgba(212,160,23,0.06); }
+.fs-quotes blockquote.fs-q-hi cite { color: #8C6A12; }
+/* CADENCE */
+.fs-cadence { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 1.4rem; }
+.fs-spread.fs-light .fs-cadence { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.08); }
+.fs-cad-week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.4rem; margin-bottom: 0.4rem; }
+.fs-cad-day { aspect-ratio: 1 / 1; border-radius: 4px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 700; color: #555; }
+.fs-spread.fs-light .fs-cad-day { background: rgba(0,0,0,0.03); border-color: rgba(0,0,0,0.08); color: #888; }
+.fs-cad-week:first-child .fs-cad-day { background: transparent; border: none; color: #888; font-size: 0.62rem; letter-spacing: 0.16em; }
+.fs-cad-day.fs-cad-on { background: #D4A017; border-color: #D4A017; color: #1A0F00; }
+.fs-cad-hooks { margin-top: 1.2rem; padding-top: 1.2rem; border-top: 1px dashed rgba(255,255,255,0.1); }
+.fs-spread.fs-light .fs-cad-hooks { border-top-color: rgba(0,0,0,0.1); }
+.fs-cad-hooks .fs-hook { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #FFF; font-size: 0.95rem; padding: 0.35rem 0; line-height: 1.35; border-bottom: 1px dashed rgba(255,255,255,0.06); }
+.fs-spread.fs-light .fs-cad-hooks .fs-hook { color: #0A0908; border-bottom-color: rgba(0,0,0,0.08); }
+.fs-cad-hooks .fs-hook:last-child { border-bottom: none; }
+/* PRICING */
+.fs-pricing { background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); border-radius: 10px; padding: 1.4rem; }
+.fs-spread.fs-dark .fs-pricing { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.08); }
+.fs-price-row { display: grid; grid-template-columns: 130px 1fr auto; gap: 0.85rem; align-items: center; padding: 0.65rem 0; border-bottom: 1px dashed rgba(0,0,0,0.08); font-size: 0.85rem; }
+.fs-spread.fs-dark .fs-price-row { border-bottom-color: rgba(255,255,255,0.08); }
+.fs-price-row:last-child { border-bottom: none; }
+.fs-price-label { color: #2A2826; font-weight: 600; }
+.fs-spread.fs-dark .fs-price-label { color: #B5B5B5; }
+.fs-price-bar { display: block; height: 6px; background: linear-gradient(90deg, #B58915, rgba(181,137,21,0.3)); border-radius: 3px; width: var(--w, 50%); }
+.fs-price-amt { font-family: 'Inter', sans-serif; font-weight: 800; color: #0A0908; font-size: 1rem; min-width: 3.5em; text-align: right; }
+.fs-spread.fs-dark .fs-price-amt { color: #FFF; }
+.fs-price-row-hi { background: rgba(212,160,23,0.12); border-radius: 6px; margin: 0.3rem -0.3rem; padding: 0.65rem 0.3rem; }
+.fs-price-row-hi .fs-price-label { color: #8C6A12; font-weight: 800; }
+.fs-price-row-hi .fs-price-amt { color: #8C6A12; font-size: 1.15rem; }
+/* CHANNELS */
+.fs-channels { display: flex; flex-direction: column; gap: 0.5rem; }
+.fs-ch { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-left: 3px solid #444; border-radius: 6px; padding: 0.85rem 1rem; position: relative; }
+.fs-spread.fs-light .fs-ch { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.08); border-left-color: #999; }
+.fs-ch.fs-ch-hi { border-left-color: #6CC57A; }
+.fs-ch.fs-ch-mid { border-left-color: #D4A017; }
+.fs-ch-name { font-size: 0.92rem; font-weight: 700; color: #FFF; margin-bottom: 0.25rem; }
+.fs-spread.fs-light .fs-ch-name { color: #0A0908; }
+.fs-ch-meta { font-size: 0.75rem; color: #888; line-height: 1.4; font-style: italic; }
+.fs-spread.fs-light .fs-ch-meta { color: #555; }
+.fs-ch-tag { position: absolute; top: 0.85rem; right: 1rem; font-size: 0.55rem; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.2em 0.6em; border-radius: 999px; font-weight: 800; background: rgba(108,197,122,0.2); color: #6CC57A; }
+.fs-ch-tag-mid { background: rgba(212,160,23,0.2); color: #D4A017; }
+/* WIREFRAME */
+.fs-wireframe { background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); border-radius: 10px; padding: 1.2rem; }
+.fs-spread.fs-dark .fs-wireframe { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.08); }
+.fs-wf-row { display: flex; gap: 0.7rem; padding: 0.7rem 0.9rem; margin-bottom: 0.45rem; border-radius: 6px; font-size: 0.88rem; align-items: center; }
+.fs-wf-row:last-child { margin-bottom: 0; }
+.fs-wf-row.fs-wf-good { background: rgba(108,197,122,0.1); border: 1px solid rgba(108,197,122,0.3); color: #2A2826; }
+.fs-spread.fs-dark .fs-wf-row.fs-wf-good { color: #D4D4D4; }
+.fs-wf-row.fs-wf-bad { background: rgba(180,40,40,0.1); border: 1px solid rgba(180,40,40,0.3); color: #2A2826; }
+.fs-spread.fs-dark .fs-wf-row.fs-wf-bad { color: #D4D4D4; }
+.fs-wf-tag { font-weight: 800; font-size: 0.62rem; letter-spacing: 0.14em; padding: 0.22em 0.55em; border-radius: 999px; flex-shrink: 0; }
+.fs-wf-row.fs-wf-good .fs-wf-tag { background: rgba(108,197,122,0.25); color: #2A5C30; }
+.fs-spread.fs-dark .fs-wf-row.fs-wf-good .fs-wf-tag { color: #6CC57A; }
+.fs-wf-row.fs-wf-bad .fs-wf-tag { background: rgba(180,40,40,0.25); color: #8E2A2A; }
+.fs-spread.fs-dark .fs-wf-row.fs-wf-bad .fs-wf-tag { color: #c66; }
+
 /* HERO DJ — Designjoy-style clean single column */
 .hero-dj { padding: 7rem 1.5rem 5rem; border-bottom: 1px solid rgba(255,255,255,0.05); margin: 0 -1.5rem 5rem; text-align: center; }
 .hero-dj-inner { max-width: 820px; margin: 0 auto; }
@@ -728,197 +842,178 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
     </div>
   </section>
 
-  <!-- ENGINE 1 — VALUE CARDS -->
-  <section id="examples">
-    <span class="section-tag">Engine 1 · Intelligence</span>
-    <h2 class="section-h">The market gets <em>mapped.</em></h2>
-    <p class="section-lede">These are example research modules, not a fixed menu. Your sprint is assembled around the question that actually matters to the business.</p>
-
-    <div class="deck-pos">
-      <div class="deck-pos-label"><strong id="deckPosCur">01</strong> <span style="color:#888;">/</span> 08 · <span id="deckPosName">Competitor Path Reconstruction</span></div>
-      <div class="deck-pos-dots" id="deckPosDots" role="tablist" aria-label="Card position"></div>
+  <!-- ENGINE 1 — INTELLIGENCE FEATURE SPREADS -->
+  <section id="examples" class="fs-wrap">
+    <div class="fs-intro">
+      <span class="section-tag">Engine 1 · Intelligence</span>
+      <h2 class="section-h">What you'll <em>actually</em> have in your hands.</h2>
+      <p class="section-lede">Real example data shown below. Not a feature list — the actual artifacts that hit your inbox at the end of a sprint.</p>
     </div>
 
-    <div class="deck-scroll-wrap">
-      <div class="deck-stack">
-        <!-- 01 · COMPETITOR PATH RECONSTRUCTION -->
-        <div class="deck-page">
-          <div class="card-head">
-            <span class="card-num">01</span>
-            <span class="card-title">How They Got Here · Step By Step</span>
-            <span class="card-meta">Sample · 24 mo</span>
-          </div>
-          <div class="priority">
-            <div class="pri-tag">The path they actually took</div>
-            <div class="pri-text">Founder-on-camera + one repeatable offer + stacked proof — every competitor at the top of the category did this in the same order.</div>
-            <span class="pri-stat">412 sales · 156 days of paid · 8 press · 47 testimonials</span>
-          </div>
-          <div class="model-row"><div class="layer">Stage 01</div><div class="what">Founder origin · 6 mo of weekly posts. Trust built before $1 of paid spend.</div></div>
-          <div class="model-row"><div class="layer">Stage 02</div><div class="what">One repeatable offer on the homepage · unchanged 18 mo · 412 sales over the period.</div></div>
-          <div class="model-row"><div class="layer">Stage 03</div><div class="what">8 press mentions · 47 testimonials · 6 partner logos stacked above pricing.</div></div>
-          <div class="model-row"><div class="layer">Stage 04</div><div class="what">Single hook · 156 days running · est. $40K spend (Meta Ad Library timestamps).</div></div>
-          <div class="model-row"><div class="layer">Now</div><div class="what">3 marketing roles · 2 ops · expansion to 2 new metros (LinkedIn jobs).</div></div>
+    <!-- SPREAD 01 · AD VAULT (the killer demo) -->
+    <article class="fs-spread fs-dark">
+      <div class="fs-row">
+        <div class="fs-copy">
+          <span class="fs-eye">01 · The Ad Vault</span>
+          <h3 class="fs-h">Every paid ad your top 4 competitors ran in the last 90 days. <em>Down to the second.</em></h3>
+          <p class="fs-sub">Imagine the person running paid ads at your top competitor handed you the full catalog: every creative, every variant, every landing page, every dollar — with notes on why each one keeps running. That's this.</p>
+          <ul class="fs-stats">
+            <li><strong>147</strong><span>active ads catalogued</span></li>
+            <li><strong>est $94K/mo</strong><span>combined competitor spend</span></li>
+            <li><strong>4 platforms</strong><span>Meta · TikTok · YouTube · Reddit</span></li>
+          </ul>
         </div>
-
-        <!-- 02 · COMPETITOR AD VAULT -->
-        <div class="deck-page">
-          <div class="card-head">
-            <span class="card-num">02</span>
-            <span class="card-title">Every Ad They're Paying To Run</span>
-            <span class="card-meta">Sample · live</span>
+        <div class="fs-visual">
+          <div class="fs-adwall">
+            <div class="fs-ad fs-ad-1"><div class="fs-ad-img" data-color="a"></div><div class="fs-ad-meta"><span class="fs-ad-platform">Meta</span><span class="fs-ad-runs">156d · ★</span></div></div>
+            <div class="fs-ad fs-ad-2"><div class="fs-ad-img" data-color="b"></div><div class="fs-ad-meta"><span class="fs-ad-platform">TikTok</span><span class="fs-ad-runs">62d</span></div></div>
+            <div class="fs-ad fs-ad-3"><div class="fs-ad-img" data-color="c"></div><div class="fs-ad-meta"><span class="fs-ad-platform">Meta</span><span class="fs-ad-runs">94d · ★</span></div></div>
+            <div class="fs-ad fs-ad-4"><div class="fs-ad-img" data-color="d"></div><div class="fs-ad-meta"><span class="fs-ad-platform">YouTube</span><span class="fs-ad-runs">42d</span></div></div>
+            <div class="fs-ad fs-ad-5"><div class="fs-ad-img" data-color="e"></div><div class="fs-ad-meta"><span class="fs-ad-platform">Meta</span><span class="fs-ad-runs">38d</span></div></div>
+            <div class="fs-ad fs-ad-6"><div class="fs-ad-img" data-color="f"></div><div class="fs-ad-meta"><span class="fs-ad-platform">Reddit</span><span class="fs-ad-runs">21d</span></div></div>
+            <div class="fs-ad fs-ad-7"><div class="fs-ad-img" data-color="g"></div><div class="fs-ad-meta"><span class="fs-ad-platform">TikTok</span><span class="fs-ad-runs">112d · ★</span></div></div>
+            <div class="fs-ad fs-ad-8"><div class="fs-ad-img" data-color="h"></div><div class="fs-ad-meta"><span class="fs-ad-platform">Meta</span><span class="fs-ad-runs">29d</span></div></div>
+            <div class="fs-ad fs-ad-9"><div class="fs-ad-img" data-color="i"></div><div class="fs-ad-meta"><span class="fs-ad-platform">YouTube</span><span class="fs-ad-runs">68d</span></div></div>
+            <div class="fs-ad fs-ad-10"><div class="fs-ad-img" data-color="j"></div><div class="fs-ad-meta"><span class="fs-ad-platform">Meta</span><span class="fs-ad-runs">8d</span></div></div>
+            <div class="fs-ad fs-ad-11"><div class="fs-ad-img" data-color="k"></div><div class="fs-ad-meta"><span class="fs-ad-platform">TikTok</span><span class="fs-ad-runs">71d · ★</span></div></div>
+            <div class="fs-ad fs-ad-12"><div class="fs-ad-img" data-color="l"></div><div class="fs-ad-meta"><span class="fs-ad-platform">Meta</span><span class="fs-ad-runs">14d</span></div></div>
           </div>
-          <div class="priority">
-            <div class="pri-tag">The hook they keep paying to run</div>
-            <div class="pri-text">"The thing nobody tells you about [category]" — running 5 months, 8 variants, est. $18K/mo. Untouched. They've solved the angle.</div>
-            <span class="pri-stat">156 days · 8 variants · est. $90K total spend</span>
-          </div>
-          <div class="model-row"><div class="layer">Meta · 5 mo</div><div class="what">"Nobody tells you about [category]" → category-leader landing. <strong>Working.</strong></div></div>
-          <div class="model-row"><div class="layer">Meta · 3 mo</div><div class="what">Founder testimonial · short cuts → Calendly book-a-call. <strong>Working.</strong></div></div>
-          <div class="model-row"><div class="layer">TikTok · 2 mo</div><div class="what">Day-in-the-life · founder-on-camera → product page. <strong>Climbing.</strong></div></div>
-          <div class="model-row"><div class="layer">YouTube · 6 wk</div><div class="what">6-min teardown · "why we exist" → email capture. <strong>Testing.</strong></div></div>
-          <div class="callout">Copy the 90-day winners. Skip the angles they killed at 30 days. <strong>Don't burn budget on tests they've already run.</strong></div>
+          <div class="fs-adwall-legend"><span>★ = 90+ days running · proven winner</span></div>
         </div>
-
-        <!-- 03 · NICHE CONTENT PERFORMANCE -->
-        <div class="deck-page">
-          <div class="card-head">
-            <span class="card-num">03</span>
-            <span class="card-title">How Often They Post · And What They Say</span>
-            <span class="card-meta">Sample · 90 day</span>
-          </div>
-          <div class="priority">
-            <div class="pri-tag">Their cadence + their on-screen text</div>
-            <div class="pri-text">Three reels a week. Hook on screen by 1.2s. Founder face in 70% of them. We pull every line of text they've put in front of a viewer this quarter.</div>
-            <span class="pri-stat">12 creators · 247 reels · 90 days</span>
-          </div>
-          <div class="criteria-grid">
-            <div class="criteria-card must"><div class="crit-label">★ Winning</div><div class="crit-text">Founder confession · 22s</div></div>
-            <div class="criteria-card must"><div class="crit-label">★ Winning</div><div class="crit-text">Niche teardown · carousel</div></div>
-            <div class="criteria-card"><div class="crit-label">Steady</div><div class="crit-text">Behind-the-scenes</div></div>
-            <div class="criteria-card"><div class="crit-label">Steady</div><div class="crit-text">Comment-trigger reel</div></div>
-            <div class="criteria-card dq"><div class="crit-label">Skip</div><div class="crit-text">Polished brand still</div></div>
-            <div class="criteria-card dq"><div class="crit-label">Skip</div><div class="crit-text">Generic motivational</div></div>
-          </div>
-          <div class="callout">Spend 60% of your effort on the two winners. Drop the bottom two entirely.</div>
-        </div>
-
-        <!-- 04 · CUSTOMER DEMAND MINING -->
-        <div class="deck-page">
-          <div class="card-head">
-            <span class="card-num">04</span>
-            <span class="card-title">1,800 Complaints · Verbatim</span>
-            <span class="card-meta">Sample · verbatim</span>
-          </div>
-          <div class="priority">
-            <div class="pri-tag">1,847 complaints about your competitors</div>
-            <div class="pri-text">Pulled from reviews, Reddit, comments, forums. The exact phrases their customers use when no one's watching. Tune your messaging around the gap.</div>
-            <span class="pri-stat">1,847 verbatim complaints · 4 platforms · last 60 days</span>
-          </div>
-          <div class="model-row"><div class="layer">47×</div><div class="what">"Wish there was a version of this for [adjacent audience]." <strong>Adjacent SKU opportunity.</strong></div></div>
-          <div class="model-row"><div class="layer">184↑</div><div class="what">Forum thread · 2 yr lifespan: "Why does no one offer [missing tier]?"</div></div>
-          <div class="model-row"><div class="layer">91×</div><div class="what">"I just want a simpler version." <strong>Lite SKU.</strong></div></div>
-          <div class="model-row"><div class="layer">38×</div><div class="what">"Does anyone make this for [use case we're missing]?"</div></div>
-          <div class="callout">Buyer language → product roadmap → sales-page copy. <strong>Same words. No invention.</strong></div>
-        </div>
-
-        <!-- 05 · MARKET GAP POSITIONING -->
-        <div class="deck-page">
-          <div class="card-head">
-            <span class="card-num">05</span>
-            <span class="card-title">Where You Sit · Why You're Unique</span>
-            <span class="card-meta">Sample</span>
-          </div>
-          <div class="priority">
-            <div class="pri-tag">The opening sitting unclaimed</div>
-            <div class="pri-text">Founder-led + proof-rich + your-buyer pricing. Three of the four top competitors miss two of those each. <em>You can take it.</em></div>
-            <span class="pri-stat">4 competitors mapped · 1 lane open</span>
-          </div>
-          <div class="model-row"><div class="layer">Direct · 28K</div><div class="what">$45 entry · ships 48hr. <strong>Zero founder content.</strong></div></div>
-          <div class="model-row"><div class="layer">Direct · 12K</div><div class="what">$95 avg ticket · premium brand. <strong>9 generic testimonials.</strong></div></div>
-          <div class="model-row"><div class="layer">Adjacent · 312K</div><div class="what">$180 entry · "premium ritual." <strong>3-wk wait, won't travel.</strong></div></div>
-          <div class="model-row"><div class="layer">Aspirational · 1.4M</div><div class="what">$420 entry · cultural mention. <strong>4× past your buyer's budget.</strong></div></div>
-        </div>
-
-        <!-- 06 · PRICING POWER -->
-        <div class="deck-page">
-          <div class="card-head">
-            <span class="card-num">06</span>
-            <span class="card-title">How Much to Charge</span>
-            <span class="card-meta">Sample · live anchors</span>
-          </div>
-          <div class="priority">
-            <div class="pri-tag">Where you should sit on the shelf</div>
-            <div class="pri-text">$80. Above the commodity floor, below the ceremony tier. Defensible band — and the data supports a $20 lift in Y2 once trust signals fire.</div>
-            <span class="pri-stat">Anchored to 11 live competitor pricing pages</span>
-          </div>
-          <div class="price-rail">
-            <div class="price-tick" style="--y: 8%;"><span class="pt-label">Premium ceiling</span><span class="pt-amt">$185</span></div>
-            <div class="price-tick" style="--y: 30%;"><span class="pt-label">Above-mid</span><span class="pt-amt">$120</span></div>
-            <div class="price-tick highlight" style="--y: 52%;"><span class="pt-label">★ Defensible band</span><span class="pt-amt">$80</span></div>
-            <div class="price-tick" style="--y: 70%;"><span class="pt-label">Mid-market</span><span class="pt-amt">$54</span></div>
-            <div class="price-tick" style="--y: 88%;"><span class="pt-label">Floor / commodity</span><span class="pt-amt">$22</span></div>
-          </div>
-          <div class="callout"><strong>Y2 move:</strong> bump to $99 once you have 50+ named testimonials. Pricing power follows trust signals.</div>
-        </div>
-
-        <!-- 07 · WEBSITE CONVERSION -->
-        <div class="deck-page">
-          <div class="card-head">
-            <span class="card-num">07</span>
-            <span class="card-title">Where Your Site Loses Money</span>
-            <span class="card-meta">Sample · audit</span>
-          </div>
-          <div class="priority">
-            <div class="pri-tag">Where the page leaks</div>
-            <div class="pri-text">Hero unclear. Proof buried. Weak CTA verb. Pricing 3 clicks deep. <em>Each one costs you a measurable share of intent.</em></div>
-            <span class="pri-stat">6 leaks · 2 already strong</span>
-          </div>
-          <div class="criteria-grid">
-            <div class="criteria-card dq"><div class="crit-label">Leak</div><div class="crit-text">Hero unclear · no offer above fold</div></div>
-            <div class="criteria-card must"><div class="crit-label">OK</div><div class="crit-text">Visual brand reads premium</div></div>
-            <div class="criteria-card dq"><div class="crit-label">Leak</div><div class="crit-text">Proof buried below the fold</div></div>
-            <div class="criteria-card dq"><div class="crit-label">Leak</div><div class="crit-text">CTA uses weak verb · "learn more"</div></div>
-            <div class="criteria-card must"><div class="crit-label">OK</div><div class="crit-text">Mobile speed under 2.5s</div></div>
-            <div class="criteria-card dq"><div class="crit-label">Leak</div><div class="crit-text">Pricing requires 3 clicks to find</div></div>
-          </div>
-          <div class="callout">Behavioral drop-off (real bounce, real CR) available with read-only analytics access.</div>
-        </div>
-
-        <!-- 08 · AUTHORITY CHANNEL MAP -->
-        <div class="deck-page">
-          <div class="card-head">
-            <span class="card-num">08</span>
-            <span class="card-title">Where They Show Up · How Often</span>
-            <span class="card-meta">Sample · 5 channels</span>
-          </div>
-          <div class="priority">
-            <div class="pri-tag">Their LinkedIn cadence + producer emails</div>
-            <div class="pri-text">Top comp posts on LinkedIn 4×/week, 80% founder voice. Two podcasts in your category booked them this quarter. Producer emails on file.</div>
-            <span class="pri-stat">5 channels mapped · 3 with confirmed openings</span>
-          </div>
-          <div class="model-row"><div class="layer">High fit</div><div class="what">Category podcast · 40K avg downloads · books 3 wk out · loves data founders.</div></div>
-          <div class="model-row"><div class="layer">High fit</div><div class="what">Local newsletter · 12K subs · 3 founders in your category last 6 mo.</div></div>
-          <div class="model-row"><div class="layer">Mid fit</div><div class="what">Niche YouTube · 18K subs · open to guests · 6-wk wait list.</div></div>
-          <div class="model-row"><div class="layer">Mid fit</div><div class="what">Adjacent partner · co-promo open · founder is friendly.</div></div>
-          <div class="model-row"><div class="layer">Mid fit</div><div class="what">Local press · weekly · profile section · 1st-of-month deadline.</div></div>
-        </div>
-
       </div>
-      <div class="deck-scroll-hint">Scroll for more</div>
-    </div>
-  </section>
+    </article>
 
-  <!-- HOW IT WORKS -->
-  <section>
-    <span class="section-tag">How it works</span>
-    <h2 class="section-h">The work moves from evidence to <em>action.</em></h2>
-    <p class="section-lede">The sprint stays narrow enough to finish, but deep enough to change what you do next.</p>
+    <!-- SPREAD 02 · CUSTOMER VOICE -->
+    <article class="fs-spread fs-light">
+      <div class="fs-row fs-row-rev">
+        <div class="fs-copy">
+          <span class="fs-eye">02 · Customer Voice</span>
+          <h3 class="fs-h">1,847 verbatim complaints about your competitors. <em>Pulled this month.</em></h3>
+          <p class="fs-sub">Reviews, Reddit threads, comment sections, App Store, Trustpilot, niche forums. The exact language their customers use when no one is watching. Tune your messaging around the gap they keep failing to fill.</p>
+          <ul class="fs-stats">
+            <li><strong>1,847</strong><span>verbatim complaints</span></li>
+            <li><strong>5 sources</strong><span>Reviews · Reddit · forums · App Store · comments</span></li>
+            <li><strong>12 themes</strong><span>recurring complaint clusters identified</span></li>
+          </ul>
+        </div>
+        <div class="fs-visual">
+          <div class="fs-quotes">
+            <blockquote><p>"Wish there was a version for [adjacent audience]"</p><cite>47× · Yelp + Google</cite></blockquote>
+            <blockquote class="fs-q-hi"><p>"I just want a simpler version of this"</p><cite>91× · top complaint · trending</cite></blockquote>
+            <blockquote><p>"Customer service didn't reply for 6 days"</p><cite>62× · Trustpilot</cite></blockquote>
+            <blockquote><p>"Confusing instructions, had to YouTube it"</p><cite>38× · Reddit</cite></blockquote>
+            <blockquote><p>"Why does no one offer [missing tier]?"</p><cite>184↑ · 2-yr forum thread</cite></blockquote>
+          </div>
+        </div>
+      </div>
+    </article>
 
-    <div class="flow-grid hiw-3">
-      <div class="flow-step"><span class="flow-num">01</span><strong>Frame the decision.</strong><p>We define the question, the stakes, the market boundary, and what would count as a useful answer.</p></div>
-      <div class="flow-step"><span class="flow-num">02</span><strong>Pull the signal trail.</strong><p>Competitors, ads, reviews, search, websites, content, pricing, comments, offers, and buyer language.</p></div>
-      <div class="flow-step"><span class="flow-num">03</span><strong>Hand back the move.</strong><p>You get a private brief with findings, source trail, recommendations, and the first actions to take.</p></div>
-    </div>
+    <!-- SPREAD 03 · CONTENT CADENCE -->
+    <article class="fs-spread fs-dark">
+      <div class="fs-row">
+        <div class="fs-copy">
+          <span class="fs-eye">03 · Content Cadence</span>
+          <h3 class="fs-h">Every reel they post. Every line of text on screen. <em>Mapped weekly.</em></h3>
+          <p class="fs-sub">Three reels a week. Hook on screen by 1.2 seconds. Founder face in 70% of them. We pull every line of text they put in front of a viewer this quarter — so you can shoot smarter than they do.</p>
+          <ul class="fs-stats">
+            <li><strong>247</strong><span>reels analyzed</span></li>
+            <li><strong>3.2/wk</strong><span>avg posting cadence</span></li>
+            <li><strong>1.2s</strong><span>avg hook-on-screen</span></li>
+          </ul>
+        </div>
+        <div class="fs-visual">
+          <div class="fs-cadence">
+            <div class="fs-cad-week"><span class="fs-cad-day">M</span><span class="fs-cad-day">T</span><span class="fs-cad-day">W</span><span class="fs-cad-day">T</span><span class="fs-cad-day">F</span><span class="fs-cad-day">S</span><span class="fs-cad-day">S</span></div>
+            <div class="fs-cad-week"><span class="fs-cad-day fs-cad-on">●</span><span class="fs-cad-day"></span><span class="fs-cad-day fs-cad-on">●</span><span class="fs-cad-day"></span><span class="fs-cad-day fs-cad-on">●</span><span class="fs-cad-day"></span><span class="fs-cad-day"></span></div>
+            <div class="fs-cad-week"><span class="fs-cad-day fs-cad-on">●</span><span class="fs-cad-day"></span><span class="fs-cad-day fs-cad-on">●</span><span class="fs-cad-day"></span><span class="fs-cad-day fs-cad-on">●</span><span class="fs-cad-day fs-cad-on">●</span><span class="fs-cad-day"></span></div>
+            <div class="fs-cad-week"><span class="fs-cad-day fs-cad-on">●</span><span class="fs-cad-day"></span><span class="fs-cad-day fs-cad-on">●</span><span class="fs-cad-day fs-cad-on">●</span><span class="fs-cad-day"></span><span class="fs-cad-day fs-cad-on">●</span><span class="fs-cad-day"></span></div>
+            <div class="fs-cad-hooks">
+              <div class="fs-hook">"What every other [category] doesn't tell you."</div>
+              <div class="fs-hook">"Day in the life of a single dad with a..."</div>
+              <div class="fs-hook">"3 things I'd never do on a Saturday booking."</div>
+              <div class="fs-hook">"Watch this before you sign with anyone else."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SPREAD 04 · WHERE YOU SIT + PRICING (combined) -->
+    <article class="fs-spread fs-light">
+      <div class="fs-row fs-row-rev">
+        <div class="fs-copy">
+          <span class="fs-eye">04 · Where You Sit · How Much To Charge</span>
+          <h3 class="fs-h">The defensible band the market <em>already pays for.</em></h3>
+          <p class="fs-sub">Live competitor pricing pulled this month. Where to sit on the shelf, why that band wins, what the next SKU up should look like, and what to bump in Y2 once your trust signals fire.</p>
+          <ul class="fs-stats">
+            <li><strong>11</strong><span>competitor pricing pages mapped</span></li>
+            <li><strong>$80</strong><span>defensible band for your stage</span></li>
+            <li><strong>+$20</strong><span>Y2 lift once trust signals fire</span></li>
+          </ul>
+        </div>
+        <div class="fs-visual">
+          <div class="fs-pricing">
+            <div class="fs-price-row"><span class="fs-price-label">Premium ceiling</span><span class="fs-price-bar" style="--w:100%;"></span><span class="fs-price-amt">$185</span></div>
+            <div class="fs-price-row"><span class="fs-price-label">Above-mid</span><span class="fs-price-bar" style="--w:65%;"></span><span class="fs-price-amt">$120</span></div>
+            <div class="fs-price-row fs-price-row-hi"><span class="fs-price-label">★ You sit here</span><span class="fs-price-bar" style="--w:43%;"></span><span class="fs-price-amt">$80</span></div>
+            <div class="fs-price-row"><span class="fs-price-label">Mid-market</span><span class="fs-price-bar" style="--w:29%;"></span><span class="fs-price-amt">$54</span></div>
+            <div class="fs-price-row"><span class="fs-price-label">Floor</span><span class="fs-price-bar" style="--w:12%;"></span><span class="fs-price-amt">$22</span></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SPREAD 05 · WHERE THEY SHOW UP -->
+    <article class="fs-spread fs-dark">
+      <div class="fs-row">
+        <div class="fs-copy">
+          <span class="fs-eye">05 · Where They Show Up</span>
+          <h3 class="fs-h">Their LinkedIn cadence, podcast bookings, newsletter features. <em>With every producer's email on file.</em></h3>
+          <p class="fs-sub">Top competitor posts on LinkedIn 4 times a week, 80% founder voice. Two podcasts in your category booked them this quarter. Three newsletters featured their case studies. We hand you the list — and the inboxes that book.</p>
+          <ul class="fs-stats">
+            <li><strong>4×/week</strong><span>top comp's LinkedIn cadence</span></li>
+            <li><strong>5 channels</strong><span>mapped with confirmed openings</span></li>
+            <li><strong>3 producers</strong><span>email + booking lead times</span></li>
+          </ul>
+        </div>
+        <div class="fs-visual">
+          <div class="fs-channels">
+            <div class="fs-ch fs-ch-hi"><div class="fs-ch-name">Marketing podcast · 40K downloads</div><div class="fs-ch-meta">books 3 wk out · loves data founders · producer email on file</div><span class="fs-ch-tag">High fit</span></div>
+            <div class="fs-ch fs-ch-hi"><div class="fs-ch-name">Local trade newsletter · 12K subs</div><div class="fs-ch-meta">3 founders in your category last 6 mo · pitch via web form</div><span class="fs-ch-tag">High fit</span></div>
+            <div class="fs-ch fs-ch-mid"><div class="fs-ch-name">Niche YouTube · 18K subs</div><div class="fs-ch-meta">open to guests · 6-wk wait list · producer LinkedIn on file</div><span class="fs-ch-tag fs-ch-tag-mid">Mid fit</span></div>
+            <div class="fs-ch fs-ch-mid"><div class="fs-ch-name">Adjacent partner brand</div><div class="fs-ch-meta">co-promo open · founder is friendly · DM warm</div><span class="fs-ch-tag fs-ch-tag-mid">Mid fit</span></div>
+            <div class="fs-ch fs-ch-mid"><div class="fs-ch-name">Local press · weekly</div><div class="fs-ch-meta">profile section · pitch deadline 1st of month · editor email on file</div><span class="fs-ch-tag fs-ch-tag-mid">Mid fit</span></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SPREAD 06 · WEBSITE LEAKS -->
+    <article class="fs-spread fs-light">
+      <div class="fs-row fs-row-rev">
+        <div class="fs-copy">
+          <span class="fs-eye">06 · Website Leaks</span>
+          <h3 class="fs-h">Where your site is <em>quietly losing</em> the buyer.</h3>
+          <p class="fs-sub">Hero unclear. Proof buried below the fold. CTA uses a weak verb. Pricing requires three clicks. Each of these costs a measurable share of intent, and we map every leak to a specific fix.</p>
+          <ul class="fs-stats">
+            <li><strong>6 leaks</strong><span>identified on a typical first audit</span></li>
+            <li><strong>2 strong</strong><span>signals already working — keep + amplify</span></li>
+            <li><strong>4 fixes</strong><span>ranked by intent recovery potential</span></li>
+          </ul>
+        </div>
+        <div class="fs-visual">
+          <div class="fs-wireframe">
+            <div class="fs-wf-row fs-wf-bad"><span class="fs-wf-tag">LEAK</span>Hero unclear · no offer above fold</div>
+            <div class="fs-wf-row fs-wf-good"><span class="fs-wf-tag">OK</span>Visual brand reads premium</div>
+            <div class="fs-wf-row fs-wf-bad"><span class="fs-wf-tag">LEAK</span>Proof buried below the fold</div>
+            <div class="fs-wf-row fs-wf-bad"><span class="fs-wf-tag">LEAK</span>CTA uses weak verb · "learn more"</div>
+            <div class="fs-wf-row fs-wf-good"><span class="fs-wf-tag">OK</span>Mobile speed under 2.5s</div>
+            <div class="fs-wf-row fs-wf-bad"><span class="fs-wf-tag">LEAK</span>Pricing requires 3 clicks to find</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
   </section>
 
   <!-- SPECIALTY · PITCH DECK RESEARCH -->
