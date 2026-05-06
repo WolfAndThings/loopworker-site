@@ -280,6 +280,154 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
 .ad-mini-copy { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #FFF; font-size: 1.05rem; line-height: 1.4; }
 .ad-mini-cta { font-size: 0.68rem; color: #B0B0B0; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.4rem; }
 
+/* ─────────────────────────────────────────
+   LIGHT CARDS — paper-on-dark editorial
+   ───────────────────────────────────────── */
+.deck-page {
+  background: linear-gradient(180deg, #F7F2E5 0%, #ECE4D2 100%) !important;
+  border: 1px solid rgba(0,0,0,0.12) !important;
+  color: #1A1816 !important;
+  box-shadow: 0 32px 70px -34px rgba(0,0,0,0.85), 0 4px 14px -4px rgba(0,0,0,0.4) !important;
+}
+.deck-page::before { display: none !important; }
+.deck-page:hover { border-color: rgba(181,137,21,0.55) !important; }
+
+/* HEAVY HEADLINE (Inter 900 instead of Cormorant italic) */
+.deck-page .dp-h2 {
+  font-family: 'Inter', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 900 !important;
+  font-size: 1.55rem !important;
+  color: #0A0908 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.18 !important;
+  margin: 0 0 1.2rem !important;
+}
+.deck-page .dp-h2 em {
+  font-family: 'Inter', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 900 !important;
+  color: #8C6A12 !important;
+  background: linear-gradient(180deg, transparent 58%, rgba(212,160,23,0.32) 58%) !important;
+  padding: 0 0.12em !important;
+}
+
+/* INNER LAYOUT OVERRIDES */
+.deck-page .tl-line::before { background: linear-gradient(180deg, rgba(181,137,21,0.65), rgba(181,137,21,0.18)); }
+.deck-page .tl-evt { border-bottom-color: rgba(0,0,0,0.1); }
+.deck-page .tl-evt::before { background: #B58915; box-shadow: 0 0 0 3px rgba(181,137,21,0.22); }
+.deck-page .tl-when { color: #8C6A12; }
+.deck-page .tl-what { color: #0F0E0C; font-weight: 700; }
+.deck-page .tl-meta { color: #6A6864; }
+
+.deck-page .comp-row { border-bottom-color: rgba(0,0,0,0.1); }
+.deck-page .comp-row .comp-name { color: #0A0908; font-weight: 800; }
+.deck-page .comp-row .comp-strength { color: #2A2826; }
+.deck-page .comp-row .comp-gap { color: #2A2826; }
+
+.deck-page .lane-callout { background: linear-gradient(180deg, rgba(181,137,21,0.15), rgba(181,137,21,0.05)); border-color: rgba(181,137,21,0.45); }
+.deck-page .lane-tag { color: #8C6A12; }
+.deck-page .lane-thesis { color: #0F0E0C; }
+
+.deck-page .price-rail::before { background: linear-gradient(180deg, rgba(181,137,21,0.5), rgba(181,137,21,0.1)); }
+.deck-page .price-tick::after { background: #B58915; opacity: 0.75; }
+.deck-page .price-tick.highlight::after { background: #B58915; box-shadow: 0 0 0 4px rgba(181,137,21,0.22); }
+.deck-page .price-tick .pt-label { color: #2A2826; }
+.deck-page .price-tick.highlight .pt-label { color: #8C6A12; }
+.deck-page .price-tick .pt-amt { color: #0F0E0C; }
+.deck-page .price-tick.highlight .pt-amt { color: #8C6A12; }
+.deck-page .price-note { color: #555; background: rgba(0,0,0,0.05); border-left-color: rgba(181,137,21,0.55); }
+
+.deck-page .qs-item { background: rgba(0,0,0,0.05); border-left-color: rgba(181,137,21,0.55); }
+.deck-page .qs-text { color: #0F0E0C; }
+.deck-page .qs-meta { color: #8C6A12; }
+
+.deck-page .hk-item { color: #1A1816; border-bottom-color: rgba(0,0,0,0.1); }
+.deck-page .hk-item::before { color: #8C6A12; }
+.deck-page .hk-item .hk-tag { color: #8C6A12; }
+
+.deck-page .sb-row { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.1); color: #0F0E0C; }
+.deck-page .sb-row::before { color: #8C6A12; }
+.deck-page .sb-row .sb-q { color: #0F0E0C; }
+.deck-page .sb-tag.buy { background: rgba(74,122,74,0.18); color: #2A5C30; }
+.deck-page .sb-tag.cmp { background: rgba(181,137,21,0.2); color: #8C6A12; }
+.deck-page .sb-tag.problem { background: rgba(0,0,0,0.07); color: #555; }
+
+.deck-page .ww-frame { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.1); }
+.deck-page .ww-row.ok { background: rgba(74,122,74,0.1); border-color: rgba(74,122,74,0.32); color: #2A2826; }
+.deck-page .ww-row.leak { background: rgba(180,40,40,0.1); border-color: rgba(180,40,40,0.32); color: #2A2826; }
+.deck-page .ww-row.ok .ww-tag { background: rgba(74,122,74,0.22); color: #2A5C30; }
+.deck-page .ww-row.leak .ww-tag { background: rgba(180,40,40,0.22); color: #8E2A2A; }
+
+.deck-page .pg-item { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.1); color: #1A1816; }
+.deck-page .pg-item .pg-box { border-color: rgba(0,0,0,0.22); }
+.deck-page .pg-item.has .pg-box { background: rgba(74,122,74,0.28); border-color: #2A5C30; color: #2A5C30; }
+.deck-page .pg-item.miss .pg-box { background: rgba(180,40,40,0.18); border-color: #8E2A2A; color: #8E2A2A; }
+
+.deck-page .hm-cell { color: #1A1816; }
+.deck-page .hm-cell.label { color: #0F0E0C; }
+.deck-page .hm-cell.head { color: #555; border-bottom-color: rgba(0,0,0,0.1); }
+.deck-page .hm-cell.h1 { background: rgba(74,122,74,0.45); color: #1A1816; }
+.deck-page .hm-cell.h2 { background: rgba(181,137,21,0.4); color: #1A1816; }
+.deck-page .hm-cell.h3 { background: rgba(181,137,21,0.18); }
+.deck-page .hm-cell.lo { background: rgba(180,40,40,0.16); color: #4A2E2E; }
+.deck-page .hm-cell.mid { background: rgba(181,137,21,0.16); }
+
+.deck-page .ol-rung { background: rgba(0,0,0,0.05); }
+.deck-page .ol-rung.r1 { border-left-color: #2A5C30; }
+.deck-page .ol-rung.r2 { border-left-color: #6F8E60; }
+.deck-page .ol-rung.r3 { border-left-color: #8C6A12; background: rgba(181,137,21,0.13); }
+.deck-page .ol-rung.r4 { border-left-color: #6E5510; background: rgba(181,137,21,0.07); }
+.deck-page .ol-rung-tier { color: #555; }
+.deck-page .ol-rung-name { color: #0F0E0C; }
+.deck-page .ol-rung-price { color: #8C6A12; }
+
+.deck-page .cf-row { background: rgba(0,0,0,0.05); }
+.deck-page .cf-row.high { border-left-color: #2A5C30; }
+.deck-page .cf-row.mid { border-left-color: #8C6A12; }
+.deck-page .cf-row .cf-name { color: #0F0E0C; }
+.deck-page .cf-row .cf-meta { color: #555; }
+.deck-page .cf-fit.f-hi { background: rgba(74,122,74,0.2); color: #2A5C30; }
+.deck-page .cf-fit.f-mid { background: rgba(181,137,21,0.22); color: #8C6A12; }
+
+.deck-page .mp-pin { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.1); }
+.deck-page .mp-pin .mp-icon { color: #8C6A12; }
+.deck-page .mp-pin .mp-name { color: #0F0E0C; font-weight: 800; }
+.deck-page .mp-pin .mp-meta { color: #555; }
+.deck-page .mp-pin .mp-rating { color: #8C6A12; }
+
+.deck-page .fr-item { border-bottom-color: rgba(0,0,0,0.1); }
+.deck-page .fr-item .fr-pain { color: #555; }
+.deck-page .fr-item .fr-arrow { color: #8C6A12; }
+.deck-page .fr-item .fr-fix { color: #0F0E0C; font-weight: 700; }
+
+.deck-page .ad-mini { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.1); }
+.deck-page .ad-mini-h { color: #8C6A12; }
+.deck-page .ad-mini-h .ad-runs { color: #6A6864; }
+.deck-page .ad-mini-copy { color: #0F0E0C; }
+.deck-page .ad-mini-cta { color: #555; }
+
+.deck-page .tp-row.up { background: rgba(74,122,74,0.13); border-left-color: #2A5C30; }
+.deck-page .tp-row.steady { background: rgba(181,137,21,0.14); border-left-color: #8C6A12; }
+.deck-page .tp-row.down { background: rgba(180,40,40,0.1); border-left-color: #8E2A2A; }
+.deck-page .tp-row.up .tp-arrow { color: #2A5C30; }
+.deck-page .tp-row.steady .tp-arrow { color: #8C6A12; }
+.deck-page .tp-row.down .tp-arrow { color: #8E2A2A; }
+.deck-page .tp-body .tp-format { color: #0F0E0C; font-weight: 800; }
+.deck-page .tp-body .tp-signal { color: #555; }
+.deck-page .tp-row.up .tp-status { background: rgba(74,122,74,0.28); color: #2A5C30; }
+.deck-page .tp-row.steady .tp-status { background: rgba(181,137,21,0.28); color: #6E5510; }
+.deck-page .tp-row.down .tp-status { background: rgba(180,40,40,0.22); color: #6A2828; }
+
+.deck-page .pd-slide { background: linear-gradient(180deg, #FFF, #F5EFE0); border-color: rgba(181,137,21,0.45); }
+.deck-page .pd-slide-no { color: #8C6A12; }
+.deck-page .pd-slide-h { color: #0F0E0C; font-weight: 800; }
+.deck-page .pd-slide-stat { color: #8C6A12; }
+.deck-page .pd-slide-stat-sub { color: #555; }
+.deck-page .pd-slide-foot { color: #6A6864; border-top-color: rgba(0,0,0,0.1); }
+
+/* Position indicator name color when on light cards: keep section-level dark */
+
 /* CLAIMS */
 .claim-tier { margin-bottom: 0.7rem; position: relative; z-index: 1; }
 .claim-tier:last-of-type { margin-bottom: 0; }
@@ -440,19 +588,6 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
       <a href="/book.html" class="sp-cta-sec" data-track="Sprint Hero Book">Begin a conversation</a>
     </div>
   </header>
-
-  <!-- HOW IT WORKS -->
-  <section>
-    <span class="section-tag">How it works</span>
-    <h2 class="section-h">Three quiet <em>moves.</em></h2>
-    <p class="section-lede">Founder-led, hand-built, evidence-only. The engagement starts with the question your business actually needs answered.</p>
-
-    <div class="flow-grid hiw-3">
-      <div class="flow-step"><span class="flow-num">01</span><strong>We start with the question.</strong><p>What do you need to know before your next move?</p></div>
-      <div class="flow-step"><span class="flow-num">02</span><strong>We crawl the public market.</strong><p>Competitors, ads, reviews, search, websites, content, pricing, comments, and buyer conversations.</p></div>
-      <div class="flow-step"><span class="flow-num">03</span><strong>We turn signals into decisions.</strong><p>You get a private brief showing what to fix, where to compete, and what to do next.</p></div>
-    </div>
-  </section>
 
   <!-- ENGINE 1 — VALUE CARDS -->
   <section>
@@ -723,6 +858,20 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
     </div>
   </section>
 
+  <!-- HOW IT WORKS -->
+  <section>
+    <span class="section-tag">How it works</span>
+    <h2 class="section-h">Three quiet <em>moves.</em></h2>
+    <p class="section-lede">Founder-led, hand-built, evidence-only. The engagement starts with the question your business actually needs answered.</p>
+
+    <div class="flow-grid hiw-3">
+      <div class="flow-step"><span class="flow-num">01</span><strong>We start with the question.</strong><p>What do you need to know before your next move?</p></div>
+      <div class="flow-step"><span class="flow-num">02</span><strong>We crawl the public market.</strong><p>Competitors, ads, reviews, search, websites, content, pricing, comments, and buyer conversations.</p></div>
+      <div class="flow-step"><span class="flow-num">03</span><strong>We turn signals into decisions.</strong><p>You get a private brief showing what to fix, where to compete, and what to do next.</p></div>
+    </div>
+  </section>
+
+
   <!-- WHAT YOU SEND / WHAT IT BECOMES -->
   <section>
     <span class="section-tag">Engine 2 · Production</span>
@@ -741,7 +890,7 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
           </div>
           <div class="workflow-source-card">
             <strong>Location</strong>
-            <img class="workflow-location-shot" src="/images/case_studies/references/myburger/09.jpg" alt="MyBurger location and signage" loading="lazy" decoding="async">
+            <img class="workflow-location-shot" src="/images/case_studies/references/myburger/11.jpg" alt="MyBurger location and signage" loading="lazy" decoding="async">
             <p>Space cues, signage, textures, in-person personality.</p>
           </div>
         </div>
@@ -776,7 +925,7 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
       <!-- RIGHT: What comes out -->
       <div class="workflow-panel">
         <div class="workflow-panel-label">What comes out</div>
-        <img class="workflow-output-image" src="/images/case_studies/references/myburger/12.jpg" alt="Branded MyBurger promotional post" loading="lazy" decoding="async">
+        <img class="workflow-output-image" src="/images/case_studies/myburger/workflow_flash_remake.png" alt="Branded MyBurger promotional post" loading="lazy" decoding="async">
         <div class="workflow-output-meta">
           <div><strong>Look</strong><span>Bright, direct, appetite-first. Unmistakably MyBurger.</span></div>
           <div><strong>Offer</strong><span>Specific promo or item-led post instead of generic food shots.</span></div>
