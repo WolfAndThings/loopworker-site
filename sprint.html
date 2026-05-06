@@ -9,13 +9,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/site-pages.css">
-<title>The Sprint — Private Market Intelligence | LoopWorker</title>
-<meta name="description" content="Private market intelligence for businesses that need to know what is actually working. Founder-led research rounds built from public market signals, competitor paths, search demand, customer voice, pricing, proof, and conversion gaps.">
+<title>The Sprint — Market Intelligence + Content Direction | LoopWorker</title>
+<meta name="description" content="A founder-led market intelligence sprint for businesses that need a clearer next move. Competitor paths, demand, buyer language, pricing, proof, conversion gaps, and content direction.">
 <link rel="canonical" href="https://www.loopworker.com/sprint.html">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://www.loopworker.com/sprint.html">
-<meta property="og:title" content="The Sprint — Private Market Intelligence | LoopWorker">
-<meta property="og:description" content="Your market is already leaving clues. We pull them, organize them, and show you where the money is.">
+<meta property="og:title" content="The Sprint — Market Intelligence + Content Direction | LoopWorker">
+<meta property="og:description" content="Your market is already leaving clues. We pull them, organize them, and turn them into your next move.">
 <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
 
@@ -50,6 +50,28 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
 .sp-cta-pri:hover { transform: translateY(-2px); }
 .sp-cta-sec { display: inline-block; padding: 1rem 1.7rem; border-radius: 999px; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; color: #FFF; border: 1px solid rgba(255,255,255,0.22); transition: border-color 0.18s, color 0.18s; }
 .sp-cta-sec:hover { border-color: #D4A017; color: #D4A017; }
+.sp-hero-proof { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.8rem; max-width: 880px; margin-top: 2.4rem; }
+.sp-proof-item { padding: 0.9rem 1rem; background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; }
+.sp-proof-item strong { display: block; color: #FFF; font-size: 0.82rem; margin-bottom: 0.18rem; }
+.sp-proof-item span { display: block; color: #8E8E8E; font-size: 0.76rem; line-height: 1.4; }
+@media (max-width: 820px) { .sp-hero-proof { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .sp-hero-proof { grid-template-columns: 1fr; } }
+
+.fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; margin-top: 1.8rem; max-width: 980px; }
+@media (max-width: 780px) { .fit-grid { grid-template-columns: 1fr; } }
+.fit-card { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 1.4rem 1.5rem; }
+.fit-card.is-strong { border-color: rgba(212,160,23,0.28); background: linear-gradient(180deg, rgba(212,160,23,0.065), rgba(255,255,255,0.015)); }
+.fit-label { font-size: 0.64rem; letter-spacing: 0.18em; text-transform: uppercase; color: #D4A017; font-weight: 800; margin-bottom: 0.55rem; }
+.fit-card h3 { color: #FFF; font-size: 1.02rem; line-height: 1.25; margin: 0 0 0.65rem; }
+.fit-card p { color: #B5B5B5; font-size: 0.9rem; margin: 0; line-height: 1.55; }
+
+.engine-strip { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: stretch; margin: 2rem 0 0; max-width: 1060px; }
+@media (max-width: 820px) { .engine-strip { grid-template-columns: 1fr; } .engine-arrow { display: none; } }
+.engine-card { padding: 1.35rem 1.45rem; border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; background: rgba(255,255,255,0.025); }
+.engine-card strong { display: block; color: #D4A017; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.5rem; }
+.engine-card h3 { color: #FFF; font-size: 1.08rem; margin: 0 0 0.5rem; }
+.engine-card p { color: #B5B5B5; font-size: 0.9rem; line-height: 1.55; margin: 0; }
+.engine-arrow { align-self: center; color: #D4A017; opacity: 0.75; font-size: 1.5rem; padding: 0 0.1rem; }
 
 .section-h { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: clamp(1.8rem, 3.4vw, 2.6rem); color: #FFF; margin: 4.5rem 0 0.4rem; line-height: 1.1; }
 .section-h em { color: #D4A017; font-style: italic; font-weight: 400; }
@@ -426,6 +448,53 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
 .deck-page .pd-slide-stat-sub { color: #555; }
 .deck-page .pd-slide-foot { color: #6A6864; border-top-color: rgba(0,0,0,0.1); }
 
+/* ─── DELIVERABLE PATTERNS — lifted from /clients/kind-bubbles/, themed amber on light cards ─── */
+.deck-page .card-head { display: grid; grid-template-columns: auto 1fr auto; gap: 0.9rem; align-items: baseline; padding-bottom: 0.95rem; margin-bottom: 1.2rem; border-bottom: 1px solid rgba(0,0,0,0.1); }
+.deck-page .card-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 2.6rem; color: #8C6A12; line-height: 0.85; letter-spacing: -0.02em; }
+.deck-page .card-title { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 0.98rem; color: #0A0908; line-height: 1.22; letter-spacing: -0.01em; }
+.deck-page .card-meta { font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase; color: #6A6864; font-weight: 700; white-space: nowrap; }
+
+.deck-page .priority { background: linear-gradient(180deg, rgba(212,160,23,0.12), rgba(212,160,23,0.025)); border: 1px solid rgba(212,160,23,0.36); border-radius: 12px; padding: 1.15rem 1.25rem; margin: 1rem 0; }
+.deck-page .priority .pri-tag { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: #8C6A12; font-weight: 800; margin-bottom: 0.5rem; }
+.deck-page .priority .pri-tag::before { content: '◆'; margin-right: 0.5em; opacity: 0.8; }
+.deck-page .priority .pri-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 1.18rem; color: #0F0E0C; line-height: 1.38; }
+.deck-page .priority .pri-stat { display: block; font-family: 'Inter', sans-serif; font-style: normal; font-weight: 800; color: #8C6A12; margin-top: 0.55rem; font-size: 0.8rem; letter-spacing: 0.04em; }
+
+.deck-page .model-row { display: grid; grid-template-columns: 130px 1fr; gap: 1rem; padding: 0.65rem 0; border-bottom: 1px dashed rgba(0,0,0,0.1); align-items: start; }
+.deck-page .model-row:last-of-type { border-bottom: none; }
+.deck-page .model-row .layer { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 1rem; color: #8C6A12; line-height: 1.3; }
+.deck-page .model-row .what { font-size: 0.88rem; color: #0F0E0C; line-height: 1.45; }
+.deck-page .model-row .what strong { color: #0A0908; font-weight: 700; }
+
+.deck-page .criteria-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.55rem; }
+.deck-page .criteria-card { background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; padding: 0.7rem 0.85rem; }
+.deck-page .criteria-card.must { border-color: rgba(74,122,74,0.4); background: rgba(74,122,74,0.07); }
+.deck-page .criteria-card.dq { border-color: rgba(180,40,40,0.34); background: rgba(180,40,40,0.05); }
+.deck-page .criteria-card .crit-label { font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 800; margin-bottom: 0.32rem; }
+.deck-page .criteria-card.must .crit-label { color: #2A5C30; }
+.deck-page .criteria-card.dq .crit-label { color: #8E2A2A; }
+.deck-page .criteria-card .crit-text { font-size: 0.82rem; color: #0F0E0C; line-height: 1.38; font-weight: 600; }
+
+.deck-page .callout { background: rgba(212,160,23,0.07); border-left: 3px solid #B58915; padding: 0.7rem 0.95rem; margin-top: 0.95rem; font-size: 0.85rem; color: #2A2826; line-height: 1.5; border-radius: 0 6px 6px 0; }
+.deck-page .callout strong { color: #8C6A12; }
+
+/* Specialty section (Pitch Deck moved out of main carousel) */
+.specialty-section { padding: 4rem 0 3rem; border-top: 1px solid rgba(255,255,255,0.05); }
+.specialty-card { background: linear-gradient(180deg, #F7F2E5, #ECE4D2); border: 1px solid rgba(212,160,23,0.32); border-radius: 14px; padding: 2.2rem 2.4rem; margin-top: 1.6rem; box-shadow: 0 28px 60px -34px rgba(0,0,0,0.85); }
+.specialty-card .specialty-eyebrow { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: #8C6A12; font-weight: 800; margin-bottom: 0.7rem; }
+.specialty-card .specialty-eyebrow::before { content: '◆'; margin-right: 0.5em; }
+.specialty-card h3 { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 1.6rem; color: #0A0908; line-height: 1.2; margin: 0 0 0.6rem; letter-spacing: -0.02em; }
+.specialty-card h3 em { color: #8C6A12; font-style: normal; background: linear-gradient(180deg, transparent 58%, rgba(212,160,23,0.32) 58%); padding: 0 0.12em; }
+.specialty-card .specialty-lede { color: #2A2826; font-size: 0.95rem; max-width: 620px; margin-bottom: 1.4rem; line-height: 1.5; }
+.specialty-card .specialty-slides { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.7rem; margin-bottom: 1.2rem; }
+@media (max-width: 720px) { .specialty-card .specialty-slides { grid-template-columns: 1fr 1fr; } }
+.specialty-card .specialty-slide { background: linear-gradient(180deg, #FFF, #F5EFE0); border: 1px solid rgba(212,160,23,0.36); border-radius: 8px; padding: 0.85rem 0.95rem; }
+.specialty-card .specialty-slide .ss-no { font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase; color: #8C6A12; font-weight: 800; margin-bottom: 0.35rem; }
+.specialty-card .specialty-slide .ss-stat { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.4rem; color: #8C6A12; line-height: 1; font-weight: 500; margin-top: 0.4rem; }
+.specialty-card .specialty-slide .ss-sub { font-size: 0.72rem; color: #555; margin-top: 0.35rem; line-height: 1.4; }
+.specialty-card .specialty-cta { display: inline-block; padding: 0.85rem 1.5rem; border-radius: 999px; background: #0A0908; color: #FFF !important; text-decoration: none; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; transition: background 0.18s; }
+.specialty-card .specialty-cta:hover { background: #8C6A12; }
+
 /* Position indicator name color when on light cards: keep section-level dark */
 
 /* CLAIMS */
@@ -580,23 +649,48 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
 
   <!-- HERO -->
   <header class="sp-hero">
-    <span class="sp-eyebrow">LoopWorker · Two engines</span>
-    <h1 class="sp-h1">We <em>read</em> your market, then we <em>make</em> the content.</h1>
-    <p class="sp-sub">Private market intelligence + brand content production for founder-led businesses. Hand-built, evidence-only. Small caseload, no templates, no junior staff.</p>
+    <span class="sp-eyebrow">The Sprint · Market signals into next moves</span>
+    <h1 class="sp-h1">Find the move your market is already <em>pointing at.</em></h1>
+    <p class="sp-sub">A founder-led research sprint for businesses that need sharper positioning, stronger content direction, cleaner offers, or a clearer path before they spend more money.</p>
     <div class="sp-cta-row">
-      <a href="#tiers" class="sp-cta-pri" data-track="Sprint Hero See Tiers">View engagements</a>
-      <a href="/book.html" class="sp-cta-sec" data-track="Sprint Hero Book">Begin a conversation</a>
+      <a href="#tiers" class="sp-cta-pri" data-track="Sprint Hero See Tiers">Choose a sprint</a>
+      <a href="#examples" class="sp-cta-sec" data-track="Sprint Hero Examples">See what gets mapped</a>
+    </div>
+    <div class="sp-hero-proof" aria-label="Sprint proof points">
+      <div class="sp-proof-item"><strong>5-14 days</strong><span>Depending on depth and decision risk.</span></div>
+      <div class="sp-proof-item"><strong>Public signals</strong><span>Competitors, reviews, ads, search, pricing, content.</span></div>
+      <div class="sp-proof-item"><strong>Source-backed</strong><span>Screenshots, links, and receipts for major claims.</span></div>
+      <div class="sp-proof-item"><strong>Founder-led</strong><span>Small caseload. No junior handoff.</span></div>
     </div>
   </header>
 
-  <!-- ENGINE 1 — VALUE CARDS -->
+  <!-- FIT -->
   <section>
-    <span class="section-tag">References · Intelligence briefs</span>
-    <h2 class="section-h">Examples of <em>research rounds</em> we build.</h2>
-    <p class="section-lede">These are examples of intelligence rounds we build, not a menu. Your engagement is assembled around the questions your business actually needs answered.</p>
+    <span class="section-tag">What this is</span>
+    <h2 class="section-h">A sprint for the moment before the <em>big move.</em></h2>
+    <p class="section-lede">Use it when the business is close enough to act, but the next move still needs evidence: what to say, where to compete, what to fix first, what to charge, or what content should exist next.</p>
+    <div class="fit-grid">
+      <div class="fit-card is-strong">
+        <div class="fit-label">Strong fit</div>
+        <h3>You have a real decision in front of you.</h3>
+        <p>A launch, repositioning, paid push, pitch deck, new offer, local expansion, website rebuild, or content system that needs to be grounded in what the market is already doing.</p>
+      </div>
+      <div class="fit-card">
+        <div class="fit-label">Weak fit</div>
+        <h3>You only need generic content ideas.</h3>
+        <p>This is not a prompt pack or a standard audit. The work starts with a business question, then pulls enough market evidence to make the answer useful.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENGINE 1 — VALUE CARDS -->
+  <section id="examples">
+    <span class="section-tag">Engine 1 · Intelligence</span>
+    <h2 class="section-h">The market gets <em>mapped.</em></h2>
+    <p class="section-lede">These are example research modules, not a fixed menu. Your sprint is assembled around the question that actually matters to the business.</p>
 
     <div class="deck-pos">
-      <div class="deck-pos-label"><strong id="deckPosCur">01</strong> <span style="color:#888;">/</span> 12 · <span id="deckPosName">Competitor Path Reconstruction</span></div>
+      <div class="deck-pos-label"><strong id="deckPosCur">01</strong> <span style="color:#888;">/</span> 08 · <span id="deckPosName">Competitor Path Reconstruction</span></div>
       <div class="deck-pos-dots" id="deckPosDots" role="tablist" aria-label="Card position"></div>
     </div>
 
@@ -604,253 +698,164 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
       <div class="deck-stack">
         <!-- 01 · COMPETITOR PATH RECONSTRUCTION -->
         <div class="deck-page">
-          <h3 class="dp-h2">See the visible path your competitors used to <em>earn attention, trust, and demand.</em></h3>
-          <div class="tl-line">
-            <div class="tl-evt"><div class="tl-when">Stage 01</div><div class="tl-what">Founder-led origin story · 6-month consistency</div><div class="tl-meta">Built early trust before any paid spend</div></div>
-            <div class="tl-evt"><div class="tl-when">Stage 02</div><div class="tl-what">Anchored into one repeatable offer</div><div class="tl-meta">Same package on the homepage for 18 months</div></div>
-            <div class="tl-evt"><div class="tl-when">Stage 03</div><div class="tl-what">Layered proof — press, testimonials, partner logos</div><div class="tl-meta">Trust signals stacked above pricing</div></div>
-            <div class="tl-evt"><div class="tl-when">Stage 04</div><div class="tl-what">Quiet paid push behind a single proven angle</div><div class="tl-meta">Same hook running 5+ months in ad library</div></div>
-            <div class="tl-evt"><div class="tl-when">Now</div><div class="tl-what">Hiring + new market expansion</div><div class="tl-meta">Job posts signal where the next bet is</div></div>
+          <div class="card-head">
+            <span class="card-num">01</span>
+            <span class="card-title">Competitor Path Reconstruction</span>
+            <span class="card-meta">Sample · 24 mo</span>
           </div>
+          <div class="priority">
+            <div class="pri-tag">The path they actually took</div>
+            <div class="pri-text">Founder-on-camera + one repeatable offer + stacked proof — every competitor at the top of the category did this in the same order.</div>
+            <span class="pri-stat">412 sales · 156 days of paid · 8 press · 47 testimonials</span>
+          </div>
+          <div class="model-row"><div class="layer">Stage 01</div><div class="what">Founder origin · 6 mo of weekly posts. Trust built before $1 of paid spend.</div></div>
+          <div class="model-row"><div class="layer">Stage 02</div><div class="what">One repeatable offer on the homepage · unchanged 18 mo · 412 sales over the period.</div></div>
+          <div class="model-row"><div class="layer">Stage 03</div><div class="what">8 press mentions · 47 testimonials · 6 partner logos stacked above pricing.</div></div>
+          <div class="model-row"><div class="layer">Stage 04</div><div class="what">Single hook · 156 days running · est. $40K spend (Meta Ad Library timestamps).</div></div>
+          <div class="model-row"><div class="layer">Now</div><div class="what">3 marketing roles · 2 ops · expansion to 2 new metros (LinkedIn jobs).</div></div>
         </div>
 
         <!-- 02 · COMPETITOR AD VAULT -->
         <div class="deck-page">
-          <h3 class="dp-h2">Every paid ad your competitors are running. <em>So you can beat them.</em></h3>
-          <div class="ads-list">
-            <div class="ad-mini">
-              <div class="ad-mini-h"><span class="ad-platform">Meta · active</span><span class="ad-runs">Running 5 mo · 8 variants</span></div>
-              <div class="ad-mini-copy">"The thing nobody tells you about [category]."</div>
-              <div class="ad-mini-cta">Landing → category-leader page</div>
-            </div>
-            <div class="ad-mini">
-              <div class="ad-mini-h"><span class="ad-platform">Meta · active</span><span class="ad-runs">Running 3 mo · 4 variants</span></div>
-              <div class="ad-mini-copy">"Founder testimonial · short cuts only."</div>
-              <div class="ad-mini-cta">Landing → Calendly book-a-call</div>
-            </div>
-            <div class="ad-mini">
-              <div class="ad-mini-h"><span class="ad-platform">TikTok · active</span><span class="ad-runs">Running 2 mo · 12 variants</span></div>
-              <div class="ad-mini-copy">"Day-in-the-life · founder-on-camera."</div>
-              <div class="ad-mini-cta">Landing → product page</div>
-            </div>
-            <div class="ad-mini">
-              <div class="ad-mini-h"><span class="ad-platform">YouTube · 30-day</span><span class="ad-runs">Running 6 wk · 3 variants</span></div>
-              <div class="ad-mini-copy">"6-min teardown of why we exist."</div>
-              <div class="ad-mini-cta">Landing → email capture</div>
-            </div>
+          <div class="card-head">
+            <span class="card-num">02</span>
+            <span class="card-title">Competitor Ad Vault</span>
+            <span class="card-meta">Sample · live</span>
           </div>
-        </div>
-
-        <!-- 03 · NICHE CONTENT PERFORMANCE BRIEF -->
-        <div class="deck-page">
-          <h3 class="dp-h2">Find the content your <em>market is already voting for.</em></h3>
-          <div class="hm-grid">
-            <div class="hm-cell head">Format</div>
-            <div class="hm-cell head">Saves</div>
-            <div class="hm-cell head">Comments</div>
-            <div class="hm-cell head">Shares</div>
-            <div class="hm-cell label">Founder confession</div>
-            <div class="hm-cell h2">High</div>
-            <div class="hm-cell h1">High</div>
-            <div class="hm-cell h2">Mid</div>
-            <div class="hm-cell label">Niche teardown</div>
-            <div class="hm-cell h2">High</div>
-            <div class="hm-cell h2">High</div>
-            <div class="hm-cell h1">High</div>
-            <div class="hm-cell label">Behind-the-scenes</div>
-            <div class="hm-cell mid">Mid</div>
-            <div class="hm-cell mid">Mid</div>
-            <div class="hm-cell mid">Mid</div>
-            <div class="hm-cell label">Brand still</div>
-            <div class="hm-cell lo">Low</div>
-            <div class="hm-cell lo">Low</div>
-            <div class="hm-cell lo">Low</div>
+          <div class="priority">
+            <div class="pri-tag">The hook they keep paying to run</div>
+            <div class="pri-text">"The thing nobody tells you about [category]" — running 5 months, 8 variants, est. $18K/mo. Untouched. They've solved the angle.</div>
+            <span class="pri-stat">156 days · 8 variants · est. $90K total spend</span>
           </div>
+          <div class="model-row"><div class="layer">Meta · 5 mo</div><div class="what">"Nobody tells you about [category]" → category-leader landing. <strong>Working.</strong></div></div>
+          <div class="model-row"><div class="layer">Meta · 3 mo</div><div class="what">Founder testimonial · short cuts → Calendly book-a-call. <strong>Working.</strong></div></div>
+          <div class="model-row"><div class="layer">TikTok · 2 mo</div><div class="what">Day-in-the-life · founder-on-camera → product page. <strong>Climbing.</strong></div></div>
+          <div class="model-row"><div class="layer">YouTube · 6 wk</div><div class="what">6-min teardown · "why we exist" → email capture. <strong>Testing.</strong></div></div>
+          <div class="callout">Copy the 90-day winners. Skip the angles they killed at 30 days. <strong>Don't burn budget on tests they've already run.</strong></div>
         </div>
 
-        <!-- 04 · CUSTOMER DEMAND MINING BRIEF -->
+        <!-- 03 · NICHE CONTENT PERFORMANCE -->
         <div class="deck-page">
-          <h3 class="dp-h2">Find what customers are <em>already asking</em> someone to make.</h3>
-          <div class="qs-list">
-            <div class="qs-item"><div class="qs-text">"Wish there was a version of this for [adjacent audience]."</div><div class="qs-meta">Repeated across 3 review platforms</div></div>
-            <div class="qs-item"><div class="qs-text">"Why does no one offer [missing service tier]?"</div><div class="qs-meta">Recurring forum thread, 2 yrs running</div></div>
-            <div class="qs-item"><div class="qs-text">"I just want a simpler version."</div><div class="qs-meta">Top complaint across category reviews</div></div>
-            <div class="qs-item"><div class="qs-text">"Does anyone make this for [use case we're missing]?"</div><div class="qs-meta">Cluster of comments on competitor posts</div></div>
+          <div class="card-head">
+            <span class="card-num">03</span>
+            <span class="card-title">Niche Content Performance</span>
+            <span class="card-meta">Sample · 90 day</span>
           </div>
-        </div>
-
-        <!-- 05 · MARKET GAP POSITIONING BRIEF -->
-        <div class="deck-page">
-          <h3 class="dp-h2">See the opening your <em>competitors are leaving behind.</em></h3>
-          <div class="comp-row"><div class="comp-name">Direct comp · A</div><div class="comp-strength">Owns price + speed</div><div class="comp-gap">No founder voice on record</div></div>
-          <div class="comp-row"><div class="comp-name">Direct comp · B</div><div class="comp-strength">Owns brand polish</div><div class="comp-gap">No proof, no specificity</div></div>
-          <div class="comp-row"><div class="comp-name">Adjacent · category-up</div><div class="comp-strength">Owns "premium" framing</div><div class="comp-gap">Slow, high-touch only</div></div>
-          <div class="comp-row"><div class="comp-name">Aspirational · top of cat.</div><div class="comp-strength">Owns the category narrative</div><div class="comp-gap">Priced past your buyer</div></div>
-          <div class="lane-callout"><div class="lane-tag">◆ The opening sitting unclaimed</div><div class="lane-thesis">Founder-led + proof-rich + your-buyer pricing. Three of the four miss two of those signals each.</div></div>
-        </div>
-
-        <!-- 06 · SEARCH DEMAND MAP -->
-        <div class="deck-page">
-          <h3 class="dp-h2">Answer the searches buyers <em>already make.</em></h3>
-          <div class="sb-list">
-            <div class="sb-row"><span class="sb-q">[your category] near me</span><span class="sb-tag buy">Buy intent</span></div>
-            <div class="sb-row"><span class="sb-q">best [your service] for [use case]</span><span class="sb-tag buy">Buy intent</span></div>
-            <div class="sb-row"><span class="sb-q">[comp brand] vs [your brand]</span><span class="sb-tag cmp">Compare</span></div>
-            <div class="sb-row"><span class="sb-q">how much does [your service] cost</span><span class="sb-tag buy">Buy intent</span></div>
-            <div class="sb-row"><span class="sb-q">[your service] for [problem]</span><span class="sb-tag problem">Problem-aware</span></div>
-            <div class="sb-row"><span class="sb-q">is [your category] worth it</span><span class="sb-tag cmp">Compare</span></div>
+          <div class="priority">
+            <div class="pri-tag">What's actually winning right now</div>
+            <div class="pri-text">Founder confessions and niche teardowns. Both convert 3–4× better than the polished brand stills your category keeps shipping.</div>
+            <span class="pri-stat">Pulled from 12 creators · 247 posts · 90 days</span>
           </div>
+          <div class="criteria-grid">
+            <div class="criteria-card must"><div class="crit-label">★ Winning</div><div class="crit-text">Founder confession · 22s</div></div>
+            <div class="criteria-card must"><div class="crit-label">★ Winning</div><div class="crit-text">Niche teardown · carousel</div></div>
+            <div class="criteria-card"><div class="crit-label">Steady</div><div class="crit-text">Behind-the-scenes</div></div>
+            <div class="criteria-card"><div class="crit-label">Steady</div><div class="crit-text">Comment-trigger reel</div></div>
+            <div class="criteria-card dq"><div class="crit-label">Skip</div><div class="crit-text">Polished brand still</div></div>
+            <div class="criteria-card dq"><div class="crit-label">Skip</div><div class="crit-text">Generic motivational</div></div>
+          </div>
+          <div class="callout">Spend 60% of your effort on the two winners. Drop the bottom two entirely.</div>
         </div>
 
-        <!-- 07 · PRICING POWER BRIEF -->
+        <!-- 04 · CUSTOMER DEMAND MINING -->
         <div class="deck-page">
-          <h3 class="dp-h2">Find the price room your <em>market already allows.</em></h3>
+          <div class="card-head">
+            <span class="card-num">04</span>
+            <span class="card-title">Customer Demand Mining</span>
+            <span class="card-meta">Sample · verbatim</span>
+          </div>
+          <div class="priority">
+            <div class="pri-tag">The phrase they use 184× a month</div>
+            <div class="pri-text">"I just want a simpler version" — top complaint across category reviews last 60 days. Whoever ships that first owns the lane.</div>
+            <span class="pri-stat">91 mentions in last 60 days · 4 platforms</span>
+          </div>
+          <div class="model-row"><div class="layer">47×</div><div class="what">"Wish there was a version of this for [adjacent audience]." <strong>Adjacent SKU opportunity.</strong></div></div>
+          <div class="model-row"><div class="layer">184↑</div><div class="what">Forum thread · 2 yr lifespan: "Why does no one offer [missing tier]?"</div></div>
+          <div class="model-row"><div class="layer">91×</div><div class="what">"I just want a simpler version." <strong>Lite SKU.</strong></div></div>
+          <div class="model-row"><div class="layer">38×</div><div class="what">"Does anyone make this for [use case we're missing]?"</div></div>
+          <div class="callout">Buyer language → product roadmap → sales-page copy. <strong>Same words. No invention.</strong></div>
+        </div>
+
+        <!-- 05 · MARKET GAP POSITIONING -->
+        <div class="deck-page">
+          <div class="card-head">
+            <span class="card-num">05</span>
+            <span class="card-title">Market Gap Positioning</span>
+            <span class="card-meta">Sample</span>
+          </div>
+          <div class="priority">
+            <div class="pri-tag">The opening sitting unclaimed</div>
+            <div class="pri-text">Founder-led + proof-rich + your-buyer pricing. Three of the four top competitors miss two of those each. <em>You can take it.</em></div>
+            <span class="pri-stat">4 competitors mapped · 1 lane open</span>
+          </div>
+          <div class="model-row"><div class="layer">Direct · 28K</div><div class="what">$45 entry · ships 48hr. <strong>Zero founder content.</strong></div></div>
+          <div class="model-row"><div class="layer">Direct · 12K</div><div class="what">$95 avg ticket · premium brand. <strong>9 generic testimonials.</strong></div></div>
+          <div class="model-row"><div class="layer">Adjacent · 312K</div><div class="what">$180 entry · "premium ritual." <strong>3-wk wait, won't travel.</strong></div></div>
+          <div class="model-row"><div class="layer">Aspirational · 1.4M</div><div class="what">$420 entry · cultural mention. <strong>4× past your buyer's budget.</strong></div></div>
+        </div>
+
+        <!-- 06 · PRICING POWER -->
+        <div class="deck-page">
+          <div class="card-head">
+            <span class="card-num">06</span>
+            <span class="card-title">Pricing Power</span>
+            <span class="card-meta">Sample · live anchors</span>
+          </div>
+          <div class="priority">
+            <div class="pri-tag">Where you should sit on the shelf</div>
+            <div class="pri-text">$80. Above the commodity floor, below the ceremony tier. Defensible band — and the data supports a $20 lift in Y2 once trust signals fire.</div>
+            <span class="pri-stat">Anchored to 11 live competitor pricing pages</span>
+          </div>
           <div class="price-rail">
-            <div class="price-tick" style="--y: 8%;"><span class="pt-label">Premium ceiling</span><span class="pt-amt">$$$$</span></div>
-            <div class="price-tick" style="--y: 30%;"><span class="pt-label">Above-mid</span><span class="pt-amt">$$$</span></div>
-            <div class="price-tick highlight" style="--y: 52%;"><span class="pt-label">★ Defensible band</span><span class="pt-amt">$$</span></div>
-            <div class="price-tick" style="--y: 70%;"><span class="pt-label">Mid-market</span><span class="pt-amt">$$</span></div>
-            <div class="price-tick" style="--y: 88%;"><span class="pt-label">Floor / commodity</span><span class="pt-amt">$</span></div>
+            <div class="price-tick" style="--y: 8%;"><span class="pt-label">Premium ceiling</span><span class="pt-amt">$185</span></div>
+            <div class="price-tick" style="--y: 30%;"><span class="pt-label">Above-mid</span><span class="pt-amt">$120</span></div>
+            <div class="price-tick highlight" style="--y: 52%;"><span class="pt-label">★ Defensible band</span><span class="pt-amt">$80</span></div>
+            <div class="price-tick" style="--y: 70%;"><span class="pt-label">Mid-market</span><span class="pt-amt">$54</span></div>
+            <div class="price-tick" style="--y: 88%;"><span class="pt-label">Floor / commodity</span><span class="pt-amt">$22</span></div>
           </div>
-          <div class="price-note">Pulled from competitor pricing pages, menus, booking flows. Where you sit shapes who buys, what they expect, and how fast you scale.</div>
+          <div class="callout"><strong>Y2 move:</strong> bump to $99 once you have 50+ named testimonials. Pricing power follows trust signals.</div>
         </div>
 
-        <!-- 08 · WEBSITE CONVERSION BRIEF -->
+        <!-- 07 · WEBSITE CONVERSION -->
         <div class="deck-page">
-          <h3 class="dp-h2">Fix the page gaps <em>costing you sales.</em></h3>
-          <div class="ww-frame">
-            <div class="ww-row leak"><span class="ww-tag">LEAK</span>Hero unclear · no offer above fold</div>
-            <div class="ww-row ok"><span class="ww-tag">OK</span>Visual brand reads premium</div>
-            <div class="ww-row leak"><span class="ww-tag">LEAK</span>Proof buried below the fold</div>
-            <div class="ww-row leak"><span class="ww-tag">LEAK</span>CTA uses weak verb · "learn more"</div>
-            <div class="ww-row ok"><span class="ww-tag">OK</span>Mobile speed under 2.5s</div>
-            <div class="ww-row leak"><span class="ww-tag">LEAK</span>Pricing requires 3 clicks to find</div>
+          <div class="card-head">
+            <span class="card-num">07</span>
+            <span class="card-title">Website Conversion</span>
+            <span class="card-meta">Sample · audit</span>
           </div>
+          <div class="priority">
+            <div class="pri-tag">Where the page leaks</div>
+            <div class="pri-text">Hero unclear. Proof buried. Weak CTA verb. Pricing 3 clicks deep. <em>Each one costs you a measurable share of intent.</em></div>
+            <span class="pri-stat">6 leaks · 2 already strong</span>
+          </div>
+          <div class="criteria-grid">
+            <div class="criteria-card dq"><div class="crit-label">Leak</div><div class="crit-text">Hero unclear · no offer above fold</div></div>
+            <div class="criteria-card must"><div class="crit-label">OK</div><div class="crit-text">Visual brand reads premium</div></div>
+            <div class="criteria-card dq"><div class="crit-label">Leak</div><div class="crit-text">Proof buried below the fold</div></div>
+            <div class="criteria-card dq"><div class="crit-label">Leak</div><div class="crit-text">CTA uses weak verb · "learn more"</div></div>
+            <div class="criteria-card must"><div class="crit-label">OK</div><div class="crit-text">Mobile speed under 2.5s</div></div>
+            <div class="criteria-card dq"><div class="crit-label">Leak</div><div class="crit-text">Pricing requires 3 clicks to find</div></div>
+          </div>
+          <div class="callout">Behavioral drop-off (real bounce, real CR) available with read-only analytics access.</div>
         </div>
 
-        <!-- 09 · PROOF GAP BRIEF -->
+        <!-- 08 · AUTHORITY CHANNEL MAP -->
         <div class="deck-page">
-          <h3 class="dp-h2">Put trust signals where <em>buyers decide.</em></h3>
-          <div class="pg-grid">
-            <div class="pg-item has"><span class="pg-box"></span>Reviews · 4.6★</div>
-            <div class="pg-item miss"><span class="pg-box"></span>Case studies on site</div>
-            <div class="pg-item has"><span class="pg-box"></span>Founder bio</div>
-            <div class="pg-item miss"><span class="pg-box"></span>Press mentions</div>
-            <div class="pg-item has"><span class="pg-box"></span>Before / after</div>
-            <div class="pg-item miss"><span class="pg-box"></span>Named testimonials</div>
-            <div class="pg-item miss"><span class="pg-box"></span>Specific outcomes</div>
-            <div class="pg-item has"><span class="pg-box"></span>Photo of real work</div>
+          <div class="card-head">
+            <span class="card-num">08</span>
+            <span class="card-title">Authority Channel Map</span>
+            <span class="card-meta">Sample · 5 channels</span>
           </div>
-        </div>
-
-        <!-- 10 · AUTHORITY CHANNEL MAP -->
-        <div class="deck-page">
-          <h3 class="dp-h2">Borrow trusted attention from <em>the right places.</em></h3>
-          <div class="cf-list">
-            <div class="cf-row high"><div><div class="cf-name">Category podcast · 40K avg downloads</div><div class="cf-meta">Booking 3 wks out · loves data founders</div></div><span class="cf-fit f-hi">High fit</span></div>
-            <div class="cf-row high"><div><div class="cf-name">Local trade newsletter · 12K subs</div><div class="cf-meta">Featured 3 founders in your category last 6 mo</div></div><span class="cf-fit f-hi">High fit</span></div>
-            <div class="cf-row mid"><div><div class="cf-name">Niche YouTube · 18K subs</div><div class="cf-meta">Open to guests · 6-week wait list</div></div><span class="cf-fit f-mid">Mid fit</span></div>
-            <div class="cf-row mid"><div><div class="cf-name">Adjacent partner brand</div><div class="cf-meta">Co-promo open · founder is friendly</div></div><span class="cf-fit f-mid">Mid fit</span></div>
-            <div class="cf-row mid"><div><div class="cf-name">Local press · weekly</div><div class="cf-meta">Profile section · pitch deadline 1st of month</div></div><span class="cf-fit f-mid">Mid fit</span></div>
+          <div class="priority">
+            <div class="pri-tag">Where attention already exists</div>
+            <div class="pri-text">Two podcasts and a category newsletter book founders at your stage. Producer emails on file. <em>Pitch this month or wait six.</em></div>
+            <span class="pri-stat">5 channels mapped · 3 with confirmed openings</span>
           </div>
-        </div>
-
-        <!-- 11 · LIVE SOCIAL DIRECTION -->
-        <div class="deck-page">
-          <h3 class="dp-h2">Today's content moves — pulled from <em>trends, competitors, and what's actually working.</em></h3>
-          <div class="tp-list">
-            <div class="tp-row up">
-              <span class="tp-arrow">↑</span>
-              <div class="tp-body">
-                <div class="tp-format">Founder-on-camera, 22-second confessional cut</div>
-                <div class="tp-signal">Saves up across 12 niche creators this week. Audio is a trending IG sound.</div>
-                <span class="tp-status">Spiking</span>
-              </div>
-            </div>
-            <div class="tp-row up">
-              <span class="tp-arrow">↑</span>
-              <div class="tp-body">
-                <div class="tp-format">"Day in the life of [unexpected role]" carousel</div>
-                <div class="tp-signal">Roughly 4× normal engagement on category posts.</div>
-                <span class="tp-status">Rising</span>
-              </div>
-            </div>
-            <div class="tp-row steady">
-              <span class="tp-arrow">→</span>
-              <div class="tp-body">
-                <div class="tp-format">Counter-position reel · "Why we don't do [obvious thing]"</div>
-                <div class="tp-signal">Top performer in your niche for 60 days running.</div>
-                <span class="tp-status">Steady winner</span>
-              </div>
-            </div>
-            <div class="tp-row steady">
-              <span class="tp-arrow">→</span>
-              <div class="tp-body">
-                <div class="tp-format">Comment-trigger giveaway / mini-resource</div>
-                <div class="tp-signal">Best DM-driver across the category.</div>
-                <span class="tp-status">Steady winner</span>
-              </div>
-            </div>
-            <div class="tp-row down">
-              <span class="tp-arrow">↓</span>
-              <div class="tp-body">
-                <div class="tp-format">Polished brand-still / mood post</div>
-                <div class="tp-signal">Saves and shares dropping in your category. Skip these for now.</div>
-                <span class="tp-status">Cooling</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 12 · PITCH DECK RESEARCH BRIEF -->
-        <div class="deck-page">
-          <h3 class="dp-h2">Build a deck that holds up to a <em>serious Q&amp;A.</em></h3>
-          <div class="pd-slides">
-            <div class="pd-slide">
-              <div>
-                <div class="pd-slide-no">Slide · Market</div>
-                <div class="pd-slide-h">TAM / SAM / SOM</div>
-              </div>
-              <div>
-                <div class="pd-slide-stat">$XX.XB</div>
-                <div class="pd-slide-stat-sub">Named sources, not "we estimate"</div>
-              </div>
-              <div class="pd-slide-foot">Gov data · trade reports</div>
-            </div>
-            <div class="pd-slide">
-              <div>
-                <div class="pd-slide-no">Slide · Funded comps</div>
-                <div class="pd-slide-h">Who raised, when, how much</div>
-              </div>
-              <div>
-                <div class="pd-slide-stat">7 rounds</div>
-                <div class="pd-slide-stat-sub">Last 24 mo in your category</div>
-              </div>
-              <div class="pd-slide-foot">Crunchbase · press</div>
-            </div>
-            <div class="pd-slide">
-              <div>
-                <div class="pd-slide-no">Slide · Public comps</div>
-                <div class="pd-slide-h">Revenue · margin · growth</div>
-              </div>
-              <div>
-                <div class="pd-slide-stat">XX%</div>
-                <div class="pd-slide-stat-sub">Avg category growth, last 4 qtrs</div>
-              </div>
-              <div class="pd-slide-foot">SEC · 10-Ks · transcripts</div>
-            </div>
-            <div class="pd-slide">
-              <div>
-                <div class="pd-slide-no">Slide · Adoption</div>
-                <div class="pd-slide-h">Trend, hiring, coverage</div>
-              </div>
-              <div>
-                <div class="pd-slide-stat">↑ 4×</div>
-                <div class="pd-slide-stat-sub">Search interest YoY in category</div>
-              </div>
-              <div class="pd-slide-foot">Trends · jobs · news</div>
-            </div>
-          </div>
+          <div class="model-row"><div class="layer">High fit</div><div class="what">Category podcast · 40K avg downloads · books 3 wk out · loves data founders.</div></div>
+          <div class="model-row"><div class="layer">High fit</div><div class="what">Local newsletter · 12K subs · 3 founders in your category last 6 mo.</div></div>
+          <div class="model-row"><div class="layer">Mid fit</div><div class="what">Niche YouTube · 18K subs · open to guests · 6-wk wait list.</div></div>
+          <div class="model-row"><div class="layer">Mid fit</div><div class="what">Adjacent partner · co-promo open · founder is friendly.</div></div>
+          <div class="model-row"><div class="layer">Mid fit</div><div class="what">Local press · weekly · profile section · 1st-of-month deadline.</div></div>
         </div>
 
       </div>
@@ -861,13 +866,45 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
   <!-- HOW IT WORKS -->
   <section>
     <span class="section-tag">How it works</span>
-    <h2 class="section-h">Three quiet <em>moves.</em></h2>
-    <p class="section-lede">Founder-led, hand-built, evidence-only. The engagement starts with the question your business actually needs answered.</p>
+    <h2 class="section-h">The work moves from evidence to <em>action.</em></h2>
+    <p class="section-lede">The sprint stays narrow enough to finish, but deep enough to change what you do next.</p>
 
     <div class="flow-grid hiw-3">
-      <div class="flow-step"><span class="flow-num">01</span><strong>We start with the question.</strong><p>What do you need to know before your next move?</p></div>
-      <div class="flow-step"><span class="flow-num">02</span><strong>We crawl the public market.</strong><p>Competitors, ads, reviews, search, websites, content, pricing, comments, and buyer conversations.</p></div>
-      <div class="flow-step"><span class="flow-num">03</span><strong>We turn signals into decisions.</strong><p>You get a private brief showing what to fix, where to compete, and what to do next.</p></div>
+      <div class="flow-step"><span class="flow-num">01</span><strong>Frame the decision.</strong><p>We define the question, the stakes, the market boundary, and what would count as a useful answer.</p></div>
+      <div class="flow-step"><span class="flow-num">02</span><strong>Pull the signal trail.</strong><p>Competitors, ads, reviews, search, websites, content, pricing, comments, offers, and buyer language.</p></div>
+      <div class="flow-step"><span class="flow-num">03</span><strong>Hand back the move.</strong><p>You get a private brief with findings, source trail, recommendations, and the first actions to take.</p></div>
+    </div>
+  </section>
+
+  <!-- SPECIALTY · PITCH DECK RESEARCH -->
+  <section class="specialty-section">
+    <div class="specialty-card">
+      <span class="specialty-eyebrow">Specialty engagement · optional</span>
+      <h3>Pitch deck research that <em>holds up</em> to a serious Q&amp;A.</h3>
+      <p class="specialty-lede">Quoted separately when an investor or partnership pitch is in play. Market sizing with named sources, funded competitor data, public-comp financials, and adoption signals — all with source trails.</p>
+      <div class="specialty-slides">
+        <div class="specialty-slide">
+          <div class="ss-no">Slide · Market</div>
+          <div class="ss-stat">$8.4B</div>
+          <div class="ss-sub">TAM · gov + trade reports cited</div>
+        </div>
+        <div class="specialty-slide">
+          <div class="ss-no">Slide · Funded comps</div>
+          <div class="ss-stat">$214M</div>
+          <div class="ss-sub">7 rounds · last close $48M</div>
+        </div>
+        <div class="specialty-slide">
+          <div class="ss-no">Slide · Public comps</div>
+          <div class="ss-stat">22%</div>
+          <div class="ss-sub">Avg category growth · 4 qtrs</div>
+        </div>
+        <div class="specialty-slide">
+          <div class="ss-no">Slide · Adoption</div>
+          <div class="ss-stat">↑ 412%</div>
+          <div class="ss-sub">Search interest YoY · 38 hires</div>
+        </div>
+      </div>
+      <a href="/book.html" class="specialty-cta" data-track="Specialty Pitch Deck CTA">Begin a conversation</a>
     </div>
   </section>
 
@@ -875,8 +912,22 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
   <!-- WHAT YOU SEND / WHAT IT BECOMES -->
   <section>
     <span class="section-tag">Engine 2 · Production</span>
-    <h2 class="section-h">What you <em>send me,</em> and what it turns into.</h2>
-    <p class="section-lede">I don't need a huge production to build a branded direction. A logo, a feel for the location, and a handful of recent posts are enough. Real example below: MyBurger.</p>
+    <h2 class="section-h">Then the direction can become <em>content.</em></h2>
+    <p class="section-lede">Some sprints stop at the brief. Some turn into production direction: stronger posts, sharper hooks, cleaner CTAs, and assets that feel more like the brand. Real example below: MyBurger.</p>
+
+    <div class="engine-strip">
+      <div class="engine-card">
+        <strong>Read</strong>
+        <h3>What should the business say next?</h3>
+        <p>Market signals clarify the offer, positioning, proof gaps, buyer language, and content angles worth building around.</p>
+      </div>
+      <div class="engine-arrow" aria-hidden="true">→</div>
+      <div class="engine-card">
+        <strong>Make</strong>
+        <h3>What should the buyer actually see?</h3>
+        <p>The research turns into post structures, creative direction, visual hierarchy, hooks, and examples a team can publish from.</p>
+      </div>
+    </div>
 
     <div class="workflow-showcase">
       <!-- LEFT: What you already have -->
@@ -939,8 +990,8 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
   <!-- TIERS -->
   <section id="tiers">
     <span class="section-tag">Engagement sizes</span>
-    <h2 class="section-h">Three engagement <em>sizes.</em></h2>
-    <p class="section-lede">Engagement size determines depth, not format. Sprint Lite answers one focused question. Sprint Pro connects several signals. Sprint Full is the full strategic round.</p>
+    <h2 class="section-h">Choose the amount of <em>certainty.</em></h2>
+    <p class="section-lede">Engagement size determines depth. Sprint Lite answers one focused question. Sprint Pro connects the signals most businesses need before acting. Sprint Full is the strategic round before a major move.</p>
 
     <div class="tier-grid">
 
@@ -949,13 +1000,13 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
         <h3 class="tier-name">Sprint Lite</h3>
         <div class="tier-price-row"><span class="tier-price">$754</span><span class="tier-price-suffix">flat</span></div>
         <span class="tier-days">5-day turnaround</span>
-        <p class="tier-best-for"><strong>Best for</strong>One focused business question that needs a clear market-informed answer.</p>
+        <p class="tier-best-for"><strong>Best for</strong>One focused business question that needs a clear, market-informed answer.</p>
         <ul class="tier-bullets">
           <li>One core research question</li>
           <li>Public market signal pull</li>
           <li>Competitor reconstruction where relevant</li>
           <li>Buyer-language and demand read</li>
-          <li>Private positioning brief</li>
+          <li>Private decision brief</li>
           <li>Source trail on every major claim</li>
         </ul>
         <div class="tier-cta-stack">
@@ -970,14 +1021,14 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
         <h3 class="tier-name">Sprint Pro</h3>
         <div class="tier-price-row"><span class="tier-price">$1,334</span><span class="tier-price-suffix">flat</span></div>
         <span class="tier-days">7-day turnaround</span>
-        <p class="tier-best-for"><strong>Best for</strong>Several signals that need to be connected before the business makes its next move.</p>
+        <p class="tier-best-for"><strong>Best for</strong>The default choice when several signals need to be connected before the business acts.</p>
         <ul class="tier-bullets">
           <li>Everything in Sprint Lite</li>
           <li>+ Customer voice and objection mining</li>
           <li>+ Pricing, offer, or conversion read</li>
           <li>+ Search demand and authority-channel map</li>
+          <li>+ Content direction and first-move plan</li>
           <li>+ Decision memo: what to fix first</li>
-          <li>Founder-led research, written for action</li>
         </ul>
         <div class="tier-cta-stack">
           <a href="https://buy.stripe.com/3cI4gy66rcpx3pgbbCcEw0w" class="tier-cta-primary" data-track="Sprint Pro Hero CTA">Begin Sprint Pro</a>
@@ -990,12 +1041,12 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
         <h3 class="tier-name">Sprint Full</h3>
         <div class="tier-price-row"><span class="tier-price">$4,900</span><span class="tier-price-suffix">flat</span></div>
         <span class="tier-days">10–14 day turnaround</span>
-        <p class="tier-best-for"><strong>Best for</strong>A full strategic round before a launch, fundraise, retail push, paid spend, or repositioning.</p>
+        <p class="tier-best-for"><strong>Best for</strong>A full strategic round before a launch, fundraise, retail push, paid spend, expansion, or repositioning.</p>
         <ul class="tier-bullets">
           <li>Everything in Sprint Pro</li>
           <li>+ Full competitor, demand, proof, and conversion map</li>
           <li>+ Pricing ladder and offer architecture</li>
-          <li>+ Optional pitch-deck research layer</li>
+          <li>+ Optional pitch-deck research or production layer</li>
           <li>+ Source-backed strategic brief with appendix</li>
           <li>Built for high-stakes decisions</li>
         </ul>
@@ -1043,7 +1094,7 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
     <div class="faq-list">
       <details>
         <summary>Is this an audit?</summary>
-        <p>Not in the usual sense. We use audit methods, but the output is a private market intelligence brief built around the decisions your business needs to make.</p>
+        <p>Not in the usual sense. We use audit methods, but the output is a private decision brief built around the move your business needs to make.</p>
       </details>
       <details>
         <summary>Do you need access to our accounts?</summary>
@@ -1055,7 +1106,11 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
       </details>
       <details>
         <summary>What do we get?</summary>
-        <p>A written strategy brief with findings, screenshots, source trails, recommendations, and next actions. Source files included where useful.</p>
+        <p>A written strategy brief with findings, screenshots, source trails, recommendations, and next actions. If production direction is part of the sprint, you also get the content structures and creative notes needed to build from it.</p>
+      </details>
+      <details>
+        <summary>Does the Sprint include content production?</summary>
+        <p>The core Sprint is research and direction. Production can be included when the next useful move is turning the findings into concrete posts, visuals, hooks, or campaign assets.</p>
       </details>
       <details>
         <summary>Who does the work?</summary>
@@ -1066,8 +1121,8 @@ body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; li
 
   <!-- BOTTOM CTA -->
   <div class="gal-cta">
-    <h3>Begin a <em>Sprint.</em></h3>
-    <p>If your business is at the point where it needs the work — start the conversation. We'll let you know if we're a fit.</p>
+    <h3>Bring the next move into <em>focus.</em></h3>
+    <p>If the business is close to acting and needs evidence before it spends more money, choose a sprint size or start with a conversation.</p>
     <div class="gal-cta-row">
       <a href="#tiers" class="sp-cta-pri" data-track="Sprint Bottom Pick CTA">View engagements</a>
       <a href="/book.html" class="sp-cta-sec" data-track="Sprint Bottom Book CTA">Begin a conversation</a>
