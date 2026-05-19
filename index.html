@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="images/cards/card_02.webp">
+    <link rel="preload" as="image" href="images/cards/card_05.webp">
     <!-- Visual polish layer — overlays inline styles with editorial accent (amber) -->
     <style>
       :root { --accent: #D4A017; --accent-soft: #B58915; --accent-glow: rgba(212, 160, 23, 0.18); --rule: rgba(212, 160, 23, 0.22); }
@@ -35,6 +35,7 @@
       /* SPRINT-LED HERO POLISH (homepage) */
       .hero h1.fade-up em { font-style: italic; color: var(--accent); font-weight: 400; }
       .hero-eyebrow { display: inline-block; font-size: 0.7rem; color: var(--accent); letter-spacing: 0.22em; text-transform: uppercase; font-weight: 800; margin-bottom: 1rem; }
+
 
       /* MINI TIER CARDS (homepage above-fold) */
       .mini-tier-section { padding: 1.5rem 2rem 4rem; }
@@ -67,6 +68,7 @@
       .mini-tier-card .mt-name { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.6rem; font-weight: 500; color: #FFF; line-height: 1.1; margin-bottom: 0.4rem; }
       .mini-tier-card .mt-price { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.6rem; color: #FFF; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
       .mini-tier-card .mt-price .mt-flat { font-size: 0.78rem; color: #888; font-weight: 500; letter-spacing: 0.06em; margin-left: 0.4rem; }
+      .mini-tier-card .mt-price .mt-flat-solo { font-size: 1.05rem; color: var(--accent); font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-left: 0; }
       .mini-tier-card .mt-scope { font-size: 0.92rem; color: #B0B0B0; line-height: 1.45; margin-bottom: 1.1rem; flex-grow: 1; }
       .mini-tier-card .mt-go {
         display: inline-flex; align-items: center; gap: 0.4rem;
@@ -109,6 +111,63 @@
         margin-right: 0.6rem;
         font-size: 0.7rem;
       }
+      .lw-stats-strip .stats-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.4rem;
+        align-items: stretch;
+        margin-top: 0.6rem;
+      }
+      @media (max-width: 880px) { .lw-stats-strip .stats-row { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 480px) { .lw-stats-strip .stats-row { grid-template-columns: 1fr; } }
+      .stat-cell {
+        text-align: center;
+        padding: 0.8rem 0.6rem;
+        border-left: 1px solid rgba(212,160,23,0.18);
+      }
+      .stat-cell:first-child { border-left: 0; }
+      @media (max-width: 880px) {
+        .stat-cell { border-left: 0; border-top: 1px solid rgba(212,160,23,0.12); padding-top: 1rem; }
+        .stat-cell:first-child, .stat-cell:nth-child(2) { border-top: 0; padding-top: 0.6rem; }
+      }
+      .stat-cell .sc-n {
+        display: block;
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        color: var(--accent);
+        font-size: 1.7rem;
+        font-weight: 500;
+        line-height: 1;
+        margin-bottom: 0.35rem;
+      }
+      .stat-cell .sc-l {
+        display: block;
+        font-size: 0.74rem;
+        letter-spacing: 0.06em;
+        color: #C8B98E;
+        line-height: 1.35;
+      }
+
+      /* CLOSING CTA · final repeat-CTA section */
+      .closing-cta-section { padding: 5rem 2rem 5rem; background: #0C0C0C; border-top: 1px solid rgba(212,160,23,0.18); }
+      .closing-cta-section .container-wide { max-width: 1100px; margin: 0 auto; }
+      .closing-cta {
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 2.4rem 1.4rem;
+        background: linear-gradient(180deg, rgba(212,160,23,0.05), rgba(255,255,255,0.012));
+        border: 1px solid rgba(212,160,23,0.22);
+        border-radius: 14px;
+      }
+      .closing-cta .cc-eyebrow { display: inline-block; font-size: 0.7rem; color: var(--accent); letter-spacing: 0.22em; text-transform: uppercase; font-weight: 800; margin-bottom: 1rem; }
+      .closing-cta h2 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(1.8rem, 3.6vw, 2.8rem); line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 0.9rem; }
+      .closing-cta h2 em { font-style: italic; color: var(--accent); font-weight: 400; }
+      .closing-cta p { font-size: 1rem; color: #B5B5B5; max-width: 540px; margin: 0 auto 1.6rem; }
+      .closing-cta-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; margin-bottom: 1.3rem; }
+      .closing-cta-note { font-size: 0.86rem; color: #888; max-width: 560px; margin: 0 auto; line-height: 1.55; }
+      .closing-cta-note a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(212,160,23,0.4); padding-bottom: 1px; }
+      .closing-cta-note a:hover { color: #FFF; border-color: #FFF; }
 
       /* HOMEPAGE CHRIS QUOTE — same shape as sprint.html */
       .home-quote-section { padding: 4.5rem 2rem 3.5rem; }
@@ -139,26 +198,26 @@
       .home-quote-block .q-attr a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(212,160,23,0.4); padding-bottom: 1px; }
       .home-quote-block .q-attr a:hover { color: #FFF; border-color: #FFF; }
     </style>
-    <title>Brand Strategy with Receipts · 5 Days · From $754 | LoopWorker</title>
-    <meta name="description" content="Live-data brand strategy in 5 days. Three productized sprint tiers from $754. Audit, competitor scrape, content pillars, hooks, ROI projection — receipts in every line.">
+    <title>The Dashboard Founders Wish They Had on Day One · LoopWorker</title>
+    <meta name="description" content="LoopWorker builds the market-research dashboard you wish you had when you started, plus the strategy to act on it. Live data on competitors, customer voice, pricing, search, proof, and channels. Founder-led, three Sprint tiers.">
     <link rel="canonical" href="https://www.loopworker.com/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.loopworker.com/">
-    <meta property="og:title" content="Brand Strategy with Receipts · 5 Days · From $754 | LoopWorker">
-    <meta property="og:description" content="Live-data brand strategy in 5 days. Three productized sprint tiers from $754. Founder-led delivery. Pay → kicked off same day.">
+    <meta property="og:title" content="The Dashboard Founders Wish They Had on Day One · LoopWorker">
+    <meta property="og:description" content="The market-research dashboard you wish you had on day one, plus the strategy to act on it. Live data, founder-led, three Sprint tiers.">
     <meta property="og:site_name" content="LoopWorker">
     <meta property="og:locale" content="en_US">
     <meta property="og:image" content="https://www.loopworker.com/images/case_studies/references/myburger/01.jpg">
-    <meta property="og:image:alt" content="LoopWorker — live-data brand strategy in 5 days, three productized sprint tiers">
+    <meta property="og:image:alt" content="LoopWorker. Market intelligence dashboards and the strategy to move on them.">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Brand Strategy with Receipts · 5 Days · From $754 | LoopWorker">
-    <meta name="twitter:description" content="Live-data brand strategy in 5 days. Three productized sprint tiers from $754.">
+    <meta name="twitter:title" content="The Dashboard Founders Wish They Had on Day One · LoopWorker">
+    <meta name="twitter:description" content="The market-research dashboard you wish you had on day one, plus the strategy to act on it. Founder-led, three Sprint tiers.">
     <meta name="twitter:image" content="https://www.loopworker.com/images/case_studies/references/myburger/01.jpg">
-    <meta name="twitter:image:alt" content="LoopWorker — live-data brand strategy in 5 days, three productized sprint tiers">
+    <meta name="twitter:image:alt" content="LoopWorker. Market intelligence dashboards and the strategy to move on them.">
 
     <!-- Google Verification -->
     <meta name="google-site-verification" content="google9258fb3826a9df03">
@@ -1049,6 +1108,100 @@
         }
 
         /* ========================
+           CASE STUDY GRID · 3-UP
+           ======================== */
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .case-study-card {
+            display: flex;
+            flex-direction: column;
+            background: #131313;
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .case-study-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(193, 113, 53, 0.5);
+        }
+        .case-study-card-media {
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+            background: #222;
+        }
+        .case-study-card-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .case-study-card-body {
+            padding: 1.5rem 1.5rem 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .case-study-card-label {
+            font-size: 0.66rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        .case-study-card-body h3 {
+            font-size: 1.15rem;
+            line-height: 1.3;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #f5f5f0;
+        }
+        .case-study-card-body p {
+            font-size: 0.88rem;
+            line-height: 1.5;
+            color: #c8b98e;
+            margin-bottom: 0.65rem;
+        }
+        .case-study-card-body p strong {
+            color: #f5f5f0;
+            font-weight: 700;
+        }
+        .case-study-card-body .cs-before strong { color: #c8a17e; }
+        .case-study-card-body .cs-shift strong { color: #b8c4d6; }
+        .case-study-card-body .cs-outcome strong { color: #b8c89a; }
+        .case-study-card-body .cs-read {
+            margin-top: auto;
+            padding-top: 1rem;
+            font-size: 0.78rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .case-study-grid-foot {
+            margin-top: 2.5rem;
+            text-align: center;
+        }
+        .case-study-grid-foot p {
+            margin-top: 1rem;
+            font-size: 0.88rem;
+            color: #888;
+            max-width: 56ch;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (max-width: 900px) {
+            .case-study-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ========================
            PERSONAL NOTE
            ======================== */
         .personal-note {
@@ -1482,6 +1635,15 @@
             color: #FFFFFF;
             margin-bottom: 0.3rem;
             letter-spacing: -0.02em;
+        }
+
+        .pricing-amount.pricing-duration {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 500;
+            font-size: 2.1rem;
+            color: #D4A017;
+            letter-spacing: 0;
         }
 
         .pricing-desc {
@@ -2021,15 +2183,15 @@
             {
                 "@type": "ProfessionalService",
                 "name": "LoopWorker",
-                "description": "Done-for-you social media content for restaurants, med spas, gyms, real estate, and local brands that want more customers.",
+                "description": "The market-research dashboard founders wish they had on day one, plus the strategy to act on it. Live data on competitors, customer voice, pricing, search, proof, and channels, built into a dashboard so any project can move on data-backed decisions.",
                 "url": "https://www.loopworker.com",
-                "priceRange": "$300 - $1,334",
                 "areaServed": "United States",
                 "serviceType": [
-                    "Social media strategy",
-                    "Social media content creation",
-                    "Content audits",
-                    "Short-form video content"
+                    "Private market intelligence",
+                    "Competitor reconstruction",
+                    "Customer voice research",
+                    "Pricing and positioning strategy",
+                    "Content direction"
                 ]
             },
             {
@@ -2037,66 +2199,42 @@
                 "mainEntity": [
                     {
                         "@type": "Question",
-                        "name": "How fast do I get the free audit?",
+                        "name": "Which tier should I start with?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Most audits go out within 24 to 48 hours and focus on the first content, CTA, and positioning fixes that should matter most."
+                            "text": "Sprint Lite for one focused question. Sprint Pro for a deeper market view across several signals. Sprint Full when the move is high-stakes and needs a full strategic round. Scope and quote are tailored per project."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Do you only give strategy, or do you create the content too?",
+                        "name": "What evidence gets pulled?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "The audit is the starting point. Paid packages include the visual direction, hooks, captions, posting plan, and short-form content deliverables."
+                            "text": "Competitors, reviews, customer voice, search demand, pricing pages, ads, content cadence, website conversion, proof gaps, and channel clues. Every line cited."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "What kinds of businesses are the best fit?",
+                        "name": "How fast is delivery?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "The best fit is usually a restaurant, med spa, gym, real estate brand, hotel, ecommerce brand, or local business that already has a real offer and needs better-performing content."
+                            "text": "Sprint Lite ships in 5 days. Sprint Pro in 10 days. Sprint Full in 14 days. Founder-led, small caseload, no offshore."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "What if I do not know which package fits yet?",
+                        "name": "Do you create the content too, or only the strategy?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Start with the free audit. It is the fastest way to see what is broken first and whether the Starter, Growth, or Full Build package makes the most sense."
+                            "text": "Sprints return the decision and the evidence. For the visuals themselves, the LoopWorker Visuals service generates 100+ on-brand assets from a single URL."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "What do I get in a content audit?",
+                        "name": "What is the refund policy?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "You get a profile and positioning check, a content angle breakdown, CTA and conversion fixes, and a first-priority action list with specific things to change right away."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How long does it take to get my content?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "The free audit comes back within 24 to 48 hours. Paid content packages are typically delivered within 5 to 10 business days depending on the scope."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Do I need to be on Instagram?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Instagram is the most common starting point, but the content strategy and deliverables work across any visual platform including TikTok, Facebook, and LinkedIn."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What if I'm not happy with the content?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "The Growth and Full Build packages include revision rounds. The audit is free, so there is no risk in starting there to see if the approach fits before committing to a paid package."
+                            "text": "If a Sprint brief lands and you cannot act on a single line, write back within 14 days for a full refund."
                         }
                     }
                 ]
@@ -2113,28 +2251,25 @@
         "url": "https://www.loopworker.com",
         "hasOfferCatalog": {
             "@type": "OfferCatalog",
-            "name": "Content Packages",
+            "name": "Strategy Sprints",
             "itemListElement": [
                 {
                     "@type": "Offer",
-                    "name": "Starter",
-                    "price": "300",
-                    "priceCurrency": "USD",
-                    "description": "6 high-converting posts, 1 short-form video, hooks and captions included, simple posting plan."
+                    "name": "Sprint Lite",
+                    "url": "https://www.loopworker.com/book.html",
+                    "description": "Five-day focused market intelligence round for one decision: competitor reconstruction, search demand, pricing, proof gap, or website conversion. Quote tailored per project."
                 },
                 {
                     "@type": "Offer",
-                    "name": "Growth",
-                    "price": "750",
-                    "priceCurrency": "USD",
-                    "description": "12 high-converting posts, 3 short-form videos, 30-day content plan, hooks and captions included, 1 round of revisions."
+                    "name": "Sprint Pro",
+                    "url": "https://www.loopworker.com/book.html",
+                    "description": "Ten-day founder-led decision brief connecting competitors, content, reviews, search, pricing, positioning, channels, and next actions. Quote tailored per project."
                 },
                 {
                     "@type": "Offer",
-                    "name": "Full Build",
-                    "price": "1334",
-                    "priceCurrency": "USD",
-                    "description": "24 high-converting posts, 6 short-form videos, 60-day content plan, full content structure, priority support."
+                    "name": "Sprint Full",
+                    "url": "https://www.loopworker.com/book.html",
+                    "description": "Fourteen-day full strategic round for high-stakes moves, with market gap, competitor path reconstruction, ads, content, pricing, proof, and roadmap. Quote tailored per project."
                 }
             ]
         }
@@ -2148,14 +2283,10 @@
         <div class="nav-inner">
             <a href="/" class="nav-logo">LoopWorker</a>
             <ul class="nav-links">
-                <li><a href="#examples">Examples</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="/sprint.html">The Sprint</a></li>
+                <li><a href="/" data-track="Nav Sprints">Sprints</a></li>
+                <li><a href="/visuals.html" data-track="Nav Visuals">Visuals</a></li>
                 <li><a href="/case-studies.html">Case Studies</a></li>
-                <li><a href="/services.html">Services</a></li>
                 <li><a href="/blog/">Blog</a></li>
-                <li><a href="#audit-form" data-track="Nav Audit Link">Free Audit</a></li>
                 <li><a href="/book.html" class="nav-cta" data-track="Nav Book CTA">Book a Call</a></li>
             </ul>
             <button type="button" class="hamburger" onclick="toggleMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
@@ -2167,14 +2298,10 @@
     </nav>
 
     <div class="mobile-nav" id="mobileNav">
-        <a href="#examples" onclick="toggleMenu()">Examples</a>
-        <a href="#how-it-works" onclick="toggleMenu()">How It Works</a>
-        <a href="#pricing" onclick="toggleMenu()">Pricing</a>
-        <a href="/sprint.html" onclick="toggleMenu()">The Sprint</a>
+        <a href="/" onclick="toggleMenu()">Sprints</a>
+        <a href="/visuals.html" onclick="toggleMenu()">Visuals</a>
         <a href="/case-studies.html" onclick="toggleMenu()">Case Studies</a>
-        <a href="/services.html" onclick="toggleMenu()">Services</a>
         <a href="/blog/" onclick="toggleMenu()">Blog</a>
-        <a href="#audit-form" onclick="toggleMenu()" data-track="Mobile Nav Audit Link">Free Audit</a>
         <a href="/book.html" class="nav-cta" onclick="toggleMenu()" data-track="Mobile Nav Book CTA">Book a Call</a>
     </div>
 
@@ -2182,30 +2309,30 @@
     <section class="hero">
         <div class="container-wide hero-shell">
             <div>
-                <span class="hero-eyebrow fade-up">◆ LoopWorker · Private market intelligence</span>
-                <h1 class="fade-up">Private market intelligence for businesses that need to know <em>what is actually working.</em></h1>
-                <p class="fade-up">Your market is already leaving clues. We pull them, organize them, and show you where the money is. Founder-led research. Small caseload. No templates.</p>
+                <span class="hero-eyebrow fade-up">◆ LoopWorker · Market intelligence + strategy</span>
+                <h1 class="fade-up">The <em>market-research dashboard</em> you wish you had on day one.</h1>
+                <p class="fade-up">Plus the strategy to use it now. We pull the live data your category leaves behind, build it into a dashboard you can come back to, and name the next move you can defend. Founder-led, five to fourteen days, scope and quote tailored to the decision in front of you.</p>
                 <div class="hero-actions fade-up">
-                    <a href="/sprint.html" class="btn btn-primary" data-track="Home Hero Sprint CTA">View engagements</a>
-                    <a href="/book.html" class="btn btn-outline" data-track="Home Hero Book CTA">Begin a conversation</a>
+                    <a href="#pricing" class="btn btn-primary" data-track="Home Hero Tiers CTA">See the tiers</a>
+                    <a href="/book.html" class="btn btn-outline" data-track="Home Hero Book CTA">Book a call</a>
                 </div>
-                <div class="hero-note fade-up">Hand-built strategy briefs, evidence-only. Or email <a href="mailto:alex@loopworker.com" data-track="Home Hero Email Click">alex@loopworker.com</a>.</div>
+                <div class="hero-note fade-up">Or email <a href="mailto:alex@loopworker.com" data-track="Home Hero Email Click">alex@loopworker.com</a>. Need on-brand product photo at scale? <a href="/visuals.html" data-track="Home Hero Visuals Link">See Visuals →</a></div>
             </div>
             <div class="hero-visuals fade-up">
                 <div class="hero-visual-card">
                     <img src="images/cards/card_05.webp" alt="Sprint Lite intelligence brief" loading="eager" decoding="async">
                     <div class="hero-visual-label">Sprint Lite</div>
-                    <p>One focused question. Competitor reconstruction or pricing or proof or website conversion.</p>
+                    <p>One dashboard view, one defensible answer. Competitor, pricing, proof, search, or website conversion.</p>
                 </div>
                 <div class="hero-visual-card">
                     <img src="images/case_studies/references/bouldering/04.jpg" alt="Sprint Pro market signal map" loading="eager" decoding="async">
                     <div class="hero-visual-label">Sprint Pro</div>
-                    <p>A deeper market view. Several signals connected — competitors, content, reviews, search, pricing, positioning.</p>
+                    <p>A multi-signal dashboard. Competitors, content, reviews, search, pricing, positioning, and the move you make next.</p>
                 </div>
                 <div class="hero-visual-card">
                     <img src="images/cards/card_21.webp" alt="Sprint Full strategic round" loading="eager" decoding="async">
                     <div class="hero-visual-label">Sprint Full</div>
-                    <p>A full strategic round. Market gap, competitor path reconstruction, ads, content, pricing, proof, next-move roadmap.</p>
+                    <p>A full operating dashboard. Market gap, competitor path, ads, content, pricing, proof, and a roadmap to ship behind.</p>
                 </div>
             </div>
         </div>
@@ -2215,39 +2342,41 @@
     <section class="mini-tier-section">
         <div class="container-wide">
             <div class="mini-tier-grid">
-                <a href="/sprint.html#tier-lite" class="mini-tier-card" data-track="Home Mini Tier Lite">
+                <a href="#pricing" class="mini-tier-card" data-track="Home Mini Tier Lite">
                     <span class="mt-eyebrow">◆ Sprint Lite</span>
                     <span class="mt-name">One focused question.</span>
-                    <span class="mt-scope">A single research round — competitor reconstruction, search demand, pricing, proof gap, or website conversion. Whichever question matters most.</span>
+                    <span class="mt-price"><span class="mt-flat mt-flat-solo">5 days</span></span>
+                    <span class="mt-scope">One dashboard view on the question that matters most. Competitors, pricing, proof gap, search demand, or website conversion.</span>
                     <span class="mt-go">View Sprint Lite →</span>
                 </a>
-                <a href="/sprint.html#tier-pro" class="mini-tier-card featured" data-track="Home Mini Tier Pro">
+                <a href="#pricing" class="mini-tier-card featured" data-track="Home Mini Tier Map">
                     <span class="mt-ribbon">Most chosen</span>
                     <span class="mt-eyebrow">◆ Sprint Pro</span>
                     <span class="mt-name">A deeper market view.</span>
-                    <span class="mt-scope">Several signals connected — competitors, content, reviews, search, pricing, and positioning. The middle engagement.</span>
+                    <span class="mt-price"><span class="mt-flat mt-flat-solo">10 days</span></span>
+                    <span class="mt-scope">A dashboard across multiple signals: competitors, content, reviews, search, pricing, positioning. The most chosen tier.</span>
                     <span class="mt-go">View Sprint Pro →</span>
                 </a>
-                <a href="/sprint.html#tier-full" class="mini-tier-card" data-track="Home Mini Tier Full">
+                <a href="#pricing" class="mini-tier-card" data-track="Home Mini Tier Brief">
                     <span class="mt-eyebrow">◆ Sprint Full</span>
                     <span class="mt-name">A full strategic round.</span>
-                    <span class="mt-scope">Market gap, competitor path reconstruction, website, content, ads, pricing, proof, next-move roadmap. For high-stakes moves.</span>
+                    <span class="mt-price"><span class="mt-flat mt-flat-solo">14 days</span></span>
+                    <span class="mt-scope">A full operating dashboard: market gap, competitor path, website, content, ads, pricing, proof, and a next-move roadmap. For high-stakes moves.</span>
                     <span class="mt-go">View Sprint Full →</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- TRUST BAR · ANONYMIZED CATEGORIES -->
-    <div class="lw-trust-bar">
+    <!-- STATS STRIP · ANONYMIZED CLIENT NUMBERS -->
+    <div class="lw-trust-bar lw-stats-strip">
         <div class="container-wide">
-            <span class="tb-eyebrow">Categories we've shipped a sprint into</span>
-            <div class="tb-cats">
-                <span>Bay Area Events</span>
-                <span>Premium DTC</span>
-                <span>AI Video SaaS</span>
-                <span>Creator</span>
-                <span>B2B Sales</span>
+            <span class="tb-eyebrow">What the dashboards have moved</span>
+            <div class="stats-row">
+                <div class="stat-cell"><span class="sc-n">6.2M</span><span class="sc-l">creator plays mapped into one pattern</span></div>
+                <div class="stat-cell"><span class="sc-n">5</span><span class="sc-l">named clients shipped this year</span></div>
+                <div class="stat-cell"><span class="sc-n">5</span><span class="sc-l">categories: DTC, LinkedIn, TikTok, Events, Creator</span></div>
+                <div class="stat-cell"><span class="sc-n">100%</span><span class="sc-l">founder-led, no offshore, no templates</span></div>
             </div>
         </div>
     </div>
@@ -2259,145 +2388,69 @@
                 <span class="q-mark">“</span>
                 <blockquote>Every metric, post link, and caption excerpt came from a fresh pull of the live feed. Nothing made up, nothing paraphrased.</blockquote>
                 <div class="q-attr">
-                    <strong>— From the Kind Bubbles delivery letter</strong>
-                    <span>Bay Area kids' bubble events · paid sprint, May 2026</span>
+                    <strong>From the Kind Bubbles delivery letter</strong>
+                    <span>Bay Area kids' bubble events · paid Sprint, May 2026</span>
                     <a href="/case-studies/kind-bubbles.html" data-track="Home Quote Read CS">Read the full case study →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TRUST STRIP -->
-    <div class="trust-strip">
-        <p>For businesses that need clearer decisions before they spend more on ads, content, branding, SEO, hiring, or a pitch deck.</p>
-    </div>
-    <div style="text-align:center;padding:1rem 2rem;"><p style="font-size:0.85rem;color:#555;margin:0 auto;">Founder-led research. Small caseload. Evidence in every line.</p></div>
-
-    <!-- PORTFOLIO / EXAMPLES -->
-    <section class="portfolio" id="examples">
-        <div class="container-wide">
-            <h2 class="fade-up">See the Content First</h2>
-            <p class="fade-up">This is the kind of visual direction I build before I layer in hooks, captions, and the strategy. The goal is that it feels like real brand content, not generic AI filler.</p>
-
-            <div class="portfolio-grid">
-
-                <div class="brand-card fade-up" onclick="openGallery(this)" role="button" tabindex="0" aria-label="Open Cult Brand gallery" data-gallery="images/cards/card_02.webp,images/cards/card_03.webp,images/cards/card_04.webp,images/cards/card_05.webp,images/cards/card_06.webp,images/cards/card_07.webp,images/cards/card_08.webp,images/cards/card_09.webp,images/cards/card_10.webp,images/cards/card_11.webp">
-                    <img class="brand-card-img" src="images/cards/card_02.webp" alt="Flash photography burger restaurant content — direct flash, analog grain, red and yellow palette" loading="lazy" decoding="async">
-                    <div class="brand-name">Cult Brand</div>
-                    <div class="brand-type">Restaurants, Food Trucks, Nightlife</div>
-                    <div class="brand-spec">Direct flash photography with analog grit. Built for brands that want a cult following.</div>
-                </div>
-
-                <div class="brand-card fade-up" onclick="openGallery(this)" role="button" tabindex="0" aria-label="Open Lux gallery" data-gallery="images/cards/card_20.webp,images/cards/card_17.webp,images/cards/card_21.webp,images/cards/card_12.webp,images/cards/card_13.webp,images/cards/card_14.webp,images/cards/card_15.webp,images/cards/card_16.webp,images/cards/card_18.webp,images/cards/card_19.webp">
-                    <img class="brand-card-img" src="images/cards/card_20.webp" alt="Editorial hospitality content — warm natural light, calm luxury interiors, soft earth tones" loading="lazy" decoding="async">
-                    <div class="brand-name">Lux</div>
-                    <div class="brand-type">Real Estate, Airbnb, Architecture, Wellness</div>
-                    <div class="brand-spec">Editorial hospitality still-lifes and calm luxury cues. Built for premium properties, stays, and wellness brands.</div>
-                </div>
-
-                <div class="brand-card fade-up" onclick="openGallery(this)" role="button" tabindex="0" aria-label="Open Clean DTC gallery" data-gallery="images/cards/card_22.webp,images/cards/card_23.webp,images/cards/card_24.webp,images/cards/card_25.webp,images/cards/card_26.webp,images/cards/card_27.webp,images/cards/card_28.webp,images/cards/card_29.webp,images/cards/card_30.webp,images/cards/card_31.webp,images/cards/card_32.webp">
-                    <img class="brand-card-img" src="images/cards/card_22.webp" alt="Minimal fashion product content — clean studio lighting, black and cream palette, restrained composition" loading="lazy" decoding="async">
-                    <div class="brand-name">Clean DTC</div>
-                    <div class="brand-type">Fashion, Skincare, DTC Products</div>
-                    <div class="brand-spec">Clean studio lighting with nothing extra in frame. Built for brands that sell through restraint.</div>
-                </div>
-
-                <div class="brand-card fade-up" onclick="openGallery(this)" role="button" tabindex="0" aria-label="Open UGC Lifestyle gallery" data-gallery="images/cards/card_33.webp,images/cards/card_34.webp,images/cards/card_35.webp,images/cards/card_36.webp,images/cards/card_37.webp,images/cards/card_38.webp,images/cards/card_39.webp,images/cards/card_40.webp,images/cards/card_41.webp,images/cards/card_42.webp">
-                    <img class="brand-card-img" src="images/cards/card_33.webp" alt="Candid UGC lifestyle content — product in hand, natural daylight, authentic customer perspective" loading="lazy" decoding="async">
-                    <div class="brand-name">UGC / Lifestyle</div>
-                    <div class="brand-type">Restaurants, Coffee Shops, Consumer Brands</div>
-                    <div class="brand-spec">Candid product-in-hand moments that feel like a real customer shot it. Authenticity over polish.</div>
-                </div>
-
-                <div class="brand-card fade-up" onclick="openGallery(this)" role="button" tabindex="0" aria-label="Open Editorial gallery" data-gallery="images/cards/card_43.webp,images/cards/card_44.webp,images/cards/card_45.webp,images/cards/card_46.webp,images/cards/card_47.webp,images/cards/card_48.webp,images/cards/card_49.webp,images/cards/card_50.webp,images/cards/card_51.webp,images/cards/card_52.webp">
-                    <img class="brand-card-img" src="images/cards/card_43.webp" alt="Editorial fashion content — dramatic lighting, intentional framing, magazine-quality composition" loading="lazy" decoding="async">
-                    <div class="brand-name">Editorial</div>
-                    <div class="brand-type">Fashion, Automotive, Campaigns</div>
-                    <div class="brand-spec">Dramatic lighting and intentional framing that belongs in a magazine spread. Built to be taken seriously.</div>
-                </div>
-
-                <div class="brand-card fade-up" onclick="openGallery(this)" role="button" tabindex="0" aria-label="Open Cinematic gallery" data-gallery="images/cards/card_57.webp,images/cards/card_60.webp,images/cards/card_53.webp,images/cards/card_54.webp,images/cards/card_55.webp,images/cards/card_56.webp,images/cards/card_58.webp,images/cards/card_59.webp,images/cards/card_61.webp,images/cards/card_62.webp">
-                    <img class="brand-card-img" src="images/cards/card_57.webp" alt="Cinematic nightlife content — motion blur, low light atmosphere, neon glow and crowd energy" loading="lazy" decoding="async">
-                    <div class="brand-name">Cinematic</div>
-                    <div class="brand-type">Bars, Hotels, Nightlife, Music, Events</div>
-                    <div class="brand-spec">Motion blur, crowd energy, and low-light atmosphere. Built for brands that come alive after dark.</div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
+    <!-- NAMED CLIENTS · 5-card roster proof -->
     <section class="proof-snapshot">
         <div class="container-wide">
             <div class="proof-intro fade-up">
-                <div class="proof-eyebrow">Named Examples</div>
-                <h2>Built Around Real Business Types</h2>
-                <p>The content is matched to how people actually decide where to eat, book, visit, or buy.</p>
+                <div class="proof-eyebrow">Recent Clients</div>
+                <h2>Five businesses moving on <em>data-backed decisions.</em></h2>
+                <p>Same research discipline, different question every time. Luxury DTC ritual, top-1% LinkedIn voice, viral legal explainer, single-founder local events, cosplay creator engine. Each one walked away with a dashboard and a defensible next move.</p>
             </div>
             <div class="proof-grid">
                 <div class="proof-card fade-up">
                     <div class="proof-logo-wrap light">
-                        <img class="proof-logo myburger" src="images/case_studies/logos/myburger-horizontal-real.png" alt="My Burger logo" loading="lazy">
+                        <img class="proof-logo myburger" src="images/cards/card_18.webp" alt="GESINE luxury cleaning ritual brand strategy" loading="lazy">
                     </div>
-                    <div class="proof-card-name">My Burger</div>
-                    <div class="proof-card-copy">Shifted from generic menu posts to sellout-driven hooks, same-day visit CTAs, and captions built to create a reason to come in tonight.</div>
-                    <div class="proof-card-note">Restaurant example</div>
-                    <a class="proof-card-link" href="/restaurants.html" data-track="Restaurant Service Page Click">See restaurant page</a>
+                    <div class="proof-card-name">GESINE</div>
+                    <div class="proof-card-copy">Luxury cleaning ritual brand. Positioning, scent-shelf comp set, hardware language, and pre-launch dashboard built before retail conversations opened.</div>
+                    <div class="proof-card-note">DTC pre-launch · Sprint Full</div>
                 </div>
                 <div class="proof-card fade-up">
                     <div class="proof-logo-wrap">
-                        <img class="proof-logo marina" src="images/case_studies/logos/marina_logo.svg" alt="Marina Med Spa logo" loading="lazy">
+                        <img class="proof-logo marina" src="images/cards/card_06.webp" alt="Derrick top 1% sales exec LinkedIn strategy" loading="lazy">
                     </div>
-                    <div class="proof-card-name">Marina Med Spa</div>
-                    <div class="proof-card-copy">Shifted from generic booking posts to education-first content that builds authority, creates better DM conversations, and attracts stronger-fit leads.</div>
-                    <div class="proof-card-note">Med spa example</div>
-                    <a class="proof-card-link" href="/med-spa.html" data-track="Med Spa Page Click">See med spa page</a>
+                    <div class="proof-card-name">Derrick</div>
+                    <div class="proof-card-copy">Top 1% sales executive, 9-year quota streak. Dual-track LinkedIn dashboard: practitioner content, 25-account engagement system, DM-keyword lead magnets.</div>
+                    <div class="proof-card-note">LinkedIn growth · Sprint Pro</div>
+                    <a class="proof-card-link" href="/case-studies/chad-90-day-linkedin.html" data-track="Derrick Case Click">Read case study →</a>
                 </div>
                 <div class="proof-card fade-up">
                     <div class="proof-logo-wrap badge">
-                        <img class="proof-logo bouldering" src="images/case_studies/logos/bouldering_logo.svg" alt="Bouldering Project logo" loading="lazy">
+                        <img class="proof-logo bouldering" src="images/cards/card_22.webp" alt="Anastasia TikTok lawyer SCOTUS case explainer content engine" loading="lazy">
                     </div>
-                    <div class="proof-card-name">Bouldering Project</div>
-                    <div class="proof-card-copy">Reframed the content from facility updates to beginner-friendly stories and first-visit prompts that make the gym feel easier to try.</div>
-                    <div class="proof-card-note">Fitness example</div>
-                    <a class="proof-card-link" href="/fitness.html" data-track="Fitness Page Click">See fitness page</a>
+                    <div class="proof-card-name">Anastasia</div>
+                    <div class="proof-card-copy">Legal explainer creator. 100-script content engine on SCOTUS cases, voice locked, ship-rough cadence, hook patterns pulled from her own data.</div>
+                    <div class="proof-card-note">TikTok · Sprint Pro</div>
+                </div>
+                <div class="proof-card fade-up">
+                    <div class="proof-logo-wrap light">
+                        <img class="proof-logo myburger" src="images/cards/card_05.webp" alt="Kind Bubbles Bay Area kids events Sprint Lite" loading="lazy">
+                    </div>
+                    <div class="proof-card-name">Kind Bubbles</div>
+                    <div class="proof-card-copy">Single-dad founder running Bay Area bubble events. Competitor scrape, complaint clusters, pricing band, channel map, and Conservative–Realistic–Aggressive Y1 projection.</div>
+                    <div class="proof-card-note">Local events · Sprint Lite</div>
+                    <a class="proof-card-link" href="/case-studies/kind-bubbles.html" data-track="Kind Bubbles Case Click">Read case study →</a>
+                </div>
+                <div class="proof-card fade-up">
+                    <div class="proof-logo-wrap">
+                        <img class="proof-logo marina" src="images/case_studies/references/bouldering/04.jpg" alt="Kirahri cosplay creator content system" loading="lazy">
+                    </div>
+                    <div class="proof-card-name">Kirahri</div>
+                    <div class="proof-card-copy">Cosplay creator, 6.2M plays mapped. The pattern in her own feed she had been missing for two years, turned into a repeatable posting system: pillars, hooks, captions.</div>
+                    <div class="proof-card-note">Creator content · Sprint Pro</div>
+                    <a class="proof-card-link" href="/case-studies/kirahri-cosplay-strategy.html" data-track="Kirahri Case Click">Read case study →</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="fit-section">
-        <div class="container-wide">
-            <div class="proof-intro fade-up">
-                <div class="proof-eyebrow">What People Ask First</div>
-                <h2>What it looks like, how much you get, and whether it feels real</h2>
-                <p>Those are usually the first three questions, so the page should answer them quickly.</p>
-            </div>
-            <div class="service-link-grid">
-                <a class="service-link-card fade-up" href="#examples" data-track="Homepage Visuals Answer">
-                    <div class="service-link-title">What The Visuals Look Like</div>
-                    <div class="service-link-copy">Direct flash, editorial, clean product, lifestyle, and hospitality looks are all shown above before you buy.</div>
-                </a>
-                <a class="service-link-card fade-up" href="#pricing" data-track="Homepage Deliverables Answer">
-                    <div class="service-link-title">How Much You Get</div>
-                    <div class="service-link-copy">Packages are fixed and clear: 6, 12, or 24 posts, plus 1, 3, or 6 short-form videos depending on scope.</div>
-                </a>
-                <div class="service-link-card fade-up">
-                    <div class="service-link-title">Will It Actually Feel Real?</div>
-                    <div class="service-link-copy">That is the point. The direction is built to feel native to the business and believable in-feed, not like plastic AI filler.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Modal -->
-    <div class="gallery-modal" id="galleryModal" role="dialog" aria-modal="true" aria-labelledby="galleryTitle">
-        <div class="gallery-modal-header">
-            <div class="gallery-modal-title" id="galleryTitle"></div>
-            <button type="button" class="gallery-modal-close" onclick="closeGallery()" aria-label="Close gallery">&times;</button>
-        </div>
-        <div class="gallery-modal-grid" id="galleryGrid"></div>
-    </div>
 
     <!-- HOW IT WORKS -->
     <section id="how-it-works" style="background: #0C0C0C;">
@@ -2489,38 +2542,64 @@
         </div>
     </section>
 
-    <!-- CASE STUDY -->
+    <!-- CASE STUDIES · 3 UP -->
     <section class="featured-case-study">
         <div class="container-wide">
             <div class="proof-intro fade-up">
-                <div class="proof-eyebrow">Featured Example</div>
-                <h2>One Example, End to End</h2>
-                <p>A shorter look at how the content changes from something people scroll past into something that gives them a reason to act.</p>
+                <div class="proof-eyebrow">Featured Examples</div>
+                <h2>The work, told as the next move.</h2>
+                <p>Three founder-led engagements. Different categories. Same discipline · live market signals turned into a visual story of what to ship next. Not a number dump. A path.</p>
             </div>
-            <div class="featured-case-study-card fade-up">
-                <div class="featured-case-study-media">
-                    <img src="images/cards/card_05.webp" alt="My Burger restaurant content example" loading="lazy" decoding="async">
-                </div>
-                <div class="featured-case-study-body">
-                    <div class="featured-case-study-label">Restaurant · My Burger</div>
-                    <h3>From generic menu posts to same-day visit content.</h3>
-                    <p>The goal was not more random reach. It was making the post feel specific enough that someone nearby had a reason to come in tonight.</p>
-                    <div class="featured-case-study-grid">
-                        <div class="featured-case-study-block before">
-                            <div class="featured-case-study-kicker">Before</div>
-                            <p>Good food visuals, but generic captions and no urgency tied to the visit.</p>
-                        </div>
-                        <div class="featured-case-study-block shift">
-                            <div class="featured-case-study-kicker">Shift</div>
-                            <p>Hooks built around sellout items, story-led captions, and same-day CTAs.</p>
-                        </div>
-                        <div class="featured-case-study-block outcome">
-                            <div class="featured-case-study-kicker">Outcome</div>
-                            <p>More saves, more shares, more “where is this?” comments, and stronger repeat intent.</p>
-                        </div>
+
+            <div class="case-study-grid fade-up">
+
+                <a class="case-study-card" href="/case-studies/kind-bubbles.html" data-track="Home Case Study Kind Bubbles">
+                    <div class="case-study-card-media">
+                        <img src="images/cards/card_22.webp" alt="Kind Bubbles · Bay Area kids bubble events case study" loading="lazy" decoding="async">
                     </div>
-                    <div class="featured-case-study-note">The same framework is what I adapt for med spas, gyms, and other local service businesses.</div>
-                </div>
+                    <div class="case-study-card-body">
+                        <div class="case-study-card-label">Bay Area kids' events · Sprint Lite</div>
+                        <h3>From noisy category to a defensible local lane.</h3>
+                        <p class="cs-before"><strong>Before:</strong> one-founder business, bigger competitors, no pricing clarity, no content lane.</p>
+                        <p class="cs-shift"><strong>Shift:</strong> competitor ads, customer complaints, pricing pages, content cadence pulled into one brief.</p>
+                        <p class="cs-outcome"><strong>Next move:</strong> calmer-events positioning, setup guarantee, $525 anchor, three reel recipes, warm channels mapped → $54-65K Y1 path.</p>
+                        <span class="cs-read">Read the full case →</span>
+                    </div>
+                </a>
+
+                <a class="case-study-card" href="/case-studies/chad-90-day-linkedin.html" data-track="Home Case Study Chad LinkedIn">
+                    <div class="case-study-card-media">
+                        <img src="images/cards/card_30.webp" alt="90-day LinkedIn system case study for a top 1 percent sales executive" loading="lazy" decoding="async">
+                    </div>
+                    <div class="case-study-card-body">
+                        <div class="case-study-card-label">Top 1% sales exec · 90-day system</div>
+                        <h3>A 90-day LinkedIn system for an executive starting fresh.</h3>
+                        <p class="cs-before"><strong>Before:</strong> a top-1% sales exec landing at a new company with no audience and two distinct buyers to reach at once.</p>
+                        <p class="cs-shift"><strong>Shift:</strong> mapped both buyer segments, built a dual-track content rhythm that wouldn't split the brand.</p>
+                        <p class="cs-outcome"><strong>Next move:</strong> 90-day post calendar, hook library, comment circuit, and the cadence that compounds beyond month one.</p>
+                        <span class="cs-read">Read the full case →</span>
+                    </div>
+                </a>
+
+                <a class="case-study-card" href="/case-studies/kirahri-cosplay-strategy.html" data-track="Home Case Study Kirahri">
+                    <div class="case-study-card-media">
+                        <img src="images/cards/card_45.webp" alt="Kirahri cosplay creator strategy from 6.2 million accidental plays to repeatable system" loading="lazy" decoding="async">
+                    </div>
+                    <div class="case-study-card-body">
+                        <div class="case-study-card-label">Creator brand · narrative system</div>
+                        <h3>From 6.2M accidental plays to a repeatable narrative system.</h3>
+                        <p class="cs-before"><strong>Before:</strong> a creator with one viral spike and no clue why it landed or how to build on it.</p>
+                        <p class="cs-shift"><strong>Shift:</strong> reverse-engineered the 6.2M-view post, mapped the narrative arc across her catalog, found the repeatable hook.</p>
+                        <p class="cs-outcome"><strong>Next move:</strong> narrative-first content system, weekly cadence built around the proven story spine.</p>
+                        <span class="cs-read">Read the full case →</span>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="case-study-grid-foot fade-up">
+                <a href="/case-studies.html" class="btn btn-outline" data-track="Home All Case Studies">See all case studies</a>
+                <p>Same Sprint structure adapts to creators, SaaS, DTC launches, pitch decks, and local businesses. Tell me your decision · I'll tell you which lane fits.</p>
             </div>
         </div>
     </section>
@@ -2528,91 +2607,56 @@
     <!-- PRICING -->
     <section class="pricing-section" id="pricing">
         <div class="container-wide">
-            <h2 class="fade-up">Choose Your Package</h2>
-            <p class="fade-up">The deliverables are fixed and clear: start small, lock in a full month of content, or build the whole system. The audit is the fastest way to choose correctly.</p>
+            <h2 class="fade-up">Choose your dashboard depth.</h2>
+            <p class="fade-up">Three Sprint tiers. Same research discipline. Dashboard depth scales with the decision in front of you. Scope and quote tailored per project.</p>
 
             <div class="pricing-grid">
 
                 <!-- STARTER -->
                 <div class="pricing-card fade-up">
-                    <div class="pricing-tier">Starter</div>
-                    <div class="pricing-amount">$300</div>
-                    <div class="pricing-desc">Best for testing what works and getting quick wins.</div>
+                    <div class="pricing-tier">Sprint Lite</div>
+                    <div class="pricing-amount pricing-duration">5 days</div>
+                    <div class="pricing-desc">Best for one focused decision that needs evidence before it ships.</div>
                     <ul class="pricing-includes">
-                        <li><strong>6</strong> high-converting posts</li>
-                        <li><strong>1</strong> short-form video</li>
-                        <li>Hooks + captions included</li>
-                        <li>Simple posting plan</li>
+                        <li><strong>5</strong> day turnaround</li>
+                        <li>One research round</li>
+                        <li>Competitor, search, pricing, proof, or website focus</li>
+                        <li>Recommendation + first action sheet</li>
                     </ul>
-                    <a href="#audit-form" class="btn btn-outline btn-full" data-track="Starter Pricing CTA">Start With Audit</a>
+                    <a href="/book.html" class="btn btn-outline btn-full" data-track="Home Sprint Lite Book">Start a Sprint Lite</a>
                 </div>
 
                 <!-- GROWTH -->
                 <div class="pricing-card featured fade-up">
-                    <div class="pricing-tier">Growth</div>
-                    <div class="pricing-amount">$750</div>
-                    <div class="pricing-desc">Best for consistent content that actually brings in customers.</div>
+                    <div class="pricing-tier">Sprint Pro</div>
+                    <div class="pricing-amount pricing-duration">10 days</div>
+                    <div class="pricing-desc">Best for connecting several market signals into a defensible next move.</div>
                     <ul class="pricing-includes">
-                        <li><strong>12</strong> high-converting posts</li>
-                        <li><strong>3</strong> short-form videos</li>
-                        <li>30-day content plan</li>
-                        <li>Hooks + captions included</li>
-                        <li>1 round of revisions</li>
+                        <li><strong>10</strong> day founder-led delivery</li>
+                        <li>Competitors, reviews, search, pricing, and positioning</li>
+                        <li>Content rhythm + channel map</li>
+                        <li>Dated, ranked action sheet</li>
                     </ul>
-                    <a href="#audit-form" class="btn btn-primary btn-full" data-track="Growth Pricing CTA">Start With Audit</a>
+                    <a href="/book.html" class="btn btn-primary btn-full" data-track="Home Sprint Pro Book">Start a Sprint Pro</a>
                 </div>
 
                 <!-- FULL BUILD -->
                 <div class="pricing-card fade-up">
-                    <div class="pricing-tier">Full Build</div>
-                    <div class="pricing-amount">$1,334</div>
-                    <div class="pricing-desc">Best for businesses ready to fully dial in their content and scale.</div>
+                    <div class="pricing-tier">Sprint Full</div>
+                    <div class="pricing-amount pricing-duration">14 days</div>
+                    <div class="pricing-desc">Best for high-stakes launches, repositioning, pitch-deck clarity, or bigger strategic moves.</div>
                     <ul class="pricing-includes">
-                        <li><strong>24</strong> high-converting posts</li>
-                        <li><strong>6</strong> short-form videos</li>
-                        <li>60-day content plan</li>
-                        <li>Full content structure</li>
-                        <li>Priority support</li>
+                        <li><strong>14</strong> day full strategic round</li>
+                        <li>Market gap + competitor path reconstruction</li>
+                        <li>Ads, content, pricing, proof, and roadmap</li>
+                        <li>Optional pitch-deck research layer</li>
                     </ul>
-                    <a href="#audit-form" class="btn btn-outline btn-full" data-track="Full Build Pricing CTA">Start With Audit</a>
+                    <a href="/book.html" class="btn btn-outline btn-full" data-track="Home Sprint Full Book">Start a Sprint Full</a>
                 </div>
 
             </div>
-            <p class="pricing-note fade-up pricing-note-center">Limited spots available to keep quality high.</p>
-            <div class="pricing-help fade-up">Not sure which one fits? Start with the audit, or email <a href="mailto:alex@loopworker.com" data-track="Pricing Email Click">alex@loopworker.com</a> if you already know the scope.</div>
-        </div>
-    </section>
-
-    <section class="audit-preview">
-        <div class="container-wide">
-            <div class="proof-intro fade-up">
-                <div class="proof-eyebrow">What You Get Free</div>
-                <h2>A real preview of the audit</h2>
-                <p>You are not getting generic advice. The audit is built around the first things I would actually change on your account.</p>
-            </div>
-            <div class="audit-preview-grid">
-                <div class="audit-preview-card fade-up">
-                    <h3>1. Profile + positioning check</h3>
-                    <p>What a new visitor sees first, what feels vague, and where trust or clarity is leaking.</p>
-                </div>
-                <div class="audit-preview-card fade-up">
-                    <h3>2. Content angle breakdown</h3>
-                    <p>Which post types are too generic, what should be repeated, and what needs a stronger reason to care.</p>
-                </div>
-                <div class="audit-preview-card fade-up">
-                    <h3>3. CTA + conversion fixes</h3>
-                    <p>Where the next step is weak, passive, or missing and how to make it clearer.</p>
-                </div>
-                <div class="audit-preview-card fade-up">
-                    <h3>4. First priority action list</h3>
-                    <ul class="preview-list">
-                        <li>One profile fix</li>
-                        <li>One content shift</li>
-                        <li>One CTA improvement</li>
-                        <li>Three content ideas to test first</li>
-                    </ul>
-                </div>
-            </div>
+            <p class="pricing-note fade-up pricing-note-center">Founder-led delivery. Small caseload. Scope and quote tailored to the decision.</p>
+            <div class="pricing-help fade-up">Not sure which one fits? <a href="/book.html" data-track="Pricing Book Click">Book a call</a>, or email <a href="mailto:alex@loopworker.com" data-track="Pricing Email Click">alex@loopworker.com</a> with the decision you need answered.</div>
         </div>
     </section>
 
@@ -2622,86 +2666,53 @@
             <div class="proof-intro fade-up">
                 <div class="proof-eyebrow">Quick FAQ</div>
                 <h2>Questions that usually block the decision</h2>
-                <p>The point of the audit is to remove guesswork before you spend anything.</p>
+                <p>Remove guesswork before you spend anything else.</p>
             </div>
             <div class="faq-grid">
                 <div class="faq-item fade-up">
-                    <h3>How fast do I get the free audit?</h3>
-                    <p>Usually within 24 to 48 hours. It is short, specific, and focused on the first fixes that should matter most.</p>
+                    <h3>Which tier should I start with?</h3>
+                    <p>Sprint Lite for one focused question. Sprint Pro for a deeper market view across several signals. Sprint Full when the next move is high-stakes and needs a full strategic round. Scope and quote tailored per project.</p>
                 </div>
                 <div class="faq-item fade-up">
-                    <h3>What do I get in a content audit?</h3>
-                    <p>A profile and positioning check, a content angle breakdown, CTA and conversion fixes, and a first-priority action list with specific things to change right away.</p>
+                    <h3>What goes into the dashboard?</h3>
+                    <p>Competitors, reviews, customer voice, search demand, pricing pages, ads, content cadence, website conversion, proof gaps, and channel clues. Every line cited. You keep the dashboard.</p>
                 </div>
                 <div class="faq-item fade-up">
-                    <h3>Do you only give strategy, or do you create the content too?</h3>
-                    <p>The audit is the entry point. Paid packages include the content direction, hooks, captions, plan, and short-form deliverables.</p>
+                    <h3>How fast is delivery?</h3>
+                    <p>Sprint Lite ships in 5 days. Sprint Pro in 10. Sprint Full in 14. Founder-led, small caseload, no offshore.</p>
                 </div>
                 <div class="faq-item fade-up">
-                    <h3>What if I already post consistently?</h3>
-                    <p>That is usually the best starting point. The issue is often not effort. It is weak positioning, low-urgency hooks, or unclear CTAs.</p>
+                    <h3>Do you create the content too, or only the strategy?</h3>
+                    <p>Sprints return the decision and the evidence. If you need the visuals themselves, <a href="/visuals.html" data-track="FAQ Visuals Link">our Visuals service</a> ships 100+ on-brand assets from a single URL.</p>
                 </div>
                 <div class="faq-item fade-up">
-                    <h3>Do I need to be on Instagram?</h3>
-                    <p>Instagram is the most common starting point, but the content strategy and deliverables work across any visual platform including TikTok, Facebook, and LinkedIn.</p>
+                    <h3>What if I already know my market?</h3>
+                    <p>Then we go faster. Sprint Lite pressure-tests the one decision you are stuck on with cited evidence, not opinion.</p>
                 </div>
                 <div class="faq-item fade-up">
-                    <h3>What if I do not know which package fits?</h3>
-                    <p>Start with the audit. That is the fastest way to see whether you need a quick reset, a monthly system, or a fuller rebuild.</p>
+                    <h3>What if I do not know which tier fits?</h3>
+                    <p><a href="/book.html" data-track="FAQ Book Link">Book a 15-minute call</a> and I will point you to the right one. No pressure.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- AUDIT FORM -->
-    <section id="audit-form" class="audit-form-section">
-        <div class="container">
-            <h2 class="fade-up">Get your free 5-point content audit</h2>
-            <p class="fade-up" style="text-align:center;margin:0 auto 1rem;max-width:460px;">Takes about 2 minutes. I will show you what I would fix first, why it matters, and where your content is leaking customers.</p>
-
-            <div class="personal-note fade-up">
-                <div class="personal-note-label">Quick note</div>
-                <p>I've worked with businesses that were posting consistently but not seeing results. Most of the time, it's not the effort — it's how the content is structured. That's what I'll show you in the audit.</p>
+    <!-- REPEAT CTA · CLOSING -->
+    <section class="closing-cta-section">
+        <div class="container-wide">
+            <div class="closing-cta">
+                <span class="cc-eyebrow">◆ Start now</span>
+                <h2>Get your project moving on <em>data-backed decisions.</em></h2>
+                <p>The dashboard you wish you had on day one, plus the strategy to act on it. Five days minimum. Founder-led. No templates, no offshore, no AI slop.</p>
+                <div class="closing-cta-actions">
+                    <a href="#pricing" class="btn btn-primary" data-track="Closing CTA Pricing">View tiers + pricing</a>
+                    <a href="/book.html" class="btn btn-outline" data-track="Closing CTA Book">Book a 15-minute call</a>
+                </div>
+                <p class="closing-cta-note">Or email <a href="mailto:alex@loopworker.com" data-track="Closing CTA Email">alex@loopworker.com</a> directly. Need on-brand product photo at scale? <a href="/visuals.html" data-track="Closing CTA Visuals">See Visuals →</a></p>
             </div>
-
-            <form name="audit" action="https://formspree.io/f/xbdpddrn" method="POST" class="audit-form fade-up" style="max-width:500px;margin:0 auto;">
-                <input type="hidden" name="_next" value="https://www.loopworker.com/thank-you.html">
-                <input type="hidden" name="_subject" value="New Content Audit Request">
-                <input type="hidden" name="_autoresponse" value="Hey! Thanks for submitting your content audit request. I'm reviewing your social media now and will send your custom audit within 24-48 hours. Talk soon, Alex">
-                <input type="hidden" name="business" id="audit-business-hidden">
-                <input type="hidden" name="website" id="audit-website-hidden">
-                <input type="hidden" name="business_type" value="Not provided">
-                <input type="hidden" name="actively_seeking_customers" value="Not provided">
-                <div class="form-group">
-                    <label for="audit-name">Name <span style="color:#e53e3e;">*</span></label>
-                    <input type="text" id="audit-name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="audit-email">Email <span style="color:#e53e3e;">*</span></label>
-                    <input type="email" id="audit-email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="audit-context">Business name + Instagram or website <span style="color:#e53e3e;">*</span></label>
-                    <input type="text" id="audit-context" name="business_context" placeholder="My Burger — instagram.com/myburger" required>
-                </div>
-                <div class="form-group">
-                    <label for="audit-challenge">What's your biggest challenge with social media right now?</label>
-                    <textarea id="audit-challenge" name="challenge" rows="3" placeholder="Optional"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-full">Get My Free Audit</button>
-                <span class="btn-sub" style="text-align:center;">No pressure. Just clarity on what's not working.</span>
-                <div class="form-trust">
-                    Usually a 24-48 hour turnaround. I only use your info to review your content and reply.
-                    <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
-                </div>
-                <div class="form-next-steps">
-                    <div class="form-next-step">After you submit, I review your profile, offer, and recent content for the first fixes that should move the needle fastest.</div>
-                    <div class="form-next-step">If you already know your scope, you can also email <a href="mailto:alex@loopworker.com" data-track="Audit Form Email Click">alex@loopworker.com</a> and I will point you to the right package.</div>
-                </div>
-                <div class="contact-inline">Prefer email? Reach me directly at <a href="mailto:alex@loopworker.com" data-track="Audit Email Footer Click">alex@loopworker.com</a>.</div>
-            </form>
         </div>
     </section>
+
 
     <!-- FOOTER -->
     <footer>
@@ -2711,8 +2722,8 @@
                 <div class="footer-tagline">Helping businesses turn content into customers.</div>
             </div>
             <ul class="footer-links">
-                <li><a href="#examples">Examples</a></li>
-                <li><a href="/services.html">Services</a></li>
+                <li><a href="/">Sprints</a></li>
+                <li><a href="/visuals.html">Visuals</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="/case-studies.html">Case Studies</a></li>
@@ -2729,7 +2740,7 @@
         </div>
     </footer>
 
-    <a href="#audit-form" class="mobile-sticky-cta" data-track="Sticky Mobile Audit CTA">Get Free Audit</a>
+    <a href="#pricing" class="mobile-sticky-cta" data-track="Sticky Mobile Pricing CTA">View pricing</a>
 
     <script>
         function trackEvent(eventName) {
@@ -2742,40 +2753,6 @@
             element.addEventListener('click', function() {
                 trackEvent(element.dataset.track);
             });
-        });
-
-        // Audit form — submit to both Formspree + Modal webhook for auto-reply
-        const auditForm = document.querySelector('.audit-form');
-        let auditFormStarted = false;
-
-        auditForm.querySelectorAll('input, textarea, select').forEach(function(field) {
-            field.addEventListener('focus', function() {
-                if (auditFormStarted) return;
-                auditFormStarted = true;
-                trackEvent('Audit Form Started');
-            });
-        });
-
-        auditForm.addEventListener('submit', function(e) {
-            const form = e.target;
-            const businessContext = form.querySelector('[name="business_context"]');
-            const businessHidden = document.getElementById('audit-business-hidden');
-            const websiteHidden = document.getElementById('audit-website-hidden');
-            const combinedContext = businessContext ? businessContext.value.trim() : '';
-
-            if (businessHidden) businessHidden.value = combinedContext;
-            if (websiteHidden) websiteHidden.value = combinedContext;
-
-            const data = {};
-            new FormData(form).forEach((v, k) => { if (!k.startsWith('_')) data[k] = v; });
-            trackEvent('Audit Form Submitted');
-            // Fire-and-forget to Modal webhook (sends auto-reply email)
-            fetch('https://lambsbrown--loopworker-audit-audit-webhook.modal.run', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data),
-            }).catch(() => {});
-            // Form still submits to Formspree normally via default action
         });
 
         // Scroll fade
@@ -2797,48 +2774,6 @@
             document.body.style.overflow = isOpen ? 'hidden' : '';
         }
 
-        // Gallery modal
-        function openGallery(card) {
-            const name = card.querySelector('.brand-name').textContent;
-            const gallerySources = (card.dataset.gallery || '').split(',').filter(Boolean);
-            const modal = document.getElementById('galleryModal');
-            const grid = document.getElementById('galleryGrid');
-            trackEvent('Gallery Opened');
-            document.getElementById('galleryTitle').textContent = name;
-            grid.innerHTML = '';
-            gallerySources.forEach((src, index) => {
-                const image = document.createElement('img');
-                image.src = src;
-                image.alt = name + ' example ' + (index + 1);
-                image.loading = 'lazy';
-                image.decoding = 'async';
-                grid.appendChild(image);
-            });
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeGallery() {
-            document.getElementById('galleryModal').classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        document.getElementById('galleryModal').addEventListener('click', function(e) {
-            if (e.target === this) closeGallery();
-        });
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeGallery();
-        });
-
-        document.querySelectorAll('.brand-card').forEach(function(card) {
-            card.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    openGallery(card);
-                }
-            });
-        });
     </script>
 
 </body>
