@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="images/cards/card_05.webp">
     <!-- Visual polish layer — overlays inline styles with editorial accent (amber) -->
     <style>
       :root { --accent: #D4A017; --accent-soft: #B58915; --accent-glow: rgba(212, 160, 23, 0.18); --rule: rgba(212, 160, 23, 0.22); }
@@ -169,6 +168,27 @@
       .closing-cta-note a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(212,160,23,0.4); padding-bottom: 1px; }
       .closing-cta-note a:hover { color: #FFF; border-color: #FFF; }
 
+      /* UPSELL LADDER · after-Sprint services */
+      .upsell-section { padding: 4.5rem 2rem 4.5rem; background: #0A0A0A; border-top: 1px solid rgba(212,160,23,0.18); }
+      .upsell-section .container-wide { max-width: 1180px; margin: 0 auto; }
+      .upsell-intro { text-align: center; max-width: 760px; margin: 0 auto 2.4rem; }
+      .upsell-intro .upsell-eyebrow { display: inline-block; font-size: 0.7rem; color: var(--accent); letter-spacing: 0.22em; text-transform: uppercase; font-weight: 800; margin-bottom: 1rem; }
+      .upsell-intro h2 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 0.9rem; }
+      .upsell-intro h2 em { font-style: italic; color: var(--accent); font-weight: 400; }
+      .upsell-intro p { font-size: 1rem; color: #B5B5B5; line-height: 1.55; }
+      .upsell-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; }
+      @media (max-width: 980px) { .upsell-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 560px) { .upsell-grid { grid-template-columns: 1fr; } }
+      .upsell-card { position: relative; padding: 1.5rem 1.4rem 1.6rem; background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005)); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
+      .upsell-card:hover { border-color: rgba(212,160,23,0.4); transform: translateY(-3px); box-shadow: 0 18px 40px -22px var(--accent-glow); }
+      .upsell-card .u-num { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--accent); font-size: 1.5rem; font-weight: 500; line-height: 1; margin-bottom: 0.7rem; opacity: 0.7; }
+      .upsell-card .u-name { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.05rem; color: #FFF; letter-spacing: -0.01em; margin-bottom: 0.5rem; }
+      .upsell-card .u-desc { font-size: 0.88rem; color: #B0B0B0; line-height: 1.5; margin-bottom: 0.8rem; }
+      .upsell-card .u-format { font-size: 0.7rem; color: var(--accent); letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; }
+      .upsell-foot { text-align: center; margin-top: 2rem; }
+      .upsell-foot p { font-size: 0.92rem; color: #888; margin-top: 1rem; }
+      .upsell-foot a.btn { display: inline-block; }
+
       /* HOMEPAGE CHRIS QUOTE — same shape as sprint.html */
       .home-quote-section { padding: 4.5rem 2rem 3.5rem; }
       .home-quote-section .container-wide { max-width: 1100px; margin: 0 auto; }
@@ -197,27 +217,119 @@
       .home-quote-block .q-attr strong { color: #FFF; font-weight: 600; }
       .home-quote-block .q-attr a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(212,160,23,0.4); padding-bottom: 1px; }
       .home-quote-block .q-attr a:hover { color: #FFF; border-color: #FFF; }
+
+      /* ───── REWRITE V3 · editorial / luxury minimal ───── */
+      .section-eyebrow { display: inline-block; font-size: 0.68rem; color: var(--accent); letter-spacing: 0.24em; text-transform: uppercase; font-weight: 800; margin-bottom: 1.1rem; }
+      .section-intro { text-align: center; max-width: 720px; margin: 0 auto 3rem; }
+      .section-intro h2 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(1.9rem, 3.6vw, 2.8rem); line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 0.8rem; }
+      .section-intro h2 em { font-style: italic; color: var(--accent); font-weight: 400; }
+      .section-intro p { font-size: 1rem; color: #A5A5A5; line-height: 1.6; }
+
+      .hero-trust { margin-top: 1.6rem; font-size: 0.78rem; color: #888; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; }
+
+      /* Problem section */
+      .problem-section { padding: 6rem 2rem; border-top: 1px solid rgba(212,160,23,0.12); border-bottom: 1px solid rgba(212,160,23,0.12); }
+      .problem-section .container-wide { max-width: 1100px; margin: 0 auto; }
+      .problem-shell { max-width: 720px; margin: 0 auto; }
+      .problem-shell h2 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.8rem; }
+      .problem-shell h2 em { font-style: italic; color: var(--accent); font-weight: 400; }
+      .problem-lead { font-size: 1.15rem; color: #E0E0E0; margin-bottom: 1rem; font-weight: 500; }
+      .problem-shell > p { font-size: 1rem; color: #B5B5B5; line-height: 1.7; margin-bottom: 1rem; }
+      .problem-list { list-style: none; padding: 0; margin: 1.2rem 0 1.8rem; }
+      .problem-list li { padding: 0.5rem 0 0.5rem 1.6rem; position: relative; color: #C5C5C5; font-size: 0.96rem; border-bottom: 1px solid rgba(255,255,255,0.04); }
+      .problem-list li:last-child { border-bottom: 0; }
+      .problem-list li::before { content: '◆'; position: absolute; left: 0; top: 0.55rem; color: var(--accent); font-size: 0.6rem; }
+      .problem-close { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: #FFF; line-height: 1.45; margin-top: 1.4rem; }
+
+      /* What gets analyzed */
+      .analysis-section { padding: 6rem 2rem; }
+      .analysis-section .container-wide { max-width: 1180px; margin: 0 auto; }
+      .analysis-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(212,160,23,0.12); border: 1px solid rgba(212,160,23,0.12); border-radius: 12px; overflow: hidden; }
+      .analysis-grid.analysis-grid-4 { grid-template-columns: repeat(4, 1fr); }
+      @media (max-width: 980px) { .analysis-grid, .analysis-grid.analysis-grid-4 { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 560px) { .analysis-grid, .analysis-grid.analysis-grid-4 { grid-template-columns: 1fr; } }
+      .analysis-card { background: #0A0A0A; padding: 1.6rem 1.4rem; transition: background 0.2s; }
+      .analysis-card:hover { background: #101010; }
+      .ac-num { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--accent); font-size: 0.95rem; font-weight: 500; opacity: 0.6; margin-bottom: 0.6rem; }
+      .ac-name { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.92rem; color: #FFF; letter-spacing: -0.01em; margin-bottom: 0.5rem; line-height: 1.3; }
+      .ac-desc { font-size: 0.82rem; color: #999; line-height: 1.5; }
+
+      /* Tiers */
+      .tiers-section { padding: 6rem 2rem; background: #0C0C0C; border-top: 1px solid rgba(212,160,23,0.12); border-bottom: 1px solid rgba(212,160,23,0.12); }
+      .tiers-section .container-wide { max-width: 1180px; margin: 0 auto; }
+      .tiers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+      @media (max-width: 900px) { .tiers-grid { grid-template-columns: 1fr; } }
+      .tier-card { padding: 2rem 1.8rem; background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005)); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; display: flex; flex-direction: column; transition: border-color 0.2s, transform 0.2s; }
+      .tier-card:hover { border-color: rgba(212,160,23,0.4); transform: translateY(-3px); }
+      .tier-card.featured { border-color: rgba(212,160,23,0.5); background: linear-gradient(180deg, rgba(212,160,23,0.05), rgba(212,160,23,0.008)); }
+      .tier-eyebrow { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); font-weight: 800; margin-bottom: 0.9rem; }
+      .tier-card h3 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 1.7rem; color: #FFF; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 1.2rem; }
+      .tier-card .tier-meta { font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: #777; font-weight: 600; margin-bottom: 0.9rem; }
+      .tier-card .tier-good-for { font-size: 0.82rem; color: #888; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; margin-bottom: 0.6rem; }
+      .tier-list { list-style: none; padding: 0; margin: 0 0 1.6rem; flex-grow: 1; }
+      .tier-list li { padding: 0.5rem 0 0.5rem 1.4rem; position: relative; color: #C0C0C0; font-size: 0.92rem; border-bottom: 1px solid rgba(255,255,255,0.04); }
+      .tier-list li:last-child { border-bottom: 0; }
+      .tier-list li::before { content: '·'; position: absolute; left: 0.3rem; top: 0.4rem; color: var(--accent); font-size: 1.4rem; line-height: 1; }
+      .tier-card .tier-cta { display: inline-flex; align-items: center; justify-content: center; padding: 0.85rem 1.2rem; border: 1px solid rgba(255,255,255,0.14); border-radius: 8px; color: #FFF; text-decoration: none; font-size: 0.84rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; transition: all 0.18s ease; }
+      .tier-card .tier-cta:hover { border-color: var(--accent); color: var(--accent); }
+      .tier-card.featured .tier-cta { background: linear-gradient(180deg, #FFFFFF 0%, #F4F4F4 100%); color: #1A0F00; border-color: transparent; }
+      .tier-card.featured .tier-cta:hover { background: linear-gradient(180deg, var(--accent) 0%, var(--accent-soft) 100%); color: #1A0F00; }
+
+      /* Case studies B/S/S/R */
+      .case-section { padding: 6rem 2rem; }
+      .case-section .container-wide { max-width: 1180px; margin: 0 auto; }
+      .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+      @media (max-width: 980px) { .case-grid { grid-template-columns: 1fr; } }
+      .case-card { display: flex; flex-direction: column; padding: 1.8rem 1.6rem; background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005)); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; text-decoration: none; color: inherit; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
+      .case-card:hover { border-color: rgba(212,160,23,0.35); transform: translateY(-3px); box-shadow: 0 18px 40px -20px var(--accent-glow); }
+      .case-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); font-weight: 800; margin-bottom: 1.1rem; }
+      .case-block { font-size: 0.9rem; color: #C0C0C0; line-height: 1.55; padding: 0.7rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+      .case-block:last-of-type { border-bottom: 0; padding-bottom: 1rem; }
+      .case-block strong { display: inline-block; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: #FFF; margin-right: 0.5rem; }
+      .case-read { display: inline-block; margin-top: 0.6rem; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+      .case-foot { text-align: center; margin-top: 2.4rem; }
+
+      /* Ideal client */
+      .ideal-section { padding: 6rem 2rem; background: #0C0C0C; border-top: 1px solid rgba(212,160,23,0.12); }
+      .ideal-section .container-wide { max-width: 900px; margin: 0 auto; }
+      .ideal-list { list-style: none; padding: 0; margin: 0 auto; max-width: 720px; }
+      .ideal-list li { padding: 1rem 0 1rem 2rem; position: relative; color: #D5D5D5; font-size: 1.02rem; line-height: 1.5; border-bottom: 1px solid rgba(255,255,255,0.05); font-family: 'Cormorant Garamond', serif; font-weight: 500; font-style: italic; font-size: 1.25rem; }
+      .ideal-list li:last-child { border-bottom: 0; }
+      .ideal-list li::before { content: '◆'; position: absolute; left: 0; top: 1.2rem; color: var(--accent); font-size: 0.7rem; font-style: normal; }
+
+      .hero-supporting { margin-top: 1.8rem; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.95rem; color: #888; max-width: 600px; line-height: 1.55; }
+
+      /* After the Sprint · compact secondary section */
+      .after-section { padding: 4rem 2rem 4rem; border-top: 1px solid rgba(255,255,255,0.04); }
+      .after-section .container-wide { max-width: 760px; margin: 0 auto; }
+      .after-shell { text-align: center; }
+      .after-shell .section-eyebrow { color: #888; font-size: 0.62rem; letter-spacing: 0.26em; }
+      .after-shell h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-style: italic; font-size: 1.5rem; color: #C5C5C5; line-height: 1.3; margin-bottom: 1.2rem; letter-spacing: -0.01em; }
+      .after-shell p { font-size: 0.92rem; color: #888; line-height: 1.65; margin-bottom: 0.8rem; max-width: 620px; margin-left: auto; margin-right: auto; }
+      .after-list { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem 1rem; margin: 1rem 0 1rem; padding: 0; list-style: none; }
+      .after-list li { font-size: 0.76rem; color: #888; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; padding: 0.3rem 0.6rem; border: 1px solid rgba(255,255,255,0.06); border-radius: 999px; }
+      .after-note { font-style: italic; color: #666; font-size: 0.85rem; font-family: 'Cormorant Garamond', serif; }
     </style>
-    <title>The Dashboard Founders Wish They Had on Day One · LoopWorker</title>
-    <meta name="description" content="LoopWorker builds the market-research dashboard you wish you had when you started, plus the strategy to act on it. Live data on competitors, customer voice, pricing, search, proof, and channels. Founder-led, three Sprint tiers.">
+    <title>Know What Your Market Is Already Telling You · LoopWorker</title>
+    <meta name="description" content="Founder-led market intelligence sprint. Live competitor, customer, pricing, content, search, and positioning signals turned into the next move you can defend. 5–14 day delivery.">
     <link rel="canonical" href="https://www.loopworker.com/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.loopworker.com/">
-    <meta property="og:title" content="The Dashboard Founders Wish They Had on Day One · LoopWorker">
-    <meta property="og:description" content="The market-research dashboard you wish you had on day one, plus the strategy to act on it. Live data, founder-led, three Sprint tiers.">
+    <meta property="og:title" content="Know What Your Market Is Already Telling You · LoopWorker">
+    <meta property="og:description" content="Founder-led market intelligence sprint. Live competitor, customer, pricing, content, search, and positioning signals turned into a defensible next move.">
     <meta property="og:site_name" content="LoopWorker">
     <meta property="og:locale" content="en_US">
     <meta property="og:image" content="https://www.loopworker.com/images/case_studies/references/myburger/01.jpg">
-    <meta property="og:image:alt" content="LoopWorker. Market intelligence dashboards and the strategy to move on them.">
+    <meta property="og:image:alt" content="LoopWorker. Strategic market intelligence for founders.">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="The Dashboard Founders Wish They Had on Day One · LoopWorker">
-    <meta name="twitter:description" content="The market-research dashboard you wish you had on day one, plus the strategy to act on it. Founder-led, three Sprint tiers.">
+    <meta name="twitter:title" content="Know What Your Market Is Already Telling You · LoopWorker">
+    <meta name="twitter:description" content="Founder-led market intelligence sprint. Evidence over opinion.">
     <meta name="twitter:image" content="https://www.loopworker.com/images/case_studies/references/myburger/01.jpg">
-    <meta name="twitter:image:alt" content="LoopWorker. Market intelligence dashboards and the strategy to move on them.">
+    <meta name="twitter:image:alt" content="LoopWorker. Signal intelligence systems for founder-led decisions.">
 
     <!-- Google Verification -->
     <meta name="google-site-verification" content="google9258fb3826a9df03">
@@ -461,11 +573,15 @@
         }
 
         .hero-shell {
-            display: grid;
-            grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-            gap: 2rem;
-            align-items: center;
+            display: block;
+            max-width: 820px;
+            margin: 0 auto;
+            text-align: center;
         }
+        .hero-shell .hero-eyebrow,
+        .hero-shell h1,
+        .hero-shell p { max-width: 760px; margin-left: auto; margin-right: auto; }
+        .hero-shell .hero-actions { justify-content: center; margin-top: 1.6rem; }
 
         .hero-actions {
             display: flex;
@@ -2183,7 +2299,7 @@
             {
                 "@type": "ProfessionalService",
                 "name": "LoopWorker",
-                "description": "The market-research dashboard founders wish they had on day one, plus the strategy to act on it. Live data on competitors, customer voice, pricing, search, proof, and channels, built into a dashboard so any project can move on data-backed decisions.",
+                "description": "LoopWorker pulls live market signals into founder-led intelligence systems that reveal what is actually happening inside a category. Competitor movement, customer behavior, pricing structures, content patterns, positioning shifts, and operational visibility for high-leverage decisions.",
                 "url": "https://www.loopworker.com",
                 "areaServed": "United States",
                 "serviceType": [
@@ -2192,51 +2308,6 @@
                     "Customer voice research",
                     "Pricing and positioning strategy",
                     "Content direction"
-                ]
-            },
-            {
-                "@type": "FAQPage",
-                "mainEntity": [
-                    {
-                        "@type": "Question",
-                        "name": "Which tier should I start with?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Sprint Lite for one focused question. Sprint Pro for a deeper market view across several signals. Sprint Full when the move is high-stakes and needs a full strategic round. Scope and quote are tailored per project."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What evidence gets pulled?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Competitors, reviews, customer voice, search demand, pricing pages, ads, content cadence, website conversion, proof gaps, and channel clues. Every line cited."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "How fast is delivery?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Sprint Lite ships in 5 days. Sprint Pro in 10 days. Sprint Full in 14 days. Founder-led, small caseload, no offshore."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Do you create the content too, or only the strategy?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Sprints return the decision and the evidence. For the visuals themselves, the LoopWorker Visuals service generates 100+ on-brand assets from a single URL."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "What is the refund policy?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "If a Sprint brief lands and you cannot act on a single line, write back within 14 days for a full refund."
-                        }
-                    }
                 ]
             }
         ]
@@ -2283,8 +2354,8 @@
         <div class="nav-inner">
             <a href="/" class="nav-logo">LoopWorker</a>
             <ul class="nav-links">
-                <li><a href="/" data-track="Nav Sprints">Sprints</a></li>
-                <li><a href="/visuals.html" data-track="Nav Visuals">Visuals</a></li>
+                <li><a href="/sprint.html" data-track="Nav Sprint">The Sprint</a></li>
+                <li><a href="/services.html" data-track="Nav Services">Services</a></li>
                 <li><a href="/case-studies.html">Case Studies</a></li>
                 <li><a href="/blog/">Blog</a></li>
                 <li><a href="/book.html" class="nav-cta" data-track="Nav Book CTA">Book a Call</a></li>
@@ -2298,8 +2369,8 @@
     </nav>
 
     <div class="mobile-nav" id="mobileNav">
-        <a href="/" onclick="toggleMenu()">Sprints</a>
-        <a href="/visuals.html" onclick="toggleMenu()">Visuals</a>
+        <a href="/sprint.html" onclick="toggleMenu()">The Sprint</a>
+        <a href="/services.html" onclick="toggleMenu()">Services</a>
         <a href="/case-studies.html" onclick="toggleMenu()">Case Studies</a>
         <a href="/blog/" onclick="toggleMenu()">Blog</a>
         <a href="/book.html" class="nav-cta" onclick="toggleMenu()" data-track="Mobile Nav Book CTA">Book a Call</a>
@@ -2309,390 +2380,225 @@
     <section class="hero">
         <div class="container-wide hero-shell">
             <div>
-                <span class="hero-eyebrow fade-up">◆ LoopWorker · Market intelligence + strategy</span>
-                <h1 class="fade-up">The <em>market-research dashboard</em> you wish you had on day one.</h1>
-                <p class="fade-up">Plus the strategy to use it now. We pull the live data your category leaves behind, build it into a dashboard you can come back to, and name the next move you can defend. Founder-led, five to fourteen days, scope and quote tailored to the decision in front of you.</p>
+                <span class="hero-eyebrow fade-up">◆ LoopWorker</span>
+                <h1 class="fade-up">Know what your market is <em>already telling you.</em></h1>
+                <p class="fade-up">LoopWorker pulls together competitor activity, customer behavior, pricing, positioning, content, operational, and audience signals into founder-led intelligence systems that reveal what is actually happening inside a market.</p>
                 <div class="hero-actions fade-up">
-                    <a href="#pricing" class="btn btn-primary" data-track="Home Hero Tiers CTA">See the tiers</a>
-                    <a href="/book.html" class="btn btn-outline" data-track="Home Hero Book CTA">Book a call</a>
+                    <a href="/sprint.html" class="btn btn-primary" data-track="Home Hero Sprint CTA">Start a Sprint</a>
+                    <a href="/case-studies.html" class="btn btn-outline" data-track="Home Hero Cases CTA">See case studies</a>
                 </div>
-                <div class="hero-note fade-up">Or email <a href="mailto:alex@loopworker.com" data-track="Home Hero Email Click">alex@loopworker.com</a>. Need on-brand product photo at scale? <a href="/visuals.html" data-track="Home Hero Visuals Link">See Visuals →</a></div>
+                <p class="hero-trust fade-up">5–14 day Sprints · Founder-led · Small client load · Built around the decision in front of you</p>
             </div>
-            <div class="hero-visuals fade-up">
-                <div class="hero-visual-card">
-                    <img src="images/cards/card_05.webp" alt="Sprint Lite intelligence brief" loading="eager" decoding="async">
-                    <div class="hero-visual-label">Sprint Lite</div>
-                    <p>One dashboard view, one defensible answer. Competitor, pricing, proof, search, or website conversion.</p>
+        </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="problem-section">
+        <div class="container-wide">
+            <div class="problem-shell fade-up">
+                <span class="section-eyebrow">◆ The Premise</span>
+                <h2>The signals already exist.<br><em>Most businesses just cannot see them clearly.</em></h2>
+                <p class="problem-lead">Your market is already leaving evidence everywhere:</p>
+                <ul class="problem-list">
+                    <li>competitors</li>
+                    <li>pricing pages</li>
+                    <li>customer reviews</li>
+                    <li>search behavior</li>
+                    <li>social feeds</li>
+                    <li>campaign performance</li>
+                    <li>content traction</li>
+                    <li>lead movement</li>
+                    <li>operational bottlenecks</li>
+                    <li>audience behavior</li>
+                </ul>
+                <p>The problem is not lack of information. The problem is that the signals are scattered.</p>
+                <p class="problem-close">LoopWorker pulls those live signals into operational visibility systems that expose what is actually happening inside the market.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT LOOPWORKER BUILDS · intelligence systems grid -->
+    <section class="analysis-section">
+        <div class="container-wide">
+            <div class="section-intro fade-up">
+                <span class="section-eyebrow">◆ What LoopWorker Builds</span>
+                <h2>Built around the <em>decision in front of you.</em></h2>
+                <p>Eight intelligence layers. Pulled live. Organized into one operational view of the market.</p>
+            </div>
+            <div class="analysis-grid analysis-grid-4">
+                <div class="analysis-card fade-up">
+                    <div class="ac-num">01</div>
+                    <div class="ac-name">Market Intelligence Systems</div>
+                    <div class="ac-desc">Competitor movement, pricing structures, positioning shifts, customer sentiment, and market gaps surfaced into one operating view.</div>
                 </div>
-                <div class="hero-visual-card">
-                    <img src="images/case_studies/references/bouldering/04.jpg" alt="Sprint Pro market signal map" loading="eager" decoding="async">
-                    <div class="hero-visual-label">Sprint Pro</div>
-                    <p>A multi-signal dashboard. Competitors, content, reviews, search, pricing, positioning, and the move you make next.</p>
+                <div class="analysis-card fade-up">
+                    <div class="ac-num">02</div>
+                    <div class="ac-name">Growth Signal Mapping</div>
+                    <div class="ac-desc">Which channels, narratives, offers, and strategies are actually gaining traction across the category right now.</div>
                 </div>
-                <div class="hero-visual-card">
-                    <img src="images/cards/card_21.webp" alt="Sprint Full strategic round" loading="eager" decoding="async">
-                    <div class="hero-visual-label">Sprint Full</div>
-                    <p>A full operating dashboard. Market gap, competitor path, ads, content, pricing, proof, and a roadmap to ship behind.</p>
+                <div class="analysis-card fade-up">
+                    <div class="ac-num">03</div>
+                    <div class="ac-name">Content Pattern Analysis</div>
+                    <div class="ac-desc">Hooks, narrative structures, audience response patterns, and repeatable engagement signals decoded from live feeds.</div>
+                </div>
+                <div class="analysis-card fade-up">
+                    <div class="ac-num">04</div>
+                    <div class="ac-name">Opportunity Mapping</div>
+                    <div class="ac-desc">Whitespace, timing windows, category openings, positioning gaps, and expansion paths exposed against the market.</div>
+                </div>
+                <div class="analysis-card fade-up">
+                    <div class="ac-num">05</div>
+                    <div class="ac-name">Operational Visibility Systems</div>
+                    <div class="ac-desc">Internal bottlenecks, workflows, execution clarity, lead flow, and system friction traced into one operational layer.</div>
+                </div>
+                <div class="analysis-card fade-up">
+                    <div class="ac-num">06</div>
+                    <div class="ac-name">Launch Intelligence</div>
+                    <div class="ac-desc">Research infrastructure built for launches, repositioning, campaigns, and category entry before paid spend opens.</div>
+                </div>
+                <div class="analysis-card fade-up">
+                    <div class="ac-num">07</div>
+                    <div class="ac-name">Lead Intelligence Layers</div>
+                    <div class="ac-desc">Signal-based lead discovery, prioritization, and targeting systems built from live behavior, not lists.</div>
+                </div>
+                <div class="analysis-card fade-up">
+                    <div class="ac-num">08</div>
+                    <div class="ac-name">Decision Infrastructure</div>
+                    <div class="ac-desc">One operational layer where scattered business signals become visible, comparable, and defensible to act on.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MINI TIER CARDS · ABOVE-FOLD -->
-    <section class="mini-tier-section">
+    <!-- TIERS -->
+    <section class="tiers-section" id="tiers">
         <div class="container-wide">
-            <div class="mini-tier-grid">
-                <a href="#pricing" class="mini-tier-card" data-track="Home Mini Tier Lite">
-                    <span class="mt-eyebrow">◆ Sprint Lite</span>
-                    <span class="mt-name">One focused question.</span>
-                    <span class="mt-price"><span class="mt-flat mt-flat-solo">5 days</span></span>
-                    <span class="mt-scope">One dashboard view on the question that matters most. Competitors, pricing, proof gap, search demand, or website conversion.</span>
-                    <span class="mt-go">View Sprint Lite →</span>
-                </a>
-                <a href="#pricing" class="mini-tier-card featured" data-track="Home Mini Tier Map">
-                    <span class="mt-ribbon">Most chosen</span>
-                    <span class="mt-eyebrow">◆ Sprint Pro</span>
-                    <span class="mt-name">A deeper market view.</span>
-                    <span class="mt-price"><span class="mt-flat mt-flat-solo">10 days</span></span>
-                    <span class="mt-scope">A dashboard across multiple signals: competitors, content, reviews, search, pricing, positioning. The most chosen tier.</span>
-                    <span class="mt-go">View Sprint Pro →</span>
-                </a>
-                <a href="#pricing" class="mini-tier-card" data-track="Home Mini Tier Brief">
-                    <span class="mt-eyebrow">◆ Sprint Full</span>
-                    <span class="mt-name">A full strategic round.</span>
-                    <span class="mt-price"><span class="mt-flat mt-flat-solo">14 days</span></span>
-                    <span class="mt-scope">A full operating dashboard: market gap, competitor path, website, content, ads, pricing, proof, and a next-move roadmap. For high-stakes moves.</span>
-                    <span class="mt-go">View Sprint Full →</span>
-                </a>
+            <div class="section-intro fade-up">
+                <span class="section-eyebrow">◆ Sprint Tiers</span>
+                <h2>Pick the depth <em>your decision needs.</em></h2>
+                <p>Three founder-led rounds. Scope and quote tailored to the move in front of you.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- STATS STRIP · ANONYMIZED CLIENT NUMBERS -->
-    <div class="lw-trust-bar lw-stats-strip">
-        <div class="container-wide">
-            <span class="tb-eyebrow">What the dashboards have moved</span>
-            <div class="stats-row">
-                <div class="stat-cell"><span class="sc-n">6.2M</span><span class="sc-l">creator plays mapped into one pattern</span></div>
-                <div class="stat-cell"><span class="sc-n">5</span><span class="sc-l">named clients shipped this year</span></div>
-                <div class="stat-cell"><span class="sc-n">5</span><span class="sc-l">categories: DTC, LinkedIn, TikTok, Events, Creator</span></div>
-                <div class="stat-cell"><span class="sc-n">100%</span><span class="sc-l">founder-led, no offshore, no templates</span></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- DELIVERABLE EXCERPT -->
-    <section class="home-quote-section">
-        <div class="container-wide">
-            <div class="home-quote-block">
-                <span class="q-mark">“</span>
-                <blockquote>Every metric, post link, and caption excerpt came from a fresh pull of the live feed. Nothing made up, nothing paraphrased.</blockquote>
-                <div class="q-attr">
-                    <strong>From the Kind Bubbles delivery letter</strong>
-                    <span>Bay Area kids' bubble events · paid Sprint, May 2026</span>
-                    <a href="/case-studies/kind-bubbles.html" data-track="Home Quote Read CS">Read the full case study →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NAMED CLIENTS · 5-card roster proof -->
-    <section class="proof-snapshot">
-        <div class="container-wide">
-            <div class="proof-intro fade-up">
-                <div class="proof-eyebrow">Recent Clients</div>
-                <h2>Five businesses moving on <em>data-backed decisions.</em></h2>
-                <p>Same research discipline, different question every time. Luxury DTC ritual, top-1% LinkedIn voice, viral legal explainer, single-founder local events, cosplay creator engine. Each one walked away with a dashboard and a defensible next move.</p>
-            </div>
-            <div class="proof-grid">
-                <div class="proof-card fade-up">
-                    <div class="proof-logo-wrap light">
-                        <img class="proof-logo myburger" src="images/cards/card_18.webp" alt="GESINE luxury cleaning ritual brand strategy" loading="lazy">
-                    </div>
-                    <div class="proof-card-name">GESINE</div>
-                    <div class="proof-card-copy">Luxury cleaning ritual brand. Positioning, scent-shelf comp set, hardware language, and pre-launch dashboard built before retail conversations opened.</div>
-                    <div class="proof-card-note">DTC pre-launch · Sprint Full</div>
-                </div>
-                <div class="proof-card fade-up">
-                    <div class="proof-logo-wrap">
-                        <img class="proof-logo marina" src="images/cards/card_06.webp" alt="Derrick top 1% sales exec LinkedIn strategy" loading="lazy">
-                    </div>
-                    <div class="proof-card-name">Derrick</div>
-                    <div class="proof-card-copy">Top 1% sales executive, 9-year quota streak. Dual-track LinkedIn dashboard: practitioner content, 25-account engagement system, DM-keyword lead magnets.</div>
-                    <div class="proof-card-note">LinkedIn growth · Sprint Pro</div>
-                    <a class="proof-card-link" href="/case-studies/chad-90-day-linkedin.html" data-track="Derrick Case Click">Read case study →</a>
-                </div>
-                <div class="proof-card fade-up">
-                    <div class="proof-logo-wrap badge">
-                        <img class="proof-logo bouldering" src="images/cards/card_22.webp" alt="Anastasia TikTok lawyer SCOTUS case explainer content engine" loading="lazy">
-                    </div>
-                    <div class="proof-card-name">Anastasia</div>
-                    <div class="proof-card-copy">Legal explainer creator. 100-script content engine on SCOTUS cases, voice locked, ship-rough cadence, hook patterns pulled from her own data.</div>
-                    <div class="proof-card-note">TikTok · Sprint Pro</div>
-                </div>
-                <div class="proof-card fade-up">
-                    <div class="proof-logo-wrap light">
-                        <img class="proof-logo myburger" src="images/cards/card_05.webp" alt="Kind Bubbles Bay Area kids events Sprint Lite" loading="lazy">
-                    </div>
-                    <div class="proof-card-name">Kind Bubbles</div>
-                    <div class="proof-card-copy">Single-dad founder running Bay Area bubble events. Competitor scrape, complaint clusters, pricing band, channel map, and Conservative–Realistic–Aggressive Y1 projection.</div>
-                    <div class="proof-card-note">Local events · Sprint Lite</div>
-                    <a class="proof-card-link" href="/case-studies/kind-bubbles.html" data-track="Kind Bubbles Case Click">Read case study →</a>
-                </div>
-                <div class="proof-card fade-up">
-                    <div class="proof-logo-wrap">
-                        <img class="proof-logo marina" src="images/case_studies/references/bouldering/04.jpg" alt="Kirahri cosplay creator content system" loading="lazy">
-                    </div>
-                    <div class="proof-card-name">Kirahri</div>
-                    <div class="proof-card-copy">Cosplay creator, 6.2M plays mapped. The pattern in her own feed she had been missing for two years, turned into a repeatable posting system: pillars, hooks, captions.</div>
-                    <div class="proof-card-note">Creator content · Sprint Pro</div>
-                    <a class="proof-card-link" href="/case-studies/kirahri-cosplay-strategy.html" data-track="Kirahri Case Click">Read case study →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section id="how-it-works" style="background: #0C0C0C;">
-        <div class="container-wide">
-            <div class="proof-intro fade-up">
-                <div class="proof-eyebrow">Show The Process</div>
-                <h2>What you send me, and what it turns into</h2>
-                <p>Usually I do not need a huge production to build a branded direction. A logo, a feel for the location, and a handful of recent posts are enough to turn the feed into something more intentional.</p>
-            </div>
-            <div class="workflow-showcase fade-up">
-                <div class="workflow-panel">
-                    <div class="workflow-panel-label">What you already have</div>
-                    <div class="workflow-source-top">
-                        <div class="workflow-source-card">
-                            <strong>Logo</strong>
-                            <div class="workflow-logo-frame">
-                                <img class="workflow-logo" src="images/case_studies/logos/myburger-horizontal-real.png" alt="My Burger logo" loading="lazy" decoding="async">
-                            </div>
-                            <p>Brand mark, colors, and the basic feel of the business.</p>
-                        </div>
-                        <div class="workflow-source-card">
-                            <strong>Location</strong>
-                            <img class="workflow-location-shot" src="images/case_studies/references/myburger/11.jpg" alt="My Burger restaurant interior" loading="lazy" decoding="async">
-                            <p>Space cues, signage, textures, and the in-person personality.</p>
-                        </div>
-                    </div>
-                    <div class="workflow-feed-label">Six recent Instagram-style shots or references</div>
-                    <div class="workflow-source-grid">
-                        <img src="images/case_studies/references/myburger/01.jpg" alt="My Burger fish burger reference" loading="lazy" decoding="async">
-                        <img src="images/case_studies/references/myburger/03.jpg" alt="My Burger sandwich in hands reference" loading="lazy" decoding="async">
-                        <img src="images/case_studies/references/myburger/05.jpg" alt="My Burger burger and fries reference" loading="lazy" decoding="async">
-                        <img src="images/case_studies/references/myburger/07.jpg" alt="My Burger shake reference" loading="lazy" decoding="async">
-                        <img src="images/case_studies/references/myburger/09.jpg" alt="My Burger interior signage reference" loading="lazy" decoding="async">
-                        <img src="images/case_studies/references/myburger/10.jpg" alt="My Burger chicken sandwich reference" loading="lazy" decoding="async">
-                    </div>
-                </div>
-                <div class="workflow-panel workflow-bridge">
-                    <div class="workflow-panel-label">What I build</div>
-                    <div class="workflow-build-item">
-                        <strong>Positioning</strong>
-                        <p>What the brand should feel like when someone lands on the feed.</p>
-                    </div>
-                    <div class="workflow-build-item">
-                        <strong>Visual Direction</strong>
-                        <p>Which colors, crops, textures, and moments should repeat so it starts to look branded.</p>
-                    </div>
-                    <div class="workflow-build-item">
-                        <strong>Hooks + CTA</strong>
-                        <p>What makes the post worth stopping on, and what the viewer should do next.</p>
-                    </div>
-                </div>
-                <div class="workflow-panel">
-                    <div class="workflow-panel-label">What comes out</div>
-                    <img class="workflow-output-image" src="images/case_studies/myburger/workflow_flash_remake.png" alt="Remade My Burger flash-style food post" loading="lazy" decoding="async">
-                    <div class="workflow-output-meta">
-                        <div>
-                            <strong>Look</strong>
-                            <span>Bright, direct, appetite-first, unmistakably My Burger.</span>
-                        </div>
-                        <div>
-                            <strong>Offer</strong>
-                            <span>Same menu item, but framed like a branded flash post instead of a raw reference shot.</span>
-                        </div>
-                        <div>
-                            <strong>Result</strong>
-                            <span>Something clearer to save, share, ask about, or come in for.</span>
-                        </div>
-                    </div>
-                    <p class="workflow-output-copy">Same business. Same product. Clearer visual system, stronger flash treatment, and a post that feels intentionally built.</p>
-                </div>
-            </div>
-            <div class="process-grid">
-                <div class="process-step fade-up">
-                    <div class="step-number">01</div>
-                    <div class="step-title">Send The Raw Pieces</div>
-                    <div class="step-desc">Logo, screenshots, location feel, recent posts, or whatever you already have.</div>
-                </div>
-                <div class="process-step fade-up">
-                    <div class="step-number">02</div>
-                    <div class="step-title">I Build The Angle</div>
-                    <div class="step-desc">Visual direction, hooks, captions, and the structure that makes the brand feel more intentional.</div>
-                </div>
-                <div class="process-step fade-up">
-                    <div class="step-number">03</div>
-                    <div class="step-title">You Post Something Clearer</div>
-                    <div class="step-desc">The output looks branded and gives the viewer a sharper reason to visit, book, inquire, or follow.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CASE STUDIES · 3 UP -->
-    <section class="featured-case-study">
-        <div class="container-wide">
-            <div class="proof-intro fade-up">
-                <div class="proof-eyebrow">Featured Examples</div>
-                <h2>The work, told as the next move.</h2>
-                <p>Three founder-led engagements. Different categories. Same discipline · live market signals turned into a visual story of what to ship next. Not a number dump. A path.</p>
-            </div>
-
-            <div class="case-study-grid fade-up">
-
-                <a class="case-study-card" href="/case-studies/kind-bubbles.html" data-track="Home Case Study Kind Bubbles">
-                    <div class="case-study-card-media">
-                        <img src="images/cards/card_22.webp" alt="Kind Bubbles · Bay Area kids bubble events case study" loading="lazy" decoding="async">
-                    </div>
-                    <div class="case-study-card-body">
-                        <div class="case-study-card-label">Bay Area kids' events · Sprint Lite</div>
-                        <h3>From noisy category to a defensible local lane.</h3>
-                        <p class="cs-before"><strong>Before:</strong> one-founder business, bigger competitors, no pricing clarity, no content lane.</p>
-                        <p class="cs-shift"><strong>Shift:</strong> competitor ads, customer complaints, pricing pages, content cadence pulled into one brief.</p>
-                        <p class="cs-outcome"><strong>Next move:</strong> calmer-events positioning, setup guarantee, $525 anchor, three reel recipes, warm channels mapped → $54-65K Y1 path.</p>
-                        <span class="cs-read">Read the full case →</span>
-                    </div>
-                </a>
-
-                <a class="case-study-card" href="/case-studies/chad-90-day-linkedin.html" data-track="Home Case Study Chad LinkedIn">
-                    <div class="case-study-card-media">
-                        <img src="images/cards/card_30.webp" alt="90-day LinkedIn system case study for a top 1 percent sales executive" loading="lazy" decoding="async">
-                    </div>
-                    <div class="case-study-card-body">
-                        <div class="case-study-card-label">Top 1% sales exec · 90-day system</div>
-                        <h3>A 90-day LinkedIn system for an executive starting fresh.</h3>
-                        <p class="cs-before"><strong>Before:</strong> a top-1% sales exec landing at a new company with no audience and two distinct buyers to reach at once.</p>
-                        <p class="cs-shift"><strong>Shift:</strong> mapped both buyer segments, built a dual-track content rhythm that wouldn't split the brand.</p>
-                        <p class="cs-outcome"><strong>Next move:</strong> 90-day post calendar, hook library, comment circuit, and the cadence that compounds beyond month one.</p>
-                        <span class="cs-read">Read the full case →</span>
-                    </div>
-                </a>
-
-                <a class="case-study-card" href="/case-studies/kirahri-cosplay-strategy.html" data-track="Home Case Study Kirahri">
-                    <div class="case-study-card-media">
-                        <img src="images/cards/card_45.webp" alt="Kirahri cosplay creator strategy from 6.2 million accidental plays to repeatable system" loading="lazy" decoding="async">
-                    </div>
-                    <div class="case-study-card-body">
-                        <div class="case-study-card-label">Creator brand · narrative system</div>
-                        <h3>From 6.2M accidental plays to a repeatable narrative system.</h3>
-                        <p class="cs-before"><strong>Before:</strong> a creator with one viral spike and no clue why it landed or how to build on it.</p>
-                        <p class="cs-shift"><strong>Shift:</strong> reverse-engineered the 6.2M-view post, mapped the narrative arc across her catalog, found the repeatable hook.</p>
-                        <p class="cs-outcome"><strong>Next move:</strong> narrative-first content system, weekly cadence built around the proven story spine.</p>
-                        <span class="cs-read">Read the full case →</span>
-                    </div>
-                </a>
-
-            </div>
-
-            <div class="case-study-grid-foot fade-up">
-                <a href="/case-studies.html" class="btn btn-outline" data-track="Home All Case Studies">See all case studies</a>
-                <p>Same Sprint structure adapts to creators, SaaS, DTC launches, pitch decks, and local businesses. Tell me your decision · I'll tell you which lane fits.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- PRICING -->
-    <section class="pricing-section" id="pricing">
-        <div class="container-wide">
-            <h2 class="fade-up">Choose your dashboard depth.</h2>
-            <p class="fade-up">Three Sprint tiers. Same research discipline. Dashboard depth scales with the decision in front of you. Scope and quote tailored per project.</p>
-
-            <div class="pricing-grid">
-
-                <!-- STARTER -->
-                <div class="pricing-card fade-up">
-                    <div class="pricing-tier">Sprint Lite</div>
-                    <div class="pricing-amount pricing-duration">5 days</div>
-                    <div class="pricing-desc">Best for one focused decision that needs evidence before it ships.</div>
-                    <ul class="pricing-includes">
-                        <li><strong>5</strong> day turnaround</li>
-                        <li>One research round</li>
-                        <li>Competitor, search, pricing, proof, or website focus</li>
-                        <li>Recommendation + first action sheet</li>
+            <div class="tiers-grid">
+                <div class="tier-card fade-up">
+                    <div class="tier-eyebrow">Sprint Lite</div>
+                    <h3>Answer one important decision.</h3>
+                    <div class="tier-meta">5-day delivery</div>
+                    <div class="tier-good-for">Good for</div>
+                    <ul class="tier-list">
+                        <li>Pricing</li>
+                        <li>Website clarity</li>
+                        <li>Positioning</li>
+                        <li>Competitor understanding</li>
+                        <li>Offer validation</li>
                     </ul>
-                    <a href="/book.html" class="btn btn-outline btn-full" data-track="Home Sprint Lite Book">Start a Sprint Lite</a>
+                    <a href="/book.html" class="tier-cta" data-track="Home Sprint Lite CTA">Start Sprint Lite</a>
                 </div>
-
-                <!-- GROWTH -->
-                <div class="pricing-card featured fade-up">
-                    <div class="pricing-tier">Sprint Pro</div>
-                    <div class="pricing-amount pricing-duration">10 days</div>
-                    <div class="pricing-desc">Best for connecting several market signals into a defensible next move.</div>
-                    <ul class="pricing-includes">
-                        <li><strong>10</strong> day founder-led delivery</li>
-                        <li>Competitors, reviews, search, pricing, and positioning</li>
-                        <li>Content rhythm + channel map</li>
-                        <li>Dated, ranked action sheet</li>
+                <div class="tier-card featured fade-up">
+                    <div class="tier-eyebrow">Sprint Pro · Most chosen</div>
+                    <h3>Connect the market signals.</h3>
+                    <div class="tier-meta">10-day delivery</div>
+                    <div class="tier-good-for">Good for</div>
+                    <ul class="tier-list">
+                        <li>Multi-channel positioning</li>
+                        <li>Content direction</li>
+                        <li>Brand differentiation</li>
+                        <li>Audience understanding</li>
                     </ul>
-                    <a href="/book.html" class="btn btn-primary btn-full" data-track="Home Sprint Pro Book">Start a Sprint Pro</a>
+                    <a href="/book.html" class="tier-cta" data-track="Home Sprint Pro CTA">Start Sprint Pro</a>
                 </div>
-
-                <!-- FULL BUILD -->
-                <div class="pricing-card fade-up">
-                    <div class="pricing-tier">Sprint Full</div>
-                    <div class="pricing-amount pricing-duration">14 days</div>
-                    <div class="pricing-desc">Best for high-stakes launches, repositioning, pitch-deck clarity, or bigger strategic moves.</div>
-                    <ul class="pricing-includes">
-                        <li><strong>14</strong> day full strategic round</li>
-                        <li>Market gap + competitor path reconstruction</li>
-                        <li>Ads, content, pricing, proof, and roadmap</li>
-                        <li>Optional pitch-deck research layer</li>
+                <div class="tier-card fade-up">
+                    <div class="tier-eyebrow">Sprint Full</div>
+                    <h3>Build the strategic roadmap.</h3>
+                    <div class="tier-meta">14-day delivery</div>
+                    <div class="tier-good-for">Good for</div>
+                    <ul class="tier-list">
+                        <li>Launches</li>
+                        <li>Repositioning</li>
+                        <li>GTM clarity</li>
+                        <li>Pitch preparation</li>
+                        <li>Category entry</li>
                     </ul>
-                    <a href="/book.html" class="btn btn-outline btn-full" data-track="Home Sprint Full Book">Start a Sprint Full</a>
+                    <a href="/book.html" class="tier-cta" data-track="Home Sprint Full CTA">Start Sprint Full</a>
                 </div>
-
             </div>
-            <p class="pricing-note fade-up pricing-note-center">Founder-led delivery. Small caseload. Scope and quote tailored to the decision.</p>
-            <div class="pricing-help fade-up">Not sure which one fits? <a href="/book.html" data-track="Pricing Book Click">Book a call</a>, or email <a href="mailto:alex@loopworker.com" data-track="Pricing Email Click">alex@loopworker.com</a> with the decision you need answered.</div>
         </div>
     </section>
 
-    <!-- HOMEPAGE FAQ -->
-    <section class="faq-section">
+    <!-- CASE STUDIES · before / signals / visibility / next move -->
+    <section class="case-section">
         <div class="container-wide">
-            <div class="proof-intro fade-up">
-                <div class="proof-eyebrow">Quick FAQ</div>
-                <h2>Questions that usually block the decision</h2>
-                <p>Remove guesswork before you spend anything else.</p>
+            <div class="section-intro fade-up">
+                <span class="section-eyebrow">◆ Recent Engagements</span>
+                <h2>From scattered signals <em>to operational clarity.</em></h2>
+                <p>Three founder-led Sprints, anonymized by request. Same research discipline, three different decisions.</p>
             </div>
-            <div class="faq-grid">
-                <div class="faq-item fade-up">
-                    <h3>Which tier should I start with?</h3>
-                    <p>Sprint Lite for one focused question. Sprint Pro for a deeper market view across several signals. Sprint Full when the next move is high-stakes and needs a full strategic round. Scope and quote tailored per project.</p>
-                </div>
-                <div class="faq-item fade-up">
-                    <h3>What goes into the dashboard?</h3>
-                    <p>Competitors, reviews, customer voice, search demand, pricing pages, ads, content cadence, website conversion, proof gaps, and channel clues. Every line cited. You keep the dashboard.</p>
-                </div>
-                <div class="faq-item fade-up">
-                    <h3>How fast is delivery?</h3>
-                    <p>Sprint Lite ships in 5 days. Sprint Pro in 10. Sprint Full in 14. Founder-led, small caseload, no offshore.</p>
-                </div>
-                <div class="faq-item fade-up">
-                    <h3>Do you create the content too, or only the strategy?</h3>
-                    <p>Sprints return the decision and the evidence. If you need the visuals themselves, <a href="/visuals.html" data-track="FAQ Visuals Link">our Visuals service</a> ships 100+ on-brand assets from a single URL.</p>
-                </div>
-                <div class="faq-item fade-up">
-                    <h3>What if I already know my market?</h3>
-                    <p>Then we go faster. Sprint Lite pressure-tests the one decision you are stuck on with cited evidence, not opinion.</p>
-                </div>
-                <div class="faq-item fade-up">
-                    <h3>What if I do not know which tier fits?</h3>
-                    <p><a href="/book.html" data-track="FAQ Book Link">Book a 15-minute call</a> and I will point you to the right one. No pressure.</p>
-                </div>
+            <div class="case-grid">
+                <a class="case-card fade-up" href="/case-studies/kind-bubbles.html" data-track="Home Case Lite">
+                    <div class="case-label">Bay Area Events Brand · Sprint Lite</div>
+                    <div class="case-block"><strong>Before</strong> Solo founder in a noisy local category. Unclear pricing, no defensible content lane, bigger competitors crowding the search.</div>
+                    <div class="case-block"><strong>Signals</strong> Competitor ad libraries pulled live, complaint clusters surfaced across reviews, pricing bands traced across the category, content cadence decoded.</div>
+                    <div class="case-block"><strong>Visibility</strong> A clear operational view of where the category was crowded, where pricing left room, and which content patterns the audience actually responded to.</div>
+                    <div class="case-block"><strong>Next Move</strong> Calmer-events positioning, setup-time guarantee, anchor package, three reel recipes, warm channel map, Y1 revenue path modeled across three scenarios.</div>
+                    <span class="case-read">Read the full case →</span>
+                </a>
+                <a class="case-card fade-up" href="/case-studies/chad-90-day-linkedin.html" data-track="Home Case Pro">
+                    <div class="case-label">Enterprise Sales Executive · Sprint Pro</div>
+                    <div class="case-block"><strong>Before</strong> Top-percentile sales exec landing at a new company with no audience and two distinct buyer types to reach at once.</div>
+                    <div class="case-block"><strong>Signals</strong> Buyer-language clusters pulled from LinkedIn activity, content patterns traced per segment, hook libraries reconstructed, comment-circuit map exposed.</div>
+                    <div class="case-block"><strong>Visibility</strong> A side-by-side read of which narrative threads landed with which audience, and where a single feed could carry both without splitting the brand.</div>
+                    <div class="case-block"><strong>Next Move</strong> Dual-track content rhythm, lead-magnet DM keywords, 25-account engagement system, 90-day operating cadence the founder could run alone.</div>
+                    <span class="case-read">Read the full case →</span>
+                </a>
+                <a class="case-card fade-up" href="/case-studies/kirahri-cosplay-strategy.html" data-track="Home Case Creator">
+                    <div class="case-label">Creator With 6.2M Organic Views · Sprint Pro</div>
+                    <div class="case-block"><strong>Before</strong> Creator with one viral spike and no read on why it landed or how to build on it. Posts swinging between hits and dead silence.</div>
+                    <div class="case-block"><strong>Signals</strong> Breakout post reverse-engineered, narrative arc mapped across the catalog, hook structures compared head-to-head, mute-test response decoded.</div>
+                    <div class="case-block"><strong>Visibility</strong> A clear read of which story spine carried attention every time, which formats burned reach, and where the repeatable signal actually lived.</div>
+                    <div class="case-block"><strong>Next Move</strong> Narrative-first content system, weekly cadence built around the proven spine, pillar mix, quality gate. A repeatable content engine instead of accidental virality.</div>
+                    <span class="case-read">Read the full case →</span>
+                </a>
+            </div>
+            <div class="case-foot fade-up">
+                <a href="/case-studies.html" class="btn btn-outline" data-track="Home All Cases CTA">See all case studies</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- IDEAL CLIENT -->
+    <section class="ideal-section">
+        <div class="container-wide">
+            <div class="section-intro fade-up">
+                <span class="section-eyebrow">◆ Best Fit For</span>
+                <h2>Who the Sprint is <em>built for.</em></h2>
+            </div>
+            <ul class="ideal-list fade-up">
+                <li>Founders making positioning decisions</li>
+                <li>Creators building repeatable content systems</li>
+                <li>Early-stage brands preparing to launch</li>
+                <li>Operators entering crowded categories</li>
+                <li>Teams needing evidence before spending money on growth</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- AFTER THE SPRINT · compact secondary -->
+    <section class="after-section">
+        <div class="container-wide">
+            <div class="after-shell fade-up">
+                <span class="section-eyebrow">◆ After the Sprint</span>
+                <h3>Once the signals are clear, <br>execution becomes easier.</h3>
+                <p>Some clients take the Sprint and execute internally. Others bring LoopWorker in to help implement the direction through:</p>
+                <ul class="after-list">
+                    <li>Campaigns</li>
+                    <li>Launch systems</li>
+                    <li>Creative production</li>
+                    <li>Paid acquisition</li>
+                    <li>Founder-led narratives</li>
+                    <li>Operational systems</li>
+                    <li>Content infrastructure</li>
+                    <li>Positioning rollouts</li>
+                </ul>
+                <p class="after-note">Execution is custom-scoped after the intelligence phase.</p>
             </div>
         </div>
     </section>
@@ -2701,14 +2607,14 @@
     <section class="closing-cta-section">
         <div class="container-wide">
             <div class="closing-cta">
-                <span class="cc-eyebrow">◆ Start now</span>
-                <h2>Get your project moving on <em>data-backed decisions.</em></h2>
-                <p>The dashboard you wish you had on day one, plus the strategy to act on it. Five days minimum. Founder-led. No templates, no offshore, no AI slop.</p>
+                <span class="cc-eyebrow">◆ Start here</span>
+                <h2>Before you spend more guessing, <em>get signal clarity.</em></h2>
+                <p>One focused decision or a full strategic round. Founder-led research built around the move in front of you.</p>
                 <div class="closing-cta-actions">
-                    <a href="#pricing" class="btn btn-primary" data-track="Closing CTA Pricing">View tiers + pricing</a>
+                    <a href="/sprint.html" class="btn btn-primary" data-track="Closing CTA Sprint">Start a Sprint</a>
                     <a href="/book.html" class="btn btn-outline" data-track="Closing CTA Book">Book a 15-minute call</a>
                 </div>
-                <p class="closing-cta-note">Or email <a href="mailto:alex@loopworker.com" data-track="Closing CTA Email">alex@loopworker.com</a> directly. Need on-brand product photo at scale? <a href="/visuals.html" data-track="Closing CTA Visuals">See Visuals →</a></p>
+                <p class="closing-cta-note">Or email <a href="mailto:alex@loopworker.com" data-track="Closing CTA Email">alex@loopworker.com</a> directly.</p>
             </div>
         </div>
     </section>
@@ -2722,10 +2628,9 @@
                 <div class="footer-tagline">Helping businesses turn content into customers.</div>
             </div>
             <ul class="footer-links">
-                <li><a href="/">Sprints</a></li>
-                <li><a href="/visuals.html">Visuals</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="/sprint.html">The Sprint</a></li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
                 <li><a href="/case-studies.html">Case Studies</a></li>
                 <li><a href="/blog/">Blog</a></li>
                 <li><a href="/about.html">About</a></li>
@@ -2740,7 +2645,7 @@
         </div>
     </footer>
 
-    <a href="#pricing" class="mobile-sticky-cta" data-track="Sticky Mobile Pricing CTA">View pricing</a>
+    <a href="/book.html" class="mobile-sticky-cta" data-track="Sticky Mobile Book CTA">Book a call</a>
 
     <script>
         function trackEvent(eventName) {

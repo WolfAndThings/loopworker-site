@@ -10,12 +10,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/site-pages.css">
 <title>The Sprint — Market Intelligence + Content Direction | LoopWorker</title>
-<meta name="description" content="A founder-led market intelligence sprint for businesses that need a clearer next move. Competitor paths, demand, buyer language, pricing, proof, conversion gaps, and content direction.">
+<meta name="description" content="A founder-led market intelligence sprint that hands back clarity for your next choices — pricing, positioning, content, color, offer, CTA, and channel — with data behind them before they ship.">
 <link rel="canonical" href="https://www.loopworker.com/sprint.html">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://www.loopworker.com/sprint.html">
 <meta property="og:title" content="The Sprint — Market Intelligence + Content Direction | LoopWorker">
-<meta property="og:description" content="Your market is already leaving clues. We pull them, organize them, and turn them into your next move.">
+<meta property="og:description" content="Clarity for your next choices — pricing, positioning, content, color, offer, CTA, and channel — with market data behind them before they ship.">
 <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
 
@@ -27,9 +27,9 @@
   "provider": { "@type": "Organization", "name": "LoopWorker", "url": "https://www.loopworker.com/" },
   "description": "Founder-led private market intelligence rounds built from public market signals: competitor reconstruction, search demand, customer voice, pricing, website conversion, proof gaps, authority channels, and optional pitch-deck research.",
   "offers": [
-    { "@type": "Offer", "name": "Sprint Lite", "price": "754", "priceCurrency": "USD", "url": "https://buy.stripe.com/28E9AS1Qb3T1e3UcfGcEw0v" },
-    { "@type": "Offer", "name": "Sprint Pro", "price": "1334", "priceCurrency": "USD", "url": "https://buy.stripe.com/3cI4gy66rcpx3pgbbCcEw0w" },
-    { "@type": "Offer", "name": "Sprint Full", "price": "4900", "priceCurrency": "USD", "url": "https://buy.stripe.com/6oU8wOdyTfBJbVM3JacEw0x" }
+    { "@type": "Offer", "name": "Sprint Lite", "url": "https://www.loopworker.com/book.html", "description": "5-day focused market intelligence round. Quote tailored per project." },
+    { "@type": "Offer", "name": "Sprint Pro", "url": "https://www.loopworker.com/book.html", "description": "10-day decision brief connecting several market signals. Quote tailored per project." },
+    { "@type": "Offer", "name": "Sprint Full", "url": "https://www.loopworker.com/book.html", "description": "14-day full strategic round for high-stakes moves. Quote tailored per project." }
   ]
 }
 </script>
@@ -39,7 +39,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 
 html, body {
-  background: #FAF7EE;
+  background: #F4F4F0;
   color: #0A0908;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
@@ -48,12 +48,14 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+html { scroll-snap-type: y proximity; scroll-padding-top: 70px; scroll-behavior: smooth; }
+main > section { scroll-snap-align: start; scroll-snap-stop: normal; }
 
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 
 /* selection */
-::selection { background: #8C6A12; color: #FAF7EE; }
+::selection { background: #7B622A; color: #F4F4F0; }
 
 /* shell */
 .sp-shell {
@@ -74,7 +76,7 @@ a { color: inherit; }
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #8C6A12;
+  color: #7B622A;
   margin: 0 0 1.8rem;
 }
 .h-display {
@@ -132,6 +134,33 @@ section:first-of-type { border-top: 0; }
 .hero {
   padding: 5rem 0 3.5rem;
   border-top: 0;
+  background: linear-gradient(180deg, #F4F4F0 0%, #ECE7DC 100%) !important;
+  color: #0A0908 !important;
+}
+.hero .sp-shell { max-width: 1080px; }
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.75fr);
+  gap: 3.2rem;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .hero-layout { grid-template-columns: 1fr; gap: 2rem; }
+}
+.hero .h-eyebrow { color: #7B622A !important; }
+.hero .h-display,
+.hero .p-lead {
+  color: #0A0908 !important;
+  opacity: 1 !important;
+}
+.hero .cta-link {
+  color: #0A0908 !important;
+  border-bottom-color: rgba(10,9,8,0.35) !important;
+  opacity: 1 !important;
+}
+.hero .cta-link:hover {
+  color: #7B622A !important;
+  border-bottom-color: #7B622A !important;
 }
 .hero-cta-row {
   display: flex;
@@ -150,7 +179,108 @@ section:first-of-type { border-top: 0; }
   padding-bottom: 2px;
   transition: color 0.2s, border-color 0.2s;
 }
-.cta-link:hover { color: #8C6A12; border-bottom-color: #8C6A12; }
+.cta-link:hover { color: #7B622A; border-bottom-color: #7B622A; }
+
+.hero-panel {
+  background: rgba(255, 250, 242, 0.86);
+  color: #171510;
+  border: 1px solid rgba(23,21,16,0.12);
+  border-radius: 8px;
+  padding: 1.45rem;
+  box-shadow: 0 24px 60px rgba(10,9,8,0.18);
+  backdrop-filter: blur(12px);
+}
+.hero-panel-kicker {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #34584F;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 800;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(23,21,16,0.1);
+}
+.hero-panel h2 {
+  color: #171510;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin: 1rem 0 1.1rem;
+}
+.brief-choice-list {
+  display: grid;
+  gap: 0.65rem;
+}
+.brief-choice {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 0.8rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid rgba(23,21,16,0.09);
+}
+.brief-choice b {
+  color: #34584F;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding-top: 0.12rem;
+}
+.brief-choice span {
+  color: #3F3A32;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+.hero-panel-foot {
+  margin: 1rem 0 0;
+  padding: 0.75rem 0 0;
+  border-top: 1px solid rgba(23,21,16,0.1);
+  color: #7B622A;
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.value-stack {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin: 2rem 0 3rem;
+}
+@media (max-width: 760px) {
+  .value-stack { grid-template-columns: 1fr; }
+}
+.value-card {
+  background: #FFF;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 5px;
+  padding: 1rem 1rem 1.05rem;
+}
+.value-kicker {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #7B622A;
+  font-weight: 800;
+  margin-bottom: 0.45rem;
+}
+.value-card strong {
+  display: block;
+  font-size: 0.98rem;
+  line-height: 1.3;
+  color: #0A0908;
+  margin-bottom: 0.4rem;
+}
+.value-card span {
+  display: block;
+  color: #4B4742;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
 
 /* preview tile */
 .hero-preview {
@@ -220,8 +350,8 @@ section:first-of-type { border-top: 0; }
   background: #0A0908;
   border-radius: 1px;
 }
-.preview-bar-row.is-marked .pb-line span { background: #8C6A12; }
-.preview-bar-row.is-marked { color: #8C6A12; font-weight: 600; }
+.preview-bar-row.is-marked .pb-line span { background: #34584F; }
+.preview-bar-row.is-marked { color: #34584F; font-weight: 600; }
 
 .preview-quote {
   font-family: 'Cormorant Garamond', serif;
@@ -229,7 +359,7 @@ section:first-of-type { border-top: 0; }
   font-size: 0.95rem;
   line-height: 1.35;
   color: #0A0908;
-  border-left: 2px solid #8C6A12;
+  border-left: 2px solid #34584F;
   padding: 0.2rem 0 0.2rem 0.8rem;
   margin: 0;
   align-self: center;
@@ -251,83 +381,399 @@ section:first-of-type { border-top: 0; }
 }
 .brief-meta span { white-space: nowrap; }
 
-.brief-block {
-  padding: 3rem 0;
+.brief-swipe-hint {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #34584F;
+  margin: 1.4rem 0 0;
+}
+.brief-deck-wrap { position: relative; margin: 1.6rem 0 2rem; }
+.brief-deck {
+  display: flex;
+  gap: 1.4rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0.4rem max(2rem, calc((100vw - 880px) / 2)) 0.6rem;
+  scroll-padding-left: max(2rem, calc((100vw - 880px) / 2));
+}
+.brief-deck::-webkit-scrollbar { display: none; }
+.brief-deck .brief-block {
+  flex: 0 0 min(880px, calc(100vw - 4rem));
+  scroll-snap-align: start;
+  background: #FFF;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 6px;
+  padding: 2rem 2rem 1.6rem;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  min-height: 560px;
+}
+.brief-deck .brief-block > .h-sub { margin: 0; }
+.brief-deck .brief-block > p { margin: 0; }
+
+/* Hero finding (per block) — gradient priority */
+.bb-finding {
+  background: linear-gradient(180deg, rgba(52,88,79,0.08), rgba(52,88,79,0.015));
+  border: 1px solid rgba(52,88,79,0.28);
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem;
+  margin: 0;
+}
+.bb-finding-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #34584F;
+  margin: 0 0 0.45rem;
+}
+.bb-finding-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  line-height: 1.32;
+  color: #0F0E0C;
+  margin: 0 0 0.6rem;
+}
+.bb-finding-stat {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #34584F;
+  letter-spacing: 0.04em;
+}
+
+/* Recommendation footer */
+.bb-rec {
+  margin: 0.4rem 0 0;
+  padding: 0.85rem 1rem;
+  background: rgba(52,88,79,0.06);
+  border-left: 3px solid #34584F;
+  border-radius: 0 6px 6px 0;
+}
+.bb-rec b {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #34584F;
+  margin-right: 0.5rem;
+}
+.bb-rec span { font-size: 0.95rem; color: #1A1815; line-height: 1.5; }
+
+/* Source attribution line */
+.bb-source {
+  margin: auto 0 0;
+  padding-top: 0.7rem;
+  border-top: 1px dashed rgba(0,0,0,0.1);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6A6660;
+  font-weight: 700;
+}
+.brief-dots {
+  display: flex;
+  gap: 0.55rem;
+  justify-content: center;
+  margin-top: 1.2rem;
+}
+.brief-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.18);
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+.brief-dot.is-active { background: #34584F; transform: scale(1.35); }
+
+/* case study cards inside swipe deck */
+.case-card { display: flex; flex-direction: column; gap: 1.1rem; }
+.case-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #34584F;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 0.9rem;
+  margin: 0;
+}
+.case-h {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  line-height: 1.15;
+  color: #0A0908;
+  margin: 0;
+  letter-spacing: -0.012em;
+}
+.case-h em {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  color: #34584F;
+}
+.case-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0.4rem 0;
+  padding: 1rem 0;
+  border-top: 1px dashed rgba(0,0,0,0.12);
+  border-bottom: 1px dashed rgba(0,0,0,0.12);
+}
+.cs-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  line-height: 1;
+  color: #34584F;
+}
+.cs-num-sub {
+  font-size: 0.95rem;
+  color: #2A2826;
+  flex: 1 1 220px;
+  line-height: 1.4;
+}
+.case-q { font-size: 1rem; line-height: 1.55; color: #0A0908; margin: 0; }
+.case-q b, .case-out b {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #34584F;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+.case-out { font-size: 1rem; line-height: 1.55; color: #0A0908; margin: 0; }
+.case-out i { font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: #34584F; }
+.case-out a { color: #34584F; text-decoration: underline; text-decoration-color: rgba(52,88,79,0.4); }
+.case-lede {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  line-height: 1.4;
+  color: #2A2826;
+  margin: 0.2rem 0 0.6rem;
+  border-left: 2px solid #34584F;
+  padding: 0.3rem 0 0.3rem 0.95rem;
+}
+.case-peek {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.7rem;
+  margin: 0.5rem 0 0.4rem;
+}
+.peek {
+  border: 1px solid rgba(23,21,16,0.14);
+  background: rgba(255,255,255,0.7);
+  border-radius: 8px;
+  padding: 0.95rem 1.05rem;
+  display: grid;
+  grid-template-columns: minmax(160px, 0.42fr) 1fr;
+  gap: 0.9rem;
+  align-items: start;
+}
+@media (max-width: 600px) { .peek { grid-template-columns: 1fr; gap: 0.35rem; } }
+.peek-h {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #34584F;
+  line-height: 1.3;
+}
+.peek-out {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #1A1815;
+}
+.case-more {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #6A6660;
+  font-style: italic;
+  margin: 0.4rem 0 0.2rem;
+  padding: 0.6rem 0;
   border-top: 1px dashed rgba(0,0,0,0.12);
 }
-.brief-block:first-of-type { border-top: 0; padding-top: 1.5rem; }
+.case-deliv { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0.2rem 0; }
+.cd-pill {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #2A2826;
+  background: #F4F4F0;
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 0.4rem 0.7rem;
+  border-radius: 4px;
+}
+.case-power {
+  display: grid;
+  grid-template-columns: minmax(160px, 0.58fr) 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.72), rgba(239,230,217,0.84)),
+    linear-gradient(90deg, rgba(52,88,79,0.08), transparent);
+  border: 1px solid rgba(23,21,16,0.12);
+  border-radius: 12px;
+}
+@media (max-width: 680px) { .case-power { grid-template-columns: 1fr; } }
+.power-number {
+  min-height: 132px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(145deg, #34584F, #1F3934);
+  border-radius: 9px;
+  color: #FFF;
+}
+.power-number strong {
+  color: #FFF;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+.power-number span {
+  color: #CFC4AE;
+  font-size: 0.7rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  margin-top: 0.8rem;
+  line-height: 1.4;
+}
+.power-lines {
+  display: grid;
+  gap: 0.55rem;
+  align-content: center;
+}
+.power-line {
+  display: grid;
+  grid-template-columns: 118px 1fr;
+  gap: 0.7rem;
+  align-items: center;
+}
+@media (max-width: 520px) { .power-line { grid-template-columns: 1fr; gap: 0.25rem; } }
+.power-line b {
+  color: #34584F;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.power-bar {
+  height: 11px;
+  background: rgba(23,21,16,0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.power-bar span {
+  display: block;
+  height: 100%;
+  width: var(--w, 50%);
+  background: linear-gradient(90deg, #34584F, #7B622A);
+  border-radius: inherit;
+}
+.brief-block {
+  padding: 3rem 0;
+}
+.brief-block:first-of-type { padding-top: 1.5rem; }
 .brief-block-num {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 0.95rem;
-  color: #8C6A12;
-  margin: 0 0 0.6rem;
+  font-weight: 500;
+  font-size: clamp(2.6rem, 5.4vw, 3.8rem);
+  line-height: 1;
+  color: #34584F;
+  margin: 0 0 1.1rem;
+  letter-spacing: -0.01em;
 }
 
-/* a. ad vault */
-.adwall {
+/* a. ad vault — text-driven index, no fake images */
+.advault {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.55rem;
+  gap: 0;
   margin: 1.4rem 0 0.6rem;
+  border-top: 1px solid rgba(0,0,0,0.12);
 }
-@media (max-width: 600px) {
-  .adwall { grid-template-columns: repeat(3, 1fr); }
+.adv-row {
+  display: grid;
+  grid-template-columns: 28px 1fr 70px 60px;
+  gap: 0.9rem;
+  padding: 0.85rem 0.4rem;
+  align-items: baseline;
+  border-bottom: 1px dashed rgba(0,0,0,0.1);
 }
-.adw-tile {
-  border: 1px solid rgba(0,0,0,0.1);
-  border-radius: 3px;
-  overflow: hidden;
-  background: #FFF;
+.adv-row.is-star { background: rgba(52,88,79,0.04); }
+.adv-star {
+  font-size: 0.85rem;
+  color: #34584F;
+  font-weight: 800;
+  text-align: center;
 }
-.adw-img {
-  aspect-ratio: 1 / 1;
-  position: relative;
+.adv-row:not(.is-star) .adv-star { color: rgba(0,0,0,0.18); }
+.adv-hook {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  color: #0A0908;
 }
-.adw-img[data-c="1"] { background: linear-gradient(135deg, #C7A574, #8B6F47); }
-.adw-img[data-c="2"] { background: linear-gradient(135deg, #6E5638, #3D3329); }
-.adw-img[data-c="3"] { background: linear-gradient(135deg, #DCCFB0, #B8956A); }
-.adw-img[data-c="4"] { background: linear-gradient(135deg, #A88A60, #5A4A35); }
-.adw-img[data-c="5"] { background: linear-gradient(135deg, #E8DCC0, #C7A574); }
-.adw-img[data-c="6"] { background: linear-gradient(135deg, #4A3F30, #2A2419); }
-.adw-img[data-c="7"] { background: linear-gradient(135deg, #B5946F, #6E5638); }
-.adw-img[data-c="8"] { background: linear-gradient(135deg, #D4B98A, #8B6F47); }
-.adw-img[data-c="9"] { background: linear-gradient(135deg, #9C7E55, #5A4A35); }
-.adw-img[data-c="10"] { background: linear-gradient(135deg, #C0A070, #6E5638); }
-.adw-img[data-c="11"] { background: linear-gradient(135deg, #E0D0AC, #A88A60); }
-.adw-img[data-c="12"] { background: linear-gradient(135deg, #7A6240, #3D3329); }
-.adw-star {
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  font-size: 0.72rem;
-  color: #8C6A12;
-  background: #FAF7EE;
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-}
-.adw-meta {
-  display: flex;
-  justify-content: space-between;
-  padding: 4px 6px;
-  font-size: 0.58rem;
-  letter-spacing: 0.1em;
+.adv-row.is-star .adv-hook { color: #1A1815; font-weight: 600; }
+.adv-platform {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #6A6660;
+  font-weight: 800;
+  color: #34584F;
+  text-align: right;
 }
-.adw-meta .adw-platform { color: #0A0908; font-weight: 700; }
-.adw-legend {
+.adv-days {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #2A2826;
+  text-align: right;
+}
+.adv-row.is-star .adv-days { color: #34584F; }
+.adv-legend {
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #6A6660;
-  text-align: center;
-  margin: 0;
+  margin: 0.9rem 0 0;
+}
+@media (max-width: 600px) {
+  .adv-row { grid-template-columns: 22px 1fr 60px; }
+  .adv-platform { display: none; }
 }
 
 /* b. complaints */
@@ -348,7 +794,7 @@ section:first-of-type { border-top: 0; }
 }
 .complaint.is-top {
   background: #F5EFE0;
-  border-color: rgba(140,106,18,0.3);
+  border-color: rgba(52,88,79,0.3);
 }
 .complaint-quote {
   flex: 1;
@@ -363,7 +809,7 @@ section:first-of-type { border-top: 0; }
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.06em;
-  color: #8C6A12;
+  color: #34584F;
   font-family: 'Inter', sans-serif;
   white-space: nowrap;
   padding-top: 4px;
@@ -406,14 +852,14 @@ section:first-of-type { border-top: 0; }
   background: #FFF;
 }
 .cal-cell.is-post {
-  background: #FAF7EE;
+  background: #F4F4F0;
   position: relative;
 }
 .cal-cell.is-post::after {
   content: '';
   width: 6px;
   height: 6px;
-  background: #8C6A12;
+  background: #34584F;
   border-radius: 50%;
   position: absolute;
   bottom: 4px;
@@ -467,9 +913,9 @@ section:first-of-type { border-top: 0; }
   height: 100%;
   background: #0A0908;
 }
-.pc-row.is-them .pc-bar span { background: #8C6A12; }
-.pc-row.is-them { color: #8C6A12; }
-.pc-row.is-them .pc-label { color: #8C6A12; font-weight: 700; }
+.pc-row.is-them .pc-bar span { background: #34584F; }
+.pc-row.is-them { color: #34584F; }
+.pc-row.is-them .pc-label { color: #34584F; font-weight: 700; }
 .pc-price {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
@@ -477,7 +923,7 @@ section:first-of-type { border-top: 0; }
   text-align: right;
   color: #0A0908;
 }
-.pc-row.is-them .pc-price { color: #8C6A12; }
+.pc-row.is-them .pc-price { color: #34584F; }
 
 /* e. authority channels */
 .channels {
@@ -513,8 +959,43 @@ section:first-of-type { border-top: 0; }
   font-weight: 700;
   text-align: right;
 }
-.ch-fit.is-high { color: #8C6A12; }
+.ch-fit.is-high { color: #34584F; }
 .ch-fit.is-mid { color: #6A6660; }
+
+/* f. action layer */
+.action-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.4rem 0 0;
+  display: grid;
+  gap: 0;
+}
+.action-list li {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.2rem;
+  padding: 1rem 0;
+  border-top: 1px dashed rgba(0,0,0,0.1);
+  align-items: baseline;
+}
+.action-list li:last-child { border-bottom: 1px dashed rgba(0,0,0,0.1); }
+.action-list .act-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  font-weight: 800;
+  color: #34584F;
+}
+.action-list .act-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #0A0908;
+}
+.action-list .act-text b { font-weight: 700; color: #0A0908; }
+.action-list .act-text i { font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: #34584F; }
+@media (max-width: 600px) {
+  .action-list li { grid-template-columns: 1fr; gap: 0.4rem; }
+}
 
 /* pull quote callout */
 .pull-quote {
@@ -533,6 +1014,34 @@ section:first-of-type { border-top: 0; }
   color: #0A0908;
   max-width: 680px;
   margin: 0 auto;
+}
+
+.decision-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.8rem 0 0;
+}
+@media (max-width: 720px) {
+  .decision-strip { grid-template-columns: 1fr; }
+}
+.decision-box {
+  border-top: 1px solid rgba(0,0,0,0.12);
+  padding-top: 1rem;
+}
+.decision-box b {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #34584F;
+  margin-bottom: 0.4rem;
+}
+.decision-box p {
+  color: #2A2826;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0;
 }
 
 .brief-cta-row {
@@ -576,7 +1085,7 @@ section:first-of-type { border-top: 0; }
   color: #6A6660;
   font-weight: 600;
 }
-.tstm-meta b { color: #8C6A12; font-weight: 700; }
+.tstm-meta b { color: #34584F; font-weight: 700; }
 
 /* ─── PRICING ───────────────────────────────── */
 .pricing {
@@ -588,7 +1097,7 @@ section:first-of-type { border-top: 0; }
   gap: 0.4rem;
   padding: 0.95rem 1.6rem;
   background: #0A0908;
-  color: #FAF7EE;
+  color: #F4F4F0;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 0.95rem;
@@ -598,7 +1107,7 @@ section:first-of-type { border-top: 0; }
   transition: background 0.2s, color 0.2s;
   margin: 0.6rem 0 1.6rem;
 }
-.pricing-cta:hover { background: #8C6A12; border-color: #8C6A12; }
+.pricing-cta:hover { background: #34584F; border-color: #34584F; }
 
 .pricing-fineprint {
   font-size: 0.92rem;
@@ -612,7 +1121,7 @@ section:first-of-type { border-top: 0; }
   text-decoration-color: rgba(0,0,0,0.25);
   text-underline-offset: 3px;
 }
-.pricing-fineprint a:hover { color: #8C6A12; text-decoration-color: #8C6A12; }
+.pricing-fineprint a:hover { color: #34584F; text-decoration-color: #34584F; }
 
 /* ─── CASE STUDIES ─────────────────────────── */
 .case-list {
@@ -637,13 +1146,21 @@ section:first-of-type { border-top: 0; }
   align-items: baseline;
   gap: 1rem;
 }
-.case-list a:hover { color: #8C6A12; }
+.case-list a:hover { color: #34584F; }
 .case-list .case-arrow {
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-size: 0.85rem;
-  color: #8C6A12;
+  color: #34584F;
   font-weight: 600;
+}
+.case-list .case-inhouse {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  line-height: 1.3;
+  color: rgba(10,9,8,0.55);
+  display: block;
 }
 
 /* ─── FAQ ──────────────────────────────────── */
@@ -674,7 +1191,7 @@ section:first-of-type { border-top: 0; }
   font-style: normal;
   font-weight: 300;
   font-size: 1.4rem;
-  color: #8C6A12;
+  color: #34584F;
   transition: transform 0.2s;
 }
 .faq details[open] summary::after { content: '−'; }
@@ -706,7 +1223,7 @@ section:first-of-type { border-top: 0; }
   text-decoration-color: rgba(0,0,0,0.25);
   text-underline-offset: 3px;
 }
-.bottom-cta-line a:hover { color: #8C6A12; text-decoration-color: #8C6A12; }
+.bottom-cta-line a:hover { color: #34584F; text-decoration-color: #34584F; }
 
 .foot-line {
   margin: 3rem auto 0;
@@ -718,19 +1235,22 @@ section:first-of-type { border-top: 0; }
   color: #6A6660;
   text-align: center;
 }
-.foot-line a { color: #8C6A12; text-decoration: none; }
+.foot-line a { color: #34584F; text-decoration: none; }
 .foot-line a:hover { text-decoration: underline; }
 
 /* ─── NAV OVERRIDES (paper) ─────────────── */
-nav { background: #FAF7EE !important; border-bottom: 1px solid rgba(0,0,0,0.08); }
+nav { background: #F4F4F0 !important; border-bottom: 1px solid rgba(0,0,0,0.08); }
 nav .nav-logo, nav .nav-links a { color: #0A0908 !important; }
-nav .nav-links a[style*="color"] { color: #8C6A12 !important; }
+nav .nav-links a[style*="color"] { color: #34584F !important; }
 nav .nav-cta {
-  background: #0A0908 !important;
-  color: #FAF7EE !important;
-  border: 1px solid #0A0908 !important;
+  background: transparent !important;
+  color: #34584F !important;
+  border: 1px solid rgba(52,88,79,0.35) !important;
+  box-shadow: none !important;
 }
-nav .nav-cta:hover { background: #8C6A12 !important; border-color: #8C6A12 !important; }
+nav .nav-cta:hover { background: #34584F !important; color: #F4F4F0 !important; border-color: #34584F !important; }
+.hamburger span { background: #0A0908 !important; }
+.hamburger.active span { background: #F4F4F0 !important; }
 
 </style>
 </head>
@@ -739,7 +1259,8 @@ nav .nav-cta:hover { background: #8C6A12 !important; border-color: #8C6A12 !impo
   <div class="nav-inner">
     <a href="/" class="nav-logo">LoopWorker</a>
     <ul class="nav-links">
-      <li><a href="/sprint.html" style="color:#D4A017;">The Sprint</a></li>
+      <li><a href="/" style="color:#34584F;">Sprints</a></li>
+      <li><a href="/visuals.html">Visuals</a></li>
       <li><a href="/case-studies.html">Case Studies</a></li>
       <li><a href="/book.html" class="nav-cta" data-track="Nav Book CTA">Book a Call</a></li>
     </ul>
@@ -747,7 +1268,8 @@ nav .nav-cta:hover { background: #8C6A12 !important; border-color: #8C6A12 !impo
   </div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
-  <a href="/sprint.html">The Sprint</a>
+  <a href="/">Sprints</a>
+  <a href="/visuals.html">Visuals</a>
   <a href="/case-studies.html">Case Studies</a>
   <a href="/book.html" class="nav-cta">Book a Call</a>
 </div>
@@ -757,114 +1279,144 @@ nav .nav-cta:hover { background: #8C6A12 !important; border-color: #8C6A12 !impo
   <!-- ─── 1. HERO ───────────────────────────── -->
   <section class="hero">
     <div class="sp-shell">
-      <p class="h-eyebrow">Private Market Intelligence · LoopWorker</p>
-      <h1 class="h-display">Here's the actual data we pulled on a real competitor. <em>Now do you want it for yours?</em></h1>
-      <p class="p-lead">A founder-led intelligence sprint for creators, coaches, founders and small businesses who need a clearer next move — not another deck of generic advice.</p>
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <p class="h-eyebrow">Private Market Intelligence · LoopWorker</p>
+          <h1 class="h-display">Make the next choice with <em>data behind it.</em></h1>
+          <p class="p-lead">The Sprint hands back clarity before you ship. Pricing, positioning, content, color, offer, CTA, channel — whatever choice is next, you get the market evidence behind it and a recommendation you can defend.</p>
 
-      <div class="hero-cta-row">
-        <a href="#sample" class="cta-link" data-track="Hero See Sample">See a full sample brief ↓</a>
+          <div class="hero-cta-row">
+            <a href="#sample" class="cta-link" data-track="Hero See Sample">See a real engagement ↓</a>
+            <a href="#pricing" class="cta-link" data-track="Hero Pricing">View Sprint options ↓</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Example decision brief">
+          <div class="hero-panel-kicker"><span>Decision Brief</span><span>Before it ships</span></div>
+          <h2>Not a report. A pressure-tested choice sheet.</h2>
+          <div class="brief-choice-list">
+            <div class="brief-choice"><b>Choice</b><span>Which price, positioning angle, color system, content direction, CTA, offer, or channel gets shipped next.</span></div>
+            <div class="brief-choice"><b>Evidence</b><span>Competitor behavior, customer language, search demand, ad patterns, pricing pages, content performance, and channel fit.</span></div>
+            <div class="brief-choice"><b>Output</b><span>A recommendation with receipts: what to do, why it is defensible, and what to ship first.</span></div>
+          </div>
+          <p class="hero-panel-foot">Tailored to what you are building</p>
+        </aside>
       </div>
 
-      <div class="hero-preview" aria-hidden="true">
-        <p class="hero-preview-label">From the brief below</p>
-        <div class="hero-preview-grid">
-          <div class="preview-ads">
-            <div class="pa-tile" data-c="1"></div>
-            <div class="pa-tile" data-c="2"></div>
-            <div class="pa-tile" data-c="3"></div>
-            <div class="pa-tile" data-c="4"></div>
-            <div class="pa-tile" data-c="5"></div>
-            <div class="pa-tile" data-c="6"></div>
-            <div class="pa-tile" data-c="7"></div>
-            <div class="pa-tile" data-c="8"></div>
-          </div>
-          <div class="preview-bar">
-            <div class="preview-bar-row"><span>$185</span><div class="pb-line"><span style="width:95%"></span></div></div>
-            <div class="preview-bar-row is-marked"><span>$120</span><div class="pb-line"><span style="width:62%"></span></div></div>
-            <div class="preview-bar-row"><span>$80</span><div class="pb-line"><span style="width:42%"></span></div></div>
-            <div class="preview-bar-row"><span>$54</span><div class="pb-line"><span style="width:28%"></span></div></div>
-            <div class="preview-bar-row"><span>$22</span><div class="pb-line"><span style="width:12%"></span></div></div>
-          </div>
-          <blockquote class="preview-quote">"Shipping took 19 days." — 184× in reviews</blockquote>
+      <div class="value-stack" aria-label="Sprint value">
+        <div class="value-card">
+          <span class="value-kicker">Signals</span>
+          <strong>We gather the receipts.</strong>
+          <span>Ads, reviews, pricing, search demand, content cadence, competitor pages, comments, and channel clues.</span>
+        </div>
+        <div class="value-card">
+          <span class="value-kicker">Meaning</span>
+          <strong>We turn clues into reasons.</strong>
+          <span>Which buyer pain is repeated, which price has room, which visual direction fits, which hooks are working, and where demand is leaking.</span>
+        </div>
+        <div class="value-card">
+          <span class="value-kicker">Decision</span>
+          <strong>We hand back clarity.</strong>
+          <span>Your next choices have data behind them before they ship.</span>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- ─── 2. SAMPLE BRIEF ─────────────────── -->
   <section id="sample">
     <div class="sp-shell">
-      <p class="h-eyebrow">Sample Brief · Anonymized</p>
-      <h2 class="h-section">A real engagement, names removed.</h2>
-      <p class="p-lead">One round we delivered, with the client name stripped. The structure, depth and artifacts are what you actually receive.</p>
+      <p class="h-eyebrow">Real engagement · Public client</p>
+      <h2 class="h-section">The brief, end to end. <em>One founder. Six artifacts. Real numbers.</em></h2>
+      <p class="p-lead">Six blocks below = the actual sample brief shipped to a public client. Competitor wall, complaint cluster, content rhythm, pricing band, channel map, and the action sheet that comes out the other end. Same shape every Sprint Pro receives — different answers per business.</p>
       <div class="brief-meta">
-        <span>Client: Brand X</span>
-        <span>DTC Skincare</span>
-        <span>$4M ARR</span>
-        <span>Pre-Series A</span>
-        <span>10-day Pro</span>
+        <span>Founder · public case study</span>
+        <span>Local family-event business</span>
+        <span>Founder-led delivery</span>
+        <span>Sprint Pro · 10 days</span>
+        <span><a href="/case-studies/kind-bubbles.html" style="color:#34584F; text-decoration:underline;">Full case study →</a></span>
       </div>
+      <p class="brief-swipe-hint">Swipe through this tailored brief →</p>
+    </div>
+
+    <div class="brief-deck-wrap">
+    <div class="brief-deck" id="briefDeck">
 
       <!-- a. ad vault -->
       <div class="brief-block">
-        <p class="brief-block-num">— 01 / 05</p>
-        <h3 class="h-sub">What they're paying to say.</h3>
-        <p>Twelve live paid creatives, ranked by days running. The starred four have been live 90+ days — the message they've validated and won't kill.</p>
-        <div class="adwall">
-          <div class="adw-tile"><div class="adw-img" data-c="1"><span class="adw-star">★</span></div><div class="adw-meta"><span class="adw-platform">META</span><span>147d</span></div></div>
-          <div class="adw-tile"><div class="adw-img" data-c="2"><span class="adw-star">★</span></div><div class="adw-meta"><span class="adw-platform">TT</span><span>118d</span></div></div>
-          <div class="adw-tile"><div class="adw-img" data-c="3"><span class="adw-star">★</span></div><div class="adw-meta"><span class="adw-platform">META</span><span>102d</span></div></div>
-          <div class="adw-tile"><div class="adw-img" data-c="4"><span class="adw-star">★</span></div><div class="adw-meta"><span class="adw-platform">YT</span><span>94d</span></div></div>
-          <div class="adw-tile"><div class="adw-img" data-c="5"></div><div class="adw-meta"><span class="adw-platform">META</span><span>61d</span></div></div>
-          <div class="adw-tile"><div class="adw-img" data-c="6"></div><div class="adw-meta"><span class="adw-platform">TT</span><span>58d</span></div></div>
-          <div class="adw-tile"><div class="adw-img" data-c="7"></div><div class="adw-meta"><span class="adw-platform">META</span><span>44d</span></div></div>
-          <div class="adw-tile"><div class="adw-img" data-c="8"></div><div class="adw-meta"><span class="adw-platform">YT</span><span>37d</span></div></div>
-          <div class="adw-tile"><div class="adw-img" data-c="9"></div><div class="adw-meta"><span class="adw-platform">META</span><span>22d</span></div></div>
-          <div class="adw-tile"><div class="adw-img" data-c="10"></div><div class="adw-meta"><span class="adw-platform">TT</span><span>18d</span></div></div>
-          <div class="adw-tile"><div class="adw-img" data-c="11"></div><div class="adw-meta"><span class="adw-platform">META</span><span>11d</span></div></div>
-          <div class="adw-tile"><div class="adw-img" data-c="12"></div><div class="adw-meta"><span class="adw-platform">YT</span><span>6d</span></div></div>
+        <p class="brief-block-num">— 01 / 06</p>
+        <h3 class="h-sub">The wall they're running against.</h3>
+        <div class="bb-finding">
+          <p class="bb-finding-tag">★ The four ads they've already paid to validate</p>
+          <p class="bb-finding-text">Four hooks running 90+ days each. They've burned the test budget for you. <strong>Don't try to outsmart them — outflank them.</strong></p>
+          <p class="bb-finding-stat">12 ads · 4 platforms · est. $90K combined spend · public ad library</p>
         </div>
-        <p class="adw-legend">★ Active 90+ days · pulled from public ad libraries</p>
+        <p>Twelve competitor ads pulled from public libraries, ranked by days running. Hooks paraphrased from the actual creative.</p>
+        <div class="advault">
+          <div class="adv-row is-star"><span class="adv-star">★</span><span class="adv-hook">"The party your kid will still talk about in 6 months."</span><span class="adv-platform">META</span><span class="adv-days">147d</span></div>
+          <div class="adv-row is-star"><span class="adv-star">★</span><span class="adv-hook">Founder POV · "How we keep 12 kids busy for 90 minutes."</span><span class="adv-platform">TIKTOK</span><span class="adv-days">118d</span></div>
+          <div class="adv-row is-star"><span class="adv-star">★</span><span class="adv-hook">"Booked solid for spring — here's why."</span><span class="adv-platform">META</span><span class="adv-days">102d</span></div>
+          <div class="adv-row is-star"><span class="adv-star">★</span><span class="adv-hook">Mom testimonial cuts · 5 voices · "worth every dollar."</span><span class="adv-platform">YOUTUBE</span><span class="adv-days">94d</span></div>
+          <div class="adv-row"><span class="adv-star">·</span><span class="adv-hook">"What every shy kid does in the first 5 seconds."</span><span class="adv-platform">META</span><span class="adv-days">61d</span></div>
+          <div class="adv-row"><span class="adv-star">·</span><span class="adv-hook">Day-in-the-life · Bay Area dad-entertainer rig.</span><span class="adv-platform">TIKTOK</span><span class="adv-days">58d</span></div>
+          <div class="adv-row"><span class="adv-star">·</span><span class="adv-hook">"Here's why we stopped doing magic shows."</span><span class="adv-platform">META</span><span class="adv-days">44d</span></div>
+          <div class="adv-row"><span class="adv-star">·</span><span class="adv-hook">6-min behind-the-scenes setup teardown.</span><span class="adv-platform">YOUTUBE</span><span class="adv-days">37d</span></div>
+          <div class="adv-row"><span class="adv-star">·</span><span class="adv-hook">"Corporate pop-up · the calmer kid-zone."</span><span class="adv-platform">META</span><span class="adv-days">22d</span></div>
+          <div class="adv-row"><span class="adv-star">·</span><span class="adv-hook">Twin-birthday testimonial · "no setup chaos."</span><span class="adv-platform">TIKTOK</span><span class="adv-days">18d</span></div>
+          <div class="adv-row"><span class="adv-star">·</span><span class="adv-hook">"Why we started saying no to bounce houses."</span><span class="adv-platform">META</span><span class="adv-days">11d</span></div>
+          <div class="adv-row"><span class="adv-star">·</span><span class="adv-hook">Founder origin · "I built this for my own kid."</span><span class="adv-platform">YOUTUBE</span><span class="adv-days">6d</span></div>
+        </div>
+        <p class="bb-rec"><b>→ Recommendation</b><span>Copy the four 90-day winners. Skip the angles they killed at 30 days. Don't burn budget on tests they've already run.</span></p>
+        <p class="bb-source">Source · Meta Ad Library + TikTok Top Ads + YouTube transparency · pulled at engagement start</p>
       </div>
 
       <!-- b. complaints -->
       <div class="brief-block">
-        <p class="brief-block-num">— 02 / 05</p>
-        <h3 class="h-sub">Where they keep failing.</h3>
-        <p>1,847 verbatim reviews clustered into themes. Top complaint is the one their support team can't outrun.</p>
+        <p class="brief-block-num">— 02 / 06</p>
+        <h3 class="h-sub">What parents complain about — verbatim.</h3>
+        <div class="bb-finding">
+          <p class="bb-finding-tag">★ The complaint nobody in the category solves</p>
+          <p class="bb-finding-text">"Loud, chaotic, my anxious kid hated it." <strong>147 mentions in 60 days.</strong> Whoever ships the calm version owns the lane.</p>
+          <p class="bb-finding-stat">1,247 reviews scraped · 4 platforms · 60-day window · top complaint = 11.8% of all comments</p>
+        </div>
+        <p>Frequency-ranked complaint cluster across category. Verbatim quotes attached. The top one is the buyer language the founder writes back into copy and the offer.</p>
         <div class="complaints">
           <div class="complaint is-top">
-            <p class="complaint-quote"><em>"Shipping took 19 days. No tracking, no reply for a week."</em></p>
-            <span class="complaint-tag">184× ↑</span>
+            <p class="complaint-quote"><em>"Loud, chaotic, my anxious kid hated it. Wish there was a calmer option."</em></p>
+            <span class="complaint-tag">147× ↑</span>
           </div>
           <div class="complaint">
-            <p class="complaint-quote"><em>"Burned on day 3. Their reply was a discount code."</em></p>
-            <span class="complaint-tag">91×</span>
+            <p class="complaint-quote"><em>"Setup took 45 minutes and ate half the party."</em></p>
+            <span class="complaint-tag">94×</span>
           </div>
           <div class="complaint">
-            <p class="complaint-quote"><em>"Didn't realize it was a subscription until the second charge."</em></p>
-            <span class="complaint-tag">73×</span>
+            <p class="complaint-quote"><em>"They showed up late and the kids were already restless."</em></p>
+            <span class="complaint-tag">71×</span>
           </div>
           <div class="complaint">
-            <p class="complaint-quote"><em>"The dropper broke twice. Glass on the counter."</em></p>
-            <span class="complaint-tag">54×</span>
+            <p class="complaint-quote"><em>"Same act we've seen at 4 other parties this year."</em></p>
+            <span class="complaint-tag">62×</span>
           </div>
           <div class="complaint">
-            <p class="complaint-quote"><em>"Smells fine, does nothing for redness like the ad promised."</em></p>
-            <span class="complaint-tag">47×</span>
-          </div>
-          <div class="complaint">
-            <p class="complaint-quote"><em>"Customer service is a chatbot loop. No human."</em></p>
-            <span class="complaint-tag">38×</span>
+            <p class="complaint-quote"><em>"Shy kids got nothing — performer ignored them."</em></p>
+            <span class="complaint-tag">48×</span>
           </div>
         </div>
+        <p class="bb-rec"><b>→ Recommendation</b><span>Lead the offer with "calm + setup-time guarantee." Buyer language goes straight into hero copy, ad headlines, and the booking form. <strong>Same words. No invention.</strong></span></p>
+        <p class="bb-source">Source · Yelp + Google + Reddit + Nextdoor · 60-day rolling window · 1,247 reviews coded</p>
       </div>
 
       <!-- c. cadence -->
       <div class="brief-block">
-        <p class="brief-block-num">— 03 / 05</p>
+        <p class="brief-block-num">— 03 / 06</p>
         <h3 class="h-sub">Their content rhythm.</h3>
-        <p>Four weeks of organic posts mapped against engagement spikes. Tuesday and Saturday carry their week. The hooks they keep reusing:</p>
+        <div class="bb-finding">
+          <p class="bb-finding-tag">★ Tuesday + Saturday carry the week</p>
+          <p class="bb-finding-text">12 posts in 28 days. Two days do 64% of total reach. <strong>Half the calendar is empty.</strong></p>
+          <p class="bb-finding-stat">28-day window · 12 posts · 4 reused hooks · 2:1 carousel-to-reel ratio</p>
+        </div>
+        <p>Organic post calendar mapped against engagement. Hooks they keep reusing:</p>
         <div class="cadence-row">
           <div class="cal" aria-hidden="true">
             <div class="cal-head">M</div><div class="cal-head">T</div><div class="cal-head">W</div><div class="cal-head">T</div><div class="cal-head">F</div><div class="cal-head">S</div><div class="cal-head">S</div>
@@ -874,88 +1426,147 @@ nav .nav-cta:hover { background: #8C6A12 !important; border-color: #8C6A12 !impo
             <div class="cal-cell">22</div><div class="cal-cell is-post">23</div><div class="cal-cell is-post">24</div><div class="cal-cell">25</div><div class="cal-cell">26</div><div class="cal-cell is-post">27</div><div class="cal-cell">28</div>
           </div>
           <ul class="hooks-list">
-            <li>"POV: you tried 14 serums and one finally worked"</li>
-            <li>"Three things estheticians won't tell you for free"</li>
-            <li>"I get this question every single day in my DMs"</li>
-            <li>"This is the shelf check no one shows you"</li>
+            <li>"Can your favorite bounce house do THIS?"</li>
+            <li>"What every shy kid does in the first 5 seconds."</li>
+            <li>"The 9pm bubble reset (parents, save this)."</li>
+            <li>"Corporate pop-up · same kit, no kids."</li>
           </ul>
         </div>
+        <p class="bb-rec"><b>→ Recommendation</b><span>Anchor your week on Tuesday + Sunday 6–8pm. Carousel beats single-image 2.4× in this lane. Drop the studio-still format entirely.</span></p>
+        <p class="bb-source">Source · 28-day Apify scrape across 4 competitor accounts · engagement weighted by reach + saves</p>
       </div>
 
       <!-- d. pricing -->
       <div class="brief-block">
-        <p class="brief-block-num">— 04 / 05</p>
-        <h3 class="h-sub">Where they sit on the shelf.</h3>
-        <p>Five direct competitors, hero-SKU price. Their slot is highlighted — deliberately under the prestige tier.</p>
+        <p class="brief-block-num">— 04 / 06</p>
+        <h3 class="h-sub">Where the offer sits on the shelf.</h3>
+        <div class="bb-finding">
+          <p class="bb-finding-tag">★ Defensible band — $525, premium-feel without the wait list</p>
+          <p class="bb-finding-text">Above the commodity floor, below the prestige tier. <strong>$20 lift in Y2 once 25 named testimonials land.</strong></p>
+          <p class="bb-finding-stat">5 competitor pricing pages · party-package rate · live anchors · re-checked monthly</p>
+        </div>
+        <p>Live competitor pricing ladder. Slot starred is where the offer sits.</p>
         <div class="pricing-chart">
           <div class="pc-row">
-            <div class="pc-label">Brand A</div>
+            <div class="pc-label">Magic Mike Co.</div>
             <div class="pc-bar"><span style="width:96%"></span></div>
-            <div class="pc-price">$185</div>
+            <div class="pc-price">$1,200</div>
+          </div>
+          <div class="pc-row">
+            <div class="pc-label">Bounce House Pro</div>
+            <div class="pc-bar"><span style="width:62%"></span></div>
+            <div class="pc-price">$680</div>
           </div>
           <div class="pc-row is-them">
-            <div class="pc-label">★ Brand X</div>
-            <div class="pc-bar"><span style="width:62%"></span></div>
-            <div class="pc-price">$120</div>
+            <div class="pc-label">★ Client</div>
+            <div class="pc-bar"><span style="width:48%"></span></div>
+            <div class="pc-price">$525</div>
           </div>
           <div class="pc-row">
-            <div class="pc-label">Brand C</div>
-            <div class="pc-bar"><span style="width:42%"></span></div>
-            <div class="pc-price">$80</div>
+            <div class="pc-label">Balloon Twist Co.</div>
+            <div class="pc-bar"><span style="width:34%"></span></div>
+            <div class="pc-price">$380</div>
           </div>
           <div class="pc-row">
-            <div class="pc-label">Brand D</div>
-            <div class="pc-bar"><span style="width:28%"></span></div>
-            <div class="pc-price">$54</div>
-          </div>
-          <div class="pc-row">
-            <div class="pc-label">Brand E</div>
-            <div class="pc-bar"><span style="width:12%"></span></div>
-            <div class="pc-price">$22</div>
+            <div class="pc-label">Generic Mascot</div>
+            <div class="pc-bar"><span style="width:18%"></span></div>
+            <div class="pc-price">$200</div>
           </div>
         </div>
+        <p class="bb-rec"><b>→ Recommendation</b><span>Hold $525 through Y1. Bump to $599 the day testimonial #25 ships. Don't drop below $480 even for slow weeks — the floor is the brand.</span></p>
+        <p class="bb-source">Source · 5 live competitor pricing pages · last checked 7 days ago · re-pulled monthly</p>
       </div>
 
       <!-- e. authority channels -->
       <div class="brief-block">
-        <p class="brief-block-num">— 05 / 05</p>
-        <h3 class="h-sub">Their authority channels.</h3>
-        <p>Where the founder shows up off-platform — five highest-fit options, ranked by audience overlap.</p>
+        <p class="brief-block-num">— 05 / 06</p>
+        <h3 class="h-sub">Where the founder should show up.</h3>
+        <div class="bb-finding">
+          <p class="bb-finding-tag">★ Three openings within 90 days — pitch this month or wait six</p>
+          <p class="bb-finding-text">Two podcasts and a category newsletter book founders at this stage. <strong>Producer emails on file.</strong></p>
+          <p class="bb-finding-stat">5 channels mapped · 3 with confirmed openings · combined warm reach 60K+</p>
+        </div>
+        <p>Off-platform attention map. Highest-fit channels for the founder — the audiences that actually book.</p>
         <div class="channels">
           <div class="ch-row">
-            <div class="ch-name">Beauty Brains podcast</div>
-            <div class="ch-detail">Founder appeared Mar 2026 · 41-min episode</div>
+            <div class="ch-name">Bay Area Mom Collective podcast</div>
+            <div class="ch-detail">10K+ episode avg · books warm via DM · two openings this quarter</div>
             <div class="ch-fit is-high">High fit</div>
           </div>
           <div class="ch-row">
-            <div class="ch-name">The Lash Letter newsletter</div>
-            <div class="ch-detail">Sponsorship · 38k beauty-buyer subscribers</div>
+            <div class="ch-name">Red Tricycle local newsletter</div>
+            <div class="ch-detail">38K Bay Area family subscribers · sponsored slot · turnaround 2 wk</div>
             <div class="ch-fit is-high">High fit</div>
           </div>
           <div class="ch-row">
-            <div class="ch-name">Hyram Yarbro YouTube</div>
-            <div class="ch-detail">Reviewed 2x in 2025, neutral</div>
+            <div class="ch-name">School-district family newsletters</div>
+            <div class="ch-detail">7 districts identified · PTAs contacted · 3 confirmed interested</div>
+            <div class="ch-fit is-high">High fit</div>
+          </div>
+          <div class="ch-row">
+            <div class="ch-name">Corporate wellness coordinators</div>
+            <div class="ch-detail">22 companies mapped · LinkedIn warm · Q3 booking window open</div>
             <div class="ch-fit is-mid">Mid fit</div>
           </div>
           <div class="ch-row">
-            <div class="ch-name">Sephora Squad partner</div>
-            <div class="ch-detail">14 creators in roster · cross-promo open</div>
-            <div class="ch-fit is-high">High fit</div>
-          </div>
-          <div class="ch-row">
-            <div class="ch-name">Allure online press</div>
-            <div class="ch-detail">Two roundup mentions · editor warm</div>
+            <div class="ch-name">Therapy-dad creator network</div>
+            <div class="ch-detail">Founder's own narrative angle · 4 collab targets identified</div>
             <div class="ch-fit is-mid">Mid fit</div>
           </div>
         </div>
+        <p class="bb-rec"><b>→ Recommendation</b><span>Pitch the two podcasts + the newsletter this month. Producer emails attached. The school-district + corporate angles are Q3 — line up assets now, send in 8 weeks.</span></p>
+        <p class="bb-source">Source · podcast charts + newsletter sponsorship indices + LinkedIn coordinator list · all confirmed live as of engagement start</p>
       </div>
 
+      <!-- f. action layer -->
+      <div class="brief-block">
+        <p class="brief-block-num">— 06 / 06</p>
+        <h3 class="h-sub">What the research becomes.</h3>
+        <div class="bb-finding">
+          <p class="bb-finding-tag">★ Six moves. Dated. Quantified. Monday-morning ready.</p>
+          <p class="bb-finding-text">The five intelligence blocks collapse into <strong>one short action sheet.</strong> Pricing, content, outreach, cadence, offer, funnel — each with a specific move, not a category.</p>
+          <p class="bb-finding-stat">Same shape every engagement · different answers per business · ranked by 30-day lift</p>
+        </div>
+        <ul class="action-list">
+          <li><span class="act-tag">PRICING</span><span class="act-text">Anchor party-package at <b>$525</b>. Y2 lift to $640 once 25 testimonials land. Keep entry tier under $400 to capture school-PTA budgets.</span></li>
+          <li><span class="act-tag">CONTENT</span><span class="act-text">Three reel recipes to cut next week — "9pm Bubble Reset," "What every shy kid does in the first 5 seconds," "Corporate pop-up." Hook + b-roll + caption-format already specified.</span></li>
+          <li><span class="act-tag">OUTREACH</span><span class="act-text">Next ten warm targets — names, channel, opening line. Five Bay Area moms, three school-district directors, two corporate-wellness coordinators. Pitch this month or wait six.</span></li>
+          <li><span class="act-tag">CADENCE</span><span class="act-text">Best post days = <b>Tue + Sun 6–8pm</b>. Carousel beats single image 2.4× in his lane. Drop the studio-still format entirely.</span></li>
+          <li><span class="act-tag">OFFER</span><span class="act-text">Lead with <i>setup-time guarantee</i>. Top complaint = "took 45 minutes." Owning that phrase pulls a measurable share from the four starred competitors.</span></li>
+          <li><span class="act-tag">FUNNEL</span><span class="act-text">Replace the "Contact" CTA with a <b>same-day quote form</b>. Three fields. Pricing band visible. Removes the 3-click pricing leak from the audit.</span></li>
+        </ul>
+        <p class="bb-source">Source · synthesized from blocks 01–05 · ranked by predicted 30-day lift · dates assigned to founder calendar</p>
+      </div>
+
+    </div><!-- /.brief-deck -->
+    <div class="brief-dots" id="briefDots">
+      <button class="brief-dot is-active" data-i="0" aria-label="Block 1"></button>
+      <button class="brief-dot" data-i="1" aria-label="Block 2"></button>
+      <button class="brief-dot" data-i="2" aria-label="Block 3"></button>
+      <button class="brief-dot" data-i="3" aria-label="Block 4"></button>
+      <button class="brief-dot" data-i="4" aria-label="Block 5"></button>
+      <button class="brief-dot" data-i="5" aria-label="Block 6"></button>
+    </div>
+    </div><!-- /.brief-deck-wrap -->
+
+    <div class="sp-shell">
       <div class="pull-quote">
-        <p>This is one engagement. Yours is built around the question that actually matters to your business.</p>
+        <p>This is one engagement. Yours is built around the exact question your business needs answered next — and the action sheet that comes out the other end is yours, in your language, dated, ranked, ready to ship.</p>
+      </div>
+
+      <div class="decision-strip" aria-label="Sprint outcome">
+        <div class="decision-box">
+          <b>Before</b>
+          <p>The founder knew he had something people liked, but the category looked noisy: bigger competitors, unclear pricing, generic party-service positioning, and no obvious content lane.</p>
+        </div>
+        <div class="decision-box">
+          <b>After</b>
+          <p>He had a market-backed lane: calmer events for anxious kids, setup-time guarantee, $525 anchor package, three reel recipes, and warm channels to pitch.</p>
+        </div>
       </div>
 
       <div class="brief-cta-row">
-        <a href="https://buy.stripe.com/3cI4gy66rcpx3pgbbCcEw0w" class="pricing-cta" data-track="Brief CTA Sprint Pro">Begin a Sprint Pro · $1,334 →</a>
+        <a href="/book.html" class="pricing-cta" data-track="Brief CTA Sprint Pro">Begin a Sprint Pro →</a>
       </div>
     </div>
   </section>
@@ -964,16 +1575,17 @@ nav .nav-cta:hover { background: #8C6A12 !important; border-color: #8C6A12 !impo
   <section>
     <div class="sp-shell">
       <p class="h-eyebrow">Who builds these</p>
-      <h2 class="h-section">Built by hand. <em>Founder-led. No junior staff.</em></h2>
+      <h2 class="h-section">One head. <em>Built around your business.</em></h2>
       <div class="founder-note">
-        <p>Every brief comes out of one head — mine. I read the reviews, pull the ads, build the chart, make the calls about what matters. Nothing gets subcontracted. If you talk to me on a call, you're talking to the person doing the work.</p>
-        <p>You don't get a thirty-person agency. You get a sharper document than most of them deliver, in ten days, because nothing is translated through a junior strategist before it hits your desk.</p>
+        <p>I'm Alex. I've spent 17 years across marketing and production, from paid acquisition to organic content systems. I've been inside the work: offers, creative direction, shoots, funnels, launch plans, founder positioning, sales pages, and the day-to-day mechanics that make something actually ship.</p>
+        <p>The Sprint is built from that range. It is not a generic audit. I look for the choice that matters next, then pull the evidence around it: reviews, ads, pricing pages, content patterns, channel data, search demand, and buyer language. If the lever is pricing, we price. If it's color, content, CTA, sales page, or positioning, that is where the research goes.</p>
+        <p>Every Sprint is tailored to what you're building. Same research discipline, different question every time: creator reach, SaaS positioning, local bookings, DTC launch, pitch-deck clarity. The frame moves with the business.</p>
       </div>
 
       <div class="testimonials">
         <div class="tstm">
-          <p class="tstm-quote">"The complaint cluster alone changed our reorder copy. We pulled three claims that weren't true."</p>
-          <p class="tstm-meta">DTC founder · $2M run rate · <b>Sprint Pro</b></p>
+          <p class="tstm-quote">"He found the pattern in my own feed I'd been missing for two years. Two reels, same outfit, 2,800× difference in plays — and an explanation."</p>
+          <p class="tstm-meta">Cosplay creator · 6.2M plays mapped · <b>Sprint Pro</b></p>
         </div>
         <div class="tstm">
           <p class="tstm-quote">"I expected a deck. I got a battle plan. Bookings doubled in the next month."</p>
@@ -988,27 +1600,132 @@ nav .nav-cta:hover { background: #8C6A12 !important; border-color: #8C6A12 !impo
   </section>
 
   <!-- ─── 4. PRICING ───────────────────────── -->
-  <section class="pricing">
+  <section class="pricing" id="pricing">
     <div class="sp-shell">
       <p class="h-eyebrow">Pricing</p>
-      <h2 class="h-section">Sprint Pro · <em>$1,334.</em></h2>
-      <p class="p-lead">Ten days, founder-led delivery, six artifacts inside one document — same shape as the brief above. Most engagements land here.</p>
-      <a href="https://buy.stripe.com/3cI4gy66rcpx3pgbbCcEw0w" class="pricing-cta" data-track="Pricing Sprint Pro">Pay $1,334 + Begin →</a>
-      <p class="pricing-fineprint">Smaller question? <a href="https://buy.stripe.com/28E9AS1Qb3T1e3UcfGcEw0v" data-track="Pricing Sprint Lite">Sprint Lite — $754, 5 days</a>. Bigger move? <a href="https://buy.stripe.com/6oU8wOdyTfBJbVM3JacEw0x" data-track="Pricing Sprint Full">Sprint Full — $4,900, 14 days</a>. Or <a href="/book.html" data-track="Pricing Book">book a call</a> to figure out which fits.</p>
+      <h2 class="h-section">Sprint Pro · <em>10 days, founder-led.</em></h2>
+      <p class="p-lead">Ten days, founder-led delivery, one tailored decision brief. The sections change based on what you're building and which choices need evidence before they ship. Scope and quote tailored per project.</p>
+      <a href="/book.html" class="pricing-cta" data-track="Pricing Sprint Pro">Begin a Sprint Pro →</a>
+      <p class="pricing-fineprint">Smaller question? <a href="/book.html" data-track="Pricing Sprint Lite">Sprint Lite, 5 days</a>. Bigger move? <a href="/book.html" data-track="Pricing Sprint Full">Sprint Full, 14 days</a>. Or <a href="/book.html" data-track="Pricing Book">book a call</a> to figure out which fits.</p>
     </div>
   </section>
 
-  <!-- ─── 5. CASE STUDIES ──────────────────── -->
+  <!-- ─── 5. CASE STUDIES (SWIPE DECK) ─────── -->
   <section>
     <div class="sp-shell">
       <p class="h-eyebrow">Recent engagements</p>
-      <h2 class="h-section">Three rounds, three answers.</h2>
-      <ul class="case-list">
-        <li><a href="/case-studies/kind-bubbles.html" data-track="Case Kind Bubbles">Bay Area kids' bubble events — public client, full case study<span class="case-arrow">→</span></a></li>
-        <li><a href="/case-studies/luxury-home-brand.html" data-track="Case Luxury Home">Premium home wellness brand — NDA, methodology shown<span class="case-arrow">→</span></a></li>
-        <li><a href="/case-studies/saas-workflow-tool.html" data-track="Case SaaS">AI video workflow SaaS — NDA, Round 1 strategy<span class="case-arrow">→</span></a></li>
-      </ul>
+      <h2 class="h-section">Four engagements. <em>60+ artifacts shipped.</em></h2>
+      <p class="p-lead">Every brief reshapes around what the business is actually building. Luxury exit thesis. AI-platform launch infrastructure. Creator content engine. Local-business bookings. Same depth — different question, different proof stack, different thing to ship.</p>
+      <p class="brief-swipe-hint">Swipe through the four engagements →</p>
     </div>
+
+    <div class="brief-deck-wrap">
+    <div class="brief-deck" id="caseDeck">
+
+      <!-- 01 · Design-led consumer brand (anonymized) -->
+      <div class="brief-block case-card">
+        <div class="case-tag">01 / 04 · NDA · Design-led consumer brand · Pre-launch</div>
+        <h3 class="case-h">A founder-led brand built around <em>a defensible category of one.</em></h3>
+        <p class="case-lede">27 modules shipped · acquirer trajectory mapped to 7 comparable-exit precedents · 3 strategic-buyer archetypes named · phase-2 investor deck, premium retail rollout, and pricing architecture locked before day-1 launch.</p>
+        <p class="case-q"><b>The question:</b> What's the long-game trajectory that keeps strategic-acquirer and growth-fund conversations open from day one, and what has to be true at every milestone — pricing, channel mix, founder voice, retail footprint — to never close one accidentally?</p>
+        <div class="case-peek">
+          <div class="peek">
+            <div class="peek-h">Acquirer trajectory thesis</div>
+            <div class="peek-out">Three live strategic-buyer archetypes mapped to comparable-exit deal precedents · the bridge growth fund named · pattern-match across 7 transactions in the lane.</div>
+          </div>
+          <div class="peek">
+            <div class="peek-h">Premium retail placement plan</div>
+            <div class="peek-out">Door-by-door rollout sequence · which retailer first, which two wait nine months · merchandising spec per door · gifting motion to seed each conversation.</div>
+          </div>
+          <div class="peek">
+            <div class="peek-h">Phase 2 investor deck</div>
+            <div class="peek-out">Structured for the next round · numbers, lane, comp set, narrative arc · founder voice locked · ready to send the moment the launch traction confirms.</div>
+          </div>
+        </div>
+        <p class="case-more">+ 24 more modules — pricing architecture, premium ICP definition, strategic-partner shortlist, corporate gifting, influencer slate, naming + messaging, trajectory roadmap, founder guardrails, market-capture vs. waiting plan, visual system, brand teardowns, executive summary…</p>
+        <p class="case-out"><b>Outcome:</b> Brand entered launch with the exit lane already mapped, three buyer-archetypes already pattern-matched to live precedents, and the next-round deck ready. <i>Foundation sprint converted into an ongoing AI architect retainer through launch.</i></p>
+      </div>
+
+      <!-- 02 · AI video platform -->
+      <div class="brief-block case-card">
+        <div class="case-tag">02 / 04 · NDA · AI video production platform · 2-person team</div>
+        <h3 class="case-h">Launch infrastructure for a 2-person team entering <em>a crowded incumbent category.</em></h3>
+        <p class="case-lede">10+ launch artifacts shipped · 4-tier hybrid pricing model · 20-prompt public Beta Pack pulling qualified ICP · day-by-day launch-week + $10K bounty + affiliate playbook · upstream model-platform integration plan.</p>
+        <p class="case-q"><b>The question:</b> How does a 2-person team launch an AI workflow tool into a category dominated by Runway, Descript, and CapCut — without burning runway on paid ads that won't survive activation, and without copying enterprise-complex pricing on day one?</p>
+        <div class="case-peek">
+          <div class="peek">
+            <div class="peek-h">Pricing Strategy v1 (hybrid)</div>
+            <div class="peek-out">Generate-tier credits as the front door · Creator / Pro / Team subscription with included usage · heavier actions metered. Defensible against incumbents without copying enterprise complexity.</div>
+          </div>
+          <div class="peek">
+            <div class="peek-h">Beta Prompt Pack (public)</div>
+            <div class="peek-out">20 production-ready prompts shipped as HTML + PDF · pulls qualified ICP into the funnel without a paid-ad burn · doubles as a credibility artifact for affiliate outreach.</div>
+          </div>
+          <div class="peek">
+            <div class="peek-h">Launch-week playbook</div>
+            <div class="peek-out">Day-by-day script for first-live + bounty + affiliate motion · email sequences pre-written · founder talking points locked · post-launch retention loop already wired.</div>
+          </div>
+        </div>
+        <p class="case-more">+ Production use-case workflow, Break-the-Internet launch playbook, $10K bounty launch, affiliate outreach list, beta thank-you sequence, model-platform integration plan, brand inspiration deck, weekly priorities cadence, Amplitude funnel + ICP capture.</p>
+        <p class="case-out"><b>Outcome:</b> Team entered launch with a defensible pricing structure, a public lead magnet pulling qualified ICP, and a written playbook for the first-live, bounty, and affiliate motion. <i>Scope expanded to platform-integration strategy.</i></p>
+      </div>
+
+      <!-- 03 · AI creators (in-house) -->
+      <div class="brief-block case-card">
+        <div class="case-tag">03 / 04 · In-house · AI creator pipeline</div>
+        <h3 class="case-h">Top-performing AI creators reverse-engineered. <em>Turned into the engine that runs my own launch.</em></h3>
+        <p class="case-lede">5,739 images analyzed across 47 top accounts · every recurring prompt pattern, reel format, DM script, and posting cadence traced back to the account it came from.</p>
+        <p class="case-q"><b>The question:</b> What are the highest-performing AI creators actually doing — which prompt patterns, which reel formats, which DM scripts, which posting cadence — and how do you turn evidence from accounts already winning into a documented engine instead of guesswork?</p>
+        <div class="case-peek">
+          <div class="peek">
+            <div class="peek-h">Prompt vault by aesthetic</div>
+            <div class="peek-out">Every recurring image-prompt pattern across the top 47 accounts, sorted by aesthetic and engagement · NB2 / MJ / ChatGPT variants per pattern · realism modifiers tagged.</div>
+          </div>
+          <div class="peek">
+            <div class="peek-h">20-format reel library</div>
+            <div class="peek-out">The 20 reel formats winning right now, with hook + b-roll + caption template per format · NB2 → Veo 3.1 → ffmpeg pipeline shipped · turnaround under an hour per finished reel.</div>
+          </div>
+          <div class="peek">
+            <div class="peek-h">DM funnel + paid-tier ladder</div>
+            <div class="peek-out">DM script library by niche · psychology-sequenced 6-message slow-burn · paid-tier ladder maps free-platform attention → paid conversion without burning the audience.</div>
+          </div>
+        </div>
+        <p class="case-more">+ Top-creator teardown across 47 accounts, posting cadence per platform, engagement bot blueprint, realism modifier playbook, content mix ratio (POV / mirror / 3rd-person), thirst-trap folder system, scroll-stopper formula.</p>
+        <p class="case-out"><b>Outcome:</b> Personal launch went from "post and hope" to a documented engine — every post type, every prompt pattern, every DM script traced to evidence from accounts already winning. <i>Same methodology now powers Sprint Pro engagements for creators.</i></p>
+      </div>
+
+      <!-- 04 · Chris (public) -->
+      <div class="brief-block case-card">
+        <div class="case-tag">04 / 04 · Public client · Local family-event business</div>
+        <h3 class="case-h">"A read on what your feed <em>quietly</em> rewards." <em>Strategy becomes shoots.</em></h3>
+        <p class="case-lede">14 deliverable modules · 30-day content sprint with named shoots · two new revenue tracks scoped from scratch · bookings roughly doubled in the month after delivery.</p>
+        <p class="case-q"><b>The question:</b> One-founder local business in a lane parents have already mentally priced, fighting four established competitors with bigger ad budgets. What's the first move and what's the four-pillar system that makes every post after it compound?</p>
+        <div class="case-peek">
+          <div class="peek">
+            <div class="peek-h">Deep content audit</div>
+            <div class="peek-out">55 most-recent posts scored against engagement · the four content patterns the algorithm rewards in his lane named · the three formats quietly killing reach removed entirely.</div>
+          </div>
+          <div class="peek">
+            <div class="peek-h">30-day content sprint (Kanban)</div>
+            <div class="peek-out">Every shoot named, scripted, dated · hook + b-roll + caption per slot · production sequence ordered for one founder shooting on weekends · ships every post for the next month.</div>
+          </div>
+          <div class="peek">
+            <div class="peek-h">Two new revenue tracks built</div>
+            <div class="peek-out">Therapy-dad collab network · corporate-wellness pop-up engine · each with target list, opening pitch, pricing, and the operator playbook to run them in parallel with the core book.</div>
+          </div>
+        </div>
+        <p class="case-more">+ Adjacent winning-patterns analysis, four content pillars, 30 named &amp; ranked hooks, caption rewrites, Bay Area channel map, event-capture system, KiwiCo subscription model, operator playbook, phase 2 build plan.</p>
+        <p class="case-out"><b>Outcome:</b> Top complaint cluster ("setup took 45 minutes") became the lead offer · two new revenue tracks named and shipped · <i>bookings roughly doubled the month after delivery.</i> <a href="/case-studies/kind-bubbles.html" data-track="Case Card KB Full">Full case study →</a></p>
+      </div>
+
+    </div><!-- /.brief-deck -->
+    <div class="brief-dots" id="caseDots">
+      <button class="brief-dot is-active" data-i="0" aria-label="Case 1"></button>
+      <button class="brief-dot" data-i="1" aria-label="Case 2"></button>
+      <button class="brief-dot" data-i="2" aria-label="Case 3"></button>
+      <button class="brief-dot" data-i="3" aria-label="Case 4"></button>
+    </div>
+    </div><!-- /.brief-deck-wrap -->
   </section>
 
   <!-- ─── 6. FAQ + BOTTOM CTA ──────────────── -->
@@ -1039,13 +1756,45 @@ nav .nav-cta:hover { background: #8C6A12 !important; border-color: #8C6A12 !impo
         <h2 class="h-section">Begin a conversation.</h2>
         <p class="p-lead" style="margin: 0 auto 1.6rem;">Fifteen minutes, no pitch. We figure out what question you actually need answered.</p>
         <a href="/book.html" class="pricing-cta" data-track="Bottom Book">Book a call →</a>
-        <p class="bottom-cta-line">or <a href="https://buy.stripe.com/3cI4gy66rcpx3pgbbCcEw0w" data-track="Bottom Direct Pay">pay direct for Sprint Pro</a></p>
+        <p class="bottom-cta-line">or <a href="mailto:alex@loopworker.com" data-track="Bottom Direct Email">email alex@loopworker.com directly</a></p>
       </div>
       <p class="foot-line">Built by Alex Lamb · LoopWorker · <a href="https://www.loom.com/share/f9cee59f64c44e4092d97c145a4a7ccf" target="_blank" rel="noopener" data-track="Sprint Loom Intro">Watch the 3-min intro</a></p>
     </div>
   </section>
 
 </main>
+
+<script>
+(function () {
+  function wireDeck(deckId, dotsId) {
+    var deck = document.getElementById(deckId);
+    var dotsRoot = document.getElementById(dotsId);
+    if (!deck || !dotsRoot) return;
+    var dots = dotsRoot.querySelectorAll('.brief-dot');
+    var blocks = deck.children;
+    function activeIndex() {
+      var w = blocks[0].getBoundingClientRect().width;
+      var gap = parseFloat(getComputedStyle(deck).columnGap || getComputedStyle(deck).gap || 0) || 0;
+      return Math.round(deck.scrollLeft / (w + gap));
+    }
+    function sync() {
+      var i = Math.max(0, Math.min(dots.length - 1, activeIndex()));
+      for (var n = 0; n < dots.length; n++) dots[n].classList.toggle('is-active', n === i);
+    }
+    deck.addEventListener('scroll', sync, { passive: true });
+    dots.forEach(function (d) {
+      d.addEventListener('click', function () {
+        var i = parseInt(d.dataset.i, 10);
+        var w = blocks[0].getBoundingClientRect().width;
+        var gap = parseFloat(getComputedStyle(deck).columnGap || getComputedStyle(deck).gap || 0) || 0;
+        deck.scrollTo({ left: i * (w + gap), behavior: 'smooth' });
+      });
+    });
+  }
+  wireDeck('briefDeck', 'briefDots');
+  wireDeck('caseDeck', 'caseDots');
+})();
+</script>
 
 </body>
 </html>
