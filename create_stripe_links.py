@@ -38,6 +38,7 @@ TIERS = [
         "description": "48-hour gateway sprint. One signal pulled deep (competitor wall, customer voice, pricing band, proof gap, or channel fit) + one ranked recommendation. PDF.",
         "amount_cents": 75000,
         "recurring": False,
+        "redirect_url": "https://www.loopworker.com/thank-you-snapshot.html",
     },
     {
         "key": "sprint-lite",
@@ -45,6 +46,7 @@ TIERS = [
         "description": "5-day focused market intelligence round. One question, evidence behind it.",
         "amount_cents": 250000,
         "recurring": False,
+        "redirect_url": "https://www.loopworker.com/thank-you-sprint.html?tier=lite",
     },
     {
         "key": "sprint-pro",
@@ -52,6 +54,7 @@ TIERS = [
         "description": "10-day decision brief connecting competitor wall, customer voice, pricing band, channel map, and ranked action sheet.",
         "amount_cents": 850000,
         "recurring": False,
+        "redirect_url": "https://www.loopworker.com/thank-you-sprint.html?tier=pro",
     },
     {
         "key": "sprint-full",
@@ -59,6 +62,7 @@ TIERS = [
         "description": "14-day full strategic round for launch, repositioning, pitch-deck clarity, or higher-stakes market moves.",
         "amount_cents": 2500000,
         "recurring": False,
+        "redirect_url": "https://www.loopworker.com/thank-you-sprint.html?tier=full",
     },
     {
         "key": "systems-retainer",
@@ -66,6 +70,7 @@ TIERS = [
         "description": "Monthly post-Sprint execution retainer. Positioning, content cadence, channel build, conversion fixes, automation wiring. Month-to-month.",
         "amount_cents": 450000,
         "recurring": True,
+        "redirect_url": "https://www.loopworker.com/thank-you-retainer.html",
     },
 ]
 
@@ -140,13 +145,41 @@ def find_or_create_price(tier, product_id):
     return price, existing
 
 
-def create_payment_link(price_id):
-    link = post("/payment_links", {
+def create_payment_link(price_id, redirect_url=None):
+    payload = {
         "line_items[0][price]": price_id,
         "line_items[0][quantity]": 1,
-    })
-    print(f"  created payment link {link['url']}")
+    }
+    if redirect_url:
+        payload["after_completion[type]"] = "redirect"
+        payload["after_completion[redirect][url]"] = redirect_url
+    link = post("/payment_links", payload)
+    print(f"  created payment link {link['url']}" + (f"  →  {redirect_url}" if redirect_url else ""))
     return link
+
+
+def update_payment_link_redirect(link_id, redirect_url):
+    """Update an existing Payment Link's after_completion redirect."""
+    try:
+        post(f"/payment_links/{link_id}", {
+            "after_completion[type]": "redirect",
+            "after_completion[redirect][url]": redirect_url,
+        })
+        print(f"  updated redirect on {link_id} → {redirect_url}")
+        return True
+    except urllib.error.HTTPError as e:
+        print(f"  WARN: could not update redirect on {link_id}: {e}")
+        return False
+
+
+def link_id_from_url(url):
+    """Extract Payment Link ID from buy.stripe.com URL by querying list endpoint."""
+    # Stripe URLs don't expose the plink_ ID directly; fetch list + match by URL
+    data = get("/payment_links?limit=100").get("data", [])
+    for plink in data:
+        if plink.get("url") == url:
+            return plink["id"]
+    return None
 
 
 def main():
@@ -160,15 +193,21 @@ def main():
 
         # Reuse existing link if price unchanged + ledger has matching link
         existing_link = ledger_entry.get("links", {}).get(amount_key)
+        redirect_url = tier.get("redirect_url")
         if existing_link and ledger_entry.get("current_amount_key") == amount_key:
             print(f"  reused payment link {existing_link}")
             link_url = existing_link
+            # Update redirect if specified + differs from ledger
+            if redirect_url and ledger_entry.get("redirect_url") != redirect_url:
+                link_id = link_id_from_url(existing_link)
+                if link_id:
+                    update_payment_link_redirect(link_id, redirect_url)
         else:
             # Deactivate other active prices (kill stale links)
             for p in existing:
                 if p["id"] != price["id"]:
                     deactivate_price(p["id"])
-            link = create_payment_link(price["id"])
+            link = create_payment_link(price["id"], redirect_url=redirect_url)
             link_url = link["url"]
 
         entry = ledger.get(tier["key"], {})
@@ -178,6 +217,8 @@ def main():
         entry.setdefault("links", {})[amount_key] = link_url
         entry["current_amount_key"] = amount_key
         entry["current_link"] = link_url
+        if redirect_url:
+            entry["redirect_url"] = redirect_url
         ledger[tier["key"]] = entry
 
     save_ledger(ledger)

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Sprint · Intake | LoopWorker</title>
+    <meta name="description" content="Your Sprint is paid. Drop the question + business context so we can start the delivery clock.">
+    <link rel="canonical" href="https://www.loopworker.com/thank-you-sprint.html">
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; line-height: 1.6; padding: 4rem 1.5rem; min-height: 100vh; }
+        .container { max-width: 720px; margin: 0 auto; }
+        .eyebrow { color: #D4A017; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; margin-bottom: 1.2rem; display: block; }
+        h1 { color: #FFF; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 1.2rem; }
+        h1 em { color: #D4A017; font-style: italic; font-weight: 500; }
+        .lede { font-size: 1.05rem; color: #B5B5B5; margin-bottom: 2.5rem; max-width: 620px; }
+        .lede strong { color: #FFF; font-weight: 600; }
+        form { display: flex; flex-direction: column; gap: 1.6rem; }
+        .field { display: flex; flex-direction: column; gap: 0.45rem; }
+        .field label { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: #888; font-weight: 600; }
+        .field input, .field textarea, .field select { background: #141414; border: 1px solid #2A2A2A; color: #F4F4F0; padding: 0.9rem 1rem; border-radius: 8px; font-family: inherit; font-size: 0.95rem; outline: none; transition: border-color 0.15s; }
+        .field input:focus, .field textarea:focus, .field select:focus { border-color: #D4A017; }
+        .field textarea { min-height: 110px; resize: vertical; }
+        .field .hint { font-size: 0.82rem; color: #666; margin-top: 0.2rem; }
+        button { background: #D4A017; color: #0A0908; border: none; padding: 1rem 1.6rem; border-radius: 8px; font-family: inherit; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 0.15s; align-self: flex-start; }
+        button:hover { background: #E8B82A; }
+        .footnote { margin-top: 2rem; font-size: 0.85rem; color: #666; line-height: 1.55; padding-top: 1.6rem; border-top: 1px solid #1A1A1A; }
+        .footnote a { color: #888; text-decoration: underline; text-decoration-color: #333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="eyebrow">◆ Payment received · delivery clock starts at intake</span>
+        <h1>Drop the <em>question.</em> We start the clock.</h1>
+        <p class="lede">Your Sprint is paid. We need 3 minutes from you to scope. The clearer the question, the sharper the brief. <strong>Receipt also in your inbox.</strong> Delivery turnaround depends on tier: <span id="ttaTier"></span></p>
+
+        <form action="https://formsubmit.co/alex@loopworker.com" method="POST">
+            <input type="hidden" name="_subject" value="🔔 Sprint Intake — new customer">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://www.loopworker.com/thank-you.html?intake=sprint">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" id="tierField" name="Tier" value="">
+
+            <div class="field">
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="Name" required>
+            </div>
+            <div class="field">
+                <label for="email">Email (where we send the brief)</label>
+                <input type="email" id="email" name="Email" required>
+            </div>
+            <div class="field">
+                <label for="company">Company / brand</label>
+                <input type="text" id="company" name="Company" required>
+            </div>
+            <div class="field">
+                <label for="url">Site URL</label>
+                <input type="url" id="url" name="URL" placeholder="https://" required>
+            </div>
+            <div class="field">
+                <label for="question">What's the question this Sprint needs to answer?</label>
+                <textarea id="question" name="Question" placeholder="Example: We're about to relaunch pricing. Is usage-based the right move for our category, and what tier structure should we ship?" required></textarea>
+                <span class="hint">Be specific. The brief is built around this single question.</span>
+            </div>
+            <div class="field">
+                <label for="stakes">What's the stakes if this decision goes wrong?</label>
+                <textarea id="stakes" name="Stakes" placeholder="Helps us weight evidence. Bigger stakes = deeper proof required."></textarea>
+            </div>
+            <div class="field">
+                <label for="context">ICP, recent moves, what's failing, anything else useful</label>
+                <textarea id="context" name="Context"></textarea>
+            </div>
+            <div class="field">
+                <label for="deadline">Any hard deadline?</label>
+                <input type="text" id="deadline" name="Deadline" placeholder="Optional. Otherwise we deliver inside tier turnaround.">
+            </div>
+
+            <button type="submit">Start the clock →</button>
+            <p class="footnote">14-day refund if the brief doesn't give you a defensible move. — Alex, LoopWorker.<br>Questions: <a href="mailto:alex@loopworker.com">alex@loopworker.com</a></p>
+        </form>
+    </div>
+    <script>
+        const tier = new URLSearchParams(location.search).get('tier') || 'pro';
+        document.getElementById('tierField').value = tier.charAt(0).toUpperCase() + tier.slice(1);
+        const tta = { lite: 'Sprint Lite · 5 days · $2,500', pro: 'Sprint Pro · 10 days · $8,500', full: 'Sprint Full · 14 days · $25,000' };
+        document.getElementById('ttaTier').textContent = tta[tier] || tta.pro;
+        document.title = (tta[tier] || tta.pro) + ' · Intake | LoopWorker';
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Retainer · Kickoff Intake | LoopWorker</title>
+    <meta name="description" content="Systems Retainer paid. Schedule kickoff + scope the first month's priorities.">
+    <link rel="canonical" href="https://www.loopworker.com/thank-you-retainer.html">
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; line-height: 1.6; padding: 4rem 1.5rem; min-height: 100vh; }
+        .container { max-width: 720px; margin: 0 auto; }
+        .eyebrow { color: #D4A017; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; margin-bottom: 1.2rem; display: block; }
+        h1 { color: #FFF; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 1.2rem; }
+        h1 em { color: #D4A017; font-style: italic; font-weight: 500; }
+        .lede { font-size: 1.05rem; color: #B5B5B5; margin-bottom: 2.5rem; max-width: 620px; }
+        .lede strong { color: #FFF; font-weight: 600; }
+        form { display: flex; flex-direction: column; gap: 1.6rem; }
+        .field { display: flex; flex-direction: column; gap: 0.45rem; }
+        .field label { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: #888; font-weight: 600; }
+        .field input, .field textarea { background: #141414; border: 1px solid #2A2A2A; color: #F4F4F0; padding: 0.9rem 1rem; border-radius: 8px; font-family: inherit; font-size: 0.95rem; outline: none; transition: border-color 0.15s; }
+        .field input:focus, .field textarea:focus { border-color: #D4A017; }
+        .field textarea { min-height: 110px; resize: vertical; }
+        button { background: #D4A017; color: #0A0908; border: none; padding: 1rem 1.6rem; border-radius: 8px; font-family: inherit; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 0.15s; align-self: flex-start; }
+        button:hover { background: #E8B82A; }
+        .footnote { margin-top: 2rem; font-size: 0.85rem; color: #666; line-height: 1.55; padding-top: 1.6rem; border-top: 1px solid #1A1A1A; }
+        .footnote a { color: #888; text-decoration: underline; text-decoration-color: #333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="eyebrow">◆ Retainer active · $4,500/mo · month-to-month</span>
+        <h1>Welcome aboard. Let's <em>scope month one.</em></h1>
+        <p class="lede">Your Systems Retainer is live. We'll schedule a 30-min kickoff this week and lock the first month's priorities. <strong>Receipt + monthly billing handled by Stripe automatically.</strong></p>
+
+        <form action="https://formsubmit.co/alex@loopworker.com" method="POST">
+            <input type="hidden" name="_subject" value="🟢 Retainer Kickoff — new subscriber">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://www.loopworker.com/thank-you.html?intake=retainer">
+            <input type="hidden" name="_captcha" value="false">
+
+            <div class="field">
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="Name" required>
+            </div>
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="Email" required>
+            </div>
+            <div class="field">
+                <label for="company">Company / brand</label>
+                <input type="text" id="company" name="Company" required>
+            </div>
+            <div class="field">
+                <label for="sprint">Did you run a Sprint first?</label>
+                <input type="text" id="sprint" name="PriorSprint" placeholder="Yes/No · which tier · roughly when">
+            </div>
+            <div class="field">
+                <label for="priorities">Top 3 things you want shipped in month 1</label>
+                <textarea id="priorities" name="Priorities" placeholder="Specific. Examples: rewrite pricing page · build cold email cadence · ship 8 LinkedIn posts · wire HubSpot to Notion" required></textarea>
+            </div>
+            <div class="field">
+                <label for="slack">Preferred comm channel?</label>
+                <input type="text" id="slack" name="Comms" placeholder="Slack channel · WhatsApp · email · Loom" required>
+            </div>
+            <div class="field">
+                <label for="kickoff">Best 30-min slot this week for kickoff?</label>
+                <input type="text" id="kickoff" name="Kickoff" placeholder="Examples: Wed 2pm ET · Thu morning · async over Loom" required>
+            </div>
+
+            <button type="submit">Send kickoff scope →</button>
+            <p class="footnote">Cancel anytime. Monthly via Stripe. — Alex, LoopWorker.<br>Questions: <a href="mailto:alex@loopworker.com">alex@loopworker.com</a></p>
+        </form>
+    </div>
+</body>
+</html>
