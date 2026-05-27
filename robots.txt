@@ -1,5 +1,11 @@
 User-agent: *
 Allow: /
-Disallow:
+Disallow: /clients/
+Disallow: /proposals/
+Disallow: /audits/
+Disallow: /book/
+Disallow: /offers/
+Disallow: /tools/
+Disallow: /courses/
 
 Sitemap: https://www.loopworker.com/sitemap.xml

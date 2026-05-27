@@ -9,13 +9,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/site-pages.css">
-<title>The Sprint — Market Intelligence + Content Direction | LoopWorker</title>
-<meta name="description" content="A founder-led market intelligence sprint that hands back clarity for your next choices — pricing, positioning, content, color, offer, CTA, and channel — with data behind them before they ship.">
+<title>The Sprint — Signal Intelligence Before Execution | LoopWorker</title>
+<meta name="description" content="A founder-led market intelligence sprint that hands back clarity for your next choices — pricing, positioning, proof, offer, CTA, visual direction, and channel — with evidence before they ship.">
 <link rel="canonical" href="https://www.loopworker.com/sprint.html">
 <meta property="og:type" content="product">
 <meta property="og:url" content="https://www.loopworker.com/sprint.html">
-<meta property="og:title" content="The Sprint — Market Intelligence + Content Direction | LoopWorker">
-<meta property="og:description" content="Clarity for your next choices — pricing, positioning, content, color, offer, CTA, and channel — with market data behind them before they ship.">
+<meta property="og:title" content="The Sprint — Signal Intelligence Before Execution | LoopWorker">
+<meta property="og:description" content="Clarity for your next choices — pricing, positioning, proof, offer, CTA, visual direction, and channel — with market evidence before they ship.">
 <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
 
@@ -27,9 +27,11 @@
   "provider": { "@type": "Organization", "name": "LoopWorker", "url": "https://www.loopworker.com/" },
   "description": "Founder-led private market intelligence rounds built from public market signals: competitor reconstruction, search demand, customer voice, pricing, website conversion, proof gaps, authority channels, and optional pitch-deck research.",
   "offers": [
-    { "@type": "Offer", "name": "Sprint Lite", "url": "https://www.loopworker.com/book.html", "description": "5-day focused market intelligence round. Quote tailored per project." },
-    { "@type": "Offer", "name": "Sprint Pro", "url": "https://www.loopworker.com/book.html", "description": "10-day decision brief connecting several market signals. Quote tailored per project." },
-    { "@type": "Offer", "name": "Sprint Full", "url": "https://www.loopworker.com/book.html", "description": "14-day full strategic round for high-stakes moves. Quote tailored per project." }
+    { "@type": "Offer", "name": "Signal Snapshot", "url": "https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D", "price": "750", "priceCurrency": "USD", "description": "48-hour gateway sprint. One signal pulled deep + ranked recommendation." },
+    { "@type": "Offer", "name": "Sprint Lite", "url": "https://buy.stripe.com/00wcN4bqL6197Fw4NecEw0E", "price": "2500", "priceCurrency": "USD", "description": "5-day focused market intelligence round." },
+    { "@type": "Offer", "name": "Sprint Pro", "url": "https://buy.stripe.com/4gMaEWgL50GP3pgfrScEw0F", "price": "8500", "priceCurrency": "USD", "description": "10-day decision brief connecting several market signals." },
+    { "@type": "Offer", "name": "Sprint Full", "url": "https://buy.stripe.com/28E14m52n9dlgc2gvWcEw0G", "price": "25000", "priceCurrency": "USD", "description": "14-day full strategic round for high-stakes moves." },
+    { "@type": "Offer", "name": "Systems Retainer", "url": "https://buy.stripe.com/eVqfZg7av9dl8JA1B2cEw0H", "price": "4500", "priceCurrency": "USD", "description": "Monthly post-Sprint execution retainer. Month-to-month." }
   ]
 }
 </script>
@@ -1123,6 +1125,157 @@ section:first-of-type { border-top: 0; }
 }
 .pricing-fineprint a:hover { color: #34584F; text-decoration-color: #34584F; }
 
+/* ─── PRICING TIER GRID ────────────────────── */
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+  margin: 2.4rem 0 1.4rem;
+}
+@media (max-width: 880px) { .tier-grid { grid-template-columns: 1fr; } }
+.tier {
+  padding: 1.8rem 1.6rem;
+  background: #FAF8F2;
+  border: 1px solid #E5E1D6;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.tier.featured {
+  background: #0A0908;
+  color: #F4F4F0;
+  border-color: #0A0908;
+  position: relative;
+}
+.tier.featured::before {
+  content: '★ Most picked';
+  position: absolute;
+  top: -10px;
+  left: 1.6rem;
+  background: #34584F;
+  color: #F4F4F0;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.tier .tier-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #6A6660;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.tier.featured .tier-eyebrow { color: #B5B1A6; }
+.tier .tier-price {
+  font-family: 'Tiempos Headline', 'Times New Roman', serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.01em;
+}
+.tier .tier-duration {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6A6660;
+  margin-bottom: 1rem;
+}
+.tier.featured .tier-duration { color: #B5B1A6; }
+.tier p.tier-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #2A2926;
+  margin-bottom: 1.4rem;
+  flex: 1;
+}
+.tier.featured p.tier-desc { color: #D5D2C7; }
+.tier .tier-cta {
+  display: inline-flex;
+  justify-content: center;
+  padding: 0.85rem 1.4rem;
+  background: #0A0908;
+  color: #F4F4F0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border-radius: 999px;
+  border: 1px solid #0A0908;
+  transition: background 0.2s, color 0.2s;
+  margin-top: auto;
+}
+.tier .tier-cta:hover { background: #34584F; border-color: #34584F; }
+.tier.featured .tier-cta { background: #F4F4F0; color: #0A0908; border-color: #F4F4F0; }
+.tier.featured .tier-cta:hover { background: #34584F; color: #F4F4F0; border-color: #34584F; }
+
+.snapshot-callout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.4rem;
+  padding: 1.4rem 1.8rem;
+  background: rgba(52,88,79,0.06);
+  border: 1px solid rgba(52,88,79,0.25);
+  border-radius: 10px;
+  margin: 1.6rem 0 0;
+}
+.snapshot-callout .snap-copy {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  color: #2A2926;
+  line-height: 1.5;
+}
+.snapshot-callout .snap-copy strong { color: #0A0908; font-weight: 700; }
+.snapshot-callout .snap-copy .snap-price { color: #34584F; font-weight: 700; }
+.snapshot-callout a.snap-cta {
+  white-space: nowrap;
+  padding: 0.75rem 1.3rem;
+  background: transparent;
+  color: #34584F;
+  border: 1px solid rgba(52,88,79,0.5);
+  border-radius: 999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.snapshot-callout a.snap-cta:hover { background: rgba(52,88,79,0.1); }
+@media (max-width: 720px) { .snapshot-callout { flex-direction: column; align-items: flex-start; } }
+
+.retainer-strip {
+  margin: 2.4rem 0 1.4rem;
+  padding: 2rem 1.8rem;
+  background: #F4F1E8;
+  border: 1px solid #E5E1D6;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.6rem;
+}
+@media (max-width: 720px) { .retainer-strip { flex-direction: column; align-items: flex-start; } }
+.retainer-strip .retainer-copy h3 {
+  font-family: 'Tiempos Headline', 'Times New Roman', serif;
+  font-size: 1.4rem;
+  margin: 0 0 0.4rem;
+}
+.retainer-strip .retainer-copy p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  color: #2A2926;
+  margin: 0;
+  max-width: 560px;
+}
+
 /* ─── CASE STUDIES ─────────────────────────── */
 .case-list {
   list-style: none;
@@ -1253,6 +1406,78 @@ nav .nav-cta:hover { background: #34584F !important; color: #F4F4F0 !important; 
 .hamburger.active span { background: #F4F4F0 !important; }
 
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@id": "https://www.loopworker.com/#loopworker-aeo",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.loopworker.com/#organization",
+      "name": "LoopWorker",
+      "url": "https://www.loopworker.com/",
+      "slogan": "Evidence before execution."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.loopworker.com/sprint.html#service",
+      "name": "The Sprint",
+      "serviceType": "Private market intelligence sprint",
+      "provider": {
+        "@id": "https://www.loopworker.com/#organization"
+      },
+      "description": "A founder-led market intelligence sprint that maps category signals, buyer language, competitor movement, proof gaps, pricing pressure, channel behavior, and a ranked next move before execution."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does LoopWorker do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LoopWorker pulls live market signals into clear visibility systems so businesses can see what is happening inside a category before they spend on execution."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is The Sprint?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Sprint is a focused market intelligence round that maps category signals, buyer language, competitor movement, proof gaps, pricing pressure, and channel behavior into a ranked next-move sheet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does evidence come before execution?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Execution gets stronger when the market signals are visible first. The Sprint shows the opportunity, hesitation, and proof gaps before positioning, visual, website, or channel work moves forward."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.loopworker.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Sprint",
+          "item": "https://www.loopworker.com/sprint.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <nav>
@@ -1260,6 +1485,7 @@ nav .nav-cta:hover { background: #34584F !important; color: #F4F4F0 !important; 
     <a href="/" class="nav-logo">LoopWorker</a>
     <ul class="nav-links">
       <li><a href="/" style="color:#34584F;">Sprints</a></li>
+      <li><a href="/pricing.html" data-track="Nav Pricing">Pricing</a></li>
       <li><a href="/visuals.html">Visuals</a></li>
       <li><a href="/case-studies.html">Case Studies</a></li>
       <li><a href="/book.html" class="nav-cta" data-track="Nav Book CTA">Book a Call</a></li>
@@ -1283,7 +1509,7 @@ nav .nav-cta:hover { background: #34584F !important; color: #F4F4F0 !important; 
         <div class="hero-copy">
           <p class="h-eyebrow">Private Market Intelligence · LoopWorker</p>
           <h1 class="h-display">Make the next choice with <em>data behind it.</em></h1>
-          <p class="p-lead">The Sprint hands back clarity before you ship. Pricing, positioning, content, color, offer, CTA, channel — whatever choice is next, you get the market evidence behind it and a recommendation you can defend.</p>
+          <p class="p-lead">The Sprint hands back clarity before you ship. Pricing, positioning, proof, offer, CTA, visual direction, channel — whatever choice is next, you get the market evidence behind it and a recommendation you can defend.</p>
 
           <div class="hero-cta-row">
             <a href="#sample" class="cta-link" data-track="Hero See Sample">See a real engagement ↓</a>
@@ -1295,8 +1521,8 @@ nav .nav-cta:hover { background: #34584F !important; color: #F4F4F0 !important; 
           <div class="hero-panel-kicker"><span>Decision Brief</span><span>Before it ships</span></div>
           <h2>Not a report. A pressure-tested choice sheet.</h2>
           <div class="brief-choice-list">
-            <div class="brief-choice"><b>Choice</b><span>Which price, positioning angle, color system, content direction, CTA, offer, or channel gets shipped next.</span></div>
-            <div class="brief-choice"><b>Evidence</b><span>Competitor behavior, customer language, search demand, ad patterns, pricing pages, content performance, and channel fit.</span></div>
+            <div class="brief-choice"><b>Choice</b><span>Which price, positioning angle, proof layer, visual system, CTA, offer, or channel gets shipped next.</span></div>
+            <div class="brief-choice"><b>Evidence</b><span>Competitor behavior, customer language, search demand, ad patterns, pricing pages, proof gaps, and channel fit.</span></div>
             <div class="brief-choice"><b>Output</b><span>A recommendation with receipts: what to do, why it is defensible, and what to ship first.</span></div>
           </div>
           <p class="hero-panel-foot">Tailored to what you are building</p>
@@ -1307,7 +1533,7 @@ nav .nav-cta:hover { background: #34584F !important; color: #F4F4F0 !important; 
         <div class="value-card">
           <span class="value-kicker">Signals</span>
           <strong>We gather the receipts.</strong>
-          <span>Ads, reviews, pricing, search demand, content cadence, competitor pages, comments, and channel clues.</span>
+          <span>Ads, reviews, pricing, search demand, proof gaps, competitor pages, comments, and channel clues.</span>
         </div>
         <div class="value-card">
           <span class="value-kicker">Meaning</span>
@@ -1327,15 +1553,15 @@ nav .nav-cta:hover { background: #34584F !important; color: #F4F4F0 !important; 
   <!-- ─── 2. SAMPLE BRIEF ─────────────────── -->
   <section id="sample">
     <div class="sp-shell">
-      <p class="h-eyebrow">Real engagement · Public client</p>
-      <h2 class="h-section">The brief, end to end. <em>One founder. Six artifacts. Real numbers.</em></h2>
-      <p class="p-lead">Six blocks below = the actual sample brief shipped to a public client. Competitor wall, complaint cluster, content rhythm, pricing band, channel map, and the action sheet that comes out the other end. Same shape every Sprint Pro receives — different answers per business.</p>
+      <p class="h-eyebrow">Sample engagement · Anonymized</p>
+      <h2 class="h-section">The brief, end to end. <em>One founder. Six evidence blocks.</em></h2>
+      <p class="p-lead">Six blocks below show the shape of a Sprint brief: competitor wall, complaint cluster, proof rhythm, pricing band, channel map, and the action sheet that comes out the other end. Same shape every Sprint Pro receives — different answers per business.</p>
       <div class="brief-meta">
-        <span>Founder · public case study</span>
+        <span>Founder · anonymized case study</span>
         <span>Local family-event business</span>
         <span>Founder-led delivery</span>
         <span>Sprint Pro · 10 days</span>
-        <span><a href="/case-studies/kind-bubbles.html" style="color:#34584F; text-decoration:underline;">Full case study →</a></span>
+        <span><a href="/case-studies/bay-area-events-brand.html" style="color:#34584F; text-decoration:underline;">Full case study →</a></span>
       </div>
       <p class="brief-swipe-hint">Swipe through this tailored brief →</p>
     </div>
@@ -1410,7 +1636,7 @@ nav .nav-cta:hover { background: #34584F !important; color: #F4F4F0 !important; 
       <!-- c. cadence -->
       <div class="brief-block">
         <p class="brief-block-num">— 03 / 06</p>
-        <h3 class="h-sub">Their content rhythm.</h3>
+        <h3 class="h-sub">Their channel rhythm.</h3>
         <div class="bb-finding">
           <p class="bb-finding-tag">★ Tuesday + Saturday carry the week</p>
           <p class="bb-finding-text">12 posts in 28 days. Two days do 64% of total reach. <strong>Half the calendar is empty.</strong></p>
@@ -1524,16 +1750,16 @@ nav .nav-cta:hover { background: #34584F !important; color: #F4F4F0 !important; 
         <h3 class="h-sub">What the research becomes.</h3>
         <div class="bb-finding">
           <p class="bb-finding-tag">★ Six moves. Dated. Quantified. Monday-morning ready.</p>
-          <p class="bb-finding-text">The five intelligence blocks collapse into <strong>one short action sheet.</strong> Pricing, content, outreach, cadence, offer, funnel — each with a specific move, not a category.</p>
+          <p class="bb-finding-text">The five intelligence blocks collapse into <strong>one short action sheet.</strong> Pricing, proof, outreach, cadence, offer, CTA — each with a specific move, not a category.</p>
           <p class="bb-finding-stat">Same shape every engagement · different answers per business · ranked by 30-day lift</p>
         </div>
         <ul class="action-list">
           <li><span class="act-tag">PRICING</span><span class="act-text">Anchor party-package at <b>$525</b>. Y2 lift to $640 once 25 testimonials land. Keep entry tier under $400 to capture school-PTA budgets.</span></li>
-          <li><span class="act-tag">CONTENT</span><span class="act-text">Three reel recipes to cut next week — "9pm Bubble Reset," "What every shy kid does in the first 5 seconds," "Corporate pop-up." Hook + b-roll + caption-format already specified.</span></li>
+          <li><span class="act-tag">PROOF</span><span class="act-text">Three proof assets to ship next week — setup clarity, first-five-seconds behavior, and corporate-fit evidence. Hook, shot logic, and caption format specified.</span></li>
           <li><span class="act-tag">OUTREACH</span><span class="act-text">Next ten warm targets — names, channel, opening line. Five Bay Area moms, three school-district directors, two corporate-wellness coordinators. Pitch this month or wait six.</span></li>
           <li><span class="act-tag">CADENCE</span><span class="act-text">Best post days = <b>Tue + Sun 6–8pm</b>. Carousel beats single image 2.4× in his lane. Drop the studio-still format entirely.</span></li>
           <li><span class="act-tag">OFFER</span><span class="act-text">Lead with <i>setup-time guarantee</i>. Top complaint = "took 45 minutes." Owning that phrase pulls a measurable share from the four starred competitors.</span></li>
-          <li><span class="act-tag">FUNNEL</span><span class="act-text">Replace the "Contact" CTA with a <b>same-day quote form</b>. Three fields. Pricing band visible. Removes the 3-click pricing leak from the audit.</span></li>
+          <li><span class="act-tag">CTA</span><span class="act-text">Replace the "Contact" CTA with a <b>same-day quote form</b>. Three fields. Pricing band visible. Removes the 3-click pricing leak from the audit.</span></li>
         </ul>
         <p class="bb-source">Source · synthesized from blocks 01–05 · ranked by predicted 30-day lift · dates assigned to founder calendar</p>
       </div>
@@ -1577,9 +1803,9 @@ nav .nav-cta:hover { background: #34584F !important; color: #F4F4F0 !important; 
       <p class="h-eyebrow">Who builds these</p>
       <h2 class="h-section">One head. <em>Built around your business.</em></h2>
       <div class="founder-note">
-        <p>I'm Alex. I've spent 17 years across marketing and production, from paid acquisition to organic content systems. I've been inside the work: offers, creative direction, shoots, funnels, launch plans, founder positioning, sales pages, and the day-to-day mechanics that make something actually ship.</p>
-        <p>The Sprint is built from that range. It is not a generic audit. I look for the choice that matters next, then pull the evidence around it: reviews, ads, pricing pages, content patterns, channel data, search demand, and buyer language. If the lever is pricing, we price. If it's color, content, CTA, sales page, or positioning, that is where the research goes.</p>
-        <p>Every Sprint is tailored to what you're building. Same research discipline, different question every time: creator reach, SaaS positioning, local bookings, DTC launch, pitch-deck clarity. The frame moves with the business.</p>
+        <p>I'm Alex. I've spent 17 years inside market, offer, and execution work: paid acquisition, founder positioning, sales pages, launch plans, customer language, proof structure, and the day-to-day mechanics that make something actually ship.</p>
+        <p>The Sprint is built from that range. It is not a generic audit. I look for the choice that matters next, then pull the evidence around it: reviews, ads, pricing pages, proof patterns, channel data, search demand, and buyer language. If the lever is pricing, we price. If it is visual direction, proof, CTA, sales page, or positioning, that is where the research goes.</p>
+        <p>Every Sprint is tailored to what you're building. Same research discipline, different question every time: creator reach, AI-platform positioning, local bookings, DTC launch, pitch-deck clarity. The frame moves with the business.</p>
       </div>
 
       <div class="testimonials">
@@ -1603,10 +1829,47 @@ nav .nav-cta:hover { background: #34584F !important; color: #F4F4F0 !important; 
   <section class="pricing" id="pricing">
     <div class="sp-shell">
       <p class="h-eyebrow">Pricing</p>
-      <h2 class="h-section">Sprint Pro · <em>10 days, founder-led.</em></h2>
-      <p class="p-lead">Ten days, founder-led delivery, one tailored decision brief. The sections change based on what you're building and which choices need evidence before they ship. Scope and quote tailored per project.</p>
-      <a href="/book.html" class="pricing-cta" data-track="Pricing Sprint Pro">Begin a Sprint Pro →</a>
-      <p class="pricing-fineprint">Smaller question? <a href="/book.html" data-track="Pricing Sprint Lite">Sprint Lite, 5 days</a>. Bigger move? <a href="/book.html" data-track="Pricing Sprint Full">Sprint Full, 14 days</a>. Or <a href="/book.html" data-track="Pricing Book">book a call</a> to figure out which fits.</p>
+      <h2 class="h-section">Three Sprints. <em>One decision brief.</em></h2>
+      <p class="p-lead">Founder-led delivery. Pick by the size of the question. Most clients start at Sprint Pro and attach a Systems Retainer once the brief lands.</p>
+
+      <div class="snapshot-callout">
+        <div class="snap-copy"><strong>Want to test the waters first?</strong> A <strong>Signal Snapshot</strong> pulls one signal deep and hands back a ranked recommendation in 48 hours. <span class="snap-price">$750</span>.</div>
+        <a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" class="snap-cta" data-track="Sprint Page Snapshot">Begin Snapshot →</a>
+      </div>
+
+      <div class="tier-grid">
+        <div class="tier">
+          <span class="tier-eyebrow">Sprint Lite</span>
+          <div class="tier-price">$2,500</div>
+          <div class="tier-duration">5 days · founder-led</div>
+          <p class="tier-desc">One focused research round: competitor reconstruction, search demand, pricing, proof gap, or website conversion. One question, evidence behind it.</p>
+          <a href="https://buy.stripe.com/00wcN4bqL6197Fw4NecEw0E" class="tier-cta" data-track="Sprint Page Tier Lite">Begin Sprint Lite →</a>
+        </div>
+        <div class="tier featured">
+          <span class="tier-eyebrow">Sprint Pro</span>
+          <div class="tier-price">$8,500</div>
+          <div class="tier-duration">10 days · founder-led</div>
+          <p class="tier-desc">Competitor wall, customer-voice cluster, proof map, pricing band, channel map, and ranked action sheet. The standard connected market brief.</p>
+          <a href="https://buy.stripe.com/4gMaEWgL50GP3pgfrScEw0F" class="tier-cta" data-track="Sprint Page Tier Pro">Begin Sprint Pro →</a>
+        </div>
+        <div class="tier">
+          <span class="tier-eyebrow">Sprint Full</span>
+          <div class="tier-price">$25,000</div>
+          <div class="tier-duration">14 days · founder-led</div>
+          <p class="tier-desc">Full strategic round for launch, repositioning, pitch-deck clarity, or a higher-stakes market move. Pricing architecture, channel build, roadmap.</p>
+          <a href="https://buy.stripe.com/28E14m52n9dlgc2gvWcEw0G" class="tier-cta" data-track="Sprint Page Tier Full">Begin Sprint Full →</a>
+        </div>
+      </div>
+
+      <div class="retainer-strip">
+        <div class="retainer-copy">
+          <h3>Systems Retainer · $4,500/mo</h3>
+          <p>After the Sprint, attach a month-to-month execution retainer. We ship the action sheet: positioning, content cadence, channel build, conversion fixes, automation wiring. Cancel anytime.</p>
+        </div>
+        <a href="https://buy.stripe.com/eVqfZg7av9dl8JA1B2cEw0H" class="pricing-cta" data-track="Sprint Page Retainer">Attach Retainer →</a>
+      </div>
+
+      <p class="pricing-fineprint">Not sure which? <a href="/book.html" data-track="Pricing Book">Book a 15-minute signal review</a> and we'll pick the smallest Sprint that answers your question well. Refund: if the brief lands and you can't act on a single line, write back within 14 days for a full refund.</p>
     </div>
   </section>
 
@@ -1615,7 +1878,7 @@ nav .nav-cta:hover { background: #34584F !important; color: #F4F4F0 !important; 
     <div class="sp-shell">
       <p class="h-eyebrow">Recent engagements</p>
       <h2 class="h-section">Four engagements. <em>60+ artifacts shipped.</em></h2>
-      <p class="p-lead">Every brief reshapes around what the business is actually building. Luxury exit thesis. AI-platform launch infrastructure. Creator content engine. Local-business bookings. Same depth — different question, different proof stack, different thing to ship.</p>
+      <p class="p-lead">Every brief reshapes around what the business is actually building. Luxury exit thesis. AI-platform launch infrastructure. Creator visibility map. Local-business bookings. Same depth — different question, different proof stack, different thing to ship.</p>
       <p class="brief-swipe-hint">Swipe through the four engagements →</p>
     </div>
 
@@ -1643,7 +1906,7 @@ nav .nav-cta:hover { background: #34584F !important; color: #F4F4F0 !important; 
           </div>
         </div>
         <p class="case-more">+ 24 more modules — pricing architecture, premium ICP definition, strategic-partner shortlist, corporate gifting, influencer slate, naming + messaging, trajectory roadmap, founder guardrails, market-capture vs. waiting plan, visual system, brand teardowns, executive summary…</p>
-        <p class="case-out"><b>Outcome:</b> Brand entered launch with the exit lane already mapped, three buyer-archetypes already pattern-matched to live precedents, and the next-round deck ready. <i>Foundation sprint converted into an ongoing AI architect retainer through launch.</i></p>
+        <p class="case-out"><b>Outcome:</b> Brand entered launch with the exit lane already mapped, three buyer-archetypes already pattern-matched to live precedents, and the next-round deck ready. <i>Foundation sprint converted into ongoing launch advisory.</i></p>
       </div>
 
       <!-- 02 · AI video platform -->
@@ -1686,36 +1949,36 @@ nav .nav-cta:hover { background: #34584F !important; color: #F4F4F0 !important; 
             <div class="peek-out">The 20 reel formats winning right now, with hook + b-roll + caption template per format · NB2 → Veo 3.1 → ffmpeg pipeline shipped · turnaround under an hour per finished reel.</div>
           </div>
           <div class="peek">
-            <div class="peek-h">DM funnel + paid-tier ladder</div>
-            <div class="peek-out">DM script library by niche · psychology-sequenced 6-message slow-burn · paid-tier ladder maps free-platform attention → paid conversion without burning the audience.</div>
+            <div class="peek-h">Offer path + decision ladder</div>
+            <div class="peek-out">Audience questions mapped by intent · proof sequence by stage · paid offer path documented without pushing the wrong segment too early.</div>
           </div>
         </div>
-        <p class="case-more">+ Top-creator teardown across 47 accounts, posting cadence per platform, engagement bot blueprint, realism modifier playbook, content mix ratio (POV / mirror / 3rd-person), thirst-trap folder system, scroll-stopper formula.</p>
-        <p class="case-out"><b>Outcome:</b> Personal launch went from "post and hope" to a documented engine — every post type, every prompt pattern, every DM script traced to evidence from accounts already winning. <i>Same methodology now powers Sprint Pro engagements for creators.</i></p>
+        <p class="case-more">+ Top-creator teardown across 47 accounts, posting cadence per platform, prompt-pattern map, visual realism rules, format mix, and repeatable proof cues.</p>
+        <p class="case-out"><b>Outcome:</b> Personal launch moved from guesswork to a documented visibility system — every format and prompt pattern traced to evidence from accounts already winning. <i>Same methodology now powers Sprint Pro engagements for creators.</i></p>
       </div>
 
-      <!-- 04 · Chris (public) -->
+      <!-- 04 · Local events brand (anonymized) -->
       <div class="brief-block case-card">
-        <div class="case-tag">04 / 04 · Public client · Local family-event business</div>
+        <div class="case-tag">04 / 04 · Anonymized · Local family-event business</div>
         <h3 class="case-h">"A read on what your feed <em>quietly</em> rewards." <em>Strategy becomes shoots.</em></h3>
-        <p class="case-lede">14 deliverable modules · 30-day content sprint with named shoots · two new revenue tracks scoped from scratch · bookings roughly doubled in the month after delivery.</p>
+        <p class="case-lede">Signal audit · 30-day proof map · two new revenue tracks scoped from the evidence · inquiry quality improved after delivery.</p>
         <p class="case-q"><b>The question:</b> One-founder local business in a lane parents have already mentally priced, fighting four established competitors with bigger ad budgets. What's the first move and what's the four-pillar system that makes every post after it compound?</p>
         <div class="case-peek">
           <div class="peek">
-            <div class="peek-h">Deep content audit</div>
-            <div class="peek-out">55 most-recent posts scored against engagement · the four content patterns the algorithm rewards in his lane named · the three formats quietly killing reach removed entirely.</div>
+            <div class="peek-h">Deep signal audit</div>
+            <div class="peek-out">55 most-recent posts scored against saves and shares · the four proof patterns the audience rewarded named · the three low-signal formats removed entirely.</div>
           </div>
           <div class="peek">
-            <div class="peek-h">30-day content sprint (Kanban)</div>
-            <div class="peek-out">Every shoot named, scripted, dated · hook + b-roll + caption per slot · production sequence ordered for one founder shooting on weekends · ships every post for the next month.</div>
+            <div class="peek-h">30-day proof map</div>
+            <div class="peek-out">Every asset named, dated, and tied to a signal · hook + visual proof + caption logic per slot · ordered for one founder producing in limited windows.</div>
           </div>
           <div class="peek">
             <div class="peek-h">Two new revenue tracks built</div>
-            <div class="peek-out">Therapy-dad collab network · corporate-wellness pop-up engine · each with target list, opening pitch, pricing, and the operator playbook to run them in parallel with the core book.</div>
+            <div class="peek-out">Adjacent partnership tracks · corporate pop-up path · each with target list, opening angle, pricing logic, and the operator notes to run beside the core offer.</div>
           </div>
         </div>
-        <p class="case-more">+ Adjacent winning-patterns analysis, four content pillars, 30 named &amp; ranked hooks, caption rewrites, Bay Area channel map, event-capture system, KiwiCo subscription model, operator playbook, phase 2 build plan.</p>
-        <p class="case-out"><b>Outcome:</b> Top complaint cluster ("setup took 45 minutes") became the lead offer · two new revenue tracks named and shipped · <i>bookings roughly doubled the month after delivery.</i> <a href="/case-studies/kind-bubbles.html" data-track="Case Card KB Full">Full case study →</a></p>
+        <p class="case-more">+ Adjacent pattern analysis, four proof pillars, 30 ranked hooks, caption rewrites, local channel map, event-capture system, operator playbook, phase 2 build plan.</p>
+        <p class="case-out"><b>Outcome:</b> Top complaint cluster became the lead offer · two new revenue tracks named · next moves tied back to the signal map. <a href="/case-studies/bay-area-events-brand.html" data-track="Case Card KB Full">Full case study →</a></p>
       </div>
 
     </div><!-- /.brief-deck -->

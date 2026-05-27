@@ -1,22 +1,37 @@
 # LoopWorker Website — loopworker-site
 
-Static HTML site for LoopWorker DFY brand photography service.
+Static HTML site for LoopWorker — **Market Intelligence for Modern Brands**. Tagline: *Evidence before execution.*
 
-## Pages
+Positioning pivoted May 21 2026 from DFY brand photography → market intelligence Sprint + Systems Retainer.
+
+## Core pages
 | File | Page |
 |------|------|
-| `index.html` | Homepage |
-| `restaurants.html` | Restaurant vertical |
-| `med-spa.html` | Med spa vertical |
-| `about.html` | About page |
-| `case-studies.html` | Case studies |
-| `free-resources.html` | Lead magnets / free resources |
-| `terms.html` | Terms |
+| `index.html` | Homepage (Market Intelligence for Modern Brands) |
+| `sprint.html` | The Sprint — full product walkthrough + 3-tier pricing |
+| `pricing.html` | Pricing — Sprint Lite/Pro/Full + Systems Retainer |
+| `services.html` | Implementation / signal environments |
+| `case-studies.html` | Case studies (4 anonymized engagements) |
+| `about.html` | About |
+| `book.html` | Booking page (Cal.com embed pending) |
+| `free-resources.html` | Lead magnets |
+| `audit.html` | Standalone audit form |
 | `404.html` | 404 page |
-| `audits/sample-audit.html` | Sample audit landing page |
+
+## Sprint ladder (live May 26 2026)
+- **Signal Snapshot** — $750 / 48 hours — gateway, one signal pulled deep (test-the-waters)
+- **Sprint Lite** — $2,500 / 5 days — one focused research round
+- **Sprint Pro** ★ — $8,500 / 10 days — standard connected market brief
+- **Sprint Full** — $25,000 / 14 days — launch / repositioning / pitch-deck
+- **Systems Retainer** — $4,500/mo — post-Sprint execution
+
+CTAs route directly to Stripe Payment Links. Ledger: `Memory/Code_Scripts/STRIPE_PAYMENT_LINKS.json`. Refresh links via `python3 create_stripe_links.py` (needs STRIPE_SECRET_KEY in env or `Projects/LoopWorker/.env`).
+
+## Killed May 26 2026 (off-positioning)
+restaurants · med-spa · fitness · ecommerce · clothing · real-estate · hotels (top-level vertical pages) + book/restaurant · book/medspa · book/fitness. Internal links re-routed to /sprint.html or removed.
 
 ## Blog (30+ SEO articles)
-`blog/` — cocktail photography, restaurant menus, nail salons, daycares, bike shops, med spa retention, AI photography verticals, content strategy, brand mood boards, media kits, TikTok for restaurants, Canva vs custom, and more.
+`blog/` — kept for SEO. Some vertical-specific articles (restaurant social media, ecommerce IG, med spa, fitness studio) remain — still rank, still drive traffic into Sprint funnel.
 
 ## Scripts
 ```bash

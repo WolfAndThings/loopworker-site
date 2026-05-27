@@ -9,23 +9,83 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/site-pages.css">
-    <title>About LoopWorker</title>
-    <meta name="description" content="About LoopWorker and the approach behind social media content designed to bring in customers instead of empty reach.">
+    <title>About LoopWorker | Signal Intelligence Studio</title>
+    <meta name="description" content="LoopWorker is a founder-led signal intelligence studio that pulls live market evidence into visibility systems for clearer business decisions.">
     <link rel="canonical" href="https://www.loopworker.com/about.html">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@id": "https://www.loopworker.com/#loopworker-aeo",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.loopworker.com/#organization",
+      "name": "LoopWorker",
+      "url": "https://www.loopworker.com/",
+      "slogan": "Evidence before execution."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does LoopWorker do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LoopWorker pulls live market signals into clear visibility systems so businesses can see what is happening inside a category before they spend on execution."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is The Sprint?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Sprint is a focused market intelligence round that maps category signals, buyer language, competitor movement, proof gaps, pricing pressure, and channel behavior into a ranked next-move sheet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does evidence come before execution?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Execution gets stronger when the market signals are visible first. The Sprint shows the opportunity, hesitation, and proof gaps before positioning, visual, website, or channel work moves forward."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.loopworker.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://www.loopworker.com/about.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
     <nav>
         <div class="nav-inner">
             <a href="/" class="nav-logo">LoopWorker</a>
             <ul class="nav-links">
-                <li><a href="/services.html">Services</a></li>
-                <li><a href="/pricing.html">Pricing</a></li>
-                <li><a href="/offers/">Offers</a></li>
-                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="/sprint.html">The Sprint</a></li>
+                <li><a href="/pricing.html" data-track="Nav Pricing">Pricing</a></li>
                 <li><a href="/case-studies.html">Case Studies</a></li>
-                <li><a href="/faq.html">FAQ</a></li>
-                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/blog/">Signals</a></li>
+                <li><a href="/about.html">About</a></li>
                 <li><a href="/book.html" class="nav-cta" data-track="Nav Book CTA">Book a Call</a></li>
             </ul>
             <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
@@ -34,14 +94,12 @@
         </div>
     </nav>
     <div class="mobile-nav" id="mobileNav">
-        <a href="/services.html">Services</a>
-        <a href="/pricing.html">Pricing</a>
-        <a href="/offers/">Offers</a>
-        <a href="/portfolio.html">Portfolio</a>
+        <a href="/sprint.html">The Sprint</a>
+        <a href="/pricing.html" data-track="Mobile Nav Pricing">Pricing</a>
         <a href="/case-studies.html">Case Studies</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/blog/">Blog</a>
-        <a href="/book.html" class="nav-cta" data-track="Nav Book CTA">Book a Call</a>
+        <a href="/blog/">Signals</a>
+        <a href="/about.html">About</a>
+        <a href="/book.html" class="nav-cta" data-track="Mobile Nav Book CTA">Book a Call</a>
     </div>
 
     <main>
@@ -49,17 +107,21 @@
             <div class="container page-hero-grid">
                 <div class="hero-copy">
                     <span class="eyebrow">About</span>
-                    <h1>LoopWorker exists to make business content more <em>useful</em>.</h1>
-                    <p>Too much business content is either generic, trend-chasing, or built for vanity metrics. LoopWorker is built around a simpler question: what would make someone choose this business instead of scrolling past it?</p>
+                    <h1>LoopWorker exists to make market movement <em>visible</em>.</h1>
+                    <p>The signals are already there: search behavior, competitor moves, customer language, pricing pressure, proof gaps, channel drift. Most businesses just cannot see them clearly enough to act with confidence.</p>
                     <div class="hero-actions">
-                        <a href="/#audit-form" class="btn btn-primary" data-track="About Hero Audit CTA">Get Free Audit</a>
-                        <a href="/services.html" class="btn btn-outline" data-track="About Hero Services CTA">See Services</a>
+                        <a href="/sprint.html" class="btn btn-primary" data-track="About Hero Sprint CTA">See The Sprint</a>
+                        <a href="/book.html" class="btn btn-outline" data-track="About Hero Book CTA">Book a Call</a>
                     </div>
                 </div>
-                <div class="hero-media">
-                    <img src="/images/cards/card_59.webp" alt="LoopWorker brand example">
-                    <strong>Built around buyer action</strong>
-                    <p>The work focuses on the mix of positioning, visuals, hooks, and CTAs that actually move a customer closer to choosing you.</p>
+                <div class="signal-panel" aria-label="LoopWorker operating view">
+                    <div class="signal-panel-top"><div class="signal-panel-title">Operating View</div><div class="signal-panel-pill">Founder-led</div></div>
+                    <div class="signal-panel-body">
+                        <div class="signal-row"><div><span>Pull</span><strong>Live public signals</strong></div><p>Competitors, reviews, search, ads, pricing, proof, and channel behavior.</p></div>
+                        <div class="signal-row"><div><span>Map</span><strong>What the pattern means</strong></div><p>Where the market is moving, what buyers need to believe, and what should not ship yet.</p></div>
+                        <div class="signal-row"><div><span>Decide</span><strong>What happens next</strong></div><p>A ranked recommendation built before creative, content, offers, or paid spend move forward.</p></div>
+                        <div class="signal-panel-decision"><span>Position</span><p>The signals are already there. LoopWorker helps businesses see them clearly.</p></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -68,20 +130,20 @@
             <div class="container">
                 <div class="section-intro">
                     <span class="eyebrow">Approach</span>
-                    <h2>The job is not “post more.” The job is make the content pull its weight.</h2>
+                    <h2>The job is not to have more opinions. The job is to see the category clearly.</h2>
                 </div>
                 <div class="grid-3">
                     <div class="card">
                         <h3>Start with the decision</h3>
-                        <p>Why does a customer say yes to this business in the first place? The content should reinforce that.</p>
+                        <p>Pricing, positioning, proof, channel, launch, offer, visual direction. The Sprint is scoped around the decision that needs evidence.</p>
                     </div>
                     <div class="card">
-                        <h3>Fix weak structure</h3>
-                        <p>Most accounts do not need more effort. They need clearer positioning, stronger hooks, and better next steps.</p>
+                        <h3>Pull live signals</h3>
+                        <p>Competitors, search demand, customer voice, pricing pages, ads, content cadence, review language, and proof gaps are mapped into one view.</p>
                     </div>
                     <div class="card">
-                        <h3>Keep it commercially useful</h3>
-                        <p>Views matter only if they connect to visits, bookings, inquiries, or repeat customers.</p>
+                        <h3>Make the next move visible</h3>
+                        <p>The output is not a mood board or a theory deck. It is an evidence-backed recommendation with a ranked action sheet.</p>
                     </div>
                 </div>
             </div>
@@ -94,18 +156,18 @@
                         <div class="kicker">Best Fit</div>
                         <h3>Who usually benefits most</h3>
                         <ul class="list">
-                            <li>Restaurants, med spas, gyms, real estate brands, hotels, ecommerce brands, and local businesses.</li>
-                            <li>Founders or teams posting consistently without seeing enough business impact.</li>
-                            <li>Businesses with real demand that need content to support it more effectively.</li>
+                            <li>Founders and operators with a real decision to make and a market already leaving clues.</li>
+                            <li>Teams preparing a launch, repositioning, pricing move, channel shift, or proof reset.</li>
+                            <li>Businesses that want clarity before spending more on execution.</li>
                         </ul>
                     </div>
                     <div class="card">
-                        <div class="kicker">Why Audit First</div>
-                        <h3>The free audit keeps the decision honest.</h3>
+                        <div class="kicker">Why Sprint First</div>
+                        <h3>The Sprint keeps execution honest.</h3>
                         <ul class="list">
-                            <li>You see what is broken before buying anything.</li>
-                            <li>You get a faster read on which package actually fits.</li>
-                            <li>You leave with useful fixes even if you do not move forward right away.</li>
+                            <li>It separates what the market is showing from what the room prefers.</li>
+                            <li>It gives downstream work a source of truth.</li>
+                            <li>It makes recommendations defendable under follow-up questions.</li>
                         </ul>
                     </div>
                 </div>
@@ -116,10 +178,10 @@
             <div class="container">
                 <div class="cta-box">
                     <span class="eyebrow">Next Step</span>
-                    <h2>If your content looks active but does not feel persuasive, start with the audit.</h2>
-                    <p>I will show you where clarity, trust, or urgency is missing and what I would fix first.</p>
+                    <h2>If the next move feels expensive or unclear, start with visibility.</h2>
+                    <p>Bring the decision. LoopWorker will map the signals around it and show what the market is already saying.</p>
                     <div class="hero-actions">
-                        <a href="/#audit-form" class="btn btn-primary" data-track="About Bottom Audit CTA">Get Free Audit</a>
+                        <a href="/sprint.html" class="btn btn-primary" data-track="About Bottom Sprint CTA">See The Sprint</a>
                         <a href="mailto:alex@loopworker.com" class="btn btn-outline" data-track="About Bottom Email CTA">Email Alex</a>
                     </div>
                 </div>
@@ -131,20 +193,20 @@
         <div class="container footer-inner">
             <div>
                 <div class="footer-brand">LoopWorker</div>
-                <div class="footer-meta">Helping businesses turn content into customers.</div>
+                <div class="footer-meta">Evidence before execution.</div>
             </div>
             <ul class="footer-links">
-                <li><a href="/services.html">Services</a></li>
-                <li><a href="/pricing.html">Pricing</a></li>
-                <li><a href="/portfolio.html">Portfolio</a></li>
+                <li><a href="/sprint.html">The Sprint</a></li>
+                <li><a href="/pricing.html" data-track="Nav Pricing">Pricing</a></li>
                 <li><a href="/case-studies.html">Case Studies</a></li>
-                <li><a href="/free-resources.html">Free Resources</a></li>
-                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/blog/">Signals</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/privacy.html">Privacy</a></li>
+                <li><a href="/terms.html">Terms</a></li>
             </ul>
             <div class="footer-contact">
                 <a href="mailto:alex@loopworker.com">alex@loopworker.com</a><br>
                 <a href="https://instagram.com/loop.worker" target="_blank" rel="noopener">@loop.worker</a>
-                <div class="footer-legal"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
             </div>
         </div>
     </footer>

@@ -28,6 +28,7 @@
       .pricing-card.featured::before { content: 'Most chosen'; position: absolute; top: -10px; left: 1.8rem; background: #FFF; color: #0A0A0A; padding: 0.18rem 0.7rem; border-radius: 4px; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
       .pricing-card .tier-name { font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: #888; margin-bottom: 0.4rem; }
       .pricing-card .tier-price { font-size: 2.5rem; font-weight: 800; color: #FFF; line-height: 1; margin-bottom: 0.3rem; letter-spacing: -0.02em; }
+      .pricing-card .tier-duration { color: #888; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.9rem; }
       .pricing-card .tier-sub { font-size: 0.88rem; color: #999; margin-bottom: 1.4rem; }
       .pricing-card ul { list-style: none; margin: 0 0 2rem; padding: 0; }
       .pricing-card ul li { padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); color: #B5B5B5; font-size: 0.92rem; padding-left: 1.6rem; position: relative; }
@@ -60,6 +61,16 @@
       .enterprise-strip .ent-copy p { color: #888; font-size: 0.9rem; margin: 0; max-width: 540px; }
       .enterprise-strip .ent-cta { white-space: nowrap; }
 
+      .snapshot-callout { display: flex; justify-content: space-between; align-items: center; gap: 1.4rem; padding: 1.4rem 1.8rem; background: rgba(212,160,23,0.06); border: 1px solid rgba(212,160,23,0.25); border-radius: 10px; margin: 0 0 2rem; }
+      .snapshot-callout .snap-copy { font-size: 0.92rem; color: #C8C5BB; line-height: 1.5; }
+      .snapshot-callout .snap-copy strong { color: #F4F4F0; font-weight: 600; }
+      .snapshot-callout .snap-copy .snap-price { color: #D4A017; font-weight: 700; }
+      .snapshot-callout a.snap-cta { white-space: nowrap; padding: 0.7rem 1.2rem; background: transparent; color: #D4A017; border: 1px solid rgba(212,160,23,0.5); border-radius: 6px; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background 0.15s; }
+      .snapshot-callout a.snap-cta:hover { background: rgba(212,160,23,0.12); }
+      @media (max-width: 720px) { .snapshot-callout { flex-direction: column; align-items: flex-start; } }
+      .retainer-section { padding: 4rem 0 1rem; }
+      .retainer-section h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 1rem; }
+      .retainer-section p.lead { max-width: 700px; }
       .faq-block { padding: 4rem 0 5rem; }
       .faq-block h2 { font-size: 1.4rem; margin-bottom: 1.5rem; }
       .faq-q { padding: 1.3rem 1.5rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; margin-bottom: 1rem; }
@@ -72,13 +83,11 @@
         <div class="nav-inner">
             <a href="/" class="nav-logo">LoopWorker</a>
             <ul class="nav-links">
-                <li><a href="/services.html">Services</a></li>
-                <li><a href="/pricing.html">Pricing</a></li>
-                <li><a href="/offers/">Offers</a></li>
+                <li><a href="/sprint.html">The Sprint</a></li>
                 <li><a href="/case-studies.html">Case Studies</a></li>
-                <li><a href="/portfolio.html">Portfolio</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="/book.html" class="nav-cta" data-track="Pricing Nav Book CTA">Book a Call</a></li>
+                <li><a href="/blog/">Signals</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/book.html" class="nav-cta" data-track="Nav Book CTA">Book a Call</a></li>
             </ul>
             <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
                 <span></span><span></span><span></span>
@@ -86,13 +95,11 @@
         </div>
     </nav>
     <div class="mobile-nav" id="mobileNav">
-        <a href="/services.html">Services</a>
-        <a href="/pricing.html">Pricing</a>
-        <a href="/offers/">Offers</a>
+        <a href="/sprint.html">The Sprint</a>
         <a href="/case-studies.html">Case Studies</a>
-        <a href="/portfolio.html">Portfolio</a>
-        <a href="/blog/">Blog</a>
-        <a href="/book.html" class="nav-cta">Book a Call</a>
+        <a href="/blog/">Signals</a>
+        <a href="/about.html">About</a>
+        <a href="/book.html" class="nav-cta" data-track="Mobile Nav Book CTA">Book a Call</a>
     </div>
 
     <main>
@@ -102,26 +109,34 @@
                 <h1>Strategy with <em>receipts.</em> 5 to 14 days, founder-led.</h1>
                 <p style="max-width:700px;color:#B5B5B5;">Most clients start with a Sprint — founder-led private market intelligence built from public signals: competitors, customer voice, search demand, pricing, website conversion, proof gaps, authority channels, and the action sheet that tells you what to ship first.</p>
 
+                <div class="snapshot-callout">
+                    <div class="snap-copy"><strong>Not ready for a full Sprint?</strong> Try a <strong>Signal Snapshot</strong> first — one signal pulled deep, ranked recommendation, 48-hour delivery. <span class="snap-price">$750</span>.</div>
+                    <a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" class="snap-cta" data-track="Pricing Snapshot Book">Begin Snapshot →</a>
+                </div>
+
                 <div class="pricing-grid" style="margin:2rem 0;">
                     <div class="pricing-card outline">
                         <span class="tier-name">Sprint Lite</span>
-                        <div class="tier-price">5 days</div>
+                        <div class="tier-price">$2,500</div>
+                        <div class="tier-duration">5 days · founder-led</div>
                         <div class="tier-sub">One focused research round: competitor reconstruction, search demand, pricing, proof gap, or website conversion</div>
-                        <a href="/book.html" class="tier-cta" data-track="Pricing Sprint Lite Book">Begin a Sprint Lite →</a>
+                        <a href="https://buy.stripe.com/00wcN4bqL6197Fw4NecEw0E" class="tier-cta" data-track="Pricing Sprint Lite Book">Begin a Sprint Lite →</a>
                         <a href="/sprint.html#pricing" style="color:#888;font-size:0.85rem;text-align:center;margin-top:0.5rem;text-decoration:none;">See Sprint details →</a>
                     </div>
                     <div class="pricing-card featured">
                         <span class="tier-name">Sprint Pro · ★ Most picked</span>
-                        <div class="tier-price">10 days</div>
-                        <div class="tier-sub">Competitor wall, customer-voice cluster, content rhythm, pricing band, channel map, and ranked action sheet</div>
-                        <a href="/book.html" class="tier-cta" data-track="Pricing Sprint Pro Book">Begin a Sprint Pro →</a>
+                        <div class="tier-price">$8,500</div>
+                        <div class="tier-duration">10 days · founder-led</div>
+                        <div class="tier-sub">Competitor wall, customer-voice cluster, proof map, pricing band, channel map, and ranked action sheet</div>
+                        <a href="https://buy.stripe.com/4gMaEWgL50GP3pgfrScEw0F" class="tier-cta" data-track="Pricing Sprint Pro Book">Begin a Sprint Pro →</a>
                         <a href="/sprint.html#sample" style="color:#888;font-size:0.85rem;text-align:center;margin-top:0.5rem;text-decoration:none;">See Pro sample →</a>
                     </div>
                     <div class="pricing-card outline">
                         <span class="tier-name">Sprint Full</span>
-                        <div class="tier-price">14 days</div>
+                        <div class="tier-price">$25,000</div>
+                        <div class="tier-duration">14 days · founder-led</div>
                         <div class="tier-sub">Full strategic round for market gap, competitor path, website, content, ads, pricing, proof, and roadmap</div>
-                        <a href="/book.html" class="tier-cta" data-track="Pricing Sprint Full Book">Begin a Sprint Full →</a>
+                        <a href="https://buy.stripe.com/28E14m52n9dlgc2gvWcEw0G" class="tier-cta" data-track="Pricing Sprint Full Book">Begin a Sprint Full →</a>
                         <a href="/sprint.html#pricing" style="color:#888;font-size:0.85rem;text-align:center;margin-top:0.5rem;text-decoration:none;">See Sprint details →</a>
                     </div>
                 </div>
@@ -145,7 +160,7 @@
                     <div class="alt-tier">
                         <div class="alt-name">Sprint Pro</div>
                         <div class="alt-price">10 days</div>
-                        <p>The core Sprint: competitors, reviews, search, pricing, content rhythm, channel map, and a ranked action sheet.</p>
+                        <p>The core Sprint: competitors, reviews, search, pricing, proof patterns, channel map, and a ranked action sheet.</p>
                         <a href="/book.html" data-track="Book Sprint Pro Alt">Begin a Sprint Pro →</a>
                     </div>
                     <div class="alt-tier">
@@ -180,6 +195,19 @@
                     </tbody>
                 </table>
 
+                <section class="retainer-section">
+                    <span class="eyebrow">◆ After the Sprint</span>
+                    <h2>Systems Retainer · <em>$4,500/mo</em></h2>
+                    <p class="lead">Most Sprint clients attach a monthly Systems Retainer once the brief lands. We turn the recommendation into shipped work: positioning rewrites, content cadence, channel build, conversion fixes, automation wiring. Month-to-month. Cancel anytime.</p>
+                    <div class="enterprise-strip">
+                        <div class="ent-copy">
+                            <h3>$4,500/month · post-Sprint execution</h3>
+                            <p>Continuous shipping against the Sprint action sheet. Founder-led with subcontracted hands. Slack channel, weekly check-in, monthly market refresh, scope adjusted as signals shift.</p>
+                        </div>
+                        <a href="https://buy.stripe.com/eVqfZg7av9dl8JA1B2cEw0H" class="ent-cta btn btn-primary" data-track="Pricing Retainer Book">Attach a Retainer</a>
+                    </div>
+                </section>
+
                 <section class="faq-block">
                     <h2>Pricing FAQ</h2>
                     <div class="faq-q">
@@ -206,8 +234,8 @@
 
                 <div style="text-align:center;padding:3rem 0 1rem;">
                     <h2 style="margin-bottom:1rem;">Still deciding?</h2>
-                    <p style="margin:0 auto 2rem;">Book the discovery call. We will talk through the decision you need answered and choose the smallest Sprint that can answer it well.</p>
-                    <a href="/book.html" class="btn btn-primary" data-track="Pricing Footer Book CTA">Book a Discovery Call</a>
+                    <p style="margin:0 auto 2rem;">Book the signal review. We will talk through the decision you need answered and choose the smallest Sprint that can answer it well.</p>
+                    <a href="/book.html" class="btn btn-primary" data-track="Pricing Footer Book CTA">Book a Signal Review</a>
                 </div>
             </div>
         </section>
@@ -217,20 +245,19 @@
         <div class="container footer-inner">
             <div>
                 <div class="footer-brand">LoopWorker</div>
-                <div class="footer-meta">Helping businesses turn content into customers.</div>
+                <div class="footer-meta">Evidence before execution.</div>
             </div>
             <ul class="footer-links">
-                <li><a href="/services.html">Services</a></li>
-                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/sprint.html">The Sprint</a></li>
                 <li><a href="/case-studies.html">Case Studies</a></li>
-                <li><a href="/portfolio.html">Portfolio</a></li>
-                <li><a href="/free-resources.html">Free Resources</a></li>
-                <li><a href="/faq.html">FAQ</a></li>
+                <li><a href="/blog/">Signals</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/privacy.html">Privacy</a></li>
+                <li><a href="/terms.html">Terms</a></li>
             </ul>
             <div class="footer-contact">
                 <a href="mailto:alex@loopworker.com">alex@loopworker.com</a><br>
                 <a href="https://instagram.com/loop.worker" target="_blank" rel="noopener">@loop.worker</a>
-                <div class="footer-legal"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
             </div>
         </div>
     </footer>
@@ -244,9 +271,11 @@
       "provider": { "@type": "Organization", "name": "LoopWorker", "url": "https://www.loopworker.com/" },
       "description": "Founder-led private market intelligence rounds built from public market signals: competitor reconstruction, search demand, customer voice, pricing, website conversion, proof gaps, authority channels, and optional pitch-deck research.",
       "offers": [
-        { "@type": "Offer", "name": "Sprint Lite", "url": "https://www.loopworker.com/book.html", "description": "5-day focused market intelligence round. Quote tailored per project." },
-        { "@type": "Offer", "name": "Sprint Pro", "url": "https://www.loopworker.com/book.html", "description": "10-day decision brief connecting several market signals. Quote tailored per project." },
-        { "@type": "Offer", "name": "Sprint Full", "url": "https://www.loopworker.com/book.html", "description": "14-day full strategic round for high-stakes moves. Quote tailored per project." }
+        { "@type": "Offer", "name": "Signal Snapshot", "url": "https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D", "price": "750", "priceCurrency": "USD", "description": "48-hour gateway sprint. One signal pulled deep + ranked recommendation." },
+        { "@type": "Offer", "name": "Sprint Lite", "url": "https://buy.stripe.com/00wcN4bqL6197Fw4NecEw0E", "price": "2500", "priceCurrency": "USD", "description": "5-day focused market intelligence round." },
+        { "@type": "Offer", "name": "Sprint Pro", "url": "https://buy.stripe.com/4gMaEWgL50GP3pgfrScEw0F", "price": "8500", "priceCurrency": "USD", "description": "10-day decision brief connecting several market signals." },
+        { "@type": "Offer", "name": "Sprint Full", "url": "https://buy.stripe.com/28E14m52n9dlgc2gvWcEw0G", "price": "25000", "priceCurrency": "USD", "description": "14-day full strategic round for high-stakes moves." },
+        { "@type": "Offer", "name": "Systems Retainer", "url": "https://buy.stripe.com/eVqfZg7av9dl8JA1B2cEw0H", "price": "4500", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M", "price": "4500", "priceCurrency": "USD" }, "description": "Monthly post-Sprint execution retainer." }
       ]
     }
     </script>

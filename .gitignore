@@ -1,1 +1,12 @@
- node_modules/ __pycache__/ .DS_Store *.pyc .env
+node_modules/
+__pycache__/
+.DS_Store
+*.pyc
+.env
+
+# Private client/proposal work should not be published with the site.
+clients/
+proposals/
+audits/*.pdf
+audits/*-brand.html
+images/case_studies/references/

@@ -1,0 +1,26 @@
+# LoopWorker
+
+LoopWorker is a founder-led signal intelligence studio.
+
+The company pulls live market signals into clear visibility systems so operators can see what is already happening inside a category before they spend on execution.
+
+Core idea: The signals are already there. Most businesses just cannot see them clearly.
+
+Primary offer:
+- The Sprint: a focused market intelligence round before execution.
+- Sprint output: category signals, buyer language, competitor movement, proof gaps, pricing pressure, channel behavior, and a ranked next-move sheet.
+
+Best public pages:
+- Home: https://www.loopworker.com/
+- The Sprint: https://www.loopworker.com/sprint.html
+- Signal Intelligence: https://www.loopworker.com/signal-intelligence.html
+- Case Studies: https://www.loopworker.com/case-studies.html
+- Signals: https://www.loopworker.com/blog/
+- Book a Signal Review: https://www.loopworker.com/book.html
+
+Useful definitions:
+- Signal intelligence: the practice of pulling visible market evidence into a working view before making positioning, pricing, proof, channel, or execution decisions.
+- Visibility system: an organized view of category evidence that makes the next business move easier to defend.
+- Evidence before execution: LoopWorker's operating principle that execution should follow observable market evidence, not preference.
+
+LoopWorker is not a generic posting vendor, freelancer portfolio, production shop, or software dashboard.

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="robots" content="noindex,follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
     <script defer src="/site-pages.js"></script>
@@ -36,12 +37,11 @@
         <div class="nav-inner">
             <a href="/" class="nav-logo">LoopWorker</a>
             <ul class="nav-links">
-                <li><a href="/services.html">Services</a></li>
-                <li><a href="/pricing.html">Pricing</a></li>
-                <li><a href="/offers/">Offers</a></li>
-                <li><a href="/tools/">Tools</a></li>
-                <li><a href="/blog/">Blog</a></li>
-                <li><a href="/book.html" class="nav-cta">Book a Call</a></li>
+                <li><a href="/sprint.html">The Sprint</a></li>
+                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/blog/">Signals</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/book.html" class="nav-cta" data-track="Nav Book CTA">Book a Call</a></li>
             </ul>
             <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
                 <span></span><span></span><span></span>
@@ -49,12 +49,11 @@
         </div>
     </nav>
     <div class="mobile-nav" id="mobileNav">
-        <a href="/services.html">Services</a>
-        <a href="/pricing.html">Pricing</a>
-        <a href="/offers/">Offers</a>
-        <a href="/tools/">Tools</a>
-        <a href="/blog/">Blog</a>
-        <a href="/book.html" class="nav-cta">Book a Call</a>
+        <a href="/sprint.html">The Sprint</a>
+        <a href="/case-studies.html">Case Studies</a>
+        <a href="/blog/">Signals</a>
+        <a href="/about.html">About</a>
+        <a href="/book.html" class="nav-cta" data-track="Mobile Nav Book CTA">Book a Call</a>
     </div>
     <main>
         <section class="tool-shell">
@@ -147,18 +146,19 @@ function rewrite() {
         <div class="container footer-inner">
             <div>
                 <div class="footer-brand">LoopWorker</div>
-                <div class="footer-meta">Helping businesses turn content into customers.</div>
+                <div class="footer-meta">Evidence before execution.</div>
             </div>
             <ul class="footer-links">
-                <li><a href="/services.html">Services</a></li>
-                <li><a href="/pricing.html">Pricing</a></li>
-                <li><a href="/tools/">All Tools</a></li>
+                <li><a href="/sprint.html">The Sprint</a></li>
                 <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/blog/">Signals</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/privacy.html">Privacy</a></li>
+                <li><a href="/terms.html">Terms</a></li>
             </ul>
             <div class="footer-contact">
                 <a href="mailto:alex@loopworker.com">alex@loopworker.com</a><br>
                 <a href="https://instagram.com/loop.worker" target="_blank" rel="noopener">@loop.worker</a>
-                <div class="footer-legal"><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
             </div>
         </div>
     </footer>

@@ -225,7 +225,7 @@ def generate_html(post):
     </div>
 </article>
 
-<section class="author-bio" style="max-width:700px;margin:0 auto;padding:3rem 2rem;border-top:1px solid rgba(255,255,255,0.06);"><div style="display:flex;gap:1.2rem;align-items:flex-start;"><div><div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.12em;color:#666;margin-bottom:0.4rem;">Written by</div><div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.4rem;">Alex Lamb</div><p style="font-size:0.9rem;color:#999;line-height:1.6;margin:0;">I help businesses turn their social media into a customer engine. If your content gets views but not customers, <a href="/#audit-form" style="color:#FFF;text-decoration:underline;">get a free audit</a> and I\'ll show you what to fix.</p></div></div></section><footer style="text-align:center;padding:3rem 2rem;color:#444;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;border-top:1px solid rgba(255,255,255,0.05);">&copy; 2026 LoopWorker. Helping businesses turn content into customers.</footer>
+<section class="author-bio" style="max-width:700px;margin:0 auto;padding:3rem 2rem;border-top:1px solid rgba(255,255,255,0.06);"><div style="display:flex;gap:1.2rem;align-items:flex-start;"><div><div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.12em;color:#666;margin-bottom:0.4rem;">Written by</div><div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.4rem;">Alex Lamb</div><p style="font-size:0.9rem;color:#999;line-height:1.6;margin:0;">LoopWorker pulls live market signals into visibility systems. If the next move is unclear, <a href="/book.html" style="color:#FFF;text-decoration:underline;">book a signal review</a> and we will identify what the market is already showing.</p></div></div></section><footer style="text-align:center;padding:3rem 2rem;color:#444;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;border-top:1px solid rgba(255,255,255,0.05);">&copy; 2026 LoopWorker. Evidence before execution.</footer>
 
 </body>
 </html>'''
@@ -268,7 +268,7 @@ def get_all_posts():
 
     <p>The typical brewery Instagram is a grid of can releases shot on a white table, the occasional blurry taproom photo, and a story repost from someone who tagged them. This is not a strategy. It is a digital lost-and-found box.</p>
 
-    <p>The problem is not effort — most brewery owners work 70-hour weeks. The problem is that nobody told them their taproom is a content studio. Every pour, every crowded Friday night, every brewer covered in grain dust is a piece of content that makes someone want to visit.</p>"""),
+    <p>The problem is not effort — most brewery owners work 70-hour weeks. The problem is that nobody told them their taproom is a visible signal surface. Every pour, every crowded Friday night, every brewer covered in grain dust is a piece of content that makes someone want to visit.</p>"""),
 
             ("Your taproom is your best marketing asset", """<p>The single most effective brewery marketing move is treating your physical space as a content machine. The taproom is where the experience happens, and the experience is what sells.</p>
 
@@ -1497,7 +1497,7 @@ def get_all_posts():
         ("seo-vs-ppc-for-local-business", "SEO vs PPC for Local Business: Where to Invest Your Marketing Budget", "Compare search engine optimization and pay-per-click advertising for local businesses. Timeline, cost, ROI, and strategy.", "seo vs ppc, local seo vs google ads, organic vs paid search, local business seo, google ads vs seo"),
         ("in-house-marketing-vs-outsourced", "In-House Marketing vs Outsourcing: What Makes Sense for Your Business Size", "Compare building an in-house marketing team vs outsourcing. Cost analysis, capabilities, and the hybrid approach.", "in house vs outsourced marketing, marketing outsourcing, hire marketer, marketing team small business"),
         ("professional-photos-vs-phone-photos", "Professional Photography vs Phone Photography for Business: Honest Comparison", "Compare DSLR professional photography and modern smartphone photography for business use. When each makes sense and how to maximize phone quality.", "professional vs phone photography, iphone business photos, phone vs camera business, dslr vs iphone"),
-        ("monthly-retainer-vs-project-based-creative", "Monthly Retainer vs Project-Based: How to Structure Creative Services", "Compare monthly retainer and per-project pricing for creative work. Which model works for your business and budget.", "retainer vs project based, creative services pricing, marketing retainer, project based marketing"),
+        ("monthly-retainer-vs-project-based-creative", "Monthly Retainer vs Project-Based: How to Structure Evidence-Led Services", "Compare monthly retainer and per-project pricing for creative work. Which model works for your business and budget.", "retainer vs project based, evidence-led services pricing, marketing retainer, project based marketing"),
         ("pinterest-vs-instagram-for-business", "Pinterest vs Instagram for Business: Which Visual Platform Wins?", "Compare Pinterest and Instagram for business marketing. Demographics, content lifespan, traffic, and which is better for your niche.", "pinterest vs instagram, pinterest business, instagram business, visual platform comparison, pinterest marketing"),
     ]
 
@@ -1676,7 +1676,7 @@ def get_all_posts():
             ],
             "related": [
                 ("/blog/small-business-marketing-budget.html", "Small Business Marketing Budget Guide"),
-                ("/blog/how-to-price-creative-services.html", "How to Price Creative Services"),
+                ("/blog/how-to-price-creative-services.html", "How to Price Evidence-Led Services"),
                 ("/blog/ai-brand-photography-cost.html", "AI Brand Photography Cost Guide"),
                 ("/blog/how-much-does-social-media-management-cost.html", "Social Media Management Cost Guide"),
             ],

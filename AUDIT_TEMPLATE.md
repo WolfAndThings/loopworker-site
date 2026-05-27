@@ -10,7 +10,7 @@ This is the reusable base for creating client audits. When someone submits the f
 2. Scrape their Instagram (last 20-30 posts) using Playwright
 3. Analyze their content using the framework below
 4. Fill in each section with their specific data
-5. Export as a clean HTML page (like kirahri-strategy)
+5. Export as a clean HTML page (like creator-strategy)
 6. Send to their email
 
 ---
@@ -52,7 +52,7 @@ Actively Seeking Customers: [Yes/No]
 - [Thing 3]
 
 **The One Rule:**
-[One sentence that captures the core insight — like kirahri's "The cosplay is the costume. The content is the story."]
+[One sentence that captures the core insight — like the creator's "The cosplay is the costume. The content is the story."]
 
 ---
 
@@ -246,7 +246,7 @@ I can create your full content package — posts, captions, hooks, and a posting
 
 ## DELIVERY FORMAT
 
-Export as a single HTML page (dark theme, matches loopworker.com style) like the kirahri-strategy pages. Include:
+Export as a single HTML page (dark theme, matches loopworker.com style) like the creator-strategy pages. Include:
 - All sections above filled in with their data
 - Actual screenshots of their posts (top/bottom performers)
 - Before/after caption examples using their real content

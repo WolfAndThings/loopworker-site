@@ -37,12 +37,12 @@ NEW_FOOTER = '''<section class="author-bio" style="max-width:700px;margin:0 auto
         <div>
             <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.12em;color:#666;margin-bottom:0.4rem;">Written by</div>
             <div style="font-size:1.1rem;font-weight:700;color:#FFF;margin-bottom:0.4rem;">Alex Lamb</div>
-            <p style="font-size:0.9rem;color:#999;line-height:1.6;margin:0;">I help businesses turn their social media into a customer engine. If your content gets views but not customers, <a href="/#audit-form" style="color:#FFF;text-decoration:underline;">get a free audit</a> and I\\'ll show you what to fix.</p>
+            <p style="font-size:0.9rem;color:#999;line-height:1.6;margin:0;">LoopWorker pulls live market signals into visibility systems. If the next move is unclear, <a href="/book.html" style="color:#FFF;text-decoration:underline;">book a signal review</a> and we will identify what the market is already showing.</p>
         </div>
     </div>
 </section>
 
-<footer style="text-align:center;padding:3rem 2rem;color:#444;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;border-top:1px solid rgba(255,255,255,0.05);">&copy; 2026 LoopWorker. Helping businesses turn content into customers.</footer>'''
+<footer style="text-align:center;padding:3rem 2rem;color:#444;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;border-top:1px solid rgba(255,255,255,0.05);">&copy; 2026 LoopWorker. Evidence before execution.</footer>'''
 
 # CTA section copy replacement - swap old positioning language
 OLD_POSITIONING = [

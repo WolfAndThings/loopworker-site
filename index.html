@@ -189,7 +189,7 @@
       .upsell-foot p { font-size: 0.92rem; color: #888; margin-top: 1rem; }
       .upsell-foot a.btn { display: inline-block; }
 
-      /* HOMEPAGE CHRIS QUOTE — same shape as sprint.html */
+      /* HOMEPAGE FOUNDER QUOTE — same shape as sprint.html */
       .home-quote-section { padding: 4.5rem 2rem 3.5rem; }
       .home-quote-section .container-wide { max-width: 1100px; margin: 0 auto; }
       .home-quote-block {
@@ -326,8 +326,37 @@
       .v4-btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.9rem 1.4rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: -0.005em; text-decoration: none; border-radius: 8px; transition: all 0.16s ease; }
       .v4-btn-primary { background: #FFF; color: #050505; border: 1px solid #FFF; }
       .v4-btn-primary:hover { background: #E8E8E8; }
+      .v4-hero-snap { margin-top: 1rem; font-size: 0.88rem; color: #888; }
+      .v4-hero-snap a { color: #D4A017; text-decoration: none; border-bottom: 1px dotted rgba(212,160,23,0.4); padding-bottom: 1px; transition: border-color 0.15s, color 0.15s; }
+      .v4-hero-snap a:hover { color: #F4C842; border-bottom-color: rgba(212,160,23,0.9); }
       .v4-btn-secondary { background: transparent; color: var(--v4-text); border: 1px solid var(--v4-line-strong); }
       .v4-btn-secondary:hover { border-color: rgba(255,255,255,0.32); background: rgba(255,255,255,0.03); }
+      .v4-hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr); gap: 3rem; align-items: center; }
+      .v4-hero-copy .v4-actions { margin-bottom: 0; }
+      .v4-hero-proof { align-self: stretch; display: flex; align-items: center; }
+      @media (max-width: 920px) {
+        .v4-hero-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+        .v4-hero-proof { align-items: stretch; }
+      }
+      .signal-console { width: 100%; border: 1px solid var(--v4-line-strong); border-radius: 14px; background: rgba(7,7,7,0.78); box-shadow: 0 28px 80px rgba(0,0,0,0.35); overflow: hidden; }
+      .console-topline { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.1rem; border-bottom: 1px solid var(--v4-line); }
+      .console-title { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--v4-soft); font-weight: 700; }
+      .console-pill { flex-shrink: 0; padding: 0.28rem 0.55rem; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; color: #9F9F9F; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; }
+      .signal-stream { padding: 0.5rem 1.1rem 0.2rem; }
+      .signal-row { display: grid; grid-template-columns: 0.62fr 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--v4-line); }
+      .signal-row:last-child { border-bottom: 0; }
+      .signal-source { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--v4-mute); line-height: 1.45; }
+      .signal-source strong { display: block; color: var(--v4-text); font-size: 1rem; letter-spacing: -0.02em; text-transform: none; margin-bottom: 0.15rem; }
+      .signal-finding { color: #D7D7D7; font-size: 0.9rem; line-height: 1.5; }
+      .signal-meter { height: 4px; margin-top: 0.65rem; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden; }
+      .meter-fill { display: block; height: 100%; width: var(--w, 64%); background: linear-gradient(90deg, rgba(255,255,255,0.38), rgba(212,160,23,0.72)); }
+      .console-decision { margin: 0 1.1rem 1.1rem; padding: 1rem; border: 1px solid rgba(212,160,23,0.26); border-radius: 10px; background: rgba(212,160,23,0.055); }
+      .decision-label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 800; margin-bottom: 0.5rem; }
+      .console-decision p { color: #EFEFEF; font-size: 0.92rem; line-height: 1.55; max-width: none; margin: 0; }
+      @media (max-width: 520px) {
+        .signal-row { grid-template-columns: 1fr; gap: 0.45rem; }
+        .console-topline { align-items: flex-start; flex-direction: column; }
+      }
 
       /* Inline stat cards */
       .v4-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 1080px; }
@@ -387,6 +416,7 @@
       .v4-offer-list li::before { content: ''; position: absolute; left: 0; top: 1.05rem; width: 6px; height: 1px; background: var(--v4-mute); }
       .v4-offer-cta { display: inline-flex; align-items: center; justify-content: center; padding: 0.85rem 1.2rem; border: 1px solid var(--v4-line-strong); border-radius: 8px; color: var(--v4-text); text-decoration: none; font-size: 0.86rem; font-weight: 600; transition: all 0.16s; }
       .v4-offer-cta:hover { background: #FFF; color: #050505; border-color: #FFF; }
+      .v4-offer-card.featured { background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01)); border-color: rgba(255,255,255,0.18); }
 
       /* Proof cards */
       .v4-proof-visual { padding: 3rem 2rem; border: 1px solid var(--v4-line); border-radius: 14px; background: rgba(255,255,255,0.012); margin-bottom: 2.4rem; position: relative; overflow: hidden; min-height: 260px; }
@@ -422,6 +452,19 @@
       .v4-proof-card { padding: 1.6rem 1.4rem; border: 1px solid var(--v4-line); border-radius: 12px; background: rgba(255,255,255,0.012); }
       .v4-proof-card h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.02rem; letter-spacing: -0.01em; color: var(--v4-text); margin-bottom: 0.55rem; }
       .v4-proof-card p { font-size: 0.88rem; color: var(--v4-mute); line-height: 1.55; }
+      .evidence-board { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 0.7rem; position: relative; }
+      .evidence-panel { border: 1px solid var(--v4-line-strong); border-radius: 10px; background: rgba(5,5,5,0.72); padding: 1rem; min-height: 142px; }
+      .evidence-panel.wide { grid-row: span 2; }
+      .evidence-label { font-size: 0.62rem; letter-spacing: 0.17em; text-transform: uppercase; color: var(--v4-mute); font-weight: 700; margin-bottom: 0.7rem; }
+      .evidence-line { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.55rem 0; border-bottom: 1px solid var(--v4-line); font-size: 0.8rem; color: var(--v4-soft); }
+      .evidence-line:last-child { border-bottom: 0; }
+      .evidence-line b { color: var(--v4-text); font-weight: 700; }
+      .quote-chip { padding: 0.7rem 0.75rem; margin-bottom: 0.55rem; border-left: 2px solid rgba(212,160,23,0.55); background: rgba(255,255,255,0.035); color: #D6D6D6; font-size: 0.82rem; line-height: 1.45; }
+      .quote-chip:last-child { margin-bottom: 0; }
+      .pattern-bars { display: flex; align-items: flex-end; gap: 4px; height: 78px; margin-top: 1rem; }
+      .pattern-bars span { flex: 1; height: var(--h); background: rgba(255,255,255,0.17); border-radius: 2px 2px 0 0; }
+      .pattern-bars span.hot { background: rgba(212,160,23,0.62); }
+      @media (max-width: 760px) { .evidence-board { grid-template-columns: 1fr; } .evidence-panel.wide { grid-row: auto; } }
 
       /* Final CTA */
       .v4-final { padding: 7rem 2rem 8rem; text-align: center; }
@@ -439,25 +482,25 @@
       footer { background: #050505 !important; border-top: 1px solid var(--v4-line); }
       .footer-brand { background: none !important; -webkit-text-fill-color: var(--v4-text) !important; color: var(--v4-text) !important; }
     </style>
-    <title>Market Intelligence for Modern Brands · LoopWorker</title>
-    <meta name="description" content="LoopWorker analyzes what is actually driving attention, pipeline, and growth in your industry. Then turns it into repeatable systems, content, workflows, and positioning.">
+    <title>Signal Intelligence for High-Leverage Decisions · LoopWorker</title>
+    <meta name="description" content="LoopWorker pulls live market signals into clear visibility systems so operators can see what is happening before they execute.">
     <link rel="canonical" href="https://www.loopworker.com/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.loopworker.com/">
-    <meta property="og:title" content="Market Intelligence for Modern Brands · LoopWorker">
-    <meta property="og:description" content="Analyze what is actually working in your market. Then build systems around it.">
+    <meta property="og:title" content="Signal Intelligence for High-Leverage Decisions · LoopWorker">
+    <meta property="og:description" content="Evidence before execution. LoopWorker reveals what is already moving inside a category.">
     <meta property="og:site_name" content="LoopWorker">
     <meta property="og:locale" content="en_US">
-    <meta property="og:image" content="https://www.loopworker.com/images/case_studies/references/myburger/01.jpg">
-    <meta property="og:image:alt" content="LoopWorker. Market intelligence and leverage systems.">
+    <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+    <meta property="og:image:alt" content="LoopWorker. Signal intelligence for high-leverage decisions.">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Market Intelligence for Modern Brands · LoopWorker">
-    <meta name="twitter:description" content="LoopWorker analyzes what is actually working in your market. Then builds systems around it.">
-    <meta name="twitter:image" content="https://www.loopworker.com/images/case_studies/references/myburger/01.jpg">
+    <meta name="twitter:title" content="Signal Intelligence for High-Leverage Decisions · LoopWorker">
+    <meta name="twitter:description" content="LoopWorker pulls live market signals into clear visibility systems before execution.">
+    <meta name="twitter:image" content="https://www.loopworker.com/images/cards/card_02.webp">
     <meta name="twitter:image:alt" content="LoopWorker. Signal intelligence systems for founder-led decisions.">
 
     <!-- Google Verification -->
@@ -882,21 +925,6 @@
             width: auto;
             height: auto;
             opacity: 1;
-        }
-
-        .proof-logo.myburger {
-            max-width: 188px;
-            max-height: 38px;
-        }
-
-        .proof-logo.marina {
-            max-width: 214px;
-            max-height: 46px;
-        }
-
-        .proof-logo.bouldering {
-            width: 72px;
-            height: 72px;
         }
 
         .proof-card-name {
@@ -2381,6 +2409,16 @@
                 letter-spacing: 0.04em;
                 text-transform: uppercase;
                 box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(120%);
+                transition: opacity 0.2s ease, transform 0.2s ease;
+            }
+
+            .mobile-sticky-cta.is-visible {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateY(0);
             }
         }
 
@@ -2421,7 +2459,7 @@
                 "@type": "Organization",
                 "name": "LoopWorker",
                 "url": "https://www.loopworker.com",
-                "logo": "https://www.loopworker.com/images/case_studies/references/myburger/01.jpg",
+                "logo": "https://www.loopworker.com/images/cards/card_02.webp",
                 "email": "alex@loopworker.com",
                 "sameAs": ["https://instagram.com/loop.worker"]
             },
@@ -2436,7 +2474,7 @@
                     "Competitor reconstruction",
                     "Customer voice research",
                     "Pricing and positioning strategy",
-                    "Content direction"
+                    "Proof and channel direction"
                 ]
             }
         ]
@@ -2475,6 +2513,67 @@
         }
     }
     </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@id": "https://www.loopworker.com/#homepage-aeo",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.loopworker.com/#organization",
+      "name": "LoopWorker",
+      "url": "https://www.loopworker.com/",
+      "slogan": "Evidence before execution.",
+      "description": "LoopWorker is a founder-led signal intelligence studio that pulls live market evidence into visibility systems for clearer decisions before execution."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.loopworker.com/#website",
+      "name": "LoopWorker",
+      "url": "https://www.loopworker.com/",
+      "publisher": {
+        "@id": "https://www.loopworker.com/#organization"
+      },
+      "about": [
+        "signal intelligence",
+        "market signals",
+        "evidence before execution",
+        "visibility systems"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is LoopWorker?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LoopWorker is a founder-led signal intelligence studio that pulls live market evidence into visibility systems before execution."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does The Sprint produce?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Sprint produces a mapped view of category signals, buyer language, competitor movement, proof gaps, pricing pressure, channel behavior, and a ranked next-move sheet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does evidence before execution mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It means pricing, positioning, proof, visual direction, channel, and website decisions should be shaped by observable market evidence before execution begins."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -2484,9 +2583,10 @@
             <a href="/" class="nav-logo">LoopWorker</a>
             <ul class="nav-links">
                 <li><a href="/sprint.html" data-track="Nav Sprint">The Sprint</a></li>
-                <li><a href="/services.html" data-track="Nav Services">Services</a></li>
+                <li><a href="/pricing.html" data-track="Nav Pricing">Pricing</a></li>
                 <li><a href="/case-studies.html">Case Studies</a></li>
-                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/blog/">Signals</a></li>
+                <li><a href="/about.html">About</a></li>
                 <li><a href="/book.html" class="nav-cta" data-track="Nav Book CTA">Book a Call</a></li>
             </ul>
             <button type="button" class="hamburger" onclick="toggleMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
@@ -2499,9 +2599,10 @@
 
     <div class="mobile-nav" id="mobileNav">
         <a href="/sprint.html" onclick="toggleMenu()">The Sprint</a>
-        <a href="/services.html" onclick="toggleMenu()">Services</a>
+        <a href="/pricing.html" data-track="Mobile Nav Pricing">Pricing</a>
         <a href="/case-studies.html" onclick="toggleMenu()">Case Studies</a>
-        <a href="/blog/" onclick="toggleMenu()">Blog</a>
+        <a href="/blog/" onclick="toggleMenu()">Signals</a>
+        <a href="/about.html" onclick="toggleMenu()">About</a>
         <a href="/book.html" class="nav-cta" onclick="toggleMenu()" data-track="Mobile Nav Book CTA">Book a Call</a>
     </div>
 
@@ -2509,28 +2610,42 @@
     <!-- HERO -->
     <section class="v4-hero">
         <div class="v4-shell">
-            <span class="v4-eyebrow fade-up">◆ LoopWorker</span>
-            <h1 class="v4-h1 fade-up">Market Intelligence for Modern Brands</h1>
-            <p class="v4-sub fade-up">We analyze what is actually driving attention, pipeline, and growth in your industry. Then turn it into repeatable systems, content, workflows, and positioning.</p>
-            <div class="v4-actions fade-up">
-                <a href="/book.html" class="v4-btn v4-btn-primary" data-track="V4 Hero Book">Book Strategy Call</a>
-                <a href="/sprint.html" class="v4-btn v4-btn-secondary" data-track="V4 Hero Sprint">View Sprint System</a>
-            </div>
-            <div class="v4-stats fade-up">
-                <div class="v4-stat">
-                    <div class="v4-stat-label">Followers</div>
-                    <div class="v4-stat-num">+7,008</div>
-                    <div class="v4-stat-desc">Generated in 30 days through engineered content systems.</div>
+            <div class="v4-hero-grid">
+                <div class="v4-hero-copy">
+                    <span class="v4-eyebrow fade-up">◆ Evidence before execution</span>
+                    <h1 class="v4-h1 fade-up">The signals are already there.</h1>
+                    <p class="v4-sub fade-up">LoopWorker pulls live market signals into clear visibility systems so founders and operators can see what is happening inside a category before they spend, ship, reposition, or scale.</p>
+                    <div class="v4-actions fade-up">
+                        <a href="/book.html" class="v4-btn v4-btn-primary" data-track="V4 Hero Book">Book a Call</a>
+                        <a href="/sprint.html" class="v4-btn v4-btn-secondary" data-track="V4 Hero Sprint">View The Sprint</a>
+                    </div>
+                    <p class="v4-hero-snap fade-up"><a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" data-track="V4 Hero Snapshot">Or test the waters · $750 Signal Snapshot →</a></p>
                 </div>
-                <div class="v4-stat">
-                    <div class="v4-stat-label">Views</div>
-                    <div class="v4-stat-num">600K+</div>
-                    <div class="v4-stat-desc">Built through strategic content packaging and positioning.</div>
-                </div>
-                <div class="v4-stat">
-                    <div class="v4-stat-label">Pipeline</div>
-                    <div class="v4-stat-num">$180K</div>
-                    <div class="v4-stat-desc">Generated through authority systems and lead generation workflows.</div>
+                <div class="v4-hero-proof fade-up" aria-label="Example market signal console">
+                    <div class="signal-console">
+                        <div class="console-topline">
+                            <div class="console-title">Category Pull · live public signals</div>
+                            <div class="console-pill">Visibility System</div>
+                        </div>
+                        <div class="signal-stream">
+                            <div class="signal-row">
+                                <div class="signal-source"><strong>1,247</strong> review fragments</div>
+                                <div class="signal-finding">Top friction cluster: buyers want confidence before setup, not more features.<div class="signal-meter"><span class="meter-fill" style="--w: 82%"></span></div></div>
+                            </div>
+                            <div class="signal-row">
+                                <div class="signal-source"><strong>12</strong> competitor ads</div>
+                                <div class="signal-finding">Four hooks have stayed live past 90 days; all lead with risk removal before aspiration.<div class="signal-meter"><span class="meter-fill" style="--w: 68%"></span></div></div>
+                            </div>
+                            <div class="signal-row">
+                                <div class="signal-source"><strong>5</strong> pricing pages</div>
+                                <div class="signal-finding">$525 is defensible if proof is sequenced before the offer and onboarding feels handled.<div class="signal-meter"><span class="meter-fill" style="--w: 74%"></span></div></div>
+                            </div>
+                        </div>
+                        <div class="console-decision">
+                            <div class="decision-label">Next move</div>
+                            <p>Lead with the calm setup guarantee, hold the price, and ship three proof-led assets before adding spend.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2541,30 +2656,30 @@
         <div class="v4-shell">
             <div class="v4-section-intro fade-up">
                 <span class="v4-section-eyebrow">◆ The Problem</span>
-                <h2 class="v4-h2">Most Businesses Are Still Operating Manually</h2>
-                <p class="v4-section-sub">Most companies are creating content blindly, reacting to competitors too late, publishing inconsistently, relying on disconnected tools, and wasting time on non-compounding marketing. Meanwhile AI-native brands are operating faster, publishing more, and building authority at machine speed.</p>
+                <h2 class="v4-h2">The market is already talking. Most teams cannot read it.</h2>
+                <p class="v4-section-sub">Reviews, ads, search behavior, pricing pages, competitor edits, creator patterns, and buyer language are already showing where the category is moving. The risk is making execution decisions without seeing the signal stack first.</p>
             </div>
             <div class="v4-compare fade-up">
                 <div class="v4-compare-col">
-                    <div class="v4-compare-title">Traditional Marketing</div>
+                    <div class="v4-compare-title">Execution Without Visibility</div>
                     <ul class="v4-list">
-                        <li>Manual content creation</li>
-                        <li>Inconsistent messaging</li>
-                        <li>Fragmented systems</li>
-                        <li>Delayed market insights</li>
-                        <li>Reactive strategy</li>
-                        <li>Slow production cycles</li>
+                        <li>Messaging built from internal opinions</li>
+                        <li>Competitor movement noticed too late</li>
+                        <li>Creative chosen by taste instead of evidence</li>
+                        <li>Pricing changes made without category context</li>
+                        <li>Content shipped before the proof gap is clear</li>
+                        <li>Spend added before the decision layer is stable</li>
                     </ul>
                 </div>
                 <div class="v4-compare-col v4-bright">
-                    <div class="v4-compare-title">LoopWorker Systems</div>
+                    <div class="v4-compare-title">LoopWorker Visibility</div>
                     <ul class="v4-list">
-                        <li>Market intelligence analysis</li>
-                        <li>AI-powered workflows</li>
-                        <li>Repeatable content engines</li>
-                        <li>Authority positioning systems</li>
-                        <li>Automated operations</li>
-                        <li>Scalable execution infrastructure</li>
+                        <li>Live public signals pulled into one view</li>
+                        <li>Competitor paths traced before they become obvious</li>
+                        <li>Audience language mapped into usable patterns</li>
+                        <li>Offer, pricing, and proof compared side by side</li>
+                        <li>Clear next moves ranked by evidence strength</li>
+                        <li>Execution starts after the visibility layer is built</li>
                     </ul>
                 </div>
             </div>
@@ -2576,41 +2691,41 @@
         <div class="v4-shell">
             <div class="v4-section-intro fade-up">
                 <span class="v4-section-eyebrow">◆ How LoopWorker Works</span>
-                <h2 class="v4-h2">Identify leverage first. Build execution around it.</h2>
-                <p class="v4-section-sub">Every system starts with identifying leverage first. Then building execution around it.</p>
+                <h2 class="v4-h2">Pull the signals. Map the pattern. Decide with evidence.</h2>
+                <p class="v4-section-sub">The Sprint turns scattered market data into an operator-ready view of what is happening, what matters, and what should happen next.</p>
             </div>
             <div class="v4-process-grid">
                 <div class="v4-process-card fade-up">
                     <div class="v4-process-num">01</div>
-                    <div class="v4-process-title">Analyze</div>
-                    <p class="v4-process-lead">We study:</p>
+                    <div class="v4-process-title">Pull</div>
+                    <p class="v4-process-lead">We collect signals from:</p>
                     <ul class="v4-process-list">
-                        <li>Competitor positioning</li>
-                        <li>Content patterns</li>
-                        <li>Audience behavior</li>
-                        <li>Conversion structures</li>
-                        <li>Authority gaps</li>
-                        <li>Messaging trends</li>
+                        <li>Competitor pages and offer structures</li>
+                        <li>Reviews, comments, and buyer language</li>
+                        <li>Search demand and category questions</li>
+                        <li>Ad libraries and creative longevity</li>
+                        <li>Pricing ladders and proof claims</li>
+                        <li>Channels where attention is already moving</li>
                     </ul>
                 </div>
                 <div class="v4-process-card fade-up">
                     <div class="v4-process-num">02</div>
-                    <div class="v4-process-title">Build</div>
-                    <p class="v4-process-lead">We create:</p>
+                    <div class="v4-process-title">Map</div>
+                    <p class="v4-process-lead">We organize the evidence into:</p>
                     <ul class="v4-process-list">
-                        <li>AI workflows</li>
-                        <li>Content systems</li>
-                        <li>Automation infrastructure</li>
-                        <li>Authority frameworks</li>
-                        <li>Lead generation engines</li>
-                        <li>Operational systems</li>
+                        <li>Competitor movement maps</li>
+                        <li>Message and proof gap views</li>
+                        <li>Pricing and offer comparisons</li>
+                        <li>Audience friction clusters</li>
+                        <li>Channel and cadence patterns</li>
+                        <li>Clear strategic options</li>
                     </ul>
                 </div>
                 <div class="v4-process-card fade-up">
                     <div class="v4-process-num">03</div>
-                    <div class="v4-process-title">Scale</div>
+                    <div class="v4-process-title">Decide</div>
                     <div class="v4-process-body">
-                        <p>You publish faster, operate clearer, and compound attention through repeatable systems designed for long-term leverage.</p>
+                        <p>You leave with a decision brief that shows what to protect, what to change, what to test, what to stop doing, and where execution has the strongest evidence behind it.</p>
                     </div>
                 </div>
             </div>
@@ -2621,48 +2736,48 @@
     <section class="v4-section">
         <div class="v4-shell">
             <div class="v4-section-intro fade-up">
-                <span class="v4-section-eyebrow">◆ Engagements</span>
-                <h2 class="v4-h2">Built Around Leverage</h2>
+                <span class="v4-section-eyebrow">◆ The Sprint</span>
+                <h2 class="v4-h2">A focused intelligence round before the next move.</h2>
+                <p class="v4-section-sub">The Sprint is the product. Downstream execution only makes sense after the visibility layer shows what the category is asking for.</p>
             </div>
             <div class="v4-offer-grid">
                 <div class="v4-offer-card fade-up">
-                    <div class="v4-offer-title">Intelligence Sprint</div>
-                    <p class="v4-offer-sub">Best for founders, operators, and teams needing clarity before scaling.</p>
+                    <div class="v4-offer-title">Sprint Lite</div>
+                    <p class="v4-offer-sub">Best for one urgent decision that needs evidence fast.</p>
                     <ul class="v4-offer-list">
-                        <li>Competitor analysis</li>
-                        <li>Positioning review</li>
-                        <li>Authority breakdown</li>
-                        <li>Workflow mapping</li>
-                        <li>Strategic recommendations</li>
-                        <li>System roadmap</li>
+                        <li>One focused question</li>
+                        <li>Compressed category pull</li>
+                        <li>Signal summary</li>
+                        <li>Decision recommendation</li>
+                        <li>Execution guardrails</li>
                     </ul>
-                    <a href="/sprint.html" class="v4-offer-cta" data-track="V4 Offer Sprint">View Sprint</a>
+                    <a href="/sprint.html" class="v4-offer-cta" data-track="V4 Offer Lite">View Sprint</a>
+                </div>
+                <div class="v4-offer-card featured fade-up">
+                    <div class="v4-offer-title">Sprint Pro</div>
+                    <p class="v4-offer-sub">Best for founders who need the category view before a larger move.</p>
+                    <ul class="v4-offer-list">
+                        <li>Competitor reconstruction</li>
+                        <li>Audience language map</li>
+                        <li>Pricing and proof comparison</li>
+                        <li>Channel pattern read</li>
+                        <li>Visibility brief</li>
+                        <li>Ranked next moves</li>
+                    </ul>
+                    <a href="/sprint.html" class="v4-offer-cta" data-track="V4 Offer Pro">View Sprint</a>
                 </div>
                 <div class="v4-offer-card fade-up">
-                    <div class="v4-offer-title">Content Systems</div>
-                    <p class="v4-offer-sub">Repeatable publishing systems designed to compound authority.</p>
+                    <div class="v4-offer-title">Sprint Full</div>
+                    <p class="v4-offer-sub">Best for high-stakes positioning, launch, or market decisions.</p>
                     <ul class="v4-offer-list">
-                        <li>Carousel systems</li>
-                        <li>Short-form frameworks</li>
-                        <li>LinkedIn systems</li>
-                        <li>Packaging strategy</li>
-                        <li>Creative direction</li>
-                        <li>Content operations</li>
+                        <li>Full category intelligence layer</li>
+                        <li>Offer and market gap diagnosis</li>
+                        <li>Ad, content, and website pattern review</li>
+                        <li>Messaging and proof architecture</li>
+                        <li>Decision roadmap</li>
+                        <li>Execution handoff direction</li>
                     </ul>
-                    <a href="/services.html" class="v4-offer-cta" data-track="V4 Offer Content">Explore Systems</a>
-                </div>
-                <div class="v4-offer-card fade-up">
-                    <div class="v4-offer-title">Workflow Automation</div>
-                    <p class="v4-offer-sub">Operational leverage through AI-powered workflows and automation.</p>
-                    <ul class="v4-offer-list">
-                        <li>AI integrations</li>
-                        <li>Onboarding automation</li>
-                        <li>CRM workflows</li>
-                        <li>Proposal systems</li>
-                        <li>Reporting systems</li>
-                        <li>Internal operations</li>
-                    </ul>
-                    <a href="/services.html" class="v4-offer-cta" data-track="V4 Offer Automation">See Automations</a>
+                    <a href="/sprint.html" class="v4-offer-cta" data-track="V4 Offer Full">View Sprint</a>
                 </div>
             </div>
         </div>
@@ -2672,57 +2787,52 @@
     <section class="v4-section">
         <div class="v4-shell">
             <div class="v4-section-intro fade-up">
-                <span class="v4-section-eyebrow">◆ Systems</span>
-                <h2 class="v4-h2">Systems Built for Scale</h2>
-                <p class="v4-section-sub">Every engagement is designed around repeatable leverage. Not one-off execution.</p>
+                <span class="v4-section-eyebrow">◆ What You Can See</span>
+                <h2 class="v4-h2">The data becomes a working view.</h2>
+                <p class="v4-section-sub">Not a generic report. Not a dashboard for the sake of a dashboard. A decision layer made from signal fragments, comparisons, annotations, and next-move logic.</p>
             </div>
 
-            <div class="v4-proof-visual fade-up" aria-hidden="true">
-                <div class="v4-proof-visual-inner">
-                    <div class="v4-proof-vis-cell">
-                        <div class="v4-proof-vis-label">Signal · Content</div>
-                        <div class="v4-proof-vis-bar"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-                    </div>
-                    <div class="v4-proof-vis-cell">
-                        <div class="v4-proof-vis-label">Workflow Map</div>
-                        <div class="v4-proof-vis-flow">
-                            <div class="v4-proof-vis-flow-row">Ingest</div>
-                            <div class="v4-proof-vis-flow-row">Pattern</div>
-                            <div class="v4-proof-vis-flow-row">Publish</div>
-                            <div class="v4-proof-vis-flow-row">Measure</div>
+            <div class="v4-proof-visual fade-up">
+                <div class="evidence-board" aria-label="Example visibility board">
+                    <div class="evidence-panel wide">
+                        <div class="evidence-label">Ad Longevity · competitor library</div>
+                        <div class="evidence-line"><span>Risk-removal hook</span><b>112 days</b></div>
+                        <div class="evidence-line"><span>Founder proof angle</span><b>94 days</b></div>
+                        <div class="evidence-line"><span>Outcome-only claim</span><b>18 days</b></div>
+                        <div class="pattern-bars" aria-hidden="true">
+                            <span style="--h: 35%"></span><span class="hot" style="--h: 88%"></span><span style="--h: 46%"></span><span class="hot" style="--h: 76%"></span><span style="--h: 24%"></span><span style="--h: 58%"></span>
                         </div>
                     </div>
-                    <div class="v4-proof-vis-cell">
-                        <div class="v4-proof-vis-label">Authority · Cadence</div>
-                        <div class="v4-proof-vis-dots">
-                            <i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i></i>
-                            <i></i><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i></i><i class="on"></i>
-                            <i class="on"></i><i></i><i class="on"></i><i></i><i class="on"></i><i class="on"></i><i></i>
-                        </div>
+                    <div class="evidence-panel">
+                        <div class="evidence-label">Review Cluster</div>
+                        <div class="quote-chip">"I liked it, but I needed to know what setup actually looked like."</div>
+                        <div class="quote-chip">"The promise was clear. The handoff was not."</div>
                     </div>
-                    <div class="v4-proof-vis-cell">
-                        <div class="v4-proof-vis-label">Pipeline · 30d</div>
-                        <div class="v4-proof-vis-bar bar-b"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                    <div class="evidence-panel">
+                        <div class="evidence-label">Offer Comparison</div>
+                        <div class="evidence-line"><span>Proof before price</span><b>Strong</b></div>
+                        <div class="evidence-line"><span>Setup clarity</span><b>Missing</b></div>
+                        <div class="evidence-line"><span>Upsell logic</span><b>Early</b></div>
                     </div>
                 </div>
             </div>
 
             <div class="v4-proof-grid">
                 <div class="v4-proof-card fade-up">
-                    <h3>Content Velocity</h3>
-                    <p>Turn one idea into multi-platform authority assets.</p>
+                    <h3>Competitor Movement</h3>
+                    <p>Trace what competitors changed, what stayed live, and what that reveals about the market.</p>
                 </div>
                 <div class="v4-proof-card fade-up">
-                    <h3>Operational Leverage</h3>
-                    <p>Replace fragmented manual workflows with repeatable systems.</p>
+                    <h3>Buyer Language</h3>
+                    <p>Surface the words, objections, questions, and trust gaps buyers are already handing you.</p>
                 </div>
                 <div class="v4-proof-card fade-up">
-                    <h3>Authority Positioning</h3>
-                    <p>Engineer messaging around what already performs in your market.</p>
+                    <h3>Proof Architecture</h3>
+                    <p>Compare claims, evidence, guarantees, offers, and handoffs before rewriting the page.</p>
                 </div>
                 <div class="v4-proof-card fade-up">
-                    <h3>Market Intelligence</h3>
-                    <p>Identify positioning opportunities before competitors react.</p>
+                    <h3>Next-Move Logic</h3>
+                    <p>Turn the pattern into what to ship, change, test, protect, or leave alone.</p>
                 </div>
             </div>
         </div>
@@ -2731,11 +2841,11 @@
     <!-- SECTION 6 · FINAL CTA -->
     <section class="v4-section v4-final">
         <div class="v4-shell">
-            <h2 class="v4-h2 fade-up">Find the Bottleneck Slowing Your Growth</h2>
-            <p class="v4-final-sub fade-up">LoopWorker identifies what is already working in your market. Then builds systems around it.</p>
+            <h2 class="v4-h2 fade-up">See the signals before you spend.</h2>
+            <p class="v4-final-sub fade-up">LoopWorker gives you a clear view of the category before creative, content, paid media, repositioning, or operations move forward.</p>
             <div class="v4-actions fade-up">
-                <a href="/book.html" class="v4-btn v4-btn-primary" data-track="V4 Final Book">Book Strategy Call</a>
-                <a href="/sprint.html" class="v4-btn v4-btn-secondary" data-track="V4 Final Sprint">View Sprint Process</a>
+                <a href="/book.html" class="v4-btn v4-btn-primary" data-track="V4 Final Book">Book a Call</a>
+                <a href="/sprint.html" class="v4-btn v4-btn-secondary" data-track="V4 Final Sprint">View The Sprint</a>
             </div>
         </div>
     </section>
@@ -2749,10 +2859,9 @@
             </div>
             <ul class="footer-links">
                 <li><a href="/sprint.html">The Sprint</a></li>
-                <li><a href="/services.html">Services</a></li>
-                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/pricing.html" data-track="Nav Pricing">Pricing</a></li>
                 <li><a href="/case-studies.html">Case Studies</a></li>
-                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/blog/">Signals</a></li>
                 <li><a href="/about.html">About</a></li>
             </ul>
             <div class="footer-contact">
@@ -2798,6 +2907,14 @@
             hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
             document.body.style.overflow = isOpen ? 'hidden' : '';
         }
+
+        const stickyCta = document.querySelector('.mobile-sticky-cta');
+        function updateStickyCta() {
+            if (!stickyCta) return;
+            stickyCta.classList.toggle('is-visible', window.scrollY > 680);
+        }
+        window.addEventListener('scroll', updateStickyCta, { passive: true });
+        updateStickyCta();
 
     </script>
 
