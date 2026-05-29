@@ -34,7 +34,7 @@ LEDGER = Path(__file__).resolve().parent.parent.parent / "Memory" / "Code_Script
 TIERS = [
     {
         "key": "signal-snapshot",
-        "name": "Signal Snapshot",
+        "name": "Sprint 1 · Signal Snapshot",
         "description": "48-hour gateway sprint. One signal pulled deep (competitor wall, customer voice, pricing band, proof gap, or channel fit) + one ranked recommendation. PDF.",
         "amount_cents": 75000,
         "recurring": False,
@@ -42,27 +42,19 @@ TIERS = [
     },
     {
         "key": "sprint-lite",
-        "name": "Sprint Lite",
+        "name": "Sprint 2",
         "description": "5-day focused market intelligence round. One question, evidence behind it.",
-        "amount_cents": 250000,
+        "amount_cents": 320000,
         "recurring": False,
-        "redirect_url": "https://www.loopworker.com/thank-you-sprint.html?tier=lite",
+        "redirect_url": "https://www.loopworker.com/thank-you-sprint.html?tier=2",
     },
     {
         "key": "sprint-pro",
-        "name": "Sprint Pro",
+        "name": "Sprint 3",
         "description": "10-day decision brief connecting competitor wall, customer voice, pricing band, channel map, and ranked action sheet.",
-        "amount_cents": 850000,
+        "amount_cents": 800000,
         "recurring": False,
-        "redirect_url": "https://www.loopworker.com/thank-you-sprint.html?tier=pro",
-    },
-    {
-        "key": "sprint-full",
-        "name": "Sprint Full",
-        "description": "14-day full strategic round for launch, repositioning, pitch-deck clarity, or higher-stakes market moves.",
-        "amount_cents": 2500000,
-        "recurring": False,
-        "redirect_url": "https://www.loopworker.com/thank-you-sprint.html?tier=full",
+        "redirect_url": "https://www.loopworker.com/thank-you-sprint.html?tier=3",
     },
     {
         "key": "systems-retainer",
