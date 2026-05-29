@@ -329,6 +329,9 @@
       .v4-hero-snap { margin-top: 1rem; font-size: 0.88rem; color: #888; }
       .v4-hero-snap a { color: #D4A017; text-decoration: none; border-bottom: 1px dotted rgba(212,160,23,0.4); padding-bottom: 1px; transition: border-color 0.15s, color 0.15s; }
       .v4-hero-snap a:hover { color: #F4C842; border-bottom-color: rgba(212,160,23,0.9); }
+      .v4-hero-capacity { margin-top: 1.6rem; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--v4-mute); font-weight: 600; display: flex; align-items: center; gap: 0.6rem; }
+      .v4-cap-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #4ADE80; box-shadow: 0 0 0 3px rgba(74,222,128,0.18); animation: capPulse 2.2s ease-in-out infinite; }
+      @keyframes capPulse { 0%,100% { box-shadow: 0 0 0 3px rgba(74,222,128,0.18); } 50% { box-shadow: 0 0 0 6px rgba(74,222,128,0.06); } }
       .v4-btn-secondary { background: transparent; color: var(--v4-text); border: 1px solid var(--v4-line-strong); }
       .v4-btn-secondary:hover { border-color: rgba(255,255,255,0.32); background: rgba(255,255,255,0.03); }
       .v4-hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr); gap: 3rem; align-items: center; }
@@ -2642,6 +2645,7 @@
                         <a href="/sprint.html" class="v4-btn v4-btn-secondary" data-track="V4 Hero Sprint">View The Sprint</a>
                     </div>
                     <p class="v4-hero-snap fade-up"><a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" data-track="V4 Hero Snapshot">Or test the waters · Sprint 1 · $750 →</a></p>
+                    <p class="v4-hero-capacity fade-up"><span class="v4-cap-dot" aria-hidden="true"></span>Founder-led delivery · 2 active Sprint 3 engagements at a time</p>
                 </div>
                 <div class="v4-hero-proof fade-up" aria-label="Example market signal console">
                     <div class="signal-console">
