@@ -329,6 +329,15 @@
       .v4-hero-snap { margin-top: 1rem; font-size: 0.88rem; color: #888; }
       .v4-hero-snap a { color: #D4A017; text-decoration: none; border-bottom: 1px dotted rgba(212,160,23,0.4); padding-bottom: 1px; transition: border-color 0.15s, color 0.15s; }
       .v4-hero-snap a:hover { color: #F4C842; border-bottom-color: rgba(212,160,23,0.9); }
+      /* price strip — anchors $750/$3.2k/$8k above the fold */
+      .v4-price-strip { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.6rem; }
+      .v4-price-chip { display: flex; flex-direction: column; gap: 0.15rem; padding: 0.7rem 1rem; border: 1px solid var(--v4-line-strong); border-radius: 10px; background: rgba(255,255,255,0.018); text-decoration: none; color: var(--v4-text); transition: all 0.16s; min-width: 0; }
+      .v4-price-chip:hover { border-color: rgba(212,160,23,0.45); background: rgba(212,160,23,0.04); transform: translateY(-1px); }
+      .v4-price-chip strong { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em; color: var(--v4-text); }
+      .v4-price-chip span { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--v4-mute); font-weight: 600; }
+      .v4-price-chip-featured { border-color: rgba(212,160,23,0.45); background: rgba(212,160,23,0.06); }
+      .v4-price-chip-featured strong { color: var(--accent); }
+      .v4-price-chip-featured:hover { background: rgba(212,160,23,0.1); }
       .v4-hero-capacity { margin-top: 1.6rem; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--v4-mute); font-weight: 600; display: flex; align-items: center; gap: 0.6rem; }
       .v4-cap-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #4ADE80; box-shadow: 0 0 0 3px rgba(74,222,128,0.18); animation: capPulse 2.2s ease-in-out infinite; }
       @keyframes capPulse { 0%,100% { box-shadow: 0 0 0 3px rgba(74,222,128,0.18); } 50% { box-shadow: 0 0 0 6px rgba(74,222,128,0.06); } }
@@ -511,6 +520,25 @@
       .v4-final .v4-h2 { max-width: 760px; margin: 0 auto 1.2rem; }
       .v4-final .v4-final-sub { max-width: 620px; margin: 0 auto 2.4rem; font-size: 1.02rem; color: var(--v4-soft); line-height: 1.6; }
       .v4-final .v4-actions { justify-content: center; margin-bottom: 0; }
+
+      /* Mini FAQ block — answers buy hesitation before the final CTA */
+      .v4-faq .v4-section-intro { margin-bottom: 2.4rem; }
+      .v4-faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; max-width: 1080px; margin: 0 auto; }
+      @media (max-width: 760px) { .v4-faq-grid { grid-template-columns: 1fr; } }
+      .v4-faq-item { padding: 1.4rem 1.6rem; border: 1px solid var(--v4-line); border-radius: 12px; background: rgba(255,255,255,0.012); transition: border-color 0.18s; }
+      .v4-faq-item:hover { border-color: rgba(212,160,23,0.28); }
+      .v4-faq-item summary { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--v4-text); letter-spacing: -0.01em; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+      .v4-faq-item summary::-webkit-details-marker { display: none; }
+      .v4-faq-item summary::after { content: '+'; font-family: 'Inter', sans-serif; font-weight: 300; font-size: 1.5rem; color: var(--v4-mute); transition: transform 0.2s, color 0.2s; line-height: 1; }
+      .v4-faq-item[open] summary::after { content: '–'; color: var(--accent); transform: rotate(0deg); }
+      .v4-faq-item p { font-size: 0.95rem; line-height: 1.6; color: var(--v4-soft); margin: 1rem 0 0; max-width: none; }
+
+      /* Sticky desktop CTA — follows scroll on >=860px viewports */
+      .v4-sticky { position: fixed; right: 1.6rem; bottom: 1.6rem; z-index: 950; padding: 0.85rem 1.2rem; background: var(--accent); color: #1A0F00; border: 1px solid var(--accent); border-radius: 10px; text-decoration: none; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.88rem; letter-spacing: -0.005em; box-shadow: 0 12px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(212,160,23,0.4); opacity: 0; transform: translateY(20px); pointer-events: none; transition: opacity 0.3s ease, transform 0.3s ease, background 0.18s; display: none; }
+      .v4-sticky:hover { background: #F4C842; }
+      .v4-sticky.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+      @media (min-width: 860px) { .v4-sticky { display: inline-flex; align-items: center; gap: 0.55rem; } }
+      .v4-sticky-arrow { font-size: 1.1em; line-height: 1; }
 
       /* Override existing nav for v4 minimal */
       nav .nav-logo { color: var(--v4-text) !important; font-weight: 700 !important; }
@@ -2660,13 +2688,17 @@
                 <div class="v4-hero-copy">
                     <span class="v4-eyebrow fade-up">◆ Evidence before execution</span>
                     <h1 class="v4-h1 fade-up">The signals are already there.</h1>
-                    <p class="v4-sub fade-up">Live market signals turned into a decision layer. See what the category wants before you spend, ship, reposition, or scale.</p>
-                    <div class="v4-actions fade-up">
-                        <a href="/book.html" class="v4-btn v4-btn-primary" data-track="V4 Hero Book">Book a Call</a>
-                        <a href="/sprint.html" class="v4-btn v4-btn-secondary" data-track="V4 Hero Sprint">View The Sprint</a>
+                    <p class="v4-sub fade-up">Founder-led market intelligence sprints. We pull the public signals around your next decision and hand back a PDF brief that says what to ship, hold, or kill.</p>
+                    <div class="v4-price-strip fade-up" aria-label="Sprint pricing at a glance">
+                        <a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" class="v4-price-chip" data-track="V4 Hero Strip Sprint 1"><strong>$750</strong><span>48 hours · one signal</span></a>
+                        <a href="https://buy.stripe.com/28E28q52nahp3pg6VmcEw0I" class="v4-price-chip" data-track="V4 Hero Strip Sprint 2"><strong>$3,200</strong><span>5 days · one decision</span></a>
+                        <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="v4-price-chip v4-price-chip-featured" data-track="V4 Hero Strip Sprint 3"><strong>$8,000</strong><span>10 days · full brief</span></a>
                     </div>
-                    <p class="v4-hero-snap fade-up"><a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" data-track="V4 Hero Snapshot">Or test the waters · Sprint 1 · $750 →</a></p>
-                    <p class="v4-hero-capacity fade-up"><span class="v4-cap-dot" aria-hidden="true"></span>Founder-led delivery · 2 active Sprint 3 engagements at a time</p>
+                    <div class="v4-actions fade-up">
+                        <a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" class="v4-btn v4-btn-primary" data-track="V4 Hero Sprint 1">Begin Sprint 1 · $750</a>
+                        <a href="/book.html" class="v4-btn v4-btn-secondary" data-track="V4 Hero Book">Talk first · Book a Call</a>
+                    </div>
+                    <p class="v4-hero-capacity fade-up"><span class="v4-cap-dot" aria-hidden="true"></span>Founder-led · 48 hours on Sprint 1 · 2 active Sprint 3 engagements at a time</p>
                 </div>
                 <div class="v4-hero-proof fade-up" aria-label="Example market signal console">
                     <div class="signal-console">
@@ -2903,14 +2935,42 @@
         </div>
     </section>
 
+    <!-- SECTION 5.5 · MINI FAQ -->
+    <section class="v4-section v4-faq">
+        <div class="v4-shell">
+            <div class="v4-section-intro fade-up">
+                <span class="v4-section-eyebrow">◆ Common questions</span>
+                <h2 class="v4-h2">Short answers <em>before you buy.</em></h2>
+            </div>
+            <div class="v4-faq-grid">
+                <details class="v4-faq-item fade-up">
+                    <summary>What do I actually get?</summary>
+                    <p>A PDF brief. Competitor wall, customer voice, pricing band, channel map, and a ranked action sheet. Same shape every Sprint 3. Sprint 1 is one signal deep instead of the connected brief.</p>
+                </details>
+                <details class="v4-faq-item fade-up">
+                    <summary>How fast?</summary>
+                    <p>Sprint 1 ships 48 hours from purchase. Sprint 2: 5 days. Sprint 3: 10 days. Founder-led, no team handoff.</p>
+                </details>
+                <details class="v4-faq-item fade-up">
+                    <summary>What if it's not useful?</summary>
+                    <p>If the brief lands and you can't act on a single line, write back within 14 days for a full refund. Happened once in two years.</p>
+                </details>
+                <details class="v4-faq-item fade-up">
+                    <summary>Do you ship the work too?</summary>
+                    <p>Optional. Systems Retainer is $4,500/mo month-to-month after the brief lands. Positioning rewrites, content cadence, channel build, conversion fixes, automation wiring.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
     <!-- SECTION 6 · FINAL CTA -->
     <section class="v4-section v4-final">
         <div class="v4-shell">
             <h2 class="v4-h2 fade-up">See the category before you spend.</h2>
-            <p class="v4-final-sub fade-up">Clear visibility before creative, content, paid media, or repositioning. Decide with evidence.</p>
+            <p class="v4-final-sub fade-up">Sprint 1 in 48 hours for $750. Or jump to Sprint 3 for the full connected brief.</p>
             <div class="v4-actions fade-up">
-                <a href="/book.html" class="v4-btn v4-btn-primary" data-track="V4 Final Book">Book a Call</a>
-                <a href="/sprint.html" class="v4-btn v4-btn-secondary" data-track="V4 Final Sprint">View The Sprint</a>
+                <a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" class="v4-btn v4-btn-primary" data-track="V4 Final Sprint 1">Begin Sprint 1 · $750</a>
+                <a href="/sprint.html" class="v4-btn v4-btn-secondary" data-track="V4 Final Sprint">View all Sprints</a>
             </div>
         </div>
     </section>
@@ -2940,6 +3000,26 @@
     </footer>
 
     <a href="/book.html" class="mobile-sticky-cta" data-track="Sticky Mobile Book CTA">Book a call</a>
+
+    <!-- Desktop sticky CTA - appears after user scrolls past hero -->
+    <a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" id="stickyDesktopCta" class="v4-sticky" data-track="Sticky Desktop Sprint 1">Begin Sprint 1 · $750 <span class="v4-sticky-arrow" aria-hidden="true">→</span></a>
+    <script>
+        (function() {
+            var cta = document.getElementById('stickyDesktopCta');
+            if (!cta) return;
+            var threshold = 700;
+            var ticking = false;
+            function update() {
+                if (window.scrollY > threshold) cta.classList.add('is-visible');
+                else cta.classList.remove('is-visible');
+                ticking = false;
+            }
+            window.addEventListener('scroll', function() {
+                if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
+            }, { passive: true });
+            update();
+        })();
+    </script>
 
     <script>
         function trackEvent(eventName) {
