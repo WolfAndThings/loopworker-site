@@ -371,6 +371,9 @@
 
       /* Section shells */
       .v4-section { padding: 7rem 2rem; border-bottom: 1px solid var(--v4-line); }
+      /* subtle bg alternation chunks the page visually */
+      .v4-section:nth-of-type(even) { background: rgba(255,255,255,0.008); }
+      .v4-section:nth-of-type(odd) { background: rgba(0,0,0,0.18); }
       .v4-section-intro { max-width: 760px; margin: 0 0 3.5rem; }
       .v4-section-eyebrow { display: inline-block; font-size: 0.68rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--v4-mute); font-weight: 600; margin-bottom: 1.2rem; }
       .v4-h2 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: clamp(1.8rem, 3.6vw, 2.8rem); line-height: 1.1; letter-spacing: -0.025em; color: var(--v4-text); margin: 0 0 1rem; }
@@ -397,6 +400,22 @@
       .v4-process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
       @media (max-width: 900px) { .v4-process-grid { grid-template-columns: 1fr; } }
       .v4-process-card { padding: 2rem 1.8rem; border: 1px solid var(--v4-line); border-radius: 14px; background: rgba(255,255,255,0.012); display: flex; flex-direction: column; min-height: 320px; }
+
+      /* Vertical numbered flow (replaces 3-up Pull/Map/Decide cards) */
+      .v4-flow { display: grid; gap: 0; max-width: 880px; margin: 0 auto; }
+      .v4-flow-step { display: grid; grid-template-columns: 84px 1fr; gap: 1.8rem; padding: 1.6rem 0 2.4rem; }
+      @media (max-width: 720px) { .v4-flow-step { grid-template-columns: 56px 1fr; gap: 1.2rem; padding: 1.2rem 0 1.8rem; } }
+      .v4-flow-rail { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+      .v4-flow-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 2.6rem; color: var(--accent); line-height: 1; letter-spacing: -0.02em; }
+      .v4-flow-line { flex: 1; width: 1px; background: linear-gradient(180deg, rgba(212,160,23,0.4), rgba(255,255,255,0.04)); min-height: 60px; }
+      .v4-flow-body { padding-top: 0.2rem; }
+      .v4-flow-title { font-family: 'Inter', sans-serif; font-weight: 800; font-size: clamp(1.5rem, 2.6vw, 2rem); color: var(--v4-text); letter-spacing: -0.02em; margin-bottom: 1rem; line-height: 1.15; }
+      .v4-flow-verb { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; color: var(--v4-mute); font-size: 0.7em; letter-spacing: 0; display: inline-block; margin-left: 0.4em; }
+      .v4-flow-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+      .v4-chip { display: inline-flex; padding: 0.4rem 0.85rem; font-size: 0.8rem; font-weight: 500; color: var(--v4-soft); border: 1px solid var(--v4-line); border-radius: 999px; background: rgba(255,255,255,0.018); }
+      .v4-flow-payoff { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: clamp(1.1rem, 1.7vw, 1.35rem); line-height: 1.45; color: var(--v4-text); margin: 0; max-width: 620px; }
+      .v4-flow-final .v4-flow-body { border-left: 0; padding-left: 0; padding-top: 0.3rem; }
+      .v4-flow-final .v4-flow-num { color: var(--accent); }
       .v4-process-num { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.16em; color: var(--v4-mute); margin-bottom: 0.6rem; }
       .v4-process-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.5rem; letter-spacing: -0.02em; color: var(--v4-text); margin-bottom: 1.1rem; }
       .v4-process-lead { font-size: 0.92rem; color: var(--v4-mute); margin-bottom: 0.8rem; }
@@ -409,8 +428,9 @@
       /* Offer cards */
       .v4-offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
       @media (max-width: 980px) { .v4-offer-grid { grid-template-columns: 1fr; } }
-      .v4-offer-card { padding: 2.4rem 2rem; border: 1px solid var(--v4-line); border-radius: 14px; background: rgba(255,255,255,0.012); display: flex; flex-direction: column; transition: border-color 0.18s; }
-      .v4-offer-card:hover { border-color: var(--v4-line-strong); }
+      .v4-offer-card { padding: 2.4rem 2rem; border: 1px solid var(--v4-line); border-radius: 14px; background: rgba(255,255,255,0.012); display: flex; flex-direction: column; transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s, box-shadow 0.22s, background 0.22s; }
+      .v4-offer-card:hover { border-color: rgba(212,160,23,0.35); transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(212,160,23,0.18); background: rgba(255,255,255,0.025); }
+      .v4-offer-card.featured:hover { border-color: var(--accent); box-shadow: 0 18px 40px rgba(0,0,0,0.4), 0 0 0 1px var(--accent), 0 0 60px rgba(212,160,23,0.12); }
       .v4-offer-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.4rem; letter-spacing: -0.02em; color: var(--v4-text); margin-bottom: 0.7rem; }
       .v4-offer-sub { font-size: 0.92rem; color: var(--v4-mute); line-height: 1.55; margin-bottom: 1.8rem; }
       .v4-offer-list { list-style: none; padding: 0; margin: 0 0 2rem; flex-grow: 1; }
@@ -468,7 +488,8 @@
       .v4-proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
       @media (max-width: 1000px) { .v4-proof-grid { grid-template-columns: repeat(2, 1fr); } }
       @media (max-width: 560px) { .v4-proof-grid { grid-template-columns: 1fr; } }
-      .v4-proof-card { padding: 1.6rem 1.4rem; border: 1px solid var(--v4-line); border-radius: 12px; background: rgba(255,255,255,0.012); }
+      .v4-proof-card { padding: 1.6rem 1.4rem; border: 1px solid var(--v4-line); border-radius: 12px; background: rgba(255,255,255,0.012); transition: transform 0.2s ease, border-color 0.2s, background 0.2s; }
+      .v4-proof-card:hover { transform: translateY(-3px); border-color: rgba(212,160,23,0.28); background: rgba(255,255,255,0.022); }
       .v4-proof-card h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.02rem; letter-spacing: -0.01em; color: var(--v4-text); margin-bottom: 0.55rem; }
       .v4-proof-card p { font-size: 0.88rem; color: var(--v4-mute); line-height: 1.55; }
       .evidence-board { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 0.7rem; position: relative; }
@@ -2732,38 +2753,40 @@
                 <h2 class="v4-h2">Pull the signals. Map the pattern. Decide with evidence.</h2>
                 <p class="v4-section-sub">Scattered signals turned into a working view: what's happening, what matters, what to do next.</p>
             </div>
-            <div class="v4-process-grid">
-                <div class="v4-process-card fade-up">
-                    <div class="v4-process-num">01</div>
-                    <div class="v4-process-title">Pull</div>
-                    <p class="v4-process-lead">We collect signals from:</p>
-                    <ul class="v4-process-list">
-                        <li>Competitor pages and offer structures</li>
-                        <li>Reviews, comments, and buyer language</li>
-                        <li>Search demand and category questions</li>
-                        <li>Ad libraries and creative longevity</li>
-                        <li>Pricing ladders and proof claims</li>
-                        <li>Channels where attention is already moving</li>
-                    </ul>
+            <div class="v4-flow">
+                <div class="v4-flow-step fade-up">
+                    <div class="v4-flow-rail"><span class="v4-flow-num">01</span><span class="v4-flow-line"></span></div>
+                    <div class="v4-flow-body">
+                        <div class="v4-flow-title">Pull <span class="v4-flow-verb">live public signals</span></div>
+                        <div class="v4-flow-chips">
+                            <span class="v4-chip">Competitor offer pages</span>
+                            <span class="v4-chip">Reviews + buyer language</span>
+                            <span class="v4-chip">Search demand</span>
+                            <span class="v4-chip">Ad libraries</span>
+                            <span class="v4-chip">Pricing ladders</span>
+                            <span class="v4-chip">Channel patterns</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="v4-process-card fade-up">
-                    <div class="v4-process-num">02</div>
-                    <div class="v4-process-title">Map</div>
-                    <p class="v4-process-lead">We organize the evidence into:</p>
-                    <ul class="v4-process-list">
-                        <li>Competitor movement maps</li>
-                        <li>Message and proof gap views</li>
-                        <li>Pricing and offer comparisons</li>
-                        <li>Audience friction clusters</li>
-                        <li>Channel and cadence patterns</li>
-                        <li>Clear strategic options</li>
-                    </ul>
+                <div class="v4-flow-step fade-up">
+                    <div class="v4-flow-rail"><span class="v4-flow-num">02</span><span class="v4-flow-line"></span></div>
+                    <div class="v4-flow-body">
+                        <div class="v4-flow-title">Map <span class="v4-flow-verb">into a working view</span></div>
+                        <div class="v4-flow-chips">
+                            <span class="v4-chip">Competitor movement maps</span>
+                            <span class="v4-chip">Proof gap views</span>
+                            <span class="v4-chip">Pricing comparison</span>
+                            <span class="v4-chip">Audience friction clusters</span>
+                            <span class="v4-chip">Channel cadence</span>
+                            <span class="v4-chip">Strategic options</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="v4-process-card fade-up">
-                    <div class="v4-process-num">03</div>
-                    <div class="v4-process-title">Decide</div>
-                    <div class="v4-process-body">
-                        <p>You leave with a decision brief that shows what to protect, what to change, what to test, what to stop doing, and where execution has the strongest evidence behind it.</p>
+                <div class="v4-flow-step v4-flow-final fade-up">
+                    <div class="v4-flow-rail"><span class="v4-flow-num">03</span></div>
+                    <div class="v4-flow-body">
+                        <div class="v4-flow-title">Decide <span class="v4-flow-verb">with evidence</span></div>
+                        <p class="v4-flow-payoff">You leave with a decision brief. What to protect. What to change. What to test. What to stop. Where execution has the strongest evidence behind it.</p>
                     </div>
                 </div>
             </div>
