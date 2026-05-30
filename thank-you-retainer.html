@@ -32,6 +32,25 @@
         .footnote { margin-top: 2rem; font-size: 0.85rem; color: #666; line-height: 1.55; padding-top: 1.6rem; border-top: 1px solid #1A1A1A; }
         .footnote a { color: #888; text-decoration: underline; text-decoration-color: #333; }
     </style>
+<style id="lw-polish">
+/* Universal polish: tabular nums on prices, optimizeLegibility, focus ring, selection, reduced motion, skip-link, print, scroll padding */
+html { scroll-padding-top: 80px; -webkit-tap-highlight-color: rgba(212,160,23,0.18); }
+html body { text-rendering: optimizeLegibility; font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1; font-kerning: normal; }
+.tier-price, .v4-price-chip strong, .v4-offer-price, .pricing-amount,
+.v4-tstm-meta-stat, .stat strong, .signal-source strong, .console-pill,
+.v4-stat-num, .lp-source strong, .compare-table td, .compare-table th { font-variant-numeric: tabular-nums; font-feature-settings: 'kern' 1, 'liga' 1, 'tnum' 1, 'lnum' 1; }
+::selection { background: rgba(212,160,23,0.32); color: #FFF; }
+::-moz-selection { background: rgba(212,160,23,0.32); color: #FFF; }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid rgba(212,160,23,0.7); outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
+section[id], .v4-section { scroll-margin-top: 96px; }
+h1, h2, .v4-h1, .v4-h2, .lp-h1, .lp-h2 { text-wrap: balance; }
+@media print { nav, .mobile-nav, .v4-sticky, .mobile-sticky-cta, .hamburger, body::after { display: none !important; } body { background: #FFF !important; color: #000 !important; } a { color: #000 !important; text-decoration: underline; } }
+.skip-link { position: absolute; left: -9999px; top: 0; z-index: 9999; padding: 0.75rem 1.25rem; background: #D4A017; color: #1A0F00; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; border-radius: 0 0 8px 0; }
+.skip-link:focus { left: 0; }
+details summary { cursor: pointer; }
+</style>
 </head>
 <body>
     <div class="container">
