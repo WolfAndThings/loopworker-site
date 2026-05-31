@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site-pages.css">
+  <title>Competitor Research vs Competitor Reconstruction · Signals · LoopWorker</title>
+  <meta name="description" content="Competitor research catalogues what competitors do. Competitor reconstruction rebuilds why their offer works. The second one ships a decision. Here's the difference.">
+  <link rel="canonical" href="https://www.loopworker.com/blog/competitor-research-vs-reconstruction.html">
+  <meta name="author" content="Alex Lamb">
+  <meta name="theme-color" content="#080808">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.loopworker.com/blog/competitor-research-vs-reconstruction.html">
+  <meta property="og:title" content="Competitor Research vs Competitor Reconstruction">
+  <meta property="og:description" content="Research catalogues. Reconstruction explains. Only one of them ships a decision.">
+  <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+  <meta property="og:site_name" content="LoopWorker">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-05-31">
+  <meta property="article:modified_time" content="2026-05-31">
+  <meta property="article:author" content="Alex Lamb">
+  <meta property="article:section" content="Definitions">
+  <meta property="article:tag" content="competitor research">
+  <meta property="article:tag" content="competitor reconstruction">
+  <meta property="article:tag" content="market intelligence">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Competitor Research vs Competitor Reconstruction">
+  <meta name="twitter:description" content="Research catalogues. Reconstruction explains.">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23080808' width='100' height='100'/><text x='50' y='65' font-size='52' text-anchor='middle' fill='%23D4A017'>◉</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+  <link rel="dns-prefetch" href="https://buy.stripe.com">
+
+  <style>
+    :root { --gold-leaf: linear-gradient(135deg, #E8C77A 0%, #D4A017 45%, #A87C0E 100%); --line: rgba(255,255,255,0.07); --soft: #C2C2C2; --mute: #888; --text: #F5F5F5; }
+    .sig-article { padding: 8rem 1.5rem 4rem; max-width: 760px; margin: 0 auto; }
+    .sig-meta-row { display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mute); font-weight: 600; margin-bottom: 1.4rem; }
+    .sig-meta-row span::before { content: '◆ '; color: #D4A017; }
+    .sig-meta-row span:first-child::before { content: ''; }
+    .sig-h1 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: clamp(2rem, 4.8vw, 3.4rem); line-height: 1.05; letter-spacing: -0.035em; color: var(--text); margin: 0 0 1.4rem; text-wrap: balance; }
+    .sig-h1 em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    .sig-lead { font-size: 1.18rem; line-height: 1.6; color: #D5D5D5; margin: 0 0 2.4rem; }
+    .sig-tldr { padding: 1.4rem 1.6rem; border: 1px solid rgba(212,160,23,0.25); background: rgba(212,160,23,0.04); border-radius: 10px; margin: 0 0 2.8rem; }
+    .sig-tldr-label { display: block; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: #D4A017; font-weight: 700; margin-bottom: 0.55rem; }
+    .sig-tldr p { font-size: 0.98rem; line-height: 1.6; color: var(--soft); margin: 0; }
+    .sig-section { margin: 2.6rem 0; }
+    .sig-section h2 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.55rem; letter-spacing: -0.02em; color: var(--text); margin: 0 0 1rem; line-height: 1.2; }
+    .sig-section h2 em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    .sig-section h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--text); margin: 1.8rem 0 0.7rem; letter-spacing: -0.015em; }
+    .sig-section p { font-size: 1.02rem; line-height: 1.7; color: var(--soft); margin: 0 0 1.1rem; }
+    .sig-section strong { color: var(--text); }
+    .sig-section ul, .sig-section ol { margin: 0 0 1.3rem 0; padding-left: 1.4rem; }
+    .sig-section li { font-size: 1rem; line-height: 1.7; color: var(--soft); margin-bottom: 0.5rem; }
+    .sig-section li strong { color: var(--text); }
+    .sig-callout { padding: 1.2rem 1.4rem; border-left: 2px solid #D4A017; background: rgba(255,255,255,0.022); margin: 1.6rem 0; border-radius: 0 8px 8px 0; }
+    .sig-callout p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.18rem; line-height: 1.4; color: var(--text); margin: 0; }
+    .sig-def { padding: 1rem 1.2rem; border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,0.012); margin: 1.4rem 0; font-size: 0.95rem; line-height: 1.55; color: var(--soft); }
+    .sig-def strong { display: inline-block; font-weight: 800; color: var(--text); margin-right: 0.4rem; letter-spacing: -0.005em; }
+    .sig-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.8rem 0; }
+    @media (max-width: 600px) { .sig-compare { grid-template-columns: 1fr; } }
+    .sig-compare-col { padding: 1.4rem; border: 1px solid var(--line); border-radius: 10px; background: rgba(255,255,255,0.012); }
+    .sig-compare-col.bright { background: rgba(212,160,23,0.05); border-color: rgba(212,160,23,0.28); }
+    .sig-compare-head { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mute); font-weight: 700; margin-bottom: 0.7rem; }
+    .sig-compare-col.bright .sig-compare-head { color: #D4A017; }
+    .sig-compare-col h4 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--text); margin: 0 0 0.8rem; letter-spacing: -0.015em; }
+    .sig-compare-col ul { list-style: none; margin: 0; padding: 0; }
+    .sig-compare-col li { padding: 0.5rem 0; font-size: 0.92rem; color: var(--soft); border-top: 1px solid var(--line); padding-left: 1rem; position: relative; }
+    .sig-compare-col li::before { content: ''; position: absolute; left: 0; top: 1.1rem; width: 6px; height: 1px; background: var(--mute); }
+    .sig-compare-col li:first-of-type { border-top: 0; }
+    .sig-faq { margin: 3rem 0 2rem; padding: 2rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .sig-faq-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: #D4A017; font-weight: 700; margin-bottom: 1.4rem; }
+    .sig-faq details { padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+    .sig-faq details:last-of-type { border-bottom: 0; }
+    .sig-faq summary { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.02rem; color: var(--text); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; letter-spacing: -0.005em; }
+    .sig-faq summary::-webkit-details-marker { display: none; }
+    .sig-faq summary::after { content: '+'; font-weight: 300; font-size: 1.4rem; color: var(--mute); line-height: 1; }
+    .sig-faq details[open] summary::after { content: '–'; color: #D4A017; }
+    .sig-faq details p { font-size: 0.96rem; line-height: 1.65; color: var(--soft); margin: 0.9rem 0 0; }
+    .sig-cta-box { margin: 3rem 0 0; padding: 2rem; border: 1px solid var(--line); border-radius: 12px; background: linear-gradient(180deg, rgba(212,160,23,0.04), rgba(255,255,255,0.01)); display: grid; grid-template-columns: 1fr auto; gap: 1.4rem; align-items: center; }
+    @media (max-width: 640px) { .sig-cta-box { grid-template-columns: 1fr; } }
+    .sig-cta-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--text); margin-bottom: 0.3rem; letter-spacing: -0.01em; }
+    .sig-cta-text { font-size: 0.92rem; color: var(--soft); line-height: 1.55; margin: 0; }
+    .sig-cta-btn { display: inline-flex; align-items: center; padding: 0.85rem 1.4rem; background: #D4A017; color: #1A0F00; text-decoration: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.88rem; white-space: nowrap; transition: background 0.18s; }
+    .sig-cta-btn:hover { background: #F4C842; }
+    .sig-foot { margin: 2.4rem 0 0; font-size: 0.82rem; color: var(--mute); padding-top: 1.2rem; border-top: 1px solid var(--line); }
+    .sig-foot a { color: var(--soft); }
+    .sig-related { margin: 3rem 0; }
+    .sig-related-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); font-weight: 700; margin-bottom: 1rem; }
+    .sig-related ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; }
+    .sig-related li a { display: block; padding: 0.85rem 1rem; border: 1px solid var(--line); border-radius: 8px; color: var(--text); text-decoration: none; font-size: 0.95rem; transition: border-color 0.18s, background 0.18s; }
+    .sig-related li a:hover { border-color: rgba(212,160,23,0.3); background: rgba(212,160,23,0.04); }
+    .sig-related li a span { color: var(--mute); font-size: 0.85rem; display: block; margin-top: 0.2rem; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.loopworker.com/#organization",
+        "name": "LoopWorker",
+        "url": "https://www.loopworker.com/",
+        "slogan": "Evidence before execution.",
+        "founder": { "@type": "Person", "name": "Alex Lamb", "url": "https://www.loopworker.com/about.html" }
+      },
+      {
+        "@type": "Article",
+        "headline": "Competitor research vs competitor reconstruction",
+        "alternativeHeadline": "Research catalogues. Reconstruction explains.",
+        "description": "Competitor research catalogues what competitors do. Competitor reconstruction rebuilds why their offer works. Only one of them ships a decision.",
+        "url": "https://www.loopworker.com/blog/competitor-research-vs-reconstruction.html",
+        "datePublished": "2026-05-31",
+        "dateModified": "2026-05-31",
+        "wordCount": 1140,
+        "timeRequired": "PT5M",
+        "inLanguage": "en-US",
+        "author": { "@type": "Person", "name": "Alex Lamb", "url": "https://www.loopworker.com/about.html" },
+        "publisher": { "@id": "https://www.loopworker.com/#organization" },
+        "mainEntityOfPage": "https://www.loopworker.com/blog/competitor-research-vs-reconstruction.html",
+        "image": "https://www.loopworker.com/images/cards/card_02.webp",
+        "about": ["competitor research", "competitor reconstruction", "market intelligence", "category analysis"],
+        "keywords": "competitor research, competitor reconstruction, competitor analysis, market intelligence, category research"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is competitor research?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Competitor research is the practice of cataloguing what competitors are doing: their pricing, their channels, their messaging, their product features. It produces a list of observations. It doesn't explain why anything works. Useful as input, dangerous as output." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is competitor reconstruction?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Competitor reconstruction is the practice of rebuilding why a competitor's offer works. It maps the proof chain, the buyer pattern, and the category claim each competitor is making. It produces a working theory of the category, not a list of facts." }
+          },
+          {
+            "@type": "Question",
+            "name": "What's the difference between competitor research and reconstruction?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Research catalogues what competitors do. Reconstruction explains why those moves are working (or not). Research can be done in an afternoon. Reconstruction takes a week and produces a defensible decision." }
+          },
+          {
+            "@type": "Question",
+            "name": "When should I do competitor research vs reconstruction?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Research before quick decisions (which channel to test, which copy to swap). Reconstruction before big bets (repositioning, pricing change, launch, category move)." }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does competitor reconstruction take?",
+            "acceptedAnswer": { "@type": "Answer", "text": "5 to 10 working days for one competitor done thoroughly. The Sprint format does it across 4-6 competitors in a single round and produces a category map plus a ranked next move." }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.loopworker.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Signals", "item": "https://www.loopworker.com/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Competitor research vs competitor reconstruction", "item": "https://www.loopworker.com/blog/competitor-research-vs-reconstruction.html" }
+        ]
+      },
+      {
+        "@type": "DefinedTermSet",
+        "name": "LoopWorker Definitions",
+        "hasDefinedTerm": [
+          {
+            "@type": "DefinedTerm",
+            "name": "Competitor research",
+            "description": "Cataloguing what competitors do: pricing, channels, messaging, features. Produces observations, not explanations."
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "Competitor reconstruction",
+            "description": "Rebuilding why a competitor's offer works. Produces a working theory of the category and a defensible next move."
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">LoopWorker</a>
+      <ul class="nav-links">
+        <li><a href="/sprint.html">The Sprint</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/case-studies.html">Case Studies</a></li>
+        <li><a href="/blog/">Signals</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/book.html" class="nav-cta">Book a Call</a></li>
+      </ul>
+      <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/sprint.html">The Sprint</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/case-studies.html">Case Studies</a>
+    <a href="/blog/">Signals</a>
+    <a href="/about.html">About</a>
+    <a href="/book.html" class="nav-cta">Book a Call</a>
+  </div>
+
+  <main id="main" class="sig-article">
+    <div class="sig-meta-row">
+      <span>Definition</span>
+      <span>5 min read</span>
+      <span>May 31, 2026</span>
+      <span>Alex Lamb</span>
+    </div>
+
+    <h1 class="sig-h1">Competitor research vs <em>competitor reconstruction.</em></h1>
+
+    <p class="sig-lead">Same input. Different output. One ships a decision. The other ships a deck.</p>
+
+    <aside class="sig-tldr">
+      <span class="sig-tldr-label">◆ TL;DR</span>
+      <p>Competitor research catalogues what competitors do (pricing, channels, messaging, features). It produces a list of observations. Competitor reconstruction rebuilds why their offer works. It produces a theory of the category and a defensible next move. Research is the input. Reconstruction is the output. Most teams ship research and call it strategy.</p>
+    </aside>
+
+    <section class="sig-section">
+      <h2>The Notion doc.</h2>
+      <p>A founder showed me a 47-page Notion doc last month. Tab one: every competitor's pricing tier. Tab two: every competitor's homepage hero. Tab three: their LinkedIn cadence. Tab four: estimated ad spend. Tab five: feature comparison matrix.</p>
+      <p>"What's the next move?" I asked.</p>
+      <p>She paused. "Well, we have all the data."</p>
+      <p>That's the problem. Data isn't a decision. The deck had everything except the one thing it needed: a defensible answer to <em>what do we do tomorrow.</em></p>
+    </section>
+
+    <section class="sig-section">
+      <h2>Two definitions.</h2>
+
+      <div class="sig-def"><strong>Competitor research:</strong>The practice of cataloguing what competitors are doing. Pricing, channels, messaging, features, cadence. Produces a list of observations. Useful as input, dangerous as output.</div>
+
+      <div class="sig-def"><strong>Competitor reconstruction:</strong>The practice of rebuilding why a competitor's offer works. Maps the proof chain, the buyer pattern, and the category claim each competitor is making. Produces a working theory of the category.</div>
+
+      <p>Research answers <strong>what.</strong> Reconstruction answers <strong>why.</strong> Most teams ship the first one and call it strategy. The deck looks complete. It isn't.</p>
+
+      <div class="sig-callout">
+        <p>A list of facts is not a theory of the category.</p>
+      </div>
+    </section>
+
+    <section class="sig-section">
+      <h2>Side by side.</h2>
+
+      <div class="sig-compare">
+        <div class="sig-compare-col">
+          <div class="sig-compare-head">Research</div>
+          <h4>Catalogues observations</h4>
+          <ul>
+            <li>Lists what competitors do</li>
+            <li>Pricing tiers, copy, features</li>
+            <li>Done in an afternoon</li>
+            <li>Output: a deck or doc</li>
+            <li>Conclusion: "Here's what they do"</li>
+            <li>Stops at description</li>
+            <li>Survives one quarter</li>
+          </ul>
+        </div>
+        <div class="sig-compare-col bright">
+          <div class="sig-compare-head">Reconstruction</div>
+          <h4>Rebuilds the why</h4>
+          <ul>
+            <li>Maps why their moves work</li>
+            <li>Proof chain, buyer pattern, claim</li>
+            <li>Takes 5-10 working days</li>
+            <li>Output: a ranked decision</li>
+            <li>Conclusion: "Here's what to do"</li>
+            <li>Goes through to next move</li>
+            <li>Holds for 1-2 years</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Why most teams stop at research.</h3>
+      <p>Research is comfortable. It feels productive. The deck grows. The screenshots accumulate. Nobody pushes back on a Notion doc with 47 tabs.</p>
+      <p>Reconstruction is uncomfortable. You have to <strong>commit to a theory</strong> about why the category is shaped the way it is. You have to defend that theory against the data. You have to be wrong sometimes, in writing, in front of the founder.</p>
+      <p>That's also why reconstruction is the work that ships a decision.</p>
+    </section>
+
+    <section class="sig-section">
+      <h2>The move.</h2>
+      <p>Use research when:</p>
+      <ul>
+        <li>You're testing one channel, one offer angle, one creative swap</li>
+        <li>The decision is reversible inside two weeks</li>
+        <li>You need a sanity check, not a theory</li>
+      </ul>
+      <p>Use reconstruction when:</p>
+      <ul>
+        <li>You're repositioning, repricing, launching, or moving categories</li>
+        <li>The decision will be defended in a board meeting or investor call</li>
+        <li>You're about to spend 10× research budget on execution</li>
+      </ul>
+      <p>The math is simple. Reconstruction costs a week. The wrong reposition costs a year.</p>
+    </section>
+
+    <section class="sig-section">
+      <h2>Back to the 47-page doc.</h2>
+      <p>We threw out the doc. Pulled four competitors instead of fourteen. Rebuilt the why on each one. Ten days later she had a ranked recommendation: hold pricing, swap the proof claim, kill one channel, double down on another. She shipped it inside the month. The deck never came up again.</p>
+      <p>The data wasn't the problem. The doc wasn't the problem. The problem was: it stopped at <em>what.</em></p>
+    </section>
+
+    <section class="sig-faq">
+      <div class="sig-faq-label">◆ Common questions</div>
+      <details>
+        <summary>What is competitor research?</summary>
+        <p>Cataloguing what competitors do: pricing, channels, messaging, features. Produces observations. Useful as input, dangerous as output.</p>
+      </details>
+      <details>
+        <summary>What is competitor reconstruction?</summary>
+        <p>Rebuilding why a competitor's offer works. Maps the proof chain, the buyer pattern, the category claim. Produces a working theory and a defensible next move.</p>
+      </details>
+      <details>
+        <summary>When should I use research vs reconstruction?</summary>
+        <p>Research for reversible quick tests. Reconstruction before any big bet (repositioning, repricing, launches, category moves).</p>
+      </details>
+      <details>
+        <summary>How long does reconstruction take?</summary>
+        <p>5 to 10 working days for one competitor done thoroughly. The Sprint format does it across 4-6 competitors and produces a category map plus a ranked next move.</p>
+      </details>
+      <details>
+        <summary>Can I do competitor reconstruction myself?</summary>
+        <p>Yes. The harder skill is staying honest. Founders reconstructing their own category often pattern-match to what they want to be true. An outside read keeps the theory testable.</p>
+      </details>
+    </section>
+
+    <aside class="sig-cta-box">
+      <div>
+        <div class="sig-cta-title">Want the reconstruction on your category?</div>
+        <p class="sig-cta-text">Sprint 3 rebuilds the why across 4-6 competitors + a ranked next move. 10 days, $8,000. Or start with Sprint 1 ($750, 48 hours) on one competitor first.</p>
+      </div>
+      <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="sig-cta-btn" data-track="Blog Reconstruction CTA">View Sprint 3 →</a>
+    </aside>
+
+    <section class="sig-related">
+      <div class="sig-related-label">◆ Related signals</div>
+      <ul>
+        <li><a href="/blog/why-ads-stop-working-after-60-days.html">Why your ads stop working after 60 days<span>Category drift vs creative fatigue.</span></a></li>
+        <li><a href="/blog/why-consistency-beats-virality.html">Why consistency beats virality<span>Repeatable signals over spikes.</span></a></li>
+      </ul>
+    </section>
+
+    <p class="sig-foot">Last updated May 31, 2026. Field notes by <a href="/about.html">Alex Lamb</a>, LoopWorker.</p>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">LoopWorker</div>
+        <div class="footer-meta">Evidence before execution.</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="/sprint.html">The Sprint</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/case-studies.html">Case Studies</a></li>
+        <li><a href="/blog/">Signals</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script defer src="/site-pages.js"></script>
+</body>
+</html>
