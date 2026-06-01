@@ -8,8 +8,8 @@ Positioning pivoted May 21 2026 from DFY brand photography → market intelligen
 | File | Page |
 |------|------|
 | `index.html` | Homepage (Market Intelligence for Modern Brands) |
-| `sprint.html` | The Sprint — full product walkthrough + 3-tier pricing |
-| `pricing.html` | Pricing — Sprint Lite/Pro/Full + Systems Retainer |
+| `sprint.html` | The Sprint — full product walkthrough + 4-tier pricing |
+| `pricing.html` | Pricing — Surface/Compass/Atlas/Operating System + Systems Retainer |
 | `services.html` | Implementation / signal environments |
 | `case-studies.html` | Case studies (4 anonymized engagements) |
 | `about.html` | About |
@@ -18,12 +18,14 @@ Positioning pivoted May 21 2026 from DFY brand photography → market intelligen
 | `audit.html` | Standalone audit form |
 | `404.html` | 404 page |
 
-## Sprint ladder (live May 26 2026)
-- **Signal Snapshot** — $750 / 48 hours — gateway, one signal pulled deep (test-the-waters)
-- **Sprint Lite** — $2,500 / 5 days — one focused research round
-- **Sprint Pro** ★ — $8,500 / 10 days — standard connected market brief
-- **Sprint Full** — $25,000 / 14 days — launch / repositioning / pitch-deck
+## Sprint ladder (renamed Jun 1 2026)
+- **Surface** — $750 / 48 hours — gateway, surface scan (web + social + 3 next moves)
+- **Compass** — $3,200 / 5 days — competitive read + your strategic answer (leads / launch / X)
+- **Atlas** — $8,000 / 10 days — answer + 3 outlets dialed for your niche
+- **Operating System** — $25,000 / 14 days + 3-month support — data + answer + deep dive + positioning + 90-day social roadmap + execution playbook
 - **Systems Retainer** — $4,500/mo — post-Sprint execution
+
+Stripe ledger: `Memory/Code_Scripts/STRIPE_PAYMENT_LINKS.json` (all 5 links click-tested Jun 1 2026, 6/6 verified clean including Operating System).
 
 CTAs route directly to Stripe Payment Links. Ledger: `Memory/Code_Scripts/STRIPE_PAYMENT_LINKS.json`. Refresh links via `python3 create_stripe_links.py` (needs STRIPE_SECRET_KEY in env or `Projects/LoopWorker/.env`).
 

@@ -1,246 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <title>Signal Snapshot · Intake | LoopWorker</title>
-    <meta name="description" content="Your Signal Snapshot is paid. Pick your signal + share business context so we can deliver in 48 hours.">
-    <link rel="canonical" href="https://www.loopworker.com/thank-you-snapshot.html">
-    <meta name="robots" content="noindex">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
-    <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background: #080808;
-            color: #D4D4D4;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            padding: 4rem 1.5rem;
-            min-height: 100vh;
-        }
-        .container { max-width: 720px; margin: 0 auto; }
-        .eyebrow {
-            color: #D4A017;
-            font-size: 0.72rem;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            font-weight: 700;
-            margin-bottom: 1.2rem;
-            display: block;
-        }
-        h1 {
-            color: #FFF;
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            font-weight: 700;
-            line-height: 1.15;
-            letter-spacing: -0.03em;
-            margin-bottom: 1.2rem;
-        }
-        h1 em { color: #D4A017; font-style: italic; font-weight: 500; }
-        .lede {
-            font-size: 1.05rem;
-            color: #B5B5B5;
-            margin-bottom: 2.5rem;
-            max-width: 620px;
-        }
-        .lede strong { color: #FFF; font-weight: 600; }
-        form { display: flex; flex-direction: column; gap: 1.6rem; }
-        .field { display: flex; flex-direction: column; gap: 0.45rem; }
-        .field label {
-            font-size: 0.78rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: #888;
-            font-weight: 600;
-        }
-        .field input,
-        .field select,
-        .field textarea {
-            background: #141414;
-            border: 1px solid #2A2A2A;
-            color: #F4F4F0;
-            padding: 0.9rem 1rem;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 0.95rem;
-            outline: none;
-            transition: border-color 0.15s;
-        }
-        .field input:focus,
-        .field select:focus,
-        .field textarea:focus { border-color: #D4A017; }
-        .field textarea { min-height: 110px; resize: vertical; }
-        .field .hint { font-size: 0.82rem; color: #666; margin-top: 0.2rem; }
-        .signal-group {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 0.7rem;
-        }
-        .signal-opt {
-            position: relative;
-            background: #141414;
-            border: 1px solid #2A2A2A;
-            border-radius: 8px;
-            padding: 1rem 1.1rem;
-            cursor: pointer;
-            transition: border-color 0.15s, background 0.15s;
-        }
-        .signal-opt:hover { border-color: #555; }
-        .signal-opt input { position: absolute; opacity: 0; pointer-events: none; }
-        .signal-opt input:checked + .signal-body {
-            color: #F4F4F0;
-        }
-        .signal-opt:has(input:checked) {
-            border-color: #D4A017;
-            background: rgba(212,160,23,0.08);
-        }
-        .signal-body { color: #B5B5B5; }
-        .signal-body .signal-name {
-            color: #FFF;
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-bottom: 0.3rem;
-            display: block;
-        }
-        .signal-body .signal-desc { font-size: 0.82rem; line-height: 1.45; color: #888; }
-        button {
-            background: #D4A017;
-            color: #0A0908;
-            border: none;
-            padding: 1rem 1.6rem;
-            border-radius: 8px;
-            font-family: inherit;
-            font-weight: 700;
-            font-size: 0.9rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: background 0.15s;
-            align-self: flex-start;
-        }
-        button:hover { background: #E8B82A; }
-        .footnote {
-            margin-top: 2rem;
-            font-size: 0.85rem;
-            color: #666;
-            line-height: 1.55;
-            padding-top: 1.6rem;
-            border-top: 1px solid #1A1A1A;
-        }
-        .footnote a { color: #888; text-decoration: underline; text-decoration-color: #333; }
-    </style>
-<style id="lw-polish">
-/* Universal polish: tabular nums on prices, optimizeLegibility, focus ring, selection, reduced motion, skip-link, print, scroll padding */
-html { scroll-padding-top: 80px; -webkit-tap-highlight-color: rgba(212,160,23,0.18); }
-html body { text-rendering: optimizeLegibility; font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1; font-kerning: normal; }
-.tier-price, .v4-price-chip strong, .v4-offer-price, .pricing-amount,
-.v4-tstm-meta-stat, .stat strong, .signal-source strong, .console-pill,
-.v4-stat-num, .lp-source strong, .compare-table td, .compare-table th { font-variant-numeric: tabular-nums; font-feature-settings: 'kern' 1, 'liga' 1, 'tnum' 1, 'lnum' 1; }
-::selection { background: rgba(212,160,23,0.32); color: #FFF; }
-::-moz-selection { background: rgba(212,160,23,0.32); color: #FFF; }
-:focus { outline: none; }
-:focus-visible { outline: 2px solid rgba(212,160,23,0.7); outline-offset: 3px; border-radius: 4px; }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
-section[id], .v4-section { scroll-margin-top: 96px; }
-h1, h2, .v4-h1, .v4-h2, .lp-h1, .lp-h2 { text-wrap: balance; }
-@media print { nav, .mobile-nav, .v4-sticky, .mobile-sticky-cta, .hamburger, body::after { display: none !important; } body { background: #FFF !important; color: #000 !important; } a { color: #000 !important; text-decoration: underline; } }
-.skip-link { position: absolute; left: -9999px; top: 0; z-index: 9999; padding: 0.75rem 1.25rem; background: #D4A017; color: #1A0F00; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; border-radius: 0 0 8px 0; }
-.skip-link:focus { left: 0; }
-details summary { cursor: pointer; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <title>Surface · Intake | LoopWorker</title>
+  <meta name="description" content="Your Surface is paid. Pick your signal and share business context so we can deliver in 48 hours.">
+  <link rel="canonical" href="https://www.loopworker.com/thank-you-snapshot.html">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#07070C">
+  <meta name="color-scheme" content="dark">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/v5-system.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
+
+  <style>
+    .v5-intake-shell { position: relative; overflow: hidden; padding: 5rem 2rem 6rem; min-height: 80vh; }
+    .v5-intake-shell::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 900px 500px at 30% 0%, rgba(99,102,241,0.16), transparent 60%),
+        radial-gradient(ellipse 700px 400px at 80% 80%, rgba(168,85,247,0.10), transparent 70%);
+    }
+    .v5-intake-inner { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; }
+    .v5-intake-inner h1 { font-size: clamp(2rem, 4.4vw, 3rem); margin: 0 0 1rem; }
+    .v5-intake-lede {
+      font-size: 1.05rem; color: var(--text-2);
+      line-height: 1.55; margin: 0 0 2.5rem;
+    }
+    .v5-intake-lede strong { color: var(--text); font-weight: 600; }
+    .v5-intake-card {
+      background: linear-gradient(135deg, rgba(99,102,241,0.05), transparent 50%), var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px; padding: 2.4rem;
+      position: relative; overflow: hidden;
+    }
+    .v5-intake-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: var(--grad-hero);
+    }
+    .v5-intake-card form { display: flex; flex-direction: column; gap: 1.4rem; }
+    .v5-intake-card .v5-form-field { margin: 0; }
+    .v5-intake-card .hint { font-size: 0.8rem; color: var(--text-3); margin-top: 0.4rem; }
+    .v5-signal-pick {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.7rem;
+    }
+    .v5-signal-opt {
+      position: relative;
+      background: rgba(0,0,0,0.3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+    .v5-signal-opt:hover { border-color: var(--border-bright); }
+    .v5-signal-opt input { position: absolute; opacity: 0; pointer-events: none; }
+    .v5-signal-opt:has(input:checked) {
+      border-color: var(--indigo);
+      background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(168,85,247,0.04));
+      box-shadow: 0 0 0 1px rgba(99,102,241,0.3) inset;
+    }
+    .v5-signal-name {
+      font-family: var(--sans-tight);
+      color: var(--text); font-weight: 700;
+      font-size: 0.96rem; margin-bottom: 0.3rem;
+      display: block; letter-spacing: -0.015em;
+    }
+    .v5-signal-desc {
+      font-size: 0.82rem; line-height: 1.45; color: var(--text-3);
+    }
+    .v5-intake-foot {
+      margin-top: 2rem; padding-top: 1.6rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--mono); font-size: 0.78rem;
+      color: var(--text-3); line-height: 1.55;
+    }
+    .v5-intake-foot a { color: var(--indigo-bright); border-bottom: 1px solid rgba(129,140,248,0.3); }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <span class="eyebrow">◆ Payment received · 48-hour clock starts at intake</span>
-        <h1>Pick your <em>signal.</em> Drop the context.</h1>
-        <p class="lede">Your Signal Snapshot is paid. We need 2 minutes from you to start. Pick which of the 5 signals you want pulled, drop the business context, and we'll deliver inside 48 hours from when you hit submit. <strong>Receipt also in your inbox.</strong></p>
+  <a href="#main" class="skip-link">Skip to content</a>
 
-        <form action="https://formsubmit.co/alex@loopworker.com" method="POST">
-            <input type="hidden" name="_subject" value="🔔 Snapshot Intake — new $750 customer">
+  <nav class="v5-nav">
+    <div class="v5-nav-inner">
+      <a href="/" class="v5-logo">
+        <span class="v5-logo-mark">L</span>
+        LoopWorker
+      </a>
+      <div class="v5-nav-links">
+        <a href="/sprint.html">Sprints</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/case-studies.html">Customers</a>
+        <a href="/about.html">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="v5-intake-shell">
+      <div class="v5-intake-inner">
+        <div class="v5-chip">
+          <span class="v5-chip-dot"></span>
+          <span>Payment received · 48-hour clock starts at intake</span>
+        </div>
+        <h1>Pick your <span class="grad-text">signal.</span> Drop the context.</h1>
+        <p class="v5-intake-lede">Your Surface is paid. 2 minutes from you to start. Pick which of the 5 signals to pull + drop business context. We deliver inside 48 hours from when you hit submit. <strong>Receipt also in your inbox.</strong></p>
+
+        <div class="v5-intake-card">
+          <form action="https://formsubmit.co/alex@loopworker.com" method="POST">
+            <input type="hidden" name="_subject" value="🔔 Surface Intake — new $750 customer">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_next" value="https://www.loopworker.com/thank-you.html?intake=snapshot">
             <input type="hidden" name="_captcha" value="false">
 
-            <div class="field">
-                <label for="name">Your name</label>
-                <input type="text" id="name" name="Name" required>
+            <div class="v5-form-field">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="Name" required>
+            </div>
+            <div class="v5-form-field">
+              <label for="email">Email (where we send the brief)</label>
+              <input type="email" id="email" name="Email" required>
+            </div>
+            <div class="v5-form-field">
+              <label for="company">Company / brand</label>
+              <input type="text" id="company" name="Company" required>
+            </div>
+            <div class="v5-form-field">
+              <label for="url">Site URL</label>
+              <input type="url" id="url" name="URL" placeholder="https://" required>
             </div>
 
-            <div class="field">
-                <label for="email">Email (where we send the brief)</label>
-                <input type="email" id="email" name="Email" required>
+            <div class="v5-form-field">
+              <label>Pick one signal to pull</label>
+              <div class="v5-signal-pick">
+                <label class="v5-signal-opt">
+                  <input type="radio" name="Signal" value="Competitor wall" required>
+                  <span class="v5-signal-name">Competitor wall</span>
+                  <span class="v5-signal-desc">3-5 direct competitors · positioning · pricing · hero copy · CTAs · last 30d content.</span>
+                </label>
+                <label class="v5-signal-opt">
+                  <input type="radio" name="Signal" value="Customer voice">
+                  <span class="v5-signal-name">Customer voice</span>
+                  <span class="v5-signal-desc">50-200 review fragments clustered by theme · friction · love · wish-they-had.</span>
+                </label>
+                <label class="v5-signal-opt">
+                  <input type="radio" name="Signal" value="Pricing band">
+                  <span class="v5-signal-name">Pricing band</span>
+                  <span class="v5-signal-desc">Where you sit vs 5-10 comparables · anchor analysis · tier-structure read.</span>
+                </label>
+                <label class="v5-signal-opt">
+                  <input type="radio" name="Signal" value="Proof gap">
+                  <span class="v5-signal-name">Proof gap</span>
+                  <span class="v5-signal-desc">What credibility cues you're missing vs winners · testimonials · press · case studies.</span>
+                </label>
+                <label class="v5-signal-opt">
+                  <input type="radio" name="Signal" value="Channel fit">
+                  <span class="v5-signal-name">Channel fit</span>
+                  <span class="v5-signal-desc">Which channel actually works in your category right now · engagement signals across 5 platforms.</span>
+                </label>
+              </div>
             </div>
 
-            <div class="field">
-                <label for="company">Company / brand</label>
-                <input type="text" id="company" name="Company" required>
+            <div class="v5-form-field">
+              <label for="decision">What decision is this signal informing?</label>
+              <textarea id="decision" name="Decision" placeholder="e.g. We're about to relaunch our pricing page and want to know if usage-based is the right move for our category." required></textarea>
+              <div class="hint">One sentence is fine. More is better.</div>
+            </div>
+            <div class="v5-form-field">
+              <label for="context">Anything else useful? ICP, recent moves, what's failing</label>
+              <textarea id="context" name="Context" placeholder="Optional. Helps us pick the right cut of the signal."></textarea>
             </div>
 
-            <div class="field">
-                <label for="url">Site URL</label>
-                <input type="url" id="url" name="URL" placeholder="https://" required>
-            </div>
+            <button type="submit" class="v5-form-submit">Start the 48-hour clock →</button>
+          </form>
 
-            <div class="field">
-                <label>Pick one signal to pull</label>
-                <div class="signal-group">
-                    <label class="signal-opt">
-                        <input type="radio" name="Signal" value="Competitor wall" required>
-                        <span class="signal-body">
-                            <span class="signal-name">Competitor wall</span>
-                            <span class="signal-desc">3-5 direct competitors · positioning · pricing · hero copy · CTAs · last 30d content.</span>
-                        </span>
-                    </label>
-                    <label class="signal-opt">
-                        <input type="radio" name="Signal" value="Customer voice">
-                        <span class="signal-body">
-                            <span class="signal-name">Customer voice</span>
-                            <span class="signal-desc">50-200 review fragments clustered by theme · friction · love · wish-they-had.</span>
-                        </span>
-                    </label>
-                    <label class="signal-opt">
-                        <input type="radio" name="Signal" value="Pricing band">
-                        <span class="signal-body">
-                            <span class="signal-name">Pricing band</span>
-                            <span class="signal-desc">Where you sit vs 5-10 comparables · anchor analysis · tier-structure read.</span>
-                        </span>
-                    </label>
-                    <label class="signal-opt">
-                        <input type="radio" name="Signal" value="Proof gap">
-                        <span class="signal-body">
-                            <span class="signal-name">Proof gap</span>
-                            <span class="signal-desc">What credibility cues you're missing vs winners · testimonials · press · case studies.</span>
-                        </span>
-                    </label>
-                    <label class="signal-opt">
-                        <input type="radio" name="Signal" value="Channel fit">
-                        <span class="signal-body">
-                            <span class="signal-name">Channel fit</span>
-                            <span class="signal-desc">Which channel actually works in your category right now · engagement signals across 5 platforms.</span>
-                        </span>
-                    </label>
-                </div>
-            </div>
+          <p class="v5-intake-foot">14-day refund if the brief doesn't give you a defensible move. — Alex, LoopWorker.<br>Questions: <a href="mailto:alex@loopworker.com">alex@loopworker.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-            <div class="field">
-                <label for="decision">What decision is this signal informing?</label>
-                <textarea id="decision" name="Decision" placeholder="Example: We're about to relaunch our pricing page and want to know if usage-based is the right move for our category." required></textarea>
-                <span class="hint">One sentence is fine. More is better.</span>
-            </div>
-
-            <div class="field">
-                <label for="context">Anything else useful? (ICP, recent moves, what's failing, what's not)</label>
-                <textarea id="context" name="Context" placeholder="Optional. Helps us pick the right cut of the signal."></textarea>
-            </div>
-
-            <button type="submit">Start the 48-hour clock →</button>
-
-            <p class="footnote">14-day refund if the brief doesn't give you a single defensible move. No process, no questions. — Alex, LoopWorker.<br>Questions: <a href="mailto:alex@loopworker.com">alex@loopworker.com</a></p>
-        </form>
+  <footer class="v5-foot">
+    <div class="v5-foot-inner">
+      <div class="v5-foot-logo">LoopWorker</div>
+      <p class="v5-foot-small">Evidence before execution.</p>
     </div>
+  </footer>
 </body>
 </html>

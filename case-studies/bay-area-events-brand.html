@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
-    <script defer src="/site-pages.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/site-pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/v5-system.css">
     <title>Case Study: Bay Area Events Brand Signal Map | LoopWorker</title>
     <meta name="description" content="An anonymized events-brand case study showing how founder-led demand signals became a clear visibility system and next-move path.">
     <link rel="canonical" href="https://www.loopworker.com/case-studies/bay-area-events-brand.html">
@@ -16,7 +17,7 @@
     <meta property="og:url" content="https://www.loopworker.com/case-studies/bay-area-events-brand.html">
     <meta property="og:title" content="Bay Area Events Brand Signal Map | LoopWorker">
     <meta property="og:description" content="Founder-led demand signals turned into a visibility system and next-move path. Client details anonymized.">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <link rel='icon' type='image/svg+xml' href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
 
     <script type="application/ld+json">
     {
@@ -35,31 +36,38 @@
     </script>
 </head>
 <body>
-    <nav>
-        <div class="nav-inner">
-            <a href="/" class="nav-logo">LoopWorker</a>
-            <ul class="nav-links">
-                <li><a href="/sprint.html">The Sprint</a></li>
-                <li><a href="/case-studies.html">Case Studies</a></li>
-                <li><a href="/blog/">Signals</a></li>
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/book.html" class="nav-cta" data-track="Nav Book CTA">Book a Call</a></li>
-            </ul>
-            <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
-    <div class="mobile-nav" id="mobileNav">
-        <a href="/sprint.html">The Sprint</a>
-        <a href="/case-studies.html">Case Studies</a>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="v5-nav">
+    <div class="v5-nav-inner">
+      <a href="/" class="v5-logo">
+        <span class="v5-logo-mark">L</span>
+        LoopWorker
+      </a>
+      <div class="v5-nav-links">
+        <a href="/sprint.html">Sprints</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/case-studies.html" class="active">Customers</a>
         <a href="/blog/">Signals</a>
         <a href="/about.html">About</a>
-        <a href="/book.html" class="nav-cta" data-track="Mobile Nav Book CTA">Book a Call</a>
+        <a href="/book.html" class="v5-nav-cta">Book a Call</a>
+      </div>
+      <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+    <div class="v5-mobile-nav" id="mobileNav">
+      <a href="/sprint.html">Sprints</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/case-studies.html">Customers</a>
+      <a href="/blog/">Signals</a>
+      <a href="/about.html">About</a>
+      <a href="/book.html" class="v5-nav-cta">Book a Call</a>
+    </div>
+  </nav>
 
-    <main>
-        <section class="cs-shell">
+  <main id="main">
+    <section class="cs-shell">
             <div class="container">
                 <span class="eyebrow">◆ Case Study · Bay Area Events Brand · Anonymized</span>
                 <h1>Bay Area Events Brand · founder-led demand signals mapped into a <em>clear next move.</em></h1>
@@ -68,7 +76,7 @@
                 <div class="cs-meta">
                     <div><span>Brand</span><strong>Bay Area Events Brand · redacted handle</strong></div>
                     <div><span>Founder</span><strong>Redacted</strong></div>
-                    <div><span>Sprint</span><strong>Sprint Lite · 5 days</strong></div>
+                    <div><span>Sprint</span><strong>Compass · 5 days</strong></div>
                     <div><span>Output</span><strong>Signal map · pillars · next-move plan</strong></div>
                 </div>
 
@@ -137,7 +145,7 @@
                         <li><strong>Your data is already there.</strong> The audit isn't theoretical — it pulls from your actual posts. The patterns are sitting in your saves and shares; you just haven't sorted them.</li>
                         <li><strong>The founder is usually the under-used asset.</strong> 8 out of 10 founder-led brands we audit get the same signal: founder-on-camera converts at multiples of product/event b-roll. The audit makes that argument with proof, not vibes.</li>
                         <li><strong>The lane is rarely where you think it is.</strong> The founder assumed the competitive set was party entertainers. The live-data pipeline showed the open lane was wellness-coded sensory studios. Same product. Different shelf. Different margin.</li>
-                        <li><strong>Sprint Lite is the focused entry.</strong> Narrow enough to move quickly. Deep enough to show the difference between generic content help and a visibility system.</li>
+                        <li><strong>Compass is the focused entry.</strong> Narrow enough to move quickly. Deep enough to show the difference between generic content help and a visibility system.</li>
                     </ul>
                 </div>
 
@@ -155,32 +163,20 @@
                 <h2>Run a founder-led brand? Same system. <em>Founder-led.</em></h2>
                 <p>Five days. One focused question. A visibility system built from live market signals.</p>
                 <div class="hero-actions" style="justify-content: center;">
-                    <a href="/sprint.html" class="btn btn-primary" data-track="Bay Area Events Brand Footer Sprint Lite CTA">See the Sprint Lite →</a>
+                    <a href="/sprint.html" class="btn btn-primary" data-track="Bay Area Events Brand Footer Compass CTA">See the Compass →</a>
                     <a href="/book.html" class="btn btn-outline" data-track="Bay Area Events Brand Footer Book CTA">Book a Signal Review</a>
                 </div>
             </div>
         </section>
-    </main>
+  </main>
 
-    <footer>
-        <div class="container footer-inner">
-            <div>
-                <div class="footer-brand">LoopWorker</div>
-                <div class="footer-meta">Evidence before execution.</div>
-            </div>
-            <ul class="footer-links">
-                <li><a href="/sprint.html">The Sprint</a></li>
-                <li><a href="/case-studies.html">Case Studies</a></li>
-                <li><a href="/blog/">Signals</a></li>
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/privacy.html">Privacy</a></li>
-                <li><a href="/terms.html">Terms</a></li>
-            </ul>
-            <div class="footer-contact">
-                <a href="mailto:alex@loopworker.com">alex@loopworker.com</a><br>
-                <a href="https://instagram.com/loop.worker" target="_blank" rel="noopener">@loop.worker</a>
-            </div>
-        </div>
-    </footer>
+  <footer class="v5-foot">
+    <div class="v5-foot-inner">
+      <div class="v5-foot-logo">LoopWorker</div>
+      <p>Evidence before execution.</p>
+      <p>© 2026 · <a href="/sprint.html">Sprints</a> · <a href="/case-studies.html">Customers</a> · <a href="/blog/">Signals</a> · <a href="/about.html">About</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+      <p class="v5-foot-small">alex@loopworker.com · <a href="https://instagram.com/loopworker">@loopworker</a></p>
+    </div>
+  </footer>
 </body>
 </html>

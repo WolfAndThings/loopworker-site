@@ -1,53 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.loopworker.com/</loc><lastmod>2026-05-21</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.loopworker.com/sprint.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
-  <url><loc>https://www.loopworker.com/signal-intelligence.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.loopworker.com/case-studies.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.loopworker.com/case-studies/enterprise-sales-executive.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/case-studies/creator-organic-views.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/case-studies/bay-area-events-brand.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/case-studies/luxury-home-brand.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/case-studies/saas-workflow-tool.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/visuals.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.loopworker.com/blog/</loc><lastmod>2026-05-21</lastmod><changefreq>weekly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/blog/why-ads-stop-working-after-60-days.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/blog/competitor-research-vs-reconstruction.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/blog/how-to-read-a-pricing-band.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/blog/what-category-positioning-means.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/blog/customer-voice-cluster.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/blog/what-is-a-decision-brief.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/blog/why-cac-went-up.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/blog/the-proof-gap.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/blog/repurpose-reposition-rebuild.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/blog/buyer-language-pulls.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/blog/the-action-sheet.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/blog/channel-saturation.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/blog/evaluate-strategy-consultant.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/blog/complaint-signal.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/blog/visibility-brief-vs-strategic-plan.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/blog/how-to-brief-a-sprint.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/blog/what-to-do-with-a-sprint.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/blog/why-i-refund-sprints.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/blog/when-research-distracts.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/blog/visibility-cycle.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/blog/why-consistency-beats-virality.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.loopworker.com/blog/social-media-analytics-guide.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.loopworker.com/blog/restaurant-social-media-mistakes.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.loopworker.com/blog/google-business-profile-optimization.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.loopworker.com/blog/call-to-action-examples.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.loopworker.com/blog/content-strategy-for-businesses-that-hate-content.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.loopworker.com/blog/ecommerce-instagram-strategy.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.loopworker.com/blog/fitness-studio-instagram-strategy.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.loopworker.com/blog/med-spa-social-media-strategy.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.loopworker.com/about.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.loopworker.com/book.html</loc><lastmod>2026-05-26</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.loopworker.com/pricing.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
-  <url><loc>https://www.loopworker.com/services.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.loopworker.com/restaurants.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.loopworker.com/medspas.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.loopworker.com/coaches.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.loopworker.com/agencies.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.loopworker.com/faq.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.loopworker.com/portfolio.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- CORE FUNNEL -->
+  <url><loc>https://www.loopworker.com/</loc><lastmod>2026-06-01</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.loopworker.com/sprint.html</loc><lastmod>2026-06-01</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://www.loopworker.com/pricing.html</loc><lastmod>2026-06-01</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://www.loopworker.com/book.html</loc><lastmod>2026-06-01</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.loopworker.com/sample-brief.html</loc><lastmod>2026-06-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.loopworker.com/about.html</loc><lastmod>2026-06-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+
+  <!-- CASE STUDIES -->
+  <url><loc>https://www.loopworker.com/case-studies.html</loc><lastmod>2026-06-01</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.loopworker.com/case-studies/enterprise-sales-executive.html</loc><lastmod>2026-06-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.loopworker.com/case-studies/creator-organic-views.html</loc><lastmod>2026-06-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.loopworker.com/case-studies/bay-area-events-brand.html</loc><lastmod>2026-06-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.loopworker.com/case-studies/luxury-home-brand.html</loc><lastmod>2026-06-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.loopworker.com/case-studies/saas-workflow-tool.html</loc><lastmod>2026-06-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+
+  <!-- RESOURCES -->
+  <url><loc>https://www.loopworker.com/resources/field-manual.html</loc><lastmod>2026-06-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.loopworker.com/signal-intelligence.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.loopworker.com/faq.html</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+
+  <!-- BLOG -->
+  <url><loc>https://www.loopworker.com/blog/</loc><lastmod>2026-05-31</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.loopworker.com/blog/why-ads-stop-working-after-60-days.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.loopworker.com/blog/competitor-research-vs-reconstruction.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.loopworker.com/blog/how-to-read-a-pricing-band.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.loopworker.com/blog/what-category-positioning-means.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.loopworker.com/blog/customer-voice-cluster.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.loopworker.com/blog/what-is-a-decision-brief.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.loopworker.com/blog/why-cac-went-up.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.loopworker.com/blog/the-proof-gap.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.loopworker.com/blog/repurpose-reposition-rebuild.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.loopworker.com/blog/buyer-language-pulls.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.loopworker.com/blog/the-action-sheet.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.loopworker.com/blog/channel-saturation.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.loopworker.com/blog/evaluate-strategy-consultant.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.loopworker.com/blog/complaint-signal.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.loopworker.com/blog/visibility-brief-vs-strategic-plan.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.loopworker.com/blog/how-to-brief-a-sprint.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.loopworker.com/blog/what-to-do-with-a-sprint.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.loopworker.com/blog/why-i-refund-sprints.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.loopworker.com/blog/when-research-distracts.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.loopworker.com/blog/visibility-cycle.html</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- LEGACY BLOG (SEO-driving vertical articles) -->
+  <url><loc>https://www.loopworker.com/blog/why-consistency-beats-virality.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.55</priority></url>
+  <url><loc>https://www.loopworker.com/blog/social-media-analytics-guide.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.55</priority></url>
+  <url><loc>https://www.loopworker.com/blog/restaurant-social-media-mistakes.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.55</priority></url>
+  <url><loc>https://www.loopworker.com/blog/google-business-profile-optimization.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.55</priority></url>
+  <url><loc>https://www.loopworker.com/blog/call-to-action-examples.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.55</priority></url>
+  <url><loc>https://www.loopworker.com/blog/content-strategy-for-businesses-that-hate-content.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.55</priority></url>
+  <url><loc>https://www.loopworker.com/blog/ecommerce-instagram-strategy.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.55</priority></url>
+  <url><loc>https://www.loopworker.com/blog/fitness-studio-instagram-strategy.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.55</priority></url>
+  <url><loc>https://www.loopworker.com/blog/med-spa-social-media-strategy.html</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.55</priority></url>
+
 </urlset>

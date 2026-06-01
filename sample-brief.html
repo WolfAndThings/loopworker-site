@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <title>Sample Atlas Brief · LoopWorker</title>
+  <meta name="description" content="Read an anonymized Atlas-tier Sprint brief. Full structure, real depth, names stripped. 4-minute read.">
+  <link rel="canonical" href="https://www.loopworker.com/sample-brief.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.loopworker.com/sample-brief.html">
+  <meta property="og:title" content="Sample Atlas Brief · LoopWorker">
+  <meta property="og:description" content="Anonymized Sprint Pro deliverable. See what you get back.">
+  <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="LoopWorker">
+  <meta name="theme-color" content="#07070C">
+  <meta name="color-scheme" content="dark">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/v5-system.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
+  <link rel="dns-prefetch" href="https://buy.stripe.com">
+
+  <style>
+    .v5-brief-shell { padding: 4rem 2rem 6rem; }
+    .v5-brief-intro {
+      max-width: 740px; margin: 0 auto 3rem; text-align: center;
+    }
+    .v5-brief-intro h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin: 0 0 1rem;
+    }
+    .v5-brief-intro p {
+      font-size: 1.05rem; color: var(--text-2);
+      line-height: 1.55; margin: 0;
+    }
+    .v5-brief-meta-row {
+      display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
+      margin-top: 1.6rem; padding-top: 1.6rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--mono); font-size: 0.78rem;
+      color: var(--text-3); letter-spacing: 0.04em;
+    }
+    .v5-brief-meta-row strong { color: var(--text); }
+
+    /* the brief artifact — looks like a real PDF page */
+    .v5-brief {
+      max-width: 940px; margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4rem 3.5rem;
+      position: relative; overflow: hidden;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.04) inset,
+        0 40px 80px -30px rgba(0,0,0,0.8),
+        0 0 100px -30px rgba(99,102,241,0.3);
+    }
+    .v5-brief::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: var(--grad-hero);
+    }
+    @media (max-width: 700px) { .v5-brief { padding: 2.4rem 1.8rem; } }
+    .v5-brief-stamp {
+      position: absolute; top: 1.8rem; right: 1.8rem;
+      padding: 0.4rem 0.9rem;
+      font-family: var(--mono); font-size: 0.66rem;
+      color: var(--indigo-bright); font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      background: rgba(99,102,241,0.1);
+      border: 1px solid rgba(99,102,241,0.25);
+      border-radius: 6px;
+    }
+    .v5-brief-header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 2rem; margin-bottom: 2.4rem;
+    }
+    .v5-brief-header .tag {
+      font-family: var(--mono); font-size: 0.74rem;
+      color: var(--indigo-bright); font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      margin-bottom: 0.8rem; display: block;
+    }
+    .v5-brief-header h2 {
+      font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+      line-height: 1.12; margin: 0 0 1rem;
+    }
+    .v5-brief-meta {
+      display: flex; flex-wrap: wrap; gap: 1.2rem;
+      font-size: 0.86rem; color: var(--text-3);
+    }
+    .v5-brief-meta strong { color: var(--text); font-weight: 600; }
+    .v5-brief section { margin: 2.4rem 0; }
+    .v5-brief h3 {
+      font-family: var(--sans-tight); font-size: 0.82rem;
+      font-weight: 700; color: var(--indigo-bright);
+      letter-spacing: 0.18em; text-transform: uppercase;
+      margin: 0 0 1rem; padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .v5-brief h4 {
+      font-family: var(--sans-tight); font-size: 1.3rem;
+      color: var(--text); font-weight: 700; letter-spacing: -0.022em;
+      margin: 1.4rem 0 0.6rem;
+    }
+    .v5-brief p {
+      color: var(--text-2); font-size: 1rem;
+      line-height: 1.65; margin: 0 0 1rem;
+    }
+    .v5-brief .lede {
+      font-size: 1.1rem; color: var(--text);
+      border-left: 2px solid var(--indigo); padding-left: 1.2rem;
+      margin: 1.2rem 0; font-weight: 500;
+    }
+    .v5-brief-verdict {
+      background:
+        linear-gradient(135deg, rgba(99,102,241,0.08), rgba(168,85,247,0.04)),
+        rgba(7,7,12,0.6);
+      border: 1px solid rgba(99,102,241,0.25);
+      padding: 1.8rem 2rem; border-radius: 12px;
+      margin: 1.8rem 0;
+    }
+    .v5-brief-verdict .v-tag {
+      font-family: var(--mono); font-size: 0.7rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--indigo-bright); font-weight: 800;
+      margin-bottom: 0.7rem;
+    }
+    .v5-brief-verdict h4 {
+      color: var(--text); margin: 0 0 0.5rem;
+      font-size: 1.5rem; font-weight: 700;
+    }
+    .v5-brief-verdict p { color: var(--text-2); margin: 0; font-size: 0.96rem; }
+
+    .v5-brief-signal-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem; margin: 1rem 0;
+    }
+    @media (max-width: 600px) { .v5-brief-signal-grid { grid-template-columns: 1fr; } }
+    .v5-brief-signal {
+      padding: 1.1rem;
+      background: rgba(0,0,0,0.3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    .v5-brief-signal .n {
+      font-family: var(--sans-tight); font-size: 1.8rem;
+      font-weight: 800; color: var(--indigo-bright);
+      letter-spacing: -0.025em; line-height: 1;
+      display: block;
+      font-variant-numeric: tabular-nums;
+    }
+    .v5-brief-signal .l {
+      font-family: var(--mono); font-size: 0.7rem;
+      color: var(--text-3); letter-spacing: 0.1em;
+      text-transform: uppercase; margin-top: 0.5rem; display: block;
+    }
+    .v5-brief-signal .d {
+      font-size: 0.86rem; color: var(--text-2); line-height: 1.4;
+      margin-top: 0.5rem;
+    }
+
+    .v5-brief-cluster {
+      background: rgba(0,0,0,0.3);
+      border-left: 2px solid var(--indigo);
+      padding: 1rem 1.3rem;
+      margin: 0.8rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .v5-brief-cluster .c-tag {
+      font-family: var(--mono); font-size: 0.7rem;
+      color: var(--indigo-bright); letter-spacing: 0.12em;
+      text-transform: uppercase; font-weight: 700;
+      margin-bottom: 0.5rem; display: block;
+    }
+    .v5-brief-cluster .c-count {
+      font-family: var(--mono); font-size: 0.78rem;
+      color: var(--text-3); float: right; font-weight: 600;
+    }
+    .v5-brief-cluster blockquote {
+      margin: 0.3rem 0; font-style: italic;
+      font-family: var(--sans-tight); font-size: 1rem;
+      color: var(--text-2); line-height: 1.4;
+    }
+
+    .v5-brief-table {
+      width: 100%; border-collapse: collapse; margin: 1rem 0 1.4rem;
+      font-size: 0.92rem;
+    }
+    .v5-brief-table th {
+      text-align: left; font-family: var(--mono);
+      font-weight: 700; font-size: 0.72rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-3);
+      padding: 0.6rem 0.7rem;
+      border-bottom: 2px solid var(--border);
+    }
+    .v5-brief-table td {
+      padding: 0.7rem; border-bottom: 1px solid var(--border);
+      color: var(--text-2); vertical-align: top;
+    }
+    .v5-brief-table .num { font-variant-numeric: tabular-nums; font-weight: 600; }
+    .v5-brief-table .accent { color: var(--indigo-bright); font-weight: 700; }
+    .v5-brief-table .you-row { background: rgba(99,102,241,0.06); }
+    .v5-brief-table .you-row td { color: var(--text); }
+
+    .v5-action-list { list-style: none; padding: 0; margin: 1rem 0; counter-reset: action; }
+    .v5-action-list li {
+      counter-increment: action; position: relative;
+      padding: 1rem 1rem 1rem 3.2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .v5-action-list li::before {
+      content: counter(action);
+      position: absolute; left: 0; top: 1rem;
+      width: 2.3rem; height: 2.3rem; border-radius: 50%;
+      background: var(--grad-cta); color: #FFF;
+      font-family: var(--sans-tight); font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+      box-shadow: 0 0 20px -4px var(--indigo);
+    }
+    .v5-action-list .a-title {
+      font-family: var(--sans-tight); font-weight: 700;
+      color: var(--text); margin-bottom: 0.3rem; font-size: 1rem;
+    }
+    .v5-action-list .a-meta {
+      font-family: var(--mono); font-size: 0.74rem;
+      color: var(--text-3); letter-spacing: 0.04em;
+    }
+    .v5-action-list .a-meta span { margin-right: 1rem; }
+    .v5-action-list .a-meta strong { color: var(--indigo-bright); }
+
+    .v5-brief-foot {
+      border-top: 2px solid var(--border); margin-top: 3rem;
+      padding-top: 1.4rem;
+      display: flex; justify-content: space-between;
+      font-family: var(--mono); font-size: 0.76rem;
+      color: var(--text-3); flex-wrap: wrap; gap: 1rem;
+    }
+    .v5-brief-foot strong { color: var(--text); }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Sample Atlas Brief · LoopWorker",
+    "description": "Anonymized example of a LoopWorker Atlas-tier Sprint deliverable. Demonstrates structure, depth, and ranked-action format.",
+    "publisher": { "@type": "Organization", "name": "LoopWorker", "url": "https://www.loopworker.com/" }
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="v5-nav">
+    <div class="v5-nav-inner">
+      <a href="/" class="v5-logo">
+        <span class="v5-logo-mark">L</span>
+        LoopWorker
+      </a>
+      <div class="v5-nav-links">
+        <a href="/sprint.html">Sprints</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/case-studies.html">Customers</a>
+        <a href="/blog/">Signals</a>
+        <a href="/about.html">About</a>
+        <a href="/book.html" class="v5-nav-cta">Book a Call</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- INTRO -->
+    <section class="v5-brief-shell">
+      <div class="v5-brief-intro">
+        <span class="v5-eyebrow">Sample · Atlas Deliverable</span>
+        <h1>What you actually <span class="grad-text">get back.</span></h1>
+        <p>Every Atlas Sprint ends with a brief like this one. Anonymized from a real engagement. Full structure preserved.</p>
+        <div class="v5-brief-meta-row">
+          <span><strong>Read time:</strong> 4 minutes</span>
+          <span><strong>Real engagement value:</strong> $8,000</span>
+          <span><strong>Tier:</strong> Atlas · 10 days</span>
+        </div>
+      </div>
+
+      <!-- THE BRIEF -->
+      <article class="v5-brief">
+        <span class="v5-brief-stamp">Sample · Anonymized</span>
+
+        <header class="v5-brief-header">
+          <span class="tag">Atlas · Decision Brief #247</span>
+          <h2>Should <span class="grad-text">[Client]</span> reposition for the enterprise buyer before the Q3 raise?</h2>
+          <div class="v5-brief-meta">
+            <span><strong>Engagement:</strong> Atlas · 10 days</span>
+            <span><strong>Industry:</strong> B2B SaaS · workflow automation</span>
+            <span><strong>Filed:</strong> 11 days before Q3 board</span>
+          </div>
+        </header>
+
+        <section>
+          <h3>The Question Behind the Question</h3>
+          <p class="lede">Client framed this as a positioning question. The signals say it's a pricing-page and proof-asset question. The reposition is real but premature — the buyer is reading you wrong, not finding you wrong.</p>
+          <p>Submitted question: <em>"Should we drop SMB messaging and rebuild the homepage around mid-market and enterprise?"</em></p>
+          <p>The market is already pulling the brand mid-market. Pricing tier 3 closes 4.2x more revenue than tiers 1+2 combined. But three competitors that ran the same play in 2024-2025 lost 38-52% of their organic search traffic in the 90 days post-reposition. The bridge is buildable without the breakage.</p>
+        </section>
+
+        <div class="v5-brief-verdict">
+          <div class="v-tag">Verdict · the line</div>
+          <h4>Don't reposition. Restage.</h4>
+          <p>Keep the existing homepage. Build a separate <em>/enterprise</em> path with mid-market proof, ROI calculator, and human-routed booking. Sequence: ship by week 3, route 30% of paid traffic through it by week 6, re-evaluate full reposition at Q4 board with conversion data instead of vibes.</p>
+        </div>
+
+        <section>
+          <h3>What the Signals Said · 4 sources</h3>
+          <div class="v5-brief-signal-grid">
+            <div class="v5-brief-signal">
+              <span class="n">2,147</span>
+              <span class="l">Competitor ad creatives</span>
+              <span class="d">7 direct competitors · 90 days · Meta, LinkedIn, Google Ads.</span>
+            </div>
+            <div class="v5-brief-signal">
+              <span class="n">1,308</span>
+              <span class="l">Review fragments parsed</span>
+              <span class="d">G2 + Capterra + TrustRadius. Filtered to client's category + 3 closest competitors.</span>
+            </div>
+            <div class="v5-brief-signal">
+              <span class="n">14,650</span>
+              <span class="l">Monthly searches mapped</span>
+              <span class="d">38 buyer-language keywords ranked by intent + difficulty. Bottom-funnel only.</span>
+            </div>
+            <div class="v5-brief-signal">
+              <span class="n">22</span>
+              <span class="l">Pricing pages tear-down</span>
+              <span class="d">Direct + adjacent. Tier structures, anchor logic, social proof placement.</span>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Customer Language · friction clusters</h3>
+          <div class="v5-brief-cluster">
+            <span class="c-tag">Cluster 1 · Buying-confidence gap</span>
+            <span class="c-count">487 fragments · 37.2%</span>
+            <blockquote>"Looked great in the demo. Then I couldn't tell whether my team would actually use it. No proof from a team my size."</blockquote>
+            <blockquote>"We need to see other ops leads using this, not founders."</blockquote>
+          </div>
+          <div class="v5-brief-cluster">
+            <span class="c-tag">Cluster 2 · Pricing-tier confusion</span>
+            <span class="c-count">312 fragments · 23.9%</span>
+            <blockquote>"Couldn't figure out if we were the Pro or Business tier. Picked Pro and missed three of the things we needed."</blockquote>
+          </div>
+          <div class="v5-brief-cluster">
+            <span class="c-tag">Cluster 3 · Onboarding-stall risk</span>
+            <span class="c-count">211 fragments · 16.1%</span>
+            <blockquote>"Loved it in week one. Stalled out before we'd wired it to the rest of our stack. Cancelled at month two."</blockquote>
+          </div>
+          <p class="lede">Notice what's <em>not</em> here. Zero clusters around "wrong segment" or "wish you served bigger teams." The repositioning hypothesis isn't validated in customer language — pricing and proof are.</p>
+        </section>
+
+        <section>
+          <h3>Competitor Pattern · pricing-page architecture</h3>
+          <table class="v5-brief-table">
+            <thead>
+              <tr><th>Comp</th><th>Tier 1</th><th>Anchor</th><th>Top</th><th>Proof above pricing?</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>A (mkt leader)</td><td class="num">$49/mo</td><td class="num accent">$249/mo ★</td><td>Custom</td><td>Yes · 4 logos</td></tr>
+              <tr><td>B (#2)</td><td class="num">$29/mo</td><td class="num accent">$199/mo ★</td><td class="num">$499/mo</td><td>Yes · case-study</td></tr>
+              <tr><td>C (rising)</td><td>Free</td><td class="num accent">$159/mo ★</td><td>Custom</td><td>Yes · 2 quotes</td></tr>
+              <tr><td>D (legacy)</td><td class="num">$89/mo</td><td class="num">$229/mo</td><td>Custom</td><td>No</td></tr>
+              <tr class="you-row"><td><strong>You</strong></td><td class="num">$39/mo</td><td class="num">$129/mo</td><td class="num">$329/mo</td><td>No</td></tr>
+            </tbody>
+          </table>
+          <p>Anchor tier is $100/mo below the field. You're cheap by accident — the buyer reads cheap as risky. Adding $99 + better proof at anchor tier will <em>raise</em> conversion, not drop it.</p>
+        </section>
+
+        <section>
+          <h3>Ranked Action Sheet · what to ship, in order</h3>
+          <ol class="v5-action-list">
+            <li>
+              <div class="a-title">Build /enterprise as a parallel path</div>
+              <div class="a-meta">
+                <span><strong>By:</strong> Week 3</span>
+                <span><strong>Effort:</strong> 1 designer · 1 PM · 1 eng (light)</span>
+                <span><strong>Owner:</strong> growth lead</span>
+              </div>
+            </li>
+            <li>
+              <div class="a-title">Reprice anchor tier to $229 + bundle 2 integrations free</div>
+              <div class="a-meta">
+                <span><strong>By:</strong> Week 4</span>
+                <span><strong>Effort:</strong> Stripe + comms only</span>
+                <span><strong>Owner:</strong> CEO sign-off · CRO execute</span>
+              </div>
+            </li>
+            <li>
+              <div class="a-title">Ship 4 proof assets (1 video, 3 written case studies) above pricing table</div>
+              <div class="a-meta">
+                <span><strong>By:</strong> Week 5</span>
+                <span><strong>Effort:</strong> 2 customer interviews · 1 production day</span>
+              </div>
+            </li>
+            <li>
+              <div class="a-title">Add team-size selector on pricing page → routed pricing display</div>
+              <div class="a-meta">
+                <span><strong>By:</strong> Week 6</span>
+                <span><strong>Effort:</strong> 1 eng · 2 days</span>
+              </div>
+            </li>
+            <li>
+              <div class="a-title">Onboarding email retrofit · address Cluster 3 stall risk by day 14</div>
+              <div class="a-meta">
+                <span><strong>By:</strong> Week 7</span>
+                <span><strong>Effort:</strong> 1 lifecycle marketer · 5 emails</span>
+              </div>
+            </li>
+            <li>
+              <div class="a-title">Re-evaluate full reposition Q4 board · with the above as evidence</div>
+              <div class="a-meta">
+                <span><strong>By:</strong> Q4 board prep</span>
+                <span><strong>Effort:</strong> dashboard reading</span>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section>
+          <h3>What This Sprint Did Not Cover</h3>
+          <p>Brand identity refresh, hiring strategy, product roadmap. Out of scope. Three follow-on signals worth tracking next quarter:</p>
+          <p>→ Whether competitor B's recent series-C will push them into enterprise — opens lane below them.<br>
+          → Whether the Cluster 2 pricing confusion drops 50%+ after restage (validates the diagnosis).<br>
+          → Whether your two largest customers (Tier 3) want what looks like enterprise procurement support — that would invert the question.</p>
+        </section>
+
+        <footer class="v5-brief-foot">
+          <div><strong>LoopWorker</strong> · Atlas brief · prepared by Alex Lamb</div>
+          <div>Filed 11d before Q3 board · 14-day refund offered if zero lines actionable</div>
+        </footer>
+      </article>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="v5-closing">
+      <div class="v5-closing-grid">
+        <div class="v5-closing-main">
+          <span class="v5-eyebrow-plain">Ready to file your question</span>
+          <h2>Bring the decision. We'll find the <span class="grad-text">signals.</span></h2>
+          <p>Atlas is the standard tier — 10 days, full brief, ranked actions. Or test the waters with a 48-hour Surface scan for $750.</p>
+          <div class="v5-cta-row">
+            <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="v5-btn v5-btn-primary" data-track="Sample Brief Atlas">Begin Atlas · $8,000</a>
+            <a href="/book.html" class="v5-btn v5-btn-ghost" data-track="Sample Brief Book">Book a 30-min review</a>
+          </div>
+          <div class="v5-closing-note">14-day refund · happened once in 2 years · 2 active Atlas at a time</div>
+        </div>
+
+        <div class="v5-email-card">
+          <div class="v5-email-eyebrow">Browse the ladder</div>
+          <h4>Surface, Compass, Atlas, OS.</h4>
+          <p>Four tiers. One method. Pick the depth that fits the decision on your desk.</p>
+          <div class="v5-mt-sm">
+            <a href="/sprint.html" class="v5-btn v5-btn-ghost" data-track="Sample Brief Sprints">See Sprint ladder →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="v5-foot">
+    <div class="v5-foot-inner">
+      <div class="v5-foot-logo">LoopWorker</div>
+      <p>Evidence before execution.</p>
+      <p>© 2026 · <a href="/sprint.html">Sprints</a> · <a href="/case-studies.html">Customers</a> · <a href="/blog/">Signals</a> · <a href="/about.html">About</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+      <p class="v5-foot-small">alex@loopworker.com · <a href="https://instagram.com/loopworker">@loopworker</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

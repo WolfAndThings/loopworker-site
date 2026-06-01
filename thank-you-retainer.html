@@ -1,101 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <title>Retainer · Kickoff Intake | LoopWorker</title>
-    <meta name="description" content="Systems Retainer paid. Schedule kickoff + scope the first month's priorities.">
-    <link rel="canonical" href="https://www.loopworker.com/thank-you-retainer.html">
-    <meta name="robots" content="noindex">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
-    <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #080808; color: #D4D4D4; font-family: 'Inter', sans-serif; line-height: 1.6; padding: 4rem 1.5rem; min-height: 100vh; }
-        .container { max-width: 720px; margin: 0 auto; }
-        .eyebrow { color: #D4A017; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; margin-bottom: 1.2rem; display: block; }
-        h1 { color: #FFF; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 1.2rem; }
-        h1 em { color: #D4A017; font-style: italic; font-weight: 500; }
-        .lede { font-size: 1.05rem; color: #B5B5B5; margin-bottom: 2.5rem; max-width: 620px; }
-        .lede strong { color: #FFF; font-weight: 600; }
-        form { display: flex; flex-direction: column; gap: 1.6rem; }
-        .field { display: flex; flex-direction: column; gap: 0.45rem; }
-        .field label { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: #888; font-weight: 600; }
-        .field input, .field textarea { background: #141414; border: 1px solid #2A2A2A; color: #F4F4F0; padding: 0.9rem 1rem; border-radius: 8px; font-family: inherit; font-size: 0.95rem; outline: none; transition: border-color 0.15s; }
-        .field input:focus, .field textarea:focus { border-color: #D4A017; }
-        .field textarea { min-height: 110px; resize: vertical; }
-        button { background: #D4A017; color: #0A0908; border: none; padding: 1rem 1.6rem; border-radius: 8px; font-family: inherit; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 0.15s; align-self: flex-start; }
-        button:hover { background: #E8B82A; }
-        .footnote { margin-top: 2rem; font-size: 0.85rem; color: #666; line-height: 1.55; padding-top: 1.6rem; border-top: 1px solid #1A1A1A; }
-        .footnote a { color: #888; text-decoration: underline; text-decoration-color: #333; }
-    </style>
-<style id="lw-polish">
-/* Universal polish: tabular nums on prices, optimizeLegibility, focus ring, selection, reduced motion, skip-link, print, scroll padding */
-html { scroll-padding-top: 80px; -webkit-tap-highlight-color: rgba(212,160,23,0.18); }
-html body { text-rendering: optimizeLegibility; font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1; font-kerning: normal; }
-.tier-price, .v4-price-chip strong, .v4-offer-price, .pricing-amount,
-.v4-tstm-meta-stat, .stat strong, .signal-source strong, .console-pill,
-.v4-stat-num, .lp-source strong, .compare-table td, .compare-table th { font-variant-numeric: tabular-nums; font-feature-settings: 'kern' 1, 'liga' 1, 'tnum' 1, 'lnum' 1; }
-::selection { background: rgba(212,160,23,0.32); color: #FFF; }
-::-moz-selection { background: rgba(212,160,23,0.32); color: #FFF; }
-:focus { outline: none; }
-:focus-visible { outline: 2px solid rgba(212,160,23,0.7); outline-offset: 3px; border-radius: 4px; }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
-section[id], .v4-section { scroll-margin-top: 96px; }
-h1, h2, .v4-h1, .v4-h2, .lp-h1, .lp-h2 { text-wrap: balance; }
-@media print { nav, .mobile-nav, .v4-sticky, .mobile-sticky-cta, .hamburger, body::after { display: none !important; } body { background: #FFF !important; color: #000 !important; } a { color: #000 !important; text-decoration: underline; } }
-.skip-link { position: absolute; left: -9999px; top: 0; z-index: 9999; padding: 0.75rem 1.25rem; background: #D4A017; color: #1A0F00; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; border-radius: 0 0 8px 0; }
-.skip-link:focus { left: 0; }
-details summary { cursor: pointer; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <title>Retainer · Kickoff Intake | LoopWorker</title>
+  <meta name="description" content="Systems Retainer paid. Schedule kickoff and scope the first month's priorities.">
+  <link rel="canonical" href="https://www.loopworker.com/thank-you-retainer.html">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#07070C">
+  <meta name="color-scheme" content="dark">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/v5-system.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
+
+  <style>
+    .v5-intake-shell { position: relative; overflow: hidden; padding: 5rem 2rem 6rem; min-height: 80vh; }
+    .v5-intake-shell::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 900px 500px at 30% 0%, rgba(99,102,241,0.16), transparent 60%),
+        radial-gradient(ellipse 700px 400px at 80% 80%, rgba(16,185,129,0.08), transparent 70%);
+    }
+    .v5-intake-inner { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
+    .v5-intake-inner h1 { font-size: clamp(2rem, 4.4vw, 3rem); margin: 0 0 1rem; }
+    .v5-intake-lede { font-size: 1.05rem; color: var(--text-2); line-height: 1.55; margin: 0 0 2.5rem; }
+    .v5-intake-lede strong { color: var(--text); font-weight: 600; }
+    .v5-intake-card {
+      background: linear-gradient(135deg, rgba(99,102,241,0.05), transparent 50%), var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px; padding: 2.4rem;
+      position: relative; overflow: hidden;
+    }
+    .v5-intake-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: var(--grad-hero);
+    }
+    .v5-intake-card form { display: flex; flex-direction: column; gap: 1.4rem; }
+    .v5-intake-card .v5-form-field { margin: 0; }
+    .v5-intake-foot {
+      margin-top: 2rem; padding-top: 1.6rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--mono); font-size: 0.78rem;
+      color: var(--text-3); line-height: 1.55;
+    }
+    .v5-intake-foot a { color: var(--indigo-bright); border-bottom: 1px solid rgba(129,140,248,0.3); }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <span class="eyebrow">◆ Retainer active · $4,500/mo · month-to-month</span>
-        <h1>Welcome aboard. Let's <em>scope month one.</em></h1>
-        <p class="lede">Your Systems Retainer is live. We'll schedule a 30-min kickoff this week and lock the first month's priorities. <strong>Receipt + monthly billing handled by Stripe automatically.</strong></p>
+  <a href="#main" class="skip-link">Skip to content</a>
 
-        <form action="https://formsubmit.co/alex@loopworker.com" method="POST">
+  <nav class="v5-nav">
+    <div class="v5-nav-inner">
+      <a href="/" class="v5-logo">
+        <span class="v5-logo-mark">L</span>
+        LoopWorker
+      </a>
+      <div class="v5-nav-links">
+        <a href="/sprint.html">Sprints</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/case-studies.html">Customers</a>
+        <a href="/about.html">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="v5-intake-shell">
+      <div class="v5-intake-inner">
+        <div class="v5-chip">
+          <span class="v5-chip-dot"></span>
+          <span>Retainer active · $4,500/mo · month-to-month</span>
+        </div>
+        <h1>Welcome aboard. Let's <span class="grad-text">scope month one.</span></h1>
+        <p class="v5-intake-lede">Your Systems Retainer is live. We'll schedule a 30-min kickoff this week and lock the first month's priorities. <strong>Receipt + monthly billing handled by Stripe automatically.</strong></p>
+
+        <div class="v5-intake-card">
+          <form action="https://formsubmit.co/alex@loopworker.com" method="POST">
             <input type="hidden" name="_subject" value="🟢 Retainer Kickoff — new subscriber">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_next" value="https://www.loopworker.com/thank-you.html?intake=retainer">
             <input type="hidden" name="_captcha" value="false">
 
-            <div class="field">
-                <label for="name">Your name</label>
-                <input type="text" id="name" name="Name" required>
+            <div class="v5-form-field">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="Name" required>
             </div>
-            <div class="field">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="Email" required>
+            <div class="v5-form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="Email" required>
             </div>
-            <div class="field">
-                <label for="company">Company / brand</label>
-                <input type="text" id="company" name="Company" required>
+            <div class="v5-form-field">
+              <label for="company">Company / brand</label>
+              <input type="text" id="company" name="Company" required>
             </div>
-            <div class="field">
-                <label for="sprint">Did you run a Sprint first?</label>
-                <input type="text" id="sprint" name="PriorSprint" placeholder="Yes/No · which tier · roughly when">
+            <div class="v5-form-field">
+              <label for="sprint">Did you run a Sprint first?</label>
+              <input type="text" id="sprint" name="PriorSprint" placeholder="Yes/No · which tier · roughly when">
             </div>
-            <div class="field">
-                <label for="priorities">Top 3 things you want shipped in month 1</label>
-                <textarea id="priorities" name="Priorities" placeholder="Specific. Examples: rewrite pricing page · build cold email cadence · ship 8 LinkedIn posts · wire HubSpot to Notion" required></textarea>
+            <div class="v5-form-field">
+              <label for="priorities">Top 3 things you want shipped in month 1</label>
+              <textarea id="priorities" name="Priorities" placeholder="Specific. e.g. rewrite pricing page · build cold email cadence · ship 8 LinkedIn posts · wire HubSpot to Notion" required></textarea>
             </div>
-            <div class="field">
-                <label for="slack">Preferred comm channel?</label>
-                <input type="text" id="slack" name="Comms" placeholder="Slack channel · WhatsApp · email · Loom" required>
+            <div class="v5-form-field">
+              <label for="slack">Preferred comm channel?</label>
+              <input type="text" id="slack" name="Comms" placeholder="Slack channel · WhatsApp · email · Loom" required>
             </div>
-            <div class="field">
-                <label for="kickoff">Best 30-min slot this week for kickoff?</label>
-                <input type="text" id="kickoff" name="Kickoff" placeholder="Examples: Wed 2pm ET · Thu morning · async over Loom" required>
+            <div class="v5-form-field">
+              <label for="kickoff">Best 30-min slot this week for kickoff?</label>
+              <input type="text" id="kickoff" name="Kickoff" placeholder="e.g. Wed 2pm ET · Thu morning · async over Loom" required>
             </div>
 
-            <button type="submit">Send kickoff scope →</button>
-            <p class="footnote">Cancel anytime. Monthly via Stripe. — Alex, LoopWorker.<br>Questions: <a href="mailto:alex@loopworker.com">alex@loopworker.com</a></p>
-        </form>
+            <button type="submit" class="v5-form-submit">Send kickoff scope →</button>
+          </form>
+
+          <p class="v5-intake-foot">Cancel anytime. Monthly via Stripe. — Alex, LoopWorker.<br>Questions: <a href="mailto:alex@loopworker.com">alex@loopworker.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="v5-foot">
+    <div class="v5-foot-inner">
+      <div class="v5-foot-logo">LoopWorker</div>
+      <p class="v5-foot-small">Evidence before execution.</p>
     </div>
+  </footer>
 </body>
 </html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <title>The Signals Field Manual · LoopWorker</title>
+  <meta name="description" content="Seven public signals every founder should pull before their next big spend. Free 12-section field manual from LoopWorker.">
+  <link rel="canonical" href="https://www.loopworker.com/resources/field-manual.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.loopworker.com/resources/field-manual.html">
+  <meta property="og:title" content="The Signals Field Manual · LoopWorker">
+  <meta property="og:description" content="Seven public signals every founder should pull before their next big spend.">
+  <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="LoopWorker">
+  <meta name="theme-color" content="#07070C">
+  <meta name="color-scheme" content="dark">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/v5-system.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
+
+  <style>
+    /* FIELD MANUAL · printable + screen-friendly */
+    .fm-shell {
+      position: relative; overflow: hidden;
+      padding: 5rem 2rem 4rem;
+    }
+    .fm-shell::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 1000px 600px at 50% 0%, rgba(99,102,241,0.16), transparent 60%),
+        radial-gradient(ellipse 800px 500px at 50% 100%, rgba(168,85,247,0.10), transparent 70%);
+    }
+    .fm-inner {
+      position: relative; z-index: 2;
+      max-width: 760px; margin: 0 auto;
+    }
+
+    .fm-cover {
+      text-align: center;
+      padding: 3rem 0 4rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 4rem;
+    }
+    .fm-cover .lbl {
+      font-family: var(--mono); font-size: 0.74rem;
+      color: var(--indigo-bright); letter-spacing: 0.18em;
+      text-transform: uppercase; font-weight: 700;
+      margin-bottom: 1.6rem;
+    }
+    .fm-cover h1 {
+      font-size: clamp(2.4rem, 5.2vw, 3.8rem);
+      line-height: 1.04;
+      margin: 0 0 1rem;
+    }
+    .fm-cover .sub {
+      font-size: 1.15rem; color: var(--text-2);
+      line-height: 1.55; margin: 0 auto 2rem;
+      max-width: 520px;
+    }
+    .fm-cover .by {
+      font-family: var(--mono); font-size: 0.78rem;
+      color: var(--text-3); letter-spacing: 0.04em;
+    }
+
+    .fm-toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.6rem 1.8rem;
+      margin: 0 0 3rem;
+    }
+    .fm-toc h2 {
+      font-family: var(--mono); font-size: 0.74rem;
+      color: var(--indigo-bright); letter-spacing: 0.18em;
+      text-transform: uppercase; font-weight: 700;
+      margin: 0 0 1rem;
+    }
+    .fm-toc ol {
+      list-style: none; padding: 0; margin: 0;
+      counter-reset: toc;
+    }
+    .fm-toc li {
+      counter-increment: toc;
+      padding: 0.5rem 0 0.5rem 2.2rem;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.94rem;
+    }
+    .fm-toc li:last-child { border-bottom: 0; }
+    .fm-toc li::before {
+      content: '0' counter(toc);
+      position: absolute; left: 0;
+      font-family: var(--mono); font-size: 0.78rem;
+      color: var(--indigo-bright); font-weight: 700;
+    }
+    .fm-toc a {
+      color: var(--text); font-weight: 500;
+      border-bottom: 0;
+    }
+    .fm-toc a:hover { color: var(--indigo-bright); }
+
+    .fm-signal {
+      margin: 4rem 0;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .fm-signal:last-of-type { border-bottom: 0; }
+    .fm-signal .num {
+      font-family: var(--mono); font-size: 0.82rem;
+      color: var(--indigo-bright); letter-spacing: 0.16em;
+      text-transform: uppercase; font-weight: 700;
+      margin-bottom: 0.5rem; display: block;
+    }
+    .fm-signal h2 {
+      font-size: clamp(1.7rem, 3vw, 2.2rem);
+      line-height: 1.1; margin: 0 0 1.2rem;
+    }
+    .fm-signal .what {
+      font-family: var(--sans-tight);
+      font-size: 1.1rem; color: var(--text);
+      line-height: 1.5; margin: 0 0 2rem;
+      font-weight: 500; font-style: italic;
+      padding-left: 1.2rem;
+      border-left: 2px solid var(--indigo);
+    }
+    .fm-signal h3 {
+      font-family: var(--sans-tight); font-size: 0.92rem;
+      font-weight: 700; color: var(--text);
+      letter-spacing: 0.06em; text-transform: uppercase;
+      margin: 2rem 0 0.8rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .fm-signal p {
+      color: var(--text-2); font-size: 1rem;
+      line-height: 1.7; margin: 0 0 1rem;
+    }
+    .fm-signal ol, .fm-signal ul {
+      list-style: none; padding: 0; margin: 1rem 0;
+      font-size: 0.96rem; color: var(--text-2); line-height: 1.6;
+    }
+    .fm-signal ol { counter-reset: step; }
+    .fm-signal ol li {
+      counter-increment: step;
+      padding: 0.6rem 0 0.6rem 2.4rem;
+      position: relative;
+    }
+    .fm-signal ol li::before {
+      content: counter(step);
+      position: absolute; left: 0; top: 0.65rem;
+      width: 1.6rem; height: 1.6rem; border-radius: 50%;
+      background: linear-gradient(135deg, rgba(99,102,241,0.16), rgba(168,85,247,0.08));
+      border: 1px solid rgba(99,102,241,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: 0.74rem; font-weight: 700;
+      color: var(--indigo-bright);
+    }
+    .fm-signal ul li {
+      padding: 0.4rem 0 0.4rem 1.4rem;
+      position: relative;
+    }
+    .fm-signal ul li::before {
+      content: '▸'; position: absolute; left: 0;
+      color: var(--indigo-bright);
+    }
+    .fm-tool {
+      padding: 1rem 1.2rem;
+      background: rgba(99,102,241,0.04);
+      border: 1px solid rgba(99,102,241,0.18);
+      border-radius: 10px;
+      margin: 1rem 0;
+      font-size: 0.92rem;
+      color: var(--text-2);
+    }
+    .fm-tool strong {
+      font-family: var(--mono); font-size: 0.7rem;
+      color: var(--indigo-bright); letter-spacing: 0.14em;
+      text-transform: uppercase; display: block; margin-bottom: 0.3rem;
+    }
+    .fm-tool a { color: var(--indigo-bright); border-bottom: 1px solid rgba(129,140,248,0.3); }
+    .fm-trap {
+      padding: 1rem 1.2rem;
+      background: rgba(236,72,153,0.04);
+      border: 1px solid rgba(236,72,153,0.18);
+      border-radius: 10px;
+      margin: 1rem 0;
+      font-size: 0.92rem; color: var(--text-2);
+    }
+    .fm-trap strong {
+      font-family: var(--mono); font-size: 0.7rem;
+      color: var(--pink); letter-spacing: 0.14em;
+      text-transform: uppercase; display: block; margin-bottom: 0.3rem;
+    }
+    .fm-outro {
+      margin: 4rem 0 0;
+      padding: 3rem 2rem;
+      background:
+        radial-gradient(ellipse 600px 300px at 50% 0%, rgba(99,102,241,0.14), transparent 60%),
+        var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .fm-outro::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: var(--grad-hero);
+    }
+    .fm-outro h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0 0 1rem; }
+    .fm-outro p { color: var(--text-3); margin: 0 auto 1.6rem; max-width: 480px; line-height: 1.6; }
+
+    .fm-actions {
+      position: sticky; top: 70px; z-index: 10;
+      display: flex; gap: 0.6rem; justify-content: flex-end;
+      margin-bottom: 1rem; flex-wrap: wrap;
+    }
+    .fm-actions button, .fm-actions a {
+      padding: 0.55rem 0.95rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: var(--sans); font-size: 0.82rem; font-weight: 600;
+      color: var(--text); cursor: pointer;
+      -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+      transition: all 0.18s ease;
+    }
+    .fm-actions button:hover, .fm-actions a:hover {
+      border-color: var(--indigo); background: rgba(99,102,241,0.08);
+    }
+
+    /* PRINT */
+    @media print {
+      @page { margin: 0.6in; }
+      body { background: #FFF !important; color: #000 !important; }
+      .v5-nav, .v5-foot, .fm-actions, .fm-shell::before, .fm-outro { display: none !important; }
+      .fm-inner { max-width: 100%; }
+      h1, h2, h3 { color: #000 !important; }
+      h2.section-h, h2 .grad-text, .fm-cover h1, .fm-signal h2 {
+        background: none !important;
+        -webkit-text-fill-color: initial !important;
+        color: #000 !important;
+      }
+      .grad-text { background: none !important; -webkit-text-fill-color: initial !important; color: #6366F1 !important; }
+      .fm-toc, .fm-signal, .fm-tool, .fm-trap {
+        background: #FAFAFA !important; color: #000 !important;
+        border-color: #DDD !important;
+      }
+      .fm-signal { page-break-inside: avoid; border-color: #DDD !important; }
+      .fm-signal h2 { color: #000 !important; }
+      p, li, .fm-signal p { color: #222 !important; }
+      a { color: #6366F1 !important; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Signals Field Manual",
+    "description": "Seven public signals every founder should pull before their next big spend.",
+    "author": { "@type": "Person", "name": "Alex Lamb", "url": "https://www.loopworker.com/about.html" },
+    "publisher": { "@type": "Organization", "name": "LoopWorker", "url": "https://www.loopworker.com/" },
+    "datePublished": "2026-06-01",
+    "mainEntityOfPage": "https://www.loopworker.com/resources/field-manual.html"
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="v5-nav">
+    <div class="v5-nav-inner">
+      <a href="/" class="v5-logo">
+        <span class="v5-logo-mark">L</span>
+        LoopWorker
+      </a>
+      <div class="v5-nav-links">
+        <a href="/sprint.html">Sprints</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/case-studies.html">Customers</a>
+        <a href="/blog/">Signals</a>
+        <a href="/about.html">About</a>
+        <a href="/book.html" class="v5-nav-cta">Book a Call</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="fm-shell">
+      <div class="fm-inner">
+
+        <div class="fm-actions">
+          <button type="button" onclick="window.print()">Print / Save PDF</button>
+          <a href="/sprint.html">See the Sprints</a>
+        </div>
+
+        <header class="fm-cover">
+          <div class="lbl">Field Manual · v1.0 · June 2026</div>
+          <h1>The Signals <span class="grad-text">Field Manual</span></h1>
+          <p class="sub">Seven public signals every founder should pull before their next big spend. Free. By Alex Lamb · LoopWorker.</p>
+          <div class="by">Evidence before execution.</div>
+        </header>
+
+        <nav class="fm-toc" aria-label="Contents">
+          <h2>Contents</h2>
+          <ol>
+            <li><a href="#s1">Review-velocity language patterns</a></li>
+            <li><a href="#s2">Competitor ad creative pacing</a></li>
+            <li><a href="#s3">Search demand for buyer-language</a></li>
+            <li><a href="#s4">Pricing-page architecture</a></li>
+            <li><a href="#s5">Geotag / location-based demand</a></li>
+            <li><a href="#s6">Founder-vs-team visibility gap</a></li>
+            <li><a href="#s7">Customer-language delta</a></li>
+          </ol>
+        </nav>
+
+        <article>
+
+          <section class="fm-signal" id="s1">
+            <span class="num">Signal 01</span>
+            <h2>Review-velocity language patterns</h2>
+            <p class="what">What customers are repeating in review platforms — clustered, counted, ranked.</p>
+
+            <h3>Why it matters</h3>
+            <p>Founders argue about positioning in conference rooms. Customers already said it on G2, Trustpilot, Google, App Store. Same five themes show up over and over. Pull them, count them, and the brand voice writes itself.</p>
+
+            <h3>How to pull it</h3>
+            <ol>
+              <li>Identify 3-5 closest competitors in your category. Direct + adjacent.</li>
+              <li>Pull every public review from the last 12 months. Filter to verified.</li>
+              <li>Tag each fragment by emotional driver (frustration, surprise, relief, doubt, trust).</li>
+              <li>Cluster by frequency. Rank top 5 by share of total.</li>
+              <li>Pull verbatim quotes for the top 3 clusters.</li>
+            </ol>
+
+            <div class="fm-tool">
+              <strong>Free tools</strong>
+              Google review export · G2 free tier · Trustpilot search · Capterra public reviews · ChatGPT for clustering (paste 30+ reviews, ask for top themes).
+            </div>
+
+            <div class="fm-trap">
+              <strong>Trap</strong>
+              5-star reviews are noise. The 3-star and 4-star reviews carry the most signal — they're the buyers who almost loved it. Their hesitation is your positioning gap.
+            </div>
+          </section>
+
+          <section class="fm-signal" id="s2">
+            <span class="num">Signal 02</span>
+            <h2>Competitor ad creative pacing</h2>
+            <p class="what">What your competitors are actually buying — across Meta, LinkedIn, Google.</p>
+
+            <h3>Why it matters</h3>
+            <p>Ad spend is a behavioral signal. When a competitor pushes 40 creatives in a week and one survives the cut, that survivor tells you what their audience is responding to. Free to read. Hard to interpret.</p>
+
+            <h3>How to pull it</h3>
+            <ol>
+              <li>Go to Meta Ad Library. Search competitor brand name.</li>
+              <li>Filter to last 30-90 days. Sort by run time.</li>
+              <li>Note ads still running after 14+ days — those are the winners.</li>
+              <li>Capture the hook, the offer, the visual treatment, the CTA.</li>
+              <li>Repeat across 5-7 competitors.</li>
+              <li>Pattern: which hooks survive across multiple brands? That's the category-level winning angle.</li>
+            </ol>
+
+            <div class="fm-tool">
+              <strong>Free tools</strong>
+              Meta Ad Library · LinkedIn Ad Library · Google Ads Transparency Center · SpyFu free tier · Foreplay (paid but indispensable).
+            </div>
+
+            <div class="fm-trap">
+              <strong>Trap</strong>
+              Don't copy the winning ad. Reverse-engineer the structural reason it's winning — then build your own version inside your brand voice. Direct copies lose to the original.
+            </div>
+          </section>
+
+          <section class="fm-signal" id="s3">
+            <span class="num">Signal 03</span>
+            <h2>Search demand for buyer-language</h2>
+            <p class="what">What buyers actually type into Google when they're ready to decide.</p>
+
+            <h3>Why it matters</h3>
+            <p>Marketing teams write copy using internal jargon. Buyers search using buyer language. The gap is where 60-80% of conversion is lost. Search demand data shows you the actual phrases — and the volume behind each.</p>
+
+            <h3>How to pull it</h3>
+            <ol>
+              <li>Brainstorm 15-20 buyer-intent phrases for your category.</li>
+              <li>Run each through a keyword tool. Note monthly volume + difficulty.</li>
+              <li>Group by intent: research, comparison, decision.</li>
+              <li>Identify "long-tail decision" phrases — low volume, high intent, low difficulty. These are the gold.</li>
+              <li>Rewrite your homepage hero + pricing page using the top 3 buyer-language phrases verbatim.</li>
+            </ol>
+
+            <div class="fm-tool">
+              <strong>Free tools</strong>
+              Google Keyword Planner · Ahrefs free tier · Ubersuggest · AnswerThePublic · Reddit search (paste phrase, see verbatim use).
+            </div>
+
+            <div class="fm-trap">
+              <strong>Trap</strong>
+              High-volume keywords are saturated. Volume of 200/mo at zero competition beats volume of 50,000/mo at saturation. Look for the in-between.
+            </div>
+          </section>
+
+          <section class="fm-signal" id="s4">
+            <span class="num">Signal 04</span>
+            <h2>Pricing-page architecture</h2>
+            <p class="what">Three things to check on every competitor's pricing page.</p>
+
+            <h3>Why it matters</h3>
+            <p>Pricing is the most tested page on any SaaS site. If 5 competitors all converged on the same tier structure, anchor logic, or social proof placement — they did the work for you. Borrow the structure, not the price.</p>
+
+            <h3>How to pull it</h3>
+            <ol>
+              <li>Visit 5-10 comparable pricing pages. Direct + adjacent.</li>
+              <li>For each: log tier count, anchor tier (usually middle), highest tier price, free tier exists or not.</li>
+              <li>Note proof placement: above tiers, below tiers, in tier cards, or absent.</li>
+              <li>Note social proof type: logos, quotes, named clients, or none.</li>
+              <li>Compare your pricing page against the median. Where do you deviate?</li>
+              <li>Test: if 4 of 5 competitors have a 3-tier ladder + social proof above and you don't, the field is telling you something.</li>
+            </ol>
+
+            <div class="fm-tool">
+              <strong>Free tools</strong>
+              Just a browser + a spreadsheet. Wayback Machine to see how a page changed over time.
+            </div>
+
+            <div class="fm-trap">
+              <strong>Trap</strong>
+              Pricing isn't a vote. Sometimes 4 of 5 are wrong and the outlier is right. Use the pattern to inform, not to defer.
+            </div>
+          </section>
+
+          <section class="fm-signal" id="s5">
+            <span class="num">Signal 05</span>
+            <h2>Geotag / location-based demand</h2>
+            <p class="what">Where attention is concentrating geographically.</p>
+
+            <h3>Why it matters</h3>
+            <p>Most categories have local demand asymmetry. A creator in Brooklyn outpulls the same creator pattern in Phoenix by 4x. A med spa in LA gets 8x the "near me" searches of one in suburban Chicago. Local demand maps tell you where to put paid spend, where to recruit, where to launch.</p>
+
+            <h3>How to pull it</h3>
+            <ol>
+              <li>Use Google Trends. Filter by your category term + by region.</li>
+              <li>Compare interest scores across 10 metro areas.</li>
+              <li>Cross-reference with Instagram geotags (search hashtag, scroll location-tagged posts).</li>
+              <li>Look at competitor Google Maps reviews — review count by location is a demand proxy.</li>
+              <li>Map: where is demand concentrated, where is it growing, where is it underserved?</li>
+            </ol>
+
+            <div class="fm-tool">
+              <strong>Free tools</strong>
+              Google Trends · Google Maps · Instagram explore by location · Reddit local subs.
+            </div>
+
+            <div class="fm-trap">
+              <strong>Trap</strong>
+              "Hot" markets are saturated. Often the second-tier metros have less competition + the same buyer hunger.
+            </div>
+          </section>
+
+          <section class="fm-signal" id="s6">
+            <span class="num">Signal 06</span>
+            <h2>Founder-vs-team visibility gap</h2>
+            <p class="what">Does your category trust founders more than companies?</p>
+
+            <h3>Why it matters</h3>
+            <p>Some categories — services, advisory, premium DTC — reward founder visibility. Others — SaaS, infrastructure, enterprise — reward team / company visibility. Get this wrong and your content engine pushes the wrong face. Look at the winners and copy who they show.</p>
+
+            <h3>How to pull it</h3>
+            <ol>
+              <li>Pull the top 10 brands in your category on LinkedIn.</li>
+              <li>Note: does the founder post under their own name, the company name, or both?</li>
+              <li>Check engagement: which posts get higher reach — founder-led or company-led?</li>
+              <li>Look at podcast appearances: are founders the guests, or is it product team?</li>
+              <li>Map: who's the public face of each top brand? Pattern emerges in 5 minutes.</li>
+              <li>Decide: where does your category sit on the founder-led ↔ team-led spectrum?</li>
+            </ol>
+
+            <div class="fm-tool">
+              <strong>Free tools</strong>
+              LinkedIn search · Apple Podcasts search · YouTube "interview [competitor name]" · IG bios.
+            </div>
+
+            <div class="fm-trap">
+              <strong>Trap</strong>
+              Founder visibility is a content commitment, not a strategy. If your founder won't post 3x/week for 6 months, picking the founder-led play sets you up to fail.
+            </div>
+          </section>
+
+          <section class="fm-signal" id="s7">
+            <span class="num">Signal 07</span>
+            <h2>Customer-language delta</h2>
+            <p class="what">The gap between how your customers describe you and how you describe yourself.</p>
+
+            <h3>Why it matters</h3>
+            <p>This is the most expensive signal to miss. Brand says "AI-powered workflow automation." Customer says "it stopped my 6pm spreadsheet panic." Same product. Different language. The customer's version converts 3-5x better — because they're describing the outcome they paid for.</p>
+
+            <h3>How to pull it</h3>
+            <ol>
+              <li>Pull 30+ verbatim customer fragments: reviews, support tickets, sales call transcripts, testimonials.</li>
+              <li>List the 20 most common phrases customers use to describe what you do.</li>
+              <li>Pull your own homepage hero, sub, and About copy.</li>
+              <li>Compare: do your words match their words? Or are they two different vocabularies?</li>
+              <li>Rewrite homepage hero using top 3 customer phrases verbatim.</li>
+              <li>A/B test if traffic allows. Otherwise ship and monitor conversion.</li>
+            </ol>
+
+            <div class="fm-tool">
+              <strong>Free tools</strong>
+              Your own CRM · sales call recordings · review platforms · ChatGPT to cluster fragments.
+            </div>
+
+            <div class="fm-trap">
+              <strong>Trap</strong>
+              Founders defend their brand language hard. Customer language wins anyway. Ego is the most expensive trap in this entire manual.
+            </div>
+          </section>
+
+        </article>
+
+        <div class="fm-outro">
+          <span class="v5-eyebrow">Done reading?</span>
+          <h2>Bring the decision. We'll find the <span class="grad-text">signals.</span></h2>
+          <p>If pulling these yourself feels like a month of work — that's because it is. A Sprint pulls 5-7 signals deep in 5-10 days. PDF brief, ranked actions, evidence beside every line.</p>
+          <div class="v5-cta-row v5-cta-row-center">
+            <a href="/sprint.html" class="v5-btn v5-btn-primary">See the Sprints</a>
+            <a href="/book.html" class="v5-btn v5-btn-ghost">Book a free 30-min review</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="v5-foot">
+    <div class="v5-foot-inner">
+      <div class="v5-foot-logo">LoopWorker</div>
+      <p>Evidence before execution.</p>
+      <p>© 2026 · <a href="/sprint.html">Sprints</a> · <a href="/case-studies.html">Customers</a> · <a href="/about.html">About</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+      <p class="v5-foot-small">alex@loopworker.com · <a href="https://instagram.com/loopworker">@loopworker</a></p>
+    </div>
+  </footer>
+</body>
+</html>

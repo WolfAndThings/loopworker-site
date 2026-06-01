@@ -1,3204 +1,488 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-    <!-- Visual polish layer — overlays inline styles with editorial accent (amber) -->
-    <style>
-      :root { --accent: #D4A017; --accent-soft: #B58915; --accent-glow: rgba(212, 160, 23, 0.18); --rule: rgba(212, 160, 23, 0.22); }
-      body { background: radial-gradient(ellipse 1200px 800px at 50% 100%, rgba(212,160,23,0.025), transparent 60%), #080808 !important; }
-      h1.fade-up { font-family: 'Cormorant Garamond', 'Inter', serif !important; font-weight: 500 !important; letter-spacing: -0.02em !important; line-height: 1.06 !important; }
-      h1 em { font-style: italic; color: var(--accent); font-weight: 400; }
-      .hero { position: relative; overflow: hidden; }
-      .hero::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 800px 500px at 15% 0%, rgba(212,160,23,0.08), transparent 60%), radial-gradient(ellipse 700px 600px at 100% 30%, rgba(108,197,122,0.04), transparent 70%); z-index: 0; }
-      .hero > * { position: relative; z-index: 1; }
-      .hero-chip { background: linear-gradient(135deg, rgba(212,160,23,0.08), rgba(255,255,255,0.03)) !important; border: 1px solid var(--rule) !important; color: #E8D8B0 !important; transition: all 0.18s ease; }
-      .hero-chip:hover { border-color: var(--accent) !important; transform: translateY(-1px); }
-      .nav-cta { background: linear-gradient(180deg, #FFFFFF 0%, #F4F4F4 100%) !important; box-shadow: 0 1px 0 rgba(255,255,255,0.4) inset, 0 8px 20px -8px rgba(0,0,0,0.4); transition: all 0.18s ease; }
-      .nav-cta:hover { background: linear-gradient(180deg, var(--accent) 0%, var(--accent-soft) 100%) !important; color: #1A0F00 !important; transform: translateY(-1px); }
-      .btn-primary { background: linear-gradient(180deg, #FFFFFF 0%, #F4F4F4 100%); transition: all 0.18s ease; }
-      .btn-primary:hover { background: linear-gradient(180deg, var(--accent) 0%, var(--accent-soft) 100%) !important; color: #1A0F00 !important; transform: translateY(-1px); box-shadow: 0 8px 28px -6px var(--accent-glow); }
-      .btn-outline:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
-      .service-link-card { transition: transform 0.2s ease, box-shadow 0.25s ease; }
-      .service-link-card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px -20px rgba(0,0,0,0.5), 0 0 28px var(--accent-glow); }
-      .audit-form-section { border-top: 1px solid var(--rule); }
-      .nav-logo:hover { color: var(--accent) !important; }
-      .audit-form input:focus, .audit-form textarea:focus, .audit-form select:focus { border-color: var(--accent) !important; box-shadow: 0 0 0 3px var(--accent-glow) !important; outline: none; }
-      .footer-brand { background: linear-gradient(90deg, #FFFFFF, var(--accent)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-
-      /* SPRINT-LED HERO POLISH (homepage) */
-      .hero h1.fade-up em { font-style: italic; color: var(--accent); font-weight: 400; }
-      .hero-eyebrow { display: inline-block; font-size: 0.7rem; color: var(--accent); letter-spacing: 0.22em; text-transform: uppercase; font-weight: 800; margin-bottom: 1rem; }
-
-
-      /* MINI TIER CARDS (homepage above-fold) */
-      .mini-tier-section { padding: 1.5rem 2rem 4rem; }
-      .mini-tier-section .container-wide { max-width: 1100px; margin: 0 auto; }
-      .mini-tier-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.2rem;
-        margin: 0 auto;
-      }
-      @media (max-width: 800px) { .mini-tier-grid { grid-template-columns: 1fr; gap: 1rem; } }
-      .mini-tier-card {
-        position: relative;
-        display: flex; flex-direction: column;
-        padding: 1.6rem 1.6rem 1.7rem;
-        background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.008));
-        border: 1px solid rgba(255,255,255,0.08);
-        border-radius: 12px;
-        text-decoration: none;
-        color: inherit;
-        transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-      }
-      .mini-tier-card:hover { border-color: rgba(212,160,23,0.35); transform: translateY(-3px); box-shadow: 0 18px 40px -22px var(--accent-glow); }
-      .mini-tier-card.featured {
-        border-color: rgba(212,160,23,0.6);
-        background: linear-gradient(180deg, rgba(212,160,23,0.07), rgba(212,160,23,0.012));
-        box-shadow: 0 14px 36px -22px var(--accent-glow);
-      }
-      .mini-tier-card .mt-eyebrow { font-size: 0.66rem; color: var(--accent); letter-spacing: 0.22em; text-transform: uppercase; font-weight: 800; margin-bottom: 0.55rem; display: block; }
-      .mini-tier-card .mt-name { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.6rem; font-weight: 500; color: #FFF; line-height: 1.1; margin-bottom: 0.4rem; }
-      .mini-tier-card .mt-price { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.6rem; color: #FFF; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
-      .mini-tier-card .mt-price .mt-flat { font-size: 0.78rem; color: #888; font-weight: 500; letter-spacing: 0.06em; margin-left: 0.4rem; }
-      .mini-tier-card .mt-price .mt-flat-solo { font-size: 1.05rem; color: var(--accent); font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-left: 0; }
-      .mini-tier-card .mt-scope { font-size: 0.92rem; color: #B0B0B0; line-height: 1.45; margin-bottom: 1.1rem; flex-grow: 1; }
-      .mini-tier-card .mt-go {
-        display: inline-flex; align-items: center; gap: 0.4rem;
-        font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase;
-        font-weight: 700; color: var(--accent);
-      }
-      .mini-tier-card.featured .mt-ribbon {
-        position: absolute; top: -10px; right: 14px;
-        background: linear-gradient(180deg, var(--accent), var(--accent-soft));
-        color: #1A0F00; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
-        font-size: 0.62rem; padding: 0.3rem 0.7rem; border-radius: 999px;
-      }
-
-      /* TRUST BAR (homepage) */
-      .lw-trust-bar {
-        padding: 1.6rem 2rem;
-        border-top: 1px solid rgba(212,160,23,0.18);
-        border-bottom: 1px solid rgba(212,160,23,0.18);
-        background: linear-gradient(90deg, rgba(212,160,23,0.04), rgba(212,160,23,0.01), rgba(212,160,23,0.04));
-      }
-      .lw-trust-bar .container-wide { max-width: 1100px; margin: 0 auto; }
-      .lw-trust-bar .tb-eyebrow {
-        display: block; text-align: center;
-        font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase;
-        color: #888; font-weight: 700; margin-bottom: 0.7rem;
-      }
-      .lw-trust-bar .tb-cats {
-        display: flex; flex-wrap: wrap; justify-content: center;
-        gap: 0.7rem 1.6rem;
-        font-size: 0.78rem; letter-spacing: 0.18em;
-        text-transform: uppercase; color: #C8B98E; font-weight: 600;
-      }
-      .lw-trust-bar .tb-cats span {
-        position: relative;
-        padding: 0 0.2rem;
-      }
-      .lw-trust-bar .tb-cats span::before {
-        content: '◆';
-        color: var(--accent);
-        margin-right: 0.6rem;
-        font-size: 0.7rem;
-      }
-      .lw-stats-strip .stats-row {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1.4rem;
-        align-items: stretch;
-        margin-top: 0.6rem;
-      }
-      @media (max-width: 880px) { .lw-stats-strip .stats-row { grid-template-columns: repeat(2, 1fr); } }
-      @media (max-width: 480px) { .lw-stats-strip .stats-row { grid-template-columns: 1fr; } }
-      .stat-cell {
-        text-align: center;
-        padding: 0.8rem 0.6rem;
-        border-left: 1px solid rgba(212,160,23,0.18);
-      }
-      .stat-cell:first-child { border-left: 0; }
-      @media (max-width: 880px) {
-        .stat-cell { border-left: 0; border-top: 1px solid rgba(212,160,23,0.12); padding-top: 1rem; }
-        .stat-cell:first-child, .stat-cell:nth-child(2) { border-top: 0; padding-top: 0.6rem; }
-      }
-      .stat-cell .sc-n {
-        display: block;
-        font-family: 'Cormorant Garamond', serif;
-        font-style: italic;
-        color: var(--accent);
-        font-size: 1.7rem;
-        font-weight: 500;
-        line-height: 1;
-        margin-bottom: 0.35rem;
-      }
-      .stat-cell .sc-l {
-        display: block;
-        font-size: 0.74rem;
-        letter-spacing: 0.06em;
-        color: #C8B98E;
-        line-height: 1.35;
-      }
-
-      /* CLOSING CTA · final repeat-CTA section */
-      .closing-cta-section { padding: 5rem 2rem 5rem; background: #0C0C0C; border-top: 1px solid rgba(212,160,23,0.18); }
-      .closing-cta-section .container-wide { max-width: 1100px; margin: 0 auto; }
-      .closing-cta {
-        text-align: center;
-        max-width: 720px;
-        margin: 0 auto;
-        padding: 2.4rem 1.4rem;
-        background: linear-gradient(180deg, rgba(212,160,23,0.05), rgba(255,255,255,0.012));
-        border: 1px solid rgba(212,160,23,0.22);
-        border-radius: 14px;
-      }
-      .closing-cta .cc-eyebrow { display: inline-block; font-size: 0.7rem; color: var(--accent); letter-spacing: 0.22em; text-transform: uppercase; font-weight: 800; margin-bottom: 1rem; }
-      .closing-cta h2 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(1.8rem, 3.6vw, 2.8rem); line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 0.9rem; }
-      .closing-cta h2 em { font-style: italic; color: var(--accent); font-weight: 400; }
-      .closing-cta p { font-size: 1rem; color: #B5B5B5; max-width: 540px; margin: 0 auto 1.6rem; }
-      .closing-cta-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; margin-bottom: 1.3rem; }
-      .closing-cta-note { font-size: 0.86rem; color: #888; max-width: 560px; margin: 0 auto; line-height: 1.55; }
-      .closing-cta-note a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(212,160,23,0.4); padding-bottom: 1px; }
-      .closing-cta-note a:hover { color: #FFF; border-color: #FFF; }
-
-      /* UPSELL LADDER · after-Sprint services */
-      .upsell-section { padding: 4.5rem 2rem 4.5rem; background: #0A0A0A; border-top: 1px solid rgba(212,160,23,0.18); }
-      .upsell-section .container-wide { max-width: 1180px; margin: 0 auto; }
-      .upsell-intro { text-align: center; max-width: 760px; margin: 0 auto 2.4rem; }
-      .upsell-intro .upsell-eyebrow { display: inline-block; font-size: 0.7rem; color: var(--accent); letter-spacing: 0.22em; text-transform: uppercase; font-weight: 800; margin-bottom: 1rem; }
-      .upsell-intro h2 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 0.9rem; }
-      .upsell-intro h2 em { font-style: italic; color: var(--accent); font-weight: 400; }
-      .upsell-intro p { font-size: 1rem; color: #B5B5B5; line-height: 1.55; }
-      .upsell-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; }
-      @media (max-width: 980px) { .upsell-grid { grid-template-columns: repeat(2, 1fr); } }
-      @media (max-width: 560px) { .upsell-grid { grid-template-columns: 1fr; } }
-      .upsell-card { position: relative; padding: 1.5rem 1.4rem 1.6rem; background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005)); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
-      .upsell-card:hover { border-color: rgba(212,160,23,0.4); transform: translateY(-3px); box-shadow: 0 18px 40px -22px var(--accent-glow); }
-      .upsell-card .u-num { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--accent); font-size: 1.5rem; font-weight: 500; line-height: 1; margin-bottom: 0.7rem; opacity: 0.7; }
-      .upsell-card .u-name { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.05rem; color: #FFF; letter-spacing: -0.01em; margin-bottom: 0.5rem; }
-      .upsell-card .u-desc { font-size: 0.88rem; color: #B0B0B0; line-height: 1.5; margin-bottom: 0.8rem; }
-      .upsell-card .u-format { font-size: 0.7rem; color: var(--accent); letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; }
-      .upsell-foot { text-align: center; margin-top: 2rem; }
-      .upsell-foot p { font-size: 0.92rem; color: #888; margin-top: 1rem; }
-      .upsell-foot a.btn { display: inline-block; }
-
-      /* HOMEPAGE FOUNDER QUOTE — same shape as sprint.html */
-      .home-quote-section { padding: 4.5rem 2rem 3.5rem; }
-      .home-quote-section .container-wide { max-width: 1100px; margin: 0 auto; }
-      .home-quote-block {
-        margin: 0 auto;
-        max-width: 820px;
-        padding: 2.4rem 2.2rem;
-        background: linear-gradient(180deg, rgba(212,160,23,0.05), rgba(255,255,255,0.012));
-        border: 1px solid rgba(212,160,23,0.22);
-        border-radius: 14px;
-      }
-      .home-quote-block .q-mark {
-        font-family: 'Cormorant Garamond', serif; font-style: italic;
-        color: var(--accent); font-size: 3.4rem; line-height: 0.4;
-        opacity: 0.6; display: block; margin-bottom: 0.7rem;
-      }
-      .home-quote-block blockquote {
-        font-family: 'Cormorant Garamond', serif; font-style: italic;
-        color: #FFF; font-size: clamp(1.25rem, 2.1vw, 1.6rem);
-        line-height: 1.45; margin: 0 0 1.4rem; font-weight: 500;
-      }
-      .home-quote-block .q-attr {
-        display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; align-items: center;
-        font-size: 0.86rem; color: #B5B5B5; letter-spacing: 0.04em;
-      }
-      .home-quote-block .q-attr strong { color: #FFF; font-weight: 600; }
-      .home-quote-block .q-attr a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(212,160,23,0.4); padding-bottom: 1px; }
-      .home-quote-block .q-attr a:hover { color: #FFF; border-color: #FFF; }
-
-      /* ───── REWRITE V3 · editorial / luxury minimal ───── */
-      .section-eyebrow { display: inline-block; font-size: 0.68rem; color: var(--accent); letter-spacing: 0.24em; text-transform: uppercase; font-weight: 800; margin-bottom: 1.1rem; }
-      .section-intro { text-align: center; max-width: 720px; margin: 0 auto 3rem; }
-      .section-intro h2 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(1.9rem, 3.6vw, 2.8rem); line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 0.8rem; }
-      .section-intro h2 em { font-style: italic; color: var(--accent); font-weight: 400; }
-      .section-intro p { font-size: 1rem; color: #A5A5A5; line-height: 1.6; }
-
-      .hero-trust { margin-top: 1.6rem; font-size: 0.78rem; color: #888; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; }
-
-      /* Problem section */
-      .problem-section { padding: 6rem 2rem; border-top: 1px solid rgba(212,160,23,0.12); border-bottom: 1px solid rgba(212,160,23,0.12); }
-      .problem-section .container-wide { max-width: 1100px; margin: 0 auto; }
-      .problem-shell { max-width: 720px; margin: 0 auto; }
-      .problem-shell h2 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.8rem; }
-      .problem-shell h2 em { font-style: italic; color: var(--accent); font-weight: 400; }
-      .problem-lead { font-size: 1.15rem; color: #E0E0E0; margin-bottom: 1rem; font-weight: 500; }
-      .problem-shell > p { font-size: 1rem; color: #B5B5B5; line-height: 1.7; margin-bottom: 1rem; }
-      .problem-list { list-style: none; padding: 0; margin: 1.2rem 0 1.8rem; }
-      .problem-list li { padding: 0.5rem 0 0.5rem 1.6rem; position: relative; color: #C5C5C5; font-size: 0.96rem; border-bottom: 1px solid rgba(255,255,255,0.04); }
-      .problem-list li:last-child { border-bottom: 0; }
-      .problem-list li::before { content: '◆'; position: absolute; left: 0; top: 0.55rem; color: var(--accent); font-size: 0.6rem; }
-      .problem-close { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: #FFF; line-height: 1.45; margin-top: 1.4rem; }
-
-      /* What gets analyzed */
-      .analysis-section { padding: 6rem 2rem; }
-      .analysis-section .container-wide { max-width: 1180px; margin: 0 auto; }
-      .analysis-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(212,160,23,0.12); border: 1px solid rgba(212,160,23,0.12); border-radius: 12px; overflow: hidden; }
-      .analysis-grid.analysis-grid-4 { grid-template-columns: repeat(4, 1fr); }
-      @media (max-width: 980px) { .analysis-grid, .analysis-grid.analysis-grid-4 { grid-template-columns: repeat(2, 1fr); } }
-      @media (max-width: 560px) { .analysis-grid, .analysis-grid.analysis-grid-4 { grid-template-columns: 1fr; } }
-      .analysis-card { background: #0A0A0A; padding: 1.6rem 1.4rem; transition: background 0.2s; }
-      .analysis-card:hover { background: #101010; }
-      .ac-num { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--accent); font-size: 0.95rem; font-weight: 500; opacity: 0.6; margin-bottom: 0.6rem; }
-      .ac-name { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.92rem; color: #FFF; letter-spacing: -0.01em; margin-bottom: 0.5rem; line-height: 1.3; }
-      .ac-desc { font-size: 0.82rem; color: #999; line-height: 1.5; }
-
-      /* Tiers */
-      .tiers-section { padding: 6rem 2rem; background: #0C0C0C; border-top: 1px solid rgba(212,160,23,0.12); border-bottom: 1px solid rgba(212,160,23,0.12); }
-      .tiers-section .container-wide { max-width: 1180px; margin: 0 auto; }
-      .tiers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
-      @media (max-width: 900px) { .tiers-grid { grid-template-columns: 1fr; } }
-      .tier-card { padding: 2rem 1.8rem; background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005)); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; display: flex; flex-direction: column; transition: border-color 0.2s, transform 0.2s; }
-      .tier-card:hover { border-color: rgba(212,160,23,0.4); transform: translateY(-3px); }
-      .tier-card.featured { border-color: rgba(212,160,23,0.5); background: linear-gradient(180deg, rgba(212,160,23,0.05), rgba(212,160,23,0.008)); }
-      .tier-eyebrow { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); font-weight: 800; margin-bottom: 0.9rem; }
-      .tier-card h3 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 1.7rem; color: #FFF; line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 1.2rem; }
-      .tier-card .tier-meta { font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: #777; font-weight: 600; margin-bottom: 0.9rem; }
-      .tier-card .tier-good-for { font-size: 0.82rem; color: #888; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; margin-bottom: 0.6rem; }
-      .tier-list { list-style: none; padding: 0; margin: 0 0 1.6rem; flex-grow: 1; }
-      .tier-list li { padding: 0.5rem 0 0.5rem 1.4rem; position: relative; color: #C0C0C0; font-size: 0.92rem; border-bottom: 1px solid rgba(255,255,255,0.04); }
-      .tier-list li:last-child { border-bottom: 0; }
-      .tier-list li::before { content: '·'; position: absolute; left: 0.3rem; top: 0.4rem; color: var(--accent); font-size: 1.4rem; line-height: 1; }
-      .tier-card .tier-cta { display: inline-flex; align-items: center; justify-content: center; padding: 0.85rem 1.2rem; border: 1px solid rgba(255,255,255,0.14); border-radius: 8px; color: #FFF; text-decoration: none; font-size: 0.84rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; transition: all 0.18s ease; }
-      .tier-card .tier-cta:hover { border-color: var(--accent); color: var(--accent); }
-      .tier-card.featured .tier-cta { background: linear-gradient(180deg, #FFFFFF 0%, #F4F4F4 100%); color: #1A0F00; border-color: transparent; }
-      .tier-card.featured .tier-cta:hover { background: linear-gradient(180deg, var(--accent) 0%, var(--accent-soft) 100%); color: #1A0F00; }
-
-      /* Case studies B/S/S/R */
-      .case-section { padding: 6rem 2rem; }
-      .case-section .container-wide { max-width: 1180px; margin: 0 auto; }
-      .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
-      @media (max-width: 980px) { .case-grid { grid-template-columns: 1fr; } }
-      .case-card { display: flex; flex-direction: column; padding: 1.8rem 1.6rem; background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.005)); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; text-decoration: none; color: inherit; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
-      .case-card:hover { border-color: rgba(212,160,23,0.35); transform: translateY(-3px); box-shadow: 0 18px 40px -20px var(--accent-glow); }
-      .case-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); font-weight: 800; margin-bottom: 1.1rem; }
-      .case-block { font-size: 0.9rem; color: #C0C0C0; line-height: 1.55; padding: 0.7rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-      .case-block:last-of-type { border-bottom: 0; padding-bottom: 1rem; }
-      .case-block strong { display: inline-block; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: #FFF; margin-right: 0.5rem; }
-      .case-read { display: inline-block; margin-top: 0.6rem; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
-      .case-foot { text-align: center; margin-top: 2.4rem; }
-
-      /* Ideal client */
-      .ideal-section { padding: 6rem 2rem; background: #0C0C0C; border-top: 1px solid rgba(212,160,23,0.12); }
-      .ideal-section .container-wide { max-width: 900px; margin: 0 auto; }
-      .ideal-list { list-style: none; padding: 0; margin: 0 auto; max-width: 720px; }
-      .ideal-list li { padding: 1rem 0 1rem 2rem; position: relative; color: #D5D5D5; font-size: 1.02rem; line-height: 1.5; border-bottom: 1px solid rgba(255,255,255,0.05); font-family: 'Cormorant Garamond', serif; font-weight: 500; font-style: italic; font-size: 1.25rem; }
-      .ideal-list li:last-child { border-bottom: 0; }
-      .ideal-list li::before { content: '◆'; position: absolute; left: 0; top: 1.2rem; color: var(--accent); font-size: 0.7rem; font-style: normal; }
-
-      .hero-supporting { margin-top: 1.8rem; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.95rem; color: #888; max-width: 600px; line-height: 1.55; }
-
-      /* After the Sprint · compact secondary section */
-      .after-section { padding: 4rem 2rem 4rem; border-top: 1px solid rgba(255,255,255,0.04); }
-      .after-section .container-wide { max-width: 760px; margin: 0 auto; }
-      .after-shell { text-align: center; }
-      .after-shell .section-eyebrow { color: #888; font-size: 0.62rem; letter-spacing: 0.26em; }
-      .after-shell h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-style: italic; font-size: 1.5rem; color: #C5C5C5; line-height: 1.3; margin-bottom: 1.2rem; letter-spacing: -0.01em; }
-      .after-shell p { font-size: 0.92rem; color: #888; line-height: 1.65; margin-bottom: 0.8rem; max-width: 620px; margin-left: auto; margin-right: auto; }
-      .after-list { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem 1rem; margin: 1rem 0 1rem; padding: 0; list-style: none; }
-      .after-list li { font-size: 0.76rem; color: #888; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; padding: 0.3rem 0.6rem; border: 1px solid rgba(255,255,255,0.06); border-radius: 999px; }
-      .after-note { font-style: italic; color: #666; font-size: 0.85rem; font-family: 'Cormorant Garamond', serif; }
-
-      /* ═════════ V4 · LINEAR / NOTION PREMIUM MINIMAL ═════════ */
-      body { background: #050505 !important; }
-      :root { --v4-line: rgba(255,255,255,0.07); --v4-line-strong: rgba(255,255,255,0.14); --v4-text: #F5F5F5; --v4-mute: #888; --v4-soft: #C2C2C2; --gold: #D4A017; --gold-light: #E8C77A; --gold-deep: #A87C0E; --gold-leaf: linear-gradient(135deg, #E8C77A 0%, #D4A017 45%, #A87C0E 100%); }
-      /* Leaf-gold metallic on key numerals - premium menu feel */
-      .leaf-gold { background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; letter-spacing: -0.01em; }
-
-      /* Hero v4 */
-      .v4-hero { padding: 9rem 2rem 5rem; position: relative; border-bottom: 1px solid var(--v4-line); }
-      .v4-hero::before { content: ''; position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 64px 64px; -webkit-mask-image: radial-gradient(ellipse 1000px 600px at 50% 0%, #000 0%, transparent 70%); mask-image: radial-gradient(ellipse 1000px 600px at 50% 0%, #000 0%, transparent 70%); }
-      /* Premium warm spotlight - subtle gold light source top-left */
-      .v4-hero::after { content: ''; position: absolute; top: -300px; left: -200px; width: 900px; height: 900px; pointer-events: none; background: radial-gradient(circle at center, rgba(212,160,23,0.08) 0%, rgba(212,160,23,0.03) 30%, transparent 60%); }
-      .v4-hero > .v4-shell { position: relative; z-index: 1; }
-      .v4-hero > .v4-shell { position: relative; z-index: 1; }
-      .v4-shell { max-width: 1080px; margin: 0 auto; }
-      .v4-eyebrow { display: inline-block; font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--v4-mute); font-weight: 600; margin-bottom: 1.8rem; padding: 0.35rem 0.75rem; border: 1px solid var(--v4-line-strong); border-radius: 999px; }
-      .v4-h1 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: clamp(2.8rem, 6.5vw, 5.6rem); line-height: 1; letter-spacing: -0.04em; color: var(--v4-text); margin: 0 0 1.6rem; max-width: 880px; text-shadow: 0 1px 0 rgba(255,255,255,0.04); }
-      .v4-h1 em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; letter-spacing: -0.02em; }
-      .v4-sub { font-size: clamp(1.05rem, 1.4vw, 1.2rem); line-height: 1.55; color: var(--v4-soft); max-width: 720px; margin: 0 0 2.4rem; font-weight: 400; }
-      .v4-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-bottom: 4rem; }
-      .v4-btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.9rem 1.4rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600; letter-spacing: -0.005em; text-decoration: none; border-radius: 8px; transition: all 0.16s ease; }
-      .v4-btn-primary { background: #FFF; color: #050505; border: 1px solid #FFF; }
-      .v4-btn-primary:hover { background: #E8E8E8; }
-      .v4-hero-snap { margin-top: 1rem; font-size: 0.88rem; color: #888; }
-      .v4-hero-snap a { color: #D4A017; text-decoration: none; border-bottom: 1px dotted rgba(212,160,23,0.4); padding-bottom: 1px; transition: border-color 0.15s, color 0.15s; }
-      .v4-hero-snap a:hover { color: #F4C842; border-bottom-color: rgba(212,160,23,0.9); }
-      /* price strip — anchors $750/$3.2k/$8k above the fold */
-      .v4-price-strip { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.6rem; }
-      .v4-price-chip { display: flex; flex-direction: column; gap: 0.15rem; padding: 0.7rem 1rem; border: 1px solid var(--v4-line-strong); border-radius: 10px; background: rgba(255,255,255,0.018); text-decoration: none; color: var(--v4-text); transition: all 0.16s; min-width: 0; }
-      .v4-price-chip:hover { border-color: rgba(212,160,23,0.45); background: rgba(212,160,23,0.04); transform: translateY(-1px); }
-      .v4-price-chip strong { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 1.5rem; letter-spacing: -0.01em; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; line-height: 1; }
-      .v4-price-chip span { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--v4-mute); font-weight: 600; }
-      .v4-price-chip-featured { border-color: rgba(212,160,23,0.45); background: rgba(212,160,23,0.06); }
-      .v4-price-chip-featured strong { color: var(--accent); }
-      .v4-price-chip-featured:hover { background: rgba(212,160,23,0.1); }
-      .v4-hero-capacity { margin-top: 1.6rem; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--v4-mute); font-weight: 600; display: flex; align-items: center; gap: 0.6rem; }
-      .v4-cap-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #4ADE80; box-shadow: 0 0 0 3px rgba(74,222,128,0.18); animation: capPulse 2.2s ease-in-out infinite; }
-      @keyframes capPulse { 0%,100% { box-shadow: 0 0 0 3px rgba(74,222,128,0.18); } 50% { box-shadow: 0 0 0 6px rgba(74,222,128,0.06); } }
-      .v4-btn-secondary { background: transparent; color: var(--v4-text); border: 1px solid var(--v4-line-strong); }
-      .v4-btn-secondary:hover { border-color: rgba(255,255,255,0.32); background: rgba(255,255,255,0.03); }
-      .v4-hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr); gap: 3rem; align-items: center; }
-      .v4-hero-copy .v4-actions { margin-bottom: 0; }
-      .v4-hero-proof { align-self: stretch; display: flex; align-items: center; }
-      @media (max-width: 920px) {
-        .v4-hero-grid { grid-template-columns: 1fr; gap: 2.4rem; }
-        .v4-hero-proof { align-items: stretch; }
-      }
-      .signal-console { width: 100%; border: 1px solid var(--v4-line-strong); border-radius: 14px; background: rgba(7,7,7,0.78); box-shadow: 0 28px 80px rgba(0,0,0,0.35); overflow: hidden; }
-      .console-topline { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.1rem; border-bottom: 1px solid var(--v4-line); }
-      .console-title { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--v4-soft); font-weight: 700; }
-      .console-pill { flex-shrink: 0; padding: 0.28rem 0.55rem; border: 1px solid rgba(255,255,255,0.12); border-radius: 999px; color: #9F9F9F; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; }
-      .signal-stream { padding: 0.5rem 1.1rem 0.2rem; }
-      .signal-row { display: grid; grid-template-columns: 0.62fr 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--v4-line); }
-      .signal-row:last-child { border-bottom: 0; }
-      .signal-source { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--v4-mute); line-height: 1.45; }
-      .signal-source strong { display: block; color: var(--v4-text); font-size: 1rem; letter-spacing: -0.02em; text-transform: none; margin-bottom: 0.15rem; }
-      .signal-finding { color: #D7D7D7; font-size: 0.9rem; line-height: 1.5; }
-      .signal-meter { height: 4px; margin-top: 0.65rem; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden; }
-      .meter-fill { display: block; height: 100%; width: var(--w, 64%); background: linear-gradient(90deg, rgba(255,255,255,0.38), rgba(212,160,23,0.72)); }
-      .console-decision { margin: 0 1.1rem 1.1rem; padding: 1rem; border: 1px solid rgba(212,160,23,0.26); border-radius: 10px; background: rgba(212,160,23,0.055); }
-      .decision-label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 800; margin-bottom: 0.5rem; }
-      .console-decision p { color: #EFEFEF; font-size: 0.92rem; line-height: 1.55; max-width: none; margin: 0; }
-      @media (max-width: 520px) {
-        .signal-row { grid-template-columns: 1fr; gap: 0.45rem; }
-        .console-topline { align-items: flex-start; flex-direction: column; }
-      }
-
-      /* Inline stat cards */
-      .v4-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 1080px; }
-      @media (max-width: 800px) { .v4-stats { grid-template-columns: 1fr; } }
-      .v4-stat { padding: 1.6rem 1.4rem; border: 1px solid var(--v4-line); border-radius: 12px; background: rgba(255,255,255,0.012); }
-      .v4-stat-num { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.8rem; letter-spacing: -0.03em; color: var(--v4-text); line-height: 1; margin-bottom: 0.5rem; }
-      .v4-stat-label { font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--v4-mute); font-weight: 600; margin-bottom: 0.7rem; }
-      .v4-stat-desc { font-size: 0.88rem; color: #9E9E9E; line-height: 1.5; }
-
-      /* Section shells */
-      .v4-section { padding: 7rem 2rem; border-bottom: 1px solid var(--v4-line); position: relative; }
-      /* subtle bg alternation chunks the page visually */
-      .v4-section:nth-of-type(even) { background: rgba(255,255,255,0.008); }
-      .v4-section:nth-of-type(odd) { background: rgba(0,0,0,0.18); }
-      /* Hairline gold rule above each section title - premium editorial divider */
-      .v4-section .v4-section-intro::before { content: ''; display: block; width: 64px; height: 1px; background: var(--gold-leaf); margin-bottom: 1.4rem; opacity: 0.55; }
-
-      /* Left-rail section markers - scroll progress indicator */
-      .v4-rail { position: fixed; left: 1.4rem; top: 50%; transform: translateY(-50%); z-index: 800; display: none; flex-direction: column; gap: 0.85rem; padding: 1rem 0.6rem; }
-      @media (min-width: 1180px) { .v4-rail { display: flex; } }
-      .v4-rail-dot { position: relative; width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.16); transition: all 0.25s ease; cursor: pointer; }
-      .v4-rail-dot::before { content: attr(data-label); position: absolute; left: 16px; top: 50%; transform: translateY(-50%); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--v4-mute); font-weight: 700; white-space: nowrap; opacity: 0; transition: opacity 0.2s; pointer-events: none; }
-      .v4-rail-dot:hover { background: var(--accent); transform: scale(1.4); }
-      .v4-rail-dot:hover::before { opacity: 1; }
-      .v4-rail-dot.is-current { background: var(--accent); box-shadow: 0 0 0 3px rgba(212,160,23,0.16); }
-      .v4-section-intro { max-width: 760px; margin: 0 0 3.5rem; }
-      .v4-section-eyebrow { display: inline-block; font-size: 0.68rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--v4-mute); font-weight: 600; margin-bottom: 1.2rem; }
-      .v4-h2 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: clamp(1.8rem, 3.6vw, 2.8rem); line-height: 1.1; letter-spacing: -0.025em; color: var(--v4-text); margin: 0 0 1rem; }
-      .v4-section-sub { font-size: 1rem; color: var(--v4-soft); line-height: 1.6; max-width: 640px; }
-
-      /* Two-column compare */
-      .v4-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--v4-line); border-radius: 14px; overflow: hidden; }
-      @media (max-width: 820px) { .v4-compare { grid-template-columns: 1fr; } }
-      .v4-compare-col { padding: 2rem 1.8rem; }
-      .v4-compare-col + .v4-compare-col { border-left: 1px solid var(--v4-line); }
-      @media (max-width: 820px) { .v4-compare-col + .v4-compare-col { border-left: 0; border-top: 1px solid var(--v4-line); } }
-      .v4-compare-col.v4-bright { background: rgba(255,255,255,0.018); }
-      .v4-compare-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1.4rem; }
-      .v4-compare-col:not(.v4-bright) .v4-compare-title { color: var(--v4-mute); }
-      .v4-compare-col.v4-bright .v4-compare-title { color: var(--v4-text); }
-      .v4-list { list-style: none; padding: 0; margin: 0; }
-      .v4-list li { padding: 0.85rem 0 0.85rem 1.4rem; font-size: 0.95rem; line-height: 1.5; color: var(--v4-soft); border-bottom: 1px solid var(--v4-line); position: relative; }
-      .v4-list li:last-child { border-bottom: 0; }
-      .v4-compare-col:not(.v4-bright) .v4-list li { color: #888; }
-      .v4-compare-col:not(.v4-bright) .v4-list li::before { content: '×'; position: absolute; left: 0; top: 0.85rem; color: #555; font-size: 0.95rem; line-height: 1; }
-      .v4-compare-col.v4-bright .v4-list li::before { content: '✓'; position: absolute; left: 0; top: 0.95rem; color: var(--v4-text); font-size: 0.85rem; line-height: 1; font-weight: 700; }
-
-      /* Process cards */
-      .v4-process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-      @media (max-width: 900px) { .v4-process-grid { grid-template-columns: 1fr; } }
-      .v4-process-card { padding: 2rem 1.8rem; border: 1px solid var(--v4-line); border-radius: 14px; background: rgba(255,255,255,0.012); display: flex; flex-direction: column; min-height: 320px; }
-
-      /* Vertical numbered flow (replaces 3-up Pull/Map/Decide cards) */
-      .v4-flow { display: grid; gap: 0; max-width: 880px; margin: 0 auto; }
-      .v4-flow-step { display: grid; grid-template-columns: 84px 1fr; gap: 1.8rem; padding: 1.6rem 0 2.4rem; }
-      @media (max-width: 720px) { .v4-flow-step { grid-template-columns: 56px 1fr; gap: 1.2rem; padding: 1.2rem 0 1.8rem; } }
-      .v4-flow-rail { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
-      .v4-flow-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 2.6rem; color: var(--accent); line-height: 1; letter-spacing: -0.02em; }
-      .v4-flow-line { flex: 1; width: 1px; background: linear-gradient(180deg, rgba(212,160,23,0.4), rgba(255,255,255,0.04)); min-height: 60px; }
-      .v4-flow-body { padding-top: 0.2rem; }
-      .v4-flow-title { font-family: 'Inter', sans-serif; font-weight: 800; font-size: clamp(1.5rem, 2.6vw, 2rem); color: var(--v4-text); letter-spacing: -0.02em; margin-bottom: 1rem; line-height: 1.15; }
-      .v4-flow-verb { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; color: var(--v4-mute); font-size: 0.7em; letter-spacing: 0; display: inline-block; margin-left: 0.4em; }
-      .v4-flow-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; }
-      .v4-chip { display: inline-flex; padding: 0.4rem 0.85rem; font-size: 0.8rem; font-weight: 500; color: var(--v4-soft); border: 1px solid var(--v4-line); border-radius: 999px; background: rgba(255,255,255,0.018); }
-      .v4-flow-payoff { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: clamp(1.1rem, 1.7vw, 1.35rem); line-height: 1.45; color: var(--v4-text); margin: 0; max-width: 620px; }
-      .v4-flow-final .v4-flow-body { border-left: 0; padding-left: 0; padding-top: 0.3rem; }
-      .v4-flow-final .v4-flow-num { color: var(--accent); }
-      .v4-process-num { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.16em; color: var(--v4-mute); margin-bottom: 0.6rem; }
-      .v4-process-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.5rem; letter-spacing: -0.02em; color: var(--v4-text); margin-bottom: 1.1rem; }
-      .v4-process-lead { font-size: 0.92rem; color: var(--v4-mute); margin-bottom: 0.8rem; }
-      .v4-process-list { list-style: none; padding: 0; margin: 0; }
-      .v4-process-list li { padding: 0.55rem 0 0.55rem 1.2rem; font-size: 0.9rem; color: var(--v4-soft); border-bottom: 1px solid var(--v4-line); position: relative; }
-      .v4-process-list li:last-child { border-bottom: 0; }
-      .v4-process-list li::before { content: ''; position: absolute; left: 0; top: 1.05rem; width: 6px; height: 1px; background: var(--v4-mute); }
-      .v4-process-body p { font-size: 0.94rem; color: var(--v4-soft); line-height: 1.6; }
-
-      /* Offer cards */
-      .v4-offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
-      @media (max-width: 980px) { .v4-offer-grid { grid-template-columns: 1fr; } }
-      .v4-offer-card { padding: 2.4rem 2rem; border: 1px solid var(--v4-line); border-radius: 14px; background: rgba(255,255,255,0.012); display: flex; flex-direction: column; transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.32s, box-shadow 0.32s, background 0.32s; box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset, 0 10px 30px rgba(0,0,0,0.25); }
-      .v4-offer-card:hover { border-color: rgba(212,160,23,0.35); transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(212,160,23,0.18); background: rgba(255,255,255,0.025); }
-      .v4-offer-card.featured:hover { border-color: var(--accent); box-shadow: 0 18px 40px rgba(0,0,0,0.4), 0 0 0 1px var(--accent), 0 0 60px rgba(212,160,23,0.12); }
-      .v4-offer-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.4rem; letter-spacing: -0.02em; color: var(--v4-text); margin-bottom: 0.7rem; }
-      .v4-offer-sub { font-size: 0.92rem; color: var(--v4-mute); line-height: 1.55; margin-bottom: 1.8rem; }
-      .v4-offer-list { list-style: none; padding: 0; margin: 0 0 2rem; flex-grow: 1; }
-      .v4-offer-list li { padding: 0.6rem 0 0.6rem 1.4rem; font-size: 0.94rem; color: var(--v4-soft); border-bottom: 1px solid var(--v4-line); position: relative; }
-      .v4-offer-list li:last-child { border-bottom: 0; }
-      .v4-offer-list li::before { content: ''; position: absolute; left: 0; top: 1.05rem; width: 6px; height: 1px; background: var(--v4-mute); }
-      .v4-offer-cta { display: inline-flex; align-items: center; justify-content: center; padding: 0.85rem 1.2rem; border: 1px solid var(--v4-line-strong); border-radius: 8px; color: var(--v4-text); text-decoration: none; font-size: 0.86rem; font-weight: 600; transition: all 0.16s; }
-      .v4-offer-cta:hover { background: #FFF; color: #050505; border-color: #FFF; }
-      .v4-offer-card.featured { background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01)); border-color: rgba(255,255,255,0.18); position: relative; }
-      .v4-offer-card.featured::before { content: 'Most chosen'; position: absolute; top: -10px; left: 1.4rem; background: #D4A017; color: #1A0F00; padding: 0.2rem 0.7rem; border-radius: 4px; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
-      .v4-offer-price { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 2.1rem; color: var(--v4-text); letter-spacing: -0.025em; line-height: 1; margin-bottom: 0.3rem; }
-      .v4-offer-duration { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--v4-mute); font-weight: 600; margin-bottom: 1.2rem; }
-      .v4-offer-card.featured .v4-offer-cta { background: #D4A017; color: #1A0F00; border-color: #D4A017; }
-      .v4-offer-card.featured .v4-offer-cta:hover { background: #F4C842; border-color: #F4C842; color: #1A0F00; }
-
-      /* Testimonial strip below hero */
-      .v4-testimonial-strip { padding: 3.5rem 2rem; border-bottom: 1px solid var(--v4-line); background: rgba(212,160,23,0.025); }
-      .v4-testimonial-strip .v4-shell { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 3rem; align-items: center; }
-      @media (max-width: 820px) { .v4-testimonial-strip .v4-shell { grid-template-columns: 1fr; gap: 1.6rem; } }
-      .v4-tstm-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: clamp(1.3rem, 2.4vw, 1.85rem); line-height: 1.32; color: var(--v4-text); margin: 0; max-width: none; }
-      .v4-tstm-quote::first-letter { font-size: 2.4em; line-height: 0.85; float: left; padding: 0.15em 0.18em 0 0; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; font-weight: 500; }
-      .v4-tstm-meta { display: flex; flex-direction: column; gap: 0.25rem; }
-      .v4-tstm-meta-attr { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--v4-mute); font-weight: 700; }
-      .v4-tstm-meta-stat { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 1.5rem; color: #D4A017; line-height: 1.1; }
-      .v4-tstm-meta-tier { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--v4-soft); font-weight: 600; margin-top: 0.3rem; }
-
-      /* Proof cards */
-      .v4-proof-visual { padding: 3rem 2rem; border: 1px solid var(--v4-line); border-radius: 14px; background: rgba(255,255,255,0.012); margin-bottom: 2.4rem; position: relative; overflow: hidden; min-height: 260px; }
-      .v4-proof-visual::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 32px 32px; pointer-events: none; opacity: 0.6; }
-      .v4-proof-visual-inner { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; }
-      @media (max-width: 700px) { .v4-proof-visual-inner { grid-template-columns: repeat(2, 1fr); } }
-      .v4-proof-vis-cell { padding: 1rem 0.9rem; border: 1px solid var(--v4-line-strong); border-radius: 8px; background: rgba(5,5,5,0.6); }
-      .v4-proof-vis-label { font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--v4-mute); font-weight: 600; margin-bottom: 0.45rem; }
-      .v4-proof-vis-bar { display: flex; align-items: flex-end; gap: 2px; height: 36px; }
-      .v4-proof-vis-bar span { flex: 1; background: rgba(255,255,255,0.18); border-radius: 1px; }
-      .v4-proof-vis-bar span:nth-child(1) { height: 38%; }
-      .v4-proof-vis-bar span:nth-child(2) { height: 62%; }
-      .v4-proof-vis-bar span:nth-child(3) { height: 28%; }
-      .v4-proof-vis-bar span:nth-child(4) { height: 84%; background: rgba(255,255,255,0.55); }
-      .v4-proof-vis-bar span:nth-child(5) { height: 54%; }
-      .v4-proof-vis-bar span:nth-child(6) { height: 72%; }
-      .v4-proof-vis-bar.bar-b span:nth-child(1) { height: 22%; }
-      .v4-proof-vis-bar.bar-b span:nth-child(2) { height: 48%; }
-      .v4-proof-vis-bar.bar-b span:nth-child(3) { height: 76%; background: rgba(255,255,255,0.55); }
-      .v4-proof-vis-bar.bar-b span:nth-child(4) { height: 40%; }
-      .v4-proof-vis-bar.bar-b span:nth-child(5) { height: 88%; background: rgba(255,255,255,0.55); }
-      .v4-proof-vis-bar.bar-b span:nth-child(6) { height: 32%; }
-      .v4-proof-vis-flow { display: flex; flex-direction: column; gap: 0.45rem; }
-      .v4-proof-vis-flow-row { display: flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; color: var(--v4-soft); }
-      .v4-proof-vis-flow-row::before { content: ''; width: 6px; height: 6px; border: 1px solid var(--v4-mute); border-radius: 2px; }
-      .v4-proof-vis-dots { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
-      .v4-proof-vis-dots i { display: block; width: 100%; aspect-ratio: 1; background: rgba(255,255,255,0.08); border-radius: 50%; }
-      .v4-proof-vis-dots i.on { background: rgba(255,255,255,0.6); }
-
-      .v4-proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
-      @media (max-width: 1000px) { .v4-proof-grid { grid-template-columns: repeat(2, 1fr); } }
-      @media (max-width: 560px) { .v4-proof-grid { grid-template-columns: 1fr; } }
-      .v4-proof-card { padding: 1.6rem 1.4rem; border: 1px solid var(--v4-line); border-radius: 12px; background: rgba(255,255,255,0.012); transition: transform 0.2s ease, border-color 0.2s, background 0.2s; }
-      .v4-proof-card:hover { transform: translateY(-3px); border-color: rgba(212,160,23,0.28); background: rgba(255,255,255,0.022); }
-      .v4-proof-card h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.02rem; letter-spacing: -0.01em; color: var(--v4-text); margin-bottom: 0.55rem; }
-      .v4-proof-card p { font-size: 0.88rem; color: var(--v4-mute); line-height: 1.55; }
-      .evidence-board { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 0.7rem; position: relative; }
-      .evidence-panel { border: 1px solid var(--v4-line-strong); border-radius: 10px; background: rgba(5,5,5,0.72); padding: 1rem; min-height: 142px; }
-      .evidence-panel.wide { grid-row: span 2; }
-      .evidence-label { font-size: 0.62rem; letter-spacing: 0.17em; text-transform: uppercase; color: var(--v4-mute); font-weight: 700; margin-bottom: 0.7rem; }
-      .evidence-line { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.55rem 0; border-bottom: 1px solid var(--v4-line); font-size: 0.8rem; color: var(--v4-soft); }
-      .evidence-line:last-child { border-bottom: 0; }
-      .evidence-line b { color: var(--v4-text); font-weight: 700; }
-      .quote-chip { padding: 0.7rem 0.75rem; margin-bottom: 0.55rem; border-left: 2px solid rgba(212,160,23,0.55); background: rgba(255,255,255,0.035); color: #D6D6D6; font-size: 0.82rem; line-height: 1.45; }
-      .quote-chip:last-child { margin-bottom: 0; }
-      .pattern-bars { display: flex; align-items: flex-end; gap: 4px; height: 78px; margin-top: 1rem; }
-      .pattern-bars span { flex: 1; height: var(--h); background: rgba(255,255,255,0.17); border-radius: 2px 2px 0 0; }
-      .pattern-bars span.hot { background: rgba(212,160,23,0.62); }
-      @media (max-width: 760px) { .evidence-board { grid-template-columns: 1fr; } .evidence-panel.wide { grid-row: auto; } }
-
-      /* Final CTA */
-      /* Editorial pull-quote between sections - magazine-spread luxury moment */
-      .v4-pullquote { padding: 6rem 2rem; border-bottom: 1px solid var(--v4-line); background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(212,160,23,0.025) 50%, rgba(0,0,0,0.25) 100%); position: relative; }
-      .v4-pullquote .v4-shell { max-width: 900px; text-align: center; }
-      .v4-pq-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: clamp(1.7rem, 3.6vw, 2.8rem); line-height: 1.25; color: var(--v4-text); margin: 0 0 1.4rem; max-width: none; letter-spacing: -0.005em; }
-      .v4-pq-text em { background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; font-style: italic; }
-      .v4-pq-attr { font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--v4-mute); font-weight: 600; max-width: none; margin: 0; }
-      .v4-pq-attr em { font-style: italic; text-transform: none; letter-spacing: 0.04em; color: var(--v4-soft); font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 1.05em; }
-      .v4-pq-mark { color: var(--accent); margin-right: 0.4em; }
-
-      /* Selected engagements - typeset like a Michelin guide list */
-      .v4-engagements { padding: 5rem 2rem; border-bottom: 1px solid var(--v4-line); }
-      .v4-eng-label { font-size: 0.68rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--v4-mute); font-weight: 600; margin-bottom: 2.4rem; }
-      .v4-eng-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem 3rem; max-width: 1080px; }
-      @media (max-width: 900px) { .v4-eng-grid { grid-template-columns: repeat(2, 1fr); gap: 1.6rem 2rem; } }
-      @media (max-width: 560px) { .v4-eng-grid { grid-template-columns: 1fr; } }
-      .v4-eng-item { display: flex; flex-direction: column; gap: 0.3rem; padding: 0.4rem 0; border-top: 1px solid var(--v4-line); padding-top: 1rem; }
-      .v4-eng-item em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 1.5rem; color: var(--v4-text); letter-spacing: -0.01em; line-height: 1.1; }
-      .v4-eng-item span { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--v4-mute); font-weight: 600; }
-
-      /* Vertical landers strip - link out to category pages */
-      .v4-verticals { padding: 5rem 2rem; border-bottom: 1px solid var(--v4-line); background: rgba(0,0,0,0.22); }
-      .v4-vert-intro { margin-bottom: 2.4rem; max-width: 760px; }
-      .v4-vert-label { font-size: 0.68rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--v4-mute); font-weight: 600; margin-bottom: 1rem; }
-      .v4-vert-lead { font-size: 1.05rem; color: var(--v4-soft); line-height: 1.55; margin: 0; max-width: 640px; }
-      .v4-vert-lead em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; color: var(--v4-text); font-size: 1.05em; }
-      .v4-vert-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 1080px; }
-      @media (max-width: 900px) { .v4-vert-grid { grid-template-columns: repeat(2, 1fr); } }
-      @media (max-width: 520px) { .v4-vert-grid { grid-template-columns: 1fr; } }
-      .v4-vert-card { display: flex; flex-direction: column; gap: 0.5rem; padding: 1.6rem 1.4rem; border: 1px solid var(--v4-line); border-radius: 12px; background: rgba(255,255,255,0.015); text-decoration: none; transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s, background 0.25s; }
-      .v4-vert-card:hover { transform: translateY(-3px); border-color: rgba(212,160,23,0.35); background: rgba(212,160,23,0.04); }
-      .v4-vert-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 1.4rem; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; line-height: 1; }
-      .v4-vert-name { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--v4-text); letter-spacing: -0.01em; }
-      .v4-vert-leak { font-size: 0.88rem; color: var(--v4-mute); }
-      .v4-vert-leak em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; color: var(--accent); font-size: 1.05em; }
-      .v4-vert-other .v4-vert-num { color: var(--v4-mute); -webkit-text-fill-color: var(--v4-mute); background: none; }
-
-      .v4-final { padding: 7rem 2rem 8rem; text-align: center; }
-      .v4-final .v4-h2 { max-width: 760px; margin: 0 auto 1.2rem; }
-      .v4-final .v4-final-sub { max-width: 620px; margin: 0 auto 2.4rem; font-size: 1.02rem; color: var(--v4-soft); line-height: 1.6; }
-      .v4-final .v4-actions { justify-content: center; margin-bottom: 0; }
-
-      /* Mini FAQ block — answers buy hesitation before the final CTA */
-      .v4-faq .v4-section-intro { margin-bottom: 2.4rem; }
-      .v4-faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; max-width: 1080px; margin: 0 auto; }
-      @media (max-width: 760px) { .v4-faq-grid { grid-template-columns: 1fr; } }
-      .v4-faq-item { padding: 1.4rem 1.6rem; border: 1px solid var(--v4-line); border-radius: 12px; background: rgba(255,255,255,0.012); transition: border-color 0.18s; }
-      .v4-faq-item:hover { border-color: rgba(212,160,23,0.28); }
-      .v4-faq-item summary { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--v4-text); letter-spacing: -0.01em; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-      .v4-faq-item summary::-webkit-details-marker { display: none; }
-      .v4-faq-item summary::after { content: '+'; font-family: 'Inter', sans-serif; font-weight: 300; font-size: 1.5rem; color: var(--v4-mute); transition: transform 0.2s, color 0.2s; line-height: 1; }
-      .v4-faq-item[open] summary::after { content: '–'; color: var(--accent); transform: rotate(0deg); }
-      .v4-faq-item p { font-size: 0.95rem; line-height: 1.6; color: var(--v4-soft); margin: 1rem 0 0; max-width: none; }
-
-      /* Sticky desktop CTA — follows scroll on >=860px viewports */
-      .v4-sticky { position: fixed; right: 1.6rem; bottom: 1.6rem; z-index: 950; padding: 0.85rem 1.2rem; background: var(--accent); color: #1A0F00; border: 1px solid var(--accent); border-radius: 10px; text-decoration: none; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.88rem; letter-spacing: -0.005em; box-shadow: 0 12px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(212,160,23,0.4); opacity: 0; transform: translateY(20px); pointer-events: none; transition: opacity 0.3s ease, transform 0.3s ease, background 0.18s; display: none; }
-      .v4-sticky:hover { background: #F4C842; }
-      .v4-sticky.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
-      @media (min-width: 860px) { .v4-sticky { display: inline-flex; align-items: center; gap: 0.55rem; } }
-      .v4-sticky-arrow { font-size: 1.1em; line-height: 1; }
-
-      /* Override existing nav for v4 minimal */
-      nav .nav-logo { color: var(--v4-text) !important; font-weight: 700 !important; }
-      nav .nav-links a { color: #B5B5B5 !important; }
-      nav .nav-links a.nav-cta { background: #FFF !important; color: #050505 !important; box-shadow: none !important; }
-      nav .nav-links a.nav-cta:hover { background: #E8E8E8 !important; }
-      nav { background: rgba(5,5,5,0.85) !important; -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--v4-line); }
-
-      footer { background: #050505 !important; border-top: 1px solid var(--v4-line); }
-      .footer-brand { background: none !important; -webkit-text-fill-color: var(--v4-text) !important; color: var(--v4-text) !important; }
-    </style>
-    <title>Signal Intelligence for High-Leverage Decisions · LoopWorker</title>
-    <meta name="description" content="LoopWorker pulls live market signals into clear visibility systems so operators can see what is happening before they execute.">
-    <link rel="canonical" href="https://www.loopworker.com/">
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.loopworker.com/">
-    <meta property="og:title" content="Signal Intelligence for High-Leverage Decisions · LoopWorker">
-    <meta property="og:description" content="Evidence before execution. LoopWorker reveals what is already moving inside a category.">
-    <meta property="og:site_name" content="LoopWorker">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
-    <meta property="og:image:alt" content="LoopWorker. Signal intelligence for high-leverage decisions.">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Signal Intelligence for High-Leverage Decisions · LoopWorker">
-    <meta name="twitter:description" content="LoopWorker pulls live market signals into clear visibility systems before execution.">
-    <meta name="twitter:image" content="https://www.loopworker.com/images/cards/card_02.webp">
-    <meta name="twitter:image:alt" content="LoopWorker. Signal intelligence systems for founder-led decisions.">
-
-    <!-- Google Verification -->
-    <meta name="google-site-verification" content="google9258fb3826a9df03">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
-
-    <style>
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: #080808;
-            color: #D4D4D4;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        h1, h2, h3, h4 {
-            color: #FFFFFF;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-        }
-
-        h1 {
-            font-size: clamp(2.2rem, 5vw, 3.8rem);
-            line-height: 1.08;
-            font-weight: 800;
-        }
-
-        h2 {
-            font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-            line-height: 1.15;
-            margin-bottom: 1.5rem;
-        }
-
-        p {
-            color: #B0B0B0;
-            font-size: 1.1rem;
-            max-width: 640px;
-        }
-
-        section {
-            padding: 6rem 2rem;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .container-wide {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        /* --- Nav --- */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(8, 8, 8, 0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            padding: 0 2rem;
-        }
-
-        .nav-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 64px;
-        }
-
-        .nav-logo {
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: #FFF;
-            letter-spacing: 0.06em;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-size: 0.85rem;
-            color: #888;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: #FFF;
-        }
-
-        .nav-cta {
-            background: #FFFFFF;
-            color: #0A0A0A !important;
-            padding: 0.55rem 1.4rem;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 0.8rem !important;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            transition: all 0.2s ease;
-        }
-
-        .nav-cta:hover {
-            background: #F0F0F0;
-            transform: translateY(-1px);
-        }
-
-        .hamburger {
-            display: none;
-            background: transparent;
-            border: 0;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 0.5rem;
-            z-index: 1002;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 22px;
-            height: 2px;
-            background: #FFF;
-            transition: all 0.3s ease;
-        }
-
-        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-        .hamburger.active span:nth-child(2) { opacity: 0; }
-        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(8, 8, 8, 0.98);
-            z-index: 1001;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .mobile-nav.active { display: flex; }
-
-        .mobile-nav a {
-            font-size: 1.3rem;
-            color: #CCC;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .mobile-nav .nav-cta {
-            font-size: 1rem !important;
-            padding: 0.8rem 2rem;
-            margin-top: 1rem;
-            display: inline-block;
-        }
-
-        /* --- Buttons --- */
-        .btn {
-            display: inline-block;
-            padding: 1rem 2.4rem;
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 4px;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: #FFFFFF;
-            color: #0A0A0A;
-        }
-
-        .btn-primary:hover {
-            background: #F0F0F0;
-            box-shadow: 0 0 40px rgba(255,255,255,0.08);
-            transform: translateY(-1px);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: #999;
-            border: 1px solid #333;
-        }
-
-        .btn-outline:hover {
-            border-color: #555;
-            color: #FFF;
-        }
-
-        .btn-sub {
-            display: block;
-            margin-top: 0.75rem;
-            font-size: 0.8rem;
-            color: #666;
-        }
-
-        /* ========================
-           HERO
-           ======================== */
-        .hero {
-            padding-top: 10rem;
-            padding-bottom: 5rem;
-        }
-
-        .hero h1 { margin-bottom: 1.5rem; }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
-            color: #999;
-        }
-
-        .hero-shell {
-            display: block;
-            max-width: 820px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .hero-shell .hero-eyebrow,
-        .hero-shell h1,
-        .hero-shell p { max-width: 760px; margin-left: auto; margin-right: auto; }
-        .hero-shell .hero-actions { justify-content: center; margin-top: 1.6rem; }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .hero-note {
-            margin-top: 1rem;
-            font-size: 0.92rem;
-            color: #787878;
-            max-width: 580px;
-        }
-
-        .hero-note a {
-            color: #D0D0D0;
-            text-decoration: none;
-        }
-
-        .hero-note a:hover {
-            color: #FFF;
-        }
-
-        .hero-chip-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.65rem;
-            margin-top: 1.4rem;
-        }
-
-        .hero-chip {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.45rem 0.8rem;
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 999px;
-            background: #101010;
-            color: #A8A8A8;
-            font-size: 0.72rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-
-        .hero-visuals {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-        }
-
-        .hero-visual-card {
-            background: #0E0E0E;
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 12px;
-            padding: 0.8rem;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.25);
-        }
-
-        .hero-visual-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 0.8rem;
-        }
-
-        .hero-visual-label {
-            font-size: 0.72rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: #666;
-            font-weight: 700;
-            margin-bottom: 0.4rem;
-        }
-
-        .hero-visual-card p {
-            max-width: 100%;
-            font-size: 0.85rem;
-            color: #909090;
-        }
-
-        /* ========================
-           TRUST STRIP
-           ======================== */
-        .trust-strip {
-            padding: 2rem;
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.04);
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-        }
-
-        .trust-strip p {
-            max-width: 100%;
-            font-size: 0.9rem;
-            color: #666;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            font-weight: 500;
-            margin: 0 auto;
-        }
-
-        /* ========================
-           PROOF SNAPSHOT
-           ======================== */
-        .proof-snapshot {
-            background: #080808;
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-        }
-
-        .proof-intro {
-            max-width: 720px;
-            margin-bottom: 2rem;
-        }
-
-        .proof-eyebrow {
-            font-size: 0.68rem;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            color: #666;
-            margin-bottom: 0.9rem;
-            font-weight: 700;
-        }
-
-        .proof-intro p {
-            font-size: 1rem;
-            color: #888;
-            max-width: 720px;
-        }
-
-        .proof-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-        }
-
-        .proof-card {
-            background: #0E0E0E;
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 12px;
-            padding: 1.4rem;
-        }
-
-        .proof-logo-wrap {
-            width: 100%;
-            min-height: 84px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.95rem 1.1rem;
-            background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 100%);
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 14px;
-            margin-bottom: 1rem;
-        }
-
-        .proof-logo-wrap.light {
-            background: #f1eeeb;
-            border-color: rgba(255,255,255,0.04);
-        }
-
-        .proof-logo-wrap.badge {
-            min-height: 92px;
-        }
-
-        .proof-logo {
-            display: block;
-            width: auto;
-            height: auto;
-            opacity: 1;
-        }
-
-        .proof-card-name {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #FFF;
-            margin-bottom: 0.45rem;
-        }
-
-        .proof-card-copy {
-            font-size: 0.95rem;
-            color: #B6B6B6;
-            line-height: 1.65;
-            margin-bottom: 0.8rem;
-        }
-
-        .proof-card-note {
-            font-size: 0.78rem;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-        }
-
-        .proof-card-link {
-            display: inline-block;
-            margin-top: 0.9rem;
-            color: #FFF;
-            font-size: 0.82rem;
-            text-decoration: none;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-        }
-
-        .proof-card-link:hover {
-            color: #CCC;
-        }
-
-        /* ========================
-           PROBLEM
-           ======================== */
-        .problem {
-            background: #0C0C0C;
-        }
-
-        .problem-list {
-            list-style: none;
-            margin: 2rem 0 2.5rem;
-        }
-
-        .problem-list li {
-            padding: 0.7rem 0;
-            font-size: 1.05rem;
-            color: #999;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.8rem;
-        }
-
-        .problem-list li::before {
-            content: '\2715';
-            color: #555;
-            font-size: 0.85rem;
-            flex-shrink: 0;
-            margin-top: 3px;
-        }
-
-        .problem-kicker {
-            font-size: 1.15rem;
-            color: #B0B0B0;
-            margin-top: 1rem;
-        }
-
-        .problem-kicker strong { color: #FFFFFF; }
-
-        /* ========================
-           SOLUTION
-           ======================== */
-        .solution p {
-            font-size: 1.15rem;
-            margin-bottom: 1rem;
-        }
-
-        /* ========================
-           BEFORE / AFTER EXAMPLES
-           ======================== */
-        .examples-section {
-            background: #0C0C0C;
-        }
-
-        .example-block {
-            margin-bottom: 3rem;
-        }
-
-        .example-block:last-child {
-            margin-bottom: 0;
-        }
-
-        .example-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: #555;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .example-comparison {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        .example-card {
-            border-radius: 10px;
-            padding: 1.8rem;
-            position: relative;
-        }
-
-        .example-card.before {
-            background: #111;
-            border: 1px solid rgba(255,255,255,0.04);
-        }
-
-        .example-card.after {
-            background: #0F1A0F;
-            border: 1px solid rgba(100,200,100,0.1);
-        }
-
-        .example-tag {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            display: inline-block;
-            padding: 0.3rem 0.8rem;
-            border-radius: 3px;
-        }
-
-        .before .example-tag {
-            color: #888;
-            background: rgba(255,255,255,0.04);
-        }
-
-        .after .example-tag {
-            color: #6BCB77;
-            background: rgba(100,200,100,0.08);
-        }
-
-        .example-caption {
-            font-size: 1.05rem;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-
-        .before .example-caption {
-            color: #777;
-        }
-
-        .after .example-caption {
-            color: #DDD;
-        }
-
-        .example-meta {
-            font-size: 0.82rem;
-            color: #555;
-            line-height: 1.7;
-        }
-
-        .before .example-meta {
-            color: #555;
-        }
-
-        .after .example-meta {
-            color: #6BCB77;
-        }
-
-        .example-meta strong {
-            color: inherit;
-            font-weight: 600;
-        }
-
-        .example-why {
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255,255,255,0.04);
-            font-size: 0.9rem;
-            color: #888;
-            line-height: 1.6;
-        }
-
-        .example-why strong {
-            color: #CCC;
-        }
-
-        @media (max-width: 768px) {
-            .example-comparison {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* ========================
-           PORTFOLIO
-           ======================== */
-        .portfolio {
-            background: #0C0C0C;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .brand-card {
-            background: #0E0E0E;
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 12px;
-            padding: 1.4rem;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .brand-card:hover {
-            border-color: rgba(255,255,255,0.1);
-            transform: translateY(-6px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-        }
-
-        .brand-card:focus-visible,
-        .hamburger:focus-visible,
-        .gallery-modal-close:focus-visible {
-            outline: 2px solid rgba(255,255,255,0.4);
-            outline-offset: 4px;
-        }
-
-        .brand-card-img {
-            width: 100%;
-            height: 380px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 1.4rem;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .brand-card:hover .brand-card-img {
-            transform: scale(1.02);
-        }
-
-        .brand-name {
-            font-size: 1.2rem;
-            font-weight: 800;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.3rem;
-            text-transform: uppercase;
-            color: #FFF;
-        }
-
-        .brand-type {
-            font-size: 0.8rem;
-            color: #555;
-            margin-bottom: 0.8rem;
-        }
-
-        .brand-spec {
-            font-size: 0.85rem;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .brand-gallery {
-            display: none;
-        }
-
-        /* Gallery modal */
-        .gallery-modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(2, 2, 2, 0.97);
-            z-index: 9999;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .gallery-modal.active { display: block; }
-
-        .gallery-modal-header {
-            position: sticky;
-            top: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 2rem;
-            background: rgba(5, 5, 5, 0.9);
-            backdrop-filter: blur(10px);
-            z-index: 10001;
-            border-bottom: 1px solid #1A1A1A;
-        }
-
-        .gallery-modal-title {
-            font-size: 1.3rem;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            color: #FFF;
-        }
-
-        .gallery-modal-close {
-            background: transparent;
-            border: 0;
-            font-size: 1.8rem;
-            color: #666;
-            cursor: pointer;
-            padding: 0.5rem;
-            transition: color 0.2s ease;
-            line-height: 1;
-        }
-
-        .gallery-modal-close:hover { color: #FFF; }
-
-        .gallery-modal-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1rem;
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .gallery-modal-grid img {
-            width: 100%;
-            border-radius: 8px;
-            object-fit: cover;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        }
-
-        .gallery-modal-grid img:hover {
-            transform: scale(1.03);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.5);
-        }
-
-        /* ========================
-           CASE STUDIES
-           ======================== */
-        .featured-case-study {
-            background: #0C0C0C;
-        }
-
-        .featured-case-study-card {
-            display: grid;
-            grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-            gap: 1.5rem;
-            margin-top: 2.5rem;
-            background: #0E0E0E;
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 14px;
-            padding: 1.5rem;
-        }
-
-        .featured-case-study-media img {
-            width: 100%;
-            height: 100%;
-            min-height: 320px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .featured-case-study-label {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: #666;
-            font-weight: 600;
-            margin-bottom: 0.9rem;
-        }
-
-        .featured-case-study-body h3 {
-            font-size: clamp(1.5rem, 3vw, 2.15rem);
-            line-height: 1.08;
-            margin-bottom: 0.9rem;
-        }
-
-        .featured-case-study-body p {
-            max-width: 100%;
-            font-size: 0.98rem;
-            color: #9A9A9A;
-            margin-bottom: 1.4rem;
-        }
-
-        .featured-case-study-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.9rem;
-        }
-
-        .featured-case-study-block {
-            background: #111;
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 10px;
-            padding: 1rem;
-        }
-
-        .featured-case-study-kicker {
-            font-size: 0.72rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            margin-bottom: 0.6rem;
-            font-weight: 700;
-        }
-
-        .featured-case-study-block p {
-            font-size: 0.92rem;
-            line-height: 1.65;
-            max-width: 100%;
-            margin-bottom: 0;
-        }
-
-        .featured-case-study-block.before .featured-case-study-kicker,
-        .featured-case-study-block.before p {
-            color: #666;
-        }
-
-        .featured-case-study-block.shift .featured-case-study-kicker,
-        .featured-case-study-block.shift p {
-            color: #AAA;
-        }
-
-        .featured-case-study-block.outcome .featured-case-study-kicker,
-        .featured-case-study-block.outcome p {
-            color: #6BCB77;
-        }
-
-        .featured-case-study-note {
-            font-size: 0.84rem;
-            color: #777;
-            margin-top: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .featured-case-study-card,
-            .featured-case-study-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .featured-case-study-media img {
-                min-height: 220px;
-            }
-        }
-
-        /* ========================
-           CASE STUDY GRID · 3-UP
-           ======================== */
-        .case-study-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        .case-study-card {
-            display: flex;
-            flex-direction: column;
-            background: #131313;
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 12px;
-            overflow: hidden;
-            text-decoration: none;
-            color: inherit;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-        .case-study-card:hover {
-            transform: translateY(-3px);
-            border-color: rgba(193, 113, 53, 0.5);
-        }
-        .case-study-card-media {
-            aspect-ratio: 16 / 10;
-            overflow: hidden;
-            background: #222;
-        }
-        .case-study-card-media img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        .case-study-card-body {
-            padding: 1.5rem 1.5rem 1.75rem;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-        .case-study-card-label {
-            font-size: 0.66rem;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: var(--accent);
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-        }
-        .case-study-card-body h3 {
-            font-size: 1.15rem;
-            line-height: 1.3;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #f5f5f0;
-        }
-        .case-study-card-body p {
-            font-size: 0.88rem;
-            line-height: 1.5;
-            color: #c8b98e;
-            margin-bottom: 0.65rem;
-        }
-        .case-study-card-body p strong {
-            color: #f5f5f0;
-            font-weight: 700;
-        }
-        .case-study-card-body .cs-before strong { color: #c8a17e; }
-        .case-study-card-body .cs-shift strong { color: #b8c4d6; }
-        .case-study-card-body .cs-outcome strong { color: #b8c89a; }
-        .case-study-card-body .cs-read {
-            margin-top: auto;
-            padding-top: 1rem;
-            font-size: 0.78rem;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            font-weight: 700;
-            color: var(--accent);
-        }
-        .case-study-grid-foot {
-            margin-top: 2.5rem;
-            text-align: center;
-        }
-        .case-study-grid-foot p {
-            margin-top: 1rem;
-            font-size: 0.88rem;
-            color: #888;
-            max-width: 56ch;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        @media (max-width: 900px) {
-            .case-study-grid { grid-template-columns: 1fr; }
-        }
-
-        /* ========================
-           PERSONAL NOTE
-           ======================== */
-        .personal-note {
-            background: #111;
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2.5rem;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .personal-note-label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: #666;
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-        }
-
-        .personal-note p {
-            font-size: 0.95rem;
-            color: #AAA;
-            line-height: 1.7;
-            max-width: 100%;
-        }
-
-        .fit-section {
-            background: #0C0C0C;
-            padding-top: 4rem;
-            padding-bottom: 4rem;
-        }
-
-        .service-link-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .service-link-card {
-            display: block;
-            background: #111;
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 12px;
-            padding: 1.15rem;
-            text-decoration: none;
-            transition: all 0.25s ease;
-        }
-
-        .service-link-card:hover {
-            border-color: rgba(255,255,255,0.12);
-            transform: translateY(-2px);
-        }
-
-        .service-link-title {
-            font-size: 1rem;
-            color: #FFF;
-            font-weight: 700;
-            margin-bottom: 0.35rem;
-        }
-
-        .service-link-copy {
-            max-width: 100%;
-            font-size: 0.9rem;
-            color: #8C8C8C;
-        }
-
-        .service-link-grid--thumbs {
-            gap: 1.25rem;
-        }
-
-        .service-link-card--thumb {
-            padding: 0;
-            overflow: hidden;
-            background: #0D0D0D;
-        }
-
-        .service-link-thumb {
-            aspect-ratio: 4 / 5;
-            background: #151515;
-            overflow: hidden;
-        }
-
-        .service-link-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.35s ease;
-        }
-
-        .service-link-card--thumb:hover .service-link-thumb img {
-            transform: scale(1.02);
-        }
-
-        .service-link-body {
-            padding: 0.95rem 1rem 1.05rem;
-        }
-
-        .service-link-card--thumb .service-link-title {
-            margin-bottom: 0.45rem;
-        }
-
-        .service-link-card--thumb .service-link-copy {
-            font-size: 0.88rem;
-            line-height: 1.55;
-            color: #9A9A9A;
-        }
-
-        /* ========================
-           FORM SELECT
-           ======================== */
-        .form-group select {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            background: #151515;
-            border: 1px solid #222;
-            border-radius: 4px;
-            color: #FFF;
-            font-size: 1rem;
-            font-family: inherit;
-            outline: none;
-            transition: border-color 0.2s ease;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-        }
-
-        .form-group select:focus {
-            border-color: #444;
-        }
-
-        /* ========================
-           WHAT YOU GET
-           ======================== */
-        .deliverables-list {
-            list-style: none;
-            margin: 2.5rem 0 2rem;
-        }
-
-        .deliverables-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-            font-size: 1.05rem;
-            color: #CCC;
-        }
-
-        .deliverables-list li:last-child { border-bottom: none; }
-
-        .deliverables-list li::before {
-            content: '';
-            flex-shrink: 0;
-            width: 8px;
-            height: 8px;
-            background: #FFF;
-            border-radius: 50%;
-            margin-top: 8px;
-        }
-
-        .deliverables-goal {
-            font-size: 1.1rem;
-            color: #999;
-            margin-top: 1rem;
-        }
-
-        .deliverables-goal strong { color: #FFFFFF; }
-
-        /* ========================
-           HOW IT WORKS
-           ======================== */
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .workflow-showcase {
-            display: grid;
-            grid-template-columns: minmax(0, 1.15fr) minmax(240px, 0.7fr) minmax(0, 0.95fr);
-            gap: 1.25rem;
-            margin-top: 2.75rem;
-            align-items: stretch;
-        }
-
-        .workflow-panel {
-            background: #0E0E0E;
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 16px;
-            padding: 1.25rem;
-        }
-
-        .workflow-panel-label {
-            display: inline-flex;
-            align-items: center;
-            margin-bottom: 1rem;
-            font-size: 0.68rem;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            font-weight: 700;
-            color: #727272;
-        }
-
-        .workflow-source-top {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 0.85rem;
-            margin-bottom: 0.9rem;
-        }
-
-        .workflow-source-card {
-            background: #111;
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 12px;
-            padding: 1rem;
-        }
-
-        .workflow-source-card strong,
-        .workflow-feed-label,
-        .workflow-output-meta strong,
-        .workflow-build-item strong {
-            display: block;
-            font-size: 0.72rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: #F1F1F1;
-            margin-bottom: 0.65rem;
-        }
-
-        .workflow-source-card p,
-        .workflow-output-copy,
-        .workflow-build-item p {
-            max-width: 100%;
-            font-size: 0.88rem;
-            color: #8A8A8A;
-            margin-bottom: 0;
-        }
-
-        .workflow-logo {
-            width: 100%;
-            max-width: 250px;
-            height: auto;
-            object-fit: contain;
-        }
-
-        .workflow-logo-frame {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            min-height: 94px;
-            padding: 1rem 1.1rem;
-            background: linear-gradient(180deg, #f3f0ed 0%, #e6e0d8 100%);
-            border-radius: 12px;
-            margin-bottom: 0.85rem;
-        }
-
-        .workflow-location-shot {
-            width: 100%;
-            height: 92px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 0.85rem;
-        }
-
-        .workflow-feed-label {
-            color: #8B8B8B;
-            margin-bottom: 0.75rem;
-        }
-
-        .workflow-source-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 0.75rem;
-        }
-
-        .workflow-source-grid img {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.06);
-        }
-
-        .workflow-bridge {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 0.8rem;
-            background: linear-gradient(180deg, #101010 0%, #0B0B0B 100%);
-        }
-
-        .workflow-build-item {
-            background: #111;
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 12px;
-            padding: 1rem;
-        }
-
-        .workflow-build-item strong {
-            margin-bottom: 0.45rem;
-            color: #FFFFFF;
-        }
-
-        .workflow-output-image {
-            width: 100%;
-            aspect-ratio: 4 / 5;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 1rem;
-            border: 1px solid rgba(255,255,255,0.06);
-        }
-
-        .workflow-output-meta {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 0.65rem;
-            margin-bottom: 1rem;
-        }
-
-        .workflow-output-meta div {
-            background: #111;
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 10px;
-            padding: 0.8rem;
-        }
-
-        .workflow-output-meta span {
-            display: block;
-            font-size: 0.82rem;
-            color: #9C9C9C;
-            line-height: 1.5;
-        }
-
-        .step-number {
-            font-size: 3.5rem;
-            font-weight: 900;
-            color: rgba(255,255,255,0.06);
-            line-height: 1;
-            margin-bottom: 1rem;
-            letter-spacing: -0.04em;
-        }
-
-        .step-title {
-            font-size: 1.1rem;
-            color: #FFFFFF;
-            font-weight: 600;
-            margin-bottom: 0.6rem;
-        }
-
-        .step-desc {
-            font-size: 0.95rem;
-            color: #777;
-            line-height: 1.6;
-        }
-
-        /* ========================
-           PRICING
-           ======================== */
-        .pricing-section {
-            background: #0C0C0C;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .pricing-card {
-            background: #0E0E0E;
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 12px;
-            padding: 2.5rem 2rem;
-            position: relative;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .pricing-card:hover {
-            border-color: rgba(255,255,255,0.1);
-            transform: translateY(-4px);
-            box-shadow: 0 16px 48px rgba(0,0,0,0.4);
-        }
-
-        .pricing-card.featured {
-            border-color: rgba(255,255,255,0.12);
-            background: linear-gradient(180deg, #121212 0%, #0E0E0E 100%);
-        }
-
-        .pricing-card.featured::before {
-            content: 'MOST POPULAR';
-            position: absolute;
-            top: -1px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #FFFFFF;
-            color: #0A0A0A;
-            font-size: 0.6rem;
-            font-weight: 700;
-            letter-spacing: 0.18em;
-            padding: 0.4rem 1.2rem;
-            border-radius: 0 0 6px 6px;
-        }
-
-        .pricing-tier {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-
-        .pricing-name {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #FFF;
-            margin-bottom: 0.8rem;
-        }
-
-        .pricing-amount {
-            font-size: 2.4rem;
-            font-weight: 800;
-            color: #FFFFFF;
-            margin-bottom: 0.3rem;
-            letter-spacing: -0.02em;
-        }
-
-        .pricing-amount.pricing-duration {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-weight: 500;
-            font-size: 2.1rem;
-            color: #D4A017;
-            letter-spacing: 0;
-        }
-
-        .pricing-desc {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 1.5rem;
-            line-height: 1.5;
-        }
-
-        .pricing-includes {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .pricing-includes li {
-            padding: 0.5rem 0;
-            font-size: 0.92rem;
-            color: #AAA;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.7rem;
-            border-bottom: 1px solid rgba(255,255,255,0.03);
-        }
-
-        .pricing-includes li:last-child { border-bottom: none; }
-
-        .pricing-includes li::before {
-            content: '\2014';
-            color: #444;
-            flex-shrink: 0;
-        }
-
-        .pricing-note {
-            font-size: 0.85rem;
-            color: #555;
-            margin-top: 1rem;
-        }
-
-        .pricing-note-center {
-            text-align: center;
-            margin-top: 1.5rem;
-        }
-
-        .pricing-includes li strong {
-            color: #FFF;
-        }
-
-        .pricing-help {
-            margin-top: 1.5rem;
-            text-align: center;
-            font-size: 0.92rem;
-            color: #777;
-        }
-
-        .pricing-help a {
-            color: #D2D2D2;
-            text-decoration: none;
-        }
-
-        .pricing-help a:hover {
-            color: #FFF;
-        }
-
-        .faq-section {
-            background: #080808;
-            padding-top: 4rem;
-            padding-bottom: 4rem;
-        }
-
-        .faq-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .faq-item {
-            background: #0E0E0E;
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 12px;
-            padding: 1.4rem;
-        }
-
-        .faq-item h3 {
-            font-size: 1rem;
-            line-height: 1.4;
-            margin-bottom: 0.75rem;
-        }
-
-        .faq-item p {
-            max-width: 100%;
-            font-size: 0.93rem;
-            color: #989898;
-        }
-
-        .audit-preview {
-            background: #080808;
-            padding-top: 4rem;
-            padding-bottom: 4rem;
-        }
-
-        .audit-preview-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .audit-preview-card {
-            background: #0E0E0E;
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 12px;
-            padding: 1.3rem;
-        }
-
-        .audit-preview-card h3 {
-            font-size: 1rem;
-            margin-bottom: 0.7rem;
-        }
-
-        .audit-preview-card p {
-            max-width: 100%;
-            font-size: 0.93rem;
-            color: #939393;
-        }
-
-        .preview-list {
-            list-style: none;
-            margin-top: 0.9rem;
-        }
-
-        .preview-list li {
-            display: flex;
-            gap: 0.75rem;
-            align-items: flex-start;
-            padding: 0.45rem 0;
-            color: #B0B0B0;
-            font-size: 0.92rem;
-        }
-
-        .preview-list li::before {
-            content: '\2192';
-            color: #FFF;
-            flex-shrink: 0;
-        }
-
-        /* ========================
-           CTA SECTIONS
-           ======================== */
-        .cta-section {
-            text-align: center;
-        }
-
-        .cta-section .container { max-width: 600px; }
-        .cta-section h2 { margin-bottom: 1rem; }
-
-        .cta-section p {
-            margin: 0 auto 2rem;
-            text-align: center;
-        }
-
-        /* ========================
-           SECONDARY
-           ======================== */
-        .secondary {
-            background: #0C0C0C;
-        }
-
-        .secondary-list {
-            list-style: none;
-            margin: 1.5rem 0 2rem;
-        }
-
-        .secondary-list li {
-            padding: 0.5rem 0;
-            font-size: 1rem;
-            color: #999;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.7rem;
-        }
-
-        .secondary-list li::before {
-            content: '\2014';
-            color: #444;
-            flex-shrink: 0;
-        }
-
-        .secondary strong { color: #FFFFFF; }
-
-        /* ========================
-           FOOTER
-           ======================== */
-        footer {
-            padding: 4rem 2rem;
-            border-top: 1px solid rgba(255,255,255,0.06);
-        }
-
-        .footer-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .footer-brand {
-            font-size: 1rem;
-            font-weight: 800;
-            color: #FFF;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-tagline {
-            font-size: 0.85rem;
-            color: #555;
-        }
-
-        .footer-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-links a {
-            font-size: 0.85rem;
-            color: #666;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .footer-links a:hover { color: #FFF; }
-
-        .footer-contact {
-            font-size: 0.85rem;
-            color: #555;
-            line-height: 1.8;
-        }
-
-        .footer-contact a {
-            color: #888;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .footer-contact a:hover { color: #FFF; }
-
-        .footer-legal {
-            margin-top: 0.7rem;
-            color: #555;
-        }
-
-        .footer-legal a {
-            color: #666;
-            text-decoration: none;
-        }
-
-        .footer-legal a:hover {
-            color: #FFF;
-        }
-
-        /* ========================
-           SCROLL FADE
-           ======================== */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 9998;
-            opacity: 0.02;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-            background-repeat: repeat;
-        }
-
-        /* ========================
-           AUDIT FORM
-           ======================== */
-        .audit-form-section {
-            background: #0C0C0C;
-        }
-
-        .audit-form-section .container { max-width: 500px; }
-        .audit-form-section h2 { text-align: center; }
-        .audit-form { margin-top: 2rem; }
-
-        .form-group { margin-bottom: 1.2rem; }
-        .form-group:last-of-type { margin-bottom: 1.5rem; }
-
-        .form-group label {
-            display: block;
-            font-size: 0.85rem;
-            color: #888;
-            margin-bottom: 0.4rem;
-            letter-spacing: 0.02em;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            background: #151515;
-            border: 1px solid #222;
-            border-radius: 4px;
-            color: #FFF;
-            font-size: 1rem;
-            font-family: inherit;
-            outline: none;
-            transition: border-color 0.2s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus { border-color: #444; }
-
-        .form-group textarea { resize: vertical; }
-
-        .form-trust {
-            margin-top: 1rem;
-            text-align: center;
-            font-size: 0.82rem;
-            color: #666;
-            line-height: 1.7;
-        }
-
-        .form-trust a {
-            color: #AAA;
-            text-decoration: none;
-        }
-
-        .form-trust a:hover {
-            color: #FFF;
-        }
-
-        .btn-full {
-            width: 100%;
-            text-align: center;
-        }
-
-        .form-next-steps {
-            display: grid;
-            gap: 0.8rem;
-            margin-top: 1.2rem;
-        }
-
-        .form-next-step {
-            background: #111;
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 8px;
-            padding: 0.9rem 1rem;
-            color: #969696;
-            font-size: 0.9rem;
-        }
-
-        .form-next-step a {
-            color: #D2D2D2;
-            text-decoration: none;
-        }
-
-        .form-next-step a:hover {
-            color: #FFF;
-        }
-
-        .contact-inline {
-            margin-top: 1rem;
-            text-align: center;
-            color: #777;
-            font-size: 0.85rem;
-        }
-
-        .contact-inline a {
-            color: #D2D2D2;
-            text-decoration: none;
-        }
-
-        .contact-inline a:hover {
-            color: #FFF;
-        }
-
-        .mobile-sticky-cta {
-            display: none;
-        }
-
-        /* ========================
-           RESPONSIVE
-           ======================== */
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hamburger { display: flex; }
-
-            section { padding: 4rem 1.5rem; }
-
-            .hero {
-                padding-top: 8rem;
-                padding-bottom: 3rem;
-            }
-
-            .hero-shell,
-            .hero-visuals,
-            .fit-grid,
-            .service-link-grid,
-            .audit-preview-grid,
-            .faq-grid,
-            .workflow-showcase,
-            .workflow-source-top,
-            .workflow-output-meta {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-visual-card img {
-                height: 220px;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .proof-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .brand-card-img { height: 300px; }
-
-            .process-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .workflow-source-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .pricing-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .pricing-card { padding: 2rem 1.5rem; }
-
-            .gallery-modal-grid {
-                grid-template-columns: 1fr;
-                padding: 1rem;
-            }
-
-            .footer-inner {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 0.8rem;
-            }
-
-            body {
-                padding-bottom: 5.25rem;
-            }
-
-            .mobile-sticky-cta {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                position: fixed;
-                left: 1rem;
-                right: 1rem;
-                bottom: 1rem;
-                z-index: 10000;
-                padding: 1rem 1.2rem;
-                border-radius: 999px;
-                background: #FFFFFF;
-                color: #0A0A0A;
-                text-decoration: none;
-                font-weight: 700;
-                letter-spacing: 0.04em;
-                text-transform: uppercase;
-                box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-                opacity: 0;
-                pointer-events: none;
-                transform: translateY(120%);
-                transition: opacity 0.2s ease, transform 0.2s ease;
-            }
-
-            .mobile-sticky-cta.is-visible {
-                opacity: 1;
-                pointer-events: auto;
-                transform: translateY(0);
-            }
-        }
-
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .hero-shell,
-            .fit-grid,
-            .faq-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-visuals,
-            .audit-preview-grid,
-            .service-link-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .pricing-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .pricing-grid .pricing-card:last-child {
-                grid-column: 1 / -1;
-                max-width: 400px;
-                margin: 0 auto;
-            }
-        }
-    </style>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "Organization",
-                "name": "LoopWorker",
-                "url": "https://www.loopworker.com",
-                "logo": "https://www.loopworker.com/images/cards/card_02.webp",
-                "email": "alex@loopworker.com",
-                "sameAs": ["https://instagram.com/loopworker"]
-            },
-            {
-                "@type": "ProfessionalService",
-                "name": "LoopWorker",
-                "description": "LoopWorker pulls live market signals into founder-led intelligence systems that reveal what is actually happening inside a category. Competitor movement, customer behavior, pricing structures, content patterns, positioning shifts, and operational visibility for high-leverage decisions.",
-                "url": "https://www.loopworker.com",
-                "areaServed": "United States",
-                "serviceType": [
-                    "Private market intelligence",
-                    "Competitor reconstruction",
-                    "Customer voice research",
-                    "Pricing and positioning strategy",
-                    "Proof and channel direction"
-                ]
-            }
-        ]
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <title>Signal Intelligence for High-Leverage Decisions · LoopWorker</title>
+  <meta name="description" content="Evidence before execution. Founder-led market intelligence sprints. 48 hours to 14 days. We pull the public signals around your next move and return a brief that says what to ship, hold, or kill.">
+  <link rel="canonical" href="https://www.loopworker.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.loopworker.com/">
+  <meta property="og:title" content="Signal Intelligence for High-Leverage Decisions · LoopWorker">
+  <meta property="og:description" content="Evidence before execution. LoopWorker reveals what is already moving inside a category.">
+  <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="LoopWorker">
+  <meta name="theme-color" content="#07070C">
+  <meta name="color-scheme" content="dark">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/v5-system.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
+  <link rel="dns-prefetch" href="https://buy.stripe.com">
+  <link rel="preconnect" href="https://plausible.io">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.loopworker.com/#organization",
+        "name": "LoopWorker",
+        "url": "https://www.loopworker.com/",
+        "logo": "https://www.loopworker.com/images/cards/card_02.webp",
+        "email": "alex@loopworker.com",
+        "slogan": "Evidence before execution.",
+        "description": "LoopWorker is a founder-led signal intelligence studio that pulls live market evidence into visibility systems for clearer decisions before execution.",
+        "sameAs": ["https://instagram.com/loopworker"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.loopworker.com/#website",
+        "name": "LoopWorker",
+        "url": "https://www.loopworker.com/",
+        "publisher": { "@id": "https://www.loopworker.com/#organization" }
+      },
+      {
         "@type": "ProfessionalService",
         "name": "LoopWorker",
-        "url": "https://www.loopworker.com",
+        "description": "Founder-led market intelligence sprints. 48 hours to 14 days. Public-signal research delivered as a decision brief with ranked actions.",
+        "url": "https://www.loopworker.com/",
+        "areaServed": "United States",
+        "serviceType": [
+          "Private market intelligence",
+          "Competitor reconstruction",
+          "Customer voice research",
+          "Pricing and positioning strategy",
+          "Channel direction"
+        ],
         "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Strategy Sprints",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "name": "Sprint 1 · Signal Snapshot",
-                    "url": "https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D",
-                    "price": "750",
-                    "priceCurrency": "USD",
-                    "description": "48-hour gateway sprint. One signal pulled deep + ranked recommendation."
-                },
-                {
-                    "@type": "Offer",
-                    "name": "Sprint 2",
-                    "url": "https://buy.stripe.com/28E28q52nahp3pg6VmcEw0I",
-                    "price": "3200",
-                    "priceCurrency": "USD",
-                    "description": "Five-day focused market intelligence round for one decision: competitor reconstruction, search demand, pricing, proof gap, or website conversion."
-                },
-                {
-                    "@type": "Offer",
-                    "name": "Sprint 3",
-                    "url": "https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J",
-                    "price": "8000",
-                    "priceCurrency": "USD",
-                    "description": "Ten-day founder-led decision brief connecting competitors, content, reviews, search, pricing, positioning, channels, and next actions."
-                }
-            ]
+          "@type": "OfferCatalog",
+          "name": "Sprint Ladder",
+          "itemListElement": [
+            { "@type": "Offer", "name": "Surface", "url": "https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D", "price": "750", "priceCurrency": "USD", "description": "48-hour gateway sprint. Surface scan + 3 next-move recommendations." },
+            { "@type": "Offer", "name": "Compass", "url": "https://buy.stripe.com/28E28q52nahp3pg6VmcEw0I", "price": "3200", "priceCurrency": "USD", "description": "5-day focused decision sprint. Competitive read + strategic answer." },
+            { "@type": "Offer", "name": "Atlas", "url": "https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J", "price": "8000", "priceCurrency": "USD", "description": "10-day full territory map. Connected market signals + ranked action sheet." },
+            { "@type": "Offer", "name": "Operating System", "url": "https://buy.stripe.com/28E14m52n9dlgc2gvWcEw0G", "price": "25000", "priceCurrency": "USD", "description": "14-day launch / repositioning sprint + 3 months execution support." },
+            { "@type": "Offer", "name": "Systems Retainer", "url": "https://buy.stripe.com/eVqfZg7av9dl8JA1B2cEw0H", "price": "4500", "priceCurrency": "USD", "description": "Monthly post-Sprint execution retainer." }
+          ]
         }
-    }
-    </script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@id": "https://www.loopworker.com/#homepage-aeo",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://www.loopworker.com/#organization",
-      "name": "LoopWorker",
-      "url": "https://www.loopworker.com/",
-      "slogan": "Evidence before execution.",
-      "description": "LoopWorker is a founder-led signal intelligence studio that pulls live market evidence into visibility systems for clearer decisions before execution."
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://www.loopworker.com/#website",
-      "name": "LoopWorker",
-      "url": "https://www.loopworker.com/",
-      "publisher": {
-        "@id": "https://www.loopworker.com/#organization"
       },
-      "about": [
-        "signal intelligence",
-        "market signals",
-        "evidence before execution",
-        "visibility systems"
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is LoopWorker?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "LoopWorker is a founder-led signal intelligence studio that pulls live market evidence into visibility systems before execution."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What does The Sprint produce?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The Sprint produces a mapped view of category signals, buyer language, competitor movement, proof gaps, pricing pressure, channel behavior, and a ranked next-move sheet."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What does evidence before execution mean?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "It means pricing, positioning, proof, visual direction, channel, and website decisions should be shaped by observable market evidence before execution begins."
-          }
-        }
-      ]
-    }
-  ]
-}
-</script>
-    <meta name="theme-color" content="#080808">
-    <meta name="color-scheme" content="dark">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="LoopWorker">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23080808' width='100' height='100'/><text x='50' y='65' font-size='52' text-anchor='middle' fill='%23D4A017'>◉</text></svg>">
-    <link rel="dns-prefetch" href="https://buy.stripe.com">
-    <link rel="preconnect" href="https://plausible.io">
-<style id="lw-polish">
-/* Universal polish: tabular nums on prices, optimizeLegibility, focus ring, selection, reduced motion, skip-link, print, scroll padding */
-html { scroll-padding-top: 80px; -webkit-tap-highlight-color: rgba(212,160,23,0.18); }
-html body { text-rendering: optimizeLegibility; font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1; font-kerning: normal; }
-.tier-price, .v4-price-chip strong, .v4-offer-price, .pricing-amount,
-.v4-tstm-meta-stat, .stat strong, .signal-source strong, .console-pill,
-.v4-stat-num, .lp-source strong, .compare-table td, .compare-table th { font-variant-numeric: tabular-nums; font-feature-settings: 'kern' 1, 'liga' 1, 'tnum' 1, 'lnum' 1; }
-::selection { background: rgba(212,160,23,0.32); color: #FFF; }
-::-moz-selection { background: rgba(212,160,23,0.32); color: #FFF; }
-:focus { outline: none; }
-:focus-visible { outline: 2px solid rgba(212,160,23,0.7); outline-offset: 3px; border-radius: 4px; }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
-section[id], .v4-section { scroll-margin-top: 96px; }
-h1, h2, .v4-h1, .v4-h2, .lp-h1, .lp-h2 { text-wrap: balance; }
-@media print { nav, .mobile-nav, .v4-sticky, .mobile-sticky-cta, .hamburger, body::after { display: none !important; } body { background: #FFF !important; color: #000 !important; } a { color: #000 !important; text-decoration: underline; } }
-.skip-link { position: absolute; left: -9999px; top: 0; z-index: 9999; padding: 0.75rem 1.25rem; background: #D4A017; color: #1A0F00; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; border-radius: 0 0 8px 0; }
-.skip-link:focus { left: 0; }
-details summary { cursor: pointer; }
-</style>
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is LoopWorker?", "acceptedAnswer": { "@type": "Answer", "text": "LoopWorker is a founder-led market intelligence studio. We pull public signals around your next decision and return a brief that says what to ship, hold, or kill." } },
+          { "@type": "Question", "name": "How is this different from a consultant?", "acceptedAnswer": { "@type": "Answer", "text": "Consultants give opinions. Sprints give signals. The brief stands on its own with public-data evidence beside every recommendation." } },
+          { "@type": "Question", "name": "How long does a Sprint take?", "acceptedAnswer": { "@type": "Answer", "text": "Surface is 48 hours. Compass is 5 days. Atlas is 10 days. Operating System is 14 days plus 3 months of support." } },
+          { "@type": "Question", "name": "Is there a guarantee?", "acceptedAnswer": { "@type": "Answer", "text": "14-day refund. If you cannot act on a single line of the brief, write back. Happened once in two years." } }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-    <a href="#main" class="skip-link">Skip to content</a>
+  <a href="#main" class="skip-link">Skip to content</a>
 
-    <!-- NAV -->
-    <nav>
-        <div class="nav-inner">
-            <a href="/" class="nav-logo">LoopWorker</a>
-            <ul class="nav-links">
-                <li><a href="/sprint.html" data-track="Nav Sprint">The Sprint</a></li>
-                <li><a href="/pricing.html" data-track="Nav Pricing">Pricing</a></li>
-                <li><a href="/case-studies.html">Case Studies</a></li>
-                <li><a href="/blog/">Signals</a></li>
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/book.html" class="nav-cta" data-track="Nav Book CTA">Book a Call</a></li>
-            </ul>
-            <button type="button" class="hamburger" onclick="toggleMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
-
-    <div class="mobile-nav" id="mobileNav">
-        <a href="/sprint.html" onclick="toggleMenu()">The Sprint</a>
-        <a href="/pricing.html" data-track="Mobile Nav Pricing">Pricing</a>
-        <a href="/case-studies.html" onclick="toggleMenu()">Case Studies</a>
-        <a href="/blog/" onclick="toggleMenu()">Signals</a>
-        <a href="/about.html" onclick="toggleMenu()">About</a>
-        <a href="/book.html" class="nav-cta" onclick="toggleMenu()" data-track="Mobile Nav Book CTA">Book a Call</a>
+  <!-- NAV -->
+  <nav class="v5-nav">
+    <div class="v5-nav-inner">
+      <a href="/" class="v5-logo">
+        <span class="v5-logo-mark">L</span>
+        LoopWorker
+      </a>
+      <div class="v5-nav-links">
+        <a href="/sprint.html">Sprints</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/case-studies.html">Customers</a>
+        <a href="/blog/">Signals</a>
+        <a href="/about.html">About</a>
+        <a href="/book.html" class="v5-nav-cta" data-track="Nav Book CTA">Book a Call</a>
+      </div>
+      <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+    <div class="v5-mobile-nav" id="mobileNav">
+      <a href="/sprint.html">Sprints</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/case-studies.html">Customers</a>
+      <a href="/blog/">Signals</a>
+      <a href="/about.html">About</a>
+      <a href="/book.html" class="v5-nav-cta">Book a Call</a>
+    </div>
+  </nav>
 
-    <div id="main"></div>
-
+  <main id="main">
 
     <!-- HERO -->
-    <section class="v4-hero">
-        <div class="v4-shell">
-            <div class="v4-hero-grid">
-                <div class="v4-hero-copy">
-                    <span class="v4-eyebrow fade-up">◆ Evidence before execution</span>
-                    <h1 class="v4-h1 fade-up">The signals are <em>already there.</em></h1>
-                    <p class="v4-sub fade-up">Founder-led market intelligence sprints. We pull the public signals around your next decision and hand back a PDF brief that says what to ship, hold, or kill.</p>
-                    <div class="v4-price-strip fade-up" aria-label="Sprint pricing at a glance">
-                        <a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" class="v4-price-chip" data-track="V4 Hero Strip Sprint 1"><strong>$750</strong><span>48 hours · one signal</span></a>
-                        <a href="https://buy.stripe.com/28E28q52nahp3pg6VmcEw0I" class="v4-price-chip" data-track="V4 Hero Strip Sprint 2"><strong>$3,200</strong><span>5 days · one decision</span></a>
-                        <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="v4-price-chip v4-price-chip-featured" data-track="V4 Hero Strip Sprint 3"><strong>$8,000</strong><span>10 days · full brief</span></a>
-                    </div>
-                    <div class="v4-actions fade-up">
-                        <a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" class="v4-btn v4-btn-primary" data-track="V4 Hero Sprint 1">Begin Sprint 1 · $750</a>
-                        <a href="/book.html" class="v4-btn v4-btn-secondary" data-track="V4 Hero Book">Talk first · Book a Call</a>
-                    </div>
-                    <p class="v4-hero-capacity fade-up"><span class="v4-cap-dot" aria-hidden="true"></span>Founder-led · 48 hours on Sprint 1 · 2 active Sprint 3 engagements at a time</p>
-                </div>
-                <div class="v4-hero-proof fade-up" aria-label="Example market signal console">
-                    <div class="signal-console">
-                        <div class="console-topline">
-                            <div class="console-title">Category Pull · live public signals</div>
-                            <div class="console-pill">Visibility System</div>
-                        </div>
-                        <div class="signal-stream">
-                            <div class="signal-row">
-                                <div class="signal-source"><strong>1,247</strong> review fragments</div>
-                                <div class="signal-finding">Top friction cluster: buyers want confidence before setup, not more features.<div class="signal-meter"><span class="meter-fill" style="--w: 82%"></span></div></div>
-                            </div>
-                            <div class="signal-row">
-                                <div class="signal-source"><strong>12</strong> competitor ads</div>
-                                <div class="signal-finding">Four hooks have stayed live past 90 days; all lead with risk removal before aspiration.<div class="signal-meter"><span class="meter-fill" style="--w: 68%"></span></div></div>
-                            </div>
-                            <div class="signal-row">
-                                <div class="signal-source"><strong>5</strong> pricing pages</div>
-                                <div class="signal-finding">$525 is defensible if proof is sequenced before the offer and onboarding feels handled.<div class="signal-meter"><span class="meter-fill" style="--w: 74%"></span></div></div>
-                            </div>
-                        </div>
-                        <div class="console-decision">
-                            <div class="decision-label">Next move</div>
-                            <p>Lead with the calm setup guarantee, hold the price, and ship three proof-led assets before adding spend.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="v5-hero">
+      <div class="v5-hero-inner">
+        <div>
+          <div class="v5-chip">
+            <span class="v5-chip-dot"></span>
+            <span>Atlas · <strong>2 slots left this month</strong></span>
+            <span class="v5-chip-divider"></span>
+            <span>14-day refund</span>
+          </div>
+
+          <h1>Stop guessing what to <span class="grad-text">ship next.</span></h1>
+          <p class="v5-hero-sub">Founder-led market intelligence sprints. 48 hours to 14 days. We pull the public signals around your next move and return a brief that says what to ship, hold, or kill — with evidence beside every line.</p>
+
+          <div class="v5-cta-row">
+            <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="v5-btn v5-btn-primary" data-track="Home Hero Atlas">Begin Atlas <span class="meta">· $8,000 · 10d</span></a>
+            <a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" class="v5-btn v5-btn-ghost" data-track="Home Hero Surface">Start with $750 Surface</a>
+          </div>
+
+          <div class="v5-hero-trust">
+            <div class="v5-avatars"><span></span><span></span><span></span><span></span></div>
+            <span><strong>43 founders</strong> have shipped briefs since Q3 2024</span>
+          </div>
         </div>
+
+        <!-- UI MOCKUP -->
+        <aside class="v5-ui-card">
+          <div class="v5-ui-bar">
+            <div class="v5-ui-dots"><span></span><span></span><span></span></div>
+            <div class="v5-ui-tab">atlas-247 · <strong>brief.pdf</strong></div>
+          </div>
+          <div class="v5-ui-body">
+            <div class="v5-ui-eyebrow">Atlas · brief #247</div>
+            <div class="v5-ui-h">Should we reposition for <span class="grad-text">enterprise</span> before the Q3 raise?</div>
+            <div class="v5-ui-stats">
+              <div class="v5-ui-stat"><span class="n">2,147</span><span class="l">ad creatives</span></div>
+              <div class="v5-ui-stat"><span class="n">1,308</span><span class="l">review frags</span></div>
+              <div class="v5-ui-stat"><span class="n">14,650</span><span class="l">searches/mo</span></div>
+            </div>
+            <div class="v5-ui-bars-grid">
+              <div class="v5-ui-rowbar">
+                <span class="v5-ui-rowbar-label">Buying confidence</span>
+                <div class="v5-ui-rowbar-track"><div class="v5-ui-rowbar-fill" data-w="78"></div></div>
+                <span class="v5-ui-rowbar-num">37%</span>
+              </div>
+              <div class="v5-ui-rowbar">
+                <span class="v5-ui-rowbar-label">Pricing confusion</span>
+                <div class="v5-ui-rowbar-track"><div class="v5-ui-rowbar-fill" data-w="62"></div></div>
+                <span class="v5-ui-rowbar-num">24%</span>
+              </div>
+              <div class="v5-ui-rowbar">
+                <span class="v5-ui-rowbar-label">Onboarding stall</span>
+                <div class="v5-ui-rowbar-track"><div class="v5-ui-rowbar-fill" data-w="42"></div></div>
+                <span class="v5-ui-rowbar-num">16%</span>
+              </div>
+              <div class="v5-ui-rowbar">
+                <span class="v5-ui-rowbar-label">Channel fit</span>
+                <div class="v5-ui-rowbar-track"><div class="v5-ui-rowbar-fill" data-w="28"></div></div>
+                <span class="v5-ui-rowbar-num">11%</span>
+              </div>
+            </div>
+            <div class="v5-ui-verdict">
+              <div class="v5-ui-verdict-tag">Verdict</div>
+              <div class="v5-ui-verdict-text">Don't reposition. Restage. Build /enterprise as parallel path. Reprice anchor +$100. Refund if no line actionable.</div>
+            </div>
+          </div>
+        </aside>
+      </div>
     </section>
 
-    <!-- TESTIMONIAL STRIP -->
-    <section class="v4-testimonial-strip">
-        <div class="v4-shell">
-            <p class="v4-tstm-quote">He found the pattern in my own feed I'd been missing for two years. Two reels, same outfit, 2,800× difference in plays. And an explanation.</p>
-            <div class="v4-tstm-meta">
-                <span class="v4-tstm-meta-attr">Cosplay creator</span>
-                <span class="v4-tstm-meta-stat">6.2M plays mapped</span>
-                <span class="v4-tstm-meta-tier">Sprint 3 · 10 days</span>
-            </div>
+    <!-- CATEGORY STRIP -->
+    <section class="v5-logos">
+      <div class="v5-logos-inner">
+        <div class="v5-logos-label">Briefs delivered for founders across</div>
+        <div class="v5-logos-row">
+          <span>SaaS</span><span>DTC</span><span>Services</span><span>Creators</span><span>Marketplaces</span><span>Agencies</span>
         </div>
+      </div>
     </section>
 
-    <!-- SECTION 2 · THE PROBLEM -->
-    <section class="v4-section">
-        <div class="v4-shell">
-            <div class="v4-section-intro fade-up">
-                <span class="v4-section-eyebrow">◆ The Problem</span>
-                <h2 class="v4-h2">The market is talking. Most teams don't listen.</h2>
-                <p class="v4-section-sub">Reviews, ads, pricing, competitor moves, buyer language. The category is telling you what to ship. Most teams decide without it.</p>
-            </div>
-            <div class="v4-compare fade-up">
-                <div class="v4-compare-col">
-                    <div class="v4-compare-title">Execution Without Visibility</div>
-                    <ul class="v4-list">
-                        <li>Messaging built from internal opinions</li>
-                        <li>Competitor movement noticed too late</li>
-                        <li>Creative chosen by taste instead of evidence</li>
-                        <li>Pricing changes made without category context</li>
-                        <li>Content shipped before the proof gap is clear</li>
-                        <li>Spend added before the decision layer is stable</li>
-                    </ul>
-                </div>
-                <div class="v4-compare-col v4-bright">
-                    <div class="v4-compare-title">LoopWorker Visibility</div>
-                    <ul class="v4-list">
-                        <li>Live public signals pulled into one view</li>
-                        <li>Competitor paths traced before they become obvious</li>
-                        <li>Audience language mapped into usable patterns</li>
-                        <li>Offer, pricing, and proof compared side by side</li>
-                        <li>Clear next moves ranked by evidence strength</li>
-                        <li>Execution starts after the visibility layer is built</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- PRICING LADDER -->
+    <section class="v5-section" id="pricing">
+      <div class="v5-section-inner">
+        <div class="v5-section-intro">
+          <span class="v5-eyebrow">The Sprint Ladder</span>
+          <h2>Pick the depth that <span class="grad-text">fits the decision.</span></h2>
+          <p class="v5-section-sub">Most clients run Atlas. Surface exists so you can test the method on one signal first.</p>
         </div>
-    </section>
 
-    <!-- EDITORIAL PULL QUOTE -->
-    <section class="v4-pullquote">
-        <div class="v4-shell">
-            <p class="v4-pq-text fade-up">The category is <em>already telling you</em> what to ship. Most teams keep guessing.</p>
-            <p class="v4-pq-attr fade-up"><span class="v4-pq-mark">◆</span> Founder note · <em>Alex Lamb, LoopWorker</em></p>
-        </div>
-    </section>
-
-    <!-- SELECTED ENGAGEMENTS STRIP -->
-    <section class="v4-engagements">
-        <div class="v4-shell">
-            <div class="v4-eng-label fade-up">◆ Selected engagements</div>
-            <div class="v4-eng-grid">
-                <span class="v4-eng-item fade-up"><em>Luxury exit thesis</em><span>27 modules · 7-year roadmap</span></span>
-                <span class="v4-eng-item fade-up"><em>AI launch infrastructure</em><span>2-person team · 10+ artifacts</span></span>
-                <span class="v4-eng-item fade-up"><em>Creator visibility map</em><span>6.2M plays mapped</span></span>
-                <span class="v4-eng-item fade-up"><em>Local-business bookings</em><span>$54-65K Y1 path</span></span>
-                <span class="v4-eng-item fade-up"><em>Pre-launch DTC</em><span>NDA · pricing architecture</span></span>
-                <span class="v4-eng-item fade-up"><em>Founder positioning</em><span>NDA · category-of-one frame</span></span>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 3 · THE LOOPWORKER MODEL -->
-    <section class="v4-section">
-        <div class="v4-shell">
-            <div class="v4-section-intro fade-up">
-                <span class="v4-section-eyebrow">◆ How LoopWorker Works</span>
-                <h2 class="v4-h2">Pull the signals. Map the pattern. Decide with evidence.</h2>
-                <p class="v4-section-sub">Scattered signals turned into a working view: what's happening, what matters, what to do next.</p>
-            </div>
-            <div class="v4-flow">
-                <div class="v4-flow-step fade-up">
-                    <div class="v4-flow-rail"><span class="v4-flow-num">01</span><span class="v4-flow-line"></span></div>
-                    <div class="v4-flow-body">
-                        <div class="v4-flow-title">Pull <span class="v4-flow-verb">live public signals</span></div>
-                        <div class="v4-flow-chips">
-                            <span class="v4-chip">Competitor offer pages</span>
-                            <span class="v4-chip">Reviews + buyer language</span>
-                            <span class="v4-chip">Search demand</span>
-                            <span class="v4-chip">Ad libraries</span>
-                            <span class="v4-chip">Pricing ladders</span>
-                            <span class="v4-chip">Channel patterns</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="v4-flow-step fade-up">
-                    <div class="v4-flow-rail"><span class="v4-flow-num">02</span><span class="v4-flow-line"></span></div>
-                    <div class="v4-flow-body">
-                        <div class="v4-flow-title">Map <span class="v4-flow-verb">into a working view</span></div>
-                        <div class="v4-flow-chips">
-                            <span class="v4-chip">Competitor movement maps</span>
-                            <span class="v4-chip">Proof gap views</span>
-                            <span class="v4-chip">Pricing comparison</span>
-                            <span class="v4-chip">Audience friction clusters</span>
-                            <span class="v4-chip">Channel cadence</span>
-                            <span class="v4-chip">Strategic options</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="v4-flow-step v4-flow-final fade-up">
-                    <div class="v4-flow-rail"><span class="v4-flow-num">03</span></div>
-                    <div class="v4-flow-body">
-                        <div class="v4-flow-title">Decide <span class="v4-flow-verb">with evidence</span></div>
-                        <p class="v4-flow-payoff">You leave with a decision brief. What to protect. What to change. What to test. What to stop. Where execution has the strongest evidence behind it.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 4 · OFFER STRUCTURE -->
-    <section class="v4-section">
-        <div class="v4-shell">
-            <div class="v4-section-intro fade-up">
-                <span class="v4-section-eyebrow">◆ The Sprint</span>
-                <h2 class="v4-h2">A focused intelligence round before the next move.</h2>
-                <p class="v4-section-sub">The Sprint is the product. Execution only works after you can see the category.</p>
-            </div>
-            <div class="v4-offer-grid">
-                <div class="v4-offer-card fade-up">
-                    <div class="v4-offer-title">Sprint 1 · Snapshot</div>
-                    <div class="v4-offer-price">$750</div>
-                    <div class="v4-offer-duration">48 hours · founder-led</div>
-                    <p class="v4-offer-sub">Gateway. One signal pulled deep. Test the waters before committing to a connected round.</p>
-                    <ul class="v4-offer-list">
-                        <li>One signal pulled deep</li>
-                        <li>Ranked recommendation</li>
-                        <li>48-hour turnaround</li>
-                        <li>PDF brief</li>
-                    </ul>
-                    <a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" class="v4-offer-cta" data-track="V4 Offer Sprint 1">Begin Sprint 1</a>
-                </div>
-                <div class="v4-offer-card fade-up">
-                    <div class="v4-offer-title">Sprint 2</div>
-                    <div class="v4-offer-price">$3,200</div>
-                    <div class="v4-offer-duration">5 days · founder-led</div>
-                    <p class="v4-offer-sub">One urgent decision that needs evidence fast. One question, one connected answer.</p>
-                    <ul class="v4-offer-list">
-                        <li>One focused question</li>
-                        <li>Compressed category pull</li>
-                        <li>Signal summary</li>
-                        <li>Decision recommendation</li>
-                        <li>Execution guardrails</li>
-                    </ul>
-                    <a href="https://buy.stripe.com/28E28q52nahp3pg6VmcEw0I" class="v4-offer-cta" data-track="V4 Offer Sprint 2">Begin Sprint 2</a>
-                </div>
-                <div class="v4-offer-card featured fade-up">
-                    <div class="v4-offer-title">Sprint 3</div>
-                    <div class="v4-offer-price">$8,000</div>
-                    <div class="v4-offer-duration">10 days · founder-led</div>
-                    <p class="v4-offer-sub">The category view before a larger move. The standard connected market brief.</p>
-                    <ul class="v4-offer-list">
-                        <li>Competitor reconstruction</li>
-                        <li>Audience language map</li>
-                        <li>Pricing and proof comparison</li>
-                        <li>Channel pattern read</li>
-                        <li>Visibility brief</li>
-                        <li>Ranked next moves</li>
-                    </ul>
-                    <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="v4-offer-cta" data-track="V4 Offer Sprint 3">Begin Sprint 3</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 5 · VISUAL PROOF -->
-    <section class="v4-section">
-        <div class="v4-shell">
-            <div class="v4-section-intro fade-up">
-                <span class="v4-section-eyebrow">◆ What You Can See</span>
-                <h2 class="v4-h2">The data becomes a working view.</h2>
-                <p class="v4-section-sub">Not a report. Not a dashboard. A decision layer built from real signals. Fragments, patterns, gaps.</p>
-            </div>
-
-            <div class="v4-proof-visual fade-up">
-                <div class="evidence-board" aria-label="Example visibility board">
-                    <div class="evidence-panel wide">
-                        <div class="evidence-label">Ad Longevity · competitor library</div>
-                        <div class="evidence-line"><span>Risk-removal hook</span><b>112 days</b></div>
-                        <div class="evidence-line"><span>Founder proof angle</span><b>94 days</b></div>
-                        <div class="evidence-line"><span>Outcome-only claim</span><b>18 days</b></div>
-                        <div class="pattern-bars" aria-hidden="true">
-                            <span style="--h: 35%"></span><span class="hot" style="--h: 88%"></span><span style="--h: 46%"></span><span class="hot" style="--h: 76%"></span><span style="--h: 24%"></span><span style="--h: 58%"></span>
-                        </div>
-                    </div>
-                    <div class="evidence-panel">
-                        <div class="evidence-label">Review Cluster</div>
-                        <div class="quote-chip">"I liked it, but I needed to know what setup actually looked like."</div>
-                        <div class="quote-chip">"The promise was clear. The handoff was not."</div>
-                    </div>
-                    <div class="evidence-panel">
-                        <div class="evidence-label">Offer Comparison</div>
-                        <div class="evidence-line"><span>Proof before price</span><b>Strong</b></div>
-                        <div class="evidence-line"><span>Setup clarity</span><b>Missing</b></div>
-                        <div class="evidence-line"><span>Upsell logic</span><b>Early</b></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="v4-proof-grid">
-                <div class="v4-proof-card fade-up">
-                    <h3>Competitor Movement</h3>
-                    <p>Trace what competitors changed, what stayed live, and what that reveals about the market.</p>
-                </div>
-                <div class="v4-proof-card fade-up">
-                    <h3>Buyer Language</h3>
-                    <p>Surface the words, objections, questions, and trust gaps buyers are already handing you.</p>
-                </div>
-                <div class="v4-proof-card fade-up">
-                    <h3>Proof Architecture</h3>
-                    <p>Compare claims, evidence, guarantees, offers, and handoffs before rewriting the page.</p>
-                </div>
-                <div class="v4-proof-card fade-up">
-                    <h3>Next-Move Logic</h3>
-                    <p>Turn the pattern into what to ship, change, test, protect, or leave alone.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- VERTICAL LANDERS STRIP -->
-    <section class="v4-verticals">
-        <div class="v4-shell">
-            <div class="v4-vert-intro fade-up">
-                <div class="v4-vert-label">◆ Read by category</div>
-                <p class="v4-vert-lead">Different signal environments. Same Sprint methodology. <em>Pick the leak you already know about.</em></p>
-            </div>
-            <div class="v4-vert-grid">
-                <a href="/restaurants.html" class="v4-vert-card fade-up" data-track="Home Vertical Restaurants">
-                    <div class="v4-vert-num">01</div>
-                    <div class="v4-vert-name">Restaurants</div>
-                    <div class="v4-vert-leak">leak <em>same-day demand</em></div>
-                </a>
-                <a href="/medspas.html" class="v4-vert-card fade-up" data-track="Home Vertical Medspas">
-                    <div class="v4-vert-num">02</div>
-                    <div class="v4-vert-name">Med Spas</div>
-                    <div class="v4-vert-leak">leak <em>trust gaps</em></div>
-                </a>
-                <a href="/coaches.html" class="v4-vert-card fade-up" data-track="Home Vertical Coaches">
-                    <div class="v4-vert-num">03</div>
-                    <div class="v4-vert-name">Coaches</div>
-                    <div class="v4-vert-leak">leak <em>proof patterns</em></div>
-                </a>
-                <a href="/sprint.html" class="v4-vert-card v4-vert-other fade-up" data-track="Home Vertical Other">
-                    <div class="v4-vert-num">+</div>
-                    <div class="v4-vert-name">Other categories</div>
-                    <div class="v4-vert-leak">SaaS · DTC · founders · agencies</div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 5.5 · MINI FAQ -->
-    <section class="v4-section v4-faq">
-        <div class="v4-shell">
-            <div class="v4-section-intro fade-up">
-                <span class="v4-section-eyebrow">◆ Common questions</span>
-                <h2 class="v4-h2">Short answers <em>before you buy.</em></h2>
-            </div>
-            <div class="v4-faq-grid">
-                <details class="v4-faq-item fade-up">
-                    <summary>What do I actually get?</summary>
-                    <p>A PDF brief. Competitor wall, customer voice, pricing band, channel map, and a ranked action sheet. Same shape every Sprint 3. Sprint 1 is one signal deep instead of the connected brief.</p>
-                </details>
-                <details class="v4-faq-item fade-up">
-                    <summary>How fast?</summary>
-                    <p>Sprint 1 ships 48 hours from purchase. Sprint 2: 5 days. Sprint 3: 10 days. Founder-led, no team handoff.</p>
-                </details>
-                <details class="v4-faq-item fade-up">
-                    <summary>What if it's not useful?</summary>
-                    <p>If the brief lands and you can't act on a single line, write back within 14 days for a full refund. Happened once in two years.</p>
-                </details>
-                <details class="v4-faq-item fade-up">
-                    <summary>Do you ship the work too?</summary>
-                    <p>Optional. Systems Retainer is $4,500/mo month-to-month after the brief lands. Positioning rewrites, content cadence, channel build, conversion fixes, automation wiring.</p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 6 · FINAL CTA -->
-    <section class="v4-section v4-final">
-        <div class="v4-shell">
-            <h2 class="v4-h2 fade-up">See the category before you spend.</h2>
-            <p class="v4-final-sub fade-up">Sprint 1 in 48 hours for $750. Or jump to Sprint 3 for the full connected brief.</p>
-            <div class="v4-actions fade-up">
-                <a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" class="v4-btn v4-btn-primary" data-track="V4 Final Sprint 1">Begin Sprint 1 · $750</a>
-                <a href="/sprint.html" class="v4-btn v4-btn-secondary" data-track="V4 Final Sprint">View all Sprints</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-inner">
-            <div>
-                <div class="footer-brand">LoopWorker</div>
-                <div class="footer-tagline">Evidence before execution.</div>
-            </div>
-            <ul class="footer-links">
-                <li><a href="/sprint.html">The Sprint</a></li>
-                <li><a href="/pricing.html" data-track="Nav Pricing">Pricing</a></li>
-                <li><a href="/case-studies.html">Case Studies</a></li>
-                <li><a href="/blog/">Signals</a></li>
-                <li><a href="/about.html">About</a></li>
+        <div class="v5-tier-row">
+          <div class="v5-tier">
+            <div class="v5-tier-eyebrow">Surface</div>
+            <h3>Surface scan</h3>
+            <div class="v5-tier-price">$750<small>· 48h</small></div>
+            <div class="v5-tier-frame">Gateway. Test the method first.</div>
+            <ul>
+              <li>Web + social signal scan</li>
+              <li>3 next-move recommendations</li>
+              <li>Refund if not actionable</li>
             </ul>
-            <div class="footer-contact">
-                <a href="mailto:alex@loopworker.com">alex@loopworker.com</a><br>
-                <a href="https://instagram.com/loopworker" target="_blank" rel="noopener">@loopworker</a>
-                <div class="footer-legal">
-                    <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
-                </div>
-            </div>
+            <a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" class="v5-tier-cta v5-tier-cta-ghost" data-track="Home Pricing Surface">Begin Surface</a>
+          </div>
+
+          <div class="v5-tier">
+            <div class="v5-tier-eyebrow">Compass</div>
+            <h3>Direction set</h3>
+            <div class="v5-tier-price">$3,200<small>· 5d</small></div>
+            <div class="v5-tier-frame">Most upgrade to Atlas for full picture.</div>
+            <ul>
+              <li>Competitive read</li>
+              <li>Strategic answer to one question</li>
+              <li>Leads · launch · channel focus</li>
+            </ul>
+            <a href="https://buy.stripe.com/28E28q52nahp3pg6VmcEw0I" class="v5-tier-cta v5-tier-cta-ghost" data-track="Home Pricing Compass">Begin Compass</a>
+          </div>
+
+          <div class="v5-tier v5-tier-anchor">
+            <div class="v5-tier-ribbon">Most chosen · 70%</div>
+            <div class="v5-tier-eyebrow">Atlas</div>
+            <h3>Full territory map</h3>
+            <div class="v5-tier-price">$8,000<small>· 10d</small></div>
+            <div class="v5-tier-frame">Default for SaaS, DTC, services, founder-led brands.</div>
+            <ul>
+              <li>Competitor analysis · 5–7 direct + adjacent</li>
+              <li>Customer language clusters</li>
+              <li>Pricing tear-down + band</li>
+              <li>3 outlets dialed for your niche</li>
+              <li>Ranked, dated action sheet</li>
+              <li>30-min walkthrough on delivery</li>
+            </ul>
+            <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="v5-tier-cta v5-tier-cta-anchor" data-track="Home Pricing Atlas">Begin Atlas →</a>
+          </div>
+
+          <div class="v5-tier">
+            <div class="v5-tier-eyebrow">Operating System</div>
+            <h3>Company-level bet</h3>
+            <div class="v5-tier-price">$25,000<small>· 14d + 3mo</small></div>
+            <div class="v5-tier-frame">Launches, repositioning, 90-day execution.</div>
+            <ul>
+              <li>Everything in Atlas</li>
+              <li>Deep dive + positioning</li>
+              <li>90-day social roadmap</li>
+              <li>Execution playbook</li>
+              <li>3 months support</li>
+            </ul>
+            <a href="https://buy.stripe.com/28E14m52n9dlgc2gvWcEw0G" class="v5-tier-cta v5-tier-cta-ghost" data-track="Home Pricing OS">Begin OS</a>
+          </div>
         </div>
-    </footer>
 
-    <a href="/book.html" class="mobile-sticky-cta" data-track="Sticky Mobile Book CTA">Book a call</a>
+        <div class="v5-pricing-foot">
+          After your Sprint, optional Systems Retainer <span class="v5-num">$4,500</span>/mo for execution. <a href="/pricing.html#retainer">Learn more</a>
+        </div>
+      </div>
+    </section>
 
-    <!-- Desktop sticky CTA - appears after user scrolls past hero -->
-    <a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" id="stickyDesktopCta" class="v4-sticky" data-track="Sticky Desktop Sprint 1">Begin Sprint 1 · $750 <span class="v4-sticky-arrow" aria-hidden="true">→</span></a>
-    <script>
-        (function() {
-            var cta = document.getElementById('stickyDesktopCta');
-            if (!cta) return;
-            var threshold = 700;
-            var ticking = false;
-            function update() {
-                if (window.scrollY > threshold) cta.classList.add('is-visible');
-                else cta.classList.remove('is-visible');
-                ticking = false;
-            }
-            window.addEventListener('scroll', function() {
-                if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
-            }, { passive: true });
-            update();
-        })();
-    </script>
+    <!-- PROBLEM -->
+    <section class="v5-section v5-section-tight">
+      <div class="v5-split-grid">
+        <div>
+          <span class="v5-eyebrow-plain">The reality</span>
+          <h2>Most teams ship <span class="grad-text">blind.</span></h2>
+          <p class="v5-lede">Founders launch positioning, pricing, and campaigns built on the loudest opinion in the room. The signals to make the call honestly are already public — reviews, ads, search demand, pricing pages, customer language.</p>
+          <p class="v5-body">Nobody is reading them. They cost less than the wrong launch.</p>
+        </div>
+        <div class="v5-contrast-card">
+          <h5>The difference</h5>
+          <div class="v5-contrast-row">
+            <div class="v5-contrast-col bad">
+              <h6>Without a Sprint</h6>
+              <ul>
+                <li>Opinion-led</li>
+                <li>$50K+ spend, no evidence</li>
+                <li>3-month rebuild after launch</li>
+                <li>Internal politics decide</li>
+              </ul>
+            </div>
+            <div class="v5-contrast-col good">
+              <h6>With a Sprint</h6>
+              <ul>
+                <li>Signal-led</li>
+                <li>$750–$25K, evidence first</li>
+                <li>Decision in 48h–14d</li>
+                <li>Market decides</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <script>
-        function trackEvent(eventName) {
-            if (typeof window.plausible === 'function') {
-                window.plausible(eventName);
-            }
-        }
+    <!-- TESTIMONIAL MAIN -->
+    <section class="v5-section v5-testimonial-bg">
+      <div class="v5-testimonial">
+        <div class="v5-tc-mark">"</div>
+        <blockquote class="v5-tc-quote">We knew demand was there. We couldn't see why. The brief mapped four pillars I hadn't realized were doing the work. We rebuilt the brand around them and the path to $54K Y1 stopped feeling speculative.</blockquote>
+        <div class="v5-tc-attrib">
+          <div class="v5-tc-avatar">JM</div>
+          <div>
+            <div class="v5-tc-name">Bay Area events founder</div>
+            <div class="v5-tc-role">Atlas · demand pattern map</div>
+          </div>
+          <div class="v5-tc-outcome">$54-65K Y1 mapped</div>
+        </div>
+      </div>
+    </section>
 
-        document.querySelectorAll('[data-track]').forEach(function(element) {
-            element.addEventListener('click', function() {
-                trackEvent(element.dataset.track);
-            });
-        });
+    <!-- PROCESS -->
+    <section class="v5-section">
+      <div class="v5-section-inner">
+        <div class="v5-section-intro">
+          <span class="v5-eyebrow">How a Sprint works</span>
+          <h2>Three steps. <span class="grad-text">One brief.</span></h2>
+        </div>
+        <div class="v5-process">
+          <div class="v5-step">
+            <div class="v5-step-icon">01</div>
+            <h4>Pull</h4>
+            <p>Competitor ads, review fragments, search demand, pricing pages, customer language. Public signals only. No surveys, no expert calls.</p>
+          </div>
+          <div class="v5-step">
+            <div class="v5-step-icon">02</div>
+            <h4>Map</h4>
+            <p>Rank patterns by frequency + impact. Cross-reference signals against each other. Find what's missing as much as what's present.</p>
+          </div>
+          <div class="v5-step">
+            <div class="v5-step-icon">03</div>
+            <h4>Decide</h4>
+            <p>PDF brief with the verdict on top, ranked actions below, evidence beside every line. 30-min walkthrough call on delivery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        // Scroll fade
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    <!-- SAMPLE BRIEF CALLOUT -->
+    <section class="v5-section">
+      <div class="v5-callout">
+        <span class="v5-eyebrow">Wondering what you get back</span>
+        <h2>Read an anonymized <span class="grad-text">Atlas brief.</span></h2>
+        <p>Full structure, real depth, names stripped. 4-minute read. Decide if this is the kind of artifact you want on your desk before the next $50K spend.</p>
+        <a href="/sample-brief.html" class="v5-btn v5-btn-primary" data-track="Home Sample Brief">Read the sample brief →</a>
+      </div>
+    </section>
 
-        // Mobile menu
-        function toggleMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const mobileNav = document.getElementById('mobileNav');
-            hamburger.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-            const isOpen = mobileNav.classList.contains('active');
-            hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            document.body.style.overflow = isOpen ? 'hidden' : '';
-        }
+    <!-- TRIO -->
+    <section class="v5-section">
+      <div class="v5-section-inner">
+        <div class="v5-section-intro">
+          <span class="v5-eyebrow">More signal, more clients</span>
+          <h2>What founders <span class="grad-text">say.</span></h2>
+        </div>
+        <div class="v5-trio">
+          <div class="v5-trio-card">
+            <blockquote>Two posts blew up to 6M plays and zero idea why. Alex showed me the three variables driving it. My calendar runs on signal now.</blockquote>
+            <div class="v5-trio-cite">
+              <div class="v5-trio-avatar"></div>
+              <div>
+                <div class="n">Creator</div>
+                <div class="r">6.2M plays · content</div>
+              </div>
+            </div>
+          </div>
+          <div class="v5-trio-card">
+            <blockquote>30 days from buyer meetings, no shared language for positioning. The Sprint became the 16-deck foundation we walked into every conversation with.</blockquote>
+            <div class="v5-trio-cite">
+              <div class="v5-trio-avatar"></div>
+              <div>
+                <div class="n">Founder</div>
+                <div class="r">Luxury ritual brand · NDA</div>
+              </div>
+            </div>
+          </div>
+          <div class="v5-trio-card">
+            <blockquote>Every AI video tool was pitching model claims. We needed the workflow gap. Sprint named it in 10 days. We launched paid two weeks later.</blockquote>
+            <div class="v5-trio-cite">
+              <div class="v5-trio-avatar"></div>
+              <div>
+                <div class="n">Founder</div>
+                <div class="r">AI video platform · NDA</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        const stickyCta = document.querySelector('.mobile-sticky-cta');
-        function updateStickyCta() {
-            if (!stickyCta) return;
-            stickyCta.classList.toggle('is-visible', window.scrollY > 680);
-        }
-        window.addEventListener('scroll', updateStickyCta, { passive: true });
-        updateStickyCta();
+    <!-- FAQ -->
+    <section class="v5-section">
+      <div class="v5-section-inner">
+        <div class="v5-section-intro">
+          <span class="v5-eyebrow">Before you decide</span>
+          <h2>Common <span class="grad-text">objections.</span></h2>
+        </div>
+        <div class="v5-faq-list">
+          <details class="v5-faq-item">
+            <summary>Why not just hire a consultant?</summary>
+            <p>Consultants give you opinions. Sprints give you signals — public data, ranked patterns, evidence behind every line. The PDF stands on its own.</p>
+          </details>
+          <details class="v5-faq-item">
+            <summary>Why not do this research in-house?</summary>
+            <p>You can. The Field Manual walks through the seven core signals. Most founders try, realize each signal takes 4-12 hours done right, and decide $8,000 buys 10 days of their team's time back.</p>
+          </details>
+          <details class="v5-faq-item">
+            <summary>What if my market is too small for this?</summary>
+            <p>If your category has at least 3 competitors, 50+ public reviews, and any search demand, the signals are there. Niche markets often produce sharper briefs because the noise floor is lower.</p>
+          </details>
+          <details class="v5-faq-item">
+            <summary>What's the difference between you and a research agency?</summary>
+            <p>Agencies deliver decks. Sprints deliver decisions. Agencies need 6-12 weeks. Sprints take 48h to 14d. Agencies present findings. Sprints recommend moves.</p>
+          </details>
+          <details class="v5-faq-item">
+            <summary>What if the brief doesn't help?</summary>
+            <p>14-day refund. If you can't act on a single line, write back. Happened once in two years.</p>
+          </details>
+        </div>
+      </div>
+    </section>
 
-    </script>
+    <!-- CLOSING + EMAIL CAPTURE -->
+    <section class="v5-closing">
+      <div class="v5-closing-grid">
+        <div class="v5-closing-main">
+          <span class="v5-eyebrow-plain">Ready when you are</span>
+          <h2>Bring the decision. We'll find the <span class="grad-text">signals.</span></h2>
+          <p>Most Sprints start with a 30-min decision review. Free. If a Sprint fits, we scope it. If it doesn't, you leave with a sharper read on what to look at first.</p>
+          <div class="v5-cta-row">
+            <a href="/book.html" class="v5-btn v5-btn-primary" data-track="Home Closing Book">Book a 30-min review · Free</a>
+            <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="v5-btn v5-btn-ghost" data-track="Home Closing Atlas">Begin Atlas · $8,000</a>
+          </div>
+          <div class="v5-closing-note">14-day refund · happened once in 2 years · 2 active Atlas at a time</div>
+        </div>
+
+        <div class="v5-email-card">
+          <div class="v5-email-eyebrow">Not ready yet</div>
+          <h4>Pull the signals yourself.</h4>
+          <p>The 12-page Signals Field Manual — 7 public signals every founder should pull before their next big spend. Free.</p>
+          <form class="v5-email-form" action="https://formspree.io/f/xbdpddrn" method="POST" data-track="Home Field Manual Opt-In">
+            <input type="hidden" name="_subject" value="Field Manual opt-in · loopworker.com/">
+            <input type="hidden" name="_next" value="https://www.loopworker.com/resources/field-manual.html?from=home">
+            <input type="hidden" name="source" value="loopworker.com/ field-manual">
+            <input type="email" name="email" placeholder="you@company.com" required aria-label="Email address">
+            <button type="submit">Get the manual →</button>
+          </form>
+          <div class="v5-email-tiny">Instant access · 5 follow-up emails · unsub anytime</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="v5-foot">
+    <div class="v5-foot-inner">
+      <div class="v5-foot-logo">LoopWorker</div>
+      <p>Evidence before execution.</p>
+      <p>© 2026 · <a href="/sprint.html">Sprints</a> · <a href="/case-studies.html">Customers</a> · <a href="/blog/">Signals</a> · <a href="/about.html">About</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+      <p class="v5-foot-small">alex@loopworker.com · <a href="https://instagram.com/loopworker">@loopworker</a></p>
+    </div>
+  </footer>
 
 </body>
 </html>

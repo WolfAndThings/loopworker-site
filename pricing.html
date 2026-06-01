@@ -1,282 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
-    <script defer src="/site-pages.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/site-pages.css">
-    <title>Pricing · Strategy Sprints | LoopWorker</title>
-    <meta name="description" content="Three Sprint tiers, founder-led, 5 to 14 days. Scope and quote tailored per project. Book a 15-minute call to scope the right fit.">
-    <link rel="canonical" href="https://www.loopworker.com/pricing.html">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.loopworker.com/pricing.html">
-    <meta property="og:title" content="Pricing · Strategy Sprints | LoopWorker">
-    <meta property="og:description" content="Three Sprint tiers, founder-led, 5 to 14 days. Scope and quote tailored per project.">
-    <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <title>Pricing · Strategy Sprints | LoopWorker</title>
+  <meta name="description" content="Four Sprint tiers, founder-led, 48 hours to 14 days. Surface $750. Compass $3,200. Atlas $8,000. Operating System $25,000. Systems Retainer $4,500/mo.">
+  <link rel="canonical" href="https://www.loopworker.com/pricing.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.loopworker.com/pricing.html">
+  <meta property="og:title" content="Pricing · Strategy Sprints | LoopWorker">
+  <meta property="og:description" content="Four Sprint tiers, founder-led, 48 hours to 14 days. Scope and quote tailored per project.">
+  <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="LoopWorker">
+  <meta name="theme-color" content="#07070C">
+  <meta name="color-scheme" content="dark">
 
-    <style>
-      :root { --gold-leaf: linear-gradient(135deg, #E8C77A 0%, #D4A017 45%, #A87C0E 100%); }
-      .pricing-shell { padding: 7rem 1.5rem 4rem; }
-      .pricing-shell h1 em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
-      .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 3rem 0; }
-      @media (max-width: 900px) { .pricing-grid { grid-template-columns: 1fr; } }
-      .pricing-card { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 2rem 1.8rem; display: flex; flex-direction: column; }
-      .pricing-card.featured { border-color: rgba(255,255,255,0.32); background: rgba(255,255,255,0.045); position: relative; }
-      .pricing-card.featured::before { content: 'Most chosen'; position: absolute; top: -10px; left: 1.8rem; background: #FFF; color: #0A0A0A; padding: 0.18rem 0.7rem; border-radius: 4px; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
-      .pricing-card .tier-name { font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: #888; margin-bottom: 0.4rem; }
-      .pricing-card .tier-price { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 3.2rem; line-height: 1; margin-bottom: 0.35rem; letter-spacing: -0.025em; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
-      .pricing-card .tier-duration { color: #888; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.9rem; }
-      .pricing-card .tier-sub { font-size: 0.88rem; color: #999; margin-bottom: 1.4rem; }
-      .pricing-card ul { list-style: none; margin: 0 0 2rem; padding: 0; }
-      .pricing-card ul li { padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); color: #B5B5B5; font-size: 0.92rem; padding-left: 1.6rem; position: relative; }
-      .pricing-card ul li::before { content: '◉'; position: absolute; left: 0; color: #6CC57A; font-size: 0.8rem; top: 0.55rem; }
-      .pricing-card ul li:last-child { border-bottom: 0; }
-      .pricing-card .pick-btn { display: inline-block; text-align: center; background: #FFF; color: #0A0A0A; padding: 0.95rem 1.4rem; border-radius: 6px; font-weight: 700; font-size: 0.84rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; margin-top: auto; transition: transform 0.15s, background 0.15s; }
-      .pricing-card .pick-btn:hover { background: #F0F0F0; transform: translateY(-1px); }
-      .pricing-card.outline .pick-btn { background: transparent; color: #FFF; border: 1px solid rgba(255,255,255,0.4); }
-      .pricing-card.outline .pick-btn:hover { background: rgba(255,255,255,0.08); }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-      .compare-table { width: 100%; border-collapse: collapse; margin: 4rem 0; font-size: 0.92rem; }
-      .compare-table th, .compare-table td { padding: 0.95rem 1.2rem; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.06); }
-      .compare-table th { color: #FFF; font-weight: 600; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; }
-      .compare-table td { color: #A7A7A7; }
-      .compare-table td:first-child { color: #888; }
-      .compare-table .yes { color: #6CC57A; }
-      .compare-table .no { color: #555; }
+  <link rel="stylesheet" href="/v5-system.css">
 
-      .alt-tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin: 4rem 0 3rem; }
-      @media (max-width: 720px) { .alt-tiers { grid-template-columns: 1fr; } }
-      .alt-tier { padding: 1.6rem 1.8rem; background: rgba(255,255,255,0.018); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; }
-      .alt-tier .alt-name { color: #FFF; font-weight: 600; font-size: 1.05rem; margin-bottom: 0.25rem; }
-      .alt-tier .alt-price { color: #6CC57A; font-size: 0.85rem; letter-spacing: 0.06em; margin-bottom: 0.7rem; }
-      .alt-tier p { color: #A7A7A7; font-size: 0.9rem; margin: 0 0 0.9rem; }
-      .alt-tier a { color: #BBB; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
+  <link rel="dns-prefetch" href="https://buy.stripe.com">
+  <link rel="preconnect" href="https://plausible.io">
 
-      .enterprise-strip { padding: 2.5rem 2rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; display: flex; justify-content: space-between; align-items: center; gap: 2rem; margin: 3rem 0; }
-      @media (max-width: 720px) { .enterprise-strip { flex-direction: column; align-items: flex-start; } }
-      .enterprise-strip .ent-copy h3 { color: #FFF; font-size: 1.25rem; margin-bottom: 0.4rem; }
-      .enterprise-strip .ent-copy p { color: #888; font-size: 0.9rem; margin: 0; max-width: 540px; }
-      .enterprise-strip .ent-cta { white-space: nowrap; }
+  <style>
+    .v5-pricing-hero {
+      position: relative; overflow: hidden;
+      padding: 6rem 2rem 2rem;
+      text-align: center;
+    }
+    .v5-pricing-hero::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 900px 500px at 50% 0%, rgba(99,102,241,0.18), transparent 60%),
+        radial-gradient(ellipse 700px 400px at 50% 100%, rgba(236,72,153,0.08), transparent 70%);
+    }
+    .v5-pricing-hero-inner {
+      position: relative; z-index: 2;
+      max-width: 760px; margin: 0 auto;
+    }
+    .v5-pricing-hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      margin: 0 0 1.2rem;
+    }
+    .v5-pricing-hero p {
+      font-size: 1.1rem; color: var(--text-2); line-height: 1.55;
+      margin: 0 auto; max-width: 600px;
+    }
+    .v5-compare {
+      width: 100%; border-collapse: collapse;
+      margin: 0; font-size: 0.9rem;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden;
+    }
+    .v5-compare th, .v5-compare td {
+      padding: 1rem 1.2rem; text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .v5-compare thead th {
+      background: rgba(99,102,241,0.06);
+      color: var(--text); font-weight: 700;
+      font-family: var(--sans-tight);
+      font-size: 0.86rem; letter-spacing: -0.012em;
+    }
+    .v5-compare thead th:first-child {
+      font-family: var(--mono); font-size: 0.72rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-3); font-weight: 600;
+    }
+    .v5-compare tbody tr:last-child td { border-bottom: 0; }
+    .v5-compare td { color: var(--text-2); }
+    .v5-compare td:first-child {
+      color: var(--text-3); font-family: var(--mono);
+      font-size: 0.78rem; letter-spacing: 0.04em;
+    }
+    .v5-compare .yes { color: var(--emerald); font-weight: 700; }
+    .v5-compare .no { color: var(--text-4); }
+    .v5-compare-anchor { background: rgba(99,102,241,0.04); }
+    @media (max-width: 720px) {
+      .v5-compare { font-size: 0.82rem; }
+      .v5-compare th, .v5-compare td { padding: 0.7rem 0.6rem; }
+    }
+    .v5-retainer-card {
+      max-width: 980px; margin: 0 auto;
+      background: linear-gradient(135deg, rgba(99,102,241,0.05), transparent 50%), var(--surface);
+      border: 1px solid var(--border); border-radius: 20px;
+      padding: 2.5rem;
+      display: grid; grid-template-columns: 1.3fr 0.7fr;
+      gap: 2.5rem; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    .v5-retainer-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: var(--grad-hero);
+    }
+    @media (max-width: 720px) { .v5-retainer-card { grid-template-columns: 1fr; } }
+    .v5-retainer-card h3 { font-size: 1.6rem; margin: 0 0 0.6rem; }
+    .v5-retainer-card p { color: var(--text-3); line-height: 1.55; margin: 0; }
+    .v5-retainer-price {
+      font-family: var(--sans-tight); font-size: 2.6rem;
+      font-weight: 800; letter-spacing: -0.035em;
+      background: var(--grad-cta);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: block; line-height: 1;
+    }
+    .v5-retainer-price small {
+      display: block; font-size: 0.85rem; color: var(--text-3);
+      font-weight: 500; letter-spacing: 0; margin-top: 0.5rem;
+      -webkit-text-fill-color: var(--text-3);
+    }
+  </style>
 
-      .snapshot-callout { display: flex; justify-content: space-between; align-items: center; gap: 1.4rem; padding: 1.4rem 1.8rem; background: rgba(212,160,23,0.06); border: 1px solid rgba(212,160,23,0.25); border-radius: 10px; margin: 0 0 2rem; }
-      .snapshot-callout .snap-copy { font-size: 0.92rem; color: #C8C5BB; line-height: 1.5; }
-      .snapshot-callout .snap-copy strong { color: #F4F4F0; font-weight: 600; }
-      .snapshot-callout .snap-copy .snap-price { color: #D4A017; font-weight: 700; }
-      .snapshot-callout a.snap-cta { white-space: nowrap; padding: 0.7rem 1.2rem; background: transparent; color: #D4A017; border: 1px solid rgba(212,160,23,0.5); border-radius: 6px; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: background 0.15s; }
-      .snapshot-callout a.snap-cta:hover { background: rgba(212,160,23,0.12); }
-      @media (max-width: 720px) { .snapshot-callout { flex-direction: column; align-items: flex-start; } }
-      .retainer-section { padding: 4rem 0 1rem; }
-      .retainer-section h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 1rem; }
-      .retainer-section p.lead { max-width: 700px; }
-      .faq-block { padding: 4rem 0 5rem; }
-      .faq-block h2 { font-size: 1.4rem; margin-bottom: 1.5rem; }
-      .faq-q { padding: 1.3rem 1.5rem; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; margin-bottom: 1rem; }
-      .faq-q h3 { color: #FFF; font-size: 1rem; margin-bottom: 0.4rem; font-weight: 600; }
-      .faq-q p { color: #A7A7A7; font-size: 0.93rem; margin: 0; }
-    </style>
-    <meta name="theme-color" content="#080808">
-    <meta name="color-scheme" content="dark">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="LoopWorker">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23080808' width='100' height='100'/><text x='50' y='65' font-size='52' text-anchor='middle' fill='%23D4A017'>◉</text></svg>">
-    <link rel="dns-prefetch" href="https://buy.stripe.com">
-    <link rel="preconnect" href="https://plausible.io">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "The Sprint — Private Market Intelligence",
+    "brand": "LoopWorker",
+    "provider": { "@type": "Organization", "name": "LoopWorker", "url": "https://www.loopworker.com/" },
+    "description": "Founder-led private market intelligence rounds built from public market signals: competitor reconstruction, search demand, customer voice, pricing, website conversion, proof gaps, authority channels.",
+    "offers": [
+      { "@type": "Offer", "name": "Surface", "url": "https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D", "price": "750", "priceCurrency": "USD", "description": "48-hour gateway sprint." },
+      { "@type": "Offer", "name": "Compass", "url": "https://buy.stripe.com/28E28q52nahp3pg6VmcEw0I", "price": "3200", "priceCurrency": "USD", "description": "5-day focused market intelligence round." },
+      { "@type": "Offer", "name": "Atlas", "url": "https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J", "price": "8000", "priceCurrency": "USD", "description": "10-day decision brief connecting several market signals." },
+      { "@type": "Offer", "name": "Operating System", "url": "https://buy.stripe.com/28E14m52n9dlgc2gvWcEw0G", "price": "25000", "priceCurrency": "USD", "description": "14-day launch / repositioning sprint + 3 months execution support." },
+      { "@type": "Offer", "name": "Systems Retainer", "url": "https://buy.stripe.com/eVqfZg7av9dl8JA1B2cEw0H", "price": "4500", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M", "price": "4500", "priceCurrency": "USD" }, "description": "Monthly post-Sprint execution retainer." }
+    ]
+  }
+  </script>
 </head>
 <body>
-    <a href="#main" class="skip-link">Skip to content</a>
-    <nav>
-        <div class="nav-inner">
-            <a href="/" class="nav-logo">LoopWorker</a>
-            <ul class="nav-links">
-                <li><a href="/sprint.html">The Sprint</a></li>
-                <li><a href="/case-studies.html">Case Studies</a></li>
-                <li><a href="/blog/">Signals</a></li>
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/book.html" class="nav-cta" data-track="Nav Book CTA">Book a Call</a></li>
-            </ul>
-            <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
-    <div class="mobile-nav" id="mobileNav">
-        <a href="/sprint.html">The Sprint</a>
-        <a href="/case-studies.html">Case Studies</a>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="v5-nav">
+    <div class="v5-nav-inner">
+      <a href="/" class="v5-logo">
+        <span class="v5-logo-mark">L</span>
+        LoopWorker
+      </a>
+      <div class="v5-nav-links">
+        <a href="/sprint.html">Sprints</a>
+        <a href="/pricing.html" class="active">Pricing</a>
+        <a href="/case-studies.html">Customers</a>
         <a href="/blog/">Signals</a>
         <a href="/about.html">About</a>
-        <a href="/book.html" class="nav-cta" data-track="Mobile Nav Book CTA">Book a Call</a>
+        <a href="/book.html" class="v5-nav-cta" data-track="Nav Book CTA">Book a Call</a>
+      </div>
+      <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+    <div class="v5-mobile-nav" id="mobileNav">
+      <a href="/sprint.html">Sprints</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/case-studies.html">Customers</a>
+      <a href="/blog/">Signals</a>
+      <a href="/about.html">About</a>
+      <a href="/book.html" class="v5-nav-cta">Book a Call</a>
+    </div>
+  </nav>
 
-    <main id="main">
-        <section class="pricing-shell" style="padding-bottom:2rem;">
-            <div class="container">
-                <span class="eyebrow">◆ Start here · Strategy first</span>
-                <h1>Strategy with <em>receipts.</em> 5 to 14 days, founder-led.</h1>
-                <p style="max-width:700px;color:#B5B5B5;">Most clients start with a Sprint. Founder-led private market intelligence built from public signals: competitors, customer voice, search demand, pricing, proof gaps, and an action sheet that says what to ship first.</p>
+  <main id="main">
 
-                <div class="pricing-grid" style="margin:2rem 0;">
-                    <div class="pricing-card outline">
-                        <span class="tier-name">Sprint 1 · Snapshot</span>
-                        <div class="tier-price">$750</div>
-                        <div class="tier-duration">48 hours · founder-led</div>
-                        <div class="tier-sub">Gateway. One signal pulled deep, ranked recommendation. Test the waters before a connected round.</div>
-                        <a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" class="pick-btn" data-track="Pricing Sprint 1 Book">Begin Sprint 1 →</a>
-                    </div>
-                    <div class="pricing-card outline">
-                        <span class="tier-name">Sprint 2</span>
-                        <div class="tier-price">$3,200</div>
-                        <div class="tier-duration">5 days · founder-led</div>
-                        <div class="tier-sub">One focused research round: competitor reconstruction, search demand, pricing, proof gap, or website conversion.</div>
-                        <a href="https://buy.stripe.com/28E28q52nahp3pg6VmcEw0I" class="pick-btn" data-track="Pricing Sprint 2 Book">Begin Sprint 2 →</a>
-                    </div>
-                    <div class="pricing-card featured">
-                        <span class="tier-name">Sprint 3 · ★ Most chosen</span>
-                        <div class="tier-price">$8,000</div>
-                        <div class="tier-duration">10 days · founder-led</div>
-                        <div class="tier-sub">Competitor wall, customer-voice cluster, proof map, pricing band, channel map, and ranked action sheet.</div>
-                        <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="pick-btn" data-track="Pricing Sprint 3 Book">Begin Sprint 3 →</a>
-                    </div>
-                </div>
-                <p style="text-align:center;color:#888;font-size:0.9rem;">Want the full Sprint walkthrough? <a href="/sprint.html" style="color:#D4A017;">See sprint.html →</a></p>
-            </div>
-        </section>
+    <section class="v5-pricing-hero">
+      <div class="v5-pricing-hero-inner">
+        <span class="v5-eyebrow">Pricing · Sprint Ladder</span>
+        <h1>Strategy with <span class="grad-text">receipts.</span></h1>
+        <p>Founder-led market intelligence sprints. 48 hours to 14 days. Most clients run Atlas. The smaller tiers exist for buyers who want to test the method or focus a single decision.</p>
+      </div>
+    </section>
 
-        <section class="pricing-shell" style="padding-top:3rem;border-top:1px solid rgba(255,255,255,0.06);">
-            <div class="container">
-                <span class="eyebrow">How to choose</span>
-                <h1 style="font-size:clamp(1.6rem,3vw,2.2rem);">The question determines <em>the depth.</em></h1>
-                <p>All three Sprints are private market intelligence rounds. The difference is how many signals need to be connected before the recommendation is defensible.</p>
-
-                <div class="alt-tiers">
-                    <div class="alt-tier">
-                        <div class="alt-name">Sprint 1 · Snapshot</div>
-                        <div class="alt-price">48 hours</div>
-                        <p>One signal pulled deep, ranked recommendation. Gateway for testing the waters before a connected round.</p>
-                        <a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" data-track="Book Sprint 1 Alt">Begin Sprint 1 →</a>
-                    </div>
-                    <div class="alt-tier">
-                        <div class="alt-name">Sprint 2</div>
-                        <div class="alt-price">5 days</div>
-                        <p>One focused question with evidence behind it: pricing, proof, search demand, website conversion, or competitor reconstruction.</p>
-                        <a href="https://buy.stripe.com/28E28q52nahp3pg6VmcEw0I" data-track="Book Sprint 2 Alt">Begin Sprint 2 →</a>
-                    </div>
-                    <div class="alt-tier">
-                        <div class="alt-name">Sprint 3</div>
-                        <div class="alt-price">10 days</div>
-                        <p>The core Sprint: competitors, reviews, search, pricing, proof patterns, channel map, and a ranked action sheet.</p>
-                        <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" data-track="Book Sprint 3 Alt">Begin Sprint 3 →</a>
-                    </div>
-                </div>
-
-                <h2 style="font-size:1.5rem;margin:5rem 0 1rem;">What gets pulled</h2>
-                <table class="compare-table">
-                    <thead>
-                        <tr>
-                            <th>Signal</th>
-                            <th>Sprint 1</th>
-                            <th>Sprint 2</th>
-                            <th>Sprint 3</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Focused decision question</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-                        <tr><td>Competitor reconstruction</td><td>one angle</td><td>as needed</td><td class="yes">✓</td></tr>
-                        <tr><td>Customer voice / review clusters</td><td>one angle</td><td>as needed</td><td class="yes">✓</td></tr>
-                        <tr><td>Search demand + channel fit</td><td>one angle</td><td>as needed</td><td class="yes">✓</td></tr>
-                        <tr><td>Pricing position</td><td>one angle</td><td>as needed</td><td class="yes">✓</td></tr>
-                        <tr><td>Proof gaps + authority channels</td><td>one angle</td><td>as needed</td><td class="yes">✓</td></tr>
-                        <tr><td>Ranked action sheet</td><td>one move</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-                        <tr><td>Delivery time</td><td>48 hours</td><td>5 days</td><td>10 days</td></tr>
-                    </tbody>
-                </table>
-
-                <section class="retainer-section">
-                    <span class="eyebrow">◆ After the Sprint</span>
-                    <h2>Systems Retainer · <em>$4,500/mo</em></h2>
-                    <p class="lead">Most Sprint clients attach a Systems Retainer once the brief lands. We turn the recommendation into shipped work: positioning rewrites, content cadence, channel build, conversion fixes, automation wiring. Month-to-month. Cancel anytime.</p>
-                    <div class="enterprise-strip">
-                        <div class="ent-copy">
-                            <h3>$4,500/month · post-Sprint execution</h3>
-                            <p>Continuous shipping against the Sprint action sheet. Founder-led with subcontracted hands. Slack channel, weekly check-in, monthly market refresh, scope adjusted as signals shift.</p>
-                        </div>
-                        <a href="https://buy.stripe.com/eVqfZg7av9dl8JA1B2cEw0H" class="ent-cta btn btn-primary" data-track="Pricing Retainer Book">Attach a Retainer</a>
-                    </div>
-                </section>
-
-                <section class="faq-block">
-                    <h2>Pricing FAQ</h2>
-                    <div class="faq-q">
-                        <h3>Is this an audit?</h3>
-                        <p>No. An audit grades what you already have. The Sprint pulls public signals from the market and turns them into a next move.</p>
-                    </div>
-                    <div class="faq-q">
-                        <h3>What do I actually get?</h3>
-                        <p>One decision brief with the relevant evidence, the recommendation, and a ranked action sheet. PDF plus editable doc.</p>
-                    </div>
-                    <div class="faq-q">
-                        <h3>Which tier should I choose?</h3>
-                        <p>Lite for one narrow question. Pro for the standard connected market brief. Full for a launch, repositioning, pitch-deck, pricing architecture, or other higher-stakes move.</p>
-                    </div>
-                    <div class="faq-q">
-                        <h3>Can this use sensitive data?</h3>
-                        <p>Yes. Default engagements are private. Public case studies are anonymized or only published with permission.</p>
-                    </div>
-                    <div class="faq-q">
-                        <h3>Refund policy?</h3>
-                        <p>If the brief lands and you cannot act on a single line, write back within 14 days for a full refund.</p>
-                    </div>
-                </section>
-
-                <div style="text-align:center;padding:3rem 0 1rem;">
-                    <h2 style="margin-bottom:1rem;">Still deciding?</h2>
-                    <p style="margin:0 auto 2rem;">Book the signal review. We will talk through the decision you need answered and choose the smallest Sprint that can answer it well.</p>
-                    <a href="/book.html" class="btn btn-primary" data-track="Pricing Footer Book CTA">Book a Signal Review</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container footer-inner">
-            <div>
-                <div class="footer-brand">LoopWorker</div>
-                <div class="footer-meta">Evidence before execution.</div>
-            </div>
-            <ul class="footer-links">
-                <li><a href="/sprint.html">The Sprint</a></li>
-                <li><a href="/case-studies.html">Case Studies</a></li>
-                <li><a href="/blog/">Signals</a></li>
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/privacy.html">Privacy</a></li>
-                <li><a href="/terms.html">Terms</a></li>
+    <!-- TIER LADDER -->
+    <section class="v5-section v5-section-tight">
+      <div class="v5-section-inner">
+        <div class="v5-tier-row">
+          <div class="v5-tier">
+            <div class="v5-tier-eyebrow">Surface</div>
+            <h3>Surface scan</h3>
+            <div class="v5-tier-price">$750<small>· 48h</small></div>
+            <div class="v5-tier-frame">Gateway. Test the method first.</div>
+            <ul>
+              <li>One signal pulled deep</li>
+              <li>3 next-move recommendations</li>
+              <li>Refund if not actionable</li>
             </ul>
-            <div class="footer-contact">
-                <a href="mailto:alex@loopworker.com">alex@loopworker.com</a><br>
-                <a href="https://instagram.com/loopworker" target="_blank" rel="noopener">@loopworker</a>
-            </div>
-        </div>
-    </footer>
+            <a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" class="v5-tier-cta v5-tier-cta-ghost" data-track="Pricing Surface">Begin Surface</a>
+          </div>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "The Sprint — Private Market Intelligence",
-      "brand": "LoopWorker",
-      "provider": { "@type": "Organization", "name": "LoopWorker", "url": "https://www.loopworker.com/" },
-      "description": "Founder-led private market intelligence rounds built from public market signals: competitor reconstruction, search demand, customer voice, pricing, website conversion, proof gaps, authority channels, and optional pitch-deck research.",
-      "offers": [
-        { "@type": "Offer", "name": "Sprint 1 · Signal Snapshot", "url": "https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D", "price": "750", "priceCurrency": "USD", "description": "48-hour gateway sprint. One signal pulled deep + ranked recommendation." },
-        { "@type": "Offer", "name": "Sprint 2", "url": "https://buy.stripe.com/28E28q52nahp3pg6VmcEw0I", "price": "3200", "priceCurrency": "USD", "description": "5-day focused market intelligence round." },
-        { "@type": "Offer", "name": "Sprint 3", "url": "https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J", "price": "8000", "priceCurrency": "USD", "description": "10-day decision brief connecting several market signals." },
-        { "@type": "Offer", "name": "Systems Retainer", "url": "https://buy.stripe.com/eVqfZg7av9dl8JA1B2cEw0H", "price": "4500", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M", "price": "4500", "priceCurrency": "USD" }, "description": "Monthly post-Sprint execution retainer." }
-      ]
-    }
-    </script>
+          <div class="v5-tier">
+            <div class="v5-tier-eyebrow">Compass</div>
+            <h3>Direction set</h3>
+            <div class="v5-tier-price">$3,200<small>· 5d</small></div>
+            <div class="v5-tier-frame">Most upgrade to Atlas for the full picture.</div>
+            <ul>
+              <li>Competitive read</li>
+              <li>Strategic answer to one question</li>
+              <li>Leads · launch · channel focus</li>
+            </ul>
+            <a href="https://buy.stripe.com/28E28q52nahp3pg6VmcEw0I" class="v5-tier-cta v5-tier-cta-ghost" data-track="Pricing Compass">Begin Compass</a>
+          </div>
+
+          <div class="v5-tier v5-tier-anchor">
+            <div class="v5-tier-ribbon">Most chosen · 70%</div>
+            <div class="v5-tier-eyebrow">Atlas</div>
+            <h3>Full territory map</h3>
+            <div class="v5-tier-price">$8,000<small>· 10d</small></div>
+            <div class="v5-tier-frame">Default for SaaS, DTC, services, founder-led brands.</div>
+            <ul>
+              <li>Competitor analysis · 5-7 direct + adjacent</li>
+              <li>Customer language clusters</li>
+              <li>Pricing tear-down + band</li>
+              <li>3 outlets dialed for your niche</li>
+              <li>Ranked, dated action sheet</li>
+              <li>30-min walkthrough on delivery</li>
+            </ul>
+            <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="v5-tier-cta v5-tier-cta-anchor" data-track="Pricing Atlas">Begin Atlas →</a>
+          </div>
+
+          <div class="v5-tier">
+            <div class="v5-tier-eyebrow">Operating System</div>
+            <h3>Company-level bet</h3>
+            <div class="v5-tier-price">$25,000<small>· 14d + 3mo</small></div>
+            <div class="v5-tier-frame">Launches, repositioning, 90-day execution.</div>
+            <ul>
+              <li>Everything in Atlas</li>
+              <li>Deep dive + positioning</li>
+              <li>90-day social roadmap</li>
+              <li>Execution playbook</li>
+              <li>3 months support</li>
+            </ul>
+            <a href="https://buy.stripe.com/28E14m52n9dlgc2gvWcEw0G" class="v5-tier-cta v5-tier-cta-ghost" data-track="Pricing OS">Begin OS</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARE TABLE -->
+    <section class="v5-section v5-section-tight">
+      <div class="v5-section-inner">
+        <div class="v5-section-intro">
+          <span class="v5-eyebrow">What gets pulled</span>
+          <h2>The same signals, <span class="grad-text">at different depths.</span></h2>
+        </div>
+
+        <table class="v5-compare">
+          <thead>
+            <tr>
+              <th>Signal</th>
+              <th>Surface</th>
+              <th>Compass</th>
+              <th class="v5-compare-anchor">Atlas ★</th>
+              <th>OS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Decision question scoped</td><td class="yes">✓</td><td class="yes">✓</td><td class="v5-compare-anchor yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Competitor reconstruction</td><td>one angle</td><td>as needed</td><td class="v5-compare-anchor yes">5–7 ✓</td><td class="yes">5–7 + adj</td></tr>
+            <tr><td>Customer voice / review clusters</td><td>one angle</td><td>as needed</td><td class="v5-compare-anchor yes">✓</td><td class="yes">deep</td></tr>
+            <tr><td>Search demand + channel fit</td><td>one angle</td><td>as needed</td><td class="v5-compare-anchor yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Pricing tear-down + band</td><td class="no">—</td><td>as needed</td><td class="v5-compare-anchor yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Proof gaps + authority channels</td><td class="no">—</td><td>as needed</td><td class="v5-compare-anchor yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Ranked action sheet (dated)</td><td>one move</td><td class="yes">✓</td><td class="v5-compare-anchor yes">✓</td><td class="yes">90-day</td></tr>
+            <tr><td>Pitch-ready slides</td><td class="no">—</td><td class="no">—</td><td class="v5-compare-anchor no">—</td><td class="yes">✓</td></tr>
+            <tr><td>Strategic options modeled</td><td class="no">—</td><td class="no">—</td><td class="v5-compare-anchor no">—</td><td class="yes">2 modeled</td></tr>
+            <tr><td>Execution support</td><td class="no">—</td><td class="no">—</td><td class="v5-compare-anchor no">—</td><td class="yes">3 months</td></tr>
+            <tr><td>Delivery time</td><td>48h</td><td>5d</td><td class="v5-compare-anchor"><strong>10d</strong></td><td>14d + 3mo</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- RETAINER -->
+    <section class="v5-section v5-section-tight" id="retainer">
+      <div class="v5-section-inner">
+        <div class="v5-section-intro">
+          <span class="v5-eyebrow">After the Sprint</span>
+          <h2>Optional <span class="grad-text">Systems Retainer.</span></h2>
+        </div>
+        <div class="v5-retainer-card">
+          <div>
+            <h3>Continuous shipping against the action sheet.</h3>
+            <p>Most Sprint clients attach a Systems Retainer once the brief lands. We turn the recommendation into shipped work: positioning rewrites, content cadence, channel build, conversion fixes, automation wiring. Founder-led, subcontracted hands. Slack channel, weekly check-in, monthly market refresh. Month-to-month. Cancel anytime.</p>
+          </div>
+          <div class="v5-center">
+            <span class="v5-retainer-price">$4,500<small>/ month</small></span>
+            <a href="https://buy.stripe.com/eVqfZg7av9dl8JA1B2cEw0H" class="v5-btn v5-btn-primary v5-mt-md" data-track="Pricing Retainer">Attach Retainer →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="v5-section">
+      <div class="v5-section-inner">
+        <div class="v5-section-intro">
+          <span class="v5-eyebrow">Pricing FAQ</span>
+          <h2>Common <span class="grad-text">questions.</span></h2>
+        </div>
+        <div class="v5-faq-list">
+          <details class="v5-faq-item">
+            <summary>Is this an audit?</summary>
+            <p>No. An audit grades what you already have. The Sprint pulls public signals from the market and turns them into a next move.</p>
+          </details>
+          <details class="v5-faq-item">
+            <summary>What do I actually get?</summary>
+            <p>One decision brief with the relevant evidence, the recommendation, and a ranked action sheet. PDF plus editable doc. Atlas + Operating System include a 30-min walkthrough call on delivery.</p>
+          </details>
+          <details class="v5-faq-item">
+            <summary>Which tier should I choose?</summary>
+            <p>Surface to test the method. Compass for one narrow question. Atlas for the standard connected market brief — most clients land here. Operating System for a launch, repositioning, pitch-deck, or pricing architecture rewrite where 3 months of execution support actually matters.</p>
+          </details>
+          <details class="v5-faq-item">
+            <summary>Can this use sensitive data?</summary>
+            <p>Yes. Default engagements are private. Public case studies are anonymized or only published with permission.</p>
+          </details>
+          <details class="v5-faq-item">
+            <summary>Refund policy?</summary>
+            <p>14-day refund. If the brief lands and you cannot act on a single line, write back. Happened once in two years.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="v5-closing">
+      <div class="v5-closing-grid">
+        <div class="v5-closing-main">
+          <span class="v5-eyebrow-plain">Still deciding</span>
+          <h2>Bring the decision. We'll find the <span class="grad-text">signals.</span></h2>
+          <p>Free 30-min signal review. We talk through the decision you need answered and pick the smallest Sprint that can answer it well.</p>
+          <div class="v5-cta-row">
+            <a href="/book.html" class="v5-btn v5-btn-primary" data-track="Pricing Closing Book">Book a 30-min review · Free</a>
+            <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="v5-btn v5-btn-ghost" data-track="Pricing Closing Atlas">Begin Atlas · $8,000</a>
+          </div>
+          <div class="v5-closing-note">14-day refund · happened once in 2 years · 2 active Atlas at a time</div>
+        </div>
+
+        <div class="v5-email-card">
+          <div class="v5-email-eyebrow">Want a sample first</div>
+          <h4>Read an anonymized brief.</h4>
+          <p>Full structure, real depth, names stripped. 4-minute read.</p>
+          <div class="v5-mt-sm">
+            <a href="/sample-brief.html" class="v5-btn v5-btn-ghost" data-track="Pricing Sample Brief">View sample brief →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="v5-foot">
+    <div class="v5-foot-inner">
+      <div class="v5-foot-logo">LoopWorker</div>
+      <p>Evidence before execution.</p>
+      <p>© 2026 · <a href="/sprint.html">Sprints</a> · <a href="/case-studies.html">Customers</a> · <a href="/blog/">Signals</a> · <a href="/about.html">About</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+      <p class="v5-foot-small">alex@loopworker.com · <a href="https://instagram.com/loopworker">@loopworker</a></p>
+    </div>
+  </footer>
+
 </body>
 </html>

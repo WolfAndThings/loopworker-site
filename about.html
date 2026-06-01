@@ -1,222 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
-    <script defer src="/site-pages.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/site-pages.css">
-    <title>About LoopWorker | Signal Intelligence Studio</title>
-    <meta name="description" content="LoopWorker is a founder-led signal intelligence studio that pulls live market evidence into visibility systems for clearer business decisions.">
-    <link rel="canonical" href="https://www.loopworker.com/about.html">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <title>About · LoopWorker | Founder-Led Signal Intelligence</title>
+  <meta name="description" content="LoopWorker is a founder-led signal intelligence studio. We pull live market evidence into visibility systems for clearer business decisions before execution.">
+  <link rel="canonical" href="https://www.loopworker.com/about.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.loopworker.com/about.html">
+  <meta property="og:title" content="About · LoopWorker | Founder-Led Signal Intelligence">
+  <meta property="og:description" content="LoopWorker exists to make market movement visible. Founder-led, evidence-first.">
+  <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="LoopWorker">
+  <meta name="theme-color" content="#07070C">
+  <meta name="color-scheme" content="dark">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@id": "https://www.loopworker.com/#loopworker-aeo",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://www.loopworker.com/#organization",
-      "name": "LoopWorker",
-      "url": "https://www.loopworker.com/",
-      "slogan": "Evidence before execution."
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What does LoopWorker do?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "LoopWorker pulls live market signals into clear visibility systems so businesses can see what is happening inside a category before they spend on execution."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is The Sprint?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The Sprint is a focused market intelligence round that maps category signals, buyer language, competitor movement, proof gaps, pricing pressure, and channel behavior into a ranked next-move sheet."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why does evidence come before execution?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Execution gets stronger when the market signals are visible first. The Sprint shows the opportunity, hesitation, and proof gaps before positioning, visual, website, or channel work moves forward."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.loopworker.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "About",
-          "item": "https://www.loopworker.com/about.html"
-        }
-      ]
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/v5-system.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
+
+  <style>
+    .v5-principle-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
     }
-  ]
-}
-</script>
-    <meta name="theme-color" content="#080808">
-    <meta name="color-scheme" content="dark">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="LoopWorker">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23080808' width='100' height='100'/><text x='50' y='65' font-size='52' text-anchor='middle' fill='%23D4A017'>◉</text></svg>">
-    <link rel="dns-prefetch" href="https://buy.stripe.com">
-    <link rel="preconnect" href="https://plausible.io">
+    @media (max-width: 880px) { .v5-principle-grid { grid-template-columns: 1fr; } }
+    .v5-principle {
+      padding: 2rem 1.6rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+    .v5-principle h4 {
+      font-size: 1.15rem; margin: 0 0 0.6rem;
+      letter-spacing: -0.02em;
+    }
+    .v5-principle p {
+      font-size: 0.94rem; color: var(--text-3);
+      line-height: 1.55; margin: 0;
+    }
+    .v5-principle .num {
+      font-family: var(--mono); font-size: 0.74rem;
+      color: var(--indigo-bright); letter-spacing: 0.12em;
+      text-transform: uppercase; font-weight: 700;
+      margin-bottom: 0.9rem; display: block;
+    }
+    .v5-founder {
+      max-width: 880px; margin: 0 auto;
+      display: grid; grid-template-columns: 200px 1fr;
+      gap: 3rem; align-items: center;
+    }
+    @media (max-width: 720px) { .v5-founder { grid-template-columns: 1fr; gap: 2rem; text-align: center; } }
+    .v5-founder-photo {
+      width: 200px; height: 200px; border-radius: 50%;
+      background: var(--grad-cta);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--sans-tight); font-weight: 900;
+      color: #FFF; font-size: 3.4rem;
+      box-shadow: 0 0 80px -10px var(--indigo);
+      margin: 0 auto;
+    }
+    .v5-founder h2 {
+      font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+      margin: 0 0 1rem;
+    }
+    .v5-founder p {
+      color: var(--text-2); font-size: 1.05rem;
+      line-height: 1.6; margin: 0 0 1rem;
+    }
+    .v5-best-fit-grid {
+      max-width: 1080px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;
+    }
+    @media (max-width: 720px) { .v5-best-fit-grid { grid-template-columns: 1fr; } }
+    .v5-fit-card {
+      padding: 2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+    .v5-fit-card.good { border-color: rgba(16,185,129,0.25); background: linear-gradient(135deg, rgba(16,185,129,0.04), transparent 60%), var(--surface); }
+    .v5-fit-card h4 {
+      font-size: 1.05rem; margin: 0 0 1rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .v5-fit-card h4 .tag {
+      font-family: var(--mono); font-size: 0.68rem;
+      padding: 0.25rem 0.6rem; border-radius: 999px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      font-weight: 700;
+    }
+    .v5-fit-card.good h4 .tag {
+      background: rgba(16,185,129,0.12); color: var(--emerald);
+      border: 1px solid rgba(16,185,129,0.25);
+    }
+    .v5-fit-card.bad h4 .tag {
+      background: rgba(255,255,255,0.04); color: var(--text-3);
+      border: 1px solid var(--border);
+    }
+    .v5-fit-card ul {
+      list-style: none; padding: 0; margin: 0;
+      color: var(--text-2); font-size: 0.95rem; line-height: 1.6;
+    }
+    .v5-fit-card li {
+      padding: 0.4rem 0 0.4rem 1.5rem; position: relative;
+    }
+    .v5-fit-card.good li::before {
+      content: '✓'; position: absolute; left: 0;
+      color: var(--emerald); font-weight: 700;
+    }
+    .v5-fit-card.bad li::before {
+      content: '—'; position: absolute; left: 0;
+      color: var(--text-4);
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.loopworker.com/#organization",
+        "name": "LoopWorker",
+        "url": "https://www.loopworker.com/",
+        "slogan": "Evidence before execution.",
+        "founder": { "@type": "Person", "name": "Alex Lamb" }
+      },
+      {
+        "@type": "AboutPage",
+        "name": "About LoopWorker",
+        "url": "https://www.loopworker.com/about.html",
+        "description": "LoopWorker is a founder-led signal intelligence studio. Public-data research delivered as decision briefs."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.loopworker.com/" },
+          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://www.loopworker.com/about.html" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-    <a href="#main" class="skip-link">Skip to content</a>
-    <nav>
-        <div class="nav-inner">
-            <a href="/" class="nav-logo">LoopWorker</a>
-            <ul class="nav-links">
-                <li><a href="/sprint.html">The Sprint</a></li>
-                <li><a href="/pricing.html" data-track="Nav Pricing">Pricing</a></li>
-                <li><a href="/case-studies.html">Case Studies</a></li>
-                <li><a href="/blog/">Signals</a></li>
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/book.html" class="nav-cta" data-track="Nav Book CTA">Book a Call</a></li>
-            </ul>
-            <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
-    <div class="mobile-nav" id="mobileNav">
-        <a href="/sprint.html">The Sprint</a>
-        <a href="/pricing.html" data-track="Mobile Nav Pricing">Pricing</a>
-        <a href="/case-studies.html">Case Studies</a>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="v5-nav">
+    <div class="v5-nav-inner">
+      <a href="/" class="v5-logo">
+        <span class="v5-logo-mark">L</span>
+        LoopWorker
+      </a>
+      <div class="v5-nav-links">
+        <a href="/sprint.html">Sprints</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/case-studies.html">Customers</a>
         <a href="/blog/">Signals</a>
-        <a href="/about.html">About</a>
-        <a href="/book.html" class="nav-cta" data-track="Mobile Nav Book CTA">Book a Call</a>
+        <a href="/about.html" class="active">About</a>
+        <a href="/book.html" class="v5-nav-cta" data-track="Nav Book CTA">Book a Call</a>
+      </div>
+      <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+    <div class="v5-mobile-nav" id="mobileNav">
+      <a href="/sprint.html">Sprints</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/case-studies.html">Customers</a>
+      <a href="/blog/">Signals</a>
+      <a href="/about.html">About</a>
+      <a href="/book.html" class="v5-nav-cta">Book a Call</a>
+    </div>
+  </nav>
 
-    <main id="main">
-        <section class="page-hero">
-            <div class="container page-hero-grid">
-                <div class="hero-copy">
-                    <span class="eyebrow">About</span>
-                    <h1>LoopWorker exists to make market movement <em>visible</em>.</h1>
-                    <p>The signals are already there. Search behavior, competitor moves, customer language, pricing pressure, proof gaps, channel drift. Most businesses don't listen.</p>
-                    <div class="hero-actions">
-                        <a href="/sprint.html" class="btn btn-primary" data-track="About Hero Sprint CTA">See The Sprint</a>
-                        <a href="/book.html" class="btn btn-outline" data-track="About Hero Book CTA">Book a Call</a>
-                    </div>
-                </div>
-                <div class="signal-panel" aria-label="LoopWorker operating view">
-                    <div class="signal-panel-top"><div class="signal-panel-title">Operating View</div><div class="signal-panel-pill">Founder-led</div></div>
-                    <div class="signal-panel-body">
-                        <div class="signal-row"><div><span>Pull</span><strong>Live public signals</strong></div><p>Competitors, reviews, search, ads, pricing, proof, and channel behavior.</p></div>
-                        <div class="signal-row"><div><span>Map</span><strong>What the pattern means</strong></div><p>Where the market is moving, what buyers need to believe, and what should not ship yet.</p></div>
-                        <div class="signal-row"><div><span>Decide</span><strong>What happens next</strong></div><p>A ranked recommendation built before creative, content, offers, or paid spend move forward.</p></div>
-                        <div class="signal-panel-decision"><span>Position</span><p>The signals are talking. LoopWorker helps businesses listen.</p></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <main id="main">
 
-        <section class="section-alt">
-            <div class="container">
-                <div class="section-intro">
-                    <span class="eyebrow">Approach</span>
-                    <h2>The job is not to have more opinions. The job is to see the category clearly.</h2>
-                </div>
-                <div class="grid-3">
-                    <div class="card">
-                        <h3>Start with the decision</h3>
-                        <p>Pricing, positioning, proof, channel, launch, offer, visual direction. The Sprint is scoped around the decision that needs evidence.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Pull live signals</h3>
-                        <p>Competitors, search demand, customer voice, pricing pages, ads, content cadence, review language, and proof gaps are mapped into one view.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Make the next move visible</h3>
-                        <p>The output is not a mood board or a theory deck. It is an evidence-backed recommendation with a ranked action sheet.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="v5-hero">
+      <div class="v5-hero-inner centered">
+        <span class="v5-eyebrow">About LoopWorker</span>
+        <h1>The signals are <span class="grad-text">already there.</span></h1>
+        <p class="v5-hero-sub">Search behavior, competitor moves, customer language, pricing pressure, proof gaps, channel drift. Most businesses don't listen. LoopWorker exists to make market movement visible — before execution.</p>
+      </div>
+    </section>
 
-        <section>
-            <div class="container">
-                <div class="grid-2">
-                    <div class="card">
-                        <div class="kicker">Best Fit</div>
-                        <h3>Who usually benefits most</h3>
-                        <ul class="list">
-                            <li>Founders and operators with a real decision to make and a market already leaving clues.</li>
-                            <li>Teams preparing a launch, repositioning, pricing move, channel shift, or proof reset.</li>
-                            <li>Businesses that want clarity before spending more on execution.</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <div class="kicker">Why Sprint First</div>
-                        <h3>The Sprint keeps execution honest.</h3>
-                        <ul class="list">
-                            <li>It separates what the market is showing from what the room prefers.</li>
-                            <li>It gives downstream work a source of truth.</li>
-                            <li>It makes recommendations defendable under follow-up questions.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-tight">
-            <div class="container">
-                <div class="cta-box">
-                    <span class="eyebrow">Next Step</span>
-                    <h2>If the next move feels expensive or unclear, start with visibility.</h2>
-                    <p>Bring the decision. LoopWorker will map the signals around it and show what the market is already saying.</p>
-                    <div class="hero-actions">
-                        <a href="/sprint.html" class="btn btn-primary" data-track="About Bottom Sprint CTA">See The Sprint</a>
-                        <a href="mailto:alex@loopworker.com" class="btn btn-outline" data-track="About Bottom Email CTA">Email Alex</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container footer-inner">
-            <div>
-                <div class="footer-brand">LoopWorker</div>
-                <div class="footer-meta">Evidence before execution.</div>
-            </div>
-            <ul class="footer-links">
-                <li><a href="/sprint.html">The Sprint</a></li>
-                <li><a href="/pricing.html" data-track="Nav Pricing">Pricing</a></li>
-                <li><a href="/case-studies.html">Case Studies</a></li>
-                <li><a href="/blog/">Signals</a></li>
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/privacy.html">Privacy</a></li>
-                <li><a href="/terms.html">Terms</a></li>
-            </ul>
-            <div class="footer-contact">
-                <a href="mailto:alex@loopworker.com">alex@loopworker.com</a><br>
-                <a href="https://instagram.com/loopworker" target="_blank" rel="noopener">@loopworker</a>
-            </div>
+    <!-- FOUNDER -->
+    <section class="v5-section">
+      <div class="v5-section-inner">
+        <div class="v5-section-intro">
+          <span class="v5-eyebrow">Founder-led</span>
+          <h2>Built and run by <span class="grad-text">Alex Lamb.</span></h2>
         </div>
-    </footer>
+        <div class="v5-founder">
+          <div class="v5-founder-photo">AL</div>
+          <div>
+            <p>I built LoopWorker because most strategy work happens before the evidence shows up. Founders ship positioning, pricing, and campaigns built on the loudest opinion in the room — and three months later, rebuild.</p>
+            <p>The signals to make the call honestly are public. Competitor ads, review fragments, search demand, pricing pages, customer language. Pulling them takes 4-12 hours per signal done right. Most teams don't have that time. So they guess.</p>
+            <p>LoopWorker is the pull. Founder-led. No team of analysts. Two active Atlas engagements at a time so the work stays mine.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINCIPLES -->
+    <section class="v5-section v5-section-tight">
+      <div class="v5-section-inner">
+        <div class="v5-section-intro">
+          <span class="v5-eyebrow">How we work</span>
+          <h2>Three principles. <span class="grad-text">No deviation.</span></h2>
+        </div>
+        <div class="v5-principle-grid">
+          <div class="v5-principle">
+            <span class="num">01</span>
+            <h4>Start with the decision</h4>
+            <p>Pricing, positioning, proof, channel, launch, offer, visual direction. Every Sprint is scoped around a real decision on your desk — not a research wishlist.</p>
+          </div>
+          <div class="v5-principle">
+            <span class="num">02</span>
+            <h4>Pull live public signals</h4>
+            <p>Competitors, search demand, customer voice, pricing pages, ads, content cadence, review language, proof gaps. Public data only. No surveys, no expert calls.</p>
+          </div>
+          <div class="v5-principle">
+            <span class="num">03</span>
+            <h4>Make the next move visible</h4>
+            <p>The output is not a mood board or a theory deck. It's an evidence-backed recommendation with a ranked, dated action sheet. PDF + editable doc.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEST FIT / WORST FIT -->
+    <section class="v5-section v5-section-tight">
+      <div class="v5-section-inner">
+        <div class="v5-section-intro">
+          <span class="v5-eyebrow">Honest fit</span>
+          <h2>Who LoopWorker is — <span class="grad-text">and isn't</span> — for.</h2>
+        </div>
+        <div class="v5-best-fit-grid">
+          <div class="v5-fit-card good">
+            <h4>Best fit <span class="tag">Yes</span></h4>
+            <ul>
+              <li>Founders + operators with a real decision on the table</li>
+              <li>Teams preparing a launch, repositioning, pricing move, or channel shift</li>
+              <li>Businesses with $50K+ at stake on the next move</li>
+              <li>Categories w/ 3+ competitors + public review volume</li>
+              <li>Buyers who want clarity before more execution spend</li>
+            </ul>
+          </div>
+          <div class="v5-fit-card bad">
+            <h4>Not for <span class="tag">No</span></h4>
+            <ul>
+              <li>Companies wanting a deck to validate a decision already made</li>
+              <li>Pre-revenue ideas with no comparable market yet</li>
+              <li>Teams looking for outsourced execution without strategy</li>
+              <li>Anyone expecting 6-week agency turnarounds at this price</li>
+              <li>Decisions where "what feels right" is the actual answer</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY SPRINT FIRST -->
+    <section class="v5-section v5-section-tight">
+      <div class="v5-section-inner">
+        <div class="v5-callout">
+          <span class="v5-eyebrow">The thesis</span>
+          <h2>The job is not to have more opinions. The job is to see the <span class="grad-text">category clearly.</span></h2>
+          <p>Sprints separate what the market is showing from what the room prefers. They give downstream work a source of truth. They make recommendations defendable under follow-up questions. Execution gets stronger when the evidence comes first.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="v5-closing">
+      <div class="v5-closing-grid">
+        <div class="v5-closing-main">
+          <span class="v5-eyebrow-plain">Next step</span>
+          <h2>Bring the decision. We'll find the <span class="grad-text">signals.</span></h2>
+          <p>If the next move feels expensive or unclear, start with visibility. Free 30-min signal review or begin Atlas directly.</p>
+          <div class="v5-cta-row">
+            <a href="/book.html" class="v5-btn v5-btn-primary" data-track="About Closing Book">Book a 30-min review · Free</a>
+            <a href="/sprint.html" class="v5-btn v5-btn-ghost" data-track="About Closing Sprints">See the Sprints</a>
+          </div>
+          <div class="v5-closing-note">alex@loopworker.com · founder-led · 2 active Atlas at a time</div>
+        </div>
+
+        <div class="v5-email-card">
+          <div class="v5-email-eyebrow">Reading first</div>
+          <h4>Sample brief.</h4>
+          <p>Read an anonymized Atlas-tier output. Full structure, real depth, names stripped.</p>
+          <div class="v5-mt-sm">
+            <a href="/sample-brief.html" class="v5-btn v5-btn-ghost" data-track="About Sample Brief">View sample →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="v5-foot">
+    <div class="v5-foot-inner">
+      <div class="v5-foot-logo">LoopWorker</div>
+      <p>Evidence before execution.</p>
+      <p>© 2026 · <a href="/sprint.html">Sprints</a> · <a href="/case-studies.html">Customers</a> · <a href="/blog/">Signals</a> · <a href="/about.html">About</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+      <p class="v5-foot-small">alex@loopworker.com · <a href="https://instagram.com/loopworker">@loopworker</a></p>
+    </div>
+  </footer>
+
 </body>
 </html>

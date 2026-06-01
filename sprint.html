@@ -1,1422 +1,495 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
-<script defer src="/site-pages.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/site-pages.css">
-<title>The Sprint · Signal Intelligence Before Execution | LoopWorker</title>
-<meta name="description" content="Founder-led market intelligence sprint. Clarity for your next choices: pricing, positioning, proof, offer, CTA, visual direction, channel. Evidence before they ship.">
-<link rel="canonical" href="https://www.loopworker.com/sprint.html">
-<meta property="og:type" content="product">
-<meta property="og:url" content="https://www.loopworker.com/sprint.html">
-<meta property="og:title" content="The Sprint · Signal Intelligence Before Execution | LoopWorker">
-<meta property="og:description" content="Clarity for your next choices: pricing, positioning, proof, offer, CTA, visuals, channel. Market evidence before they ship.">
-<meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <title>The Sprint · Signal Intelligence Before Execution | LoopWorker</title>
+  <meta name="description" content="Founder-led market intelligence sprint. Public-signal research delivered as a decision brief with ranked actions. 48 hours to 14 days.">
+  <link rel="canonical" href="https://www.loopworker.com/sprint.html">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://www.loopworker.com/sprint.html">
+  <meta property="og:title" content="The Sprint · Signal Intelligence Before Execution | LoopWorker">
+  <meta property="og:description" content="Clarity for your next choices: pricing, positioning, proof, offer, CTA, visuals, channel. Market evidence before execution.">
+  <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="LoopWorker">
+  <meta name="theme-color" content="#07070C">
+  <meta name="color-scheme" content="dark">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "The Sprint · Private Market Intelligence",
-  "provider": { "@type": "Organization", "name": "LoopWorker", "url": "https://www.loopworker.com/" },
-  "description": "Founder-led private market intelligence rounds built from public market signals: competitor reconstruction, search demand, customer voice, pricing, website conversion, proof gaps, authority channels, and optional pitch-deck research.",
-  "offers": [
-    { "@type": "Offer", "name": "Sprint 1 · Signal Snapshot", "url": "https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D", "price": "750", "priceCurrency": "USD", "description": "48-hour gateway sprint. One signal pulled deep + ranked recommendation." },
-    { "@type": "Offer", "name": "Sprint 2", "url": "https://buy.stripe.com/28E28q52nahp3pg6VmcEw0I", "price": "3200", "priceCurrency": "USD", "description": "5-day focused market intelligence round." },
-    { "@type": "Offer", "name": "Sprint 3", "url": "https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J", "price": "8000", "priceCurrency": "USD", "description": "10-day decision brief connecting several market signals." },
-    { "@type": "Offer", "name": "Systems Retainer", "url": "https://buy.stripe.com/eVqfZg7av9dl8JA1B2cEw0H", "price": "4500", "priceCurrency": "USD", "description": "Monthly post-Sprint execution retainer. Month-to-month." }
-  ]
-}
-</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@id": "https://www.loopworker.com/#loopworker-aeo",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://www.loopworker.com/#organization",
-      "name": "LoopWorker",
-      "url": "https://www.loopworker.com/",
-      "slogan": "Evidence before execution."
-    },
-    {
-      "@type": "Service",
-      "@id": "https://www.loopworker.com/sprint.html#service",
-      "name": "The Sprint",
-      "serviceType": "Private market intelligence sprint",
-      "provider": { "@id": "https://www.loopworker.com/#organization" },
-      "description": "A founder-led market intelligence sprint that maps category signals, buyer language, competitor movement, proof gaps, pricing pressure, channel behavior, and a ranked next move before execution."
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "What does LoopWorker do?", "acceptedAnswer": { "@type": "Answer", "text": "LoopWorker pulls live market signals into clear visibility systems so businesses can see what is happening inside a category before they spend on execution." } },
-        { "@type": "Question", "name": "What is The Sprint?", "acceptedAnswer": { "@type": "Answer", "text": "The Sprint is a focused market intelligence round that maps category signals, buyer language, competitor movement, proof gaps, pricing pressure, and channel behavior into a ranked next-move sheet." } },
-        { "@type": "Question", "name": "Why does evidence come before execution?", "acceptedAnswer": { "@type": "Answer", "text": "Execution gets stronger when the market signals are visible first. The Sprint shows the opportunity, hesitation, and proof gaps before positioning, visual, website, or channel work moves forward." } }
-      ]
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.loopworker.com/" },
-        { "@type": "ListItem", "position": 2, "name": "The Sprint", "item": "https://www.loopworker.com/sprint.html" }
-      ]
+  <link rel="stylesheet" href="/v5-system.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
+  <link rel="dns-prefetch" href="https://buy.stripe.com">
+  <link rel="preconnect" href="https://plausible.io">
+
+  <style>
+    .v5-signal-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
     }
-  ]
-}
-</script>
+    @media (max-width: 880px) { .v5-signal-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 580px) { .v5-signal-grid { grid-template-columns: 1fr; } }
+    .v5-signal {
+      padding: 1.6rem 1.4rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: all 0.22s ease;
+    }
+    .v5-signal:hover { border-color: var(--border-bright); transform: translateY(-3px); }
+    .v5-signal-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: linear-gradient(135deg, rgba(99,102,241,0.14), rgba(168,85,247,0.06));
+      border: 1px solid rgba(99,102,241,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: 0.74rem; font-weight: 700;
+      color: var(--indigo-bright); margin-bottom: 1rem;
+    }
+    .v5-signal h4 {
+      font-family: var(--sans-tight); font-size: 1.05rem;
+      font-weight: 700; margin: 0 0 0.4rem; letter-spacing: -0.02em;
+    }
+    .v5-signal p {
+      font-size: 0.9rem; color: var(--text-3); line-height: 1.5; margin: 0;
+    }
+    .v5-deep-tier {
+      max-width: 1080px; margin: 0 auto 3rem;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 2.5rem;
+      display: grid; grid-template-columns: 0.7fr 1.3fr;
+      gap: 3rem; align-items: start;
+      position: relative;
+    }
+    @media (max-width: 880px) { .v5-deep-tier { grid-template-columns: 1fr; gap: 1.5rem; } }
+    .v5-deep-tier.anchor {
+      background:
+        radial-gradient(ellipse 800px 400px at 50% 0%, rgba(99,102,241,0.12), transparent 60%),
+        var(--surface-hi);
+      border-color: rgba(99,102,241,0.3);
+      box-shadow:
+        0 30px 60px -20px rgba(99,102,241,0.25),
+        0 0 80px -30px rgba(168,85,247,0.2);
+    }
+    .v5-deep-tier.anchor::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: var(--grad-hero);
+    }
+    .v5-deep-tier-head h2 {
+      font-size: clamp(1.8rem, 3.2vw, 2.4rem); margin: 0 0 0.4rem;
+    }
+    .v5-deep-tier-head .tier-tag {
+      font-family: var(--mono); font-size: 0.7rem;
+      color: var(--text-3); font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      margin-bottom: 0.7rem; display: block;
+    }
+    .v5-deep-tier.anchor .v5-deep-tier-head .tier-tag { color: var(--indigo-bright); }
+    .v5-deep-tier-head .price {
+      font-family: var(--sans-tight); font-size: 2.4rem;
+      font-weight: 800; letter-spacing: -0.035em; line-height: 1;
+      color: var(--text); display: block; margin-top: 1rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .v5-deep-tier-head .price small {
+      font-family: var(--sans); font-size: 0.84rem;
+      color: var(--text-3); font-weight: 500; margin-left: 0.4rem;
+      letter-spacing: 0;
+    }
+    .v5-deep-tier-body p {
+      color: var(--text-2); font-size: 1rem; line-height: 1.6; margin: 0 0 1rem;
+    }
+    .v5-deep-tier-body ul {
+      list-style: none; padding: 0; margin: 0 0 1.4rem;
+      font-size: 0.92rem; color: var(--text-2); line-height: 1.55;
+    }
+    .v5-deep-tier-body ul li {
+      padding: 0.4rem 0 0.4rem 1.4rem; position: relative;
+    }
+    .v5-deep-tier-body ul li::before {
+      content: '✓'; position: absolute; left: 0; color: var(--indigo-bright);
+      font-weight: 700;
+    }
+    .v5-deep-tier .for-tag {
+      display: inline-block;
+      font-family: var(--mono); font-size: 0.72rem;
+      color: var(--text-3); letter-spacing: 0.06em;
+      padding: 0.4rem 0.7rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-bottom: 1.2rem;
+    }
+  </style>
 
-<style>
-/* ═══════════════════════════════════════════════════════════════
-   SPRINT.HTML · V4 DARK EDITORIAL · MIRRORS INDEX.HTML
-   ─────────────────────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --v4-line: rgba(255,255,255,0.07);
-  --v4-line-strong: rgba(255,255,255,0.14);
-  --v4-text: #F5F5F5;
-  --v4-mute: #888;
-  --v4-soft: #C2C2C2;
-  --accent: #D4A017;
-  --accent-soft: #B58915;
-  --accent-glow: rgba(212, 160, 23, 0.18);
-  --gold-leaf: linear-gradient(135deg, #E8C77A 0%, #D4A017 45%, #A87C0E 100%);
-}
-.leaf-gold { background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; }
-
-html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-body {
-  background: #050505;
-  color: #D4D4D4;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-img { max-width: 100%; display: block; }
-a { color: inherit; }
-
-/* ─── Nav (matches index.html v4) ─────────────────────────── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  background: rgba(5, 5, 5, 0.85);
-  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--v4-line);
-  padding: 0 2rem;
-}
-.nav-inner {
-  max-width: 1100px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
-  height: 64px;
-}
-.nav-logo {
-  font-size: 1.1rem; font-weight: 800; color: var(--v4-text);
-  letter-spacing: 0.06em; text-decoration: none; text-transform: uppercase;
-  transition: color 0.18s;
-}
-.nav-logo:hover { color: var(--accent); }
-.nav-links {
-  display: flex; align-items: center; gap: 1.8rem;
-  list-style: none;
-}
-.nav-links a {
-  color: #B5B5B5; text-decoration: none; font-size: 0.9rem; font-weight: 500;
-  transition: color 0.18s;
-}
-.nav-links a:hover { color: var(--v4-text); }
-.nav-links a.nav-cta {
-  background: #FFF; color: #050505 !important; padding: 0.55rem 1rem;
-  border-radius: 8px; font-weight: 600; font-size: 0.86rem;
-  transition: background 0.18s, transform 0.18s;
-}
-.nav-links a.nav-cta:hover { background: #E8E8E8; transform: translateY(-1px); }
-.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; gap: 4px; flex-direction: column; }
-.hamburger span { display: block; width: 22px; height: 2px; background: var(--v4-text); transition: all 0.2s; }
-.mobile-nav { display: none; }
-@media (max-width: 760px) {
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  .mobile-nav.is-open {
-    display: flex; flex-direction: column; gap: 0.4rem;
-    position: fixed; top: 64px; left: 0; right: 0; z-index: 999;
-    background: rgba(5,5,5,0.97); padding: 1.4rem 2rem;
-    border-bottom: 1px solid var(--v4-line);
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "The Sprint · Private Market Intelligence",
+    "provider": { "@type": "Organization", "name": "LoopWorker", "url": "https://www.loopworker.com/" },
+    "description": "Founder-led private market intelligence rounds built from public market signals: competitor reconstruction, search demand, customer voice, pricing, website conversion, proof gaps, authority channels.",
+    "offers": [
+      { "@type": "Offer", "name": "Surface", "url": "https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D", "price": "750", "priceCurrency": "USD", "description": "48-hour gateway sprint." },
+      { "@type": "Offer", "name": "Compass", "url": "https://buy.stripe.com/28E28q52nahp3pg6VmcEw0I", "price": "3200", "priceCurrency": "USD", "description": "5-day focused market intelligence round." },
+      { "@type": "Offer", "name": "Atlas", "url": "https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J", "price": "8000", "priceCurrency": "USD", "description": "10-day decision brief connecting several market signals." },
+      { "@type": "Offer", "name": "Operating System", "url": "https://buy.stripe.com/28E14m52n9dlgc2gvWcEw0G", "price": "25000", "priceCurrency": "USD", "description": "14-day launch / repositioning sprint + 3 months execution support." },
+      { "@type": "Offer", "name": "Systems Retainer", "url": "https://buy.stripe.com/eVqfZg7av9dl8JA1B2cEw0H", "price": "4500", "priceCurrency": "USD", "description": "Monthly post-Sprint execution retainer." }
+    ]
   }
-  .mobile-nav a { color: var(--v4-text); text-decoration: none; padding: 0.7rem 0; font-size: 1rem; }
-  .mobile-nav a.nav-cta { background: #FFF; color: #050505; text-align: center; border-radius: 8px; margin-top: 0.4rem; }
-}
-
-main { padding-top: 64px; }
-
-/* ─── Shared v4 primitives (mirrors index.html) ──────────── */
-.v4-shell { max-width: 1080px; margin: 0 auto; }
-.v4-eyebrow {
-  display: inline-block; font-size: 0.7rem; letter-spacing: 0.24em;
-  text-transform: uppercase; color: var(--v4-mute); font-weight: 600;
-  margin-bottom: 1.8rem; padding: 0.35rem 0.75rem;
-  border: 1px solid var(--v4-line-strong); border-radius: 999px;
-}
-.v4-h1 {
-  font-family: 'Inter', sans-serif; font-weight: 800;
-  font-size: clamp(2.8rem, 6.5vw, 5.6rem); line-height: 1;
-  letter-spacing: -0.04em; color: var(--v4-text);
-  margin: 0 0 1.6rem; max-width: 880px;
-}
-.v4-h1 em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; letter-spacing: -0.02em; }
-.v4-sub {
-  font-size: clamp(1.05rem, 1.4vw, 1.2rem); line-height: 1.55;
-  color: var(--v4-soft); max-width: 720px; margin: 0 0 2.4rem; font-weight: 400;
-}
-.v4-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-bottom: 2rem; }
-.v4-btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  padding: 0.9rem 1.4rem; font-family: 'Inter', sans-serif;
-  font-size: 0.9rem; font-weight: 600; letter-spacing: -0.005em;
-  text-decoration: none; border-radius: 8px;
-  transition: all 0.16s ease; cursor: pointer;
-}
-.v4-btn-primary { background: #FFF; color: #050505; border: 1px solid #FFF; }
-.v4-btn-primary:hover { background: #E8E8E8; transform: translateY(-1px); }
-.v4-btn-secondary { background: transparent; color: var(--v4-text); border: 1px solid var(--v4-line-strong); }
-.v4-btn-secondary:hover { border-color: rgba(255,255,255,0.32); background: rgba(255,255,255,0.03); }
-
-.v4-hero-snap { margin-top: 0.4rem; font-size: 0.88rem; color: #888; }
-.v4-hero-snap a {
-  color: var(--accent); text-decoration: none;
-  border-bottom: 1px dotted rgba(212,160,23,0.4); padding-bottom: 1px;
-  transition: border-color 0.15s, color 0.15s;
-}
-.v4-hero-snap a:hover { color: #F4C842; border-bottom-color: rgba(212,160,23,0.9); }
-
-.v4-section { padding: 7rem 2rem; border-bottom: 1px solid var(--v4-line); }
-.v4-section-intro { max-width: 760px; margin: 0 0 3.5rem; }
-.v4-section-eyebrow {
-  display: inline-block; font-size: 0.68rem; letter-spacing: 0.26em;
-  text-transform: uppercase; color: var(--v4-mute); font-weight: 600;
-  margin-bottom: 1.2rem;
-}
-.v4-h2 {
-  font-family: 'Inter', sans-serif; font-weight: 800;
-  font-size: clamp(1.8rem, 3.6vw, 2.8rem); line-height: 1.1;
-  letter-spacing: -0.025em; color: var(--v4-text); margin: 0 0 1rem;
-}
-.v4-h2 em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; letter-spacing: -0.02em; }
-.v4-section-sub { font-size: 1rem; color: var(--v4-soft); line-height: 1.6; max-width: 640px; }
-
-/* ─── Hero ────────────────────────────────────────────────── */
-.v4-hero {
-  padding: 9rem 2rem 5rem; position: relative;
-  border-bottom: 1px solid var(--v4-line);
-}
-.v4-hero::before {
-  content: ''; position: absolute; inset: 0; pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-  background-size: 64px 64px;
-  -webkit-mask-image: radial-gradient(ellipse 1000px 600px at 50% 0%, #000 0%, transparent 70%);
-          mask-image: radial-gradient(ellipse 1000px 600px at 50% 0%, #000 0%, transparent 70%);
-}
-.v4-hero::after { content: ''; position: absolute; top: -300px; left: -200px; width: 900px; height: 900px; pointer-events: none; background: radial-gradient(circle at center, rgba(212,160,23,0.08) 0%, rgba(212,160,23,0.03) 30%, transparent 60%); }
-.v4-hero > .v4-shell { position: relative; z-index: 1; }
-.v4-section .v4-section-intro::before { content: ''; display: block; width: 64px; height: 1px; background: var(--gold-leaf); margin-bottom: 1.4rem; opacity: 0.55; }
-.v4-section:nth-of-type(even) { background: rgba(255,255,255,0.008); }
-.v4-section:nth-of-type(odd) { background: rgba(0,0,0,0.18); }
-.v4-hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
-  gap: 3rem; align-items: center;
-}
-@media (max-width: 920px) {
-  .v4-hero-grid { grid-template-columns: 1fr; gap: 2.4rem; }
-}
-
-/* ─── Hero signal-console (decision brief panel) ─────────── */
-.signal-console {
-  width: 100%; border: 1px solid var(--v4-line-strong); border-radius: 14px;
-  background: rgba(7,7,7,0.78);
-  box-shadow: 0 28px 80px rgba(0,0,0,0.35); overflow: hidden;
-}
-.console-topline {
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  padding: 1rem 1.1rem; border-bottom: 1px solid var(--v4-line);
-}
-.console-title {
-  font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--v4-soft); font-weight: 700;
-}
-.console-pill {
-  flex-shrink: 0; padding: 0.28rem 0.55rem;
-  border: 1px solid rgba(255,255,255,0.12); border-radius: 999px;
-  color: #9F9F9F; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
-}
-.signal-stream { padding: 0.5rem 1.1rem 0.2rem; }
-.signal-row {
-  display: grid; grid-template-columns: 0.62fr 1fr; gap: 1rem;
-  padding: 1rem 0; border-bottom: 1px solid var(--v4-line);
-}
-.signal-row:last-child { border-bottom: 0; }
-.signal-source {
-  font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--v4-mute); line-height: 1.45;
-}
-.signal-source strong {
-  display: block; color: var(--v4-text); font-size: 1rem;
-  letter-spacing: -0.02em; text-transform: none; margin-bottom: 0.15rem;
-}
-.signal-finding { color: #D7D7D7; font-size: 0.9rem; line-height: 1.5; }
-.console-decision {
-  margin: 0 1.1rem 1.1rem; padding: 1rem;
-  border: 1px solid rgba(212,160,23,0.26); border-radius: 10px;
-  background: rgba(212,160,23,0.055);
-}
-.decision-label {
-  font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--accent); font-weight: 800; margin-bottom: 0.5rem;
-}
-.console-decision p { color: #EFEFEF; font-size: 0.92rem; line-height: 1.55; max-width: none; margin: 0; }
-@media (max-width: 520px) {
-  .signal-row { grid-template-columns: 1fr; gap: 0.45rem; }
-  .console-topline { align-items: flex-start; flex-direction: column; }
-}
-
-/* ─── Three signals process cards ────────────────────────── */
-.v4-process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-@media (max-width: 900px) { .v4-process-grid { grid-template-columns: 1fr; } }
-.v4-process-card {
-  padding: 2rem 1.8rem; border: 1px solid var(--v4-line); border-radius: 14px;
-  background: rgba(255,255,255,0.012);
-  display: flex; flex-direction: column; min-height: 240px;
-}
-.v4-process-num {
-  font-family: 'Inter', sans-serif; font-weight: 700;
-  font-size: 0.78rem; letter-spacing: 0.16em;
-  color: var(--v4-mute); margin-bottom: 0.6rem;
-  text-transform: uppercase;
-}
-.v4-process-title {
-  font-family: 'Inter', sans-serif; font-weight: 700;
-  font-size: 1.5rem; letter-spacing: -0.02em; color: var(--v4-text); margin-bottom: 1.1rem;
-}
-.v4-process-body { font-size: 0.94rem; color: var(--v4-soft); line-height: 1.6; }
-
-/* ─── Brief swipe deck (6 evidence blocks) ───────────────── */
-.brief-meta {
-  display: flex; flex-wrap: wrap; gap: 0.5rem 1.2rem;
-  margin: 0 0 1.4rem; font-size: 0.72rem; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--v4-mute); font-weight: 600;
-}
-.brief-meta a { color: var(--accent); text-decoration: none; border-bottom: 1px dotted rgba(212,160,23,0.4); }
-.brief-meta a:hover { color: #F4C842; }
-.brief-swipe-hint {
-  font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--v4-mute); font-weight: 600; margin: 1.2rem 0 1.6rem;
-}
-
-.brief-deck-wrap { position: relative; }
-.brief-deck {
-  display: flex; gap: 1.2rem; overflow-x: auto;
-  scroll-snap-type: x mandatory; scroll-behavior: smooth;
-  padding: 0.4rem max(1.5rem, calc((100vw - 1080px) / 2)) 1rem;
-  margin: 0 -2rem;
-  scrollbar-width: none;
-}
-.brief-deck::-webkit-scrollbar { display: none; }
-.brief-deck .brief-block {
-  flex: 0 0 min(720px, calc(100vw - 3rem));
-  scroll-snap-align: start;
-  padding: 2rem 1.8rem 1.7rem;
-  background: rgba(255,255,255,0.012);
-  border: 1px solid var(--v4-line);
-  border-radius: 14px;
-  display: flex; flex-direction: column; gap: 1rem;
-}
-.brief-block-num {
-  font-family: 'Inter', sans-serif; font-weight: 700;
-  font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--v4-mute); margin: 0;
-}
-.brief-block h3.h-sub {
-  font-family: 'Inter', sans-serif; font-weight: 700;
-  font-size: clamp(1.3rem, 2.4vw, 1.7rem); letter-spacing: -0.02em;
-  color: var(--v4-text); line-height: 1.18; margin: 0;
-}
-.brief-block > p {
-  color: var(--v4-soft); font-size: 0.94rem; line-height: 1.55; margin: 0;
-}
-.brief-block > p strong { color: var(--v4-text); font-weight: 700; }
-
-/* finding callout — gold-accent left border quote-chip style */
-.bb-finding {
-  padding: 1rem 1.15rem;
-  background: rgba(255,255,255,0.035);
-  border-left: 2px solid rgba(212,160,23,0.55);
-  border-radius: 0 8px 8px 0;
-}
-.bb-finding-tag {
-  font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--accent); font-weight: 800; margin: 0 0 0.55rem;
-}
-.bb-finding-text {
-  font-size: 1.02rem; line-height: 1.42; color: var(--v4-text);
-  margin: 0 0 0.45rem; font-weight: 500;
-}
-.bb-finding-text strong { color: #FFFFFF; font-weight: 700; }
-.bb-finding-stat {
-  font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--v4-mute); font-weight: 600; margin: 0;
-}
-
-/* recommendation — secondary dark card */
-.bb-rec {
-  display: flex; gap: 0.9rem; align-items: flex-start;
-  padding: 0.9rem 1.1rem;
-  border: 1px solid var(--v4-line-strong); border-radius: 8px;
-  background: rgba(5,5,5,0.5);
-}
-.bb-rec b {
-  flex-shrink: 0; color: var(--v4-text); font-weight: 700;
-  font-size: 0.82rem; letter-spacing: 0.06em;
-}
-.bb-rec span { font-size: 0.92rem; color: var(--v4-soft); line-height: 1.5; }
-.bb-rec strong { color: var(--v4-text); }
-
-.bb-source {
-  font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
-  color: #666; font-weight: 500; padding-top: 0.6rem;
-  border-top: 1px solid var(--v4-line); margin: 0;
-}
-
-/* Ad vault rows (block 01) */
-.advault { display: flex; flex-direction: column; gap: 0.4rem; }
-.adv-row {
-  display: grid; grid-template-columns: 18px 1fr auto auto;
-  gap: 0.7rem; align-items: center;
-  padding: 0.6rem 0.8rem;
-  border: 1px solid var(--v4-line); border-radius: 6px;
-  font-size: 0.84rem; color: var(--v4-soft);
-}
-.adv-row.is-star { border-color: rgba(212,160,23,0.28); background: rgba(212,160,23,0.04); }
-.adv-star { color: var(--v4-mute); font-weight: 700; text-align: center; }
-.adv-row.is-star .adv-star { color: var(--accent); }
-.adv-hook { color: var(--v4-text); font-size: 0.88rem; line-height: 1.35; }
-.adv-platform {
-  font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--v4-mute); font-weight: 700;
-}
-.adv-days {
-  font-size: 0.82rem; font-weight: 700; color: var(--v4-text);
-  font-variant-numeric: tabular-nums; min-width: 42px; text-align: right;
-}
-
-/* Complaints (block 02) */
-.complaints { display: flex; flex-direction: column; gap: 0.5rem; }
-.complaint {
-  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
-  padding: 0.7rem 0.95rem;
-  border: 1px solid var(--v4-line); border-radius: 6px;
-}
-.complaint.is-top { border-color: rgba(212,160,23,0.28); background: rgba(212,160,23,0.04); }
-.complaint-quote {
-  margin: 0; font-size: 0.92rem; color: var(--v4-text); line-height: 1.4;
-  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500;
-}
-.complaint-tag {
-  flex-shrink: 0; font-size: 0.72rem; font-weight: 700; color: var(--v4-mute);
-  letter-spacing: 0.05em; font-variant-numeric: tabular-nums;
-}
-.complaint.is-top .complaint-tag { color: var(--accent); }
-
-/* Cadence (block 03) */
-.cadence-row {
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-  gap: 1.2rem; align-items: start;
-}
-@media (max-width: 620px) { .cadence-row { grid-template-columns: 1fr; } }
-.cal {
-  display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px;
-  padding: 0.8rem; border: 1px solid var(--v4-line); border-radius: 8px;
-  background: rgba(5,5,5,0.4);
-}
-.cal-head {
-  font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--v4-mute); text-align: center; padding: 0.2rem 0; font-weight: 700;
-}
-.cal-cell {
-  aspect-ratio: 1; display: flex; align-items: center; justify-content: center;
-  font-size: 0.7rem; color: #555;
-  border: 1px solid rgba(255,255,255,0.04); border-radius: 4px;
-}
-.cal-cell.is-post {
-  background: rgba(212,160,23,0.18); color: var(--accent);
-  border-color: rgba(212,160,23,0.4); font-weight: 700;
-}
-.hooks-list {
-  list-style: none; padding: 0; margin: 0;
-  display: flex; flex-direction: column; gap: 0.45rem;
-}
-.hooks-list li {
-  font-size: 0.84rem; color: var(--v4-soft); line-height: 1.4;
-  padding: 0.55rem 0.75rem;
-  border: 1px solid var(--v4-line); border-radius: 6px;
-  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500;
-}
-
-/* Pricing chart (block 04) */
-.pricing-chart { display: flex; flex-direction: column; gap: 0.4rem; }
-.pc-row {
-  display: grid; grid-template-columns: 160px 1fr 70px;
-  gap: 0.8rem; align-items: center;
-}
-@media (max-width: 520px) { .pc-row { grid-template-columns: 1fr 60px; }
-  .pc-row .pc-bar { grid-column: 1 / -1; }
-}
-.pc-label { font-size: 0.82rem; color: var(--v4-soft); }
-.pc-row.is-them .pc-label { color: var(--accent); font-weight: 700; }
-.pc-bar { height: 18px; background: rgba(255,255,255,0.04); border-radius: 4px; overflow: hidden; }
-.pc-bar span {
-  display: block; height: 100%;
-  background: linear-gradient(90deg, rgba(255,255,255,0.22), rgba(255,255,255,0.32));
-  border-radius: 4px;
-}
-.pc-row.is-them .pc-bar span {
-  background: linear-gradient(90deg, rgba(212,160,23,0.55), var(--accent));
-}
-.pc-price {
-  font-size: 0.82rem; color: var(--v4-text); font-weight: 700;
-  font-variant-numeric: tabular-nums; text-align: right;
-}
-.pc-row.is-them .pc-price { color: var(--accent); }
-
-/* Channels (block 05) */
-.channels { display: flex; flex-direction: column; gap: 0.5rem; }
-.ch-row {
-  display: grid; grid-template-columns: minmax(0, 1fr) auto; row-gap: 0.3rem;
-  padding: 0.75rem 0.95rem;
-  border: 1px solid var(--v4-line); border-radius: 6px;
-}
-.ch-name { color: var(--v4-text); font-size: 0.92rem; font-weight: 600; }
-.ch-detail { grid-column: 1; font-size: 0.78rem; color: var(--v4-mute); line-height: 1.4; }
-.ch-fit {
-  grid-row: 1; grid-column: 2; align-self: start;
-  font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
-  font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 999px;
-}
-.ch-fit.is-high { color: var(--accent); border: 1px solid rgba(212,160,23,0.4); background: rgba(212,160,23,0.06); }
-.ch-fit.is-mid { color: var(--v4-mute); border: 1px solid var(--v4-line-strong); }
-
-/* Action list (block 06) */
-.action-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.55rem; }
-.action-list li {
-  display: grid; grid-template-columns: 100px 1fr; gap: 0.9rem; align-items: start;
-  padding: 0.75rem 0.95rem;
-  border: 1px solid var(--v4-line); border-radius: 6px;
-}
-@media (max-width: 520px) { .action-list li { grid-template-columns: 1fr; gap: 0.4rem; } }
-.act-tag {
-  font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--accent); font-weight: 800; padding-top: 0.15rem;
-}
-.act-text { font-size: 0.88rem; color: var(--v4-soft); line-height: 1.5; }
-.act-text b { color: var(--v4-text); }
-.act-text i { font-style: italic; color: var(--v4-text); }
-
-/* Dots */
-.brief-dots {
-  display: flex; gap: 0.5rem; justify-content: center;
-  margin: 1.2rem auto 0;
-}
-.brief-dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: rgba(255,255,255,0.12); border: 0; padding: 0;
-  cursor: pointer; transition: all 0.2s;
-}
-.brief-dot:hover { background: rgba(255,255,255,0.3); }
-.brief-dot.is-active { background: var(--accent); width: 22px; border-radius: 4px; }
-
-/* Decision strip / pull quote / brief CTA */
-.pull-quote {
-  margin: 3rem auto 2.2rem; max-width: 760px; padding: 1.6rem 1.8rem;
-  border: 1px solid var(--v4-line); border-left: 3px solid var(--accent);
-  border-radius: 0 10px 10px 0; background: rgba(255,255,255,0.012);
-}
-.pull-quote p {
-  margin: 0; font-family: 'Cormorant Garamond', serif; font-style: italic;
-  font-size: 1.2rem; line-height: 1.55; color: var(--v4-soft); font-weight: 500;
-}
-.decision-strip {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
-  max-width: 880px; margin: 0 auto 2.2rem;
-}
-@media (max-width: 720px) { .decision-strip { grid-template-columns: 1fr; } }
-.decision-box {
-  padding: 1.4rem 1.4rem; border: 1px solid var(--v4-line); border-radius: 12px;
-  background: rgba(255,255,255,0.012);
-}
-.decision-box b {
-  display: block; font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--v4-mute); font-weight: 700; margin-bottom: 0.7rem;
-}
-.decision-box p { color: var(--v4-soft); font-size: 0.92rem; line-height: 1.55; margin: 0; }
-.brief-cta-row { display: flex; justify-content: center; margin-top: 2rem; }
-
-/* ─── "Who builds these" + testimonials ─────────────────── */
-.founder-note { max-width: 760px; margin: 0 0 3rem; display: flex; flex-direction: column; gap: 1rem; }
-.founder-note p { color: var(--v4-soft); font-size: 1rem; line-height: 1.65; margin: 0; }
-.testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-@media (max-width: 900px) { .testimonials { grid-template-columns: 1fr; } }
-.tstm {
-  padding: 1.6rem 1.4rem; border: 1px solid var(--v4-line); border-radius: 12px;
-  background: rgba(255,255,255,0.012);
-}
-.tstm-quote {
-  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500;
-  font-size: 1.05rem; line-height: 1.45; color: var(--v4-text); margin: 0 0 0.9rem;
-}
-.tstm-meta {
-  font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--v4-mute); font-weight: 600; margin: 0;
-}
-.tstm-meta b { color: var(--accent); font-weight: 700; }
-
-/* ─── Pricing ──────────────────────────────────────────── */
-.snapshot-callout {
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
-  gap: 1.2rem;
-  padding: 1.4rem 1.6rem; margin: 0 0 2rem;
-  border: 1px solid rgba(212,160,23,0.32); border-radius: 12px;
-  background: linear-gradient(180deg, rgba(212,160,23,0.07), rgba(212,160,23,0.012));
-}
-.snap-copy { color: var(--v4-soft); font-size: 0.95rem; line-height: 1.55; flex: 1 1 360px; }
-.snap-copy strong { color: var(--v4-text); }
-.snap-price { color: var(--accent); font-weight: 800; }
-/* site-pages.css ships a `main a:not(.btn):not(...)` rule with very high
-   specificity that paints all bare links in pale gold + a gold gradient.
-   Force our new sprint CTAs to ignore it. */
-.snap-cta, .tier-cta, .pricing-cta,
-.v4-btn, .v4-btn-primary, .v4-btn-secondary,
-.v4-offer-cta {
-  background-image: none !important;
-}
-.snap-cta { color: #050505 !important; }
-.tier-cta { color: var(--v4-text) !important; }
-.v4-offer-card.featured .tier-cta { color: #050505 !important; background: #FFF !important; }
-.pricing-cta { color: var(--v4-text) !important; }
-.v4-btn-primary { color: #050505 !important; background: #FFF !important; }
-.v4-btn-secondary { color: var(--v4-text) !important; }
-
-.snap-cta {
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  padding: 0.7rem 1.1rem; background: var(--accent); color: #1A0F00;
-  text-decoration: none; border-radius: 8px;
-  font-size: 0.86rem; font-weight: 700; letter-spacing: 0.02em;
-  transition: all 0.18s;
-}
-.snap-cta:hover { background: #F4C842; transform: translateY(-1px); }
-
-.v4-offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
-@media (max-width: 980px) { .v4-offer-grid { grid-template-columns: 1fr; } }
-.v4-offer-card {
-  padding: 2.4rem 2rem; border: 1px solid var(--v4-line); border-radius: 14px;
-  background: rgba(255,255,255,0.012);
-  display: flex; flex-direction: column; transition: border-color 0.18s, transform 0.18s;
-}
-.v4-offer-card:hover { border-color: var(--v4-line-strong); transform: translateY(-2px); }
-.v4-offer-card.featured {
-  background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
-  border-color: rgba(255,255,255,0.18);
-  position: relative;
-}
-.v4-offer-card.featured::before {
-  content: 'Most chosen';
-  position: absolute; top: -10px; left: 1.6rem;
-  background: var(--accent); color: #1A0F00;
-  font-size: 0.62rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
-  padding: 0.3rem 0.7rem; border-radius: 999px;
-}
-.tier-eyebrow {
-  font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--v4-mute); font-weight: 700; margin-bottom: 0.6rem; display: block;
-}
-.capacity-line { margin-top: 1.4rem; font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--v4-mute); font-weight: 600; display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
-.cap-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #4ADE80; box-shadow: 0 0 0 3px rgba(74,222,128,0.18); flex-shrink: 0; }
-.v4-offer-card.featured .tier-eyebrow { color: var(--accent); }
-.tier-price {
-  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500;
-  font-size: 3rem; letter-spacing: -0.025em;
-  background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
-  margin-bottom: 0.3rem; line-height: 1;
-}
-.tier-duration {
-  font-size: 0.78rem; letter-spacing: 0.08em; color: var(--v4-mute);
-  margin-bottom: 1.1rem; font-weight: 600;
-}
-.tier-desc {
-  font-size: 0.92rem; color: var(--v4-soft); line-height: 1.55;
-  margin-bottom: 1.8rem; flex-grow: 1;
-}
-.tier-cta {
-  display: inline-flex; align-items: center; justify-content: center;
-  padding: 0.85rem 1.2rem; border: 1px solid var(--v4-line-strong); border-radius: 8px;
-  color: var(--v4-text); text-decoration: none; font-size: 0.86rem; font-weight: 600;
-  transition: all 0.16s;
-}
-.tier-cta:hover { background: #FFF; color: #050505; border-color: #FFF; }
-.v4-offer-card.featured .tier-cta { background: #FFF; color: #050505; border-color: #FFF; }
-.v4-offer-card.featured .tier-cta:hover { background: var(--accent); border-color: var(--accent); color: #1A0F00; }
-
-.retainer-strip {
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
-  gap: 1.4rem; margin-top: 2rem;
-  padding: 1.6rem 1.8rem; border: 1px solid var(--v4-line); border-radius: 12px;
-  background: rgba(255,255,255,0.012);
-}
-.retainer-copy { flex: 1 1 380px; }
-.retainer-copy h3 {
-  font-family: 'Inter', sans-serif; font-weight: 700;
-  font-size: 1.15rem; letter-spacing: -0.01em; color: var(--v4-text);
-  margin: 0 0 0.4rem;
-}
-.retainer-copy p { color: var(--v4-soft); font-size: 0.92rem; line-height: 1.55; margin: 0; }
-.pricing-cta {
-  display: inline-flex; align-items: center; justify-content: center;
-  padding: 0.85rem 1.4rem; background: transparent; color: var(--v4-text);
-  border: 1px solid var(--v4-line-strong); border-radius: 8px;
-  text-decoration: none; font-size: 0.86rem; font-weight: 600;
-  transition: all 0.18s;
-}
-.pricing-cta:hover { background: #FFF; color: #050505; border-color: #FFF; }
-.pricing-fineprint {
-  font-size: 0.85rem; color: var(--v4-mute); line-height: 1.55;
-  margin: 1.8rem 0 0; max-width: 760px;
-}
-.pricing-fineprint a { color: var(--accent); text-decoration: none; border-bottom: 1px dotted rgba(212,160,23,0.4); }
-.pricing-fineprint a:hover { color: #F4C842; }
-
-/* ─── Case study deck ────────────────────────────────────── */
-#caseDeck .brief-block { padding: 1.8rem 1.6rem; }
-.case-tag {
-  font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--v4-mute); font-weight: 700; margin: 0;
-}
-.case-h {
-  font-family: 'Inter', sans-serif; font-weight: 700;
-  font-size: clamp(1.25rem, 2.2vw, 1.55rem); letter-spacing: -0.02em;
-  color: var(--v4-text); line-height: 1.2; margin: 0;
-}
-.case-h em { font-style: italic; color: var(--accent); font-weight: 700; }
-.case-lede {
-  font-size: 0.94rem; color: var(--v4-soft); line-height: 1.55; margin: 0;
-}
-.case-q, .case-out {
-  font-size: 0.9rem; color: var(--v4-soft); line-height: 1.5; margin: 0;
-}
-.case-q b, .case-out b {
-  color: var(--accent); font-weight: 800; font-size: 0.7rem;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  display: inline-block; margin-right: 0.3rem;
-}
-.case-out i {
-  font-style: italic; color: var(--v4-text);
-  font-family: 'Cormorant Garamond', serif; font-size: 0.98rem;
-}
-.case-out a { color: var(--accent); text-decoration: none; border-bottom: 1px dotted rgba(212,160,23,0.4); }
-.case-out a:hover { color: #F4C842; }
-.case-peek { display: flex; flex-direction: column; gap: 0.55rem; }
-.peek {
-  padding: 0.85rem 1rem;
-  border: 1px solid var(--v4-line); border-radius: 8px;
-  background: rgba(5,5,5,0.4);
-}
-.peek-h {
-  font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--v4-text); font-weight: 700; margin-bottom: 0.4rem;
-}
-.peek-out { font-size: 0.84rem; color: var(--v4-soft); line-height: 1.5; }
-.case-more {
-  font-size: 0.82rem; color: var(--v4-mute); line-height: 1.5; margin: 0;
-  padding: 0.7rem 0.9rem; border-left: 2px solid var(--v4-line-strong);
-  font-style: italic;
-}
-
-/* ─── FAQ ───────────────────────────────────────────────── */
-.faq { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-@media (max-width: 760px) { .faq { grid-template-columns: 1fr; } }
-.faq details {
-  padding: 1.2rem 1.4rem; border: 1px solid var(--v4-line); border-radius: 10px;
-  background: rgba(255,255,255,0.012);
-  transition: border-color 0.18s;
-}
-.faq details[open] { border-color: var(--v4-line-strong); }
-.faq summary {
-  cursor: pointer; font-weight: 600; color: var(--v4-text);
-  font-size: 1rem; list-style: none; position: relative; padding-right: 1.8rem;
-}
-.faq summary::-webkit-details-marker { display: none; }
-.faq summary::after {
-  content: '+'; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
-  color: var(--v4-mute); font-weight: 400; font-size: 1.4rem; line-height: 1;
-  transition: transform 0.2s, color 0.2s;
-}
-.faq details[open] summary::after { content: '–'; color: var(--accent); }
-.faq details p {
-  margin: 0.9rem 0 0; color: var(--v4-soft); font-size: 0.92rem; line-height: 1.6;
-}
-
-/* ─── Final CTA ─────────────────────────────────────────── */
-.v4-final { padding: 7rem 2rem 8rem; text-align: center; border-bottom: 0; }
-.v4-final .v4-h2 { max-width: 760px; margin: 0 auto 1.2rem; }
-.v4-final .v4-final-sub {
-  max-width: 620px; margin: 0 auto 2.4rem;
-  font-size: 1.02rem; color: var(--v4-soft); line-height: 1.6;
-}
-.v4-final .v4-actions { justify-content: center; margin-bottom: 0; }
-.v4-final-line {
-  margin-top: 2rem; font-size: 0.82rem; color: var(--v4-mute); letter-spacing: 0.04em;
-}
-.v4-final-line a { color: var(--accent); text-decoration: none; border-bottom: 1px dotted rgba(212,160,23,0.4); }
-.v4-final-line a:hover { color: #F4C842; }
-
-/* ─── Footer hook (site-pages.css provides actual footer) ─ */
-footer { background: #050505 !important; border-top: 1px solid var(--v4-line); }
-.footer-brand { background: none !important; -webkit-text-fill-color: var(--v4-text) !important; color: var(--v4-text) !important; }
-</style>
-    <meta name="theme-color" content="#080808">
-    <meta name="color-scheme" content="dark">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="LoopWorker">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23080808' width='100' height='100'/><text x='50' y='65' font-size='52' text-anchor='middle' fill='%23D4A017'>◉</text></svg>">
-    <link rel="dns-prefetch" href="https://buy.stripe.com">
-    <link rel="preconnect" href="https://plausible.io">
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What does LoopWorker do?", "acceptedAnswer": { "@type": "Answer", "text": "LoopWorker pulls live market signals into clear visibility systems so businesses can see what is happening inside a category before they spend on execution." } },
+      { "@type": "Question", "name": "What is The Sprint?", "acceptedAnswer": { "@type": "Answer", "text": "The Sprint is a focused market intelligence round that maps category signals, buyer language, competitor movement, proof gaps, pricing pressure, and channel behavior into a ranked next-move sheet." } },
+      { "@type": "Question", "name": "Why does evidence come before execution?", "acceptedAnswer": { "@type": "Answer", "text": "Execution gets stronger when the market signals are visible first. The Sprint shows the opportunity, hesitation, and proof gaps before positioning, visual, website, or channel work moves forward." } }
+    ]
+  }
+  </script>
 </head>
 <body>
-    <a href="#main" class="skip-link">Skip to content</a>
-<nav>
-  <div class="nav-inner">
-    <a href="/" class="nav-logo">LoopWorker</a>
-    <ul class="nav-links">
-      <li><a href="/" data-track="Nav Home">Sprints</a></li>
-      <li><a href="/pricing.html" data-track="Nav Pricing">Pricing</a></li>
-      <li><a href="/visuals.html" data-track="Nav Visuals">Visuals</a></li>
-      <li><a href="/case-studies.html" data-track="Nav Case Studies">Case Studies</a></li>
-      <li><a href="/book.html" class="nav-cta" data-track="Nav Book CTA">Book a Call</a></li>
-    </ul>
-    <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
-<div class="mobile-nav" id="mobileNav">
-  <a href="/">Sprints</a>
-  <a href="/pricing.html">Pricing</a>
-  <a href="/visuals.html">Visuals</a>
-  <a href="/case-studies.html">Case Studies</a>
-  <a href="/book.html" class="nav-cta">Book a Call</a>
-</div>
+  <a href="#main" class="skip-link">Skip to content</a>
 
-<main id="main">
-
-  <!-- ─── 1. HERO ────────────────────────────────────────────── -->
-  <section class="v4-hero">
-    <div class="v4-shell">
-      <div class="v4-hero-grid">
-        <div class="v4-hero-copy">
-          <span class="v4-eyebrow">◆ Private market intelligence</span>
-          <h1 class="v4-h1">Make the next choice with <em>data behind it.</em></h1>
-          <p class="v4-sub">Clarity before you ship. Pricing, positioning, proof, offer, CTA, visuals, channel. Whatever choice is next, you get the evidence behind it and a recommendation you can defend.</p>
-          <div class="v4-actions">
-            <a href="/book.html" class="v4-btn v4-btn-primary" data-track="Sprint Hero Book">Book a Call</a>
-            <a href="#pricing" class="v4-btn v4-btn-secondary" data-track="Sprint Hero Pricing">View pricing</a>
-          </div>
-          <p class="v4-hero-snap"><a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" data-track="Sprint Hero Snapshot">Or test the waters · Sprint 1 · $750 →</a></p>
-        </div>
-
-        <div class="v4-hero-proof" aria-label="Example decision brief">
-          <div class="signal-console">
-            <div class="console-topline">
-              <div class="console-title">Decision Brief · Before it ships</div>
-              <div class="console-pill">Choice Sheet</div>
-            </div>
-            <div class="signal-stream">
-              <div class="signal-row">
-                <div class="signal-source"><strong>Choice</strong>What gets shipped next</div>
-                <div class="signal-finding">Which price, positioning angle, proof layer, visual system, CTA, offer, or channel gets shipped next.</div>
-              </div>
-              <div class="signal-row">
-                <div class="signal-source"><strong>Evidence</strong>Public market signals</div>
-                <div class="signal-finding">Competitor behavior, customer language, search demand, ad patterns, pricing pages, proof gaps, and channel fit.</div>
-              </div>
-              <div class="signal-row">
-                <div class="signal-source"><strong>Output</strong>Recommendation with receipts</div>
-                <div class="signal-finding">What to do, why it is defensible, and what to ship first.</div>
-              </div>
-            </div>
-            <div class="console-decision">
-              <div class="decision-label">Tailored to what you are building</div>
-              <p>Not a report. A pressure-tested choice sheet built around the exact question your business needs answered next.</p>
-            </div>
-          </div>
-        </div>
+  <nav class="v5-nav">
+    <div class="v5-nav-inner">
+      <a href="/" class="v5-logo">
+        <span class="v5-logo-mark">L</span>
+        LoopWorker
+      </a>
+      <div class="v5-nav-links">
+        <a href="/sprint.html" class="active">Sprints</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/case-studies.html">Customers</a>
+        <a href="/blog/">Signals</a>
+        <a href="/about.html">About</a>
+        <a href="/book.html" class="v5-nav-cta" data-track="Nav Book CTA">Book a Call</a>
       </div>
+      <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </section>
-
-  <!-- ─── 2. THREE SIGNALS · ONE MEANING · ONE DECISION ─────── -->
-  <section class="v4-section">
-    <div class="v4-shell">
-      <div class="v4-section-intro">
-        <span class="v4-section-eyebrow">◆ How a Sprint works</span>
-        <h2 class="v4-h2">Three signals. One meaning. <em>One decision.</em></h2>
-        <p class="v4-section-sub">Public market data turned into a working view of what is happening, what matters, and what should ship first.</p>
-      </div>
-      <div class="v4-process-grid">
-        <div class="v4-process-card">
-          <div class="v4-process-num">01 · Signals</div>
-          <div class="v4-process-title">We gather the receipts.</div>
-          <div class="v4-process-body">Ads, reviews, pricing, search demand, proof gaps, competitor pages, comments, and channel clues.</div>
-        </div>
-        <div class="v4-process-card">
-          <div class="v4-process-num">02 · Meaning</div>
-          <div class="v4-process-title">We turn clues into reasons.</div>
-          <div class="v4-process-body">Which buyer pain is repeated, which price has room, which visual direction fits, which hooks are working, and where demand is leaking.</div>
-        </div>
-        <div class="v4-process-card">
-          <div class="v4-process-num">03 · Decision</div>
-          <div class="v4-process-title">We hand back clarity.</div>
-          <div class="v4-process-body">Your next choices have data behind them before they ship.</div>
-        </div>
-      </div>
+    <div class="v5-mobile-nav" id="mobileNav">
+      <a href="/sprint.html">Sprints</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/case-studies.html">Customers</a>
+      <a href="/blog/">Signals</a>
+      <a href="/about.html">About</a>
+      <a href="/book.html" class="v5-nav-cta">Book a Call</a>
     </div>
-  </section>
+  </nav>
 
-  <!-- ─── 3. SAMPLE BRIEF · SWIPE DECK ──────────────────────── -->
-  <section class="v4-section" id="sample">
-    <div class="v4-shell">
-      <div class="v4-section-intro">
-        <span class="v4-section-eyebrow">◆ Sample engagement · Anonymized</span>
-        <h2 class="v4-h2">The brief, end to end. <em>One founder. Six evidence blocks.</em></h2>
-        <p class="v4-section-sub">Six blocks: competitor wall, complaint cluster, proof rhythm, pricing band, channel map, action sheet. Same shape every Sprint 3. Different answers per business.</p>
-        <div class="brief-meta">
-          <span>Founder · anonymized case study</span>
-          <span>Local family-event business</span>
-          <span>Founder-led delivery</span>
-          <span>Sprint 3 · 10 days</span>
-          <span><a href="/case-studies/bay-area-events-brand.html">Full case study →</a></span>
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="v5-hero">
+      <div class="v5-hero-inner centered">
+        <div class="v5-chip">
+          <span class="v5-chip-dot"></span>
+          <span>Founder-led · Alex Lamb</span>
+          <span class="v5-chip-divider"></span>
+          <span>14-day refund</span>
         </div>
-        <p class="brief-swipe-hint">Swipe through this tailored brief →</p>
+        <h1>Signal intelligence <span class="grad-text">before execution.</span></h1>
+        <p class="v5-hero-sub">The Sprint is a founder-led market intelligence round. Public signals — competitor ads, review fragments, search demand, pricing pages, customer language — pulled, ranked, and delivered as a PDF brief that says what to ship, hold, or kill.</p>
+        <div class="v5-cta-row">
+          <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="v5-btn v5-btn-primary" data-track="Sprint Hero Atlas">Begin Atlas <span class="meta">· $8,000 · 10d</span></a>
+          <a href="/book.html" class="v5-btn v5-btn-ghost" data-track="Sprint Hero Book">Book a free 30-min review</a>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="brief-deck-wrap">
-      <div class="brief-deck" id="briefDeck">
-
-        <!-- a. ad vault -->
-        <div class="brief-block">
-          <p class="brief-block-num">01 / 06</p>
-          <h3 class="h-sub">The wall they're running against.</h3>
-          <div class="bb-finding">
-            <p class="bb-finding-tag">★ The four ads they've already paid to validate</p>
-            <p class="bb-finding-text">Four hooks running 90+ days each. They've burned the test budget for you. <strong>Don't try to outsmart them. outflank them.</strong></p>
-            <p class="bb-finding-stat">12 ads · 4 platforms · est. $90K combined spend · public ad library</p>
-          </div>
-          <p>Twelve competitor ads pulled from public libraries, ranked by days running. Hooks paraphrased from the actual creative.</p>
-          <div class="advault">
-            <div class="adv-row is-star"><span class="adv-star">★</span><span class="adv-hook">"The party your kid will still talk about in 6 months."</span><span class="adv-platform">META</span><span class="adv-days">147d</span></div>
-            <div class="adv-row is-star"><span class="adv-star">★</span><span class="adv-hook">Founder POV · "How we keep 12 kids busy for 90 minutes."</span><span class="adv-platform">TIKTOK</span><span class="adv-days">118d</span></div>
-            <div class="adv-row is-star"><span class="adv-star">★</span><span class="adv-hook">"Booked solid for spring. here's why."</span><span class="adv-platform">META</span><span class="adv-days">102d</span></div>
-            <div class="adv-row is-star"><span class="adv-star">★</span><span class="adv-hook">Mom testimonial cuts · 5 voices · "worth every dollar."</span><span class="adv-platform">YOUTUBE</span><span class="adv-days">94d</span></div>
-            <div class="adv-row"><span class="adv-star">·</span><span class="adv-hook">"What every shy kid does in the first 5 seconds."</span><span class="adv-platform">META</span><span class="adv-days">61d</span></div>
-            <div class="adv-row"><span class="adv-star">·</span><span class="adv-hook">Day-in-the-life · Bay Area dad-entertainer rig.</span><span class="adv-platform">TIKTOK</span><span class="adv-days">58d</span></div>
-            <div class="adv-row"><span class="adv-star">·</span><span class="adv-hook">"Here's why we stopped doing magic shows."</span><span class="adv-platform">META</span><span class="adv-days">44d</span></div>
-            <div class="adv-row"><span class="adv-star">·</span><span class="adv-hook">6-min behind-the-scenes setup teardown.</span><span class="adv-platform">YOUTUBE</span><span class="adv-days">37d</span></div>
-            <div class="adv-row"><span class="adv-star">·</span><span class="adv-hook">"Corporate pop-up · the calmer kid-zone."</span><span class="adv-platform">META</span><span class="adv-days">22d</span></div>
-            <div class="adv-row"><span class="adv-star">·</span><span class="adv-hook">Twin-birthday testimonial · "no setup chaos."</span><span class="adv-platform">TIKTOK</span><span class="adv-days">18d</span></div>
-            <div class="adv-row"><span class="adv-star">·</span><span class="adv-hook">"Why we started saying no to bounce houses."</span><span class="adv-platform">META</span><span class="adv-days">11d</span></div>
-            <div class="adv-row"><span class="adv-star">·</span><span class="adv-hook">Founder origin · "I built this for my own kid."</span><span class="adv-platform">YOUTUBE</span><span class="adv-days">6d</span></div>
-          </div>
-          <p class="bb-rec"><b>→ Recommendation</b><span>Copy the four 90-day winners. Skip the angles they killed at 30 days. Don't burn budget on tests they've already run.</span></p>
-          <p class="bb-source">Source · Meta Ad Library + TikTok Top Ads + YouTube transparency · pulled at engagement start</p>
+    <!-- WHAT GETS PULLED -->
+    <section class="v5-section">
+      <div class="v5-section-inner">
+        <div class="v5-section-intro">
+          <span class="v5-eyebrow">What gets pulled</span>
+          <h2>Seven public signals. <span class="grad-text">Already there.</span></h2>
+          <p class="v5-section-sub">The market is broadcasting. We don't run surveys, focus groups, or expert calls. Everything is observable.</p>
         </div>
 
-        <!-- b. complaints -->
-        <div class="brief-block">
-          <p class="brief-block-num">02 / 06</p>
-          <h3 class="h-sub">What parents complain about. verbatim.</h3>
-          <div class="bb-finding">
-            <p class="bb-finding-tag">★ The complaint nobody in the category solves</p>
-            <p class="bb-finding-text">"Loud, chaotic, my anxious kid hated it." <strong>147 mentions in 60 days.</strong> Whoever ships the calm version owns the lane.</p>
-            <p class="bb-finding-stat">1,247 reviews scraped · 4 platforms · 60-day window · top complaint = 11.8% of all comments</p>
+        <div class="v5-signal-grid">
+          <div class="v5-signal">
+            <div class="v5-signal-icon">01</div>
+            <h4>Competitor reconstruction</h4>
+            <p>5–7 direct + adjacent competitors. Positioning, pricing, proof, channel cadence, hiring signals.</p>
           </div>
-          <p>Frequency-ranked complaint cluster across category. Verbatim quotes attached. The top one is the buyer language the founder writes back into copy and the offer.</p>
-          <div class="complaints">
-            <div class="complaint is-top">
-              <p class="complaint-quote">"Loud, chaotic, my anxious kid hated it. Wish there was a calmer option."</p>
-              <span class="complaint-tag">147× ↑</span>
-            </div>
-            <div class="complaint">
-              <p class="complaint-quote">"Setup took 45 minutes and ate half the party."</p>
-              <span class="complaint-tag">94×</span>
-            </div>
-            <div class="complaint">
-              <p class="complaint-quote">"They showed up late and the kids were already restless."</p>
-              <span class="complaint-tag">71×</span>
-            </div>
-            <div class="complaint">
-              <p class="complaint-quote">"Same act we've seen at 4 other parties this year."</p>
-              <span class="complaint-tag">62×</span>
-            </div>
-            <div class="complaint">
-              <p class="complaint-quote">"Shy kids got nothing. performer ignored them."</p>
-              <span class="complaint-tag">48×</span>
-            </div>
+          <div class="v5-signal">
+            <div class="v5-signal-icon">02</div>
+            <h4>Customer language clusters</h4>
+            <p>Review fragments, support tickets, social mentions. Ranked by frequency. Verbatim quotes.</p>
           </div>
-          <p class="bb-rec"><b>→ Recommendation</b><span>Lead the offer with "calm + setup-time guarantee." Buyer language goes straight into hero copy, ad headlines, and the booking form. <strong>Same words. No invention.</strong></span></p>
-          <p class="bb-source">Source · Yelp + Google + Reddit + Nextdoor · 60-day rolling window · 1,247 reviews coded</p>
+          <div class="v5-signal">
+            <div class="v5-signal-icon">03</div>
+            <h4>Search demand</h4>
+            <p>Buyer-language keywords + intent classification. What's growing, what's saturated, what's still open.</p>
+          </div>
+          <div class="v5-signal">
+            <div class="v5-signal-icon">04</div>
+            <h4>Pricing position</h4>
+            <p>Tear-down of every comparable pricing page. Tiers, anchors, social proof placement, hidden friction.</p>
+          </div>
+          <div class="v5-signal">
+            <div class="v5-signal-icon">05</div>
+            <h4>Proof gaps</h4>
+            <p>Where your category's buyers want belief. Testimonials, case studies, founder visibility, team faces.</p>
+          </div>
+          <div class="v5-signal">
+            <div class="v5-signal-icon">06</div>
+            <h4>Channel + authority map</h4>
+            <p>Where competitors actually show up. Outlets, partnerships, content cadence, paid spend pattern.</p>
+          </div>
+          <div class="v5-signal">
+            <div class="v5-signal-icon">07</div>
+            <h4>Ranked action sheet</h4>
+            <p>Every brief ends here. Dated, owner-named, ranked by impact. Evidence cited beside every line.</p>
+          </div>
+          <div class="v5-signal v5-signal-accent">
+            <div class="v5-signal-icon">+</div>
+            <h4>The verdict</h4>
+            <p>One paragraph at the top. The call you came for. Defensible against the loudest opinion in your room.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="v5-section v5-section-tight">
+      <div class="v5-section-inner">
+        <div class="v5-section-intro">
+          <span class="v5-eyebrow">How a Sprint runs</span>
+          <h2>Three steps. <span class="grad-text">One brief.</span></h2>
+        </div>
+        <div class="v5-process">
+          <div class="v5-step">
+            <div class="v5-step-icon">01</div>
+            <h4>Pull</h4>
+            <p>Kickoff call frames the decision. Then 48 hours to 10 days of signal harvesting depending on tier. No client time required.</p>
+          </div>
+          <div class="v5-step">
+            <div class="v5-step-icon">02</div>
+            <h4>Map</h4>
+            <p>Rank patterns by frequency + impact. Cross-reference signals against each other. Find what's missing as much as what's present.</p>
+          </div>
+          <div class="v5-step">
+            <div class="v5-step-icon">03</div>
+            <h4>Decide</h4>
+            <p>PDF brief delivered. Verdict on top, ranked actions below, evidence beside every line. 30-min walkthrough call on delivery (Atlas + OS).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE 4 TIERS DEEP -->
+    <section class="v5-section">
+      <div class="v5-section-inner">
+        <div class="v5-section-intro">
+          <span class="v5-eyebrow">Pick the depth</span>
+          <h2>Four tiers. <span class="grad-text">One method.</span></h2>
+          <p class="v5-section-sub">Same signal-pulling discipline. Different scope. Pick by the decision on your desk.</p>
         </div>
 
-        <!-- c. cadence -->
-        <div class="brief-block">
-          <p class="brief-block-num">03 / 06</p>
-          <h3 class="h-sub">Their channel rhythm.</h3>
-          <div class="bb-finding">
-            <p class="bb-finding-tag">★ Tuesday + Saturday carry the week</p>
-            <p class="bb-finding-text">12 posts in 28 days. Two days do 64% of total reach. <strong>Half the calendar is empty.</strong></p>
-            <p class="bb-finding-stat">28-day window · 12 posts · 4 reused hooks · 2:1 carousel-to-reel ratio</p>
+        <!-- SURFACE -->
+        <div class="v5-deep-tier" id="surface">
+          <div class="v5-deep-tier-head">
+            <span class="tier-tag">Surface</span>
+            <h2>Surface scan</h2>
+            <span class="price">$750<small>· 48h</small></span>
+            <a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" class="v5-btn v5-btn-ghost v5-mt-md" data-track="Sprint Deep Surface">Begin Surface →</a>
           </div>
-          <p>Organic post calendar mapped against engagement. Hooks they keep reusing:</p>
-          <div class="cadence-row">
-            <div class="cal" aria-hidden="true">
-              <div class="cal-head">M</div><div class="cal-head">T</div><div class="cal-head">W</div><div class="cal-head">T</div><div class="cal-head">F</div><div class="cal-head">S</div><div class="cal-head">S</div>
-              <div class="cal-cell">1</div><div class="cal-cell is-post">2</div><div class="cal-cell">3</div><div class="cal-cell is-post">4</div><div class="cal-cell">5</div><div class="cal-cell is-post">6</div><div class="cal-cell">7</div>
-              <div class="cal-cell">8</div><div class="cal-cell is-post">9</div><div class="cal-cell is-post">10</div><div class="cal-cell">11</div><div class="cal-cell is-post">12</div><div class="cal-cell is-post">13</div><div class="cal-cell">14</div>
-              <div class="cal-cell">15</div><div class="cal-cell is-post">16</div><div class="cal-cell">17</div><div class="cal-cell is-post">18</div><div class="cal-cell">19</div><div class="cal-cell is-post">20</div><div class="cal-cell">21</div>
-              <div class="cal-cell">22</div><div class="cal-cell is-post">23</div><div class="cal-cell is-post">24</div><div class="cal-cell">25</div><div class="cal-cell">26</div><div class="cal-cell is-post">27</div><div class="cal-cell">28</div>
-            </div>
-            <ul class="hooks-list">
-              <li>"Can your favorite bounce house do THIS?"</li>
-              <li>"What every shy kid does in the first 5 seconds."</li>
-              <li>"The 9pm bubble reset (parents, save this)."</li>
-              <li>"Corporate pop-up · same kit, no kids."</li>
+          <div class="v5-deep-tier-body">
+            <span class="for-tag">For: testing the method · low commitment</span>
+            <p>Gateway sprint. One public signal pulled deep. We answer one focused question with a ranked recommendation. Refund if you can't act on it.</p>
+            <ul>
+              <li>One signal pulled deep (web, social, reviews, pricing, or search)</li>
+              <li>3 next-move recommendations ranked by impact</li>
+              <li>PDF brief delivered in 48 hours</li>
+              <li>Refund if not actionable</li>
             </ul>
+            <p class="v5-tier-note">Most buyers run Surface once to feel the work, then come back for Atlas when a bigger decision lands.</p>
           </div>
-          <p class="bb-rec"><b>→ Recommendation</b><span>Anchor your week on Tuesday + Sunday 6–8pm. Carousel beats single-image 2.4× in this lane. Drop the studio-still format entirely.</span></p>
-          <p class="bb-source">Source · 28-day Apify scrape across 4 competitor accounts · engagement weighted by reach + saves</p>
         </div>
 
-        <!-- d. pricing -->
-        <div class="brief-block">
-          <p class="brief-block-num">04 / 06</p>
-          <h3 class="h-sub">Where the offer sits on the shelf.</h3>
-          <div class="bb-finding">
-            <p class="bb-finding-tag">★ Defensible band. $525, premium-feel without the wait list</p>
-            <p class="bb-finding-text">Above the commodity floor, below the prestige tier. <strong>$20 lift in Y2 once 25 named testimonials land.</strong></p>
-            <p class="bb-finding-stat">5 competitor pricing pages · party-package rate · live anchors · re-checked monthly</p>
+        <!-- COMPASS -->
+        <div class="v5-deep-tier" id="compass">
+          <div class="v5-deep-tier-head">
+            <span class="tier-tag">Compass</span>
+            <h2>Direction set</h2>
+            <span class="price">$3,200<small>· 5d</small></span>
+            <a href="https://buy.stripe.com/28E28q52nahp3pg6VmcEw0I" class="v5-btn v5-btn-ghost v5-mt-md" data-track="Sprint Deep Compass">Begin Compass →</a>
           </div>
-          <p>Live competitor pricing ladder. Slot starred is where the offer sits.</p>
-          <div class="pricing-chart">
-            <div class="pc-row">
-              <div class="pc-label">Magic Mike Co.</div>
-              <div class="pc-bar"><span style="width:96%"></span></div>
-              <div class="pc-price">$1,200</div>
-            </div>
-            <div class="pc-row">
-              <div class="pc-label">Bounce House Pro</div>
-              <div class="pc-bar"><span style="width:62%"></span></div>
-              <div class="pc-price">$680</div>
-            </div>
-            <div class="pc-row is-them">
-              <div class="pc-label">★ Client</div>
-              <div class="pc-bar"><span style="width:48%"></span></div>
-              <div class="pc-price">$525</div>
-            </div>
-            <div class="pc-row">
-              <div class="pc-label">Balloon Twist Co.</div>
-              <div class="pc-bar"><span style="width:34%"></span></div>
-              <div class="pc-price">$380</div>
-            </div>
-            <div class="pc-row">
-              <div class="pc-label">Generic Mascot</div>
-              <div class="pc-bar"><span style="width:18%"></span></div>
-              <div class="pc-price">$200</div>
-            </div>
+          <div class="v5-deep-tier-body">
+            <span class="for-tag">For: one narrow question · single-decision focus</span>
+            <p>Focused research round. We answer one strategic question — pricing, positioning, channel, proof gap, conversion — with 2-3 signals cross-referenced behind it.</p>
+            <ul>
+              <li>Competitive read on your category</li>
+              <li>Strategic answer to one focused question</li>
+              <li>2-3 signals cross-referenced</li>
+              <li>Ranked action sheet</li>
+              <li>PDF brief delivered in 5 days</li>
+            </ul>
+            <p class="v5-tier-note">Most clients sized at this level upgrade to Atlas when they realize the question has more pieces than they thought.</p>
           </div>
-          <p class="bb-rec"><b>→ Recommendation</b><span>Hold $525 through Y1. Bump to $599 the day testimonial #25 ships. Don't drop below $480 even for slow weeks. the floor is the brand.</span></p>
-          <p class="bb-source">Source · 5 live competitor pricing pages · last checked 7 days ago · re-pulled monthly</p>
         </div>
 
-        <!-- e. authority channels -->
-        <div class="brief-block">
-          <p class="brief-block-num">05 / 06</p>
-          <h3 class="h-sub">Where the founder should show up.</h3>
-          <div class="bb-finding">
-            <p class="bb-finding-tag">★ Three openings within 90 days. pitch this month or wait six</p>
-            <p class="bb-finding-text">Two podcasts and a category newsletter book founders at this stage. <strong>Producer emails on file.</strong></p>
-            <p class="bb-finding-stat">5 channels mapped · 3 with confirmed openings · combined warm reach 60K+</p>
+        <!-- ATLAS · ANCHOR -->
+        <div class="v5-deep-tier anchor" id="atlas">
+          <div class="v5-deep-tier-head">
+            <span class="tier-tag">Atlas · ★ Most chosen · 70%</span>
+            <h2>Full territory map</h2>
+            <span class="price">$8,000<small>· 10d</small></span>
+            <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="v5-btn v5-btn-primary v5-mt-md" data-track="Sprint Deep Atlas">Begin Atlas →</a>
           </div>
-          <p>Off-platform attention map. Highest-fit channels for the founder. the audiences that actually book.</p>
-          <div class="channels">
-            <div class="ch-row">
-              <div class="ch-name">Bay Area Mom Collective podcast</div>
-              <div class="ch-detail">10K+ episode avg · books warm via DM · two openings this quarter</div>
-              <div class="ch-fit is-high">High fit</div>
-            </div>
-            <div class="ch-row">
-              <div class="ch-name">Red Tricycle local newsletter</div>
-              <div class="ch-detail">38K Bay Area family subscribers · sponsored slot · turnaround 2 wk</div>
-              <div class="ch-fit is-high">High fit</div>
-            </div>
-            <div class="ch-row">
-              <div class="ch-name">School-district family newsletters</div>
-              <div class="ch-detail">7 districts identified · PTAs contacted · 3 confirmed interested</div>
-              <div class="ch-fit is-high">High fit</div>
-            </div>
-            <div class="ch-row">
-              <div class="ch-name">Corporate wellness coordinators</div>
-              <div class="ch-detail">22 companies mapped · LinkedIn warm · Q3 booking window open</div>
-              <div class="ch-fit is-mid">Mid fit</div>
-            </div>
-            <div class="ch-row">
-              <div class="ch-name">Therapy-dad creator network</div>
-              <div class="ch-detail">Founder's own narrative angle · 4 collab targets identified</div>
-              <div class="ch-fit is-mid">Mid fit</div>
-            </div>
+          <div class="v5-deep-tier-body">
+            <span class="for-tag">For: real decisions · $50K+ spend gates · default tier</span>
+            <p>The standard brief. Connected market intelligence for a real decision on the table. Default tier for SaaS, DTC, services, and founder-led brands.</p>
+            <ul>
+              <li>Competitor analysis · 5–7 direct + adjacent</li>
+              <li>Customer language clusters (verbatim, ranked)</li>
+              <li>Pricing tear-down + positioning band</li>
+              <li>Channel + authority gap map</li>
+              <li>3 outlets dialed for your niche</li>
+              <li>Ranked, dated action sheet w/ owners</li>
+              <li>30-min walkthrough call on delivery</li>
+              <li>PDF + editable doc</li>
+            </ul>
+            <p class="v5-tier-note">If you're spending $50K+ on a launch, rebuild, or campaign — Atlas is the cheapest insurance policy you'll buy.</p>
           </div>
-          <p class="bb-rec"><b>→ Recommendation</b><span>Pitch the two podcasts + the newsletter this month. Producer emails attached. The school-district + corporate angles are Q3. line up assets now, send in 8 weeks.</span></p>
-          <p class="bb-source">Source · podcast charts + newsletter sponsorship indices + LinkedIn coordinator list · all confirmed live as of engagement start</p>
         </div>
 
-        <!-- f. action layer -->
-        <div class="brief-block">
-          <p class="brief-block-num">06 / 06</p>
-          <h3 class="h-sub">What the research becomes.</h3>
-          <div class="bb-finding">
-            <p class="bb-finding-tag">★ Six moves. Dated. Quantified. Monday-morning ready.</p>
-            <p class="bb-finding-text">The five intelligence blocks collapse into <strong>one short action sheet.</strong> Pricing, proof, outreach, cadence, offer, CTA. each with a specific move, not a category.</p>
-            <p class="bb-finding-stat">Same shape every engagement · different answers per business · ranked by 30-day lift</p>
+        <!-- OPERATING SYSTEM -->
+        <div class="v5-deep-tier" id="operating-system">
+          <div class="v5-deep-tier-head">
+            <span class="tier-tag">Operating System</span>
+            <h2>Company-level bet</h2>
+            <span class="price">$25,000<small>· 14d + 3mo</small></span>
+            <a href="https://buy.stripe.com/28E14m52n9dlgc2gvWcEw0G" class="v5-btn v5-btn-ghost v5-mt-md" data-track="Sprint Deep OS">Begin OS →</a>
           </div>
-          <ul class="action-list">
-            <li><span class="act-tag">PRICING</span><span class="act-text">Anchor party-package at <b>$525</b>. Y2 lift to $640 once 25 testimonials land. Keep entry tier under $400 to capture school-PTA budgets.</span></li>
-            <li><span class="act-tag">PROOF</span><span class="act-text">Three proof assets to ship next week. setup clarity, first-five-seconds behavior, and corporate-fit evidence. Hook, shot logic, and caption format specified.</span></li>
-            <li><span class="act-tag">OUTREACH</span><span class="act-text">Next ten warm targets. names, channel, opening line. Five Bay Area moms, three school-district directors, two corporate-wellness coordinators. Pitch this month or wait six.</span></li>
-            <li><span class="act-tag">CADENCE</span><span class="act-text">Best post days = <b>Tue + Sun 6–8pm</b>. Carousel beats single image 2.4× in his lane. Drop the studio-still format entirely.</span></li>
-            <li><span class="act-tag">OFFER</span><span class="act-text">Lead with <i>setup-time guarantee</i>. Top complaint = "took 45 minutes." Owning that phrase pulls a measurable share from the four starred competitors.</span></li>
-            <li><span class="act-tag">CTA</span><span class="act-text">Replace the "Contact" CTA with a <b>same-day quote form</b>. Three fields. Pricing band visible. Removes the 3-click pricing leak from the audit.</span></li>
-          </ul>
-          <p class="bb-source">Source · synthesized from blocks 01–05 · ranked by predicted 30-day lift · dates assigned to founder calendar</p>
+          <div class="v5-deep-tier-body">
+            <span class="for-tag">For: launches · repositioning · pitch decks · 12-month bets</span>
+            <p>Operating System is for the decisions worth the next 12 months. Launches, repositioning, pitch decks, pricing architecture rewrites. Everything in Atlas plus modeled strategic options, 90-day execution roadmap, and three months of post-Sprint support.</p>
+            <ul>
+              <li>Everything in Atlas</li>
+              <li>Deep dive + positioning architecture</li>
+              <li>Two strategic options modeled with trade-offs</li>
+              <li>90-day social + content roadmap</li>
+              <li>Execution playbook with owners and dates</li>
+              <li>Pitch-ready slide pack</li>
+              <li>3 months of execution support (Slack + monthly check-ins)</li>
+            </ul>
+            <p class="v5-tier-note">Run OS before a raise, a rebrand, an enterprise pivot, or a category move that has to land.</p>
+          </div>
         </div>
 
-      </div><!-- /.brief-deck -->
-      <div class="brief-dots" id="briefDots">
-        <button class="brief-dot is-active" data-i="0" aria-label="Block 1"></button>
-        <button class="brief-dot" data-i="1" aria-label="Block 2"></button>
-        <button class="brief-dot" data-i="2" aria-label="Block 3"></button>
-        <button class="brief-dot" data-i="3" aria-label="Block 4"></button>
-        <button class="brief-dot" data-i="4" aria-label="Block 5"></button>
-        <button class="brief-dot" data-i="5" aria-label="Block 6"></button>
       </div>
-    </div><!-- /.brief-deck-wrap -->
+    </section>
 
-    <div class="v4-shell">
-      <div class="pull-quote">
-        <p>One engagement. Yours is built around the exact question your business needs answered next. Action sheet in your language, dated, ranked, ready to ship.</p>
+    <!-- SAMPLE BRIEF -->
+    <section class="v5-section v5-section-tight">
+      <div class="v5-callout">
+        <span class="v5-eyebrow">Wondering what you get back</span>
+        <h2>Read an anonymized <span class="grad-text">Atlas brief.</span></h2>
+        <p>Full structure, real depth, names stripped. 4-minute read. Decide if this is the kind of artifact you want on your desk before the next $50K spend.</p>
+        <a href="/sample-brief.html" class="v5-btn v5-btn-primary" data-track="Sprint Sample Brief">Read the sample brief →</a>
       </div>
+    </section>
 
-      <div class="decision-strip" aria-label="Sprint outcome">
-        <div class="decision-box">
-          <b>Before</b>
-          <p>The founder knew he had something people liked, but the category looked noisy: bigger competitors, unclear pricing, generic party-service positioning, and no obvious content lane.</p>
+    <!-- POST-SPRINT RETAINER -->
+    <section class="v5-section v5-section-tight">
+      <div class="v5-section-inner">
+        <div class="v5-section-intro">
+          <span class="v5-eyebrow">After the Sprint</span>
+          <h2>Optional <span class="grad-text">Systems Retainer.</span></h2>
+          <p class="v5-section-sub">Most Sprint clients attach a retainer once the brief lands. We turn the action sheet into shipped work.</p>
         </div>
-        <div class="decision-box">
-          <b>After</b>
-          <p>He had a market-backed lane: calmer events for anxious kids, setup-time guarantee, $525 anchor package, three reel recipes, and warm channels to pitch.</p>
+        <div class="v5-callout v5-callout-tight">
+          <span class="v5-eyebrow-plain">Systems Retainer · $4,500/mo</span>
+          <h2>Continuous shipping against the action sheet.</h2>
+          <p>Positioning rewrites, content cadence, channel build, conversion fixes, automation wiring. Founder-led, subcontracted hands. Slack channel, weekly check-in, monthly market refresh. Month-to-month.</p>
+          <a href="https://buy.stripe.com/eVqfZg7av9dl8JA1B2cEw0H" class="v5-btn v5-btn-primary" data-track="Sprint Retainer">Attach Retainer →</a>
         </div>
       </div>
+    </section>
 
-      <div class="brief-cta-row">
-        <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="v4-btn v4-btn-primary" data-track="Brief CTA Sprint 3">Begin Sprint 3 · $8,000</a>
+    <!-- FAQ -->
+    <section class="v5-section">
+      <div class="v5-section-inner">
+        <div class="v5-section-intro">
+          <span class="v5-eyebrow">How it works</span>
+          <h2>Common <span class="grad-text">questions.</span></h2>
+        </div>
+        <div class="v5-faq-list">
+          <details class="v5-faq-item">
+            <summary>How much of my time does this take?</summary>
+            <p>One 30-min kickoff call to frame the decision. One 30-min walkthrough call on delivery (Atlas + OS). Maybe one async DM if I need clarification. That's it.</p>
+          </details>
+          <details class="v5-faq-item">
+            <summary>Why no surveys or interviews?</summary>
+            <p>Surveys ask people what they think they think. The market shows you what they actually do. Public signals are higher fidelity for most strategic decisions.</p>
+          </details>
+          <details class="v5-faq-item">
+            <summary>What if my market is too niche?</summary>
+            <p>If your category has at least 3 competitors, 50+ public reviews, and any search demand, the signals are there. Niche markets often produce sharper briefs because the noise floor is lower.</p>
+          </details>
+          <details class="v5-faq-item">
+            <summary>Is this an AI tool?</summary>
+            <p>No. Founder-led. I use AI as a research aid the same way I use Google. The pattern recognition + ranking + decision call is mine.</p>
+          </details>
+          <details class="v5-faq-item">
+            <summary>What if I need a different decision answered?</summary>
+            <p>Bring it on the kickoff call. Sprints adapt. Common: pricing architecture, positioning shifts, channel selection, proof asset priority, conversion friction diagnosis, launch readiness.</p>
+          </details>
+          <details class="v5-faq-item">
+            <summary>Refund?</summary>
+            <p>14 days. If you can't act on a single line, write back. Happened once in two years.</p>
+          </details>
+        </div>
       </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="v5-closing">
+      <div class="v5-closing-grid">
+        <div class="v5-closing-main">
+          <span class="v5-eyebrow-plain">Ready when you are</span>
+          <h2>Bring the decision. We'll find the <span class="grad-text">signals.</span></h2>
+          <p>Free 30-min signal review. We talk through the decision you need answered and pick the smallest Sprint that can answer it well.</p>
+          <div class="v5-cta-row">
+            <a href="/book.html" class="v5-btn v5-btn-primary" data-track="Sprint Closing Book">Book a 30-min review · Free</a>
+            <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="v5-btn v5-btn-ghost" data-track="Sprint Closing Atlas">Begin Atlas · $8,000</a>
+          </div>
+          <div class="v5-closing-note">14-day refund · happened once in 2 years · 2 active Atlas at a time</div>
+        </div>
+
+        <div class="v5-email-card">
+          <div class="v5-email-eyebrow">Want a sample first</div>
+          <h4>Read an anonymized brief.</h4>
+          <p>Full structure, real depth, names stripped. 4-minute read.</p>
+          <div class="v5-mt-sm">
+            <a href="/sample-brief.html" class="v5-btn v5-btn-ghost" data-track="Sprint Sample Brief Bottom">View sample brief →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="v5-foot">
+    <div class="v5-foot-inner">
+      <div class="v5-foot-logo">LoopWorker</div>
+      <p>Evidence before execution.</p>
+      <p>© 2026 · <a href="/sprint.html">Sprints</a> · <a href="/case-studies.html">Customers</a> · <a href="/blog/">Signals</a> · <a href="/about.html">About</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
+      <p class="v5-foot-small">alex@loopworker.com · <a href="https://instagram.com/loopworker">@loopworker</a></p>
     </div>
-  </section>
-
-  <!-- ─── 4. WHO BUILDS THESE ──────────────────────────────── -->
-  <section class="v4-section">
-    <div class="v4-shell">
-      <div class="v4-section-intro">
-        <span class="v4-section-eyebrow">◆ Who builds these</span>
-        <h2 class="v4-h2">One head. <em>Built around your business.</em></h2>
-      </div>
-      <div class="founder-note">
-        <p>I'm Alex. 17 years inside market, offer, and execution work. Paid acquisition, founder positioning, sales pages, launch plans, customer language, proof structure.</p>
-        <p>The Sprint is built from that range. Not a generic audit. I find the choice that matters next, then pull the evidence around it. If the lever is pricing, we price. If it's positioning, proof, CTA, or sales page, that's where the research goes.</p>
-        <p>Every Sprint is tailored to what you're building. Same discipline, different question. Creator reach. AI-platform positioning. Local bookings. DTC launch. Pitch-deck clarity. The frame moves with the business.</p>
-      </div>
-
-      <div class="testimonials">
-        <div class="tstm">
-          <p class="tstm-quote">"He found the pattern in my own feed I'd been missing for two years. Two reels, same outfit, 2,800× difference in plays. and an explanation."</p>
-          <p class="tstm-meta">Cosplay creator · 6.2M plays mapped · <b>Sprint 3</b></p>
-        </div>
-        <div class="tstm">
-          <p class="tstm-quote">"I expected a deck. I got a battle plan. Bookings doubled in the next month."</p>
-          <p class="tstm-meta">Bay Area founder · kids' events · <b>Sprint 2</b></p>
-        </div>
-        <div class="tstm">
-          <p class="tstm-quote">"Round 1 told us our positioning was wrong before we burned the launch budget."</p>
-          <p class="tstm-meta">AI video tooling SaaS · pre-launch · <b>Sprint 3</b></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── 5. PRICING ───────────────────────────────────────── -->
-  <section class="v4-section" id="pricing">
-    <div class="v4-shell">
-      <div class="v4-section-intro">
-        <span class="v4-section-eyebrow">◆ Pricing</span>
-        <h2 class="v4-h2">Three Sprints. <em>One decision brief.</em></h2>
-        <p class="v4-section-sub">Founder-led delivery. Pick by the size of the question. Most clients start at Sprint 3 and attach a Systems Retainer once the brief lands.</p>
-        <p class="capacity-line"><span class="cap-dot" aria-hidden="true"></span>Founder-led · 2 active Sprint 3 engagements at a time · Sprint 1 ships 48h from purchase</p>
-      </div>
-
-      <div class="v4-offer-grid">
-        <div class="v4-offer-card">
-          <span class="tier-eyebrow">Sprint 1 · Snapshot</span>
-          <div class="tier-price">$750</div>
-          <div class="tier-duration">48 hours · founder-led</div>
-          <p class="tier-desc">Gateway. One signal pulled deep (competitor wall, customer voice, pricing band, proof gap, or channel fit) and one ranked recommendation. PDF.</p>
-          <a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" class="tier-cta" data-track="Sprint Page Tier 1">Begin Sprint 1 →</a>
-        </div>
-        <div class="v4-offer-card">
-          <span class="tier-eyebrow">Sprint 2</span>
-          <div class="tier-price">$3,200</div>
-          <div class="tier-duration">5 days · founder-led</div>
-          <p class="tier-desc">One focused research round: competitor reconstruction, search demand, pricing, proof gap, or website conversion. One question, evidence behind it.</p>
-          <a href="https://buy.stripe.com/28E28q52nahp3pg6VmcEw0I" class="tier-cta" data-track="Sprint Page Tier 2">Begin Sprint 2 →</a>
-        </div>
-        <div class="v4-offer-card featured">
-          <span class="tier-eyebrow">Sprint 3</span>
-          <div class="tier-price">$8,000</div>
-          <div class="tier-duration">10 days · founder-led</div>
-          <p class="tier-desc">Competitor wall, customer-voice cluster, proof map, pricing band, channel map, and ranked action sheet. The standard connected market brief.</p>
-          <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="tier-cta" data-track="Sprint Page Tier 3">Begin Sprint 3 →</a>
-        </div>
-      </div>
-
-      <div class="retainer-strip">
-        <div class="retainer-copy">
-          <h3>Systems Retainer · $4,500/mo</h3>
-          <p>After the Sprint, attach a month-to-month execution retainer. We ship the action sheet: positioning, content cadence, channel build, conversion fixes, automation wiring. Cancel anytime.</p>
-        </div>
-        <a href="https://buy.stripe.com/eVqfZg7av9dl8JA1B2cEw0H" class="pricing-cta" data-track="Sprint Page Retainer">Attach Retainer →</a>
-      </div>
-
-      <p class="pricing-fineprint">Not sure which? <a href="/book.html" data-track="Pricing Book">Book a 15-minute signal review</a>. We'll pick the smallest Sprint that answers your question. Refund: if the brief lands and you can't act on a single line, write back within 14 days for a full refund.</p>
-    </div>
-  </section>
-
-  <!-- ─── 6. CASE STUDIES · SWIPE DECK ─────────────────────── -->
-  <section class="v4-section">
-    <div class="v4-shell">
-      <div class="v4-section-intro">
-        <span class="v4-section-eyebrow">◆ Recent engagements</span>
-        <h2 class="v4-h2">Four engagements. <em>60+ artifacts shipped.</em></h2>
-        <p class="v4-section-sub">Every brief reshapes around what the business is building. Luxury exit thesis. AI-platform launch. Creator visibility map. Local bookings. Same depth. Different question, different proof, different ship list.</p>
-        <p class="brief-swipe-hint">Swipe through the four engagements →</p>
-      </div>
-    </div>
-
-    <div class="brief-deck-wrap">
-      <div class="brief-deck" id="caseDeck">
-
-        <!-- 01 · Design-led consumer brand -->
-        <div class="brief-block case-card">
-          <div class="case-tag">01 / 04 · NDA · Design-led consumer brand · Pre-launch</div>
-          <h3 class="case-h">A founder-led brand built around <em>a defensible category of one.</em></h3>
-          <p class="case-lede">27 modules shipped · acquirer trajectory mapped to 7 comparable-exit precedents · 3 strategic-buyer archetypes named · phase-2 investor deck, premium retail rollout, and pricing architecture locked before day-1 launch.</p>
-          <p class="case-q"><b>The question:</b> What's the long-game trajectory that keeps strategic-acquirer and growth-fund conversations open from day one, and what has to be true at every milestone. pricing, channel mix, founder voice, retail footprint. to never close one accidentally?</p>
-          <div class="case-peek">
-            <div class="peek">
-              <div class="peek-h">Acquirer trajectory thesis</div>
-              <div class="peek-out">Three live strategic-buyer archetypes mapped to comparable-exit deal precedents · the bridge growth fund named · pattern-match across 7 transactions in the lane.</div>
-            </div>
-            <div class="peek">
-              <div class="peek-h">Premium retail placement plan</div>
-              <div class="peek-out">Door-by-door rollout sequence · which retailer first, which two wait nine months · merchandising spec per door · gifting motion to seed each conversation.</div>
-            </div>
-            <div class="peek">
-              <div class="peek-h">Phase 2 investor deck</div>
-              <div class="peek-out">Structured for the next round · numbers, lane, comp set, narrative arc · founder voice locked · ready to send the moment the launch traction confirms.</div>
-            </div>
-          </div>
-          <p class="case-more">+ 24 more modules. pricing architecture, premium ICP definition, strategic-partner shortlist, corporate gifting, influencer slate, naming + messaging, trajectory roadmap, founder guardrails, market-capture vs. waiting plan, visual system, brand teardowns, executive summary…</p>
-          <p class="case-out"><b>Outcome:</b> Brand entered launch with the exit lane already mapped, three buyer-archetypes already pattern-matched to live precedents, and the next-round deck ready. <i>Foundation sprint converted into ongoing launch advisory.</i></p>
-        </div>
-
-        <!-- 02 · AI video platform -->
-        <div class="brief-block case-card">
-          <div class="case-tag">02 / 04 · NDA · AI video production platform · 2-person team</div>
-          <h3 class="case-h">Launch infrastructure for a 2-person team entering <em>a crowded incumbent category.</em></h3>
-          <p class="case-lede">10+ launch artifacts shipped · 4-tier hybrid pricing model · 20-prompt public Beta Pack pulling qualified ICP · day-by-day launch-week + $10K bounty + affiliate playbook · upstream model-platform integration plan.</p>
-          <p class="case-q"><b>The question:</b> How does a 2-person team launch an AI workflow tool into a category dominated by Runway, Descript, and CapCut. without burning runway on paid ads that won't survive activation, and without copying enterprise-complex pricing on day one?</p>
-          <div class="case-peek">
-            <div class="peek">
-              <div class="peek-h">Pricing Strategy v1 (hybrid)</div>
-              <div class="peek-out">Generate-tier credits as the front door · Creator / Pro / Team subscription with included usage · heavier actions metered. Defensible against incumbents without copying enterprise complexity.</div>
-            </div>
-            <div class="peek">
-              <div class="peek-h">Beta Prompt Pack (public)</div>
-              <div class="peek-out">20 production-ready prompts shipped as HTML + PDF · pulls qualified ICP into the funnel without a paid-ad burn · doubles as a credibility artifact for affiliate outreach.</div>
-            </div>
-            <div class="peek">
-              <div class="peek-h">Launch-week playbook</div>
-              <div class="peek-out">Day-by-day script for first-live + bounty + affiliate motion · email sequences pre-written · founder talking points locked · post-launch retention loop already wired.</div>
-            </div>
-          </div>
-          <p class="case-more">+ Production use-case workflow, Break-the-Internet launch playbook, $10K bounty launch, affiliate outreach list, beta thank-you sequence, model-platform integration plan, brand inspiration deck, weekly priorities cadence, Amplitude funnel + ICP capture.</p>
-          <p class="case-out"><b>Outcome:</b> Team entered launch with a defensible pricing structure, a public lead magnet pulling qualified ICP, and a written playbook for the first-live, bounty, and affiliate motion. <i>Scope expanded to platform-integration strategy.</i></p>
-        </div>
-
-        <!-- 03 · AI creators (in-house) -->
-        <div class="brief-block case-card">
-          <div class="case-tag">03 / 04 · In-house · AI creator pipeline</div>
-          <h3 class="case-h">Top-performing AI creators reverse-engineered. <em>Turned into the engine that runs my own launch.</em></h3>
-          <p class="case-lede">5,739 images analyzed across 47 top accounts · every recurring prompt pattern, reel format, DM script, and posting cadence traced back to the account it came from.</p>
-          <p class="case-q"><b>The question:</b> What are the highest-performing AI creators actually doing. which prompt patterns, which reel formats, which DM scripts, which posting cadence. and how do you turn evidence from accounts already winning into a documented engine instead of guesswork?</p>
-          <div class="case-peek">
-            <div class="peek">
-              <div class="peek-h">Prompt vault by aesthetic</div>
-              <div class="peek-out">Every recurring image-prompt pattern across the top 47 accounts, sorted by aesthetic and engagement · NB2 / MJ / ChatGPT variants per pattern · realism modifiers tagged.</div>
-            </div>
-            <div class="peek">
-              <div class="peek-h">20-format reel library</div>
-              <div class="peek-out">The 20 reel formats winning right now, with hook + b-roll + caption template per format · NB2 → Veo 3.1 → ffmpeg pipeline shipped · turnaround under an hour per finished reel.</div>
-            </div>
-            <div class="peek">
-              <div class="peek-h">Offer path + decision ladder</div>
-              <div class="peek-out">Audience questions mapped by intent · proof sequence by stage · paid offer path documented without pushing the wrong segment too early.</div>
-            </div>
-          </div>
-          <p class="case-more">+ Top-creator teardown across 47 accounts, posting cadence per platform, prompt-pattern map, visual realism rules, format mix, and repeatable proof cues.</p>
-          <p class="case-out"><b>Outcome:</b> Personal launch moved from guesswork to a documented visibility system. every format and prompt pattern traced to evidence from accounts already winning. <i>Same methodology now powers Sprint 3 engagements for creators.</i></p>
-        </div>
-
-        <!-- 04 · Local events brand -->
-        <div class="brief-block case-card">
-          <div class="case-tag">04 / 04 · Anonymized · Local family-event business</div>
-          <h3 class="case-h">"A read on what your feed <em>quietly</em> rewards." <em>Strategy becomes shoots.</em></h3>
-          <p class="case-lede">Signal audit · 30-day proof map · two new revenue tracks scoped from the evidence · inquiry quality improved after delivery.</p>
-          <p class="case-q"><b>The question:</b> One-founder local business in a lane parents have already mentally priced, fighting four established competitors with bigger ad budgets. What's the first move and what's the four-pillar system that makes every post after it compound?</p>
-          <div class="case-peek">
-            <div class="peek">
-              <div class="peek-h">Deep signal audit</div>
-              <div class="peek-out">55 most-recent posts scored against saves and shares · the four proof patterns the audience rewarded named · the three low-signal formats removed entirely.</div>
-            </div>
-            <div class="peek">
-              <div class="peek-h">30-day proof map</div>
-              <div class="peek-out">Every asset named, dated, and tied to a signal · hook + visual proof + caption logic per slot · ordered for one founder producing in limited windows.</div>
-            </div>
-            <div class="peek">
-              <div class="peek-h">Two new revenue tracks built</div>
-              <div class="peek-out">Adjacent partnership tracks · corporate pop-up path · each with target list, opening angle, pricing logic, and the operator notes to run beside the core offer.</div>
-            </div>
-          </div>
-          <p class="case-more">+ Adjacent pattern analysis, four proof pillars, 30 ranked hooks, caption rewrites, local channel map, event-capture system, operator playbook, phase 2 build plan.</p>
-          <p class="case-out"><b>Outcome:</b> Top complaint cluster became the lead offer · two new revenue tracks named · next moves tied back to the signal map. <a href="/case-studies/bay-area-events-brand.html" data-track="Case Card KB Full">Full case study →</a></p>
-        </div>
-
-      </div><!-- /.brief-deck -->
-      <div class="brief-dots" id="caseDots">
-        <button class="brief-dot is-active" data-i="0" aria-label="Case 1"></button>
-        <button class="brief-dot" data-i="1" aria-label="Case 2"></button>
-        <button class="brief-dot" data-i="2" aria-label="Case 3"></button>
-        <button class="brief-dot" data-i="3" aria-label="Case 4"></button>
-      </div>
-    </div><!-- /.brief-deck-wrap -->
-  </section>
-
-  <!-- ─── 7. FAQ ───────────────────────────────────────────── -->
-  <section class="v4-section">
-    <div class="v4-shell">
-      <div class="v4-section-intro">
-        <span class="v4-section-eyebrow">◆ FAQ</span>
-        <h2 class="v4-h2">A few questions.</h2>
-      </div>
-      <div class="faq">
-        <details>
-          <summary>Is this an audit?</summary>
-          <p>No. An audit grades what you have. The Sprint pulls public signals on your market (competitors, customers, channels, pricing) and turns them into a next move.</p>
-        </details>
-        <details>
-          <summary>What do I actually get?</summary>
-          <p>One document, structured like the sample above: ad vault, customer-voice clusters, cadence, pricing position, authority channels, and a "what to do first" memo. PDF + editable doc.</p>
-        </details>
-        <details>
-          <summary>NDA or sensitive data?</summary>
-          <p>Default. Every engagement is mutual NDA. Public case studies are anonymized for that reason. A named case study after delivery is always optional.</p>
-        </details>
-        <details>
-          <summary>What if it's not useful?</summary>
-          <p>If the brief lands and you can't act on a single line, write back within 14 days for a full refund. Happened once in two years.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── 8. FINAL CTA ─────────────────────────────────────── -->
-  <section class="v4-final">
-    <div class="v4-shell">
-      <span class="v4-section-eyebrow">◆ Begin a conversation</span>
-      <h2 class="v4-h2">Fifteen minutes. <em>No pitch.</em></h2>
-      <p class="v4-final-sub">We figure out what question you need answered next. Then pick the smallest Sprint that answers it well.</p>
-      <div class="v4-actions">
-        <a href="/book.html" class="v4-btn v4-btn-primary" data-track="Sprint Bottom Book">Book a Call</a>
-        <a href="mailto:alex@loopworker.com" class="v4-btn v4-btn-secondary" data-track="Sprint Bottom Email">Email alex@loopworker.com</a>
-      </div>
-      <p class="v4-final-line">Built by Alex Lamb · LoopWorker · <a href="https://www.loom.com/share/f9cee59f64c44e4092d97c145a4a7ccf" target="_blank" rel="noopener" data-track="Sprint Loom Intro">Watch the 3-min intro →</a></p>
-    </div>
-  </section>
-
-</main>
-
-<script>
-(function () {
-  function wireDeck(deckId, dotsId) {
-    var deck = document.getElementById(deckId);
-    var dotsRoot = document.getElementById(dotsId);
-    if (!deck || !dotsRoot) return;
-    var dots = dotsRoot.querySelectorAll('.brief-dot');
-    var blocks = deck.children;
-    function activeIndex() {
-      var w = blocks[0].getBoundingClientRect().width;
-      var gap = parseFloat(getComputedStyle(deck).columnGap || getComputedStyle(deck).gap || 0) || 0;
-      return Math.round(deck.scrollLeft / (w + gap));
-    }
-    function sync() {
-      var i = Math.max(0, Math.min(dots.length - 1, activeIndex()));
-      for (var n = 0; n < dots.length; n++) dots[n].classList.toggle('is-active', n === i);
-    }
-    deck.addEventListener('scroll', sync, { passive: true });
-    dots.forEach(function (d) {
-      d.addEventListener('click', function () {
-        var i = parseInt(d.dataset.i, 10);
-        var w = blocks[0].getBoundingClientRect().width;
-        var gap = parseFloat(getComputedStyle(deck).columnGap || getComputedStyle(deck).gap || 0) || 0;
-        deck.scrollTo({ left: i * (w + gap), behavior: 'smooth' });
-      });
-    });
-  }
-  wireDeck('briefDeck', 'briefDots');
-  wireDeck('caseDeck', 'caseDots');
-})();
-</script>
+  </footer>
 
 </body>
 </html>
