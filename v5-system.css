@@ -881,6 +881,122 @@ h4 { font-size: 1.2rem; line-height: 1.25; font-weight: 700; }
 .v5-callout-tight { padding: 3rem 2.5rem; }
 .v5-callout-tight h2 { font-size: clamp(1.4rem, 2.4vw, 1.9rem); margin: 0.4rem 0 0.8rem; }
 
+/* ━━━ BREADTH GRID · "every lens" section ━━━ */
+.v5-breadth {
+  position: relative; overflow: hidden;
+  padding: 7rem 2rem;
+}
+.v5-breadth::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 900px 500px at 50% 50%, rgba(99,102,241,0.08), transparent 65%);
+}
+.v5-breadth-inner { position: relative; z-index: 2; max-width: var(--max); margin: 0 auto; }
+.v5-breadth-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.7rem;
+  max-width: 1100px; margin: 0 auto;
+}
+@media (max-width: 880px) { .v5-breadth-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .v5-breadth-grid { grid-template-columns: 1fr; } }
+.v5-lens {
+  padding: 1rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-family: var(--sans-tight);
+  font-size: 0.92rem; font-weight: 600;
+  color: var(--text); letter-spacing: -0.012em;
+  display: flex; align-items: center; gap: 0.6rem;
+  transition: all 0.22s ease;
+}
+.v5-lens:hover {
+  border-color: rgba(99,102,241,0.4);
+  background: rgba(99,102,241,0.04);
+  transform: translateY(-2px);
+}
+.v5-lens::before {
+  content: ''; flex-shrink: 0;
+  width: 6px; height: 6px;
+  background: var(--grad-cta);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--indigo);
+}
+.v5-breadth-pitch {
+  max-width: 720px; margin: 0 auto 3rem;
+  text-align: center;
+}
+.v5-breadth-pitch h2 { margin: 0 0 1rem; }
+.v5-breadth-pitch p {
+  font-size: 1.12rem; color: var(--text-2);
+  line-height: 1.55; margin: 0;
+}
+.v5-breadth-foot {
+  text-align: center; margin-top: 3rem;
+  font-family: var(--mono); font-size: 0.84rem;
+  color: var(--text-3); letter-spacing: 0.04em;
+}
+.v5-breadth-foot strong { color: var(--indigo-bright); font-weight: 700; }
+
+/* 4-card breadth (simpler) */
+.v5-breadth-grid-4 { grid-template-columns: repeat(4, 1fr) !important; gap: 1rem !important; }
+@media (max-width: 980px) { .v5-breadth-grid-4 { grid-template-columns: repeat(2, 1fr) !important; } }
+@media (max-width: 500px) { .v5-breadth-grid-4 { grid-template-columns: 1fr !important; } }
+.v5-lens-big {
+  padding: 1.8rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: all 0.22s ease;
+}
+.v5-lens-big:hover {
+  border-color: rgba(99,102,241,0.4);
+  background: rgba(99,102,241,0.04);
+  transform: translateY(-3px);
+}
+.v5-lens-num {
+  font-family: var(--mono); font-size: 0.72rem;
+  color: var(--indigo-bright); letter-spacing: 0.14em;
+  font-weight: 700; margin-bottom: 1rem;
+}
+.v5-lens-big h4 {
+  font-family: var(--sans-tight); font-size: 1.15rem;
+  font-weight: 700; color: var(--text);
+  margin: 0 0 0.5rem; letter-spacing: -0.025em;
+}
+.v5-lens-big p {
+  font-size: 0.92rem; color: var(--text-3);
+  line-height: 1.5; margin: 0;
+}
+
+/* ━━━ sample-brief · what's inside ━━━ */
+.v5-brief-whats-inside {
+  max-width: 940px; margin: 0 auto 3rem;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem;
+}
+@media (max-width: 720px) { .v5-brief-whats-inside { grid-template-columns: 1fr; } }
+.v5-whats-card {
+  padding: 1.6rem 1.4rem;
+  background: linear-gradient(135deg, rgba(99,102,241,0.05), transparent 60%), var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: all 0.22s ease;
+}
+.v5-whats-card:hover { border-color: rgba(99,102,241,0.4); transform: translateY(-3px); }
+.v5-whats-num {
+  font-family: var(--mono); font-size: 0.72rem;
+  color: var(--indigo-bright); letter-spacing: 0.14em;
+  font-weight: 700; margin-bottom: 0.9rem;
+}
+.v5-whats-card h4 {
+  font-family: var(--sans-tight); font-size: 1.1rem;
+  font-weight: 700; color: var(--text);
+  margin: 0 0 0.45rem; letter-spacing: -0.022em;
+}
+.v5-whats-card p {
+  font-size: 0.9rem; color: var(--text-3);
+  line-height: 1.5; margin: 0;
+}
+
 /* honeypot — hidden field for bot detection */
 .v5-hp { display: none !important; }
 

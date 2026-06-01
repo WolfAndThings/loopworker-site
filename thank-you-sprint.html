@@ -164,16 +164,16 @@
     document.getElementById('tierField').value = labels[tier] || labels['3'];
     const tta = {
       '1': 'Surface · 48 hours · $750',
-      '2': 'Compass · 5 days · $3,200',
-      '3': 'Atlas · 10 days · $8,000',
-      '4': 'Operating System · 14 days + 3mo · $25,000',
+      '2': 'Compass · 10 days · $3,200',
+      '3': 'Atlas · 21 days · $8,000',
+      '4': 'Operating System · 30 days + 3mo · $25,000',
       surface: 'Surface · 48 hours · $750',
-      compass: 'Compass · 5 days · $3,200',
-      atlas: 'Atlas · 10 days · $8,000',
-      os: 'Operating System · 14 days + 3mo · $25,000',
-      lite: 'Compass · 5 days · $3,200',
-      pro: 'Atlas · 10 days · $8,000',
-      full: 'Operating System · 14 days + 3mo · $25,000'
+      compass: 'Compass · 10 days · $3,200',
+      atlas: 'Atlas · 21 days · $8,000',
+      os: 'Operating System · 30 days + 3mo · $25,000',
+      lite: 'Compass · 10 days · $3,200',
+      pro: 'Atlas · 21 days · $8,000',
+      full: 'Operating System · 30 days + 3mo · $25,000'
     };
     document.getElementById('ttaTier').textContent = tta[tier] || tta['3'];
     document.title = (tta[tier] || tta['3']) + ' · Intake | LoopWorker';
