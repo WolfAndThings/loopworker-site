@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site-pages.css">
+  <title>When competitor research becomes a distraction · Signals · LoopWorker</title>
+  <meta name="description" content="Most ads stop working not because they got old but because the category moved. Here's how to read ad-longevity signals to know when to refresh creative vs reposition the offer.">
+  <link rel="canonical" href="https://www.loopworker.com/blog/when-research-distracts.html">
+  <meta name="author" content="Alex Lamb">
+  <meta name="theme-color" content="#080808">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.loopworker.com/blog/when-research-distracts.html">
+  <meta property="og:title" content="When competitor research becomes a distraction">
+  <meta property="og:description" content="Most ads die because the category moved, not because creative fatigued. Read the signal before swapping the hook.">
+  <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+  <meta property="og:site_name" content="LoopWorker">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-05-31">
+  <meta property="article:modified_time" content="2026-05-31">
+  <meta property="article:author" content="Alex Lamb">
+  <meta property="article:section" content="Signal Patterns">
+  <meta property="article:tag" content="paid acquisition">
+  <meta property="article:tag" content="ad longevity">
+  <meta property="article:tag" content="category signals">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="When competitor research becomes a distraction">
+  <meta name="twitter:description" content="Most ads die because the category moved, not because creative fatigued.">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23080808' width='100' height='100'/><text x='50' y='65' font-size='52' text-anchor='middle' fill='%23D4A017'>◉</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+  <link rel="dns-prefetch" href="https://buy.stripe.com">
+
+  <style>
+    :root { --gold-leaf: linear-gradient(135deg, #E8C77A 0%, #D4A017 45%, #A87C0E 100%); --line: rgba(255,255,255,0.07); --soft: #C2C2C2; --mute: #888; --text: #F5F5F5; }
+    .sig-article { padding: 8rem 1.5rem 4rem; max-width: 760px; margin: 0 auto; }
+    .sig-meta-row { display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mute); font-weight: 600; margin-bottom: 1.4rem; }
+    .sig-meta-row span::before { content: '◆ '; color: #D4A017; }
+    .sig-meta-row span:first-child::before { content: ''; }
+    .sig-h1 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: clamp(2rem, 4.8vw, 3.4rem); line-height: 1.05; letter-spacing: -0.035em; color: var(--text); margin: 0 0 1.4rem; text-wrap: balance; }
+    .sig-h1 em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    .sig-lead { font-size: 1.18rem; line-height: 1.6; color: #D5D5D5; margin: 0 0 2.4rem; }
+    .sig-tldr { padding: 1.4rem 1.6rem; border: 1px solid rgba(212,160,23,0.25); background: rgba(212,160,23,0.04); border-radius: 10px; margin: 0 0 2.8rem; }
+    .sig-tldr-label { display: block; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: #D4A017; font-weight: 700; margin-bottom: 0.55rem; }
+    .sig-tldr p { font-size: 0.98rem; line-height: 1.6; color: var(--soft); margin: 0; }
+    .sig-section { margin: 2.6rem 0; }
+    .sig-section h2 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.55rem; letter-spacing: -0.02em; color: var(--text); margin: 0 0 1rem; line-height: 1.2; }
+    .sig-section h2 em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    .sig-section h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--text); margin: 1.8rem 0 0.7rem; letter-spacing: -0.015em; }
+    .sig-section p { font-size: 1.02rem; line-height: 1.7; color: var(--soft); margin: 0 0 1.1rem; }
+    .sig-section strong { color: var(--text); }
+    .sig-section ul, .sig-section ol { margin: 0 0 1.3rem 0; padding-left: 1.4rem; }
+    .sig-section li { font-size: 1rem; line-height: 1.7; color: var(--soft); margin-bottom: 0.5rem; }
+    .sig-section li strong { color: var(--text); }
+    .sig-callout { padding: 1.2rem 1.4rem; border-left: 2px solid #D4A017; background: rgba(255,255,255,0.022); margin: 1.6rem 0; border-radius: 0 8px 8px 0; }
+    .sig-callout p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.18rem; line-height: 1.4; color: var(--text); margin: 0; }
+    .sig-def { padding: 1rem 1.2rem; border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,0.012); margin: 1.4rem 0; font-size: 0.95rem; line-height: 1.55; color: var(--soft); }
+    .sig-def strong { display: inline-block; font-weight: 800; color: var(--text); margin-right: 0.4rem; letter-spacing: -0.005em; }
+    .sig-stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin: 1.8rem 0; }
+    @media (max-width: 600px) { .sig-stat-row { grid-template-columns: 1fr; } }
+    .sig-stat { padding: 1.1rem 1.2rem; border: 1px solid var(--line); border-radius: 10px; background: rgba(255,255,255,0.012); }
+    .sig-stat-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 2rem; line-height: 1; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; margin-bottom: 0.45rem; font-variant-numeric: tabular-nums; }
+    .sig-stat-label { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mute); font-weight: 600; line-height: 1.4; }
+    .sig-faq { margin: 3rem 0 2rem; padding: 2rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .sig-faq-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: #D4A017; font-weight: 700; margin-bottom: 1.4rem; }
+    .sig-faq details { padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+    .sig-faq details:last-of-type { border-bottom: 0; }
+    .sig-faq summary { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.02rem; color: var(--text); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; letter-spacing: -0.005em; }
+    .sig-faq summary::-webkit-details-marker { display: none; }
+    .sig-faq summary::after { content: '+'; font-weight: 300; font-size: 1.4rem; color: var(--mute); line-height: 1; transition: color 0.18s; }
+    .sig-faq details[open] summary::after { content: '–'; color: #D4A017; }
+    .sig-faq details p { font-size: 0.96rem; line-height: 1.65; color: var(--soft); margin: 0.9rem 0 0; }
+    .sig-cta-box { margin: 3rem 0 0; padding: 2rem; border: 1px solid var(--line); border-radius: 12px; background: linear-gradient(180deg, rgba(212,160,23,0.04), rgba(255,255,255,0.01)); display: grid; grid-template-columns: 1fr auto; gap: 1.4rem; align-items: center; }
+    @media (max-width: 640px) { .sig-cta-box { grid-template-columns: 1fr; } }
+    .sig-cta-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--text); margin-bottom: 0.3rem; letter-spacing: -0.01em; }
+    .sig-cta-text { font-size: 0.92rem; color: var(--soft); line-height: 1.55; margin: 0; }
+    .sig-cta-btn { display: inline-flex; align-items: center; padding: 0.85rem 1.4rem; background: #D4A017; color: #1A0F00; text-decoration: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.88rem; letter-spacing: -0.005em; white-space: nowrap; transition: background 0.18s; }
+    .sig-cta-btn:hover { background: #F4C842; }
+    .sig-foot { margin: 2.4rem 0 0; font-size: 0.82rem; color: var(--mute); padding-top: 1.2rem; border-top: 1px solid var(--line); }
+    .sig-foot a { color: var(--soft); }
+    .sig-related { margin: 3rem 0; }
+    .sig-related-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); font-weight: 700; margin-bottom: 1rem; }
+    .sig-related ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; }
+    .sig-related li a { display: block; padding: 0.85rem 1rem; border: 1px solid var(--line); border-radius: 8px; color: var(--text); text-decoration: none; font-size: 0.95rem; transition: border-color 0.18s, background 0.18s; }
+    .sig-related li a:hover { border-color: rgba(212,160,23,0.3); background: rgba(212,160,23,0.04); }
+    .sig-related li a span { color: var(--mute); font-size: 0.85rem; display: block; margin-top: 0.2rem; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.loopworker.com/#organization",
+        "name": "LoopWorker",
+        "url": "https://www.loopworker.com/",
+        "slogan": "Evidence before execution.",
+        "founder": { "@type": "Person", "name": "Alex Lamb", "url": "https://www.loopworker.com/about.html" }
+      },
+      {
+        "@type": "Article",
+        "headline": "When competitor research becomes a distraction",
+        "alternativeHeadline": "Ads die when the category moves, not when creative fatigues",
+        "description": "Most ads stop working not because creative got old. They stop because the category moved. Here's how to read the signal.",
+        "url": "https://www.loopworker.com/blog/when-research-distracts.html",
+        "datePublished": "2026-05-31",
+        "dateModified": "2026-05-31",
+        "wordCount": 1180,
+        "timeRequired": "PT5M",
+        "inLanguage": "en-US",
+        "author": { "@type": "Person", "name": "Alex Lamb", "url": "https://www.loopworker.com/about.html" },
+        "publisher": { "@id": "https://www.loopworker.com/#organization" },
+        "mainEntityOfPage": "https://www.loopworker.com/blog/when-research-distracts.html",
+        "image": "https://www.loopworker.com/images/cards/card_02.webp",
+        "about": ["paid acquisition", "ad longevity", "category signals", "market intelligence"],
+        "keywords": "ad fatigue, ad longevity, why ads stop working, creative refresh, category movement"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "When does competitor research become a distraction?", "acceptedAnswer": { "@type": "Answer", "text": "When it stops feeding a specific decision. Three modes: research without a question (open scope), research as procrastination (avoiding the ship), research as anxiety management (compulsive checking). All three burn hours without producing decisions." } },
+          { "@type": "Question", "name": "How do I know if I'm researching too much?", "acceptedAnswer": { "@type": "Answer", "text": "Three questions: what decision will this research help me make, when am I supposed to make it, what would change my mind. If you can't name a decision + a deadline + a falsifier, stop. The research isn't intelligence; it's avoidance." } },
+          { "@type": "Question", "name": "When is deep competitor research the right call?", "acceptedAnswer": { "@type": "Answer", "text": "Before any decision that costs more than $10K to undo. Before positioning, pricing, or new-vertical decisions. The cost of being wrong outweighs the cost of researching. Tie the research to the decision." } },
+          { "@type": "Question", "name": "Can I research a category without a specific question?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, but cap it. Quarterly category temperature check (2 hours) keeps you oriented. Beyond that, research needs a decision attached. Open-scope research expands to fill all available time." } },
+          { "@type": "Question", "name": "What's the cheapest signal that I'm using research to avoid shipping?", "acceptedAnswer": { "@type": "Answer", "text": "If you have an open tab of competitor pages and a half-written sales page that's six weeks late, the research is the avoidance. Close the tab. Ship the page." } }
+        ]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } },
+          { "@type": "Question", "name": "[TODO Q2?]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } },
+          { "@type": "Question", "name": "[TODO Q3?]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } },
+          { "@type": "Question", "name": "[TODO Q4?]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } },
+          { "@type": "Question", "name": "[TODO Q5?]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.loopworker.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Signals", "item": "https://www.loopworker.com/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Why your ads stop working after 60 days", "item": "https://www.loopworker.com/blog/when-research-distracts.html" }
+        ]
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Ad longevity",
+        "description": "The number of consecutive days an ad has been live in a public ad library. Long-running ads signal the category is rewarding that offer frame.",
+        "inDefinedTermSet": "https://www.loopworker.com/glossary/"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">LoopWorker</a>
+      <ul class="nav-links">
+        <li><a href="/sprint.html">The Sprint</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/case-studies.html">Case Studies</a></li>
+        <li><a href="/blog/">Signals</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/book.html" class="nav-cta">Book a Call</a></li>
+      </ul>
+      <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/sprint.html">The Sprint</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/case-studies.html">Case Studies</a>
+    <a href="/blog/">Signals</a>
+    <a href="/about.html">About</a>
+    <a href="/book.html" class="nav-cta">Book a Call</a>
+  </div>
+
+  <main id="main" class="sig-article">
+    <div class="sig-meta-row">
+      <span>Diagnostic</span>
+      <span>5 min read</span>
+      <span>May 31, 2026</span>
+      <span>Alex Lamb</span>
+    </div>
+
+    <h1 class="sig-h1">When competitor research <em>becomes a distraction.</em></h1>
+
+    <p class="sig-lead">Reading what competitors do can be the most productive thing you do this quarter. It can also be the most expensive way to avoid shipping.</p>
+
+    <aside class="sig-tldr">
+      <span class="sig-tldr-label">◆ TL;DR</span>
+      <p>Competitor research becomes a distraction when it stops feeding a specific decision. Three failure modes: research without a question (open scope), research as procrastination (avoiding a hard ship), and research as anxiety management (compulsive checking). The fix is the same in all three: tie research to a named decision with a deadline, or stop.</p>
+    </aside>
+    <section class="sig-section">
+      <h2>The 4 AM Slack message.</h2>
+      <p>A founder pinged me at 4 AM. "Just found three new competitors I didn't know about. Going to spend tomorrow mapping their offers."</p><p>I asked one question back: "What decision will that map help you make?"</p><p>Silence for an hour. Then: "I don't know. I just feel like I should know."</p><p>That's the moment competitor research stops being intelligence and starts being a way to feel productive without shipping anything.</p>
+    </section>
+
+    <section class="sig-section">
+      <h2>The three failure modes.</h2>
+      <div class="sig-def"><strong>Competitor research distraction:</strong>The state where competitor research stops feeding a specific decision and becomes either avoidance, anxiety management, or open-ended scope creep. Burns time without producing decisions.</div><p>Three patterns to watch:</p><div class="sig-stat-row"><div class="sig-stat"><div class="sig-stat-num">1</div><div class="sig-stat-label">Research without a question (open scope)</div></div><div class="sig-stat"><div class="sig-stat-num">2</div><div class="sig-stat-label">Research as procrastination (avoiding the ship)</div></div><div class="sig-stat"><div class="sig-stat-num">3</div><div class="sig-stat-label">Research as anxiety management (compulsive checking)</div></div></div><p>The first looks productive. The second feels productive. The third becomes a habit. All three burn the same hours.</p><div class="sig-callout"><p>Research without a question is procrastination wearing a strategy hat.</p></div>
+    </section>
+
+    <section class="sig-section">
+      <h2>How to tell the difference.</h2>
+      <p>Three questions to ask before every research session:</p><ol><li><strong>What decision will this research help me make?</strong> Name it. If you can't name it in one sentence, the session is open scope. Stop.</li><li><strong>When am I supposed to make this decision?</strong> Name the deadline. "Eventually" is a tell. Research without a deadline becomes a hobby.</li><li><strong>What would change my mind if I find it?</strong> Name the falsifier. If nothing would change your mind, you're not researching; you're confirming.</li></ol><h3>When deep research is right.</h3><p>Before any decision that costs more than $10K to undo. Before any positioning or pricing change. Before entering a new vertical. The cost of being wrong > the cost of researching. Deep research is the right call.</p><p>When you're already 4 hours into a competitor map and can't name the decision it's serving: close the tab. The research isn't the issue. The lack of a question is.</p>
+    </section>
+
+    <section class="sig-section">
+      <h2>Back to the 4 AM Slack.</h2>
+      <p>The founder didn't map the three new competitors the next day. She shipped the new pricing page she'd been delaying for six weeks. The page lifted conversion 18% by month-end.</p><p>Six weeks later, we mapped the three competitors together. Took an hour. Ranked them against her now-shipped pricing. Two were below her tier, one was above. Decision made. Map served the decision, not the other way around.</p>
+    </section>
+<section class="sig-section">
+      <h2>[TODO B · Mechanism/why]</h2>
+      <div class="sig-def"><strong>[Key term]:</strong>[One-sentence definition. AEO loves this.]</div>
+      <p>[TODO: Explain WHY the thing in A happens. Cite mechanism, data, evidence.]</p>
+      <div class="sig-stat-row">
+        <div class="sig-stat"><div class="sig-stat-num">[X]</div><div class="sig-stat-label">[stat label]</div></div>
+        <div class="sig-stat"><div class="sig-stat-num">[X]</div><div class="sig-stat-label">[stat label]</div></div>
+        <div class="sig-stat"><div class="sig-stat-num">[X]</div><div class="sig-stat-label">[stat label]</div></div>
+      </div>
+      <div class="sig-callout"><p>[Short italic pull-quote that crystalizes the mechanism]</p></div>
+    </section>
+
+    <section class="sig-section">
+      <h2>[TODO C · Application/the move]</h2>
+      <p>[TODO: What to do with the insight. Concrete steps.]</p>
+      <ol>
+        <li><strong>[Step 1]</strong> description</li>
+        <li><strong>[Step 2]</strong> description</li>
+        <li><strong>[Step 3]</strong> description</li>
+      </ol>
+      <h3>[TODO: When NOT to do this / counter-case]</h3>
+      <p>[TODO: One paragraph showing edge case or when the move is wrong.]</p>
+    </section>
+
+    <section class="sig-section">
+      <h2>[TODO A' · Callback to scene]</h2>
+      <p>[TODO: Return to the opening scene with new meaning. 2-3 sentences. Don't over-resolve.]</p>
+    </section>
+
+    <section class="sig-faq">
+      <div class="sig-faq-label">◆ Common questions</div>
+      <details>
+        <summary>When does competitor research become a distraction?</summary>
+        <p>When it stops feeding a specific decision. Three modes: research without a question (open scope), research as procrastination (avoiding the ship), research as anxiety management (compulsive checking). All three burn hours without producing decisions.</p>
+      </details>
+      <details>
+        <summary>How do I know if I'm researching too much?</summary>
+        <p>Three questions: what decision will this research help me make, when am I supposed to make it, what would change my mind. If you can't name a decision + a deadline + a falsifier, stop. The research isn't intelligence; it's avoidance.</p>
+      </details>
+      <details>
+        <summary>When is deep competitor research the right call?</summary>
+        <p>Before any decision that costs more than $10K to undo. Before positioning, pricing, or new-vertical decisions. The cost of being wrong outweighs the cost of researching. Tie the research to the decision.</p>
+      </details>
+      <details>
+        <summary>Can I research a category without a specific question?</summary>
+        <p>Yes, but cap it. Quarterly category temperature check (2 hours) keeps you oriented. Beyond that, research needs a decision attached. Open-scope research expands to fill all available time.</p>
+      </details>
+      <details>
+        <summary>What's the cheapest signal that I'm using research to avoid shipping?</summary>
+        <p>If you have an open tab of competitor pages and a half-written sales page that's six weeks late, the research is the avoidance. Close the tab. Ship the page.</p>
+      </details>
+    </section>
+
+    <aside class="sig-cta-box">
+      <div>
+        <div class="sig-cta-title">Want research tied to a decision?</div>
+        <p class="sig-cta-text">Sprint 1 ties one specific question to a 48-hour research round + ranked recommendation. $750. No open scope.</p>
+      </div>
+      <a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" class="sig-cta-btn" data-track="Blog when-research-distracts CTA">Begin Sprint 1 →</a>
+    </aside>
+
+    <section class="sig-related">
+      <div class="sig-related-label">◆ Related signals</div>
+      <ul>
+        <li><a href="/blog/competitor-research-vs-reconstruction.html">Competitor research vs reconstruction<span>Research catalogues. Reconstruction explains.</span></a></li>
+        <li><a href="/blog/how-to-brief-a-sprint.html">How to brief a market intelligence sprint<span>The question that triggers good research.</span></a></li>
+      </ul>
+    </section>
+
+    <p class="sig-foot">Last updated May 31, 2026. Field notes by <a href="/about.html">Alex Lamb</a>, LoopWorker.</p>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">LoopWorker</div>
+        <div class="footer-meta">Evidence before execution.</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="/sprint.html">The Sprint</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/case-studies.html">Case Studies</a></li>
+        <li><a href="/blog/">Signals</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script defer src="/site-pages.js"></script>
+</body>
+</html>
