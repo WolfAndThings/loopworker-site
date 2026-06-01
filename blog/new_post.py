@@ -43,7 +43,7 @@ t = re.sub(r'(<title>)[^<]+(</title>)', f'\\1{title} · Signals · LoopWorker\\2
 t = re.sub(r'(og:title" content=")[^"]+(")', f'\\1{title}\\2', t)
 t = re.sub(r'(twitter:title" content=")[^"]+(")', f'\\1{title}\\2', t)
 t = re.sub(r'(headline": ")[^"]+(")', f'\\1{title}\\2', t)
-t = re.sub(r'(<h1 class="sig-h1">)[^<]+(</h1>)', f'\\1{title}\\2', t)
+t = re.sub(r'<h1 class="sig-h1">.*?</h1>', f'<h1 class="sig-h1">{title}</h1>', t, count=1, flags=re.S)
 
 # Swap canonical/url/breadcrumb link
 old_slug_match = re.search(r'/blog/([\w-]+)\.html', t)

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site-pages.css">
+  <title>How to read a pricing band · Signals · LoopWorker</title>
+  <meta name="description" content="Most ads stop working not because they got old but because the category moved. Here's how to read ad-longevity signals to know when to refresh creative vs reposition the offer.">
+  <link rel="canonical" href="https://www.loopworker.com/blog/how-to-read-a-pricing-band.html">
+  <meta name="author" content="Alex Lamb">
+  <meta name="theme-color" content="#080808">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.loopworker.com/blog/how-to-read-a-pricing-band.html">
+  <meta property="og:title" content="How to read a pricing band">
+  <meta property="og:description" content="Most ads die because the category moved, not because creative fatigued. Read the signal before swapping the hook.">
+  <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+  <meta property="og:site_name" content="LoopWorker">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-05-31">
+  <meta property="article:modified_time" content="2026-05-31">
+  <meta property="article:author" content="Alex Lamb">
+  <meta property="article:section" content="Signal Patterns">
+  <meta property="article:tag" content="paid acquisition">
+  <meta property="article:tag" content="ad longevity">
+  <meta property="article:tag" content="category signals">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to read a pricing band">
+  <meta name="twitter:description" content="Most ads die because the category moved, not because creative fatigued.">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23080808' width='100' height='100'/><text x='50' y='65' font-size='52' text-anchor='middle' fill='%23D4A017'>◉</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+  <link rel="dns-prefetch" href="https://buy.stripe.com">
+
+  <style>
+    :root { --gold-leaf: linear-gradient(135deg, #E8C77A 0%, #D4A017 45%, #A87C0E 100%); --line: rgba(255,255,255,0.07); --soft: #C2C2C2; --mute: #888; --text: #F5F5F5; }
+    .sig-article { padding: 8rem 1.5rem 4rem; max-width: 760px; margin: 0 auto; }
+    .sig-meta-row { display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mute); font-weight: 600; margin-bottom: 1.4rem; }
+    .sig-meta-row span::before { content: '◆ '; color: #D4A017; }
+    .sig-meta-row span:first-child::before { content: ''; }
+    .sig-h1 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: clamp(2rem, 4.8vw, 3.4rem); line-height: 1.05; letter-spacing: -0.035em; color: var(--text); margin: 0 0 1.4rem; text-wrap: balance; }
+    .sig-h1 em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    .sig-lead { font-size: 1.18rem; line-height: 1.6; color: #D5D5D5; margin: 0 0 2.4rem; }
+    .sig-tldr { padding: 1.4rem 1.6rem; border: 1px solid rgba(212,160,23,0.25); background: rgba(212,160,23,0.04); border-radius: 10px; margin: 0 0 2.8rem; }
+    .sig-tldr-label { display: block; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: #D4A017; font-weight: 700; margin-bottom: 0.55rem; }
+    .sig-tldr p { font-size: 0.98rem; line-height: 1.6; color: var(--soft); margin: 0; }
+    .sig-section { margin: 2.6rem 0; }
+    .sig-section h2 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.55rem; letter-spacing: -0.02em; color: var(--text); margin: 0 0 1rem; line-height: 1.2; }
+    .sig-section h2 em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    .sig-section h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--text); margin: 1.8rem 0 0.7rem; letter-spacing: -0.015em; }
+    .sig-section p { font-size: 1.02rem; line-height: 1.7; color: var(--soft); margin: 0 0 1.1rem; }
+    .sig-section strong { color: var(--text); }
+    .sig-section ul, .sig-section ol { margin: 0 0 1.3rem 0; padding-left: 1.4rem; }
+    .sig-section li { font-size: 1rem; line-height: 1.7; color: var(--soft); margin-bottom: 0.5rem; }
+    .sig-section li strong { color: var(--text); }
+    .sig-callout { padding: 1.2rem 1.4rem; border-left: 2px solid #D4A017; background: rgba(255,255,255,0.022); margin: 1.6rem 0; border-radius: 0 8px 8px 0; }
+    .sig-callout p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.18rem; line-height: 1.4; color: var(--text); margin: 0; }
+    .sig-def { padding: 1rem 1.2rem; border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,0.012); margin: 1.4rem 0; font-size: 0.95rem; line-height: 1.55; color: var(--soft); }
+    .sig-def strong { display: inline-block; font-weight: 800; color: var(--text); margin-right: 0.4rem; letter-spacing: -0.005em; }
+    .sig-stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin: 1.8rem 0; }
+    @media (max-width: 600px) { .sig-stat-row { grid-template-columns: 1fr; } }
+    .sig-stat { padding: 1.1rem 1.2rem; border: 1px solid var(--line); border-radius: 10px; background: rgba(255,255,255,0.012); }
+    .sig-stat-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 2rem; line-height: 1; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; margin-bottom: 0.45rem; font-variant-numeric: tabular-nums; }
+    .sig-stat-label { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mute); font-weight: 600; line-height: 1.4; }
+    .sig-faq { margin: 3rem 0 2rem; padding: 2rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .sig-faq-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: #D4A017; font-weight: 700; margin-bottom: 1.4rem; }
+    .sig-faq details { padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+    .sig-faq details:last-of-type { border-bottom: 0; }
+    .sig-faq summary { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.02rem; color: var(--text); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; letter-spacing: -0.005em; }
+    .sig-faq summary::-webkit-details-marker { display: none; }
+    .sig-faq summary::after { content: '+'; font-weight: 300; font-size: 1.4rem; color: var(--mute); line-height: 1; transition: color 0.18s; }
+    .sig-faq details[open] summary::after { content: '–'; color: #D4A017; }
+    .sig-faq details p { font-size: 0.96rem; line-height: 1.65; color: var(--soft); margin: 0.9rem 0 0; }
+    .sig-cta-box { margin: 3rem 0 0; padding: 2rem; border: 1px solid var(--line); border-radius: 12px; background: linear-gradient(180deg, rgba(212,160,23,0.04), rgba(255,255,255,0.01)); display: grid; grid-template-columns: 1fr auto; gap: 1.4rem; align-items: center; }
+    @media (max-width: 640px) { .sig-cta-box { grid-template-columns: 1fr; } }
+    .sig-cta-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--text); margin-bottom: 0.3rem; letter-spacing: -0.01em; }
+    .sig-cta-text { font-size: 0.92rem; color: var(--soft); line-height: 1.55; margin: 0; }
+    .sig-cta-btn { display: inline-flex; align-items: center; padding: 0.85rem 1.4rem; background: #D4A017; color: #1A0F00; text-decoration: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.88rem; letter-spacing: -0.005em; white-space: nowrap; transition: background 0.18s; }
+    .sig-cta-btn:hover { background: #F4C842; }
+    .sig-foot { margin: 2.4rem 0 0; font-size: 0.82rem; color: var(--mute); padding-top: 1.2rem; border-top: 1px solid var(--line); }
+    .sig-foot a { color: var(--soft); }
+    .sig-related { margin: 3rem 0; }
+    .sig-related-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); font-weight: 700; margin-bottom: 1rem; }
+    .sig-related ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; }
+    .sig-related li a { display: block; padding: 0.85rem 1rem; border: 1px solid var(--line); border-radius: 8px; color: var(--text); text-decoration: none; font-size: 0.95rem; transition: border-color 0.18s, background 0.18s; }
+    .sig-related li a:hover { border-color: rgba(212,160,23,0.3); background: rgba(212,160,23,0.04); }
+    .sig-related li a span { color: var(--mute); font-size: 0.85rem; display: block; margin-top: 0.2rem; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.loopworker.com/#organization",
+        "name": "LoopWorker",
+        "url": "https://www.loopworker.com/",
+        "slogan": "Evidence before execution.",
+        "founder": { "@type": "Person", "name": "Alex Lamb", "url": "https://www.loopworker.com/about.html" }
+      },
+      {
+        "@type": "Article",
+        "headline": "How to read a pricing band",
+        "alternativeHeadline": "Ads die when the category moves, not when creative fatigues",
+        "description": "Most ads stop working not because creative got old. They stop because the category moved. Here's how to read the signal.",
+        "url": "https://www.loopworker.com/blog/how-to-read-a-pricing-band.html",
+        "datePublished": "2026-05-31",
+        "dateModified": "2026-05-31",
+        "wordCount": 1180,
+        "timeRequired": "PT5M",
+        "inLanguage": "en-US",
+        "author": { "@type": "Person", "name": "Alex Lamb", "url": "https://www.loopworker.com/about.html" },
+        "publisher": { "@id": "https://www.loopworker.com/#organization" },
+        "mainEntityOfPage": "https://www.loopworker.com/blog/how-to-read-a-pricing-band.html",
+        "image": "https://www.loopworker.com/images/cards/card_02.webp",
+        "about": ["paid acquisition", "ad longevity", "category signals", "market intelligence"],
+        "keywords": "ad fatigue, ad longevity, why ads stop working, creative refresh, category movement"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is a pricing band?", "acceptedAnswer": { "@type": "Answer", "text": "A pricing band is the visible range competitors charge for the same offer shape. It has four readable structures: anchor (high end), cluster (where most sit), floor (race-to-bottom), and gap (unclaimed space)." } },
+          { "@type": "Question", "name": "How do I find my pricing band?", "acceptedAnswer": { "@type": "Answer", "text": "List 8-15 competitors selling roughly your offer shape (same length, deliverable, buyer). Note their price + what proof sits next to it. Sort by amount. Mark the anchor, the cluster, the floor, and the gap." } },
+          { "@type": "Question", "name": "Should I price at the average?", "acceptedAnswer": { "@type": "Answer", "text": "No. Average price has nothing behind it. Defensible price comes from matching the number to the proof you actually have (case studies, guarantees, credentials, channel)." } },
+          { "@type": "Question", "name": "What is a pricing gap?", "acceptedAnswer": { "@type": "Answer", "text": "An empty stretch in the price band where no competitor anchors. A gap below the cluster + above the floor is usually positioning room. A gap above the anchor is either a category cap or your chance to define a new tier." } },
+          { "@type": "Question", "name": "How often should I re-read the band?", "acceptedAnswer": { "@type": "Answer", "text": "Every 6 months in stable categories. Every quarter if you operate in fast-moving categories (AI, social media tooling, creator economy). Anchor moves more than people think." } }
+        ]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } },
+          { "@type": "Question", "name": "[TODO Q2?]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } },
+          { "@type": "Question", "name": "[TODO Q3?]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } },
+          { "@type": "Question", "name": "[TODO Q4?]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } },
+          { "@type": "Question", "name": "[TODO Q5?]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.loopworker.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Signals", "item": "https://www.loopworker.com/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Why your ads stop working after 60 days", "item": "https://www.loopworker.com/blog/how-to-read-a-pricing-band.html" }
+        ]
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Ad longevity",
+        "description": "The number of consecutive days an ad has been live in a public ad library. Long-running ads signal the category is rewarding that offer frame.",
+        "inDefinedTermSet": "https://www.loopworker.com/glossary/"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">LoopWorker</a>
+      <ul class="nav-links">
+        <li><a href="/sprint.html">The Sprint</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/case-studies.html">Case Studies</a></li>
+        <li><a href="/blog/">Signals</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/book.html" class="nav-cta">Book a Call</a></li>
+      </ul>
+      <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/sprint.html">The Sprint</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/case-studies.html">Case Studies</a>
+    <a href="/blog/">Signals</a>
+    <a href="/about.html">About</a>
+    <a href="/book.html" class="nav-cta">Book a Call</a>
+  </div>
+
+  <main id="main" class="sig-article">
+    <div class="sig-meta-row">
+      <span>Definition</span>
+      <span>5 min read</span>
+      <span>May 31, 2026</span>
+      <span>Alex Lamb</span>
+    </div>
+
+    <h1 class="sig-h1">How to read a <em>pricing band.</em></h1>
+
+    <p class="sig-lead">Most founders set price by feel. The category usually tells you what to charge.</p>
+
+    <aside class="sig-tldr">
+      <span class="sig-tldr-label">◆ TL;DR</span>
+      <p>A pricing band is the visible range competitors charge for the same offer shape. Reading it means more than scraping numbers. You map who anchors the high end, who races the low, where the cluster sits, and what proof each price requires. Most founders price by feel. The band tells you the defensible number with evidence behind it.</p>
+    </aside>
+    <section class="sig-section">
+      <h2>The blank Notion page.</h2>
+                <p>A founder texted me three weeks ago. "Picking price tomorrow. Coaches range from $97 to $5,000 in my space. Where do I land?"</p>
+                <p>She had a list of competitor prices. Twenty-two of them. Sorted by amount. That was her research.</p>
+                <p>She picked $1,200 because it was "in the middle." Three weeks of zero closes later, she emailed me back. "I think I priced wrong."</p>
+                <p>The list wasn't the problem. The list never is. She read prices. She didn't read the band.</p>
+                </section>
+
+    <section class="sig-section">
+      <h2>What a pricing band actually shows.</h2>
+                <div class="sig-def"><strong>Pricing band:</strong>The visible price range across competitors for the same offer shape. A band has four readable structures: anchor (high end), cluster (where most sit), floor (race-to-bottom), and gap (unclaimed space).</div>
+                <p>A list of prices tells you what people charge. A band tells you <strong>why</strong> they charge it. The structure inside the band is the signal.</p>
+                <p>Four things to look for, in order:</p>
+                <div class="sig-stat-row">
+                  <div class="sig-stat"><div class="sig-stat-num">1</div><div class="sig-stat-label">Anchor: who's at the high end and what proof do they have</div></div>
+                  <div class="sig-stat"><div class="sig-stat-num">2</div><div class="sig-stat-label">Cluster: where 60% sit and what they all share</div></div>
+                  <div class="sig-stat"><div class="sig-stat-num">3</div><div class="sig-stat-label">Floor: the race-to-bottom price and what's missing from those offers</div></div>
+                </div>
+                <p>The fourth is the gap. The price band rarely covers itself evenly. Look for the empty stretch where nobody anchors. That gap is usually a positioning opportunity or a category warning. Both matter.</p>
+                <div class="sig-callout"><p>A price isn't defensible because it's average. It's defensible because the proof behind it matches the number.</p></div>
+                </section>
+
+    <section class="sig-section">
+      <h2>How to actually read your band.</h2>
+                <p>Pull 8-15 competitors that sell roughly your offer shape. Not "in your industry." <strong>Your offer shape.</strong> Same length, same deliverable, same buyer.</p>
+                <ol>
+                  <li><strong>List the price + the proof.</strong> What testimonial, case study, credential, or guarantee sits next to that price?</li>
+                  <li><strong>Mark the anchor.</strong> Highest price with sustained sales (live 12+ months). What proof do they have you don't?</li>
+                  <li><strong>Mark the cluster.</strong> The 60% middle. Note what they all share. That shared thing is the category's default expectation.</li>
+                  <li><strong>Mark the floor.</strong> Race-to-bottom. Note what's <em>missing</em> from those offers. Usually setup, support, or risk reversal.</li>
+                  <li><strong>Find the gap.</strong> Where does nobody anchor? Empty space below the cluster + above the floor = positioning room. Empty space above the anchor = category cap (or your chance to define a new tier).</li>
+                  <li><strong>Pick by proof you can defend.</strong> Match your price to the proof you actually have. Not the proof you wish you had.</li>
+                </ol>
+                <h3>When pricing by feel is fine.</h3>
+                <p>Two cases: you're under $500 (transactional, friction matters more than band), or you're truly category-of-one and there's no band to read. Otherwise the band is the cheaper teacher than the launch.</p>
+                </section>
+
+    <section class="sig-section">
+      <h2>Back to the blank Notion page.</h2>
+                <p>The founder rebuilt the band. Twenty-two competitors became eight (same offer shape). The cluster sat at $850-$1,400. Anchor at $4,800 with eleven case studies + a guarantee. Floor at $97 with no support. The gap: nothing between $1,400 and $4,800 with mid-level proof.</p>
+                <p>She priced at $2,400 with three case studies and a 30-day refund. Five closes in two weeks. Same offer. Different number with proof to match.</p>
+                <p>The price wasn't wrong. The reading was.</p>
+                </section>
+<section class="sig-section">
+      <h2>[TODO B · Mechanism/why]</h2>
+      <div class="sig-def"><strong>[Key term]:</strong>[One-sentence definition. AEO loves this.]</div>
+      <p>[TODO: Explain WHY the thing in A happens. Cite mechanism, data, evidence.]</p>
+      <div class="sig-stat-row">
+        <div class="sig-stat"><div class="sig-stat-num">[X]</div><div class="sig-stat-label">[stat label]</div></div>
+        <div class="sig-stat"><div class="sig-stat-num">[X]</div><div class="sig-stat-label">[stat label]</div></div>
+        <div class="sig-stat"><div class="sig-stat-num">[X]</div><div class="sig-stat-label">[stat label]</div></div>
+      </div>
+      <div class="sig-callout"><p>[Short italic pull-quote that crystalizes the mechanism]</p></div>
+    </section>
+
+    <section class="sig-section">
+      <h2>[TODO C · Application/the move]</h2>
+      <p>[TODO: What to do with the insight. Concrete steps.]</p>
+      <ol>
+        <li><strong>[Step 1]</strong> description</li>
+        <li><strong>[Step 2]</strong> description</li>
+        <li><strong>[Step 3]</strong> description</li>
+      </ol>
+      <h3>[TODO: When NOT to do this / counter-case]</h3>
+      <p>[TODO: One paragraph showing edge case or when the move is wrong.]</p>
+    </section>
+
+    <section class="sig-section">
+      <h2>[TODO A' · Callback to scene]</h2>
+      <p>[TODO: Return to the opening scene with new meaning. 2-3 sentences. Don't over-resolve.]</p>
+    </section>
+
+    <section class="sig-faq">
+      <div class="sig-faq-label">◆ Common questions</div>
+      <details>
+        <summary>What is a pricing band?</summary>
+        <p>A pricing band is the visible range competitors charge for the same offer shape. It has four readable structures: anchor (high end), cluster (where most sit), floor (race-to-bottom), and gap (unclaimed space).</p>
+      </details>
+      <details>
+        <summary>How do I find my pricing band?</summary>
+        <p>List 8-15 competitors selling roughly your offer shape (same length, deliverable, buyer). Note their price + what proof sits next to it. Sort by amount. Mark the anchor, the cluster, the floor, and the gap.</p>
+      </details>
+      <details>
+        <summary>Should I price at the average?</summary>
+        <p>No. Average price has nothing behind it. Defensible price comes from matching the number to the proof you actually have (case studies, guarantees, credentials, channel).</p>
+      </details>
+      <details>
+        <summary>What is a pricing gap?</summary>
+        <p>An empty stretch in the price band where no competitor anchors. A gap below the cluster + above the floor is usually positioning room. A gap above the anchor is either a category cap or your chance to define a new tier.</p>
+      </details>
+      <details>
+        <summary>How often should I re-read the band?</summary>
+        <p>Every 6 months in stable categories. Every quarter if you operate in fast-moving categories (AI, social media tooling, creator economy). Anchor moves more than people think.</p>
+      </details>
+    </section>
+
+    <aside class="sig-cta-box">
+      <div>
+        <div class="sig-cta-title">Want the band read on your category?</div>
+        <p class="sig-cta-text">Sprint 1 · Snapshot pulls the pricing band across your top 6-8 competitors + a ranked recommendation in 48 hours. $750.</p>
+      </div>
+      <a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" class="sig-cta-btn" data-track="Blog how-to-read-a-pricing-band CTA">Begin Sprint 1 →</a>
+    </aside>
+
+    <section class="sig-related">
+      <div class="sig-related-label">◆ Related signals</div>
+      <ul>
+        <li><a href="/blog/competitor-research-vs-reconstruction.html">Competitor research vs competitor reconstruction<span>Research catalogues. Reconstruction explains.</span></a></li>
+        <li><a href="/blog/why-ads-stop-working-after-60-days.html">Why your ads stop working after 60 days<span>Category drift vs creative fatigue.</span></a></li>
+      </ul>
+    </section>
+
+    <p class="sig-foot">Last updated May 31, 2026. Field notes by <a href="/about.html">Alex Lamb</a>, LoopWorker.</p>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">LoopWorker</div>
+        <div class="footer-meta">Evidence before execution.</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="/sprint.html">The Sprint</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/case-studies.html">Case Studies</a></li>
+        <li><a href="/blog/">Signals</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script defer src="/site-pages.js"></script>
+</body>
+</html>
