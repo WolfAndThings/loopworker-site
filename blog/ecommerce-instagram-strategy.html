@@ -8,6 +8,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/site-pages.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/v5-system.css">
+  <style>
+    /* Blog post v5 article overrides */
+    body { background: var(--bg) !important; color: var(--text-2) !important; font-family: var(--sans) !important; }
+    .sig-article { max-width: 760px; margin: 0 auto; padding: 5rem 2rem; position: relative; }
+    .sig-article::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 400px; pointer-events: none; background: radial-gradient(ellipse 800px 400px at 50% 0%, rgba(99,102,241,0.10), transparent 60%); z-index: -1; }
+    .sig-article h1 { font-family: var(--sans-tight) !important; font-size: clamp(2rem, 4.4vw, 3.2rem) !important; font-weight: 800 !important; letter-spacing: -0.035em !important; line-height: 1.06 !important; color: var(--text) !important; margin: 0 0 1.4rem !important; }
+    .sig-article h2 { font-family: var(--sans-tight) !important; font-size: clamp(1.4rem, 2.4vw, 1.8rem) !important; font-weight: 700 !important; letter-spacing: -0.025em !important; color: var(--text) !important; margin: 2.4rem 0 1rem !important; }
+    .sig-article h3 { font-family: var(--sans-tight) !important; font-size: 1.2rem !important; font-weight: 700 !important; color: var(--text) !important; margin: 1.8rem 0 0.7rem !important; }
+    .sig-article p, .sig-article li { color: var(--text-2) !important; font-size: 1.05rem !important; line-height: 1.7 !important; }
+    .sig-article p { margin: 0 0 1rem !important; }
+    .sig-article a { color: var(--indigo-bright); border-bottom: 1px solid rgba(129,140,248,0.3); }
+    .sig-article a:hover { color: var(--text); border-color: var(--text); }
+    .sig-article strong { color: var(--text); }
+    .sig-article ul, .sig-article ol { padding-left: 1.4rem; margin: 0 0 1.2rem; }
+    .sig-article li { margin-bottom: 0.5rem; }
+    .sig-article blockquote { border-left: 2px solid var(--indigo); padding: 0.4rem 0 0.4rem 1.4rem; margin: 1.4rem 0; color: var(--text); font-family: var(--sans-tight); font-style: italic; font-size: 1.1rem; font-weight: 500; }
+    .sig-article code { background: rgba(99,102,241,0.1); color: var(--indigo-bright); padding: 0.15rem 0.45rem; border-radius: 4px; font-family: var(--mono); font-size: 0.88em; border: 1px solid rgba(99,102,241,0.2); }
+    .sig-article pre { background: var(--surface); border: 1px solid var(--border); padding: 1.2rem; border-radius: 10px; overflow-x: auto; }
+    .sig-article pre code { background: none; border: 0; padding: 0; color: var(--text-2); }
+    .sig-meta-row { display: flex; gap: 0.8rem; flex-wrap: wrap; font-family: var(--mono); font-size: 0.72rem; color: var(--indigo-bright); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; margin-bottom: 1.4rem; }
+    .sig-meta-row span { padding: 0.25rem 0.7rem; background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.2); border-radius: 4px; }
+    .sig-foot { margin-top: 3rem; padding-top: 1.6rem; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 0.78rem; color: var(--text-3); }
+    /* Hide old global nav legacy */
+    .container.footer-inner { max-width: 1100px; margin: 0 auto; }
+  </style>
   <title>Ecommerce Content as Offer Evidence | Signals | LoopWorker</title>
   <meta name="description" content="A signal note on product proof, customer language, creator evidence, and conversion friction in ecommerce.">
   <link rel="canonical" href="https://www.loopworker.com/blog/ecommerce-instagram-strategy.html">
@@ -103,26 +131,34 @@
 </script>
 </head>
 <body>
-  <nav>
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">LoopWorker</a>
-      <ul class="nav-links">
-        <li><a href="/sprint.html">The Sprint</a></li>
-        <li><a href="/case-studies.html">Case Studies</a></li>
-        <li><a href="/blog/">Signals</a></li>
-        <li><a href="/about.html">About</a></li>
-        <li><a href="/book.html" class="nav-cta">Book a Call</a></li>
-      </ul>
-      <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav class="v5-nav">
+    <div class="v5-nav-inner">
+      <a href="/" class="v5-logo">
+        <span class="v5-logo-mark">L</span>
+        LoopWorker
+      </a>
+      <div class="v5-nav-links">
+        <a href="/sprint.html">Sprints</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/case-studies.html">Customers</a>
+        <a href="/blog/" class="active">Signals</a>
+        <a href="/about.html">About</a>
+        <a href="/book.html" class="v5-nav-cta">Book a Call</a>
+      </div>
+      <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="v5-mobile-nav" id="mobileNav">
+      <a href="/sprint.html">Sprints</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/case-studies.html">Customers</a>
+      <a href="/blog/">Signals</a>
+      <a href="/about.html">About</a>
+      <a href="/book.html" class="v5-nav-cta">Book a Call</a>
     </div>
   </nav>
-  <div class="mobile-nav" id="mobileNav">
-    <a href="/sprint.html">The Sprint</a>
-    <a href="/case-studies.html">Case Studies</a>
-    <a href="/blog/">Signals</a>
-    <a href="/about.html">About</a>
-    <a href="/book.html" class="nav-cta">Book a Call</a>
-  </div>
   <main class="signal-article">
     <div class="container">
       <span class="article-tag">Product Brands / Signal Note</span>
@@ -140,7 +176,14 @@
       </div>
     </div>
   </main>
-  <footer><div class="container footer-inner"><div><div class="footer-brand">LoopWorker</div><div class="footer-meta">Evidence before execution.</div></div><ul class="footer-links"><li><a href="/sprint.html">The Sprint</a></li><li><a href="/case-studies.html">Case Studies</a></li><li><a href="/blog/">Signals</a></li><li><a href="/about.html">About</a></li></ul></div></footer>
+  <footer class="v5-foot">
+    <div class="v5-foot-inner">
+      <div class="v5-foot-logo">LoopWorker</div>
+      <p>Evidence before execution.</p>
+      <p>© 2026 · <a href="/sprint.html">Sprints</a> · <a href="/case-studies.html">Customers</a> · <a href="/blog/">Signals</a> · <a href="/about.html">About</a></p>
+      <p class="v5-foot-small">alex@loopworker.com · <a href="https://instagram.com/loopworker">@loopworker</a></p>
+    </div>
+  </footer>
   <script defer src="/site-pages.js"></script>
 </body>
 </html>
