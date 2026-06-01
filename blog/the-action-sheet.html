@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site-pages.css">
+  <title>The action sheet · Signals · LoopWorker</title>
+  <meta name="description" content="Most ads stop working not because they got old but because the category moved. Here's how to read ad-longevity signals to know when to refresh creative vs reposition the offer.">
+  <link rel="canonical" href="https://www.loopworker.com/blog/the-action-sheet.html">
+  <meta name="author" content="Alex Lamb">
+  <meta name="theme-color" content="#080808">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.loopworker.com/blog/the-action-sheet.html">
+  <meta property="og:title" content="The action sheet">
+  <meta property="og:description" content="Most ads die because the category moved, not because creative fatigued. Read the signal before swapping the hook.">
+  <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+  <meta property="og:site_name" content="LoopWorker">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-05-31">
+  <meta property="article:modified_time" content="2026-05-31">
+  <meta property="article:author" content="Alex Lamb">
+  <meta property="article:section" content="Signal Patterns">
+  <meta property="article:tag" content="paid acquisition">
+  <meta property="article:tag" content="ad longevity">
+  <meta property="article:tag" content="category signals">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The action sheet">
+  <meta name="twitter:description" content="Most ads die because the category moved, not because creative fatigued.">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23080808' width='100' height='100'/><text x='50' y='65' font-size='52' text-anchor='middle' fill='%23D4A017'>◉</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+  <link rel="dns-prefetch" href="https://buy.stripe.com">
+
+  <style>
+    :root { --gold-leaf: linear-gradient(135deg, #E8C77A 0%, #D4A017 45%, #A87C0E 100%); --line: rgba(255,255,255,0.07); --soft: #C2C2C2; --mute: #888; --text: #F5F5F5; }
+    .sig-article { padding: 8rem 1.5rem 4rem; max-width: 760px; margin: 0 auto; }
+    .sig-meta-row { display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mute); font-weight: 600; margin-bottom: 1.4rem; }
+    .sig-meta-row span::before { content: '◆ '; color: #D4A017; }
+    .sig-meta-row span:first-child::before { content: ''; }
+    .sig-h1 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: clamp(2rem, 4.8vw, 3.4rem); line-height: 1.05; letter-spacing: -0.035em; color: var(--text); margin: 0 0 1.4rem; text-wrap: balance; }
+    .sig-h1 em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    .sig-lead { font-size: 1.18rem; line-height: 1.6; color: #D5D5D5; margin: 0 0 2.4rem; }
+    .sig-tldr { padding: 1.4rem 1.6rem; border: 1px solid rgba(212,160,23,0.25); background: rgba(212,160,23,0.04); border-radius: 10px; margin: 0 0 2.8rem; }
+    .sig-tldr-label { display: block; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: #D4A017; font-weight: 700; margin-bottom: 0.55rem; }
+    .sig-tldr p { font-size: 0.98rem; line-height: 1.6; color: var(--soft); margin: 0; }
+    .sig-section { margin: 2.6rem 0; }
+    .sig-section h2 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.55rem; letter-spacing: -0.02em; color: var(--text); margin: 0 0 1rem; line-height: 1.2; }
+    .sig-section h2 em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    .sig-section h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--text); margin: 1.8rem 0 0.7rem; letter-spacing: -0.015em; }
+    .sig-section p { font-size: 1.02rem; line-height: 1.7; color: var(--soft); margin: 0 0 1.1rem; }
+    .sig-section strong { color: var(--text); }
+    .sig-section ul, .sig-section ol { margin: 0 0 1.3rem 0; padding-left: 1.4rem; }
+    .sig-section li { font-size: 1rem; line-height: 1.7; color: var(--soft); margin-bottom: 0.5rem; }
+    .sig-section li strong { color: var(--text); }
+    .sig-callout { padding: 1.2rem 1.4rem; border-left: 2px solid #D4A017; background: rgba(255,255,255,0.022); margin: 1.6rem 0; border-radius: 0 8px 8px 0; }
+    .sig-callout p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.18rem; line-height: 1.4; color: var(--text); margin: 0; }
+    .sig-def { padding: 1rem 1.2rem; border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,0.012); margin: 1.4rem 0; font-size: 0.95rem; line-height: 1.55; color: var(--soft); }
+    .sig-def strong { display: inline-block; font-weight: 800; color: var(--text); margin-right: 0.4rem; letter-spacing: -0.005em; }
+    .sig-stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin: 1.8rem 0; }
+    @media (max-width: 600px) { .sig-stat-row { grid-template-columns: 1fr; } }
+    .sig-stat { padding: 1.1rem 1.2rem; border: 1px solid var(--line); border-radius: 10px; background: rgba(255,255,255,0.012); }
+    .sig-stat-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 2rem; line-height: 1; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; margin-bottom: 0.45rem; font-variant-numeric: tabular-nums; }
+    .sig-stat-label { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mute); font-weight: 600; line-height: 1.4; }
+    .sig-faq { margin: 3rem 0 2rem; padding: 2rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .sig-faq-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: #D4A017; font-weight: 700; margin-bottom: 1.4rem; }
+    .sig-faq details { padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+    .sig-faq details:last-of-type { border-bottom: 0; }
+    .sig-faq summary { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.02rem; color: var(--text); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; letter-spacing: -0.005em; }
+    .sig-faq summary::-webkit-details-marker { display: none; }
+    .sig-faq summary::after { content: '+'; font-weight: 300; font-size: 1.4rem; color: var(--mute); line-height: 1; transition: color 0.18s; }
+    .sig-faq details[open] summary::after { content: '–'; color: #D4A017; }
+    .sig-faq details p { font-size: 0.96rem; line-height: 1.65; color: var(--soft); margin: 0.9rem 0 0; }
+    .sig-cta-box { margin: 3rem 0 0; padding: 2rem; border: 1px solid var(--line); border-radius: 12px; background: linear-gradient(180deg, rgba(212,160,23,0.04), rgba(255,255,255,0.01)); display: grid; grid-template-columns: 1fr auto; gap: 1.4rem; align-items: center; }
+    @media (max-width: 640px) { .sig-cta-box { grid-template-columns: 1fr; } }
+    .sig-cta-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--text); margin-bottom: 0.3rem; letter-spacing: -0.01em; }
+    .sig-cta-text { font-size: 0.92rem; color: var(--soft); line-height: 1.55; margin: 0; }
+    .sig-cta-btn { display: inline-flex; align-items: center; padding: 0.85rem 1.4rem; background: #D4A017; color: #1A0F00; text-decoration: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.88rem; letter-spacing: -0.005em; white-space: nowrap; transition: background 0.18s; }
+    .sig-cta-btn:hover { background: #F4C842; }
+    .sig-foot { margin: 2.4rem 0 0; font-size: 0.82rem; color: var(--mute); padding-top: 1.2rem; border-top: 1px solid var(--line); }
+    .sig-foot a { color: var(--soft); }
+    .sig-related { margin: 3rem 0; }
+    .sig-related-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); font-weight: 700; margin-bottom: 1rem; }
+    .sig-related ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; }
+    .sig-related li a { display: block; padding: 0.85rem 1rem; border: 1px solid var(--line); border-radius: 8px; color: var(--text); text-decoration: none; font-size: 0.95rem; transition: border-color 0.18s, background 0.18s; }
+    .sig-related li a:hover { border-color: rgba(212,160,23,0.3); background: rgba(212,160,23,0.04); }
+    .sig-related li a span { color: var(--mute); font-size: 0.85rem; display: block; margin-top: 0.2rem; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.loopworker.com/#organization",
+        "name": "LoopWorker",
+        "url": "https://www.loopworker.com/",
+        "slogan": "Evidence before execution.",
+        "founder": { "@type": "Person", "name": "Alex Lamb", "url": "https://www.loopworker.com/about.html" }
+      },
+      {
+        "@type": "Article",
+        "headline": "The action sheet",
+        "alternativeHeadline": "Ads die when the category moves, not when creative fatigues",
+        "description": "Most ads stop working not because creative got old. They stop because the category moved. Here's how to read the signal.",
+        "url": "https://www.loopworker.com/blog/the-action-sheet.html",
+        "datePublished": "2026-05-31",
+        "dateModified": "2026-05-31",
+        "wordCount": 1180,
+        "timeRequired": "PT5M",
+        "inLanguage": "en-US",
+        "author": { "@type": "Person", "name": "Alex Lamb", "url": "https://www.loopworker.com/about.html" },
+        "publisher": { "@id": "https://www.loopworker.com/#organization" },
+        "mainEntityOfPage": "https://www.loopworker.com/blog/the-action-sheet.html",
+        "image": "https://www.loopworker.com/images/cards/card_02.webp",
+        "about": ["paid acquisition", "ad longevity", "category signals", "market intelligence"],
+        "keywords": "ad fatigue, ad longevity, why ads stop working, creative refresh, category movement"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is an action sheet?", "acceptedAnswer": { "@type": "Answer", "text": "The one-page output of a strategy round listing 5-10 specific moves ranked by evidence weight, each with a 30-day owner + deadline. Bridges the strategy brief to actual execution." } },
+          { "@type": "Question", "name": "How is an action sheet different from a roadmap?", "acceptedAnswer": { "@type": "Answer", "text": "A roadmap covers months or quarters. An action sheet covers the next 30 days. The sheet is the execution layer that follows the brief; the roadmap is the broader sequence the sheets build toward." } },
+          { "@type": "Question", "name": "Why does it have to be one page?", "acceptedAnswer": { "@type": "Answer", "text": "Forcing function. One page prevents scope creep, keeps moves specific, and forces ranking by evidence weight. Multi-page action documents don't survive the Monday standup." } },
+          { "@type": "Question", "name": "Who writes the action sheet?", "acceptedAnswer": { "@type": "Answer", "text": "Strategy lead writes it. Operators ratify it in the meeting where the brief is presented. Forcing function: nobody walks out without their name on a row." } },
+          { "@type": "Question", "name": "What if my brief generates 20+ moves?", "acceptedAnswer": { "@type": "Answer", "text": "Cut to 10. The 10 with the strongest evidence weight. The next 10 go to the next sprint. Limiting to 10 forces ranking. Most teams ship more by capping the list, not expanding it." } }
+        ]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } },
+          { "@type": "Question", "name": "[TODO Q2?]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } },
+          { "@type": "Question", "name": "[TODO Q3?]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } },
+          { "@type": "Question", "name": "[TODO Q4?]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } },
+          { "@type": "Question", "name": "[TODO Q5?]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.loopworker.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Signals", "item": "https://www.loopworker.com/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Why your ads stop working after 60 days", "item": "https://www.loopworker.com/blog/the-action-sheet.html" }
+        ]
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Ad longevity",
+        "description": "The number of consecutive days an ad has been live in a public ad library. Long-running ads signal the category is rewarding that offer frame.",
+        "inDefinedTermSet": "https://www.loopworker.com/glossary/"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">LoopWorker</a>
+      <ul class="nav-links">
+        <li><a href="/sprint.html">The Sprint</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/case-studies.html">Case Studies</a></li>
+        <li><a href="/blog/">Signals</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/book.html" class="nav-cta">Book a Call</a></li>
+      </ul>
+      <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/sprint.html">The Sprint</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/case-studies.html">Case Studies</a>
+    <a href="/blog/">Signals</a>
+    <a href="/about.html">About</a>
+    <a href="/book.html" class="nav-cta">Book a Call</a>
+  </div>
+
+  <main id="main" class="sig-article">
+    <div class="sig-meta-row">
+      <span>Method</span>
+      <span>5 min read</span>
+      <span>May 31, 2026</span>
+      <span>Alex Lamb</span>
+    </div>
+
+    <h1 class="sig-h1">The action sheet<em>: turning evidence into one page.</em></h1>
+
+    <p class="sig-lead">Strategy without an action sheet is just a deck. Here's the page that survives the meeting.</p>
+
+    <aside class="sig-tldr">
+      <span class="sig-tldr-label">◆ TL;DR</span>
+      <p>An action sheet is the one-page output of a strategy round that lists 5-10 specific moves, ranked by evidence weight, with a 30-day owner + deadline next to each. Without it, strategy decks die in drawers. The sheet is the bridge between the brief and execution. The Sprint format always ends with an action sheet next to the brief.</p>
+    </aside>
+    <section class="sig-section">
+      <h2>The pinned Notion link.</h2>
+      <p>A founder pinned her strategy doc to her team's Notion six months ago. Beautiful deck. 38 slides. Six frameworks. Clear positioning. Everyone agreed it was right.</p><p>I asked: "What did your team ship from it?"</p><p>Pause. "I think... we changed the homepage hero. Maybe."</p><p>The deck was right. The sheet was missing. Without it, nothing shipped.</p>
+    </section>
+
+    <section class="sig-section">
+      <h2>What an action sheet is.</h2>
+      <div class="sig-def"><strong>Action sheet:</strong>The one-page output of a strategy round that lists 5-10 specific moves, ranked by evidence weight, with a 30-day owner and deadline next to each. Bridges the brief to execution.</div><p>A brief commits to a recommendation. An action sheet commits to the next 30 days of work. Without the sheet, the brief dies in the drawer.</p><p>The sheet is one page. Always one page. The forcing function matters more than the format.</p><div class="sig-stat-row"><div class="sig-stat"><div class="sig-stat-num">1</div><div class="sig-stat-label">page (forcing function)</div></div><div class="sig-stat"><div class="sig-stat-num">5-10</div><div class="sig-stat-label">specific moves, ranked</div></div><div class="sig-stat"><div class="sig-stat-num">30d</div><div class="sig-stat-label">owner + deadline next to each</div></div></div><p>Each row on the sheet has four columns: <strong>move</strong>, <strong>owner</strong>, <strong>deadline</strong>, <strong>evidence rank</strong>. Nothing else. If a row needs more than one line of description, the move isn't specific enough yet.</p><div class="sig-callout"><p>Strategy without an action sheet is a deck that dies in a drawer.</p></div>
+    </section>
+
+    <section class="sig-section">
+      <h2>How to write an action sheet.</h2>
+      <p>Pull from the brief's ranked recommendation. Translate each layer into one move with one owner.</p><ol><li><strong>Start with the top-ranked move.</strong> Specific. Verb-first. "Rewrite homepage hero using buyer-pull phrases. Owner: Maya. Deadline: June 14."</li><li><strong>Stack 4-9 more moves</strong> beneath it. Each one tied to a piece of evidence from the brief. Each one shippable inside the 30-day window.</li><li><strong>Rank by evidence weight,</strong> not effort. The move with the strongest evidence behind it goes top. The move with weakest evidence gets cut or moved to "next sprint."</li><li><strong>Cap at 10.</strong> If you have 11 moves, one of them is a maybe. Cut it.</li><li><strong>Print it.</strong> Hand it to the team in the same meeting where the brief is presented. Forcing function: nobody walks out without their name on a row.</li></ol><h3>When an action sheet is the wrong tool.</h3><p>Don't use the sheet format for multi-quarter roadmaps or long-cycle work (hiring, system migrations, M&A). Those need their own format. The action sheet is specifically for the 30-day execution layer after a strategy round.</p>
+    </section>
+
+    <section class="sig-section">
+      <h2>Back to the pinned Notion.</h2>
+      <p>We wrote the missing action sheet in 40 minutes from her existing deck. 8 moves, 8 owners, 8 deadlines. She walked it into her Monday standup. Six of the eight shipped in the first 30 days. Two slipped to month two and shipped.</p><p>Same deck. Same strategy. Different bridge. The deck didn't change. The execution layer finally existed.</p>
+    </section>
+<section class="sig-section">
+      <h2>[TODO B · Mechanism/why]</h2>
+      <div class="sig-def"><strong>[Key term]:</strong>[One-sentence definition. AEO loves this.]</div>
+      <p>[TODO: Explain WHY the thing in A happens. Cite mechanism, data, evidence.]</p>
+      <div class="sig-stat-row">
+        <div class="sig-stat"><div class="sig-stat-num">[X]</div><div class="sig-stat-label">[stat label]</div></div>
+        <div class="sig-stat"><div class="sig-stat-num">[X]</div><div class="sig-stat-label">[stat label]</div></div>
+        <div class="sig-stat"><div class="sig-stat-num">[X]</div><div class="sig-stat-label">[stat label]</div></div>
+      </div>
+      <div class="sig-callout"><p>[Short italic pull-quote that crystalizes the mechanism]</p></div>
+    </section>
+
+    <section class="sig-section">
+      <h2>[TODO C · Application/the move]</h2>
+      <p>[TODO: What to do with the insight. Concrete steps.]</p>
+      <ol>
+        <li><strong>[Step 1]</strong> description</li>
+        <li><strong>[Step 2]</strong> description</li>
+        <li><strong>[Step 3]</strong> description</li>
+      </ol>
+      <h3>[TODO: When NOT to do this / counter-case]</h3>
+      <p>[TODO: One paragraph showing edge case or when the move is wrong.]</p>
+    </section>
+
+    <section class="sig-section">
+      <h2>[TODO A' · Callback to scene]</h2>
+      <p>[TODO: Return to the opening scene with new meaning. 2-3 sentences. Don't over-resolve.]</p>
+    </section>
+
+    <section class="sig-faq">
+      <div class="sig-faq-label">◆ Common questions</div>
+      <details>
+        <summary>What is an action sheet?</summary>
+        <p>The one-page output of a strategy round listing 5-10 specific moves ranked by evidence weight, each with a 30-day owner + deadline. Bridges the strategy brief to actual execution.</p>
+      </details>
+      <details>
+        <summary>How is an action sheet different from a roadmap?</summary>
+        <p>A roadmap covers months or quarters. An action sheet covers the next 30 days. The sheet is the execution layer that follows the brief; the roadmap is the broader sequence the sheets build toward.</p>
+      </details>
+      <details>
+        <summary>Why does it have to be one page?</summary>
+        <p>Forcing function. One page prevents scope creep, keeps moves specific, and forces ranking by evidence weight. Multi-page action documents don't survive the Monday standup.</p>
+      </details>
+      <details>
+        <summary>Who writes the action sheet?</summary>
+        <p>Strategy lead writes it. Operators ratify it in the meeting where the brief is presented. Forcing function: nobody walks out without their name on a row.</p>
+      </details>
+      <details>
+        <summary>What if my brief generates 20+ moves?</summary>
+        <p>Cut to 10. The 10 with the strongest evidence weight. The next 10 go to the next sprint. Limiting to 10 forces ranking. Most teams ship more by capping the list, not expanding it.</p>
+      </details>
+    </section>
+
+    <aside class="sig-cta-box">
+      <div>
+        <div class="sig-cta-title">Want the action sheet built on your next move?</div>
+        <p class="sig-cta-text">Every Sprint output includes a brief + a one-page action sheet. Sprint 3 builds the full version in 10 days, $8,000. Or Sprint 1 ($750, 48 hours) for a mini-version.</p>
+      </div>
+      <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="sig-cta-btn" data-track="Blog the-action-sheet CTA">View Sprint 3 →</a>
+    </aside>
+
+    <section class="sig-related">
+      <div class="sig-related-label">◆ Related signals</div>
+      <ul>
+        <li><a href="/blog/what-is-a-decision-brief.html">What is a decision brief<span>The brief that comes before the sheet.</span></a></li>
+        <li><a href="/blog/repurpose-reposition-rebuild.html">Repurpose vs reposition vs rebuild<span>Pick the right depth before you write the sheet.</span></a></li>
+      </ul>
+    </section>
+
+    <p class="sig-foot">Last updated May 31, 2026. Field notes by <a href="/about.html">Alex Lamb</a>, LoopWorker.</p>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">LoopWorker</div>
+        <div class="footer-meta">Evidence before execution.</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="/sprint.html">The Sprint</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/case-studies.html">Case Studies</a></li>
+        <li><a href="/blog/">Signals</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script defer src="/site-pages.js"></script>
+</body>
+</html>
