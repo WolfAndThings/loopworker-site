@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site-pages.css">
+  <title>What is a decision brief · Signals · LoopWorker</title>
+  <meta name="description" content="Most ads stop working not because they got old but because the category moved. Here's how to read ad-longevity signals to know when to refresh creative vs reposition the offer.">
+  <link rel="canonical" href="https://www.loopworker.com/blog/what-is-a-decision-brief.html">
+  <meta name="author" content="Alex Lamb">
+  <meta name="theme-color" content="#080808">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.loopworker.com/blog/what-is-a-decision-brief.html">
+  <meta property="og:title" content="What is a decision brief">
+  <meta property="og:description" content="Most ads die because the category moved, not because creative fatigued. Read the signal before swapping the hook.">
+  <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+  <meta property="og:site_name" content="LoopWorker">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-05-31">
+  <meta property="article:modified_time" content="2026-05-31">
+  <meta property="article:author" content="Alex Lamb">
+  <meta property="article:section" content="Signal Patterns">
+  <meta property="article:tag" content="paid acquisition">
+  <meta property="article:tag" content="ad longevity">
+  <meta property="article:tag" content="category signals">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="What is a decision brief">
+  <meta name="twitter:description" content="Most ads die because the category moved, not because creative fatigued.">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23080808' width='100' height='100'/><text x='50' y='65' font-size='52' text-anchor='middle' fill='%23D4A017'>◉</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+  <link rel="dns-prefetch" href="https://buy.stripe.com">
+
+  <style>
+    :root { --gold-leaf: linear-gradient(135deg, #E8C77A 0%, #D4A017 45%, #A87C0E 100%); --line: rgba(255,255,255,0.07); --soft: #C2C2C2; --mute: #888; --text: #F5F5F5; }
+    .sig-article { padding: 8rem 1.5rem 4rem; max-width: 760px; margin: 0 auto; }
+    .sig-meta-row { display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mute); font-weight: 600; margin-bottom: 1.4rem; }
+    .sig-meta-row span::before { content: '◆ '; color: #D4A017; }
+    .sig-meta-row span:first-child::before { content: ''; }
+    .sig-h1 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: clamp(2rem, 4.8vw, 3.4rem); line-height: 1.05; letter-spacing: -0.035em; color: var(--text); margin: 0 0 1.4rem; text-wrap: balance; }
+    .sig-h1 em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    .sig-lead { font-size: 1.18rem; line-height: 1.6; color: #D5D5D5; margin: 0 0 2.4rem; }
+    .sig-tldr { padding: 1.4rem 1.6rem; border: 1px solid rgba(212,160,23,0.25); background: rgba(212,160,23,0.04); border-radius: 10px; margin: 0 0 2.8rem; }
+    .sig-tldr-label { display: block; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: #D4A017; font-weight: 700; margin-bottom: 0.55rem; }
+    .sig-tldr p { font-size: 0.98rem; line-height: 1.6; color: var(--soft); margin: 0; }
+    .sig-section { margin: 2.6rem 0; }
+    .sig-section h2 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.55rem; letter-spacing: -0.02em; color: var(--text); margin: 0 0 1rem; line-height: 1.2; }
+    .sig-section h2 em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    .sig-section h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--text); margin: 1.8rem 0 0.7rem; letter-spacing: -0.015em; }
+    .sig-section p { font-size: 1.02rem; line-height: 1.7; color: var(--soft); margin: 0 0 1.1rem; }
+    .sig-section strong { color: var(--text); }
+    .sig-section ul, .sig-section ol { margin: 0 0 1.3rem 0; padding-left: 1.4rem; }
+    .sig-section li { font-size: 1rem; line-height: 1.7; color: var(--soft); margin-bottom: 0.5rem; }
+    .sig-section li strong { color: var(--text); }
+    .sig-callout { padding: 1.2rem 1.4rem; border-left: 2px solid #D4A017; background: rgba(255,255,255,0.022); margin: 1.6rem 0; border-radius: 0 8px 8px 0; }
+    .sig-callout p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.18rem; line-height: 1.4; color: var(--text); margin: 0; }
+    .sig-def { padding: 1rem 1.2rem; border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,0.012); margin: 1.4rem 0; font-size: 0.95rem; line-height: 1.55; color: var(--soft); }
+    .sig-def strong { display: inline-block; font-weight: 800; color: var(--text); margin-right: 0.4rem; letter-spacing: -0.005em; }
+    .sig-stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin: 1.8rem 0; }
+    @media (max-width: 600px) { .sig-stat-row { grid-template-columns: 1fr; } }
+    .sig-stat { padding: 1.1rem 1.2rem; border: 1px solid var(--line); border-radius: 10px; background: rgba(255,255,255,0.012); }
+    .sig-stat-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 2rem; line-height: 1; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; margin-bottom: 0.45rem; font-variant-numeric: tabular-nums; }
+    .sig-stat-label { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mute); font-weight: 600; line-height: 1.4; }
+    .sig-faq { margin: 3rem 0 2rem; padding: 2rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .sig-faq-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: #D4A017; font-weight: 700; margin-bottom: 1.4rem; }
+    .sig-faq details { padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+    .sig-faq details:last-of-type { border-bottom: 0; }
+    .sig-faq summary { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.02rem; color: var(--text); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; letter-spacing: -0.005em; }
+    .sig-faq summary::-webkit-details-marker { display: none; }
+    .sig-faq summary::after { content: '+'; font-weight: 300; font-size: 1.4rem; color: var(--mute); line-height: 1; transition: color 0.18s; }
+    .sig-faq details[open] summary::after { content: '–'; color: #D4A017; }
+    .sig-faq details p { font-size: 0.96rem; line-height: 1.65; color: var(--soft); margin: 0.9rem 0 0; }
+    .sig-cta-box { margin: 3rem 0 0; padding: 2rem; border: 1px solid var(--line); border-radius: 12px; background: linear-gradient(180deg, rgba(212,160,23,0.04), rgba(255,255,255,0.01)); display: grid; grid-template-columns: 1fr auto; gap: 1.4rem; align-items: center; }
+    @media (max-width: 640px) { .sig-cta-box { grid-template-columns: 1fr; } }
+    .sig-cta-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--text); margin-bottom: 0.3rem; letter-spacing: -0.01em; }
+    .sig-cta-text { font-size: 0.92rem; color: var(--soft); line-height: 1.55; margin: 0; }
+    .sig-cta-btn { display: inline-flex; align-items: center; padding: 0.85rem 1.4rem; background: #D4A017; color: #1A0F00; text-decoration: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.88rem; letter-spacing: -0.005em; white-space: nowrap; transition: background 0.18s; }
+    .sig-cta-btn:hover { background: #F4C842; }
+    .sig-foot { margin: 2.4rem 0 0; font-size: 0.82rem; color: var(--mute); padding-top: 1.2rem; border-top: 1px solid var(--line); }
+    .sig-foot a { color: var(--soft); }
+    .sig-related { margin: 3rem 0; }
+    .sig-related-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); font-weight: 700; margin-bottom: 1rem; }
+    .sig-related ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; }
+    .sig-related li a { display: block; padding: 0.85rem 1rem; border: 1px solid var(--line); border-radius: 8px; color: var(--text); text-decoration: none; font-size: 0.95rem; transition: border-color 0.18s, background 0.18s; }
+    .sig-related li a:hover { border-color: rgba(212,160,23,0.3); background: rgba(212,160,23,0.04); }
+    .sig-related li a span { color: var(--mute); font-size: 0.85rem; display: block; margin-top: 0.2rem; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.loopworker.com/#organization",
+        "name": "LoopWorker",
+        "url": "https://www.loopworker.com/",
+        "slogan": "Evidence before execution.",
+        "founder": { "@type": "Person", "name": "Alex Lamb", "url": "https://www.loopworker.com/about.html" }
+      },
+      {
+        "@type": "Article",
+        "headline": "What is a decision brief",
+        "alternativeHeadline": "Ads die when the category moves, not when creative fatigues",
+        "description": "Most ads stop working not because creative got old. They stop because the category moved. Here's how to read the signal.",
+        "url": "https://www.loopworker.com/blog/what-is-a-decision-brief.html",
+        "datePublished": "2026-05-31",
+        "dateModified": "2026-05-31",
+        "wordCount": 1180,
+        "timeRequired": "PT5M",
+        "inLanguage": "en-US",
+        "author": { "@type": "Person", "name": "Alex Lamb", "url": "https://www.loopworker.com/about.html" },
+        "publisher": { "@id": "https://www.loopworker.com/#organization" },
+        "mainEntityOfPage": "https://www.loopworker.com/blog/what-is-a-decision-brief.html",
+        "image": "https://www.loopworker.com/images/cards/card_02.webp",
+        "about": ["paid acquisition", "ad longevity", "category signals", "market intelligence"],
+        "keywords": "ad fatigue, ad longevity, why ads stop working, creative refresh, category movement"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is a decision brief?", "acceptedAnswer": { "@type": "Answer", "text": "A short document (6-15 pages) that ranks the next strategic move for a business and shows the evidence behind the ranking. Commits to a recommendation. Defensible under questioning." } },
+          { "@type": "Question", "name": "How is a brief different from a deck?", "acceptedAnswer": { "@type": "Answer", "text": "A deck argues with visuals. A brief commits to a recommendation. The deck says 'here are options.' The brief says 'do this. Here's why.'" } },
+          { "@type": "Question", "name": "How is a brief different from a report?", "acceptedAnswer": { "@type": "Answer", "text": "A report catalogues what was found. A brief ranks what to do next. Reports stop at description. Briefs go through to commitment." } },
+          { "@type": "Question", "name": "How long should a decision brief be?", "acceptedAnswer": { "@type": "Answer", "text": "6-15 pages. Page 1 is the ranked recommendation in one sentence. Everything after page 1 is the evidence chain + counter-case + 30-day execution layer." } },
+          { "@type": "Question", "name": "Who writes the brief?", "acceptedAnswer": { "@type": "Answer", "text": "Founder-led intelligence work (a Sprint) produces the brief. Agencies often hand back reports or decks instead. Ask for the brief explicitly. If the deliverable can't fit on 15 pages with a ranked move on page 1, it isn't a brief." } }
+        ]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } },
+          { "@type": "Question", "name": "[TODO Q2?]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } },
+          { "@type": "Question", "name": "[TODO Q3?]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } },
+          { "@type": "Question", "name": "[TODO Q4?]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } },
+          { "@type": "Question", "name": "[TODO Q5?]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.loopworker.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Signals", "item": "https://www.loopworker.com/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Why your ads stop working after 60 days", "item": "https://www.loopworker.com/blog/what-is-a-decision-brief.html" }
+        ]
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Ad longevity",
+        "description": "The number of consecutive days an ad has been live in a public ad library. Long-running ads signal the category is rewarding that offer frame.",
+        "inDefinedTermSet": "https://www.loopworker.com/glossary/"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">LoopWorker</a>
+      <ul class="nav-links">
+        <li><a href="/sprint.html">The Sprint</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/case-studies.html">Case Studies</a></li>
+        <li><a href="/blog/">Signals</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/book.html" class="nav-cta">Book a Call</a></li>
+      </ul>
+      <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/sprint.html">The Sprint</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/case-studies.html">Case Studies</a>
+    <a href="/blog/">Signals</a>
+    <a href="/about.html">About</a>
+    <a href="/book.html" class="nav-cta">Book a Call</a>
+  </div>
+
+  <main id="main" class="sig-article">
+    <div class="sig-meta-row">
+      <span>Definition</span>
+      <span>5 min read</span>
+      <span>May 31, 2026</span>
+      <span>Alex Lamb</span>
+    </div>
+
+    <h1 class="sig-h1">What is a <em>decision brief.</em></h1>
+
+    <p class="sig-lead">Not a deck. Not a report. A short document that ranks your next move and shows the evidence behind it.</p>
+
+    <aside class="sig-tldr">
+      <span class="sig-tldr-label">◆ TL;DR</span>
+      <p>A decision brief is a short document (usually 6-15 pages) that ranks the next strategic move for a business and shows the evidence behind the ranking. Unlike a deck, it doesn't argue. Unlike a report, it doesn't catalogue. It commits to a recommendation and stays defensible under questioning. The brief is the output of a Sprint, not the input.</p>
+    </aside>
+    <section class="sig-section">
+      <h2>The dropped Slack file.</h2>
+                <p>A founder dropped a 47-page PDF into our shared Slack last spring. "Strategy review from the agency. What do you think?"</p>
+                <p>I scrolled. Lots of charts. Lots of frameworks. Three appendices.</p>
+                <p>"What does it tell you to do tomorrow?" I asked.</p>
+                <p>She scrolled back through. "It says... 'consider repositioning' or 'explore' a few different options."</p>
+                <p>That's the difference between a report and a brief. One catalogues. One commits.</p>
+                </section>
+
+    <section class="sig-section">
+      <h2>The brief is a commitment.</h2>
+                <div class="sig-def"><strong>Decision brief:</strong>A short document (6-15 pages) that ranks the next strategic move for a business and shows the evidence behind the ranking. Commits to a recommendation. Stays defensible under questioning.</div>
+                <p>A report says "here's what we found." A deck says "here are some options." A brief says "do this next, and here's why the evidence ranks it above the alternatives."</p>
+                <p>Three things a real decision brief always contains:</p>
+                <div class="sig-stat-row">
+                  <div class="sig-stat"><div class="sig-stat-num">1</div><div class="sig-stat-label">Ranked recommendation (one move, top of page 1)</div></div>
+                  <div class="sig-stat"><div class="sig-stat-num">2</div><div class="sig-stat-label">Evidence chain (what proves it, in 3-5 layers)</div></div>
+                  <div class="sig-stat"><div class="sig-stat-num">3</div><div class="sig-stat-label">Counter-case (what would change the ranking)</div></div>
+                </div>
+                <p>The counter-case is the test. If a brief can't tell you what would falsify the recommendation, it's a deck pretending to be a brief.</p>
+                <div class="sig-callout"><p>A real brief commits. A deck hedges. A report catalogues.</p></div>
+                </section>
+
+    <section class="sig-section">
+      <h2>How to read a brief like the buyer.</h2>
+                <p>If someone hands you a strategy document, ask four questions in this order:</p>
+                <ol>
+                  <li><strong>What's the one move?</strong> If it's not on page 1 in one sentence, it's a deck.</li>
+                  <li><strong>What's the evidence?</strong> Sources, fragments, quotes. Specific. Not "industry trends suggest."</li>
+                  <li><strong>What would change it?</strong> The counter-case. What new info would flip the ranking? If "nothing," it's an opinion not a brief.</li>
+                  <li><strong>What's the next 30 days?</strong> A brief without execution guardrails is theater.</li>
+                </ol>
+                <h3>When a deck is the right deliverable.</h3>
+                <p>Board meetings. Investor updates. Sales enablement. Three places where catalogue + visual > commitment. Don't confuse them with the brief that tells you what to ship.</p>
+                </section>
+
+    <section class="sig-section">
+      <h2>Back to the 47-page PDF.</h2>
+                <p>We rewrote the agency's report as a 9-page brief. Page 1: one ranked move. Pages 2-7: the evidence in 4 layers. Page 8: the counter-case. Page 9: the next 30 days.</p>
+                <p>She forwarded it to her board the next day. Approved in one meeting. The agency had done the research. They just hadn't written the brief.</p>
+                </section>
+<section class="sig-section">
+      <h2>[TODO B · Mechanism/why]</h2>
+      <div class="sig-def"><strong>[Key term]:</strong>[One-sentence definition. AEO loves this.]</div>
+      <p>[TODO: Explain WHY the thing in A happens. Cite mechanism, data, evidence.]</p>
+      <div class="sig-stat-row">
+        <div class="sig-stat"><div class="sig-stat-num">[X]</div><div class="sig-stat-label">[stat label]</div></div>
+        <div class="sig-stat"><div class="sig-stat-num">[X]</div><div class="sig-stat-label">[stat label]</div></div>
+        <div class="sig-stat"><div class="sig-stat-num">[X]</div><div class="sig-stat-label">[stat label]</div></div>
+      </div>
+      <div class="sig-callout"><p>[Short italic pull-quote that crystalizes the mechanism]</p></div>
+    </section>
+
+    <section class="sig-section">
+      <h2>[TODO C · Application/the move]</h2>
+      <p>[TODO: What to do with the insight. Concrete steps.]</p>
+      <ol>
+        <li><strong>[Step 1]</strong> description</li>
+        <li><strong>[Step 2]</strong> description</li>
+        <li><strong>[Step 3]</strong> description</li>
+      </ol>
+      <h3>[TODO: When NOT to do this / counter-case]</h3>
+      <p>[TODO: One paragraph showing edge case or when the move is wrong.]</p>
+    </section>
+
+    <section class="sig-section">
+      <h2>[TODO A' · Callback to scene]</h2>
+      <p>[TODO: Return to the opening scene with new meaning. 2-3 sentences. Don't over-resolve.]</p>
+    </section>
+
+    <section class="sig-faq">
+      <div class="sig-faq-label">◆ Common questions</div>
+      <details>
+        <summary>What is a decision brief?</summary>
+        <p>A short document (6-15 pages) that ranks the next strategic move for a business and shows the evidence behind the ranking. Commits to a recommendation. Defensible under questioning.</p>
+      </details>
+      <details>
+        <summary>How is a brief different from a deck?</summary>
+        <p>A deck argues with visuals. A brief commits to a recommendation. The deck says 'here are options.' The brief says 'do this. Here's why.'</p>
+      </details>
+      <details>
+        <summary>How is a brief different from a report?</summary>
+        <p>A report catalogues what was found. A brief ranks what to do next. Reports stop at description. Briefs go through to commitment.</p>
+      </details>
+      <details>
+        <summary>How long should a decision brief be?</summary>
+        <p>6-15 pages. Page 1 is the ranked recommendation in one sentence. Everything after page 1 is the evidence chain + counter-case + 30-day execution layer.</p>
+      </details>
+      <details>
+        <summary>Who writes the brief?</summary>
+        <p>Founder-led intelligence work (a Sprint) produces the brief. Agencies often hand back reports or decks instead. Ask for the brief explicitly. If the deliverable can't fit on 15 pages with a ranked move on page 1, it isn't a brief.</p>
+      </details>
+    </section>
+
+    <aside class="sig-cta-box">
+      <div>
+        <div class="sig-cta-title">Want a real decision brief on your next move?</div>
+        <p class="sig-cta-text">Sprint 3 produces a 10-page brief in 10 days. Ranked recommendation page 1, evidence chain pages 2-7, counter-case + 30-day execution layer. $8,000.</p>
+      </div>
+      <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="sig-cta-btn" data-track="Blog what-is-a-decision-brief CTA">View Sprint 3 →</a>
+    </aside>
+
+    <section class="sig-related">
+      <div class="sig-related-label">◆ Related signals</div>
+      <ul>
+        <li><a href="/blog/competitor-research-vs-reconstruction.html">Competitor research vs reconstruction<span>The work behind the brief.</span></a></li>
+        <li><a href="/blog/what-category-positioning-means.html">What category positioning means in 2026<span>Permission, not declaration.</span></a></li>
+      </ul>
+    </section>
+
+    <p class="sig-foot">Last updated May 31, 2026. Field notes by <a href="/about.html">Alex Lamb</a>, LoopWorker.</p>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">LoopWorker</div>
+        <div class="footer-meta">Evidence before execution.</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="/sprint.html">The Sprint</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/case-studies.html">Case Studies</a></li>
+        <li><a href="/blog/">Signals</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script defer src="/site-pages.js"></script>
+</body>
+</html>

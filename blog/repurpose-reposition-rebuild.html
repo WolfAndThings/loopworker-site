@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site-pages.css">
+  <title>Repurpose vs reposition vs rebuild · Signals · LoopWorker</title>
+  <meta name="description" content="Most ads stop working not because they got old but because the category moved. Here's how to read ad-longevity signals to know when to refresh creative vs reposition the offer.">
+  <link rel="canonical" href="https://www.loopworker.com/blog/repurpose-reposition-rebuild.html">
+  <meta name="author" content="Alex Lamb">
+  <meta name="theme-color" content="#080808">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.loopworker.com/blog/repurpose-reposition-rebuild.html">
+  <meta property="og:title" content="Repurpose vs reposition vs rebuild">
+  <meta property="og:description" content="Most ads die because the category moved, not because creative fatigued. Read the signal before swapping the hook.">
+  <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+  <meta property="og:site_name" content="LoopWorker">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:published_time" content="2026-05-31">
+  <meta property="article:modified_time" content="2026-05-31">
+  <meta property="article:author" content="Alex Lamb">
+  <meta property="article:section" content="Signal Patterns">
+  <meta property="article:tag" content="paid acquisition">
+  <meta property="article:tag" content="ad longevity">
+  <meta property="article:tag" content="category signals">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Repurpose vs reposition vs rebuild">
+  <meta name="twitter:description" content="Most ads die because the category moved, not because creative fatigued.">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23080808' width='100' height='100'/><text x='50' y='65' font-size='52' text-anchor='middle' fill='%23D4A017'>◉</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+  <link rel="dns-prefetch" href="https://buy.stripe.com">
+
+  <style>
+    :root { --gold-leaf: linear-gradient(135deg, #E8C77A 0%, #D4A017 45%, #A87C0E 100%); --line: rgba(255,255,255,0.07); --soft: #C2C2C2; --mute: #888; --text: #F5F5F5; }
+    .sig-article { padding: 8rem 1.5rem 4rem; max-width: 760px; margin: 0 auto; }
+    .sig-meta-row { display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mute); font-weight: 600; margin-bottom: 1.4rem; }
+    .sig-meta-row span::before { content: '◆ '; color: #D4A017; }
+    .sig-meta-row span:first-child::before { content: ''; }
+    .sig-h1 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: clamp(2rem, 4.8vw, 3.4rem); line-height: 1.05; letter-spacing: -0.035em; color: var(--text); margin: 0 0 1.4rem; text-wrap: balance; }
+    .sig-h1 em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    .sig-lead { font-size: 1.18rem; line-height: 1.6; color: #D5D5D5; margin: 0 0 2.4rem; }
+    .sig-tldr { padding: 1.4rem 1.6rem; border: 1px solid rgba(212,160,23,0.25); background: rgba(212,160,23,0.04); border-radius: 10px; margin: 0 0 2.8rem; }
+    .sig-tldr-label { display: block; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: #D4A017; font-weight: 700; margin-bottom: 0.55rem; }
+    .sig-tldr p { font-size: 0.98rem; line-height: 1.6; color: var(--soft); margin: 0; }
+    .sig-section { margin: 2.6rem 0; }
+    .sig-section h2 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.55rem; letter-spacing: -0.02em; color: var(--text); margin: 0 0 1rem; line-height: 1.2; }
+    .sig-section h2 em { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+    .sig-section h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--text); margin: 1.8rem 0 0.7rem; letter-spacing: -0.015em; }
+    .sig-section p { font-size: 1.02rem; line-height: 1.7; color: var(--soft); margin: 0 0 1.1rem; }
+    .sig-section strong { color: var(--text); }
+    .sig-section ul, .sig-section ol { margin: 0 0 1.3rem 0; padding-left: 1.4rem; }
+    .sig-section li { font-size: 1rem; line-height: 1.7; color: var(--soft); margin-bottom: 0.5rem; }
+    .sig-section li strong { color: var(--text); }
+    .sig-callout { padding: 1.2rem 1.4rem; border-left: 2px solid #D4A017; background: rgba(255,255,255,0.022); margin: 1.6rem 0; border-radius: 0 8px 8px 0; }
+    .sig-callout p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.18rem; line-height: 1.4; color: var(--text); margin: 0; }
+    .sig-def { padding: 1rem 1.2rem; border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,0.012); margin: 1.4rem 0; font-size: 0.95rem; line-height: 1.55; color: var(--soft); }
+    .sig-def strong { display: inline-block; font-weight: 800; color: var(--text); margin-right: 0.4rem; letter-spacing: -0.005em; }
+    .sig-stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin: 1.8rem 0; }
+    @media (max-width: 600px) { .sig-stat-row { grid-template-columns: 1fr; } }
+    .sig-stat { padding: 1.1rem 1.2rem; border: 1px solid var(--line); border-radius: 10px; background: rgba(255,255,255,0.012); }
+    .sig-stat-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 500; font-size: 2rem; line-height: 1; background: var(--gold-leaf); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; margin-bottom: 0.45rem; font-variant-numeric: tabular-nums; }
+    .sig-stat-label { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mute); font-weight: 600; line-height: 1.4; }
+    .sig-faq { margin: 3rem 0 2rem; padding: 2rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .sig-faq-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: #D4A017; font-weight: 700; margin-bottom: 1.4rem; }
+    .sig-faq details { padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+    .sig-faq details:last-of-type { border-bottom: 0; }
+    .sig-faq summary { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.02rem; color: var(--text); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; letter-spacing: -0.005em; }
+    .sig-faq summary::-webkit-details-marker { display: none; }
+    .sig-faq summary::after { content: '+'; font-weight: 300; font-size: 1.4rem; color: var(--mute); line-height: 1; transition: color 0.18s; }
+    .sig-faq details[open] summary::after { content: '–'; color: #D4A017; }
+    .sig-faq details p { font-size: 0.96rem; line-height: 1.65; color: var(--soft); margin: 0.9rem 0 0; }
+    .sig-cta-box { margin: 3rem 0 0; padding: 2rem; border: 1px solid var(--line); border-radius: 12px; background: linear-gradient(180deg, rgba(212,160,23,0.04), rgba(255,255,255,0.01)); display: grid; grid-template-columns: 1fr auto; gap: 1.4rem; align-items: center; }
+    @media (max-width: 640px) { .sig-cta-box { grid-template-columns: 1fr; } }
+    .sig-cta-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--text); margin-bottom: 0.3rem; letter-spacing: -0.01em; }
+    .sig-cta-text { font-size: 0.92rem; color: var(--soft); line-height: 1.55; margin: 0; }
+    .sig-cta-btn { display: inline-flex; align-items: center; padding: 0.85rem 1.4rem; background: #D4A017; color: #1A0F00; text-decoration: none; border-radius: 8px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.88rem; letter-spacing: -0.005em; white-space: nowrap; transition: background 0.18s; }
+    .sig-cta-btn:hover { background: #F4C842; }
+    .sig-foot { margin: 2.4rem 0 0; font-size: 0.82rem; color: var(--mute); padding-top: 1.2rem; border-top: 1px solid var(--line); }
+    .sig-foot a { color: var(--soft); }
+    .sig-related { margin: 3rem 0; }
+    .sig-related-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute); font-weight: 700; margin-bottom: 1rem; }
+    .sig-related ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.6rem; }
+    .sig-related li a { display: block; padding: 0.85rem 1rem; border: 1px solid var(--line); border-radius: 8px; color: var(--text); text-decoration: none; font-size: 0.95rem; transition: border-color 0.18s, background 0.18s; }
+    .sig-related li a:hover { border-color: rgba(212,160,23,0.3); background: rgba(212,160,23,0.04); }
+    .sig-related li a span { color: var(--mute); font-size: 0.85rem; display: block; margin-top: 0.2rem; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.loopworker.com/#organization",
+        "name": "LoopWorker",
+        "url": "https://www.loopworker.com/",
+        "slogan": "Evidence before execution.",
+        "founder": { "@type": "Person", "name": "Alex Lamb", "url": "https://www.loopworker.com/about.html" }
+      },
+      {
+        "@type": "Article",
+        "headline": "Repurpose vs reposition vs rebuild",
+        "alternativeHeadline": "Ads die when the category moves, not when creative fatigues",
+        "description": "Most ads stop working not because creative got old. They stop because the category moved. Here's how to read the signal.",
+        "url": "https://www.loopworker.com/blog/repurpose-reposition-rebuild.html",
+        "datePublished": "2026-05-31",
+        "dateModified": "2026-05-31",
+        "wordCount": 1180,
+        "timeRequired": "PT5M",
+        "inLanguage": "en-US",
+        "author": { "@type": "Person", "name": "Alex Lamb", "url": "https://www.loopworker.com/about.html" },
+        "publisher": { "@id": "https://www.loopworker.com/#organization" },
+        "mainEntityOfPage": "https://www.loopworker.com/blog/repurpose-reposition-rebuild.html",
+        "image": "https://www.loopworker.com/images/cards/card_02.webp",
+        "about": ["paid acquisition", "ad longevity", "category signals", "market intelligence"],
+        "keywords": "ad fatigue, ad longevity, why ads stop working, creative refresh, category movement"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is the difference between repurpose, reposition, and rebuild?", "acceptedAnswer": { "@type": "Answer", "text": "Repurpose: same offer, new format (channel reshuffle). Reposition: same offer, new frame (different claim, same product). Rebuild: new offer entirely (different product or major scope change). Ordered by depth of change required." } },
+          { "@type": "Question", "name": "How do I know which one to pick?", "acceptedAnswer": { "@type": "Answer", "text": "Three category questions in order: are competitors still using the same offer shape (if yes, repurpose); have 3+ competitors shipped new positioning in 90 days (if yes, reposition); has a substitute eaten the category or has buyer need fundamentally shifted (if yes, rebuild)." } },
+          { "@type": "Question", "name": "What does repurposing cost?", "acceptedAnswer": { "@type": "Answer", "text": "1-4 weeks of effort. Lowest cost. Right when the offer still fits but distribution is the leak." } },
+          { "@type": "Question", "name": "What does repositioning cost?", "acceptedAnswer": { "@type": "Answer", "text": "4-8 weeks of effort. Medium cost. Right when category moved but your product still solves the right problem with new emphasis." } },
+          { "@type": "Question", "name": "What does rebuilding cost?", "acceptedAnswer": { "@type": "Answer", "text": "3-6 months of effort. Highest cost. Right when a substitute ate the category or buyer need fundamentally shifted. Skip the shallower responses; they'll get eaten by the substitute." } }
+        ]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } },
+          { "@type": "Question", "name": "[TODO Q2?]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } },
+          { "@type": "Question", "name": "[TODO Q3?]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } },
+          { "@type": "Question", "name": "[TODO Q4?]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } },
+          { "@type": "Question", "name": "[TODO Q5?]", "acceptedAnswer": { "@type": "Answer", "text": "[TODO 40-60 word answer]" } }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.loopworker.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Signals", "item": "https://www.loopworker.com/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Why your ads stop working after 60 days", "item": "https://www.loopworker.com/blog/repurpose-reposition-rebuild.html" }
+        ]
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Ad longevity",
+        "description": "The number of consecutive days an ad has been live in a public ad library. Long-running ads signal the category is rewarding that offer frame.",
+        "inDefinedTermSet": "https://www.loopworker.com/glossary/"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">LoopWorker</a>
+      <ul class="nav-links">
+        <li><a href="/sprint.html">The Sprint</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/case-studies.html">Case Studies</a></li>
+        <li><a href="/blog/">Signals</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/book.html" class="nav-cta">Book a Call</a></li>
+      </ul>
+      <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/sprint.html">The Sprint</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/case-studies.html">Case Studies</a>
+    <a href="/blog/">Signals</a>
+    <a href="/about.html">About</a>
+    <a href="/book.html" class="nav-cta">Book a Call</a>
+  </div>
+
+  <main id="main" class="sig-article">
+    <div class="sig-meta-row">
+      <span>Decision Tree</span>
+      <span>5 min read</span>
+      <span>May 31, 2026</span>
+      <span>Alex Lamb</span>
+    </div>
+
+    <h1 class="sig-h1">Repurpose vs reposition vs <em>rebuild.</em></h1>
+
+    <p class="sig-lead">Three responses to the same dashboard. Picking the wrong one costs a quarter.</p>
+
+    <aside class="sig-tldr">
+      <span class="sig-tldr-label">◆ TL;DR</span>
+      <p>Repurpose, reposition, and rebuild are three different responses to flagging performance. Repurpose changes the format (same offer, new channel). Reposition changes the frame (same offer, new claim). Rebuild changes the offer itself. Picking the wrong response costs a quarter of execution. The diagnostic is in the category, not the dashboard.</p>
+    </aside>
+    <section class="sig-section">
+      <h2>Three founders, three Mondays.</h2>
+                <p>Three different founders, same week, same problem: performance flat or falling.</p>
+                <p>Founder A repurposed: turned blog posts into reels. Spent 4 weeks. Pipeline didn't move.</p>
+                <p>Founder B repositioned: rewrote the homepage and pitch deck. Spent 6 weeks. Pipeline moved up 22%.</p>
+                <p>Founder C rebuilt: shipped a new product line. Spent 4 months. Pipeline tripled.</p>
+                <p>Three different responses to the same symptom. Two were right. One was a quarter lost. The difference: how deep the category had moved.</p>
+                </section>
+
+    <section class="sig-section">
+      <h2>Three responses, three depths.</h2>
+                <div class="sig-def"><strong>Repurpose:</strong>Same offer, new format. Channel reshuffle. Lowest cost. Right when the offer still fits the category but distribution is the leak.</div>
+                <div class="sig-def"><strong>Reposition:</strong>Same offer, new frame. Different claim around the same product. Medium cost. Right when category moved but your product still solves the right problem with a new emphasis.</div>
+                <div class="sig-def"><strong>Rebuild:</strong>New offer, new frame. Different product or major scope change. Highest cost. Right when buyer need fundamentally shifted or a substitute ate the category.</div>
+                <p>Three responses, ordered by depth of change required.</p>
+                <div class="sig-stat-row">
+                  <div class="sig-stat"><div class="sig-stat-num">1-4wk</div><div class="sig-stat-label">repurpose timeline</div></div>
+                  <div class="sig-stat"><div class="sig-stat-num">4-8wk</div><div class="sig-stat-label">reposition timeline</div></div>
+                  <div class="sig-stat"><div class="sig-stat-num">3-6mo</div><div class="sig-stat-label">rebuild timeline</div></div>
+                </div>
+                <p>Cost scales 4-8× between rungs. Pick wrong and you spend rebuild time on a repurpose problem (slow), or repurpose effort on a rebuild problem (futile).</p>
+                <div class="sig-callout"><p>The wrong response burns the same quarter as the right one.</p></div>
+                </section>
+
+    <section class="sig-section">
+      <h2>How to pick the right one.</h2>
+                <p>Ask three category questions, in order:</p>
+                <ol>
+                  <li><strong>Are competitors still using the same offer shape?</strong> If yes → start at repurpose. The category didn't move; you might just be in the wrong channel.</li>
+                  <li><strong>Have 3+ competitors shipped a new positioning claim in the last 90 days?</strong> If yes → reposition. The category moved. The product still works. The frame around it needs to update.</li>
+                  <li><strong>Has a substitute eaten the category, or has the underlying buyer need fundamentally shifted?</strong> If yes → rebuild. New offer required.</li>
+                </ol>
+                <h3>When two answers say yes.</h3>
+                <p>If the category moved AND a new substitute appeared, default to the deeper response. Reposition will get eaten by the substitute. Skip to rebuild.</p>
+                </section>
+
+    <section class="sig-section">
+      <h2>Back to the three founders.</h2>
+                <p>Founder A's category hadn't moved. Distribution was actually fine. Her real bottleneck was a proof gap. Repurpose wasted 4 weeks because she diagnosed the wrong layer.</p>
+                <p>Founder B's category had shifted. Three competitors had shipped new claims. Reposition was the right depth. She got the lift.</p>
+                <p>Founder C's category had been eaten by a substitute. Repurpose or reposition would've extended a dying offer. Rebuild was right even though it took four months. By month five she was back ahead of the substitute.</p>
+                <p>The dashboard told all three the same thing. The category told three different stories.</p>
+                </section>
+<section class="sig-section">
+      <h2>[TODO B · Mechanism/why]</h2>
+      <div class="sig-def"><strong>[Key term]:</strong>[One-sentence definition. AEO loves this.]</div>
+      <p>[TODO: Explain WHY the thing in A happens. Cite mechanism, data, evidence.]</p>
+      <div class="sig-stat-row">
+        <div class="sig-stat"><div class="sig-stat-num">[X]</div><div class="sig-stat-label">[stat label]</div></div>
+        <div class="sig-stat"><div class="sig-stat-num">[X]</div><div class="sig-stat-label">[stat label]</div></div>
+        <div class="sig-stat"><div class="sig-stat-num">[X]</div><div class="sig-stat-label">[stat label]</div></div>
+      </div>
+      <div class="sig-callout"><p>[Short italic pull-quote that crystalizes the mechanism]</p></div>
+    </section>
+
+    <section class="sig-section">
+      <h2>[TODO C · Application/the move]</h2>
+      <p>[TODO: What to do with the insight. Concrete steps.]</p>
+      <ol>
+        <li><strong>[Step 1]</strong> description</li>
+        <li><strong>[Step 2]</strong> description</li>
+        <li><strong>[Step 3]</strong> description</li>
+      </ol>
+      <h3>[TODO: When NOT to do this / counter-case]</h3>
+      <p>[TODO: One paragraph showing edge case or when the move is wrong.]</p>
+    </section>
+
+    <section class="sig-section">
+      <h2>[TODO A' · Callback to scene]</h2>
+      <p>[TODO: Return to the opening scene with new meaning. 2-3 sentences. Don't over-resolve.]</p>
+    </section>
+
+    <section class="sig-faq">
+      <div class="sig-faq-label">◆ Common questions</div>
+      <details>
+        <summary>What is the difference between repurpose, reposition, and rebuild?</summary>
+        <p>Repurpose: same offer, new format (channel reshuffle). Reposition: same offer, new frame (different claim, same product). Rebuild: new offer entirely (different product or major scope change). Ordered by depth of change required.</p>
+      </details>
+      <details>
+        <summary>How do I know which one to pick?</summary>
+        <p>Three category questions in order: are competitors still using the same offer shape (if yes, repurpose); have 3+ competitors shipped new positioning in 90 days (if yes, reposition); has a substitute eaten the category or has buyer need fundamentally shifted (if yes, rebuild).</p>
+      </details>
+      <details>
+        <summary>What does repurposing cost?</summary>
+        <p>1-4 weeks of effort. Lowest cost. Right when the offer still fits but distribution is the leak.</p>
+      </details>
+      <details>
+        <summary>What does repositioning cost?</summary>
+        <p>4-8 weeks of effort. Medium cost. Right when category moved but your product still solves the right problem with new emphasis.</p>
+      </details>
+      <details>
+        <summary>What does rebuilding cost?</summary>
+        <p>3-6 months of effort. Highest cost. Right when a substitute ate the category or buyer need fundamentally shifted. Skip the shallower responses; they'll get eaten by the substitute.</p>
+      </details>
+    </section>
+
+    <aside class="sig-cta-box">
+      <div>
+        <div class="sig-cta-title">Want the right response diagnosed on your category?</div>
+        <p class="sig-cta-text">Sprint 3 reconstructs the category and ranks repurpose vs reposition vs rebuild with the evidence behind each. 10 days, $8,000.</p>
+      </div>
+      <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="sig-cta-btn" data-track="Blog repurpose-reposition-rebuild CTA">View Sprint 3 →</a>
+    </aside>
+
+    <section class="sig-related">
+      <div class="sig-related-label">◆ Related signals</div>
+      <ul>
+        <li><a href="/blog/why-cac-went-up.html">Why your CAC went up<span>Category signals that move first.</span></a></li>
+        <li><a href="/blog/what-category-positioning-means.html">What category positioning means in 2026<span>Permission, not declaration.</span></a></li>
+      </ul>
+    </section>
+
+    <p class="sig-foot">Last updated May 31, 2026. Field notes by <a href="/about.html">Alex Lamb</a>, LoopWorker.</p>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">LoopWorker</div>
+        <div class="footer-meta">Evidence before execution.</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="/sprint.html">The Sprint</a></li>
+        <li><a href="/pricing.html">Pricing</a></li>
+        <li><a href="/case-studies.html">Case Studies</a></li>
+        <li><a href="/blog/">Signals</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script defer src="/site-pages.js"></script>
+</body>
+</html>
