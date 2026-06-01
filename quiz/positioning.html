@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <title>Free Brand Positioning Quiz · Find Your Niche in 60 Seconds | LoopWorker</title>
+  <meta name="description" content="Free 60-second quiz. Answer 5 questions, get your brand archetype + a custom positioning starter. Built from the same method we run in $8K Sprints.">
+  <link rel="canonical" href="https://www.loopworker.com/quiz/positioning.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.loopworker.com/quiz/positioning.html">
+  <meta property="og:title" content="Find Your Brand Positioning in 60 Seconds — Free Quiz">
+  <meta property="og:description" content="5 questions. 60 seconds. Get your brand archetype + custom positioning starter. Free.">
+  <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+  <meta property="og:site_name" content="LoopWorker">
+  <meta name="theme-color" content="#07070C">
+  <meta name="color-scheme" content="dark">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/v5-system.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
+
+  <style>
+    .quiz-shell { position: relative; overflow: hidden; padding: 4rem 2rem 6rem; min-height: 80vh; }
+    .quiz-shell::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 1000px 600px at 50% 0%, rgba(99,102241,0.18), transparent 60%),
+        radial-gradient(ellipse 800px 500px at 50% 100%, rgba(168,85,247,0.10), transparent 70%);
+    }
+    .quiz-inner {
+      position: relative; z-index: 2;
+      max-width: 700px; margin: 0 auto;
+    }
+    .quiz-intro { text-align: center; margin-bottom: 2.4rem; }
+    .quiz-intro h1 { font-size: clamp(2.2rem, 4.6vw, 3.4rem); margin: 0 0 1rem; }
+    .quiz-intro p {
+      font-size: 1.1rem; color: var(--text-2); line-height: 1.55;
+      max-width: 540px; margin: 0 auto;
+    }
+    .quiz-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2.4rem;
+      position: relative; overflow: hidden;
+    }
+    .quiz-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: var(--grad-hero);
+    }
+    .quiz-progress {
+      display: flex; gap: 0.4rem; margin-bottom: 1.8rem;
+    }
+    .quiz-progress div {
+      flex: 1; height: 4px; border-radius: 2px;
+      background: rgba(255,255,255,0.08);
+      transition: background 0.32s ease;
+    }
+    .quiz-progress div.done { background: var(--grad-cta); }
+    .quiz-progress div.active { background: var(--indigo); }
+
+    .quiz-q-num {
+      font-family: var(--mono); font-size: 0.72rem;
+      color: var(--indigo-bright); letter-spacing: 0.14em;
+      text-transform: uppercase; font-weight: 700;
+      margin-bottom: 0.7rem;
+    }
+    .quiz-q-text {
+      font-family: var(--sans-tight); font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+      font-weight: 700; letter-spacing: -0.025em;
+      color: var(--text); margin: 0 0 1.4rem; line-height: 1.25;
+    }
+    .quiz-options { display: grid; gap: 0.6rem; }
+    .quiz-opt {
+      padding: 1rem 1.2rem;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      font-family: var(--sans-tight);
+      font-size: 0.96rem; font-weight: 500;
+      color: var(--text);
+      text-align: left; width: 100%;
+      letter-spacing: -0.012em;
+    }
+    .quiz-opt:hover {
+      border-color: var(--indigo);
+      background: rgba(99,102,241,0.05);
+      transform: translateY(-1px);
+    }
+    .quiz-opt.selected {
+      border-color: var(--indigo);
+      background: linear-gradient(135deg, rgba(99,102,241,0.10), rgba(168,85,247,0.04));
+    }
+
+    .quiz-nav {
+      display: flex; gap: 0.7rem; margin-top: 1.6rem;
+      justify-content: space-between; align-items: center;
+    }
+    .quiz-nav-text {
+      font-family: var(--mono); font-size: 0.74rem;
+      color: var(--text-3); letter-spacing: 0.04em;
+    }
+
+    /* Result */
+    .quiz-result { display: none; }
+    .quiz-result.show { display: block; }
+    .quiz-result-eyebrow {
+      font-family: var(--mono); font-size: 0.74rem;
+      color: var(--indigo-bright); letter-spacing: 0.16em;
+      text-transform: uppercase; font-weight: 700;
+      margin-bottom: 0.8rem; text-align: center;
+    }
+    .quiz-result h2 {
+      font-family: var(--sans-tight); font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+      font-weight: 800; letter-spacing: -0.035em; line-height: 1.1;
+      text-align: center; margin: 0 0 1rem;
+    }
+    .quiz-result h2 em {
+      font-style: normal;
+      background: var(--grad-hero);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .quiz-result-pitch {
+      text-align: center; color: var(--text-2);
+      font-size: 1.05rem; line-height: 1.6;
+      max-width: 480px; margin: 0 auto 2rem;
+    }
+    .quiz-result-insight {
+      background: rgba(99,102,241,0.06);
+      border: 1px solid rgba(99,102,241,0.25);
+      border-radius: 12px;
+      padding: 1.6rem 1.8rem;
+      margin: 0 0 2rem;
+    }
+    .quiz-result-insight h4 {
+      font-family: var(--mono); font-size: 0.74rem;
+      color: var(--indigo-bright); letter-spacing: 0.16em;
+      text-transform: uppercase; font-weight: 700;
+      margin: 0 0 0.7rem;
+    }
+    .quiz-result-insight p {
+      color: var(--text); font-size: 0.98rem; line-height: 1.55; margin: 0;
+    }
+    .quiz-result-form {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.8rem;
+      position: relative; overflow: hidden;
+    }
+    .quiz-result-form::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: var(--grad-hero);
+    }
+    .quiz-result-form h4 {
+      font-family: var(--sans-tight); font-size: 1.3rem;
+      font-weight: 700; letter-spacing: -0.025em;
+      margin: 0 0 0.5rem;
+    }
+    .quiz-result-form h4 em { color: var(--indigo-bright); font-style: normal; }
+    .quiz-result-form p {
+      font-size: 0.9rem; color: var(--text-3); line-height: 1.5; margin: 0 0 1.2rem;
+    }
+    .quiz-result-form form { display: flex; gap: 0.5rem; }
+    .quiz-result-form input {
+      flex: 1; padding: 0.85rem 1rem;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid var(--border); border-radius: 8px;
+      color: var(--text); font-family: var(--sans); font-size: 0.94rem;
+    }
+    .quiz-result-form input:focus { outline: none; border-color: var(--indigo); box-shadow: 0 0 0 3px rgba(99,102,241,0.18); }
+    .quiz-result-form button {
+      background: var(--grad-cta); color: #FFF; border: 0;
+      padding: 0.85rem 1.2rem; font-family: var(--sans);
+      font-size: 0.9rem; font-weight: 600; border-radius: 8px;
+      cursor: pointer; letter-spacing: -0.005em;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.1) inset, 0 12px 28px -8px rgba(99,102,241,0.55);
+      white-space: nowrap;
+    }
+    .quiz-result-form button:hover { background: var(--grad-cta-hover); }
+    .quiz-result-form-tiny {
+      font-family: var(--mono); font-size: 0.72rem;
+      color: var(--text-4); margin-top: 0.7rem; text-align: center;
+    }
+
+    .quiz-share {
+      text-align: center; margin-top: 1.6rem;
+      font-size: 0.86rem; color: var(--text-3);
+    }
+    .quiz-share a {
+      color: var(--indigo-bright); border-bottom: 1px solid rgba(129,140,248,0.3);
+      margin: 0 0.4rem;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Quiz",
+    "name": "Brand Positioning Quiz",
+    "about": "Brand positioning archetype assessment",
+    "educationalLevel": "Founders, operators, marketers",
+    "publisher": { "@type": "Organization", "name": "LoopWorker" },
+    "url": "https://www.loopworker.com/quiz/positioning.html",
+    "description": "Free 60-second quiz that maps your brand to one of four positioning archetypes."
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="v5-nav">
+    <div class="v5-nav-inner">
+      <a href="/" class="v5-logo">
+        <span class="v5-logo-mark">L</span>
+        LoopWorker
+      </a>
+      <div class="v5-nav-links">
+        <a href="/sprint.html">Sprints</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/case-studies.html">Customers</a>
+        <a href="/blog/">Signals</a>
+        <a href="/about.html">About</a>
+        <a href="/book.html" class="v5-nav-cta">Book a Call</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="quiz-shell">
+      <div class="quiz-inner">
+
+        <div class="quiz-intro">
+          <span class="v5-eyebrow">Free · 60 seconds · no signup</span>
+          <h1>What's your <span class="grad-text">brand archetype?</span></h1>
+          <p>5 questions. We map your business to one of four positioning archetypes — and tell you the one move that wins for your type.</p>
+        </div>
+
+        <div class="quiz-card" id="quizCard">
+
+          <div class="quiz-progress" id="quizProgress">
+            <div class="active"></div><div></div><div></div><div></div><div></div>
+          </div>
+
+          <div id="quizQuestion">
+            <!-- populated by JS -->
+          </div>
+
+          <div class="quiz-nav">
+            <span class="quiz-nav-text" id="quizCount">Question 1 of 5</span>
+            <button type="button" class="v5-btn v5-btn-primary" id="quizNext" disabled style="opacity: 0.4; cursor: not-allowed;">Next →</button>
+          </div>
+
+        </div>
+
+        <div class="quiz-card quiz-result" id="quizResult">
+          <span class="quiz-result-eyebrow">Your archetype</span>
+          <h2 id="archName">You're the <em>Specialist.</em></h2>
+          <p class="quiz-result-pitch" id="archPitch">You win on depth, not breadth. Customers come to you because no one else knows the niche this well.</p>
+
+          <div class="quiz-result-insight">
+            <h4>Your one move</h4>
+            <p id="archInsight">Double down on the narrow. Most brands trying to "broaden appeal" right now are bleeding distinctiveness. You should be doing the opposite.</p>
+          </div>
+
+          <div class="quiz-result-form">
+            <h4>Want the <em>full</em> positioning playbook?</h4>
+            <p>We'll send you the 4-page guide for your archetype — what to say, where to show up, what to charge, what NOT to do.</p>
+            <form action="https://formspree.io/f/xbdpddrn" method="POST" data-track="Positioning Quiz Capture">
+              <input type="hidden" name="_subject" value="Positioning Quiz · result captured">
+              <input type="hidden" name="_next" value="https://www.loopworker.com/resources/field-manual.html?from=quiz">
+              <input type="hidden" name="source" value="/quiz/positioning.html">
+              <input type="hidden" name="archetype" id="formArchetype" value="">
+              <input type="email" name="email" placeholder="you@company.com" required>
+              <button type="submit">Send my playbook →</button>
+            </form>
+            <div class="quiz-result-form-tiny">Instant access · unsub anytime · no spam</div>
+          </div>
+
+          <div class="quiz-share">
+            Share this quiz:
+            <a href="#" onclick="navigator.clipboard.writeText(location.href).then(()=>this.textContent='Copied!')">Copy link</a>·
+            <a id="quizTwitter" href="#" target="_blank" rel="noopener">Twitter</a>·
+            <a id="quizLinkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AFTER-RESULT CTA -->
+    <section class="v5-section v5-section-tight">
+      <div class="v5-callout">
+        <span class="v5-eyebrow">Want the deeper read</span>
+        <h2>Run the <span class="grad-text">full Sprint.</span></h2>
+        <p>This quiz uses the same method we run in every Sprint — except we go 100x deeper with real public data: 10 competitors, 7 signal types, ranked next moves.</p>
+        <a href="/sprint.html" class="v5-btn v5-btn-primary">See the Sprint ladder →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="v5-foot">
+    <div class="v5-foot-inner">
+      <div class="v5-foot-logo">LoopWorker</div>
+      <p>Evidence before execution.</p>
+      <p>© 2026 · <a href="/sprint.html">Sprints</a> · <a href="/case-studies.html">Customers</a> · <a href="/blog/">Signals</a> · <a href="/about.html">About</a></p>
+      <p class="v5-foot-small">alex@loopworker.com · <a href="https://instagram.com/loopworker">@loopworker</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Quiz logic — 5 questions, 4 archetypes scored A/B/C/D
+    const questions = [
+      {
+        text: "Where do you really win against competitors?",
+        opts: [
+          { label: "Depth · no one knows this niche like we do", a: 'specialist' },
+          { label: "Breadth · we serve every kind of buyer", a: 'platform' },
+          { label: "Speed · we move faster than the field", a: 'challenger' },
+          { label: "Story · our brand makes people feel something", a: 'icon' },
+        ]
+      },
+      {
+        text: "What do customers most often say about you?",
+        opts: [
+          { label: "They get me. The category, the workflow, all of it.", a: 'specialist' },
+          { label: "It's the only tool I need.", a: 'platform' },
+          { label: "They actually ship.", a: 'challenger' },
+          { label: "I love being part of this brand.", a: 'icon' },
+        ]
+      },
+      {
+        text: "Where do you spend marketing budget?",
+        opts: [
+          { label: "Niche conferences, deep content, expert positioning", a: 'specialist' },
+          { label: "Broad-reach paid + organic search", a: 'platform' },
+          { label: "Founder content + agile experimentation", a: 'challenger' },
+          { label: "Aesthetic, story, community, brand moments", a: 'icon' },
+        ]
+      },
+      {
+        text: "Pricing-wise, where do you sit in your category?",
+        opts: [
+          { label: "Premium · we charge more because we know more", a: 'specialist' },
+          { label: "Tiered · we have multiple plans for multiple buyers", a: 'platform' },
+          { label: "Aggressive · we price below incumbents to win share", a: 'challenger' },
+          { label: "Aspirational · we charge what the brand commands", a: 'icon' },
+        ]
+      },
+      {
+        text: "Your biggest growth blocker right now is…",
+        opts: [
+          { label: "Awareness — the right buyers don't know we exist", a: 'specialist' },
+          { label: "Differentiation — everyone says the same thing we do", a: 'platform' },
+          { label: "Resources — we have ideas, not bandwidth", a: 'challenger' },
+          { label: "Conversion — they love us but don't pull the trigger", a: 'icon' },
+        ]
+      },
+    ];
+
+    const archetypes = {
+      specialist: {
+        name: "You're the <em>Specialist.</em>",
+        pitch: "You win on depth, not breadth. Customers come to you because no one else knows the niche this well.",
+        insight: "Double down on the narrow. Most brands trying to 'broaden appeal' right now are bleeding distinctiveness. Get sharper, not wider. Charge more, not less. The buyers who find you should be SHOCKED at how specific your understanding is."
+      },
+      platform: {
+        name: "You're the <em>Platform.</em>",
+        pitch: "You win on breadth. You're the system that handles many jobs for many buyers — and you're the only one who does it all in one place.",
+        insight: "Stop adding features. Start naming them. Most platforms lose the differentiation race because nobody can describe what they do without listing 12 things. Pick one anchor benefit. Lead with it. Let the breadth be the surprise."
+      },
+      challenger: {
+        name: "You're the <em>Challenger.</em>",
+        pitch: "You win on speed and bold moves. The incumbents are bigger but slower. Your category is yours to take if you move now.",
+        insight: "Pick a fight publicly. The challenger archetype dies if it stays polite. Name the incumbent. Show your alternative. Build content around the comparison. Buyers want permission to leave the default — give it to them."
+      },
+      icon: {
+        name: "You're the <em>Icon.</em>",
+        pitch: "You win on story, aesthetic, and emotion. Customers don't just buy your thing — they identify with what your brand stands for.",
+        insight: "Protect the moat. Most Icon brands kill themselves by chasing volume. Premium feel = premium price = limited supply. The second you become available everywhere, you're not Icon anymore. Slow growth, fierce loyalty, charge more than feels right."
+      }
+    };
+
+    let currentQ = 0;
+    let answers = [];
+
+    const qDiv = document.getElementById('quizQuestion');
+    const countSpan = document.getElementById('quizCount');
+    const nextBtn = document.getElementById('quizNext');
+    const progressDivs = document.querySelectorAll('#quizProgress div');
+
+    function renderQ() {
+      const q = questions[currentQ];
+      countSpan.textContent = `Question ${currentQ + 1} of ${questions.length}`;
+      let html = `
+        <div class="quiz-q-num">Question 0${currentQ + 1}</div>
+        <div class="quiz-q-text">${q.text}</div>
+        <div class="quiz-options">
+      `;
+      q.opts.forEach((opt, i) => {
+        html += `<button type="button" class="quiz-opt" data-i="${i}" data-a="${opt.a}">${opt.label}</button>`;
+      });
+      html += `</div>`;
+      qDiv.innerHTML = html;
+      nextBtn.disabled = true;
+      nextBtn.style.opacity = '0.4';
+      nextBtn.style.cursor = 'not-allowed';
+
+      progressDivs.forEach((d, i) => {
+        d.classList.remove('active', 'done');
+        if (i < currentQ) d.classList.add('done');
+        else if (i === currentQ) d.classList.add('active');
+      });
+
+      qDiv.querySelectorAll('.quiz-opt').forEach(btn => {
+        btn.addEventListener('click', () => {
+          qDiv.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+          answers[currentQ] = btn.dataset.a;
+          nextBtn.disabled = false;
+          nextBtn.style.opacity = '1';
+          nextBtn.style.cursor = 'pointer';
+        });
+      });
+    }
+
+    nextBtn.addEventListener('click', () => {
+      if (currentQ < questions.length - 1) {
+        currentQ++;
+        renderQ();
+        if (window.plausible) window.plausible('Quiz Question', { props: { q: currentQ + 1 } });
+      } else {
+        showResult();
+      }
+    });
+
+    function showResult() {
+      const tally = {};
+      answers.forEach(a => { tally[a] = (tally[a] || 0) + 1; });
+      let top = 'specialist';
+      let max = 0;
+      for (const k in tally) { if (tally[k] > max) { max = tally[k]; top = k; } }
+      const arch = archetypes[top];
+      document.getElementById('archName').innerHTML = arch.name;
+      document.getElementById('archPitch').textContent = arch.pitch;
+      document.getElementById('archInsight').textContent = arch.insight;
+      document.getElementById('formArchetype').value = top;
+      document.getElementById('quizCard').style.display = 'none';
+      document.getElementById('quizResult').classList.add('show');
+
+      // share URLs
+      const shareText = encodeURIComponent(`I just took LoopWorker's brand positioning quiz. I'm a ${top.charAt(0).toUpperCase() + top.slice(1)}.`);
+      const shareUrl = encodeURIComponent('https://www.loopworker.com/quiz/positioning.html');
+      document.getElementById('quizTwitter').href = `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`;
+      document.getElementById('quizLinkedin').href = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
+
+      if (window.plausible) window.plausible('Quiz Completed', { props: { archetype: top } });
+    }
+
+    renderQ();
+  </script>
+
+  <script defer src="/v5-revenue.js"></script>
+</body>
+</html>

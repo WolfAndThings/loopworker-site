@@ -997,6 +997,173 @@ h4 { font-size: 1.2rem; line-height: 1.25; font-weight: 700; }
   line-height: 1.5; margin: 0;
 }
 
+/* ━━━━━━━━━━ EXIT-INTENT POPUP ━━━━━━━━━━ */
+.v5-exit-overlay {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(7,7,12,0.82);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  display: none; align-items: center; justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.v5-exit-overlay.open { display: flex; opacity: 1; }
+.v5-exit-modal {
+  background:
+    linear-gradient(135deg, rgba(99,102,241,0.10), transparent 50%),
+    var(--surface);
+  border: 1px solid var(--border-bright);
+  border-radius: 18px;
+  padding: 2.4rem 2.2rem;
+  max-width: 520px; width: 100%;
+  position: relative; overflow: hidden;
+  box-shadow:
+    0 40px 100px -30px rgba(0,0,0,0.8),
+    0 0 100px -30px rgba(99,102,241,0.4);
+  transform: translateY(20px);
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.v5-exit-overlay.open .v5-exit-modal { transform: translateY(0); }
+.v5-exit-modal::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: var(--grad-hero);
+}
+.v5-exit-close {
+  position: absolute; top: 0.9rem; right: 0.9rem;
+  width: 32px; height: 32px; border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  color: var(--text-3); cursor: pointer;
+  font-size: 1.4rem; line-height: 1; padding: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.18s ease;
+}
+.v5-exit-close:hover { background: rgba(255,255,255,0.08); color: var(--text); border-color: var(--border-bright); }
+.v5-exit-eyebrow {
+  font-family: var(--mono); font-size: 0.72rem;
+  color: var(--indigo-bright); letter-spacing: 0.14em;
+  text-transform: uppercase; font-weight: 700;
+  margin-bottom: 0.8rem; display: inline-block;
+  padding: 0.3rem 0.7rem;
+  background: rgba(99,102,241,0.08);
+  border: 1px solid rgba(99,102,241,0.2);
+  border-radius: 6px;
+}
+.v5-exit-modal h3 {
+  font-family: var(--sans-tight); font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 800; letter-spacing: -0.025em; line-height: 1.15;
+  color: var(--text); margin: 0 0 0.7rem;
+}
+.v5-exit-modal h3 em {
+  font-style: normal;
+  background: var(--grad-hero);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.v5-exit-modal p {
+  font-size: 0.96rem; color: var(--text-2); line-height: 1.55;
+  margin: 0 0 1.4rem;
+}
+.v5-exit-form { display: flex; gap: 0.5rem; }
+.v5-exit-form input {
+  flex: 1; padding: 0.9rem 1rem;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid var(--border); border-radius: 8px;
+  color: var(--text); font-family: var(--sans); font-size: 0.94rem;
+}
+.v5-exit-form input::placeholder { color: var(--text-4); }
+.v5-exit-form input:focus {
+  outline: none; border-color: var(--indigo);
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.18);
+}
+.v5-exit-form button {
+  background: var(--grad-cta); color: #FFF;
+  border: 0; padding: 0.9rem 1.2rem;
+  font-family: var(--sans); font-size: 0.9rem;
+  font-weight: 600; border-radius: 8px;
+  cursor: pointer; letter-spacing: -0.005em;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.1) inset, 0 12px 28px -8px rgba(99,102,241,0.55);
+  white-space: nowrap;
+}
+.v5-exit-form button:hover { background: var(--grad-cta-hover); transform: translateY(-1px); }
+.v5-exit-tiny {
+  font-family: var(--mono); font-size: 0.72rem;
+  color: var(--text-4); margin-top: 0.9rem; letter-spacing: 0.02em;
+  text-align: center;
+}
+
+/* ━━━━━━━━━━ STICKY MOBILE CTA ━━━━━━━━━━ */
+.v5-sticky-cta {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  z-index: 90;
+  padding: 0.8rem 1rem;
+  background: rgba(7,7,12,0.92);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  border-top: 1px solid var(--border-bright);
+  transform: translateY(110%);
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  display: none;
+}
+.v5-sticky-cta.show { transform: translateY(0); }
+.v5-sticky-cta-inner {
+  display: flex; gap: 0.7rem; align-items: center;
+  max-width: 600px; margin: 0 auto;
+}
+.v5-sticky-cta-text {
+  flex: 1; font-family: var(--sans-tight);
+  font-size: 0.84rem; font-weight: 600; color: var(--text);
+  letter-spacing: -0.012em; line-height: 1.3;
+}
+.v5-sticky-cta-text small {
+  display: block; font-family: var(--mono); font-size: 0.66rem;
+  color: var(--indigo-bright); letter-spacing: 0.08em;
+  text-transform: uppercase; font-weight: 700; margin-top: 0.15rem;
+}
+.v5-sticky-cta a {
+  background: var(--grad-cta); color: #FFF;
+  font-family: var(--sans); font-size: 0.84rem; font-weight: 700;
+  padding: 0.65rem 1rem; border-radius: 8px; white-space: nowrap;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.1) inset, 0 8px 20px -6px rgba(99,102,241,0.5);
+}
+.v5-sticky-cta a:hover { background: var(--grad-cta-hover); }
+@media (max-width: 880px) { .v5-sticky-cta { display: block; } }
+
+/* ━━━━━━━━━━ LIVE ACTIVITY CHIP (social proof) ━━━━━━━━━━ */
+.v5-live-chip {
+  position: fixed; bottom: 1.2rem; left: 1.2rem;
+  z-index: 80;
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.6rem 0.9rem;
+  background: rgba(7,7,12,0.92);
+  border: 1px solid var(--border-bright);
+  border-radius: 999px;
+  font-family: var(--sans); font-size: 0.78rem;
+  color: var(--text-2); font-weight: 500;
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+  box-shadow: 0 12px 28px -8px rgba(0,0,0,0.4);
+  transform: translateY(20px); opacity: 0;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.32s;
+  max-width: 340px;
+}
+.v5-live-chip.show { transform: translateY(0); opacity: 1; }
+.v5-live-chip-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--emerald); flex-shrink: 0;
+  box-shadow: 0 0 12px var(--emerald);
+  animation: v5pulse 2s ease-in-out infinite;
+}
+.v5-live-chip strong { color: var(--text); font-weight: 700; }
+.v5-live-chip-time { color: var(--text-3); margin-left: 0.2rem; }
+.v5-live-chip-close {
+  background: none; border: 0; color: var(--text-4);
+  font-size: 1rem; padding: 0; margin-left: 0.3rem; cursor: pointer;
+  line-height: 1;
+}
+.v5-live-chip-close:hover { color: var(--text); }
+@media (max-width: 880px) {
+  .v5-live-chip { bottom: 5rem; left: 1rem; right: 1rem; max-width: none; }
+}
+
 /* honeypot — hidden field for bot detection */
 .v5-hp { display: none !important; }
 
