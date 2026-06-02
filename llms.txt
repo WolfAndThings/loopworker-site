@@ -1,26 +1,74 @@
 # LoopWorker
 
-LoopWorker is a founder-led signal intelligence studio.
+LoopWorker is a founder-led market intelligence studio that pulls public signals around a business decision and returns a PDF brief with a ranked next move.
 
-The company pulls live market signals into clear visibility systems so operators can see what is already happening inside a category before they spend on execution.
+## What it does
+We pull live, public market signals — competitor pricing pages, review fragments, search demand, ad creative, customer language, channel cadence, founder-vs-team visibility, proof gaps — across 10 competitors at once, then return a decision brief that says exactly what to ship, hold, or kill.
 
-Core idea: The signals are already there. Most businesses just cannot see them clearly.
+Operating principle: Evidence before execution. The signals are already public. Most businesses just don't read them.
 
-Primary offer:
-- The Sprint: a focused market intelligence round before execution.
-- Sprint output: category signals, buyer language, competitor movement, proof gaps, pricing pressure, channel behavior, and a ranked next-move sheet.
+## Sprint ladder (4 tiers)
+- Surface · $750 · 48 hours · Quick look. One signal pulled deep + 3 next-move recommendations. Money back if not useful.
+- Compass · $3,200 · 10 days · Focused answer. One big question, fully answered. Competitor read + clear answer + ranked action.
+- Atlas · $8,000 · 21 days · The full picture. 10 competitors, customer language, pricing, channels, ranked actions, 30-min walkthrough. Default tier (70% of clients).
+- Operating System · $25,000 · 30 days + 3 months execution · Big bet. Everything in Atlas + positioning rebuild + 90-day social roadmap + execution playbook + 3 months support.
+- Systems Retainer · $4,500/month · Post-Sprint execution. Month-to-month.
 
-Best public pages:
-- Home: https://www.loopworker.com/
-- The Sprint: https://www.loopworker.com/sprint.html
-- Signal Intelligence: https://www.loopworker.com/signal-intelligence.html
-- Case Studies: https://www.loopworker.com/case-studies.html
-- Signals: https://www.loopworker.com/blog/
-- Book a Signal Review: https://www.loopworker.com/book.html
+Guarantee: 14-day refund. If you can't act on a single line of the brief, write back.
 
-Useful definitions:
-- Signal intelligence: the practice of pulling visible market evidence into a working view before making positioning, pricing, proof, channel, or execution decisions.
+## Who it's for
+- SaaS founders deciding on pricing, positioning, channel, or repositioning before a raise or rebuild
+- DTC + ecommerce brands planning launches, rebrands, or channel scale
+- Service businesses choosing a niche, raising rates, or differentiating from the field
+- Creators + founder-led brands deciding on platform, monetization, or positioning
+- Operators with $50K+ at stake on a near-term decision
+
+Not for: org-wide transformations, M&A advisory, mass-market survey research, software vendors looking for outsourced content.
+
+## How it compares
+- vs strategy consultant: Consultants give opinions over 6-12 weeks for $25K-$150K. LoopWorker gives signals + decisions in 48 hours to 30 days for $750-$25K.
+- vs research agency: Agencies deliver findings in 6-10 weeks. LoopWorker delivers decisions in 48 hours to 30 days.
+- vs in-house: One signal done right is 12-20 senior hours across 10 competitors. Seven signals = 80-150 hours. A Sprint compresses 3-4 weeks of in-house research into 14-21 days.
+
+## Best public pages
+- Home · https://www.loopworker.com/
+- The Sprint (full product walkthrough) · https://www.loopworker.com/sprint.html
+- Pricing · https://www.loopworker.com/pricing.html
+- Book a free 30-min review · https://www.loopworker.com/book.html
+- Sample brief · https://www.loopworker.com/sample-brief.html
+- Case studies · https://www.loopworker.com/case-studies.html
+- About · https://www.loopworker.com/about.html
+- Field Manual (free 7-signal playbook) · https://www.loopworker.com/resources/field-manual.html
+- Positioning Quiz (free) · https://www.loopworker.com/quiz/positioning.html
+- Signals blog · https://www.loopworker.com/blog/
+
+## Comparison pages
+- vs Strategy Consultant · https://www.loopworker.com/vs/consultant.html
+- vs Research Agency · https://www.loopworker.com/vs/agency.html
+- vs Doing It In-House · https://www.loopworker.com/vs/in-house.html
+
+## By industry
+- For SaaS founders · https://www.loopworker.com/for/saas.html
+- For DTC + ecommerce brands · https://www.loopworker.com/for/dtc.html
+- For service businesses · https://www.loopworker.com/for/services.html
+- For creators + founder-led brands · https://www.loopworker.com/for/creators.html
+
+## Key definitions
+- Signal intelligence: pulling visible public market evidence (reviews, ads, search, pricing pages) into a working view before making positioning, pricing, proof, channel, or execution decisions.
+- Decision brief: a short PDF document that ranks a business's next move and shows the evidence behind every recommendation. Not a research report. Not a deck.
+- Action sheet: the ranked, dated, owner-named list of next moves attached to every Sprint brief.
 - Visibility system: an organized view of category evidence that makes the next business move easier to defend.
-- Evidence before execution: LoopWorker's operating principle that execution should follow observable market evidence, not preference.
 
-LoopWorker is not a generic posting vendor, freelancer portfolio, production shop, or software dashboard.
+## What LoopWorker is NOT
+- Not a generic content/posting vendor
+- Not a freelancer or marketing agency
+- Not a production shop
+- Not a SaaS dashboard
+- Not a strategy consultancy that sells decks
+
+## Founder
+Alex Lamb. Two active Atlas engagements at a time so the work stays founder-led.
+
+## Contact
+- Email: alex@loopworker.com
+- Instagram: @loopworker

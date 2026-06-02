@@ -26,7 +26,7 @@
   --purple:       #A855F7;
   --pink:         #EC4899;
   --cyan:         #22D3EE;
-  --emerald:      #10B981;
+  --emerald:      #22D3EE;
 
   /* gradients */
   --grad-hero:    linear-gradient(135deg, #6366F1 0%, #A855F7 50%, #EC4899 100%);
@@ -361,8 +361,8 @@ h4 { font-size: 1.2rem; line-height: 1.25; font-weight: 700; }
 .v5-ui-rowbar-num { color: var(--text); font-family: var(--mono); font-size: 0.74rem; font-weight: 600; }
 .v5-ui-verdict {
   padding: 0.85rem 0.9rem;
-  background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(34,211,238,0.05));
-  border: 1px solid rgba(16,185,129,0.2);
+  background: linear-gradient(135deg, rgba(34,211,238,0.08), rgba(34,211,238,0.05));
+  border: 1px solid rgba(34,211,238,0.2);
   border-radius: 8px; font-size: 0.82rem;
 }
 .v5-ui-verdict-tag {
@@ -584,7 +584,7 @@ h4 { font-size: 1.2rem; line-height: 1.25; font-weight: 700; }
 .v5-tc-outcome {
   margin-left: auto;
   padding: 0.5rem 1rem;
-  background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25);
+  background: rgba(34,211,238,0.1); border: 1px solid rgba(34,211,238,0.25);
   color: var(--emerald);
   font-family: var(--mono); font-size: 0.76rem;
   font-weight: 600; letter-spacing: 0.04em;
