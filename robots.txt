@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Allow: /tools/roi-calculator.html
+
 Disallow: /clients/
 Disallow: /proposals/
 Disallow: /audits/
@@ -7,5 +9,9 @@ Disallow: /book/
 Disallow: /offers/
 Disallow: /tools/
 Disallow: /courses/
+Disallow: /internal/
+Disallow: /templates/
+Disallow: /_backup_pre_v5/
+Disallow: /funnel_audit/
 
 Sitemap: https://www.loopworker.com/sitemap.xml
