@@ -234,9 +234,9 @@
                         <div class="kc-field">
                             <label>Which tier did you buy?</label>
                             <div class="kc-radios">
-                                <label><input type="radio" name="tier_confirm" value="Sprint Lite" required> <span>Sprint Lite ($754)</span></label>
-                                <label><input type="radio" name="tier_confirm" value="Sprint Pro"> <span>Sprint Pro ($1,334)</span></label>
-                                <label><input type="radio" name="tier_confirm" value="Sprint Full"> <span>Sprint Full ($4,900)</span></label>
+                                <label><input type="radio" name="tier_confirm" value="Compass" required> <span>Compass ($754)</span></label>
+                                <label><input type="radio" name="tier_confirm" value="Atlas"> <span>Atlas ($1,334)</span></label>
+                                <label><input type="radio" name="tier_confirm" value="Operating System"> <span>Operating System ($4,900)</span></label>
                             </div>
                         </div>
                         <div class="kc-field">
@@ -354,7 +354,7 @@
         const params = new URLSearchParams(location.search);
         const tier = (params.get('tier') || '').toLowerCase();
         const session = params.get('session') || '';
-        const tierMap = { lite: 'Sprint Lite', pro: 'Sprint Pro', full: 'Sprint Full' };
+        const tierMap = { lite: 'Compass', pro: 'Atlas', full: 'Operating System' };
         const tierLabel = tierMap[tier] || '';
         if (tierLabel) {
           document.getElementById('tierName').textContent = tierLabel;

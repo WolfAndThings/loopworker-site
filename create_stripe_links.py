@@ -34,7 +34,7 @@ LEDGER = Path(__file__).resolve().parent.parent.parent / "Memory" / "Code_Script
 TIERS = [
     {
         "key": "signal-snapshot",
-        "name": "Sprint 1 · Signal Snapshot",
+        "name": "Surface",
         "description": "48-hour gateway sprint. One signal pulled deep (competitor wall, customer voice, pricing band, proof gap, or channel fit) + one ranked recommendation. PDF.",
         "amount_cents": 75000,
         "recurring": False,
@@ -42,7 +42,7 @@ TIERS = [
     },
     {
         "key": "sprint-lite",
-        "name": "Sprint 2",
+        "name": "Compass",
         "description": "5-day focused market intelligence round. One question, evidence behind it.",
         "amount_cents": 320000,
         "recurring": False,
@@ -50,7 +50,7 @@ TIERS = [
     },
     {
         "key": "sprint-pro",
-        "name": "Sprint 3",
+        "name": "Atlas",
         "description": "10-day decision brief connecting competitor wall, customer voice, pricing band, channel map, and ranked action sheet.",
         "amount_cents": 800000,
         "recurring": False,
