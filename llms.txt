@@ -3,7 +3,7 @@
 LoopWorker is a founder-led market intelligence studio that pulls public signals around a business decision and returns a PDF brief with a ranked next move.
 
 ## What it does
-We pull live, public market signals — competitor pricing pages, review fragments, search demand, ad creative, customer language, channel cadence, founder-vs-team visibility, proof gaps — across 10 competitors at once, then return a decision brief that says exactly what to ship, hold, or kill.
+We pull live, public market signals (competitor pricing pages, scraped competitor positioning surface, search demand, ad creative, customer language, channel cadence, founder-vs-team visibility, proof gaps) across 10 competitors at once, then return a decision brief that says exactly what to ship, hold, or kill.
 
 Operating principle: Evidence before execution. The signals are already public. Most businesses just don't read them.
 
@@ -54,7 +54,7 @@ Not for: org-wide transformations, M&A advisory, mass-market survey research, so
 - For creators + founder-led brands · https://www.loopworker.com/for/creators.html
 
 ## Key definitions
-- Signal intelligence: pulling visible public market evidence (reviews, ads, search, pricing pages) into a working view before making positioning, pricing, proof, channel, or execution decisions.
+- Signal intelligence: pulling visible public market evidence (scraped competitor pages, ads, search, pricing pages, customer language) into a working view before making positioning, pricing, proof, channel, or execution decisions.
 - Decision brief: a short PDF document that ranks a business's next move and shows the evidence behind every recommendation. Not a research report. Not a deck.
 - Action sheet: the ranked, dated, owner-named list of next moves attached to every Sprint brief.
 - Visibility system: an organized view of category evidence that makes the next business move easier to defend.
