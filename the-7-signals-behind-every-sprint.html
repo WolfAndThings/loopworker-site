@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <title>The 7 Signals Behind Every Sprint · LoopWorker's Method Explained | LoopWorker</title>
+  <meta name="description" content="The 7 public market signals LoopWorker pulls in every Sprint: scraped competitor surface, ad pacing, search demand, pricing architecture, geo demand, founder visibility, customer language. Full method explained.">
+  <link rel="canonical" href="https://www.loopworker.com/the-7-signals-behind-every-sprint.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.loopworker.com/the-7-signals-behind-every-sprint.html">
+  <meta property="og:title" content="The 7 Signals Behind Every Sprint">
+  <meta property="og:description" content="The 7 public signals LoopWorker pulls in every Sprint. Method explained.">
+  <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+  <meta name="theme-color" content="#07070C">
+  <meta name="color-scheme" content="dark">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/v5-system.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
+
+  <style>
+    .sig-shell { padding: 4rem 2rem 5rem; position: relative; overflow: hidden; }
+    .sig-shell::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 900px 500px at 50% 0%, rgba(99,102,241,0.16), transparent 60%); }
+    .sig-inner { position: relative; z-index: 2; max-width: 880px; margin: 0 auto; }
+    .sig-intro { text-align: center; margin-bottom: 3.4rem; }
+    .sig-intro h1 { font-size: clamp(2.4rem, 5.4vw, 4rem); margin: 0 0 1.2rem; line-height: 1.05; }
+    .sig-intro h1 em { font-style: normal; background: var(--grad-hero); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .sig-intro p { font-size: 1.18rem; color: var(--text-2); line-height: 1.6; max-width: 720px; margin: 0 auto 1.2rem; }
+    .sig-meta { display: inline-flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; font-family: var(--mono); font-size: 0.74rem; color: var(--text-3); letter-spacing: 0.1em; text-transform: uppercase; }
+    .sig-meta span { padding: 0.35rem 0.7rem; background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.18); border-radius: 6px; }
+
+    .sig-toc { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 14px; padding: 1.8rem 2rem; margin: 0 0 3rem; }
+    .sig-toc h3 { font-family: var(--mono); font-size: 0.74rem; color: var(--text-3); letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; margin: 0 0 1rem; }
+    .sig-toc ol { padding-left: 1.2rem; margin: 0; color: var(--text-2); font-size: 0.96rem; line-height: 1.9; }
+    .sig-toc a { color: var(--text); }
+    .sig-toc a:hover { color: var(--indigo-bright); }
+
+    .sig-section { margin: 3.4rem 0; }
+    .sig-section h2 { font-family: var(--sans-tight); font-size: clamp(1.6rem, 3.2vw, 2.2rem); font-weight: 800; letter-spacing: -0.025em; margin: 0 0 0.6rem; }
+    .sig-section h2 em { font-style: normal; background: var(--grad-hero); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .sig-section h3 { font-family: var(--sans-tight); font-size: 1.2rem; font-weight: 700; letter-spacing: -0.02em; margin: 2rem 0 0.5rem; color: var(--text); }
+    .sig-section p { color: var(--text-2); font-size: 1.04rem; line-height: 1.75; margin: 0 0 1.2rem; }
+    .sig-section a { color: var(--indigo-bright); }
+    .sig-section ul, .sig-section ol { color: var(--text-2); font-size: 1rem; line-height: 1.8; padding-left: 1.2rem; margin: 0 0 1.2rem; }
+    .sig-section strong { color: var(--text); }
+
+    .sig-num-tag {
+      font-family: var(--mono); font-size: 0.74rem; font-weight: 800;
+      color: var(--indigo-bright); letter-spacing: 0.18em;
+      text-transform: uppercase; display: inline-block; margin-bottom: 0.6rem;
+      padding: 0.3rem 0.8rem; background: rgba(99,102,241,0.08);
+      border: 1px solid rgba(99,102,241,0.2); border-radius: 6px;
+    }
+
+    .sig-pull { padding: 1.5rem 1.6rem; background: linear-gradient(135deg, rgba(99,102,241,0.10), rgba(168,85,247,0.04)); border: 1px solid rgba(99,102,241,0.3); border-radius: 12px; margin: 1.6rem 0; }
+    .sig-pull p { color: var(--text); font-size: 1rem; line-height: 1.65; margin: 0; }
+    .sig-pull strong { color: var(--indigo-bright); }
+
+    .sig-cta { margin: 3rem 0; padding: 2rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; position: relative; overflow: hidden; }
+    .sig-cta::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--grad-hero); }
+    .sig-cta h4 { font-family: var(--sans-tight); font-size: 1.4rem; margin: 0 0 0.6rem; font-weight: 800; }
+    .sig-cta p { color: var(--text-2); font-size: 1rem; line-height: 1.6; margin: 0 0 1.2rem; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The 7 Signals Behind Every Sprint",
+    "description": "The 7 public market signals LoopWorker pulls in every Sprint, explained: scraped competitor surface, ad pacing, search demand, pricing architecture, geo demand, founder visibility, customer language.",
+    "author": { "@type": "Person", "name": "Alex Lamb" },
+    "publisher": { "@type": "Organization", "name": "LoopWorker", "url": "https://www.loopworker.com/" },
+    "datePublished": "2026-06-04",
+    "mainEntityOfPage": "https://www.loopworker.com/the-7-signals-behind-every-sprint.html"
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="v5-nav">
+    <div class="v5-nav-inner">
+      <a href="/" class="v5-logo"><span class="v5-logo-mark">L</span>LoopWorker</a>
+      <div class="v5-nav-links">
+        <a href="/sprint.html">Sprints</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/case-studies.html">Customers</a>
+        <a href="/blog/">Signals</a>
+        <a href="/about.html">About</a>
+        <a href="/book.html" class="v5-nav-cta">Book a Call</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="sig-shell">
+      <div class="sig-inner">
+
+        <div class="sig-intro">
+          <span class="v5-eyebrow">Method · Open documentation</span>
+          <h1>The 7 signals behind every <em>Sprint.</em></h1>
+          <p>Most strategy work skips the public evidence. LoopWorker doesn't. Here's the full method: the seven signals we pull, why each matters, how to read it, and what it tells you to do next. Free to read. Free to apply.</p>
+          <div class="sig-meta">
+            <span>4,200 words</span>
+            <span>15-min read</span>
+            <span>Updated June 2026</span>
+          </div>
+        </div>
+
+        <div class="sig-toc">
+          <h3>Contents</h3>
+          <ol>
+            <li><a href="#s1">Scraped competitor positioning surface</a></li>
+            <li><a href="#s2">Competitor ad creative pacing</a></li>
+            <li><a href="#s3">Search demand for buyer language</a></li>
+            <li><a href="#s4">Pricing-page architecture</a></li>
+            <li><a href="#s5">Geo + location-based demand</a></li>
+            <li><a href="#s6">Founder vs team visibility gap</a></li>
+            <li><a href="#s7">Customer-language delta</a></li>
+            <li><a href="#how">How the 7 signals combine into a decision</a></li>
+            <li><a href="#tools">Free tools we built to help you pull these yourself</a></li>
+          </ol>
+        </div>
+
+        <div class="sig-section" id="why">
+          <h2>Why <em>seven</em> signals.</h2>
+          <p>One signal is anecdote. Two is coincidence. Three is a pattern. Seven is a category map. Each signal answers a different sub-question. Combined, they cover the visible decision space around any positioning, pricing, channel, or launch decision a founder makes.</p>
+          <p>These signals are public. They're free. Most teams skip them because pulling one well takes 4-12 senior hours and pulling all seven takes 80-150. A <a href="/sprint.html">Sprint</a> compresses that work into 14-21 days for $750-$25,000. The method below is the work, documented honestly so you can audit, copy, or buy it.</p>
+        </div>
+
+        <div class="sig-section" id="s1">
+          <span class="sig-num-tag">Signal 01</span>
+          <h2>Scraped competitor positioning <em>surface.</em></h2>
+          <p>What every competitor publicly claims, scraped across homepage, pricing, about, and bios. The collision map shows you which claims are commodity and which are unclaimed.</p>
+
+          <h3>Why it matters</h3>
+          <p>Most categories run on five recycled claims. If your hero line collides with four competitors, the buyer cannot tell you apart. The opening is whatever nobody else is willing to say. Reading the <a href="/glossary/positioning.html">positioning</a> surface across 5-10 competitors finds the gap in 30 minutes of structured work.</p>
+
+          <h3>How we pull it</h3>
+          <ul>
+            <li>Scrape homepage hero, pricing hero, about page lede, primary social bio for 5-10 competitors</li>
+            <li>Extract the 1-3 promises per page</li>
+            <li>Tag by promise type: speed, price, expertise, outcome, ease, prestige</li>
+            <li>Collide them in a matrix — find claims used by 4+ competitors (commodity) and zero (white space)</li>
+            <li>Verbatim quote the strongest white-space claim a competitor almost made but pulled back from</li>
+          </ul>
+
+          <div class="sig-pull">
+            <p><strong>Most expensive mistake here:</strong> only scraping the category leaders. The almost-rans + the pivoters carry the truest positioning data. Their first-draft promise often outranks the current one for clarity.</p>
+          </div>
+
+          <p>Related terms: <a href="/glossary/positioning.html">Brand Positioning</a> · <a href="/glossary/category-design.html">Category Design</a> · <a href="/glossary/differentiation.html">Differentiation</a> · <a href="/glossary/competitive-moat.html">Competitive Moat</a></p>
+        </div>
+
+        <div class="sig-section" id="s2">
+          <span class="sig-num-tag">Signal 02</span>
+          <h2>Competitor ad creative <em>pacing.</em></h2>
+          <p>What your competitors are actually buying — across Meta, LinkedIn, Google. Ad spend is a behavioral signal stronger than any press release.</p>
+
+          <h3>Why it matters</h3>
+          <p>When a competitor pushes 40 creatives in a week and one survives the cut, that survivor tells you what their audience is responding to. Free to read in public ad libraries. Hard to interpret without category context. The pacing — frequency + concentration + creative drift — usually predicts a channel pivot 60-90 days before it shows up in earnings.</p>
+
+          <h3>How we pull it</h3>
+          <ul>
+            <li>Pull 60-day ad history from Meta + LinkedIn + Google ad transparency libraries for 5-10 competitors</li>
+            <li>Tag each creative by category: feature claim, comparison, social proof, founder-led, lifestyle, urgency</li>
+            <li>Note frequency: how many creatives, how often refreshed, which survive 3+ weeks</li>
+            <li>The survivors carry the buyer-message signal</li>
+          </ul>
+
+          <p>Related: <a href="/glossary/share-of-voice.html">Share of Voice</a> · <a href="/glossary/distribution.html">Distribution</a> · <a href="/glossary/cac.html">CAC</a> · <a href="/glossary/channel-saturation.html">Channel Saturation</a></p>
+        </div>
+
+        <div class="sig-section" id="s3">
+          <span class="sig-num-tag">Signal 03</span>
+          <h2>Search demand for <em>buyer language.</em></h2>
+          <p>What buyers type into search engines when the problem is real. The category's true vocabulary, ranked by intent.</p>
+
+          <h3>Why it matters</h3>
+          <p>Search demand is the most honest data the public web produces. Buyers in active mode reveal exactly which words map to which problems. Most teams write copy from internal vocabulary and wonder why CAC climbs. Reading the actual <a href="/glossary/buyer-language.html">buyer language</a> from search demand collapses the gap.</p>
+
+          <h3>How we pull it</h3>
+          <ul>
+            <li>Identify 3-5 root buyer terms in your category</li>
+            <li>Pull 12-month volume + trend per term from public search engines</li>
+            <li>Cluster modifiers: "best", "near me", "vs", "alternative", "free", "for [vertical]"</li>
+            <li>Rank by volume + intent + trend</li>
+            <li>The top 10 phrases buyers actually search become your hero + sub copy candidates</li>
+          </ul>
+
+          <p>Related: <a href="/glossary/demand-signal.html">Demand Signal</a> · <a href="/glossary/discovery.html">Discovery</a> · <a href="/glossary/market-pull.html">Market Pull</a> · <a href="/glossary/buyer-journey.html">Buyer Journey</a></p>
+        </div>
+
+        <div class="sig-section" id="s4">
+          <span class="sig-num-tag">Signal 04</span>
+          <h2>Pricing-page <em>architecture.</em></h2>
+          <p>What every competitor charges, how they tier, what each tier signals. The pricing surface of your category as a single map.</p>
+
+          <h3>Why it matters</h3>
+          <p>Pricing is positioning made dollars. The anchor tier signals what category you think you're in. The modal tier signals where you expect volume. The floor signals how aggressive you are at acquisition. Reading the full <a href="/glossary/pricing-band.html">pricing band</a> across 10 competitors usually reveals you're 20-40% off the modal — in either direction.</p>
+
+          <h3>How we pull it</h3>
+          <ul>
+            <li>Pull anchor + modal + floor tier prices for 10 competitors</li>
+            <li>Note tier structure (per seat, per unit, project-based, hybrid)</li>
+            <li>Compare anchor-to-modal ratio (healthy: 3-5x)</li>
+            <li>Compare modal-to-floor ratio (healthy: 3-5x)</li>
+            <li>Identify where your pricing breaks the category's expected shape</li>
+          </ul>
+
+          <p>Try the free interactive: <a href="/tools/pricing-band-finder.html"><strong>Pricing Band Finder</strong></a> — get your 3-tier band in 30 seconds. Or read the open dataset: <a href="/2026-saas-pricing-benchmark-report.html">2026 SaaS Pricing Benchmark Report</a>.</p>
+
+          <p>Related: <a href="/glossary/anchor-pricing.html">Anchor Pricing</a> · <a href="/glossary/price-anchoring.html">Price Anchoring</a> · <a href="/glossary/offer-architecture.html">Offer Architecture</a> · <a href="/glossary/willingness-to-pay.html">Willingness to Pay</a></p>
+        </div>
+
+        <div class="sig-section" id="s5">
+          <span class="sig-num-tag">Signal 05</span>
+          <h2>Geo + location-based <em>demand.</em></h2>
+          <p>Where attention is concentrating geographically. Local demand asymmetry is the biggest unread signal in most categories.</p>
+
+          <h3>Why it matters</h3>
+          <p>A creator in Brooklyn outpulls the same creator pattern in Phoenix by 4x. A med spa in LA gets 8x the "near me" searches of one in suburban Chicago. Local demand maps tell you where to put paid spend, where to recruit, where to launch. Skipping geo is leaving 30-50% of optimization on the table for local + regional categories.</p>
+
+          <h3>How we pull it</h3>
+          <ul>
+            <li>Filter your top buyer terms by 10-20 metro areas via public search engines</li>
+            <li>Cross-reference with scraped Google Maps result density by metro</li>
+            <li>Compare interest scores: where is demand concentrated, where is it growing, where is it underserved</li>
+            <li>Map: hot vs second-tier metros — second-tier usually has same hunger, less competition</li>
+          </ul>
+
+          <p>Related: <a href="/glossary/distribution.html">Distribution</a> · <a href="/glossary/discovery.html">Discovery</a> · <a href="/glossary/customer-segment.html">Customer Segment</a></p>
+        </div>
+
+        <div class="sig-section" id="s6">
+          <span class="sig-num-tag">Signal 06</span>
+          <h2>Founder vs team <em>visibility</em> gap.</h2>
+          <p>Does your category trust founders more than companies? Get this wrong and your content engine pushes the wrong face.</p>
+
+          <h3>Why it matters</h3>
+          <p>Some categories — services, advisory, premium DTC — reward founder visibility. Others — SaaS, infrastructure, enterprise — reward team or company visibility. Pick the wrong face and you compound a brand mismatch every post for years. Reading the visible faces of the top 10 brands in your category usually settles the question in 5 minutes.</p>
+
+          <h3>How we pull it</h3>
+          <ul>
+            <li>Pull top 10 brands in your category on LinkedIn</li>
+            <li>Note: does the founder post under their own name, the company name, or both</li>
+            <li>Check engagement: which posts get higher reach — founder-led or company-led</li>
+            <li>Look at podcast appearances: are founders the guests, or product team</li>
+            <li>Map: who's the public face of each top brand. Pattern emerges fast.</li>
+          </ul>
+
+          <div class="sig-pull">
+            <p><strong>Trap:</strong> founder visibility is a content commitment, not a strategy. If your founder won't post 3x/week for 6 months, picking the founder-led play sets you up to fail.</p>
+          </div>
+
+          <p>Related: <a href="/glossary/narrative.html">Category Narrative</a> · <a href="/glossary/distribution.html">Distribution</a> · <a href="/glossary/audience.html">Owned Audience</a></p>
+        </div>
+
+        <div class="sig-section" id="s7">
+          <span class="sig-num-tag">Signal 07</span>
+          <h2>Customer-language <em>delta.</em></h2>
+          <p>The gap between how your customers describe you and how you describe yourself. The most expensive signal to miss.</p>
+
+          <h3>Why it matters</h3>
+          <p>Brand says "AI-powered workflow automation." Customer says "it stopped my 6pm spreadsheet panic." Same product. Different language. The customer's version converts 3-5x better because they're describing the outcome they paid for. The delta — what they say minus what you say — is your homepage rewrite, in their words.</p>
+
+          <h3>How we pull it</h3>
+          <ul>
+            <li>Pull 30+ verbatim customer fragments: scraped social mentions, support tickets, sales call transcripts, testimonials</li>
+            <li>List the 20 most common phrases customers use to describe what you do</li>
+            <li>Pull your own homepage hero, sub, and About copy</li>
+            <li>Compare: do your words match their words, or are they two different vocabularies</li>
+            <li>Rewrite hero using top 3 customer phrases verbatim</li>
+          </ul>
+
+          <p>Related: <a href="/glossary/buyer-language.html">Buyer Language</a> · <a href="/glossary/jobs-to-be-done.html">Jobs to Be Done</a> · <a href="/glossary/value-prop.html">Value Proposition</a></p>
+        </div>
+
+        <div class="sig-section" id="how">
+          <h2>How the 7 signals <em>combine</em> into a decision.</h2>
+          <p>Pulling one signal is research. Pulling all seven creates a decision space where every line in the brief connects to two or more signals. That's the <a href="/glossary/evidence-chain.html">evidence chain</a> — every recommendation has at least two public sources behind it, named, dated, replaceable.</p>
+
+          <p>A typical Sprint brief reads like this:</p>
+          <ol>
+            <li><strong>Top recommendation</strong> — one sentence, ranked first.</li>
+            <li><strong>Why now</strong> — pulled from signals 02 (ad pacing) + 03 (search demand)</li>
+            <li><strong>How buyers will hear it</strong> — pulled from signal 07 (customer language)</li>
+            <li><strong>Where it fits competitively</strong> — pulled from signal 01 (positioning surface)</li>
+            <li><strong>What it should cost</strong> — pulled from signal 04 (pricing architecture)</li>
+            <li><strong>Where to push it geographically</strong> — pulled from signal 05 (geo demand)</li>
+            <li><strong>Who should say it</strong> — pulled from signal 06 (founder visibility)</li>
+          </ol>
+
+          <p>That's how seven signals become one defensible page-1 recommendation. The remaining brief pages walk the rejected paths + why each was downgraded. Buyers + boards can audit every claim.</p>
+
+          <div class="sig-pull">
+            <p>The brief isn't a research report. It's a <a href="/glossary/decision-brief.html">decision brief</a> — ranked moves, evidence column, owner-named action sheet. That's the difference between strategy consulting + decision delivery.</p>
+          </div>
+        </div>
+
+        <div class="sig-section" id="tools">
+          <h2>Free tools we built to help you pull these <em>yourself.</em></h2>
+          <p>The method is documented. If you want to apply it without buying a Sprint, here are the free tools we built around it:</p>
+          <ul>
+            <li><a href="/tools/pricing-band-finder.html"><strong>Pricing Band Finder</strong></a> — Signal 04 in 30 seconds. Pick category + stage + differentiation, get your 3-tier band.</li>
+            <li><a href="/tools/channel-mix-diagnoser.html"><strong>Channel Mix Diagnoser</strong></a> — Slide each channel to its revenue share, get concentration risk + next channel to build.</li>
+            <li><a href="/tools/brand-audit-score.html"><strong>Brand Audit Score</strong></a> — 5-dimension self-audit. Weighted 0-100 score in 60 seconds.</li>
+            <li><a href="/tools/roi-calculator.html"><strong>ROI Calculator</strong></a> — What a Sprint saves vs in-house research, given your spend + senior rate.</li>
+            <li><a href="/quiz/positioning.html"><strong>Positioning Quiz</strong></a> — 5 questions, 4 archetypes, the one move that wins for your type.</li>
+          </ul>
+
+          <p>Open data + reports cited everywhere:</p>
+          <ul>
+            <li><a href="/2026-strategy-consulting-cost-comparison.html"><strong>2026 Strategy Consulting Cost Comparison</strong></a> — 11 firms (McKinsey, BCG, Bain, Big 4, boutique, independent, LoopWorker)</li>
+            <li><a href="/2026-saas-pricing-benchmark-report.html"><strong>2026 SaaS Pricing Benchmark Report</strong></a> — 12 categories, anchor/modal/floor ranges</li>
+            <li><a href="/2026-founder-compensation-report.html"><strong>2026 Founder + Executive Compensation by Stage</strong></a> — Pave, Carta, Kruze sources</li>
+          </ul>
+
+          <p>And the longest-form resource: <a href="/resources/field-manual.html"><strong>The Signals Field Manual</strong></a> — 12-page PDF, every signal in long-form, every tool listed, every trap named.</p>
+        </div>
+
+        <div class="sig-cta">
+          <h4>Skip the math. <span class="grad-text">Run a Sprint.</span></h4>
+          <p>The 7 signals take 80-150 senior hours to pull yourself across 10 competitors. Atlas Sprint compresses that into 21 days for $8,000. Decision brief on your desk in three weeks.</p>
+          <div class="v5-cta-row">
+            <a href="/book.html" class="v5-btn v5-btn-primary">Book a free 30-min review →</a>
+            <a href="/sprint.html" class="v5-btn v5-btn-ghost">See the Sprint ladder</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="v5-foot">
+    <div class="v5-foot-inner">
+      <div class="v5-foot-logo">LoopWorker</div>
+      <p>Evidence before execution.</p>
+      <p>© 2026 · <a href="/sprint.html">Sprints</a> · <a href="/case-studies.html">Customers</a> · <a href="/blog/">Signals</a> · <a href="/about.html">About</a> · <a href="/glossary/">Glossary</a></p>
+      <p class="v5-foot-small">alex@loopworker.com · <a href="https://instagram.com/loopworker">@loopworker</a></p>
+    </div>
+  </footer>
+
+  <script defer src="/v5-revenue.js"></script>
+</body>
+</html>
