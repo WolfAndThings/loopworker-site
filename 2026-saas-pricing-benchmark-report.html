@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <title>2026 SaaS Pricing Benchmark Report · Free Open Dataset · 12 Categories | LoopWorker</title>
+  <meta name="description" content="2026 SaaS pricing ranges across 12 categories. Anchor / modal / floor tiers per category. Sourced from public pricing pages, OpenView, ChartMogul, Bessemer SaaS Index. Free, citable.">
+  <link rel="canonical" href="https://www.loopworker.com/2026-saas-pricing-benchmark-report.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.loopworker.com/2026-saas-pricing-benchmark-report.html">
+  <meta property="og:title" content="2026 SaaS Pricing Benchmark Report">
+  <meta property="og:description" content="12 SaaS categories. Anchor / modal / floor tiers. Public sources cited. Free dataset.">
+  <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+  <meta name="theme-color" content="#07070C">
+  <meta name="color-scheme" content="dark">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/v5-system.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
+
+  <style>
+    .rep-shell { padding: 4rem 2rem 5rem; position: relative; overflow: hidden; }
+    .rep-shell::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 900px 500px at 50% 0%, rgba(99,102,241,0.16), transparent 60%); }
+    .rep-inner { position: relative; z-index: 2; max-width: 1080px; margin: 0 auto; }
+    .rep-intro { text-align: center; margin-bottom: 3rem; }
+    .rep-intro h1 { font-size: clamp(2.4rem, 5.4vw, 4rem); margin: 0 0 1.2rem; line-height: 1.05; }
+    .rep-intro p { font-size: 1.16rem; color: var(--text-2); line-height: 1.55; max-width: 720px; margin: 0 auto 1.4rem; }
+    .rep-meta { display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center; font-family: var(--mono); font-size: 0.74rem; color: var(--text-3); letter-spacing: 0.1em; text-transform: uppercase; }
+    .rep-meta span { padding: 0.35rem 0.7rem; background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.18); border-radius: 6px; }
+
+    .rep-section { margin: 3rem 0; }
+    .rep-section h2 { font-family: var(--sans-tight); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.025em; margin: 0 0 0.6rem; }
+    .rep-section h2 em { font-style: normal; background: var(--grad-hero); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .rep-section p { color: var(--text-2); font-size: 1.02rem; line-height: 1.65; margin: 0 0 1.2rem; }
+
+    .rep-table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin: 1.5rem 0 0.5rem; font-size: 0.94rem; }
+    .rep-table th, .rep-table td { padding: 0.95rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .rep-table th { background: rgba(255,255,255,0.03); font-family: var(--mono); font-size: 0.72rem; color: var(--text-3); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; }
+    .rep-table tbody tr:last-child td { border-bottom: 0; }
+    .rep-table td { color: var(--text-2); font-variant-numeric: tabular-nums; }
+    .rep-table td.cat { color: var(--text); font-weight: 600; }
+    .rep-table td.src { font-family: var(--mono); font-size: 0.74rem; color: var(--text-3); }
+
+    .rep-sources { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 14px; padding: 1.8rem; margin: 1.5rem 0; }
+    .rep-sources h3 { font-family: var(--sans-tight); font-size: 1.1rem; font-weight: 700; margin: 0 0 0.8rem; }
+    .rep-sources ul { margin: 0; padding-left: 1.2rem; color: var(--text-2); font-size: 0.92rem; line-height: 1.7; }
+    .rep-sources a { color: var(--indigo-bright); }
+
+    .rep-cite { margin: 2rem 0; padding: 1.4rem 1.6rem; background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.22); border-radius: 12px; font-family: var(--mono); font-size: 0.84rem; color: var(--text); line-height: 1.6; }
+    .rep-cite strong { color: var(--indigo-bright); font-family: var(--sans-tight); display: block; margin-bottom: 0.4rem; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.7rem; }
+
+    .rep-notes { color: var(--text-3); font-size: 0.86rem; line-height: 1.6; font-style: italic; margin: 0.8rem 0 0; }
+
+    .rep-callout { padding: 1.4rem 1.6rem; background: linear-gradient(135deg, rgba(99,102,241,0.10), rgba(168,85,247,0.04)); border: 1px solid rgba(99,102,241,0.3); border-radius: 12px; margin: 2rem 0; }
+    .rep-callout p { color: var(--text); font-size: 0.98rem; line-height: 1.6; margin: 0; }
+    .rep-callout a { color: var(--indigo-bright); font-weight: 700; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "2026 SaaS Pricing Benchmark Report",
+    "description": "Open SaaS pricing dataset across 12 categories. Anchor, modal, and floor tier ranges sourced from public pricing pages, OpenView, ChartMogul, Bessemer SaaS Index.",
+    "author": { "@type": "Person", "name": "Alex Lamb" },
+    "publisher": { "@type": "Organization", "name": "LoopWorker", "url": "https://www.loopworker.com/" },
+    "datePublished": "2026-06-04"
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="v5-nav">
+    <div class="v5-nav-inner">
+      <a href="/" class="v5-logo"><span class="v5-logo-mark">L</span>LoopWorker</a>
+      <div class="v5-nav-links">
+        <a href="/sprint.html">Sprints</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/case-studies.html">Customers</a>
+        <a href="/blog/">Signals</a>
+        <a href="/about.html">About</a>
+        <a href="/book.html" class="v5-nav-cta">Book a Call</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="rep-shell">
+      <div class="rep-inner">
+
+        <div class="rep-intro">
+          <span class="v5-eyebrow">Open dataset · Updated June 2026</span>
+          <h1>2026 SaaS Pricing <span class="grad-text">Benchmark</span> Report.</h1>
+          <p>Anchor, modal, and floor tier ranges across 12 SaaS categories. Sourced from public pricing pages + OpenView SaaS benchmarks + ChartMogul Index + Bessemer SaaS Index + Tomasz Tunguz pricing research. Free to cite. Citation block at the bottom.</p>
+          <div class="rep-meta">
+            <span>12 categories</span>
+            <span>5 named sources</span>
+            <span>US-priced</span>
+            <span>Free to cite</span>
+          </div>
+        </div>
+
+        <div class="rep-callout">
+          <p>Want your category-specific band in 30 seconds? Use the free <a href="/tools/pricing-band-finder.html">Pricing Band Finder</a>. Pick your category + stage + differentiation. It returns the 3-tier band tailored to your inputs.</p>
+        </div>
+
+        <div class="rep-section">
+          <h2>Horizontal SaaS · <em>category benchmarks</em>.</h2>
+          <p>Cross-functional SaaS sold to most companies. Per-seat-monthly unless noted.</p>
+          <table class="rep-table">
+            <thead><tr><th>Category</th><th>Floor</th><th>Modal</th><th>Anchor</th><th>Source</th></tr></thead>
+            <tbody>
+              <tr><td class="cat">Productivity / Collab</td><td>$8-$15/seat</td><td>$22-$45/seat</td><td>$75-$180/seat</td><td class="src">Public pricing + OpenView 2024</td></tr>
+              <tr><td class="cat">Project Management</td><td>$10-$15/seat</td><td>$24-$48/seat</td><td>$80-$200/seat</td><td class="src">Public + ChartMogul 2024</td></tr>
+              <tr><td class="cat">CRM</td><td>$25-$50/seat</td><td>$80-$150/seat</td><td>$300-$1,200/seat</td><td class="src">Public + Bessemer 2024</td></tr>
+              <tr><td class="cat">Marketing Automation</td><td>$50-$200/mo</td><td>$800-$2,500/mo</td><td>$5,000-$20,000+/mo</td><td class="src">Public + OpenView 2024</td></tr>
+              <tr><td class="cat">Help Desk / Support</td><td>$15-$25/seat</td><td>$55-$90/seat</td><td>$150-$350/seat</td><td class="src">Public + ChartMogul 2024</td></tr>
+              <tr><td class="cat">Analytics / BI</td><td>$0-$30/seat</td><td>$70-$200/seat</td><td>$500-$2,000+/seat</td><td class="src">Public + Bessemer 2024</td></tr>
+            </tbody>
+          </table>
+          <p class="rep-notes">Floor tier almost always undercharged in horizontal SaaS. Most leaders converged on the modal tier within 18 months of category maturity.</p>
+        </div>
+
+        <div class="rep-section">
+          <h2>Vertical SaaS · <em>category benchmarks</em>.</h2>
+          <p>Industry-specific software. Per-location, per-doctor, per-truck style billing more common than per-seat.</p>
+          <table class="rep-table">
+            <thead><tr><th>Category</th><th>Floor</th><th>Modal</th><th>Anchor</th><th>Source</th></tr></thead>
+            <tbody>
+              <tr><td class="cat">Restaurant POS / Ops</td><td>$50-$100/mo</td><td>$150-$400/mo</td><td>$800-$2,500/mo</td><td class="src">Public pricing surveys</td></tr>
+              <tr><td class="cat">Medical Practice Mgmt</td><td>$200-$400/mo</td><td>$600-$1,500/mo</td><td>$3,000-$8,000+/mo</td><td class="src">Public + Bessemer healthcare</td></tr>
+              <tr><td class="cat">Legal Practice Mgmt</td><td>$39-$79/seat</td><td>$99-$199/seat</td><td>$400-$1,000/seat</td><td class="src">Public + OpenView 2024</td></tr>
+              <tr><td class="cat">Construction / Trades</td><td>$50-$150/mo</td><td>$300-$800/mo</td><td>$1,500-$5,000+/mo</td><td class="src">Public + ChartMogul 2024</td></tr>
+              <tr><td class="cat">Real Estate Brokerage</td><td>$25-$50/agent</td><td>$80-$200/agent</td><td>$500-$1,500/agent</td><td class="src">Public + industry reports</td></tr>
+              <tr><td class="cat">Fitness Studio Mgmt</td><td>$80-$150/mo</td><td>$250-$500/mo</td><td>$1,000-$3,000+/mo</td><td class="src">Public + Tunguz vertical research</td></tr>
+            </tbody>
+          </table>
+          <p class="rep-notes">Vertical SaaS anchor tiers expand fast when add-on modules (payments, scheduling, marketing) are stacked. Stand-alone anchor 30-40% lower than full-stack anchor.</p>
+        </div>
+
+        <div class="rep-section">
+          <h2>Pricing <em>patterns</em> across all categories.</h2>
+          <p>The anchor-to-modal ratio holds across SaaS at ~3-4x. The modal-to-floor ratio runs ~3-5x. Categories with stronger differentiation (CRM, marketing automation, vertical SaaS) push anchor higher; categories near commodity (productivity, collab) compress ratios.</p>
+          <p>Stage matters more than category for the absolute price band. Early-stage anchors run 50-70% of late-stage anchors in the same category. The modal tier moves 20-30% over the same lifecycle.</p>
+        </div>
+
+        <div class="rep-section">
+          <h2>How the data was <em>assembled</em>.</h2>
+          <div class="rep-sources">
+            <h3>Named public sources</h3>
+            <ul>
+              <li><strong>Public pricing pages:</strong> 60+ companies' public price pages scraped + categorized as of May 2026. Notable: Salesforce, HubSpot, Monday, Asana, Atlassian, Notion, Zendesk, Intercom, Toast, Mindbody, Clio, Procore.</li>
+              <li><strong>OpenView Partners:</strong> 2024 SaaS Benchmarks report + Expansion SaaS Benchmarks. <a href="https://openviewpartners.com/blog" target="_blank" rel="noopener">openviewpartners.com/blog</a></li>
+              <li><strong>ChartMogul:</strong> 2024 SaaS Index + ARR + ACV benchmarks. <a href="https://chartmogul.com/blog" target="_blank" rel="noopener">chartmogul.com/blog</a></li>
+              <li><strong>Bessemer Venture Partners:</strong> State of the Cloud 2024 + vertical SaaS analyses. <a href="https://www.bvp.com/atlas" target="_blank" rel="noopener">bvp.com/atlas</a></li>
+              <li><strong>Tomasz Tunguz:</strong> 5-year pricing research archive + tier-shape studies. <a href="https://tomtunguz.com" target="_blank" rel="noopener">tomtunguz.com</a></li>
+            </ul>
+          </div>
+          <p>Ranges shown are floor (10th-30th percentile), modal (40th-60th), anchor (80th-95th) across publicly disclosed pricing within each category. Where pricing pages obscure full ranges with "talk to sales" gates, the implied anchor was inferred from analyst-reported deals and excluded from the floor/modal columns.</p>
+        </div>
+
+        <div class="rep-section">
+          <h2>Where this fits in a <em>Sprint</em>.</h2>
+          <p>Benchmarks alone don't decide a pricing change. They set the band. The decision is which tier to push, which tier to add, which to retire, and how aggressively to anchor. That requires reading your category's actual competitor moves and your buyer language alongside benchmarks.</p>
+          <p>An Atlas Sprint maps pricing across 10 competitors in 21 days, alongside ads, search demand, customer language, channel mix, and 3 other signals. Benchmark numbers go inside the brief as one data layer. <a href="/sprint.html">See the Sprint ladder</a> or <a href="/2026-strategy-consulting-cost-comparison.html">compare to strategy consultants</a>.</p>
+        </div>
+
+        <div class="rep-section">
+          <div class="rep-cite">
+            <strong>Cite this dataset</strong>
+            Lamb, A. (2026). <em>2026 SaaS Pricing Benchmark Report.</em> LoopWorker. https://www.loopworker.com/2026-saas-pricing-benchmark-report.html
+            <br><br>
+            Or paste anywhere: <em>Source: LoopWorker · 2026 SaaS Pricing Benchmark Report · aggregated from 60+ public pricing pages + OpenView, ChartMogul, Bessemer, Tunguz.</em>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="v5-closing">
+      <div class="v5-closing-grid">
+        <div class="v5-closing-main">
+          <span class="v5-eyebrow-plain">Pricing decision on your desk?</span>
+          <h2>Run a <span class="grad-text">Sprint.</span></h2>
+          <p>Founder-led market intelligence. Pricing signals across 10 competitors. 21 days. $8,000.</p>
+          <div class="v5-cta-row">
+            <a href="/book.html" class="v5-btn v5-btn-primary">Book a free 30-min review →</a>
+            <a href="/tools/pricing-band-finder.html" class="v5-btn v5-btn-ghost">Try the free Pricing Band Finder</a>
+          </div>
+        </div>
+        <div class="v5-email-card">
+          <div class="v5-email-eyebrow">Want more datasets like this?</div>
+          <h4>Free Field Manual.</h4>
+          <p>The 7 signals we pull in every Sprint. Plus monthly open datasets.</p>
+          <form class="v5-email-form" action="https://formspree.io/f/xbdpddrn" method="POST" data-track="SaaS Pricing Report Field Manual">
+            <input type="hidden" name="_subject" value="Field Manual opt-in · SaaS pricing report">
+            <input type="hidden" name="_next" value="https://www.loopworker.com/resources/field-manual.html?from=saas-pricing-report">
+            <input type="hidden" name="source" value="/2026-saas-pricing-benchmark-report.html">
+            <input type="email" name="email" placeholder="you@company.com" required>
+            <button type="submit">Get it →</button>
+          </form>
+          <div class="v5-email-tiny">Instant · unsub anytime</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="v5-foot">
+    <div class="v5-foot-inner">
+      <div class="v5-foot-logo">LoopWorker</div>
+      <p>Evidence before execution.</p>
+      <p>© 2026 · <a href="/sprint.html">Sprints</a> · <a href="/case-studies.html">Customers</a> · <a href="/blog/">Signals</a> · <a href="/about.html">About</a></p>
+      <p class="v5-foot-small">alex@loopworker.com · <a href="https://instagram.com/loopworker">@loopworker</a></p>
+    </div>
+  </footer>
+
+  <script defer src="/v5-revenue.js"></script>
+</body>
+</html>
