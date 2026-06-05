@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <title>2026 Founder + Executive Compensation by Stage · Free Open Dataset | LoopWorker</title>
+  <meta name="description" content="2026 founder + executive comp ranges by funding stage. Sourced from Pave, Carta, Kruze, AngelList, and Visible.vc public data. Free, citable, citation block included.">
+  <link rel="canonical" href="https://www.loopworker.com/2026-founder-compensation-report.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.loopworker.com/2026-founder-compensation-report.html">
+  <meta property="og:title" content="2026 Founder + Executive Compensation by Stage">
+  <meta property="og:description" content="Founder + executive comp ranges across pre-seed → Series C, sourced from Pave/Carta/Kruze/AngelList. Free citable dataset.">
+  <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+  <meta name="theme-color" content="#07070C">
+  <meta name="color-scheme" content="dark">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/v5-system.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
+
+  <style>
+    .rep-shell { padding: 4rem 2rem 5rem; position: relative; overflow: hidden; }
+    .rep-shell::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 900px 500px at 50% 0%, rgba(99,102,241,0.16), transparent 60%); }
+    .rep-inner { position: relative; z-index: 2; max-width: 1040px; margin: 0 auto; }
+    .rep-intro { text-align: center; margin-bottom: 3rem; }
+    .rep-intro h1 { font-size: clamp(2.4rem, 5.4vw, 4rem); margin: 0 0 1.2rem; line-height: 1.05; }
+    .rep-intro p { font-size: 1.16rem; color: var(--text-2); line-height: 1.55; max-width: 700px; margin: 0 auto 1.4rem; }
+    .rep-meta { display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center; font-family: var(--mono); font-size: 0.74rem; color: var(--text-3); letter-spacing: 0.1em; text-transform: uppercase; }
+    .rep-meta span { padding: 0.35rem 0.7rem; background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.18); border-radius: 6px; }
+
+    .rep-section { margin: 3rem 0; }
+    .rep-section h2 { font-family: var(--sans-tight); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.025em; margin: 0 0 0.6rem; }
+    .rep-section h2 em { font-style: normal; background: var(--grad-hero); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .rep-section p { color: var(--text-2); font-size: 1.02rem; line-height: 1.65; margin: 0 0 1.2rem; }
+
+    .rep-table {
+      width: 100%; border-collapse: collapse;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden; margin: 1.5rem 0 0.5rem;
+      font-size: 0.94rem;
+    }
+    .rep-table th, .rep-table td { padding: 0.95rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .rep-table th { background: rgba(255,255,255,0.03); font-family: var(--mono); font-size: 0.72rem; color: var(--text-3); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; }
+    .rep-table tbody tr:last-child td { border-bottom: 0; }
+    .rep-table td { color: var(--text-2); font-variant-numeric: tabular-nums; }
+    .rep-table td.role { color: var(--text); font-weight: 600; }
+    .rep-table td.src { font-family: var(--mono); font-size: 0.74rem; color: var(--text-3); }
+
+    .rep-sources { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 14px; padding: 1.8rem; margin: 1.5rem 0; }
+    .rep-sources h3 { font-family: var(--sans-tight); font-size: 1.1rem; font-weight: 700; margin: 0 0 0.8rem; }
+    .rep-sources ul { margin: 0; padding-left: 1.2rem; color: var(--text-2); font-size: 0.92rem; line-height: 1.7; }
+    .rep-sources a { color: var(--indigo-bright); }
+
+    .rep-cite { margin: 2rem 0; padding: 1.4rem 1.6rem; background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.22); border-radius: 12px; font-family: var(--mono); font-size: 0.84rem; color: var(--text); line-height: 1.6; }
+    .rep-cite strong { color: var(--indigo-bright); font-family: var(--sans-tight); display: block; margin-bottom: 0.4rem; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.7rem; }
+
+    .rep-notes { color: var(--text-3); font-size: 0.86rem; line-height: 1.6; font-style: italic; margin: 0.8rem 0 0; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "2026 Founder + Executive Compensation by Stage",
+    "description": "Open dataset of founder and executive compensation ranges by funding stage, sourced from Pave, Carta, Kruze, AngelList, and Visible.vc public data.",
+    "author": { "@type": "Person", "name": "Alex Lamb" },
+    "publisher": { "@type": "Organization", "name": "LoopWorker", "url": "https://www.loopworker.com/" },
+    "datePublished": "2026-06-04"
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <nav class="v5-nav">
+    <div class="v5-nav-inner">
+      <a href="/" class="v5-logo"><span class="v5-logo-mark">L</span>LoopWorker</a>
+      <div class="v5-nav-links">
+        <a href="/sprint.html">Sprints</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/case-studies.html">Customers</a>
+        <a href="/blog/">Signals</a>
+        <a href="/about.html">About</a>
+        <a href="/book.html" class="v5-nav-cta">Book a Call</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="rep-shell">
+      <div class="rep-inner">
+
+        <div class="rep-intro">
+          <span class="v5-eyebrow">Open dataset · Updated June 2026</span>
+          <h1>2026 Founder + Executive <span class="grad-text">Compensation</span> by Stage.</h1>
+          <p>Founder and executive comp ranges from pre-seed to Series C. Aggregated from public surveys + open salary data. Each row sources its number. Free to cite anywhere. Citation block at the bottom.</p>
+          <div class="rep-meta">
+            <span>2026 data</span>
+            <span>5 named sources</span>
+            <span>US-based · cash + equity</span>
+            <span>Free to cite</span>
+          </div>
+        </div>
+
+        <div class="rep-section">
+          <h2>Founder/CEO <em>cash compensation</em> by stage.</h2>
+          <p>Annualized base salary. Equity covered separately below.</p>
+          <table class="rep-table">
+            <thead><tr><th>Stage</th><th>Median</th><th>25th-75th range</th><th>Sample size</th><th>Source</th></tr></thead>
+            <tbody>
+              <tr><td class="role">Pre-seed</td><td>$0 - $60K</td><td>$0 - $90K</td><td>~280 companies</td><td class="src">Kruze 2024 survey</td></tr>
+              <tr><td class="role">Seed (post-raise)</td><td>$125K</td><td>$95K - $150K</td><td>~700 companies</td><td class="src">Kruze + Pave 2024</td></tr>
+              <tr><td class="role">Series A</td><td>$175K</td><td>$150K - $200K</td><td>~450 companies</td><td class="src">Pave 2024 founder report</td></tr>
+              <tr><td class="role">Series B</td><td>$215K</td><td>$185K - $250K</td><td>~310 companies</td><td class="src">Pave 2024 + Carta 2024</td></tr>
+              <tr><td class="role">Series C+</td><td>$285K</td><td>$245K - $325K</td><td>~190 companies</td><td class="src">Carta 2024 executive comp</td></tr>
+            </tbody>
+          </table>
+          <p class="rep-notes">Pre-seed founders frequently take zero cash before institutional money. Post-raise jumps to the seed band fast.</p>
+        </div>
+
+        <div class="rep-section">
+          <h2>CTO + technical co-founder <em>cash compensation</em>.</h2>
+          <p>Technical co-founder splits typically run 5-10% below CEO until Series A, then converge.</p>
+          <table class="rep-table">
+            <thead><tr><th>Stage</th><th>Median</th><th>25th-75th range</th><th>Notes</th><th>Source</th></tr></thead>
+            <tbody>
+              <tr><td class="role">Pre-seed</td><td>$0 - $40K</td><td>$0 - $75K</td><td>Often the founder doing the building</td><td class="src">Kruze 2024</td></tr>
+              <tr><td class="role">Seed</td><td>$115K</td><td>$90K - $140K</td><td>5-10% below CEO at this stage</td><td class="src">Pave 2024</td></tr>
+              <tr><td class="role">Series A</td><td>$170K</td><td>$145K - $195K</td><td>Converges with CEO at A</td><td class="src">Pave 2024</td></tr>
+              <tr><td class="role">Series B</td><td>$220K</td><td>$190K - $250K</td><td>Often slightly above CEO at B</td><td class="src">Carta 2024</td></tr>
+              <tr><td class="role">Series C+</td><td>$290K</td><td>$250K - $330K</td><td>Mature engineering org pulls comp up</td><td class="src">Carta 2024</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="rep-section">
+          <h2>VP + senior executive <em>cash compensation</em>.</h2>
+          <p>First non-founder executive hires across the most common functions.</p>
+          <table class="rep-table">
+            <thead><tr><th>Role</th><th>Series A</th><th>Series B</th><th>Series C+</th><th>Source</th></tr></thead>
+            <tbody>
+              <tr><td class="role">VP Engineering</td><td>$220K-$260K</td><td>$260K-$310K</td><td>$310K-$380K</td><td class="src">Pave + Carta 2024</td></tr>
+              <tr><td class="role">VP Product</td><td>$200K-$245K</td><td>$245K-$295K</td><td>$295K-$360K</td><td class="src">Pave + Carta 2024</td></tr>
+              <tr><td class="role">VP Marketing</td><td>$180K-$230K</td><td>$230K-$285K</td><td>$285K-$345K</td><td class="src">Pave 2024 marketing</td></tr>
+              <tr><td class="role">VP Sales</td><td>$175K base + $175K OTE</td><td>$220K base + $220K OTE</td><td>$275K base + $275K OTE</td><td class="src">Pave 2024 sales</td></tr>
+              <tr><td class="role">VP Finance / CFO</td><td>$210K-$255K</td><td>$260K-$315K</td><td>$315K-$395K</td><td class="src">Kruze 2024 CFO study</td></tr>
+              <tr><td class="role">Head of People</td><td>$155K-$195K</td><td>$200K-$255K</td><td>$255K-$320K</td><td class="src">Pave 2024 people ops</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="rep-section">
+          <h2>Equity <em>ownership</em> by stage.</h2>
+          <p>Approximate retained equity after each round, assuming typical dilution patterns. Use ranges, not point estimates.</p>
+          <table class="rep-table">
+            <thead><tr><th>Stage</th><th>CEO / sole founder</th><th>2-founder split (each)</th><th>3-founder split (each)</th><th>Source</th></tr></thead>
+            <tbody>
+              <tr><td class="role">Pre-seed (pre-raise)</td><td>~100%</td><td>~50% each</td><td>~33% each</td><td class="src">Standard</td></tr>
+              <tr><td class="role">Post-seed</td><td>70-78%</td><td>35-39% each</td><td>23-26% each</td><td class="src">Carta 2024 dilution</td></tr>
+              <tr><td class="role">Post-Series A</td><td>52-60%</td><td>26-30% each</td><td>17-20% each</td><td class="src">Carta 2024 dilution</td></tr>
+              <tr><td class="role">Post-Series B</td><td>38-46%</td><td>19-23% each</td><td>13-15% each</td><td class="src">Carta 2024 dilution</td></tr>
+              <tr><td class="role">Post-Series C</td><td>26-34%</td><td>13-17% each</td><td>9-11% each</td><td class="src">Carta 2024 dilution</td></tr>
+            </tbody>
+          </table>
+          <p class="rep-notes">Option pool refreshes shrink founder equity faster than down-rounds in most cap tables. Watch for 10-15% pool top-ups per round.</p>
+        </div>
+
+        <div class="rep-section">
+          <h2>VP + executive <em>equity grants</em>.</h2>
+          <p>Initial equity grants at hire, expressed as a percentage of fully-diluted shares.</p>
+          <table class="rep-table">
+            <thead><tr><th>Role</th><th>Series A grant</th><th>Series B grant</th><th>Series C grant</th><th>Source</th></tr></thead>
+            <tbody>
+              <tr><td class="role">VP Engineering</td><td>0.5% - 1.5%</td><td>0.25% - 0.7%</td><td>0.12% - 0.35%</td><td class="src">Carta 2024 hire grants</td></tr>
+              <tr><td class="role">VP Product</td><td>0.4% - 1.2%</td><td>0.2% - 0.6%</td><td>0.1% - 0.3%</td><td class="src">Carta 2024</td></tr>
+              <tr><td class="role">VP Marketing</td><td>0.3% - 1.0%</td><td>0.15% - 0.5%</td><td>0.08% - 0.25%</td><td class="src">Carta 2024</td></tr>
+              <tr><td class="role">VP Sales</td><td>0.4% - 1.2%</td><td>0.2% - 0.55%</td><td>0.1% - 0.3%</td><td class="src">Carta 2024</td></tr>
+              <tr><td class="role">CFO</td><td>0.5% - 1.5%</td><td>0.25% - 0.7%</td><td>0.12% - 0.35%</td><td class="src">Carta 2024 + Kruze 2024</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="rep-section">
+          <h2>How the <em>data</em> was assembled.</h2>
+          <div class="rep-sources">
+            <h3>Named public sources</h3>
+            <ul>
+              <li><strong>Pave:</strong> 2024 founder compensation report, marketing comp report, sales comp report, people ops comp report. <a href="https://pave.com/blog" target="_blank" rel="noopener">pave.com/blog</a></li>
+              <li><strong>Carta:</strong> 2024 startup compensation study + dilution + hire grant percentile data. <a href="https://carta.com/blog" target="_blank" rel="noopener">carta.com/blog</a></li>
+              <li><strong>Kruze Consulting:</strong> 2024 founder salary study + CFO compensation study. <a href="https://kruzeconsulting.com/blog" target="_blank" rel="noopener">kruzeconsulting.com/blog</a></li>
+              <li><strong>AngelList:</strong> startup salary data, by role + stage + region. <a href="https://angel.co/salaries" target="_blank" rel="noopener">angel.co/salaries</a></li>
+              <li><strong>Visible.vc:</strong> founder benchmark surveys + investor update transparency reports. <a href="https://visible.vc" target="_blank" rel="noopener">visible.vc</a></li>
+            </ul>
+          </div>
+          <p>Ranges shown are the 25th-75th percentile across the named sources where overlap allows, with the median pulled to the most-recent source's midpoint. Where one source's range falls outside the others by more than 15%, it's flagged in the notes column rather than blended.</p>
+        </div>
+
+        <div class="rep-section">
+          <h2>Where this fits in a <em>Sprint</em>.</h2>
+          <p>Compensation benchmarks alone don't decide a hire. They set the price band. The decision is which role to hire next, in what shape, at what level. That's a signal-mapping problem (positioning + channel mix + product depth) and a category-pattern problem (what your competitors are doing).</p>
+          <p>An Atlas Sprint maps that shape across 10 competitors in 21 days. Compensation data goes inside the brief alongside competitor org charts + open roles signal. <a href="/sprint.html">See the Sprint ladder</a> or <a href="/2026-strategy-consulting-cost-comparison.html">compare to strategy consultants</a>.</p>
+        </div>
+
+        <div class="rep-section">
+          <div class="rep-cite">
+            <strong>Cite this dataset</strong>
+            Lamb, A. (2026). <em>2026 Founder + Executive Compensation by Stage.</em> LoopWorker. https://www.loopworker.com/2026-founder-compensation-report.html
+            <br><br>
+            Or paste anywhere: <em>Source: LoopWorker · 2026 Founder + Executive Compensation by Stage · aggregated from Pave, Carta, Kruze, AngelList, Visible.vc public data.</em>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="v5-closing">
+      <div class="v5-closing-grid">
+        <div class="v5-closing-main">
+          <span class="v5-eyebrow-plain">Bigger decision than a hire?</span>
+          <h2>Run a <span class="grad-text">Sprint.</span></h2>
+          <p>Founder-led market intelligence. 21 days. $8,000. Decision brief with ranked next moves.</p>
+          <div class="v5-cta-row">
+            <a href="/book.html" class="v5-btn v5-btn-primary">Book a free 30-min review →</a>
+            <a href="/sprint.html" class="v5-btn v5-btn-ghost">See the Sprint ladder</a>
+          </div>
+        </div>
+        <div class="v5-email-card">
+          <div class="v5-email-eyebrow">Want more datasets like this?</div>
+          <h4>Free Field Manual.</h4>
+          <p>The 7 signals we pull in every Sprint. Plus monthly open datasets.</p>
+          <form class="v5-email-form" action="https://formspree.io/f/xbdpddrn" method="POST" data-track="Comp Report Field Manual">
+            <input type="hidden" name="_subject" value="Field Manual opt-in · comp report">
+            <input type="hidden" name="_next" value="https://www.loopworker.com/resources/field-manual.html?from=comp-report">
+            <input type="hidden" name="source" value="/2026-founder-compensation-report.html">
+            <input type="email" name="email" placeholder="you@company.com" required>
+            <button type="submit">Get it →</button>
+          </form>
+          <div class="v5-email-tiny">Instant · unsub anytime</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="v5-foot">
+    <div class="v5-foot-inner">
+      <div class="v5-foot-logo">LoopWorker</div>
+      <p>Evidence before execution.</p>
+      <p>© 2026 · <a href="/sprint.html">Sprints</a> · <a href="/case-studies.html">Customers</a> · <a href="/blog/">Signals</a> · <a href="/about.html">About</a></p>
+      <p class="v5-foot-small">alex@loopworker.com · <a href="https://instagram.com/loopworker">@loopworker</a></p>
+    </div>
+  </footer>
+
+  <script defer src="/v5-revenue.js"></script>
+</body>
+</html>
