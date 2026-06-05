@@ -1,0 +1,144 @@
+<!--
+LoopWorker · Stripe Capture Form Snippet
+
+Drop-in replacement for Formspree email captures. Posts to Cloudflare Worker
+which creates Stripe Customer. Redirects on success.
+
+USAGE: copy <form> block + <script> block. Set data-source on the form.
+Optional: pass extra metadata via hidden inputs named meta_*.
+
+Set WORKER_URL once below, OR via window.LW_WORKER_URL global.
+-->
+
+<!-- ---------- EXAMPLE: Field Manual capture (home page) ---------- -->
+
+<form class="lw-capture" data-source="home">
+  <input type="hidden" name="meta_page" value="/">
+  <input type="email" name="email" placeholder="you@company.com" required autocomplete="email">
+  <input type="text" name="name" placeholder="Your name (optional)" autocomplete="name">
+  <button type="submit">Get the Field Manual →</button>
+  <p class="lw-capture-status" hidden></p>
+</form>
+
+
+<!-- ---------- EXAMPLE: Tool capture (pricing-band-finder) ---------- -->
+
+<form class="lw-capture" data-source="pricing-band-finder">
+  <input type="hidden" name="meta_tool" value="pricing-band-finder">
+  <input type="email" name="email" placeholder="you@company.com" required>
+  <button type="submit">Send the pricing teardown PDF →</button>
+  <p class="lw-capture-status" hidden></p>
+</form>
+
+
+<!-- ---------- The JS handler (include once on each page) ---------- -->
+
+<script>
+(function() {
+  // SET THIS after Worker deploy:
+  const WORKER_URL = window.LW_WORKER_URL || 'https://loopworker-stripe-capture.YOUR-SUBDOMAIN.workers.dev/';
+
+  document.querySelectorAll('form.lw-capture').forEach(form => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const status = form.querySelector('.lw-capture-status');
+      const button = form.querySelector('button[type="submit"]');
+      const originalButtonText = button.textContent;
+
+      // Collect form data
+      const formData = new FormData(form);
+      const email = formData.get('email');
+      const name = formData.get('name') || null;
+      const source = form.dataset.source || 'unknown';
+
+      // Collect meta_* fields as metadata object
+      const metadata = {};
+      for (const [key, value] of formData.entries()) {
+        if (key.startsWith('meta_')) {
+          metadata[key.slice(5)] = value;
+        }
+      }
+
+      // UX: lock button + show working state
+      button.disabled = true;
+      button.textContent = 'Sending...';
+      if (status) {
+        status.hidden = true;
+        status.textContent = '';
+      }
+
+      try {
+        const resp = await fetch(WORKER_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, name, source, metadata }),
+        });
+        const data = await resp.json();
+
+        if (!resp.ok || !data.ok) {
+          throw new Error(data.error || 'Submission failed');
+        }
+
+        // Fire Plausible event if available
+        if (window.plausible) {
+          window.plausible('Capture', { props: { source } });
+        }
+
+        // Redirect on success
+        if (data.redirect_url) {
+          window.location.href = data.redirect_url;
+        } else {
+          if (status) {
+            status.hidden = false;
+            status.textContent = 'Got it. Check your inbox.';
+          }
+        }
+      } catch (err) {
+        button.disabled = false;
+        button.textContent = originalButtonText;
+        if (status) {
+          status.hidden = false;
+          status.textContent = err.message || 'Something went wrong. Try again.';
+          status.style.color = '#ff6b6b';
+        }
+      }
+    });
+  });
+})();
+</script>
+
+
+<!-- ---------- Minimal CSS (lift into v5-system.css later) ---------- -->
+
+<style>
+form.lw-capture { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+form.lw-capture input[type="email"],
+form.lw-capture input[type="text"] {
+  flex: 1; min-width: 200px;
+  padding: 0.85rem 1rem;
+  background: rgba(0,0,0,0.4);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 0.94rem;
+}
+form.lw-capture input:focus { outline: none; border-color: var(--indigo); }
+form.lw-capture button {
+  background: var(--grad-cta);
+  color: #FFF; border: 0;
+  padding: 0.85rem 1.2rem;
+  font-family: var(--sans);
+  font-size: 0.9rem; font-weight: 600;
+  border-radius: 8px; cursor: pointer;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.1) inset, 0 12px 28px -8px rgba(99,102,241,0.55);
+  white-space: nowrap;
+}
+form.lw-capture button:disabled { opacity: 0.5; cursor: wait; }
+form.lw-capture button:hover:not(:disabled) { background: var(--grad-cta-hover); }
+form.lw-capture .lw-capture-status {
+  width: 100%;
+  font-size: 0.86rem; color: var(--text-2);
+  margin: 0.4rem 0 0;
+}
+</style>

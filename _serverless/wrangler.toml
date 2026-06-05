@@ -1,0 +1,12 @@
+name = "loopworker-stripe-capture"
+main = "cloudflare-worker.js"
+compatibility_date = "2024-11-01"
+
+# Custom domain (optional, set up in Cloudflare dashboard after deploy):
+# routes = [
+#   { pattern = "capture.loopworker.com/*", zone_name = "loopworker.com" }
+# ]
+
+# Secret to set after deploy:
+# wrangler secret put STRIPE_SECRET_KEY
+# (paste sk_live_... value when prompted)
