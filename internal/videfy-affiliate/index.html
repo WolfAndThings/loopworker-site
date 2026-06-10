@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Videfy - Affiliate Breakdown</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+:root {
+  --lime:#AAFF00;
+  --teal:#00C4B4;
+  --ink:#0A0C14;
+  --white:#FAFBFF;
+  --off:#F2F4F8;
+  --soft:#E8EAF0;
+  --muted:#6B7280;
+  --border:rgba(10,12,20,0.10);
+  --border-strong:rgba(10,12,20,0.18);
+}
+html { scroll-behavior:smooth; }
+body {
+  background:#1a1a1a;
+  color:var(--ink);
+  font-family:"DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.6;
+}
+a { color:inherit; }
+.page {
+  max-width:1040px;
+  margin:32px auto;
+  padding:56px 54px 72px;
+  background:var(--white);
+  border-radius:18px;
+  box-shadow:0 30px 80px rgba(0,0,0,.28);
+}
+.doc-header {
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  align-items:flex-start;
+  padding-bottom:24px;
+  border-bottom:2px solid var(--ink);
+  margin-bottom:30px;
+}
+.wordmark { display:flex; align-items:center; gap:12px; }
+.logo-box {
+  width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  border-radius:9px;
+  background:var(--ink);
+}
+.brand-name {
+  font-family:"DM Mono", monospace;
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.doc-meta {
+  font-family:"DM Mono", monospace;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.8;
+  text-align:right;
+}
+.hero {
+  position:relative;
+  overflow:hidden;
+  padding:44px;
+  border-radius:16px;
+  background:var(--ink);
+  color:var(--white);
+  margin-bottom:22px;
+}
+.hero::before {
+  content:"";
+  position:absolute;
+  inset:0 0 auto 0;
+  height:4px;
+  background:linear-gradient(90deg,var(--lime),var(--teal));
+}
+.eyebrow {
+  display:block;
+  margin-bottom:12px;
+  color:rgba(255,255,255,.45);
+  font-family:"DM Mono", monospace;
+  font-size:10px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+.hero h1 {
+  max-width:760px;
+  margin-bottom:16px;
+  font-size:clamp(38px, 6vw, 70px);
+  line-height:.96;
+  letter-spacing:-.03em;
+}
+.hero h1 em { color:var(--lime); font-style:normal; }
+.hero p {
+  max-width:760px;
+  color:rgba(255,255,255,.72);
+  font-size:17px;
+  font-weight:300;
+}
+.toc {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  padding:18px;
+  margin:0 0 44px;
+  border:1px solid var(--border-strong);
+  border-radius:14px;
+  background:var(--off);
+}
+.toc a {
+  padding:8px 10px;
+  border-radius:7px;
+  color:var(--ink);
+  text-decoration:none;
+  font-family:"DM Mono", monospace;
+  font-size:11px;
+  letter-spacing:.04em;
+}
+.toc a:hover { background:rgba(170,255,0,.16); }
+.section {
+  margin-bottom:56px;
+  scroll-margin-top:24px;
+}
+.section:last-of-type { margin-bottom:0; }
+.section-label {
+  display:block;
+  margin-bottom:10px;
+  color:var(--muted);
+  font-family:"DM Mono", monospace;
+  font-size:10px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+}
+h2 {
+  margin-bottom:16px;
+  font-size:clamp(28px, 4vw, 42px);
+  line-height:1.08;
+  letter-spacing:-.02em;
+}
+h3 {
+  margin:22px 0 10px;
+  font-size:18px;
+  line-height:1.25;
+}
+.body {
+  max-width:760px;
+  color:#2C3040;
+  font-size:15px;
+  font-weight:300;
+}
+.body strong { color:var(--ink); font-weight:600; }
+.grid {
+  display:grid;
+  gap:12px;
+  margin-top:18px;
+}
+.grid.three { grid-template-columns:repeat(3,1fr); }
+.grid.two { grid-template-columns:repeat(2,1fr); }
+.card {
+  border:1px solid var(--border-strong);
+  border-radius:14px;
+  background:var(--white);
+  overflow:hidden;
+}
+.card-head {
+  padding:14px 18px;
+  border-bottom:1px solid var(--border);
+  background:var(--off);
+}
+.card-head.dark {
+  color:var(--white);
+  background:var(--ink);
+}
+.card-head.lime { background:rgba(170,255,0,.08); }
+.card-head.teal { background:rgba(0,196,180,.07); }
+.card-title {
+  color:inherit;
+  font-size:15px;
+  font-weight:700;
+  line-height:1.25;
+}
+.card-sub {
+  margin-top:3px;
+  color:var(--muted);
+  font-family:"DM Mono", monospace;
+  font-size:10px;
+}
+.card-head.dark .card-sub { color:rgba(255,255,255,.42); }
+.card-body { padding:16px 18px 18px; }
+.card-text {
+  color:#2C3040;
+  font-size:13.5px;
+  font-weight:300;
+  line-height:1.6;
+}
+.metric-row {
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
+  margin-top:18px;
+}
+.metric {
+  min-height:120px;
+  padding:16px;
+  border:1px solid var(--border-strong);
+  border-radius:13px;
+  background:var(--off);
+}
+.metric strong {
+  display:block;
+  margin-bottom:6px;
+  color:#2D6000;
+  font-size:25px;
+  line-height:1;
+}
+.metric span {
+  display:block;
+  color:#2C3040;
+  font-size:12.5px;
+  line-height:1.45;
+}
+.offer {
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:14px;
+  margin-top:18px;
+}
+.offer-main {
+  padding:28px 30px;
+  border:1px solid rgba(170,255,0,.34);
+  border-radius:14px;
+  background:linear-gradient(135deg,rgba(170,255,0,.08),rgba(0,196,180,.07));
+}
+.offer-label {
+  display:block;
+  margin-bottom:10px;
+  color:#2D6000;
+  font-family:"DM Mono", monospace;
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.offer-text {
+  color:var(--ink);
+  font-size:24px;
+  font-weight:700;
+  line-height:1.25;
+  letter-spacing:-.01em;
+}
+.offer-text em {
+  color:#2D6000;
+  font-style:normal;
+}
+.check-list {
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  list-style:none;
+}
+.check-list li {
+  position:relative;
+  padding-left:20px;
+  color:#2C3040;
+  font-size:13.5px;
+  font-weight:300;
+}
+.check-list li::before {
+  content:"";
+  position:absolute;
+  left:0;
+  top:9px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--lime);
+  border:1px solid rgba(45,96,0,.3);
+}
+table {
+  width:100%;
+  margin-top:16px;
+  border-collapse:separate;
+  border-spacing:0;
+  border:1px solid var(--border-strong);
+  border-radius:13px;
+  overflow:hidden;
+  font-size:12.5px;
+}
+th {
+  padding:12px 13px;
+  color:var(--white);
+  background:var(--ink);
+  text-align:left;
+  font-family:"DM Mono", monospace;
+  font-size:10px;
+  font-weight:500;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+td {
+  padding:12px 13px;
+  border-top:1px solid var(--border);
+  color:#2C3040;
+  font-weight:300;
+  line-height:1.45;
+  vertical-align:top;
+}
+td strong { color:var(--ink); font-weight:600; }
+tr:nth-child(even) td { background:var(--off); }
+.script {
+  margin-top:12px;
+  padding:18px 20px;
+  border:1px solid var(--border-strong);
+  border-radius:13px;
+  background:var(--off);
+}
+.script-label {
+  display:block;
+  margin-bottom:8px;
+  color:var(--muted);
+  font-family:"DM Mono", monospace;
+  font-size:10px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.script p {
+  color:#2C3040;
+  font-size:14px;
+  font-weight:300;
+}
+.timeline {
+  display:grid;
+  gap:8px;
+  margin-top:18px;
+}
+.timeline-row {
+  display:grid;
+  grid-template-columns:90px 1fr;
+  gap:14px;
+  align-items:start;
+  padding:14px 16px;
+  border:1px solid var(--border);
+  border-radius:11px;
+  background:var(--off);
+}
+.week {
+  color:#2D6000;
+  font-family:"DM Mono", monospace;
+  font-size:12px;
+  font-weight:500;
+}
+.timeline-row p {
+  color:#2C3040;
+  font-size:13.5px;
+  font-weight:300;
+}
+.note {
+  margin-top:18px;
+  padding:18px 20px;
+  border:1px solid rgba(0,196,180,.24);
+  border-radius:13px;
+  background:rgba(0,196,180,.06);
+}
+.note strong { color:#005C54; }
+.source-link {
+  color:#005C54;
+  font-weight:500;
+  text-decoration:none;
+  border-bottom:1px solid rgba(0,92,84,.25);
+}
+.source-link:hover { border-bottom-color:#005C54; }
+.doc-footer {
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  margin-top:64px;
+  padding-top:20px;
+  border-top:2px solid var(--ink);
+  color:var(--muted);
+  font-family:"DM Mono", monospace;
+  font-size:11px;
+}
+@media (max-width:860px) {
+  body { background:var(--white); }
+  .page { margin:0; padding:34px 20px 54px; border-radius:0; box-shadow:none; }
+  .doc-header, .doc-footer { flex-direction:column; align-items:flex-start; text-align:left; }
+  .doc-meta { text-align:left; }
+  .hero { padding:30px 24px; }
+  .toc { grid-template-columns:1fr 1fr; }
+  .grid.three, .grid.two, .offer, .metric-row { grid-template-columns:1fr; }
+  .timeline-row { grid-template-columns:1fr; gap:6px; }
+  table { display:block; overflow-x:auto; white-space:nowrap; }
+}
+@media print {
+  body { background:var(--white); }
+  .page { max-width:none; margin:0; padding:32px; border-radius:0; box-shadow:none; }
+  .toc { display:none; }
+  .section { break-inside:avoid; }
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="doc-header">
+    <div class="wordmark">
+      <div class="logo-box" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
+          <path d="M2 4L8 2L14 4V9.5C14 12.5 11.5 15 8 16C4.5 15 2 12.5 2 9.5V4Z" fill="#AAFF00" opacity="0.95"/>
+          <rect x="6.5" y="6" width="3" height="5" rx="0.75" fill="#080B12"/>
+        </svg>
+      </div>
+      <span class="brand-name">Videfy.ai</span>
+    </div>
+    <div class="doc-meta">Affiliate Breakdown<br>Standalone share doc<br>June 2026</div>
+  </header>
+
+  <section class="hero">
+    <span class="eyebrow">Affiliate program and creator outreach</span>
+    <h1>Creator affiliates for <em>Videfy launch.</em></h1>
+    <p>A focused breakdown of the affiliate offer, target creator tiers, outreach scripts, launch cadence, expected conversion math, and tracking system. This doc is designed to share without the full marketing brief.</p>
+  </section>
+
+  <nav class="toc">
+    <a href="#snapshot">00 Snapshot</a>
+    <a href="#market">01 Market</a>
+    <a href="#logic">02 Why this offer</a>
+    <a href="#offer">03 Offer</a>
+    <a href="#tiers">04 Creator tiers</a>
+    <a href="#scripts">05 Scripts</a>
+    <a href="#cadence">06 Cadence</a>
+    <a href="#outcomes">07 Outcomes</a>
+    <a href="#tracking">08 Tracking</a>
+    <a href="#sources">09 Sources</a>
+  </nav>
+
+  <section class="section" id="snapshot">
+    <span class="section-label">00 - Snapshot</span>
+    <h2>The affiliate play is not volume first. It is proof first.</h2>
+    <p class="body">Videfy should use affiliates to create visible launch proof, repeatable tutorial content, and a small base of revenue-linked creators. The near-term goal is not hundreds of partners. The near-term goal is a tight creator bench that can show Videfy in real workflows.</p>
+    <div class="metric-row">
+      <div class="metric"><strong>50</strong><span>hand-picked AI/video creators in the first outreach list</span></div>
+      <div class="metric"><strong>30%</strong><span>commission on referred customers</span></div>
+      <div class="metric"><strong>12 mo</strong><span>standard commission window</span></div>
+      <div class="metric"><strong>5</strong><span>minimum partner creators targeted for Day 0 posts</span></div>
+      <div class="metric"><strong>3-5</strong><span>expected active posters in the first 30 days</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="market">
+    <span class="section-label">01 - What others are doing</span>
+    <h2>The market already trains creators to expect recurring upside plus access.</h2>
+    <p class="body">The affiliate benchmark is not one number. AI video and creator-tool programs use a mix of recurring commission, free access, credits, co-marketing, public recognition, and selective ambassador programs. Videfy's offer should feel competitive on cash while standing out on product access and creator usefulness.</p>
+
+    <table>
+      <thead><tr><th>Company</th><th>What they do</th><th>Relevant takeaway for Videfy</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Runway</strong></td>
+          <td>Runs a selective Creative Partners Program with complimentary Max plan access, collaboration opportunities, and dedicated program events.</td>
+          <td>Top creators respond to status, access, and visibility, not just commission.</td>
+          <td><a class="source-link" href="https://runwayml.com/en/creative-partners-program" target="_blank" rel="noopener">Runway CPP</a></td>
+        </tr>
+        <tr>
+          <td><strong>Descript</strong></td>
+          <td>Affiliate terms advertise 15% recurring cash commissions for the first year of referred subscriptions.</td>
+          <td>One-year recurring commission is a normal SaaS creator-tool pattern.</td>
+          <td><a class="source-link" href="https://www.descript.com/affiliate-terms" target="_blank" rel="noopener">Descript terms</a></td>
+        </tr>
+        <tr>
+          <td><strong>Pictory</strong></td>
+          <td>Partner page promotes recurring commissions up to 50%, a free lifetime Premium account, and a cash bonus for recommending paying customers.</td>
+          <td>Video-AI affiliates are used to aggressive upside and free paid access.</td>
+          <td><a class="source-link" href="https://pictory.ai/partnernow" target="_blank" rel="noopener">Pictory partner page</a></td>
+        </tr>
+        <tr>
+          <td><strong>Synthesia</strong></td>
+          <td>Affiliate page promotes up to $267 per customer referral and 25% commission on Starter and Creator plan payments with a 60-day cookie.</td>
+          <td>25% is credible, but higher positioning can help a new entrant recruit creators.</td>
+          <td><a class="source-link" href="https://www.synthesia.io/partners/affiliates" target="_blank" rel="noopener">Synthesia affiliates</a></td>
+        </tr>
+        <tr>
+          <td><strong>Invideo</strong></td>
+          <td>Affiliate page promotes 50% commission on monthly plans and 25% commission on annual plans purchased through affiliate links.</td>
+          <td>High front-end commission is common when the product depends on creator education.</td>
+          <td><a class="source-link" href="https://invideo.io/make/affiliate-program/" target="_blank" rel="noopener">Invideo affiliate page</a></td>
+        </tr>
+        <tr>
+          <td><strong>VEED</strong></td>
+          <td>Referral help page says referrers can earn 40% commission on purchases, up to $50 per referral.</td>
+          <td>Some programs cap payout even when the percentage looks high. Videfy can be cleaner by making the 12-month upside explicit.</td>
+          <td><a class="source-link" href="https://support.veed.io/en/articles/10098098-how-does-veeds-referral-program-work" target="_blank" rel="noopener">VEED referral help</a></td>
+        </tr>
+        <tr>
+          <td><strong>Canva</strong></td>
+          <td>Canva routes affiliate participation through its community-based Canvassador program.</td>
+          <td>Large creative platforms often blend affiliate, ambassador, education, and community into one creator program.</td>
+          <td><a class="source-link" href="https://www.canva.com/help/canva-affiliate-marketing-program/" target="_blank" rel="noopener">Canva help</a></td>
+        </tr>
+        <tr>
+          <td><strong>HeyGen</strong></td>
+          <td>Runs an affiliate path and a separate ambassador program for AI video creators, educators, marketers, and community leaders.</td>
+          <td>Videfy should separate revenue affiliates from status/community partners when the ask is different.</td>
+          <td><a class="source-link" href="https://www.heygen.com/geniverse/ambassador-program" target="_blank" rel="noopener">HeyGen ambassadors</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section" id="logic">
+    <span class="section-label">02 - How we arrived here</span>
+    <h2>Videfy should sit between aggressive commission and selective creator access.</h2>
+    <p class="body">The benchmark points to one clear conclusion: a generic affiliate link is not enough for AI video creators. They need a product they can demonstrate, a reason to post now, and a commission structure worth building content around.</p>
+
+    <div class="grid three">
+      <article class="card">
+        <div class="card-head lime">
+          <div class="card-title">Why not lower than 30%</div>
+          <div class="card-sub">Recruiting reality</div>
+        </div>
+        <div class="card-body"><div class="card-text">Descript and Synthesia show that 15-25% can work for established brands. Videfy is pre-launch and needs creators to take a bigger early bet, so 30% is the floor that feels worth attention.</div></div>
+      </article>
+      <article class="card">
+        <div class="card-head teal">
+          <div class="card-title">Why not just 50%</div>
+          <div class="card-sub">Margin and seriousness</div>
+        </div>
+        <div class="card-body"><div class="card-text">Pictory and InVideo show high commissions can recruit attention, but Videfy also has AI generation costs. A 30% x 12-month structure is strong without teaching affiliates to expect unsustainable economics.</div></div>
+      </article>
+      <article class="card">
+        <div class="card-head dark">
+          <div class="card-title">Why add Pro + credits</div>
+          <div class="card-sub">Content creation need</div>
+        </div>
+        <div class="card-body"><div class="card-text">Runway, Pictory, and ambassador programs show that free access is part of the pitch. Creators cannot sell Videfy well unless they can make real examples first.</div></div>
+      </article>
+    </div>
+
+    <div class="note"><strong>Recommendation:</strong> Keep the public affiliate offer simple: 30% for 12 months, free Pro, free Generate credits. Use the 18-month extension, leaderboard, launch features, and custom demo assets as activation levers for the creators most likely to post.</div>
+  </section>
+
+  <section class="section" id="offer">
+    <span class="section-label">03 - Affiliate offer</span>
+    <h2>The offer needs to feel like access, revenue, and content.</h2>
+    <div class="offer">
+      <div class="offer-main">
+        <span class="offer-label">Core offer</span>
+        <div class="offer-text"><em>30% commission</em> for 12 months, plus free Pro access and Generate credits to test the product.</div>
+      </div>
+      <div class="card">
+        <div class="card-head lime">
+          <div class="card-title">Creator incentive stack</div>
+          <div class="card-sub">What makes the ask easier to accept</div>
+        </div>
+        <div class="card-body">
+          <ul class="check-list">
+            <li>Free Pro account active before launch.</li>
+            <li>Free Generate credits so affiliates can make real demos.</li>
+            <li>30% x 12 months on referred customers.</li>
+            <li>Top 5 monthly affiliates extended to 18 months.</li>
+            <li>Public leaderboard for competitive creators.</li>
+            <li>Launch feature opportunities for visual or tutorial creators.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="note"><strong>Positioning note:</strong> Lead with early access and useful content, not "be our affiliate." The commission is the upside after the creator already sees an angle they can post.</div>
+  </section>
+
+  <section class="section" id="tiers">
+    <span class="section-label">04 - Creator tiers</span>
+    <h2>Five tiers, five different jobs.</h2>
+
+    <div class="grid three">
+      <article class="card">
+        <div class="card-head dark">
+          <div class="card-title">Tier 1 - Mid-large</div>
+          <div class="card-sub">50K+ followers</div>
+        </div>
+        <div class="card-body"><div class="card-text">Aspirational creators and AI media voices. Hardest to land, but one or two wins can unlock credibility and traffic.</div></div>
+      </article>
+      <article class="card">
+        <div class="card-head lime">
+          <div class="card-title">Tier 2 - Mid-size</div>
+          <div class="card-sub">5K-50K followers</div>
+        </div>
+        <div class="card-body"><div class="card-text">Highest practical hit rate. These creators want growth, new content angles, and revenue upside.</div></div>
+      </article>
+      <article class="card">
+        <div class="card-head teal">
+          <div class="card-title">Tier 3 - Small/on-niche</div>
+          <div class="card-sub">1K-5K followers</div>
+        </div>
+        <div class="card-body"><div class="card-text">Easiest activation. Best group for fast affiliate ramp, tutorials, product feedback, and early community energy.</div></div>
+      </article>
+      <article class="card">
+        <div class="card-head">
+          <div class="card-title">Tier 4 - Adjacent niches</div>
+          <div class="card-sub">Design, architecture, film</div>
+        </div>
+        <div class="card-body"><div class="card-text">Not always direct-conversion creators. Useful for visual proof, aesthetic credibility, and showcase content.</div></div>
+      </article>
+      <article class="card">
+        <div class="card-head">
+          <div class="card-title">Tier 5 - Borrow pedigree</div>
+          <div class="card-sub">Advisors, press, podcasts</div>
+        </div>
+        <div class="card-body"><div class="card-text">Not true affiliates. Ask for feedback, quotes, mentions, podcast appearances, or advisor-level credibility.</div></div>
+      </article>
+      <article class="card">
+        <div class="card-head dark">
+          <div class="card-title">Priority order</div>
+          <div class="card-sub">Launch sequence</div>
+        </div>
+        <div class="card-body"><div class="card-text">Warm Tier 1 and Tier 5 early. Convert Tier 2 and Tier 3 fastest. Use Tier 4 selectively when the visual angle is strong.</div></div>
+      </article>
+    </div>
+
+    <h3>Named creator list</h3>
+    <table>
+      <thead><tr><th>Tier</th><th>Creators</th><th>Primary angle</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Tier 1</strong></td><td>@rowan.cheung, @mreflow / @mattvidpro, @bensbites, @filatov.design, @core.aivision, @prompts.ig, @theaiexchangeco</td><td>AI video producer, Claude MCP, AI media credibility, production-layer story.</td></tr>
+        <tr><td><strong>Tier 2</strong></td><td>@timkoda_, @aivideoskool, @hasantoxr, @kulufly, @yoluzon, @digitalarnab, @sahni.ai, @aiwithallie, @theaivisor, @riley.brown.ai, @thealexbanks, @pulseofai, @ai_advantage</td><td>Tutorial content, creator workflows, AI tools, agency wedge, Claude workflow.</td></tr>
+        <tr><td><strong>Tier 3</strong></td><td>@adrianabubori, @bywaviboy, @madebyizan, @drcintas, @sociyell, @beyondedge.school, @growithalex, @ai_mastery_co, @iamsheek.ai, @ai.withphil, @aipreneur.co, @tapewarp.ai</td><td>Fast affiliate ramp, prompt sharing, small creator tutorials, direct workflow demos.</td></tr>
+        <tr><td><strong>Tier 4</strong></td><td>@parametric.architecture, @architectanddesign, @insidehistory, @directoreels</td><td>Visual showcase, launch feature, output flex, aesthetic proof.</td></tr>
+        <tr><td><strong>Tier 5</strong></td><td>@lennysan, @nathanlands, @alexheath, @swyxio, @nikitabier, @arvidkahl</td><td>Podcast, newsletter, press, advisor feedback, landing page quote.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section" id="scripts">
+    <span class="section-label">05 - Outreach scripts</span>
+    <h2>Keep the first ask small.</h2>
+    <p class="body">The scripts should be personalized before sending. The structure stays consistent: reference their work, explain the early-access angle, give the offer, and ask if they want a short demo or access.</p>
+
+    <div class="script">
+      <span class="script-label">Tier 1 script</span>
+      <p>Hey [name] - really respect your work on [specific recent post / video]. We're launching Videfy, an AI video production platform built around Claude MCP. Founders are giving 50 creators free Pro accounts + 30% x 12mo commission on referrals. Want to send you a 5-min demo + early access? No strings.</p>
+    </div>
+    <div class="script">
+      <span class="script-label">Tier 2 script</span>
+      <p>Hey [name] - love your [specific content type]. We're launching Videfy, a production platform built on Claude MCP. Already creating content matching your style and can send one example below. Free Pro + 30% x 12mo on any signups. Want early access?</p>
+    </div>
+    <div class="script">
+      <span class="script-label">Tier 3 script</span>
+      <p>Hey [name] - saw your [post]. Think you'd love what we're building. Videfy launches in [X weeks] and we're giving 100 creators free Pro accounts to test. 30% x 12mo on any signups you bring. Worth a 5-min look?</p>
+    </div>
+    <div class="script">
+      <span class="script-label">Tier 4 script</span>
+      <p>Hey [name] - your [aesthetic] is exactly the kind of work Videfy was built for. Want to feature your work on launch + give you access? Free Pro + featured spot on our home page rotation.</p>
+    </div>
+    <div class="script">
+      <span class="script-label">Tier 5 script</span>
+      <p>Hey [name] - would love to send you Videfy + a custom hero film for your audience. No affiliate ask. Just want to put it in your hands and hear what you think.</p>
+    </div>
+  </section>
+
+  <section class="section" id="cadence">
+    <span class="section-label">06 - Outreach cadence</span>
+    <h2>Run it as an eight-week pre-launch pipeline.</h2>
+    <div class="timeline">
+      <div class="timeline-row"><div class="week">Week -8</div><p>Personalized DMs to Tier 1 top 7 + Tier 5. Slow-burn warm-up.</p></div>
+      <div class="timeline-row"><div class="week">Week -7</div><p>DM Tier 2 top 13 with a custom example reel or demo angle.</p></div>
+      <div class="timeline-row"><div class="week">Week -6</div><p>DM Tier 3 creators with affiliate offer, Pro access, and clear content angle.</p></div>
+      <div class="timeline-row"><div class="week">Week -5</div><p>Follow up with non-responders from Tier 1 and Tier 2.</p></div>
+      <div class="timeline-row"><div class="week">Week -4</div><p>DM Tier 4 creators with the feature/showcase offer.</p></div>
+      <div class="timeline-row"><div class="week">Week -3</div><p>Onboard committed affiliates. Activate Pro accounts and share content templates.</p></div>
+      <div class="timeline-row"><div class="week">Week -2</div><p>Final follow-up wave. Lock five partner creators for Day 0 content.</p></div>
+      <div class="timeline-row"><div class="week">Week -1</div><p>Confirm Day 0 partner creator content is scheduled or live by 10 AM ET.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="outcomes">
+    <span class="section-label">07 - Expected outcomes</span>
+    <h2>Set realistic expectations before launch.</h2>
+    <table>
+      <thead><tr><th>Step</th><th>Expected result</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><strong>50 cold DMs</strong></td><td>~30% reply rate = 15 conversations</td><td>The list is narrow enough to make personalization matter.</td></tr>
+        <tr><td><strong>15 conversations</strong></td><td>~50% commit = 7-8 affiliates</td><td>Early access + free Pro should carry the pitch.</td></tr>
+        <tr><td><strong>7-8 affiliates</strong></td><td>3-5 post in first 30 days</td><td>Expect drop-off. Active posting matters more than verbal yeses.</td></tr>
+        <tr><td><strong>3-5 active posters</strong></td><td>1-2 drive meaningful traffic</td><td>Most value comes from a small number of strong fits.</td></tr>
+        <tr><td><strong>Day 0 target</strong></td><td>5 minimum partner creators</td><td>Creates launch-day social proof and repeatable content assets.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section" id="tracking">
+    <span class="section-label">08 - Tracking system</span>
+    <h2>Track affiliates like a revenue channel, not a loose DM list.</h2>
+    <div class="grid two">
+      <div class="card">
+        <div class="card-head lime">
+          <div class="card-title">Airtable fields</div>
+          <div class="card-sub">Minimum operating layer</div>
+        </div>
+        <div class="card-body">
+          <ul class="check-list">
+            <li>Creator handle</li>
+            <li>Platform</li>
+            <li>Tier</li>
+            <li>Follower count</li>
+            <li>Outreach status: cold, warm, committed, active, lapsed</li>
+            <li>Affiliate link or code</li>
+            <li>Content posted count</li>
+            <li>Signups generated</li>
+            <li>Paid conversions</li>
+            <li>Last activity date</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head teal">
+          <div class="card-title">Weekly review</div>
+          <div class="card-sub">Keep the program clean</div>
+        </div>
+        <div class="card-body">
+          <ul class="check-list">
+            <li>Review active affiliates every week.</li>
+            <li>Follow up with warm leads that have not posted.</li>
+            <li>Drop or pause affiliates inactive for 30+ days.</li>
+            <li>Move top performers into extended commission window.</li>
+            <li>Turn best creator posts into reusable proof assets.</li>
+            <li>Refresh the target list from current AI video hashtags.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sources">
+    <span class="section-label">09 - Sources for more affiliates</span>
+    <h2>Where to keep finding the next wave.</h2>
+    <div class="grid three">
+      <div class="card">
+        <div class="card-head"><div class="card-title">TikTok</div><div class="card-sub">Short-form AI creators</div></div>
+        <div class="card-body"><div class="card-text">Search #aivideo, #klingai, #higgsfield, #seedance, and creator tutorials around AI video generation.</div></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div class="card-title">Instagram</div><div class="card-sub">Visual + prompt creators</div></div>
+        <div class="card-body"><div class="card-text">Search #aiart, #aivideo, #promptengineering, AI carousel accounts, and prompt-sharing pages.</div></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div class="card-title">X and YouTube</div><div class="card-sub">AI media + tool reviewers</div></div>
+        <div class="card-body"><div class="card-text">Search "Claude MCP", "Higgsfield", "AI video", "AI video tools 2026", Lenny's Newsletter mentions, and AI Breakdown podcast guests.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="doc-footer">
+    <span>Videfy.ai - Affiliate Breakdown</span>
+    <span>Source: Week 2 Affiliate Outreach List</span>
+  </footer>
+</main>
+</body>
+</html>
