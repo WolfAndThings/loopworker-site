@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <title>Law Firm Market Intelligence | LoopWorker</title>
+  <meta name="description" content="A private market read before your next law-firm growth bet. Competitor ads, content, lateral hires, search language, and public demand signals turned into a clear decision." />
+  <link rel="canonical" href="https://www.loopworker.com/law-firms/" />
+  <meta property="og:title" content="Law Firm Market Intelligence | LoopWorker" />
+  <meta property="og:description" content="See where demand, competitors, and referral markets are moving before you spend on ads, SEO, hiring, or a new practice-area push." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.loopworker.com/law-firms/" />
+  <meta property="og:site_name" content="LoopWorker" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Law Firm Market Intelligence | LoopWorker" />
+  <meta name="twitter:description" content="Public signals, named competitors, and a clear recommendation before your next law-firm growth bet." />
+  <style>
+    :root {
+      --bg: #07070C;
+      --ink: #FAFAFC;
+      --muted: #C7C7D1;
+      --quiet: #8A8A98;
+      --line: rgba(255, 255, 255, 0.10);
+      --panel: #0F0F1A;
+      --panel-2: #14141F;
+      --signal: #818CF8;
+      --purple: #A855F7;
+      --pink: #EC4899;
+      --cyan: #22D3EE;
+      --grad-cta: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+      --grad-hero: linear-gradient(135deg, #6366F1 0%, #A855F7 52%, #EC4899 100%);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse 1100px 700px at 15% 0%, rgba(99,102,241,0.20), transparent 60%),
+        radial-gradient(ellipse 900px 600px at 85% 20%, rgba(168,85,247,0.14), transparent 65%),
+        radial-gradient(ellipse 600px 400px at 50% 100%, rgba(236,72,153,0.08), transparent 70%),
+        var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      letter-spacing: 0;
+    }
+
+    a { color: inherit; }
+    .shell { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(7, 7, 12, 0.86);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .mark {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      color: var(--signal);
+      font-size: 13px;
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .navlinks a { text-decoration: none; }
+    .navlinks a:hover { color: var(--ink); }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 650;
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .button.primary {
+      background: var(--grad-cta);
+      border-color: transparent;
+      color: #fff;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.10) inset, 0 10px 30px -12px #6366F1;
+    }
+
+    .button:hover { transform: translateY(-1px); }
+
+    .hero {
+      min-height: calc(100vh - 64px);
+      display: grid;
+      align-items: center;
+      padding: 72px 0 56px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+      gap: 46px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--signal);
+      border: 1px solid rgba(129, 140, 248, 0.34);
+      background: rgba(99, 102, 241, 0.12);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--signal);
+      box-shadow: 0 0 18px rgba(129, 140, 248, 0.8);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(42px, 6.4vw, 78px);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .lede {
+      max-width: 690px;
+      margin: 24px 0 0;
+      color: #d2d3ca;
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.45;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .proof-line {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+      color: var(--quiet);
+      font-size: 13px;
+    }
+
+    .proof-line strong { color: var(--ink); font-weight: 650; }
+
+    .brief {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.02));
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.38);
+    }
+
+    .brief-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      padding: 14px 16px;
+      color: var(--quiet);
+      font-size: 13px;
+    }
+
+    .brief-head strong { color: var(--ink); }
+
+    .brief-body { padding: 18px; }
+
+    .brief-title {
+      margin: 0 0 16px;
+      color: var(--ink);
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .metric {
+      background: rgba(255,255,255,0.045);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      min-height: 84px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .metric span {
+      display: block;
+      color: var(--quiet);
+      font-size: 12px;
+      line-height: 1.25;
+    }
+
+    .signal-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .signal-list li {
+      display: grid;
+      grid-template-columns: 94px 1fr;
+      gap: 12px;
+      align-items: start;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.035);
+      border-radius: 8px;
+      padding: 10px;
+      color: #d7d8d0;
+      font-size: 13px;
+    }
+
+    .tag {
+      color: #10120f;
+      background: var(--ink);
+      border-radius: 5px;
+      text-align: center;
+      padding: 3px 6px;
+      font-size: 11px;
+      font-weight: 750;
+      text-transform: uppercase;
+    }
+
+    .verdict {
+      margin-top: 14px;
+      border-left: 3px solid var(--signal);
+      padding: 12px 14px;
+      background: rgba(99, 102, 241, 0.12);
+      color: #ECEEFF;
+      font-size: 14px;
+    }
+
+    section {
+      padding: 86px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.7fr 1fr;
+      gap: 36px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    .kicker {
+      margin: 0 0 10px;
+      color: var(--signal);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 50px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .section-head p, .section-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 690px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .grid.two { grid-template-columns: repeat(2, 1fr); }
+    .grid.three { grid-template-columns: repeat(3, 1fr); }
+    .grid.four { grid-template-columns: repeat(4, 1fr); }
+
+    .tile {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 20px;
+      min-height: 170px;
+    }
+
+    .tile h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .tile p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .tile .num {
+      display: inline-flex;
+      margin-bottom: 22px;
+      color: var(--quiet);
+      font-size: 13px;
+    }
+
+    .decision-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .decision-list li {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px 18px;
+      background: rgba(255,255,255,0.035);
+      color: #dbddd4;
+      font-size: 16px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 40px;
+      align-items: start;
+    }
+
+    .read-example {
+      border: 1px solid var(--line);
+      background: #0d0f0d;
+      border-radius: 8px;
+      padding: 24px;
+    }
+
+    .read-example h3 {
+      margin: 0 0 18px;
+      font-size: 24px;
+    }
+
+    .bullets {
+      margin: 0;
+      padding-left: 20px;
+      color: #d8d9d2;
+    }
+
+    .bullets li { margin: 0 0 12px; }
+    .bullets strong { color: var(--ink); }
+
+    .price {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      min-height: 100%;
+    }
+
+    .price .amount {
+      font-size: 34px;
+      line-height: 1;
+      font-weight: 760;
+    }
+
+    .price .amount span {
+      color: var(--quiet);
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .price ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 9px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .price li::before {
+      content: "";
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin-right: 9px;
+      border-radius: 50%;
+      background: var(--signal);
+      vertical-align: 1px;
+    }
+
+    .featured {
+      border-color: rgba(129, 140, 248, 0.42);
+      background: linear-gradient(180deg, rgba(99,102,241,0.14), rgba(255,255,255,0.035));
+    }
+
+    .quote {
+      font-size: clamp(26px, 4vw, 44px);
+      line-height: 1.12;
+      max-width: 980px;
+      margin: 0;
+    }
+
+    .quote span { color: var(--signal); }
+
+    .faq {
+      display: grid;
+      gap: 10px;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.035);
+      padding: 16px 18px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    details p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .final {
+      padding: 86px 0 38px;
+      border-bottom: 0;
+    }
+
+    .final-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      border: 1px solid rgba(129, 140, 248, 0.34);
+      background: linear-gradient(135deg, rgba(99,102,241,0.16), rgba(168,85,247,0.10));
+      border-radius: 8px;
+      padding: 28px;
+    }
+
+    .final-box h2 { font-size: clamp(30px, 4vw, 54px); }
+    .final-box p { color: #E5E7FF; margin: 12px 0 0; max-width: 700px; }
+
+    footer {
+      color: var(--quiet);
+      padding: 22px 0 34px;
+      font-size: 13px;
+    }
+
+    footer .shell {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .navlinks a:not(.button) { display: none; }
+      .hero-grid, .section-head, .split, .final-box { grid-template-columns: 1fr; }
+      .hero { min-height: auto; }
+      .grid.three, .grid.four, .grid.two, .decision-list { grid-template-columns: 1fr; }
+      .metrics { grid-template-columns: 1fr; }
+      .signal-list li { grid-template-columns: 1fr; }
+      section { padding: 64px 0; }
+      .final-box { align-items: stretch; }
+      .final-box .button { width: 100%; }
+    }
+
+    @media (max-width: 540px) {
+      .shell { width: min(100% - 28px, var(--max)); }
+      .nav { height: 58px; }
+      .brand { font-size: 12px; }
+      .navlinks .button { min-height: 38px; padding: 0 12px; font-size: 12px; }
+      .hero { padding: 46px 0; }
+      h1 { font-size: 40px; }
+      .lede { font-size: 17px; }
+      .brief-body { padding: 12px; }
+      .tile { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="/">
+        <span class="mark">L</span>
+        <span>LoopWorker</span>
+      </a>
+      <div class="navlinks">
+        <a href="#signals">Signals</a>
+        <a href="#decisions">Decisions</a>
+        <a href="#pricing">Pricing</a>
+        <a class="button" href="mailto:alex@loopworker.com?subject=Law%20firm%20market%20read">Send a decision</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <div class="eyebrow"><span></span> Law firm market intelligence</div>
+          <h1>The market read before your next law-firm growth bet.</h1>
+          <p class="lede">Before you spend on ads, SEO, content, lateral hiring, or a new practice-area push, we pull the public signals around your market and hand you the decision with receipts.</p>
+          <div class="cta-row">
+            <a class="button primary" href="mailto:alex@loopworker.com?subject=Law%20firm%20market%20read&body=The%20decision%20we%20are%20thinking%20through%3A%0A%0APractice%20area%20/%20market%3A%0A%0ACompetitors%20we%20watch%3A%0A">Bring us the decision</a>
+            <a class="button" href="#example">See the read</a>
+          </div>
+          <div class="proof-line">
+            <span><strong>Public data only</strong></span>
+            <span><strong>3-10 competitors</strong></span>
+            <span><strong>Answer first</strong></span>
+            <span><strong>Refund if not useful</strong></span>
+          </div>
+        </div>
+
+        <aside class="brief" aria-label="Sample law firm market brief">
+          <div class="brief-head">
+            <strong>market-read-031</strong>
+            <span>brief.pdf</span>
+          </div>
+          <div class="brief-body">
+            <p class="brief-title">Should a local immigration firm own employer raid-readiness?</p>
+            <div class="metrics">
+              <div class="metric">
+                <strong>10</strong>
+                <span>competitors reviewed</span>
+              </div>
+              <div class="metric">
+                <strong>36</strong>
+                <span>pages, ads, posts</span>
+              </div>
+              <div class="metric">
+                <strong>4</strong>
+                <span>lateral signals</span>
+              </div>
+            </div>
+            <ul class="signal-list">
+              <li><span class="tag">Known</span><span>Enforcement activity is making employers nervous.</span></li>
+              <li><span class="tag">New</span><span>National firms are publishing readiness content while local firms stay broad.</span></li>
+              <li><span class="tag">Hidden</span><span>HR, payroll, and trade groups sit upstream of the panic.</span></li>
+            </ul>
+            <div class="verdict">Verdict: Own the buyer moment locally. Build the page, checklist, referral email, and fixed-scope readiness review before competitors name the category.</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="signals">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="kicker">What we pull</p>
+            <h2>Your competitors are already showing their next move.</h2>
+          </div>
+          <p>Firms announce strategy in fragments: a partner hire, a landing page, a paid ad, a blog cluster, a new CTA, a job posting, a lost attorney, a referral-partner event. We connect the fragments before you commit budget.</p>
+        </div>
+        <div class="grid four">
+          <article class="tile">
+            <span class="num">01</span>
+            <h3>Competitor websites</h3>
+            <p>Practice pages, CTAs, city pages, attorney bios, FAQs, offer language, and what each firm is trying to own.</p>
+          </article>
+          <article class="tile">
+            <span class="num">02</span>
+            <h3>Ads and landing pages</h3>
+            <p>What competitors are willing to pay to promote, where they send buyers, and which claims they are testing in public.</p>
+          </article>
+          <article class="tile">
+            <span class="num">03</span>
+            <h3>Blogs and social</h3>
+            <p>Topic clusters, posting cadence, legal alerts, attorney voice, and the issues firms believe are worth attention.</p>
+          </article>
+          <article class="tile">
+            <span class="num">04</span>
+            <h3>Talent movement</h3>
+            <p>Who got hired, who left, who was poached, what they specialize in, and whether that points to a real practice buildout.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="decisions">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Decision menu</p>
+            <h2>Bring one question. Not a vague goal.</h2>
+          </div>
+          <p>Law-firm market reads work when there is an expensive decision on the desk. The output is not a data dump. It is a recommendation about what to own next.</p>
+        </div>
+        <ul class="decision-list">
+          <li>Which practice area should we push next?</li>
+          <li>Are competitors building a lane we need to defend?</li>
+          <li>Did a lateral hire signal a market move or just generic growth?</li>
+          <li>Should we package a fixed-fee front door or defend premium hourly work?</li>
+          <li>Are we targeting the end client or the referral partner?</li>
+          <li>Which competitors are spending into our market, and what are they testing?</li>
+          <li>What buyer moment should we own before the market gets crowded?</li>
+          <li>Should we invest in SEO, ads, social, partner outreach, or nothing yet?</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="example">
+      <div class="shell split">
+        <div>
+          <p class="kicker">Sample read</p>
+          <h2>The useful feeling is: "I knew some of that, but not all of it."</h2>
+          <p class="section-copy">A strong read respects what the firm already knows, then shows what the market is doing around them: named competitors, visible spend, hiring movement, buyer language, and the implication.</p>
+        </div>
+        <article class="read-example">
+          <h3>Example: employer-side immigration readiness</h3>
+          <ol class="bullets">
+            <li><strong>Known:</strong> Recent enforcement activity is making employers more nervous.</li>
+            <li><strong>Competitor movement:</strong> National immigration firms are publishing employer-readiness content; local competitors still lead with broad family immigration and removal defense.</li>
+            <li><strong>Channel signal:</strong> Search language is shifting toward workplace response, documentation, emergency planning, and what managers should do first.</li>
+            <li><strong>Referral signal:</strong> HR consultants, payroll firms, and trade groups are upstream of the demand before the firm gets called.</li>
+            <li><strong>Decision:</strong> Own workplace raid-readiness locally, or stay broad and compete after the category is crowded.</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <p class="quote">Most firms see the pieces separately. <span>We connect them before you commit the budget.</span></p>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Offer ladder</p>
+            <h2>Sized to the decision.</h2>
+          </div>
+          <p>Start narrow when the question is narrow. Go deeper when the decision affects real spend, hiring, or the next market the firm wants to own.</p>
+        </div>
+        <div class="grid three">
+          <article class="tile price">
+            <div>
+              <h3>Market Signal Read</h3>
+              <div class="amount">$750 <span>/ 3-5 days</span></div>
+            </div>
+            <p>One focused question, enough evidence to decide whether the opportunity is real.</p>
+            <ul>
+              <li>3-5 named competitors</li>
+              <li>Public signal pull</li>
+              <li>Buyer-language read</li>
+              <li>3 recommended moves</li>
+            </ul>
+          </article>
+          <article class="tile price featured">
+            <div>
+              <h3>Practice Area Sprint</h3>
+              <div class="amount">$3K-$8K <span>/ 10 days</span></div>
+            </div>
+            <p>The full read before a practice-area push, ad spend, SEO campaign, lateral hire, or repositioning.</p>
+            <ul>
+              <li>10 competitors</li>
+              <li>Ads, content, social scan</li>
+              <li>Lateral and talent movement</li>
+              <li>Referral-market read</li>
+              <li>Ranked recommendation</li>
+            </ul>
+          </article>
+          <article class="tile price">
+            <div>
+              <h3>Quarterly Market Watch</h3>
+              <div class="amount">$1.5K-$3K <span>/ quarter</span></div>
+            </div>
+            <p>For firms already spending on growth and wanting a standing view of competitor movement.</p>
+            <ul>
+              <li>New ads, pages, blogs</li>
+              <li>Hiring and lateral movement</li>
+              <li>Demand shifts</li>
+              <li>What to chase and ignore</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell split">
+        <div>
+          <p class="kicker">Guardrails</p>
+          <h2>This is market intelligence, not legal advice.</h2>
+        </div>
+        <div class="faq">
+          <details open>
+            <summary>What data do you use?</summary>
+            <p>Public data only: competitor sites, ads, blogs, social, attorney announcements, job postings, search language, reviews, local news, agency releases, trade groups, and visible referral-market activity.</p>
+          </details>
+          <details>
+            <summary>Is this SEO research?</summary>
+            <p>No. SEO is one channel. We look across the market and turn the signals into a decision: what the firm should own next, what to ignore, and where the current positioning is weak.</p>
+          </details>
+          <details>
+            <summary>What if the answer is "do nothing"?</summary>
+            <p>Then that is the answer. A good read should sometimes stop a firm from spending on another page, campaign, hire, or content push.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="shell">
+        <div class="final-box">
+          <div>
+            <h2>Bring the practice-area decision.</h2>
+            <p>Send the market, the competitors you watch, and the decision you are considering. We will tell you whether a focused read is worth doing.</p>
+          </div>
+          <a class="button primary" href="mailto:alex@loopworker.com?subject=Law%20firm%20market%20read&body=The%20decision%20we%20are%20thinking%20through%3A%0A%0APractice%20area%20/%20market%3A%0A%0ACompetitors%20we%20watch%3A%0A">Start the read</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">
+      <span>LoopWorker · Evidence before execution.</span>
+      <span>alex@loopworker.com</span>
+    </div>
+  </footer>
+</body>
+</html>
