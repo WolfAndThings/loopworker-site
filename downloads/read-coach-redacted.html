@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>LoopWorker · Sample Decision Read (Redacted)</title>
+<style>
+  @font-face{ font-family:'Lora'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/Lora-Regular.ttf'); }
+  @font-face{ font-family:'Lora'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/Lora-Bold.ttf'); font-weight:700; }
+  @font-face{ font-family:'Lora'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/Lora-Italic.ttf'); font-style:italic; }
+  @font-face{ font-family:'Inter'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/WorkSans-Regular.ttf'); }
+  @font-face{ font-family:'Inter'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/WorkSans-Bold.ttf'); font-weight:700; }
+  @font-face{ font-family:'Mono'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/JetBrainsMono-Regular.ttf'); }
+  @font-face{ font-family:'Mono'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/JetBrainsMono-Bold.ttf'); font-weight:700; }
+  :root{ --paper:#FCFCFB; --ink:#0C0C0E; --t2:#3B3B41; --t3:#7C7C83; --line:#E2E1DC; --fill:#F4F3EE;
+    --serif:'Lora',Georgia,serif; --sans:'Inter',sans-serif; --mono:'Mono',monospace; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ background:#E8E7E2; }
+  .sheet{ position:relative; width:772px; background:var(--paper); padding:54px 60px 48px; }
+
+  .label{ font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--t3); display:block; }
+
+  .redact{ font-family:var(--mono); font-size:10.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--t3); border:1px solid var(--line); background:var(--fill); padding:8px 12px; margin-bottom:20px; }
+
+  .top{ display:flex; justify-content:space-between; align-items:baseline; padding-bottom:13px; border-bottom:1.5px solid var(--ink); }
+  .top .wm{ font-family:var(--mono); font-size:13.5px; font-weight:700; letter-spacing:.02em; color:var(--ink); }
+  .top .rt{ font-family:var(--mono); font-size:11px; letter-spacing:.04em; color:var(--t3); text-align:right; line-height:1.7; }
+
+  .claimlabel{ margin-top:36px; margin-bottom:13px; }
+  .claim{ font-family:var(--serif); font-weight:700; font-size:31px; line-height:1.26; letter-spacing:-.02em; color:var(--ink); }
+  .claim b{ background:linear-gradient(transparent 62%, #E9E7DE 62%); }
+
+  .sub{ font-family:var(--sans); font-size:15.5px; line-height:1.6; color:var(--t2); margin-top:20px; }
+  .sub b{ color:var(--ink); font-weight:700; }
+
+  .meta{ margin-top:26px; border-top:1px solid var(--line); }
+  .mi{ font-family:var(--sans); font-size:14px; line-height:1.55; color:var(--t2); padding:11px 0; border-bottom:1px solid var(--line); display:grid; grid-template-columns:110px 1fr; gap:14px; align-items:baseline; }
+  .mi .k{ font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--ink); }
+
+  .sec{ margin-top:38px; }
+  .sec > .label{ margin-bottom:16px; }
+
+  .ei{ padding:13px 0; border-bottom:1px solid var(--line); font-family:var(--sans); font-size:14.5px; line-height:1.55; color:var(--t2); display:grid; grid-template-columns:16px 1fr; gap:12px; }
+  .ei:first-of-type{ border-top:1px solid var(--line); }
+  .ei .m{ font-family:var(--mono); font-size:12px; color:var(--ink); font-weight:700; }
+  .ei b{ color:var(--ink); font-weight:700; }
+
+  .take{ margin-top:22px; background:var(--ink); color:#fff; border-radius:5px; padding:22px 26px; }
+  .take .label{ color:rgba(255,255,255,.5); margin-bottom:11px; }
+  .take .t{ font-family:var(--serif); font-weight:700; font-size:19px; line-height:1.42; color:#fff; }
+  .take .t b{ color:#fff; text-decoration:underline; text-decoration-thickness:1.5px; text-underline-offset:3px; }
+
+  .rec{ margin-top:34px; padding:18px 22px; border:1.5px solid var(--ink); border-left:6px solid var(--ink); border-radius:4px; }
+  .rec .label{ margin-bottom:9px; }
+  .rec .t{ font-family:var(--serif); font-size:16.5px; line-height:1.5; color:var(--ink); }
+  .rec .t b{ font-weight:700; }
+
+  .cta{ font-family:var(--serif); font-style:italic; font-size:15.5px; color:var(--ink); margin-top:26px; }
+
+  .src{ font-family:var(--mono); font-size:10.5px; line-height:1.7; color:var(--t3); margin-top:34px; padding-top:18px; border-top:1.5px solid var(--ink); display:flex; justify-content:space-between; }
+  .src b{ color:var(--t2); }
+</style></head>
+<body>
+<div class="sheet">
+
+  <div class="redact">Sample Decision Read &middot; client, competitors, and identifiers redacted</div>
+
+  <div class="top">
+    <div class="wm">LoopWorker &middot; Growth Read</div>
+    <div class="rt">Prepared for an executive coach and author<br>family business advisory practice [redacted] &middot; 2026</div>
+  </div>
+
+  <span class="label claimlabel">The claim</span>
+  <div class="claim">You are running a deeper practice than your closest competitor by a factor of five. The funnel that is supposed to deliver all of it to a buyer is one Calendly link. <b>That is the gap.</b></div>
+  <div class="sub">Mastermind, masterclasses, advisory, interim CEO, two books with one forthcoming, a university appointment, a documented blue chip client list, a forty year career across major publishing, media, events, and consumer goods companies, plus a nine document lead magnet series ready to work. <b>Names, handles, private prices, and fees are redacted in this sample. Every number that remains is real.</b></div>
+
+  <div class="meta">
+    <div class="mi"><span class="k">The question</span><div>What does this practice already have, what is hiding, who is it competing with, and what should the next eight weeks look like?</div></div>
+    <div class="mi"><span class="k">Pulled</span><div>Apify pipelines across Instagram, LinkedIn profiles and posts, X, TikTok, and the Google search index &middot; every public page of the client's site and every competitor site, fetched direct &middot; press and podcast archives &middot; 1,151 LinkedIn posts analyzed</div></div>
+  </div>
+
+  <div class="sec">
+    <span class="label">The snapshot</span>
+    <div class="ei"><span class="m">01</span><div><b>The reach is real but asleep.</b> 5,000 LinkedIn followers. Around 8,000 on X with the algorithm asleep. Under 1,000 on a verified personal Instagram. A 10,000 contact email list, dormant.</div></div>
+    <div class="ei"><span class="m">02</span><div><b>425 LinkedIn posts to date average 4.23 likes per post.</b> Four mastermind tracks live. Nine lead magnet documents built and hidden.</div></div>
+    <div class="ei"><span class="m">03</span><div><b>Almost none of the stack is visible from the homepage,</b> and almost none of it nurtures a stranger toward a purchase. The most complete offer set in the family business niche, delivered through a single booking link.</div></div>
+  </div>
+
+  <div class="sec">
+    <span class="label">What you already have</span>
+    <div class="ei"><span class="m">04</span><div><b>Four mastermind tracks, live.</b> A legacy track whose page returns 404. A women's track, bi-weekly 90 minutes, three month minimum, NDA required. A men's program, seven weeks bi-weekly, four runs in 2026, the latest run sold out. A scale-stage CEO track, rolling, with no industry or gender gate.</div></div>
+    <div class="ei"><span class="m">05</span><div><b>Fifteen plus masterclasses.</b> A flagship priced publicly per session across six sessions, the only price visible on the site. A signature reputation masterclass, six modules, three cities, price hidden. A next generation transition bootcamp, an interview readiness masterclass, a certificate program, plus ten more in the library.</div></div>
+    <div class="ei"><span class="m">06</span><div><b>Two books.</b> A first book with a major publisher, 2004, still rated and reviewed across multiple editions. A second book forthcoming, the companion to the signature reputation masterclass.</div></div>
+    <div class="ei"><span class="m">07</span><div><b>Nine numbered documents and two frameworks live at the site's /downloads path, not in the main navigation.</b> Family Employment Contract, Conflict Resolution Policy, Mission Vision and Values, Family Meeting Kit, Pay and Roles Policy, Next Gen Readiness Check, Ownership Agreement, Succession Framework, Family Business Charter. Together they are the strongest single email gated lead magnet in the family business space.</div></div>
+    <div class="ei"><span class="m">08</span><div><b>A branded standalone domain for the series is registered but does not yet point anywhere.</b> It is built for white labeling to wealth managers.</div></div>
+    <div class="ei"><span class="m">09</span><div><b>A real press footprint.</b> A HuffPost contributor profile with ten articles from 2016 to 2017, the byline dormant 8.5 years, reactivation pitch open. National business network on-air commentary, 2016. Two national cable news video segments. A Forbes feature mention, 2019. Fast Company, USA Today, a recurring regional TV segment, an industry association keynote, recurring TV co-hosting, multiple podcast guest spots, multiple video interviews.</div></div>
+    <div class="ei"><span class="m">10</span><div><b>Twelve named client logos on the bio page.</b> Media conglomerates, consumer goods, universities, a national newspaper, a Big Four firm, and a premium cable network, paired with prior CEO and director roles at major publishing, media, events, and consumer goods companies.</div></div>
+    <div class="ei"><span class="m">11</span><div><b>The firm is itself a family run business.</b> Two employees on the company page, the client and her daughter. The operator running a firm that helps family operators run firms is the strongest authentic angle in the niche, and it is not on the homepage.</div></div>
+  </div>
+
+  <div class="sec">
+    <span class="label">Why it is not converting</span>
+    <div class="ei"><span class="m">12</span><div><b>The audience is not the buyer.</b> Across the 425 posts analyzed, the top performers are personal: a graduation milestone at 115 likes, a mothers tribute at 97, a personal memory post at 72 likes and 39 comments. Posts about family governance and succession at household name companies land between 1 and 18 likes. Friends and peers, not buyers.</div></div>
+    <div class="ei"><span class="m">13</span><div><b>The funnel is one inch wide.</b> Eight calls to action across the mastermind page, each pointing to the same Calendly URL. No nurture before the call, no qualifier quiz, no email sequence, no segmentation of women, men, scale, or wealth manager.</div></div>
+    <div class="ei"><span class="m">14</span><div><b>The outreach engine does not exist.</b> The last 30 tweets: 30 originals, zero replies, zero retweets, broadcast only. No visible LinkedIn comments on prospects. Silent membership in 60 LinkedIn groups and 80 Facebook groups. 10,000 CRM contacts with no recent broadcast. Five to eight warm mastermind signups that "have not engaged," cooling.</div></div>
+    <div class="ei"><span class="m">15</span><div><b>The product surface is hidden.</b> The legacy track link is broken. The book page is broken. The nine document series is not in the main nav. The forthcoming book is not promoted. The certificate program is not on the homepage. The branded standalone domain points nowhere.</div></div>
+    <div class="ei"><span class="m">16</span><div><b>No 2026 freshness signal.</b> Copyright shows 2026 and nothing else does. No 2026 case study, no 2026 keynote announcement, no recent press date. A buyer landing today sees a strategically timeless site and assumes nothing recent has happened.</div></div>
+  </div>
+
+  <div class="sec">
+    <span class="label">Where you already win</span>
+    <div class="ei"><span class="m">17</span><div><b>Largest Instagram in the family business advisor lane.</b> The verified personal account, under 1,000 followers, averages 25.3 likes. The nearest rival, an agriculture niche account, sits at 422 followers and 6.8 average likes. The rest of the field: 235 and dormant, 147 at 5.2, 142 dead since 2022 at 0.1, then 29, 22, and 8 followers. The business account runs around 200 followers at 2.0.</div></div>
+    <div class="ei"><span class="m">18</span><div><b>Deepest stack in the niche.</b> The closest competitor by product overlap hits 65 percent of the stack: a mastermind, speaking, a book, coaching, a newsletter. He has no masterclasses, no nine document series, no women's track, no university appointment, no F500 client roster.</div></div>
+    <div class="ei"><span class="m">19</span><div><b>The mastermind format itself is a thin lane.</b> Only three operators in the entire family business space actually run masterminds: the niche leader's flagship group, one program at $5,000 per six months, and one institutional family mastermind. The other six named operators in the dataset stop at speaking and advisory. The four track model here is the most sophisticated mastermind offer in the niche.</div></div>
+    <div class="ei"><span class="m">20</span><div><b>Sold out social proof exists and is buried.</b> The current run of the men's program is sold out. That is the proof the format and the price work.</div></div>
+  </div>
+
+  <div class="sec">
+    <span class="label">What is working in the space</span>
+    <div class="ei"><span class="m">21</span><div><b>Five hook patterns win on LinkedIn, out of 1,151 posts analyzed.</b> Inflection moments: a niche leader's anniversary post about buying back her family business pulled 26,000 likes and 2,000 comments, the largest single post in the dataset. Award reveals: one rival's industry award announcement is her top post at 252 likes and 44 comments. Specific dollar credibility: a profile that leads with selling a $120 million family business averages 26.40 likes per post, the top of the dataset and six times your current rate. Personal warmth plus a business lesson: your own tribute post at 72 likes and 39 comments already proves it works for you. Provocative book titles: one rival's provocatively titled family business book got translated to Korean.</div></div>
+    <div class="ei"><span class="m">22</span><div><b>The niche trade magazine runs three annual award programs.</b> A women in family business award, application based, a direct fit given the women's track and forty year practitioner record. A CEOs award. A next generation award, open to applying or nominating clients. Either way it generates content and circuit access.</div></div>
+    <div class="ei"><span class="m">23</span><div><b>Bureaus do represent family business speakers.</b> The earlier read, not famous enough for bureaus, was wrong. Two comparable operators in this niche are already listed on major speaker bureaus. With the EPK, sizzle reel, F500 client list, two books, and university appointment, there is more than enough to be repped.</div></div>
+    <div class="ei"><span class="m">24</span><div><b>TikTok in family business is empty.</b> Only one operator in the niche is on TikTok at all, 47 followers and 21 videos in an agriculture niche. Pure succession content does not win there. Broader leadership, founder POV, "you got it backwards" reframes, and identity content do. There is room for a direct, founder-transition voice in this lane.</div></div>
+    <div class="ei"><span class="m">25</span><div><b>YouTube family business is underserved.</b> A handful of niche shows and podcasts, plus institutional wealth management channels. No dominant individual creator. Open lane.</div></div>
+  </div>
+
+  <div class="sec">
+    <span class="label">Pricing and product reality</span>
+    <div class="ei"><span class="m">26</span><div><b>The field barely publishes prices.</b> One rival publishes a $5,000 per six month mastermind and gives away two free guides. Another publishes a $3,000 half day and a $5,000 thirty day offer, with a $20 book and a weekly newsletter, mastermind hidden. One runs a free assessment plus a free consult, two entry points. One sells three books at $19.99 each behind a free succession ebook. Two publish nothing at all, one of them running round tables. Your own site shows exactly one price, the flagship masterclass, with the mastermind band private, coaching hidden, the book at $20 used, and the nine documents hidden.</div></div>
+    <div class="ei"><span class="m">27</span><div><b>Your mastermind price is in the right band.</b> The closest direct comp publishes an $833 per month equivalent. You are not underpriced.</div></div>
+    <div class="ei"><span class="m">28</span><div><b>The flagship masterclass carries the only public price point on your site.</b> Make it the public anchor for everything else.</div></div>
+    <div class="ei"><span class="m">29</span><div><b>The two entry funnel, free assessment plus free consult, is the highest converting lead magnet pattern in the niche.</b> The nine document series is the raw material to outdo it.</div></div>
+    <div class="ei"><span class="m">30</span><div><b>Recommended public anchors.</b> Mastermind group, seven weeks bi-weekly, $3,500. Single masterclass entry point, $497 to $997. Speaking starting at $10,000. Half day workshop, $5,000. Full day intensive, $10,000. Interim CEO retainer, $15,000 per month plus $2,500 per day. 1:1 Strategy Hour, $1,500. The lead magnet series as a gated portal, $99 to $299 per month individual, $999 to $2,500 per month per wealth manager firm white label.</div></div>
+  </div>
+
+  <div class="sec">
+    <span class="label">The positioning shift</span>
+    <div class="ei"><span class="m">31</span><div><b>The current headline reads as a generic expert stack.</b> Transformation expert, MBA, author, keynote speaker, advisor, professor. Generic. Crowded.</div></div>
+    <div class="ei"><span class="m">32</span><div><b>Recommended: The Family Business Operating System.</b> For the founder who built it and the next generation taking it on. Masterminds, masterclasses, advisory, and the nine document series in one stack. Nobody else has the full stack. It reframes scattered fragments as one integrated system, justifies premium pricing, and makes the forthcoming book, the lead magnet series, the four masterminds, and the masterclass library cohere. "OS" is scalable, white labelable, productizable.</div></div>
+    <div class="ei"><span class="m">33</span><div><b>Voice lock, from the client's own words on the kickoff call.</b> Direct, warm, no bullshit. Forty years in. Two hundred transitions. A family run firm itself.</div></div>
+
+    <div class="take">
+      <span class="label">The hinge</span>
+      <div class="t">You have the most complete stack in the family business niche. Almost none of it is visible from the homepage, and almost none of it nurtures a stranger toward you. <b>The next eight weeks are about surfacing and delivering what is already built, not building more.</b></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <span class="label">The eight week plan</span>
+    <div class="ei"><span class="m">34</span><div><b>Week 1, foundation and freshness.</b> Fix the two broken pages, the book page and the legacy track page. Surface /downloads in the main navigation. Publish the flagship masterclass price as the anchor on every program page. Pin the sold out proof on the men's program page. Refresh the homepage hero with one 2026 specific signal, last year's industry keynote and the next 2026 program dates. Add the family run business framing to /about. Update masterclass dates from 2025 to live 2026 dates. All of it ships as direct WordPress and copy edits.</div></div>
+    <div class="ei"><span class="m">35</span><div><b>Week 2, speaking foundation.</b> A 60 to 100 event database for the next six months: family business orgs, wealth manager summits, Vistage, YPO, EO, MBA exec ed, F500 board governance, women in business, succession specific events, family office forums, built by Apify scrape across event platforms and call for proposal databases. An application package from the three bio versions you already have, a speaker fee sheet, talk one liners, and the AV rider, edited into a single cleaner sheet. Three pitch templates, bureau, conference, corporate, in a warm flattery tone. Listing on the two open bureau lanes where comparable operators already sit, free.</div></div>
+    <div class="ei"><span class="m">36</span><div><b>Weeks 3 to 4, pitches in market.</b> 30 plus personalized speaker pitches sent, the warm flattery template with the slot filled per event. Applications to every open call for proposals with deadlines in the next six months. 20 family business and succession podcast hosts pitched, three warm from past appearances plus 17 new from the database. An application for the trade magazine's women in family business award for 2026. One bureau lane, whichever goes faster. A re-pitch to the organization that hosted last year's webinar for a 2026 slot, where the warm in already exists.</div></div>
+    <div class="ei"><span class="m">37</span><div><b>Weeks 3 to 6, dormant list reactivation.</b> Audit the 10,000 contact CRM list, confirm the four existing segments, women, business owners, family run, CEOs, and add a fifth, wealth managers. Four reactivation sequences, one per segment, three emails each, twelve emails total: value first, then a single deep insight, then one of the new public price anchors and a calendar slot. A three touch nurture for the five to eight current warm signups. A LinkedIn DM playbook, five DMs per day targeting wealth managers and second generation CEOs, scripts library plus tracking sheet. A 30 day comment circuit, five thoughtful comments per day on prospects' posts across the sixty LinkedIn groups.</div></div>
+    <div class="ei"><span class="m">38</span><div><b>Weeks 7 to 8, optimization and handoff.</b> Track every speaker pitch reply, every email open and click, every DM response. Iterate the pitch template on which subject line opened and which compliment angle replied. Final report: what converted, what did not, who is in the pipeline, what to do next, plus the recommendation on retainer scope.</div></div>
+    <div class="ei"><span class="m">39</span><div><b>Win conditions, floor / target / stretch.</b> Speaker pitches sent, 30 / 50 / 75. "Love to chat" replies, 3 / 5 / 10. CFP submissions accepted, 1 / 2 / 4. Paid speaking confirmed in 60 days, 0 / 1 / 2. Email reactivation replies, 30 / 80 / 150. Warm signups closed, 1 / 3 / 5 of the five to eight.</div></div>
+    <div class="ei"><span class="m">40</span><div><b>Your job during the eight weeks is four sessions of an hour each.</b> One voice extraction call to lock the new positioning copy. Two reviews of the speaker pitch list and the email sequences. One end of project debrief. The list scraping, the Apify pipelines, the CRM automation, the LinkedIn DM Playwright bot, the email copy, the lead magnet gated portal, the speaker EPK refresh, the masterclass thumbnails, all of that I already build. The rest is mine.</div></div>
+  </div>
+
+  <div class="sec">
+    <span class="label">After the first project</span>
+    <div class="ei"><span class="m">41</span><div><b>Path A, fractional CMO retainer. Monthly fee redacted in this sample.</b> Ongoing speaker pipeline. Forthcoming book launch coordination. Newsletter rebuild. A LinkedIn content engine, sixty percent personal credibility, forty percent niche education. A TikTok ninety day land grab in the empty family business lane. The HuffPost reactivation pitch. A trade magazine practitioner column pitch. Wealth manager partnership outreach. Quarterly competitive intel refresh. Optional: a 10 percent revenue share on speaker fees and white label deals I source, if we want skin in the game.</div></div>
+    <div class="ei"><span class="m">42</span><div><b>Path B, lead magnet series GTM, a separate sixty day project. Fee redacted in this sample.</b> Point the branded standalone domain at a gated portal that sells the nine document series and the AI assistant trained on you. Build the wealth manager white label sales kit. Identify and pitch fifty wealth manager firms, family office advisors, and RIAs. Goal: five qualified partner conversations in sixty days, two pilots signed. Best done after the eight week project lands the first speaker booking. The wealth manager pitch lands harder when it can reference an upcoming paid keynote.</div></div>
+    <div class="ei"><span class="m">43</span><div><b>Year one math, conservative.</b> Cost side if both paths run: the bundled project, twelve months of retainer, and the mid range GTM project, fees redacted in this sample. What that buys: one paid keynote at $10,000 covers a meaningful share of the year. A mastermind upsell to $1,500 per month, eight seats, three runs a year, adds $90,000. Two wealth manager white label deals at $1,500 per month each across twelve months add $36,000. Forthcoming book pre orders and masterclass bundles, conservatively $25,000. Floor incremental revenue, $151,000. Ceiling, well over $400,000 if speaking lands at three to five paid gigs and the white label series hits five firms.</div></div>
+  </div>
+
+  <div class="rec">
+    <span class="label">The fastest route this points to</span>
+    <div class="t">One bundled date project, fee redacted in this sample: <b>two weeks of fixes and foundation, four weeks of pitches in market and email reactivation, two weeks of optimization and report.</b> Speaking pipeline plus dormant list reactivation in one build, because the audit findings, the speaker pitches, and the email reactivation are the same source of truth. If we book one paid keynote in the next 60 days, the project pays for itself. Either way, you keep everything. After the eight weeks we either close into retainer or we both walk with the work in your hands.</div>
+  </div>
+
+  <p class="cta">Everything in this document is sourced, real data, not assumptions. If you want to see the raw data behind any line, ask, and I will surface the JSON file or the screenshot.</p>
+
+  <div class="src">
+    <div><b>Sources</b> &middot; Apify pipelines: Instagram, LinkedIn, X, TikTok, Google search index &middot; 1,151 LinkedIn posts analyzed across eight rival profiles plus the client's 425 &middot; eight rival Instagram profiles, eight X accounts, six TikTok handles &middot; twenty seven press items inventoried &middot; nine lead magnet documents downloaded and verified &middot; four mastermind tracks, fifteen plus masterclasses, two books, twelve named F500 logos validated &middot; thirty Apify and search queries &middot; client and rival sites [redacted], fetched direct, source files kept as JSON</div>
+    <div><b>Alex &middot; LoopWorker</b> &middot; loopworker.com</div>
+  </div>
+
+</div>
+</body>
+</html>

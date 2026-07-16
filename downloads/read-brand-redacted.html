@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Sample Decision Read · Executive Summary (Client Redacted)</title>
+<style>
+  @font-face{ font-family:'Lora'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/Lora-Regular.ttf'); }
+  @font-face{ font-family:'Lora'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/Lora-Bold.ttf'); font-weight:700; }
+  @font-face{ font-family:'Lora'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/Lora-Italic.ttf'); font-style:italic; }
+  @font-face{ font-family:'Inter'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/WorkSans-Regular.ttf'); }
+  @font-face{ font-family:'Inter'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/WorkSans-Bold.ttf'); font-weight:700; }
+  @font-face{ font-family:'Mono'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/JetBrainsMono-Regular.ttf'); }
+  @font-face{ font-family:'Mono'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/JetBrainsMono-Bold.ttf'); font-weight:700; }
+  :root{ --paper:#FCFCFB; --ink:#0C0C0E; --t2:#3B3B41; --t3:#7C7C83; --line:#E2E1DC; --fill:#F4F3EE;
+    --serif:'Lora',Georgia,serif; --sans:'Inter',sans-serif; --mono:'Mono',monospace; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ background:#E8E7E2; }
+  .sheet{ position:relative; width:772px; background:var(--paper); padding:54px 60px 48px; }
+
+  .label{ font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--t3); display:block; }
+
+  .redact{ font-family:var(--mono); font-size:10.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--t3); border:1px solid var(--line); background:var(--fill); padding:8px 12px; margin-bottom:20px; }
+
+  .top{ display:flex; justify-content:space-between; align-items:baseline; padding-bottom:13px; border-bottom:1.5px solid var(--ink); }
+  .top .wm{ font-family:var(--mono); font-size:13.5px; font-weight:700; letter-spacing:.02em; color:var(--ink); }
+  .top .rt{ font-family:var(--mono); font-size:11px; letter-spacing:.04em; color:var(--t3); text-align:right; line-height:1.7; }
+
+  .claimlabel{ margin-top:36px; margin-bottom:13px; }
+  .claim{ font-family:var(--serif); font-weight:700; font-size:31px; line-height:1.26; letter-spacing:-.02em; color:var(--ink); }
+  .claim b{ background:linear-gradient(transparent 62%, #E9E7DE 62%); }
+
+  .sub{ font-family:var(--sans); font-size:15.5px; line-height:1.6; color:var(--t2); margin-top:20px; }
+  .sub b{ color:var(--ink); font-weight:700; }
+  .sec > .sub{ margin-top:0; margin-bottom:6px; }
+
+  .meta{ margin-top:26px; border-top:1px solid var(--line); }
+  .sec .meta{ margin-top:16px; }
+  .mi{ font-family:var(--sans); font-size:14px; line-height:1.55; color:var(--t2); padding:11px 0; border-bottom:1px solid var(--line); display:grid; grid-template-columns:110px 1fr; gap:14px; align-items:baseline; }
+  .mi .k{ font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--ink); }
+  .mi b{ color:var(--ink); font-weight:700; }
+
+  .sec{ margin-top:38px; }
+  .sec > .label{ margin-bottom:16px; }
+
+  .ei{ padding:13px 0; border-bottom:1px solid var(--line); font-family:var(--sans); font-size:14.5px; line-height:1.55; color:var(--t2); display:grid; grid-template-columns:16px 1fr; gap:12px; }
+  .ei:first-of-type{ border-top:1px solid var(--line); }
+  .ei .m{ font-family:var(--mono); font-size:12px; color:var(--ink); font-weight:700; }
+  .ei b{ color:var(--ink); font-weight:700; }
+
+  .take{ margin-top:22px; background:var(--ink); color:#fff; border-radius:5px; padding:22px 26px; }
+  .take .label{ color:rgba(255,255,255,.5); margin-bottom:11px; }
+  .take .t{ font-family:var(--serif); font-weight:700; font-size:19px; line-height:1.42; color:#fff; }
+  .take .t b{ color:#fff; text-decoration:underline; text-decoration-thickness:1.5px; text-underline-offset:3px; }
+
+  .rec{ margin-top:34px; padding:18px 22px; border:1.5px solid var(--ink); border-left:6px solid var(--ink); border-radius:4px; }
+  .rec .label{ margin-bottom:9px; }
+  .rec .t{ font-family:var(--serif); font-size:16.5px; line-height:1.5; color:var(--ink); }
+  .rec .t b{ font-weight:700; }
+
+  .cta{ font-family:var(--serif); font-style:italic; font-size:15.5px; color:var(--ink); margin-top:26px; }
+
+  .fn{ font-family:var(--mono); font-size:10.5px; line-height:1.6; color:var(--t3); margin-top:10px; }
+
+  .src{ font-family:var(--mono); font-size:10.5px; line-height:1.7; color:var(--t3); margin-top:34px; padding-top:18px; border-top:1.5px solid var(--ink); display:flex; justify-content:space-between; }
+  .src b{ color:var(--t2); }
+</style></head>
+<body>
+<div class="sheet">
+
+  <div class="redact">Sample Decision Read &middot; client, partners, and identifiers redacted, pre-launch</div>
+
+  <div class="top">
+    <div class="wm">LoopWorker &middot; Decision Read</div>
+    <div class="rt">Phase 2 &middot; Executive Summary<br>Sample &middot; client redacted &middot; pre-launch engagement</div>
+  </div>
+
+  <span class="label claimlabel">The claim</span>
+  <div class="claim">This brand doesn't have to invent anything. <b>Twelve brands already proved each play.</b></div>
+  <div class="sub"><b>This document answers four questions.</b> Who buys this brand at exit &middot; how much they pay &middot; what the brand has to do between now and then to earn that price &middot; which competitors already proved each move. Every number is sourced. Read this before drilling into any of the eight deeper deliverables.</div>
+
+  <div class="meta">
+    <div class="mi"><span class="k">The verdict</span><div>Most likely outcome: <b>a nine-figure sale to a strategic acquirer, 2029-2032.</b> Plan around the Hero/Touchland bracket; treat L'Or&eacute;al/Shiseido as upside, not base case.</div></div>
+    <div class="mi"><span class="k">Pulled</span><div>Phase 2 research &middot; 12 brand teardowns &middot; 14 cited exits &middot; 11 acquirers ranked &middot; 3 sourced personas &middot; deck-claim verification &middot; client deck dollar values redacted throughout</div></div>
+  </div>
+
+  <div class="sec">
+    <span class="label">The verdict &middot; six sentences</span>
+    <div class="ei"><span class="m">01</span><div><b>The client launches D2C in [launch window]</b>, anchors with an exclusive nationwide rollout at a national premium retail anchor in Year 1.</div></div>
+    <div class="ei"><span class="m">02</span><div>By Year 5 the deck projects an <b>eight-figure annual revenue run-rate</b> (exact figure redacted). To get there, the client stitches together five plays already proven by Touchland (retail theater), a wellness app's newly opened licensing window, Le Labo's 17-year hotel amenity program (hospitality scent), Coresight's $312B gifting market with its Aug 1 lock cycle, and Heinz &times; Absolut (drop cadence).</div></div>
+    <div class="ei"><span class="m">03</span><div>Once the client's trailing revenue approaches Touchland scale with 25%+ EBITDA margin, <b>two strategic acquirers become high-probability buyers at 5-6.7x sales</b>.</div></div>
+    <div class="ei"><span class="m">04</span><div>Upside ceiling: <b>L'Or&eacute;al at the Aesop multiple ($2.5B at 4.7x sales)</b> if the client crosses $100M revenue in multiple countries.</div></div>
+    <div class="ei"><span class="m">05</span><div>Two near-term proof points decide the trajectory: <b>August 1</b> = corporate gifting Q4 inventory lock &middot; the <b>[launch window] anchor-retail launch</b> must replicate the comp's 2023 sell-out (3 months of inventory in 5 hours).</div></div>
+    <div class="ei"><span class="m">06</span><div><b>Four assertions in the existing deck are wrong or unverifiable</b> and must be corrected before next investor circulation (see the corrections rail near the bottom of this page).</div></div>
+  </div>
+
+  <div class="sec">
+    <span class="label">The trajectory &middot; what the client makes per year if the playbook works</span>
+    <p class="sub">This is the client's own deck-stated revenue forecast, not invented. Dollar values are redacted in this sample; the shape, sequencing, and milestones are preserved exactly. Each year the curve gets steeper because each year stacks a new channel onto the previous year's proof.</p>
+    <div class="meta">
+      <div class="mi"><span class="k">Year 0</span><div>Launches D2C in [launch window] with the anchor retailer's LOI in pocket.</div></div>
+      <div class="mi"><span class="k">Year 1</span><div>First revenue when the anchor retailer goes nationwide. The milestone: a comp-style sell-out at the anchor retailer.</div></div>
+      <div class="mi"><span class="k">Year 2</span><div>Crosses EBITDA-positive and adds the first signed hospitality program.</div></div>
+      <div class="mi"><span class="k">Year 3</span><div>Doubles via a second retailer + international.</div></div>
+      <div class="mi"><span class="k">Year 4</span><div>Hits Touchland's pre-exit revenue zone.</div></div>
+      <div class="mi"><span class="k">Year 5</span><div>Opens the exit window at an eight-figure annual run-rate (exact deck figure redacted).</div></div>
+    </div>
+    <div class="take">
+      <span class="label">What to take from this</span>
+      <div class="t">The curve only works if every year delivers its specific milestone. <b>Miss Year 0 or Year 1 and the rest of the curve gets repriced down.</b></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <span class="label">The five plays &middot; one per comp</span>
+    <p class="sub">Investors discount "we have a unique strategy" pitches. They reward "we are running play X that brand Y already proved." Each of the client's five plays has a real comp brand that built revenue or sold for a premium using exactly that play.</p>
+    <div class="ei"><span class="m">07</span><div><b>Retail theater &middot; the cookware comp &times; the anchor retailer, 2023.</b> The comp sold 3 months of the anchor retailer's inventory in 5 hours by leading with one exclusive colorway + a named-designer narrative. The client inherits this exact playbook for [launch window]: exclusive colorway, founder positioned as designer.</div></div>
+    <div class="ei"><span class="m">08</span><div><b>Wellness licensing &middot; the target wellness app, 2025.</b> The app hired a dedicated Head of Licensing in 2025 specifically to land its first physical co-branded SKU. The door is open for the first time. The client arrives at the right moment.</div></div>
+    <div class="ei"><span class="m">09</span><div><b>Hospitality scent &middot; Le Labo &times; a global luxury hotel flag, 2008-present.</b> A co-branded amenity + retail program running for 17 years: custom signature scent, full bath line, sold through the hotel group's own online shop. The client replicates this with its shortlisted hotel targets starting Year 2.</div></div>
+    <div class="ei"><span class="m">10</span><div><b>Gifting, the Aug 1 lock &middot; Coresight, verified market.</b> The US corporate gifting market is $312B (Coresight 2025). 77% of B2B gifts cluster $50-$125, exactly where the client's hero set is priced. August 1 = lock for Q4 holiday inventory. Gifting-platform onboarding starts now.</div></div>
+    <div class="ei"><span class="m">11</span><div><b>Drop cadence &middot; Heinz &times; Absolut, April 2023.</b> The limited-run pasta sauce sold 55 units/store/week vs a 7-unit category average: 7.8x velocity on a 9-month brief-to-shelf cycle. The client runs 2-3 limited-run drops per year starting Year 2 (wellness-app &times; client, hotel-flag &times; client).</div></div>
+    <div class="take">
+      <span class="label">What to take from this</span>
+      <div class="t">Every investor question that starts with "but how do you actually..." has a comp answer. "How do you launch retail?" The cookware comp's $35M Series A + nationwide anchor-retail rollout. "How do you scale brand awareness?" The wellness app's licensing platform, currently looking for its first CPG SKU. "How do you defend pricing?" Le Labo's hotel program, 17 years and counting. <b>None of this is theoretical.</b></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <span class="label">Positioning whitespace &middot; 14 competitors, two axes</span>
+    <p class="sub">Every investor's first question is "isn't this category crowded?" The read plots the 14 closest competitors on the two axes that matter: <b>Design Object vs Functional Utility</b> (does the product belong on the counter or under the sink?) and <b>Eco-Led vs Scent-Led</b> (does the marketing lead with sustainability or with sensory experience?).</p>
+    <div class="ei"><span class="m">12</span><div><b>Eco brands cluster bottom-left</b> (Blueland &middot; Branch Basics &middot; Mrs. Meyer's &middot; Grove): they look functional and lead with sustainability.</div></div>
+    <div class="ei"><span class="m">13</span><div><b>Scent-led brands cluster mid-right</b> (Aesop &middot; Le Labo &middot; Touchland &middot; DedCool): design-forward but mostly skin/body, not home. Also plotted: Diptyque &middot; Homecourt &middot; Flamingo Estate &middot; Our Place &middot; Method &middot; Public Goods &middot; the cookware comp.</div></div>
+    <div class="ei"><span class="m">14</span><div><b>Top-right (design-forward + scent-led + home category) is empty.</b> That's the position the client occupies: design-forward enough to display, scent-led enough to feel emotional, with refill economics that bridge into eco credibility.</div></div>
+    <div class="ei"><span class="m">15</span><div>The client's <b>refill mechanic also pulls it slightly left toward eco</b>, covering an axis the scent-led brands ignore.</div></div>
+    <div class="take">
+      <span class="label">What to take from this</span>
+      <div class="t">The empty corner is why this brand deserves to exist. <b>That's the moat: occupy the empty corner + own the bridge.</b></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <span class="label">Comparable exits &middot; what gets paid</span>
+    <p class="sub">Investors price exit potential by looking at recent acquisitions of brands with similar shape. Below: real cash deal values for the seven brands this client most resembles in design, scent, or category. The full set of 14 cited exits, with the acquirer matrix and source URLs, sits in the Comparable Exits deliverable. <b>The two to focus on are Hero Cosmetics and Touchland, both bought by the same strategic acquirer (name withheld in this sample), both at ~5.5x trailing sales, both design-led category leaders.</b></p>
+    <div class="meta">
+      <div class="mi"><span class="k">$2.525B</span><div><b>Aesop</b> &middot; 2023 &middot; L'Or&eacute;al &middot; 4.7x sales &middot; $537M rev. Sets the multi-billion ceiling.</div></div>
+      <div class="mi"><span class="k">$1.0B</span><div><b>Dollar Shave Club</b> &middot; 2016 &middot; Unilever &middot; ~5x forward sales.</div></div>
+      <div class="mi"><span class="k">$880M *</span><div><b>Touchland</b> &middot; 2025 &middot; strategic buyer &middot; 5.4-6.7x &middot; $130M rev.</div></div>
+      <div class="mi"><span class="k">$845M</span><div><b>Drunk Elephant</b> &middot; 2019 &middot; Shiseido &middot; 8.5x &middot; $120M rev. Proves the 8.5x sales premium for clean prestige.</div></div>
+      <div class="mi"><span class="k">~$700M</span><div><b>Seventh Generation</b> &middot; 2016 &middot; Unilever &middot; eco home leader.</div></div>
+      <div class="mi"><span class="k">$630M</span><div><b>Hero Cosmetics</b> &middot; 2022 &middot; strategic buyer &middot; 5.5x &middot; $115M rev.</div></div>
+      <div class="mi"><span class="k">$100M</span><div><b>Native</b> &middot; 2017 &middot; P&amp;G &middot; 3.3-4x &middot; $25-30M rev. The floor for fast DTC-to-strategic flips.</div></div>
+    </div>
+    <p class="fn">* Touchland actual at signing = $700M cash/stock + up to $180M earn-out. Shown at ceiling. Same bracket either way.</p>
+    <div class="take">
+      <span class="label">What to take from this</span>
+      <div class="t">The two matching strategic deals (Hero $630M &middot; Touchland up to $880M) are the cleanest comps: buyer profile, archetype, and multiples are identical. If the client reaches comparable trailing revenue by 2029-2031 with Touchland-like EBITDA margins, the math points to a nine-figure exit band. <b>Plan around the Hero/Touchland bracket; treat L'Or&eacute;al/Shiseido as upside, not base case.</b></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <span class="label">Who buys, when &middot; 11 acquirers ranked</span>
+    <p class="sub">There are eleven realistic acquirers for a brand like this one, ranked on fit (does this buyer want premium home-reset ritual at all?) against timing (when is this buyer ready to deploy cash for a deal of the client's size?). <b>Two acquirers tie at 5/5 fit: SC Johnson and Church &amp; Dwight.</b> Their timing windows differ.</p>
+    <div class="meta">
+      <div class="mi"><span class="k">5/5</span><div><b>Church &amp; Dwight</b> &middot; digesting a major 2025 hand-care acquisition through 2027, so its window opens 2028-2030.</div></div>
+      <div class="mi"><span class="k">5/5</span><div><b>SC Johnson</b> &middot; overdue for a Lifestyle Brands addition (the last was Method in 2018), so its window is 2029-2032.</div></div>
+      <div class="mi"><span class="k">4/5</span><div><b>L Catterton</b> &middot; the private-equity bridge: could acquire the client earlier (2026-2028) and resell to a strategic later, useful if the client wants liquidity before strategic readiness. PE bridge structures (like the $200M Honest Company PIPE) provide growth capital at $25-50M revenue and runway to strategic-buyer threshold.</div></div>
+      <div class="mi"><span class="k">4/5</span><div><b>Unilever</b> (2030-32) &middot; <b>L'Or&eacute;al</b> (2031-33+), the premium ceiling.</div></div>
+      <div class="mi"><span class="k">3/5</span><div><b>P&amp;G</b> (2030-32).</div></div>
+      <div class="mi"><span class="k">2/5</span><div><b>Est&eacute;e Lauder</b> and <b>Shiseido</b> (2031-33+) &middot; <b>Colgate</b> (2030-32).</div></div>
+      <div class="mi"><span class="k">1/5</span><div><b>Henkel</b> (2031-33+) &middot; <b>Reckitt</b> (divesting, 2026-28).</div></div>
+    </div>
+    <div class="take">
+      <span class="label">What to take from this</span>
+      <div class="t"><b>The 24-month cultivation rule applies.</b> Start building relationships with Church &amp; Dwight and SC Johnson corporate-development teams two years before the target exit window: start now for a 2028 first conversation with C&amp;D, and 2027-2028 for SC Johnson. Everyone in the bottom-right quadrant is theoretical and not actionable now.</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <span class="label">The two near-term proof points</span>
+    <p class="sub">Most of the trajectory depends on Year 1 execution. But Year 1 success requires two specific things to happen in Year 0 first. One is a calendar deadline. The other is a sell-through bar to clear at retail launch. Investors will ask about both; the answer to "are you on track?" is whether the client is hitting these two.</p>
+    <div class="meta">
+      <div class="mi"><span class="k">5 hrs</span><div><b>The bar to clear.</b> The comp brand sold 3 months of the anchor retailer's inventory in 5 hours (its exclusive-colorway drop, 2023). [Launch window] is the client's equivalent moment with its own exclusive colorway at the same retailer nationwide. Hitting it triggers the Year 1 revenue milestone (deck figure redacted), unlocks the sister-brand Phase 2 path, and gives the wellness-app target a real proof point for the licensing conversation. Missing it reprices the entire trajectory.</div></div>
+      <div class="mi"><span class="k">Aug 1</span><div><b>The non-negotiable date.</b> Verified across three independent gifting-platform planning guides: August 1 is the industry-standard lock for Q4 holiday corporate gifting. To capture any portion of the $312B Coresight-verified market in the launch year, inventory + custom co-brand SKUs must be locked and the major gifting platforms onboarded by August 1.</div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <span class="label">Four revenue channels &middot; stacked, not isolated</span>
+    <p class="sub">DTC alone is fragile. Retail alone takes too long. Licensing alone is undefendable. The trajectory works because four channels stack on each other in sequence, each one funding the next.</p>
+    <div class="ei"><span class="m">16</span><div><b>D2C + anchor retail &middot; Year 0-1, locked.</b> Hero set on D2C from [launch window]; exclusive colorway at the anchor retailer nationwide. The retailer's premium sister brand is the Phase 2 expansion path: pitch its buyer 6 months post-launch with sell-through data.</div></div>
+    <div class="ei"><span class="m">17</span><div><b>Wellness licensing &middot; Year 1-2, 9-14 months.</b> Direct outreach to the target app's new licensing lead with the anchor-retail LOI as the hook. 5-12% wholesale royalty + co-marketing minimum. The target has never done a retail CPG SKU; the client is a credible first test case. 12-month brief-to-shelf realistic.</div></div>
+    <div class="ei"><span class="m">18</span><div><b>Hospitality, the Le Labo model &middot; Year 2-3.</b> Le Labo's hotel amenity program has run since 2008: custom signature scent + bath line + on-property + the hotel group's own online retail. A sustainability-led hotel brand and a luxury lifestyle flag are the first targets. Per-property revenue is recurring at scale.</div></div>
+    <div class="ei"><span class="m">19</span><div><b>Corporate gifting &middot; Year 0+, always-on.</b> 77% of B2B gifts cluster $50-$125, exactly where the client's hero set is priced. Gifting-platform onboarding starts now (no platform fee, drop-ship model). 3-tier AOV ladder: [price] starter / [price] hero / [price] premium for the top-client tier.</div></div>
+    <div class="take">
+      <span class="label">What to take from this</span>
+      <div class="t">D2C proves the brand can sell direct. The anchor retailer translates that proof into retail credibility in Year 1. Wellness-app licensing converts retail credibility into national wellness positioning. Gifting lays the recurring B2B revenue layer underneath all of it. <b>By Year 3 every channel is contributing: that's the diversification investors price into the multiple.</b></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <span class="label">The buyer &middot; one psychographic, three lives</span>
+    <p class="sub">"Who's the customer?" is investor question #2, after market size. The honest answer: <b>one Modern Premium Consumer</b> who shows up in three life-stage expressions. All three over-index on subscription willingness, all three sit above a $100K+ HHI floor (top 23.9% of US households per Census 2023), and all three respond to the same clean-certification-plus-scent-plus-design value stack.</p>
+    <div class="ei"><span class="m">20</span><div><b>Wellness-led professional &middot; $100-$250K HHI.</b> Single / DINK &middot; urban &middot; 25-44. Aesop &middot; Le Labo &middot; Goop &middot; Glossier shopper. McKinsey 2024: 82% of US consumers rank wellness top/important priority. She buys because the third-party clean certification is her safety floor and the bottle looks like Aesop on her bathroom counter.</div></div>
+    <div class="ei"><span class="m">21</span><div><b>Aesthetic-forward homemaker &middot; $150-$200K HHI.</b> Married &middot; 1-3 kids &middot; 28-45. Anthropologie's stated profile; premium home retail, West Elm &middot; Pottery Barn tier. 47% of millennials research furniture for weeks before buying. She buys because the anchor retailer sells it: that retailer's taste curation is the credibility marker she trusts.</div></div>
+    <div class="ei"><span class="m">22</span><div><b>Hospitality / amenity buyer &middot; a $26.68B market.</b> Boutique hotel + STR. Grand View Research: $26.68B in 2024 growing to $40.26B by 2030 (7.2% CAGR). Sustainability + green certs increasingly required for FF&amp;E. She specs it because guests photograph it (free social proof) and the clean certification satisfies the property's sustainability requirements.</div></div>
+    <div class="take">
+      <span class="label">What to take from this</span>
+      <div class="t">The marketing budget doesn't need to fragment into three separate funnels. <b>The same content, same imagery, same brand voice converts all three personas</b> because the underlying psychographic is shared; what changes is the channel. Persona 01 sees it on TikTok, Persona 02 sees it in the anchor retailer's catalog, Persona 03 sees it at a boutique hotel and gets sold via direct procurement. One brand build, three GTM motions.</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <span class="label">Four deck assertions to correct before next investor circulation</span>
+    <p class="sub">Phase 2 research found four claims in the existing investor deck that are either wrong or unverifiable. <b>If any of these survive into the next round, sophisticated investors will catch them and the entire deck loses credibility.</b> One is a name-confusion trap: the deck's claimed partnership actually belongs to a similarly named organization. Each correction below is what should replace the current deck assertion.</p>
+    <div class="meta">
+      <div class="mi"><span class="k">Verified</span><div><b>Touchland "$880M."</b> Actual signing = $700M cash/stock + up to $180M earn-out tied to 2025 net sales. Footnote in deck or pitch as "up to $880M." Source: the acquirer's investor-relations disclosures.</div></div>
+      <div class="mi"><span class="k">Unverified</span><div><b>Le Labo "$200-300M (2014)."</b> Est&eacute;e Lauder never officially disclosed. Reported figures range $60M-$80M. Correct in deck or remove the price entirely.</div></div>
+      <div class="mi"><span class="k">False</span><div><b>Apparel giant &times; wellness app.</b> The claimed partnership actually involved a similarly named UK suicide-prevention charity, not the wellness app the deck implies. Strike from any deck mention.</div></div>
+      <div class="mi"><span class="k">Unverified</span><div><b>DedCool &times; Crocs &middot; Glossier &times; Olive Garden.</b> No public source for either collab. Likely confused with DedCool &times; Stoney Clover Lane / Glossier "You" launch tie-ins. Strike both.</div></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <span class="label">The eight deliverables behind this page</span>
+    <p class="sub">This executive summary is the 90-second read. Each deliverable ships with full source URLs, complete data tables, and section-by-section analysis. Unlinked in this redacted sample; the client receives all eight in full.</p>
+    <div class="meta">
+      <div class="mi"><span class="k">P2-1</span><div><b>Comparable Exits</b> &middot; 14 exits &middot; acquirer matrix &middot; cited URLs</div></div>
+      <div class="mi"><span class="k">P2-2</span><div><b>Brand Teardowns</b> &middot; 12 brands &middot; revenue &middot; funding &middot; lessons</div></div>
+      <div class="mi"><span class="k">P2-3</span><div><b>Modern Premium ICP</b> &middot; 3 personas &middot; sourced HHI / behavior</div></div>
+      <div class="mi"><span class="k">P2-4</span><div><b>Anchor-Retail Launch Playbook</b> &middot; named buyer contacts &middot; 6/3/1-month timeline</div></div>
+      <div class="mi"><span class="k">P2-5</span><div><b>Corporate Gifting GTM</b> &middot; $312B verified &middot; 5 platforms &middot; Aug 1 lock</div></div>
+      <div class="mi"><span class="k">P2-6</span><div><b>Wellness Licensing Path</b> &middot; named licensing contact &middot; 12-month roadmap</div></div>
+      <div class="mi"><span class="k">P2-7</span><div><b>Trajectory Roadmap</b> &middot; year-by-year, Year 0-5 &middot; 5 levers</div></div>
+      <div class="mi"><span class="k">P2-8</span><div><b>Acquirer Thesis</b> &middot; 11 buyers &middot; exit math &middot; target stack</div></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <span class="label">The fastest route this points to</span>
+    <div class="t">Three moves come before everything else. <b>Lock inventory + custom co-brand SKUs and onboard the major gifting platforms by August 1.</b> Correct the four deck assertions before the next investor circulation. Start the 24-month acquirer cultivation now: a 2028 first conversation with Church &amp; Dwight, and 2027-2028 for SC Johnson.</div>
+  </div>
+
+  <p class="cta">This is the redacted sample of a Phase 2 executive summary. The client receives the full version with dollar values, named partners, and all eight deliverables intact.</p>
+
+  <div class="src">
+    <div><b>Sources</b> &middot; client investor deck [dollar values redacted] &middot; acquirer investor-relations disclosures &middot; Coresight 2025 &middot; McKinsey 2024 &middot; Grand View Research &middot; US Census 2023 &middot; three gifting-platform planning guides</div>
+    <div><b>Alex &middot; LoopWorker</b> &middot; loopworker.com</div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>LoopWorker · Sample Decision Read (Redacted)</title>
+<style>
+  @font-face{ font-family:'Lora'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/Lora-Regular.ttf'); }
+  @font-face{ font-family:'Lora'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/Lora-Bold.ttf'); font-weight:700; }
+  @font-face{ font-family:'Lora'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/Lora-Italic.ttf'); font-style:italic; }
+  @font-face{ font-family:'Inter'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/WorkSans-Regular.ttf'); }
+  @font-face{ font-family:'Inter'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/WorkSans-Bold.ttf'); font-weight:700; }
+  @font-face{ font-family:'Mono'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/JetBrainsMono-Regular.ttf'); }
+  @font-face{ font-family:'Mono'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/JetBrainsMono-Bold.ttf'); font-weight:700; }
+  :root{ --paper:#FCFCFB; --ink:#0C0C0E; --t2:#3B3B41; --t3:#7C7C83; --line:#E2E1DC; --fill:#F4F3EE;
+    --serif:'Lora',Georgia,serif; --sans:'Inter',sans-serif; --mono:'Mono',monospace; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ background:#E8E7E2; }
+  .sheet{ position:relative; width:772px; background:var(--paper); padding:54px 60px 48px; }
+
+  .label{ font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--t3); display:block; }
+
+  .redact{ font-family:var(--mono); font-size:10.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--t3); border:1px solid var(--line); background:var(--fill); padding:8px 12px; margin-bottom:20px; }
+
+  .top{ display:flex; justify-content:space-between; align-items:baseline; padding-bottom:13px; border-bottom:1.5px solid var(--ink); }
+  .top .wm{ font-family:var(--mono); font-size:13.5px; font-weight:700; letter-spacing:.02em; color:var(--ink); }
+  .top .rt{ font-family:var(--mono); font-size:11px; letter-spacing:.04em; color:var(--t3); text-align:right; line-height:1.7; }
+
+  .claimlabel{ margin-top:36px; margin-bottom:13px; }
+  .claim{ font-family:var(--serif); font-weight:700; font-size:31px; line-height:1.26; letter-spacing:-.02em; color:var(--ink); }
+  .claim b{ background:linear-gradient(transparent 62%, #E9E7DE 62%); }
+
+  .sub{ font-family:var(--sans); font-size:15.5px; line-height:1.6; color:var(--t2); margin-top:20px; }
+  .sub b{ color:var(--ink); font-weight:700; }
+
+  .meta{ margin-top:26px; border-top:1px solid var(--line); }
+  .mi{ font-family:var(--sans); font-size:14px; line-height:1.55; color:var(--t2); padding:11px 0; border-bottom:1px solid var(--line); display:grid; grid-template-columns:110px 1fr; gap:14px; align-items:baseline; }
+  .mi .k{ font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--ink); }
+
+  .sec{ margin-top:38px; }
+  .sec > .label{ margin-bottom:16px; }
+
+  .ei{ padding:13px 0; border-bottom:1px solid var(--line); font-family:var(--sans); font-size:14.5px; line-height:1.55; color:var(--t2); display:grid; grid-template-columns:16px 1fr; gap:12px; }
+  .ei:first-of-type{ border-top:1px solid var(--line); }
+  .ei .m{ font-family:var(--mono); font-size:12px; color:var(--ink); font-weight:700; }
+  .ei b{ color:var(--ink); font-weight:700; }
+
+  .take{ margin-top:22px; background:var(--ink); color:#fff; border-radius:5px; padding:22px 26px; }
+  .take .label{ color:rgba(255,255,255,.5); margin-bottom:11px; }
+  .take .t{ font-family:var(--serif); font-weight:700; font-size:19px; line-height:1.42; color:#fff; }
+  .take .t b{ color:#fff; text-decoration:underline; text-decoration-thickness:1.5px; text-underline-offset:3px; }
+
+  .rec{ margin-top:34px; padding:18px 22px; border:1.5px solid var(--ink); border-left:6px solid var(--ink); border-radius:4px; }
+  .rec .label{ margin-bottom:9px; }
+  .rec .t{ font-family:var(--serif); font-size:16.5px; line-height:1.5; color:var(--ink); }
+  .rec .t b{ font-weight:700; }
+
+  .cta{ font-family:var(--serif); font-style:italic; font-size:15.5px; color:var(--ink); margin-top:26px; }
+
+  .src{ font-family:var(--mono); font-size:10.5px; line-height:1.7; color:var(--t3); margin-top:34px; padding-top:18px; border-top:1.5px solid var(--ink); display:flex; justify-content:space-between; }
+  .src b{ color:var(--t2); }
+</style></head>
+<body>
+<div class="sheet">
+
+  <div class="redact">Sample Decision Read · client, counterparties, and market redacted</div>
+
+  <div class="top">
+    <div class="wm">LoopWorker &middot; Growth Read</div>
+    <div class="rt">Prepared for an associate attorney<br>four-attorney consumer firm [redacted] &middot; June 2026</div>
+  </div>
+
+  <span class="label claimlabel">The claim</span>
+  <div class="claim">Your rivals are buying the most expensive channel in the field, the one 82% of firms say they regret. The channel with the best return sits unguarded. <b>The money channel is the one nobody is guarding.</b></div>
+  <div class="sub">Ninety-six percent of people with a legal problem start on a search engine, and at this firm's size client acquisition is now almost entirely online. So the real question is not which practice area to push. <b>It is which channel grows you fastest, where your rivals are weak, and what four fast people can move on before they do.</b></div>
+
+  <div class="meta">
+    <div class="mi"><span class="k">The question</span><div>The firm runs a bigger intake operation than most four-attorney shops. Where should a small, fast team spend its next dollar and hour to grow fastest, given what every rival is and is not already doing?</div></div>
+    <div class="mi"><span class="k">Pulled</span><div>June 2026 &middot; rival ad / content / review footprints &middot; 2025-26 legal-marketing channel data &middot; the firm's own site and review presence</div></div>
+  </div>
+
+  <div class="sec">
+    <span class="label">The evidence</span>
+    <div class="ei"><span class="m">01</span><div><b>Your field is fighting over the wrong channel.</b> The market's biggest ad buyer and others purchase the top of every practice-area search through paid ads, the most expensive lane there is and the one 82% of firms say they regret.</div></div>
+    <div class="ei"><span class="m">02</span><div><b>The best-return channel is wide open.</b> Local search and Google reviews carry the strongest ROI in the 2025-26 channel data, and nobody is guarding them: a top-50-ranked rival nearby has a blog dead since 2019 and a 3.7 review rating.</div></div>
+    <div class="ei"><span class="m">03</span><div><b>The leaks are on the firm's own site.</b> It runs an intake operation bigger than most four-attorney firms, then hides the Google rating a client scans for, leaves the YouTube link empty, and keeps a page selling a law the state voided in 2023. Every leak sits on the cheap, high-return side of the ledger.</div></div>
+
+    <div class="take">
+      <span class="label">The hinge</span>
+      <div class="t">The field is paying a premium to fight where everyone is looking, while the channel that actually converts sits empty. <b>A four-person firm with a working intake machine can take it before anyone notices.</b></div>
+    </div>
+  </div>
+
+  <div class="rec">
+    <span class="label">The fastest route this points to</span>
+    <div class="t">Point the intake machine you already have at the channel your rivals are asleep on. The starter begins this week: <b>a review ask on every closed matter, and your live rating where clients can actually see it.</b> The build behind it, the fix order, the AI-run content volume, the screened slot, the referral engine, is sized to your team, not a marketing department.</div>
+  </div>
+
+  <p class="cta">Two findings off a quick scan. The full read maps every rival's channel spend, finds where your own traffic actually comes from, and lays out the order to fix it. If useful, I can walk you through it in 20 minutes. No prep needed.</p>
+
+  <div class="src">
+    <div><b>Sources</b> &middot; rival PPC pages [firms redacted] &middot; review-platform rating ~3.7 &middot; 2025-26 legal-marketing ROI data &middot; client site [redacted], reviewed June 2026</div>
+    <div><b>Alex &middot; LoopWorker</b> &middot; loopworker.com</div>
+  </div>
+
+</div>
+</body>
+</html>
