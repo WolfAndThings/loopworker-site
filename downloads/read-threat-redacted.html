@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>LoopWorker · Sample Decision Read (Redacted) · Threat Read</title>
+<style>
+  @font-face{ font-family:'Lora'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/Lora-Regular.ttf'); }
+  @font-face{ font-family:'Lora'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/Lora-Bold.ttf'); font-weight:700; }
+  @font-face{ font-family:'Lora'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/Lora-Italic.ttf'); font-style:italic; }
+  @font-face{ font-family:'Inter'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/WorkSans-Regular.ttf'); }
+  @font-face{ font-family:'Inter'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/WorkSans-Bold.ttf'); font-weight:700; }
+  @font-face{ font-family:'Mono'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/JetBrainsMono-Regular.ttf'); }
+  @font-face{ font-family:'Mono'; src:url('/Users/alexlamb/.claude/skills/canvas-design/canvas-fonts/JetBrainsMono-Bold.ttf'); font-weight:700; }
+  :root{ --paper:#FCFCFB; --ink:#0C0C0E; --t2:#3B3B41; --t3:#7C7C83; --line:#E2E1DC; --fill:#F4F3EE;
+    --serif:'Lora',Georgia,serif; --sans:'Inter',sans-serif; --mono:'Mono',monospace; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ background:#E8E7E2; }
+  .sheet{ position:relative; width:772px; background:var(--paper); padding:54px 60px 48px; }
+
+  .label{ font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--t3); display:block; }
+
+  .redact{ font-family:var(--mono); font-size:10.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--t3); border:1px solid var(--line); background:var(--fill); padding:8px 12px; margin-bottom:20px; }
+
+  .top{ display:flex; justify-content:space-between; align-items:baseline; padding-bottom:13px; border-bottom:1.5px solid var(--ink); }
+  .top .wm{ font-family:var(--mono); font-size:13.5px; font-weight:700; letter-spacing:.02em; color:var(--ink); }
+  .top .rt{ font-family:var(--mono); font-size:11px; letter-spacing:.04em; color:var(--t3); text-align:right; line-height:1.7; }
+
+  .claimlabel{ margin-top:36px; margin-bottom:13px; }
+  .claim{ font-family:var(--serif); font-weight:700; font-size:31px; line-height:1.26; letter-spacing:-.02em; color:var(--ink); }
+  .claim b{ background:linear-gradient(transparent 62%, #E9E7DE 62%); }
+
+  .sub{ font-family:var(--sans); font-size:15.5px; line-height:1.6; color:var(--t2); margin-top:20px; }
+  .sub b{ color:var(--ink); font-weight:700; }
+
+  .sec{ margin-top:38px; }
+  .sec > .label{ margin-bottom:16px; }
+
+  .ei{ padding:13px 0; border-bottom:1px solid var(--line); font-family:var(--sans); font-size:14.5px; line-height:1.55; color:var(--t2); display:grid; grid-template-columns:16px 1fr; gap:12px; }
+  .ei:first-of-type{ border-top:1px solid var(--line); }
+  .ei .m{ font-family:var(--mono); font-size:12px; color:var(--ink); font-weight:700; }
+  .ei b{ color:var(--ink); font-weight:700; }
+
+  .take{ margin-top:22px; background:var(--ink); color:#fff; border-radius:5px; padding:22px 26px; }
+  .take .label{ color:rgba(255,255,255,.5); margin-bottom:11px; }
+  .take .t{ font-family:var(--serif); font-weight:700; font-size:19px; line-height:1.42; color:#fff; }
+  .take .t b{ color:#fff; text-decoration:underline; text-decoration-thickness:1.5px; text-underline-offset:3px; }
+
+  .pos{ margin-top:24px; }
+  .pos .label{ margin-bottom:12px; }
+  .pi{ font-family:var(--sans); font-size:14.5px; line-height:1.55; color:var(--t2); padding:12px 0; border-bottom:1px solid var(--line); display:grid; grid-template-columns:96px 1fr; gap:14px; align-items:baseline; }
+  .pi:first-of-type{ border-top:1px solid var(--line); }
+  .pi .k{ font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--ink); }
+  .pi b{ color:var(--ink); font-weight:700; }
+
+  .firm{ margin-top:34px; background:var(--fill); border:1.5px solid var(--ink); border-left:7px solid var(--ink); border-radius:5px; padding:22px 26px; }
+  .firm .label{ margin-bottom:11px; }
+  .firm .t{ font-family:var(--sans); font-size:15px; line-height:1.6; color:var(--t2); }
+  .firm .t b{ color:var(--ink); font-weight:700; }
+  .firm .field{ font-family:var(--sans); font-style:italic; font-size:13.5px; line-height:1.55; color:var(--t3); margin-top:13px; }
+
+  .watch{ margin-top:34px; }
+  .watch .label{ margin-bottom:12px; }
+  .wi{ font-family:var(--sans); font-size:14px; line-height:1.5; color:var(--t2); padding:7px 0 7px 20px; position:relative; }
+  .wi::before{ content:""; position:absolute; left:0; top:13px; width:7px; height:7px; border:1.4px solid var(--ink); border-radius:50%; }
+
+  .how{ margin-top:36px; }
+  .how .label{ margin-bottom:12px; }
+  .hl{ font-family:var(--mono); font-size:11.5px; line-height:1.55; color:var(--t2); padding:9px 0; border-bottom:1px solid var(--line); }
+  .hl:first-of-type{ border-top:1px solid var(--line); }
+  .hl b{ color:var(--ink); font-weight:700; }
+
+  .rec{ margin-top:34px; padding:18px 22px; border:1.5px solid var(--ink); border-left:6px solid var(--ink); border-radius:4px; }
+  .rec .label{ margin-bottom:9px; }
+  .rec .t{ font-family:var(--serif); font-size:16.5px; line-height:1.5; color:var(--ink); }
+  .rec .t b{ font-weight:700; }
+
+  .src{ font-family:var(--mono); font-size:10.5px; line-height:1.7; color:var(--t3); margin-top:34px; padding-top:18px; border-top:1.5px solid var(--ink); display:flex; justify-content:space-between; gap:24px; }
+  .src b{ color:var(--t2); }
+
+  @media print{
+    @page{ size:Letter; margin:0.6in 0.65in 0.7in; }
+    html,body{ background:#fff; }
+    .sheet{ width:auto; padding:0; background:#fff; }
+    .ei, .pi, .wi, .hl, .take, .firm, .rec, .src{ break-inside:avoid; page-break-inside:avoid; }
+    .label, .claim, .watch .label, .how .label, .pos .label{ break-after:avoid; page-break-after:avoid; }
+    .sec{ margin-top:30px; }
+    .take{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  }
+</style></head>
+<body>
+<div class="sheet">
+
+  <div class="redact">Sample Decision Read · client, rival firms, market, and all partner names redacted</div>
+
+  <div class="top">
+    <div class="wm">LoopWorker &middot; Threat Read</div>
+    <div class="rt">Prepared for the CMO of an Am Law 200 firm [redacted]<br>July 2026</div>
+  </div>
+
+  <span class="label claimlabel">The claim</span>
+  <div class="claim">A rival is turning three of your private equity partners into the market's middle-market PE brand. Your hiring since October is roughly even, so the ground you are losing is not the bench. <b>It is the story the next rainmaker and the next fund read before they choose.</b></div>
+  <div class="sub">The story that names the market's mid-market PE leader is what pulls the next portable book, and what tilts a fund's read when both firms chase one mandate. The rival is marketing that story, on a platform it built partly from your departed partners, after every hire. Below is what I read from it, and the call I will be graded on.</div>
+
+  <div class="sec">
+    <span class="label">The evidence</span>
+    <div class="ei"><span class="m">01</span><div><b>A chain, not scattered churn.</b> A senior partner left the client's PE group for the rival in October 2025. Four months later two more from his group followed him, joining, in the rival's own announcement, on the heels of the first. One partner first, then two of his group behind him. That is the signature of a targeted pull, not random attrition.</div></div>
+    <div class="ei"><span class="m">02</span><div><b>The single largest feeder of a multi-firm build.</b> The rival also took PE partners from two elite national firms and a third large firm in the same window. Ten partners joined it in 2026, and it was the No. 1 Am Law 200 firm for lateral hires in its state in 2025. Across that build, the client supplied more of the rival's PE partners than any other single firm, and the only connected group.</div></div>
+    <div class="ei"><span class="m">03</span><div><b>The bench is rebuilt and roughly even.</b> This is not a firm bleeding out. The client's corporate group added about ten attorneys since October 2025, including a new Private Equity Finance chair hired from a global firm and a senior M&amp;A partner, on top of sixteen new partners named for 2026. On headcount, the raid is close to matched.</div></div>
+    <div class="ei"><span class="m">04</span><div><b>The telling is not even at all.</b> The rival runs a press release after nearly every hire and markets a top-10 league-table practice and a $40B+ deal-value platform. The client's equal build is nearly silent next to it. In a market where recruiters, reporters and deal teams name the leader before a mandate is ever pitched, that description is the asset, and right now the rival is the one writing it.</div></div>
+    <div class="ei"><span class="m">05</span><div><b>The one claim the rival cannot buy.</b> The client built its office in this market from three lawyers to well over a hundred in seven years, around exactly this middle-market PE and corporate lane. The rival is assembling its version in quarters. Having been the market's middle-market PE bench for nearly a decade is available to the client and to no lateral-built rival. That is the ground the rival is renting.</div></div>
+
+    <div class="take">
+      <span class="label">The hinge</span>
+      <div class="t">On bodies, this is close to a draw: you replaced roughly what you lost. On story, it is not close. The rival narrates every hire into a middle-market PE brand, and a brand is what a portable book weighs before it moves and what a fund reads before it short-lists. <b>You are winning the part that is countable and losing the part that compounds.</b></div>
+    </div>
+  </div>
+
+  <div class="pos">
+    <span class="label">Where it leaves you</span>
+    <div class="pi"><span class="k">Recruiting</span><div>The next PE rainmaker weighing the two firms reads the rival as the market's mid-market PE place, because that is the only story being told. Your hiring since October is real and roughly even, but it is unnarrated, so it does not reach the candidate as a reason to choose you. Each book that picks the rival is revenue that chose a story over a scoreboard.</div></div>
+    <div class="pi"><span class="k">Pitches</span><div>When a fund short-lists both firms for a mid-market mandate, the tie-breaker on the close ones is which firm the market already calls the leader. That naming is uncontested at the moment, which means it is being decided in the rival's favor by default.</div></div>
+    <div class="pi"><span class="k">Tempo</span><div>The rival added a PE lateral roughly monthly from October to March and marketed each one. Every cycle the story goes unanswered, the name sets a little harder, and it sets before the next lateral or mandate is ever in play.</div></div>
+  </div>
+
+  <div class="firm">
+    <span class="label">The honest other reading</span>
+    <div class="t"><b>The client holds the tenure and the rebuilt bench. The rival holds the microphone.</b> The same facts read two ways, and the difference is the whole call. Three departures plus a loud rival can mean a positioning contest you can still win on ground you already own. It can also mean the first months of a talent drift that even hiring numbers mask for a year.</div>
+    <div class="field">I take the first position and stake the dated call below on it. If you read it the second way, the moves change, and I would rather say that here than sell you the version that reads cleaner.</div>
+  </div>
+
+  <div class="watch">
+    <span class="label">What to watch</span>
+    <div class="wi">Whether the rival announces another PE lateral before year-end, and whether any of them come again from the client's bench. A fourth from that bench moves this from pattern to campaign.</div>
+    <div class="wi">Whether a counter-narrative appears: a middle-market PE platform claim from the client, a ranking push, or a lateral reclaimed from the rival. Its absence is the gap staying open.</div>
+    <div class="wi">Whether the next fund both firms pitch names the rival as the market's middle-market PE leader in its own words. That is the narrative pricing in.</div>
+  </div>
+
+  <div class="how">
+    <span class="label">How I know</span>
+    <div class="hl">Every move here sits on the public record the reader already works from: firm releases, national legal trade press, the 2026 laterals report. The call is checkable against your own sources. The judgment on top of it is mine.</div>
+  </div>
+
+  <div class="rec">
+    <span class="label">On record</span>
+    <div class="t">By December 31, 2026, the rival keeps publicly marketing its middle-market PE build while the client mounts no comparable public answer, so the narrative lead widens even though hiring stays roughly even. <b>I am wrong if, before year-end, the client stakes a visible middle-market PE positioning claim of its own or pulls a lateral back from the rival. The fastest way to make me wrong is to answer it. Grade me on it.</b></div>
+  </div>
+
+  <div class="src"><span><b>Sources:</b> rival firm press releases for each lateral [names redacted] &middot; national legal trade press coverage of each move &middot; the 2026 laterals report &middot; the client's own hiring announcements &middot; league-table and deal-value figures from the rival's practice pages. All dated and re-pullable.</span><span>Alex &middot; LoopWorker &middot; loopworker.com</span></div>
+
+</div>
+</body></html>

@@ -4,515 +4,243 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
-  <title>Sample Atlas Brief · LoopWorker</title>
-  <meta name="description" content="Read an anonymized Atlas-tier Sprint brief. Full structure, real depth, names stripped. 4-minute read.">
+  <title>Sample Decision Read · LoopWorker</title>
+  <meta name="description" content="A real Decision Read delivered to the CMO of an Am Law 200 firm in July 2026. Names redacted, nothing else changed. Four-minute read.">
   <link rel="canonical" href="https://www.loopworker.com/sample-brief.html">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.loopworker.com/sample-brief.html">
-  <meta property="og:title" content="Sample Atlas Brief · LoopWorker">
-  <meta property="og:description" content="Anonymized Sprint Pro deliverable. See what you get back.">
+  <meta property="og:title" content="Sample Decision Read · LoopWorker">
+  <meta property="og:description" content="A real Read, client redacted. The verdict on top, the evidence under it, one dated call at the bottom.">
   <meta property="og:image" content="https://www.loopworker.com/images/loopworker-og.png">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="LoopWorker">
-  <meta name="theme-color" content="#07070C">
+  <meta name="theme-color" content="#070708">
   <meta name="color-scheme" content="dark">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Lora:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/v5-system.css?v=uniform-shell-1">
+  <link rel="stylesheet" href="/v6-system.css?v=graded-evidence-2">
 
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
-  <link rel="dns-prefetch" href="https://buy.stripe.com">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070708' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%23E3A44A' font-family='Georgia' font-weight='400'>L</text></svg>">
 
   <style>
-    .v5-brief-shell { padding: 4rem 2rem 6rem; }
-    .v5-brief-intro {
-      max-width: 740px; margin: 0 auto 3rem; text-align: center;
-    }
-    .v5-brief-intro h1 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      margin: 0 0 1rem;
-    }
-    .v5-brief-intro p {
-      font-size: 1.05rem; color: var(--text-2);
-      line-height: 1.55; margin: 0;
-    }
-    .v5-brief-meta-row {
-      display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
-      margin-top: 1.6rem; padding-top: 1.6rem;
-      border-top: 1px solid var(--border);
-      font-family: var(--mono); font-size: 0.78rem;
-      color: var(--text-3); letter-spacing: 0.04em;
-    }
-    .v5-brief-meta-row strong { color: var(--text); }
+    /* page-local */
+    .sample-hero { padding: 7.5rem 2rem 3.5rem; max-width: 880px; margin: 0 auto; text-align: center; }
+    .sample-hero h1 { margin: 1.2rem 0 1rem; }
+    .sample-hero .section-sub { max-width: 640px; margin: 0 auto; }
+    .sample-meta { display: flex; justify-content: center; gap: 1.6rem; flex-wrap: wrap; margin-top: 2rem; font-family: 'JetBrains Mono', monospace; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--t3, #8a8a90); }
+    .sample-meta span b { color: #E3A44A; font-weight: 500; }
 
-    /* the brief artifact, looks like a real PDF page */
-    .v5-brief {
-      max-width: 940px; margin: 0 auto;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 4rem 3.5rem;
-      position: relative; overflow: hidden;
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,0.04) inset,
-        0 40px 80px -30px rgba(0,0,0,0.8),
-        0 0 100px -30px rgba(99,102,241,0.3);
-    }
-    .v5-brief::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-      background: var(--grad-hero);
-    }
-    @media (max-width: 700px) { .v5-brief { padding: 2.4rem 1.8rem; } }
-    .v5-brief-stamp {
-      position: absolute; top: 1.8rem; right: 1.8rem;
-      padding: 0.4rem 0.9rem;
-      font-family: var(--mono); font-size: 0.66rem;
-      color: var(--indigo-bright); font-weight: 700;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      background: rgba(99,102,241,0.1);
-      border: 1px solid rgba(99,102,241,0.25);
-      border-radius: 6px;
-    }
-    .v5-brief-header {
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 2rem; margin-bottom: 2.4rem;
-    }
-    .v5-brief-header .tag {
-      font-family: var(--mono); font-size: 0.74rem;
-      color: var(--indigo-bright); font-weight: 700;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      margin-bottom: 0.8rem; display: block;
-    }
-    .v5-brief-header h2 {
-      font-size: clamp(1.8rem, 3.4vw, 2.6rem);
-      line-height: 1.12; margin: 0 0 1rem;
-    }
-    .v5-brief-meta {
-      display: flex; flex-wrap: wrap; gap: 1.2rem;
-      font-size: 0.86rem; color: var(--text-3);
-    }
-    .v5-brief-meta strong { color: var(--text); font-weight: 600; }
-    .v5-brief section { margin: 2.4rem 0; }
-    .v5-brief h3 {
-      font-family: var(--sans-tight); font-size: 0.82rem;
-      font-weight: 700; color: var(--indigo-bright);
-      letter-spacing: 0.18em; text-transform: uppercase;
-      margin: 0 0 1rem; padding-bottom: 0.6rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .v5-brief h4 {
-      font-family: var(--sans-tight); font-size: 1.3rem;
-      color: var(--text); font-weight: 700; letter-spacing: -0.022em;
-      margin: 1.4rem 0 0.6rem;
-    }
-    .v5-brief p {
-      color: var(--text-2); font-size: 1rem;
-      line-height: 1.65; margin: 0 0 1rem;
-    }
-    .v5-brief .lede {
-      font-size: 1.1rem; color: var(--text);
-      border-left: 2px solid var(--indigo); padding-left: 1.2rem;
-      margin: 1.2rem 0; font-weight: 500;
-    }
-    .v5-brief-verdict {
-      background:
-        linear-gradient(135deg, rgba(99,102,241,0.08), rgba(168,85,247,0.04)),
-        rgba(7,7,12,0.6);
-      border: 1px solid rgba(99,102,241,0.25);
-      padding: 1.8rem 2rem; border-radius: 12px;
-      margin: 1.8rem 0;
-    }
-    .v5-brief-verdict .v-tag {
-      font-family: var(--mono); font-size: 0.7rem;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--indigo-bright); font-weight: 800;
-      margin-bottom: 0.7rem;
-    }
-    .v5-brief-verdict h4 {
-      color: var(--text); margin: 0 0 0.5rem;
-      font-size: 1.5rem; font-weight: 700;
-    }
-    .v5-brief-verdict p { color: var(--text-2); margin: 0; font-size: 0.96rem; }
+    .anatomy { max-width: 880px; margin: 0 auto 3.5rem; padding: 0 2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .anatomy .a-item { border: 1px solid rgba(255,255,255,.09); padding: 1.1rem 1.2rem; }
+    .anatomy .a-num { font-family: 'JetBrains Mono', monospace; font-size: .7rem; color: #E3A44A; letter-spacing: .12em; }
+    .anatomy .a-item h3 { font-size: .95rem; margin: .45rem 0 .35rem; }
+    .anatomy .a-item p { font-size: .82rem; line-height: 1.5; color: var(--t3, #9a9aa0); margin: 0; }
+    @media (max-width: 720px){ .anatomy { grid-template-columns: 1fr; } }
 
-    .v5-brief-signal-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr);
-      gap: 0.8rem; margin: 1rem 0;
-    }
-    @media (max-width: 600px) { .v5-brief-signal-grid { grid-template-columns: 1fr; } }
-    .v5-brief-signal {
-      padding: 1.1rem;
-      background: rgba(0,0,0,0.3);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-    }
-    .v5-brief-signal .n {
-      font-family: var(--sans-tight); font-size: 1.8rem;
-      font-weight: 800; color: var(--indigo-bright);
-      letter-spacing: -0.025em; line-height: 1;
-      display: block;
-      font-variant-numeric: tabular-nums;
-    }
-    .v5-brief-signal .l {
-      font-family: var(--mono); font-size: 0.7rem;
-      color: var(--text-3); letter-spacing: 0.1em;
-      text-transform: uppercase; margin-top: 0.5rem; display: block;
-    }
-    .v5-brief-signal .d {
-      font-size: 0.86rem; color: var(--text-2); line-height: 1.4;
-      margin-top: 0.5rem;
-    }
+    /* the embedded document, scoped under .rsheet */
+    .sheet-wrap { padding: 0 1rem 3rem; display: flex; justify-content: center; }
+    .rsheet { width: 772px; max-width: 100%; background: #FCFCFB; padding: 54px 60px 48px; color: #3B3B41; box-shadow: 0 30px 80px rgba(0,0,0,.55); }
+    @media (max-width: 640px){ .rsheet { padding: 34px 24px 32px; } }
+    .rsheet .label { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: #7C7C83; display: block; }
+    .rsheet .redact { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: #7C7C83; border: 1px solid #E2E1DC; background: #F4F3EE; padding: 8px 12px; margin-bottom: 20px; }
+    .rsheet .top { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 13px; border-bottom: 1.5px solid #0C0C0E; gap: 12px; }
+    .rsheet .top .wm { font-family: 'JetBrains Mono', monospace; font-size: 13.5px; font-weight: 700; color: #0C0C0E; }
+    .rsheet .top .rt { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .04em; color: #7C7C83; text-align: right; line-height: 1.7; }
+    .rsheet .claimlabel { margin-top: 36px; margin-bottom: 13px; }
+    .rsheet .claim { font-family: 'Lora', Georgia, serif; font-weight: 700; font-size: clamp(22px, 4vw, 31px); line-height: 1.26; letter-spacing: -.02em; color: #0C0C0E; }
+    .rsheet .claim b { background: linear-gradient(transparent 62%, #E9E7DE 62%); }
+    .rsheet .sub { font-family: 'Work Sans', sans-serif; font-size: 15.5px; line-height: 1.6; color: #3B3B41; margin-top: 20px; }
+    .rsheet .sec { margin-top: 38px; }
+    .rsheet .sec > .label { margin-bottom: 16px; }
+    .rsheet .ei { padding: 13px 0; border-bottom: 1px solid #E2E1DC; font-family: 'Work Sans', sans-serif; font-size: 14.5px; line-height: 1.55; color: #3B3B41; display: grid; grid-template-columns: 16px 1fr; gap: 12px; }
+    .rsheet .ei:first-of-type { border-top: 1px solid #E2E1DC; }
+    .rsheet .ei .m { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #0C0C0E; font-weight: 700; }
+    .rsheet .ei b, .rsheet .sub b, .rsheet .pi b, .rsheet .firm .t b { color: #0C0C0E; font-weight: 700; }
+    .rsheet .take { margin-top: 22px; background: #0C0C0E; color: #fff; border-radius: 5px; padding: 22px 26px; }
+    .rsheet .take .label { color: rgba(255,255,255,.5); margin-bottom: 11px; }
+    .rsheet .take .t { font-family: 'Lora', Georgia, serif; font-weight: 700; font-size: 19px; line-height: 1.42; color: #fff; }
+    .rsheet .take .t b { color: #fff; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+    .rsheet .pos { margin-top: 24px; }
+    .rsheet .pos .label { margin-bottom: 12px; }
+    .rsheet .pi { font-family: 'Work Sans', sans-serif; font-size: 14.5px; line-height: 1.55; color: #3B3B41; padding: 12px 0; border-bottom: 1px solid #E2E1DC; display: grid; grid-template-columns: 96px 1fr; gap: 14px; align-items: baseline; }
+    .rsheet .pi:first-of-type { border-top: 1px solid #E2E1DC; }
+    .rsheet .pi .k { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #0C0C0E; }
+    @media (max-width: 640px){ .rsheet .pi { grid-template-columns: 1fr; gap: 4px; } }
+    .rsheet .firm { margin-top: 34px; background: #F4F3EE; border: 1.5px solid #0C0C0E; border-left: 7px solid #0C0C0E; border-radius: 5px; padding: 22px 26px; }
+    .rsheet .firm .label { margin-bottom: 11px; }
+    .rsheet .firm .t { font-family: 'Work Sans', sans-serif; font-size: 15px; line-height: 1.6; color: #3B3B41; }
+    .rsheet .firm .field { font-family: 'Work Sans', sans-serif; font-style: italic; font-size: 13.5px; line-height: 1.55; color: #7C7C83; margin-top: 13px; }
+    .rsheet .watch { margin-top: 34px; }
+    .rsheet .watch .label { margin-bottom: 12px; }
+    .rsheet .wi { font-family: 'Work Sans', sans-serif; font-size: 14px; line-height: 1.5; color: #3B3B41; padding: 7px 0 7px 20px; position: relative; }
+    .rsheet .wi::before { content: ""; position: absolute; left: 0; top: 13px; width: 7px; height: 7px; border: 1.4px solid #0C0C0E; border-radius: 50%; }
+    .rsheet .how { margin-top: 36px; }
+    .rsheet .how .label { margin-bottom: 12px; }
+    .rsheet .hlx { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; line-height: 1.55; color: #3B3B41; padding: 9px 0; border-top: 1px solid #E2E1DC; border-bottom: 1px solid #E2E1DC; }
+    .rsheet .rec { margin-top: 34px; padding: 18px 22px; border: 1.5px solid #0C0C0E; border-left: 6px solid #0C0C0E; border-radius: 4px; }
+    .rsheet .rec .label { margin-bottom: 9px; }
+    .rsheet .rec .t { font-family: 'Lora', Georgia, serif; font-size: 16.5px; line-height: 1.5; color: #0C0C0E; }
+    .rsheet .src { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; line-height: 1.7; color: #7C7C83; margin-top: 34px; padding-top: 18px; border-top: 1.5px solid #0C0C0E; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .rsheet .src b { color: #3B3B41; }
 
-    .v5-brief-cluster {
-      background: rgba(0,0,0,0.3);
-      border-left: 2px solid var(--indigo);
-      padding: 1rem 1.3rem;
-      margin: 0.8rem 0;
-      border-radius: 0 8px 8px 0;
-    }
-    .v5-brief-cluster .c-tag {
-      font-family: var(--mono); font-size: 0.7rem;
-      color: var(--indigo-bright); letter-spacing: 0.12em;
-      text-transform: uppercase; font-weight: 700;
-      margin-bottom: 0.5rem; display: block;
-    }
-    .v5-brief-cluster .c-count {
-      font-family: var(--mono); font-size: 0.78rem;
-      color: var(--text-3); float: right; font-weight: 600;
-    }
-    .v5-brief-cluster blockquote {
-      margin: 0.3rem 0; font-style: italic;
-      font-family: var(--sans-tight); font-size: 1rem;
-      color: var(--text-2); line-height: 1.4;
-    }
-
-    .v5-brief-table {
-      width: 100%; border-collapse: collapse; margin: 1rem 0 1.4rem;
-      font-size: 0.92rem;
-    }
-    .v5-brief-table th {
-      text-align: left; font-family: var(--mono);
-      font-weight: 700; font-size: 0.72rem;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--text-3);
-      padding: 0.6rem 0.7rem;
-      border-bottom: 2px solid var(--border);
-    }
-    .v5-brief-table td {
-      padding: 0.7rem; border-bottom: 1px solid var(--border);
-      color: var(--text-2); vertical-align: top;
-    }
-    .v5-brief-table .num { font-variant-numeric: tabular-nums; font-weight: 600; }
-    .v5-brief-table .accent { color: var(--indigo-bright); font-weight: 700; }
-    .v5-brief-table .you-row { background: rgba(99,102,241,0.06); }
-    .v5-brief-table .you-row td { color: var(--text); }
-
-    .v5-action-list { list-style: none; padding: 0; margin: 1rem 0; counter-reset: action; }
-    .v5-action-list li {
-      counter-increment: action; position: relative;
-      padding: 1rem 1rem 1rem 3.2rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .v5-action-list li::before {
-      content: counter(action);
-      position: absolute; left: 0; top: 1rem;
-      width: 2.3rem; height: 2.3rem; border-radius: 50%;
-      background: var(--grad-cta); color: #FFF;
-      font-family: var(--sans-tight); font-weight: 800;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.85rem;
-      box-shadow: 0 0 20px -4px var(--indigo);
-    }
-    .v5-action-list .a-title {
-      font-family: var(--sans-tight); font-weight: 700;
-      color: var(--text); margin-bottom: 0.3rem; font-size: 1rem;
-    }
-    .v5-action-list .a-meta {
-      font-family: var(--mono); font-size: 0.74rem;
-      color: var(--text-3); letter-spacing: 0.04em;
-    }
-    .v5-action-list .a-meta span { margin-right: 1rem; }
-    .v5-action-list .a-meta strong { color: var(--indigo-bright); }
-
-    .v5-brief-foot {
-      border-top: 2px solid var(--border); margin-top: 3rem;
-      padding-top: 1.4rem;
-      display: flex; justify-content: space-between;
-      font-family: var(--mono); font-size: 0.76rem;
-      color: var(--text-3); flex-wrap: wrap; gap: 1rem;
-    }
-    .v5-brief-foot strong { color: var(--text); }
+    .sample-cta { max-width: 880px; margin: 0 auto; padding: 1rem 2rem 5rem; text-align: center; }
+    .sample-cta .cta-row { justify-content: center; margin-top: 1.4rem; }
+    .sample-cta p.more { margin-top: 1.6rem; font-size: .88rem; color: var(--t3, #9a9aa0); }
+    .sample-cta p.more a { color: #E3A44A; }
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Sample Atlas Brief · LoopWorker",
-    "description": "Anonymized example of a LoopWorker Atlas-tier Sprint deliverable. Demonstrates structure, depth, and ranked-action format.",
-    "publisher": { "@type": "Organization", "name": "LoopWorker", "url": "https://www.loopworker.com/" }
-  }
-  </script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
 
-  <nav class="v5-nav">
-    <div class="v5-nav-inner">
-      <a href="/" class="v5-logo">
-        <span class="v5-logo-mark">L</span>
+  <!-- NAV -->
+  <nav class="v6-nav">
+    <div class="nav-inner">
+      <a href="/" class="logo">
+        <span class="logo-mark">L</span>
         LoopWorker
       </a>
-      <div class="v5-nav-links">
-        <a href="/sprint.html">Sprints</a>
-        <a href="/pricing.html">Pricing</a>
-        <a href="/case-studies.html">Customers</a>
-        <a href="/blog/">Signals</a>
-        <a href="/about.html">About</a>
-        <a href="/book.html" class="v5-nav-cta" data-track="Nav Book CTA">Book a Review</a>
+      <div class="nav-links">
+        <a href="/#how">How it works</a>
+        <a href="/#reads">Recent Reads</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/#send-question" class="nav-cta" data-track="Nav Send Question">Get the Read</a>
       </div>
-      <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+      <button type="button" class="hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <div class="v5-mobile-nav" id="mobileNav">
-      <a href="/sprint.html">Sprints</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/case-studies.html">Customers</a>
-      <a href="/blog/">Signals</a>
-      <a href="/about.html">About</a>
-      <a href="/book.html" class="v5-nav-cta">Book a Review</a>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="/#how">How it works</a>
+      <a href="/#reads">Recent Reads</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#send-question" class="nav-cta">Get the Read</a>
     </div>
   </nav>
 
   <main id="main">
 
     <!-- INTRO -->
-    <section class="v5-brief-shell">
-      <div class="v5-brief-intro">
-        <span class="v5-eyebrow">Sample · See what you get</span>
-        <h1>Here's what you <span class="grad-text">actually get back.</span></h1>
-        <p>A clear PDF. Top of page: the call we'd make. Below: ranked next moves with proof for every line. Skim it in 4 minutes.</p>
-        <div class="v5-brief-meta-row">
-          <span><strong>Read time:</strong> 4 minutes</span>
-          <span><strong>Real value:</strong> $8,000</span>
-          <span><strong>Tier:</strong> Atlas · 10 days</span>
-        </div>
+    <section class="sample-hero">
+      <span class="eyebrow">Sample · real engagement, client redacted</span>
+      <h1>This is what <span class="hl">comes back.</span></h1>
+      <p class="section-sub">A real Decision Read, delivered to the chief marketing officer of an Am Law 200 firm in July 2026. Names redacted, nothing else changed. The verdict sits on top, the evidence under it, and one dated call I can be graded on at the bottom.</p>
+      <div class="sample-meta">
+        <span>Format · <b>Threat Read</b></span>
+        <span>Delivered · <b>July 2026</b></span>
+        <span>Read time · <b>4 minutes</b></span>
       </div>
-
-      <!-- 3-CARD WHAT'S INSIDE -->
-      <div class="v5-brief-whats-inside">
-        <div class="v5-whats-card">
-          <div class="v5-whats-num">01</div>
-          <h4>The call</h4>
-          <p>One paragraph. What we'd do if it were our business.</p>
-        </div>
-        <div class="v5-whats-card">
-          <div class="v5-whats-num">02</div>
-          <h4>The proof</h4>
-          <p>Real numbers from your market. Reviews, ads, search, pricing.</p>
-        </div>
-        <div class="v5-whats-card">
-          <div class="v5-whats-num">03</div>
-          <h4>The next moves</h4>
-          <p>Ranked list of what to do, by when, by whom. Step-by-step.</p>
-        </div>
-      </div>
-
-      <!-- THE BRIEF -->
-      <article class="v5-brief">
-        <span class="v5-brief-stamp">Sample · Anonymized</span>
-
-        <header class="v5-brief-header">
-          <span class="tag">Atlas · Decision Brief #247</span>
-          <h2>Should <span class="grad-text">[Client]</span> reposition for the enterprise buyer before the Q3 raise?</h2>
-          <div class="v5-brief-meta">
-            <span><strong>Engagement:</strong> Atlas · 10 days</span>
-            <span><strong>Industry:</strong> B2B SaaS · workflow automation</span>
-            <span><strong>Filed:</strong> 11 days before Q3 board</span>
-          </div>
-        </header>
-
-        <section>
-          <h3>The Question Behind the Question</h3>
-          <p class="lede">Client framed this as a positioning question. The signals say it's a pricing-page and proof-asset question. The reposition is real but premature, the buyer is reading you wrong, not finding you wrong.</p>
-          <p>Submitted question: <em>"Should we drop SMB messaging and rebuild the homepage around mid-market and enterprise?"</em></p>
-          <p>The market is already pulling the brand mid-market. Pricing tier 3 closes 4.2x more revenue than tiers 1+2 combined. But three competitors that ran the same play in 2024-2025 lost 38-52% of their organic search traffic in the 90 days post-reposition. The bridge is buildable without the breakage.</p>
-        </section>
-
-        <div class="v5-brief-verdict">
-          <div class="v-tag">Verdict · the line</div>
-          <h4>Don't reposition. Restage.</h4>
-          <p>Keep the existing homepage. Build a separate <em>/enterprise</em> path with mid-market proof, ROI calculator, and human-routed booking. Sequence: ship by week 3, route 30% of paid traffic through it by week 6, re-evaluate full reposition at Q4 board with conversion data instead of vibes.</p>
-        </div>
-
-        <section>
-          <h3>What the Signals Said · 4 sources</h3>
-          <div class="v5-brief-signal-grid">
-            <div class="v5-brief-signal">
-              <span class="n">2,147</span>
-              <span class="l">Competitor ad creatives</span>
-              <span class="d">7 direct competitors · 90 days · Meta, LinkedIn, Google Ads.</span>
-            </div>
-            <div class="v5-brief-signal">
-              <span class="n">1,308</span>
-              <span class="l">Review fragments parsed</span>
-              <span class="d">G2 + Capterra + TrustRadius. Filtered to client's category + 3 closest competitors.</span>
-            </div>
-            <div class="v5-brief-signal">
-              <span class="n">14,650</span>
-              <span class="l">Monthly searches mapped</span>
-              <span class="d">38 buyer-language keywords ranked by intent + difficulty. Bottom-funnel only.</span>
-            </div>
-            <div class="v5-brief-signal">
-              <span class="n">22</span>
-              <span class="l">Pricing pages tear-down</span>
-              <span class="d">Direct + adjacent. Tier structures, anchor logic, social proof placement.</span>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h3>Customer Language · friction clusters</h3>
-          <div class="v5-brief-cluster">
-            <span class="c-tag">Cluster 1 · Buying-confidence gap</span>
-            <span class="c-count">487 fragments · 37.2%</span>
-            <blockquote>"Looked great in the demo. Then I couldn't tell whether my team would actually use it. No proof from a team my size."</blockquote>
-            <blockquote>"We need to see other ops leads using this, not founders."</blockquote>
-          </div>
-          <div class="v5-brief-cluster">
-            <span class="c-tag">Cluster 2 · Pricing-tier confusion</span>
-            <span class="c-count">312 fragments · 23.9%</span>
-            <blockquote>"Couldn't figure out if we were the Pro or Business tier. Picked Pro and missed three of the things we needed."</blockquote>
-          </div>
-          <div class="v5-brief-cluster">
-            <span class="c-tag">Cluster 3 · Onboarding-stall risk</span>
-            <span class="c-count">211 fragments · 16.1%</span>
-            <blockquote>"Loved it in week one. Stalled out before we'd wired it to the rest of our stack. Cancelled at month two."</blockquote>
-          </div>
-          <p class="lede">Notice what's <em>not</em> here. Zero clusters around "wrong segment" or "wish you served bigger teams." The repositioning hypothesis isn't validated in customer language, pricing and proof are.</p>
-        </section>
-
-        <section>
-          <h3>Competitor Pattern · pricing-page architecture</h3>
-          <table class="v5-brief-table">
-            <thead>
-              <tr><th>Comp</th><th>Tier 1</th><th>Anchor</th><th>Top</th><th>Proof above pricing?</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>A (mkt leader)</td><td class="num">$49/mo</td><td class="num accent">$249/mo ★</td><td>Custom</td><td>Yes · 4 logos</td></tr>
-              <tr><td>B (#2)</td><td class="num">$29/mo</td><td class="num accent">$199/mo ★</td><td class="num">$499/mo</td><td>Yes · case-study</td></tr>
-              <tr><td>C (rising)</td><td>Free</td><td class="num accent">$159/mo ★</td><td>Custom</td><td>Yes · 2 quotes</td></tr>
-              <tr><td>D (legacy)</td><td class="num">$89/mo</td><td class="num">$229/mo</td><td>Custom</td><td>No</td></tr>
-              <tr class="you-row"><td><strong>You</strong></td><td class="num">$39/mo</td><td class="num">$129/mo</td><td class="num">$329/mo</td><td>No</td></tr>
-            </tbody>
-          </table>
-          <p>Anchor tier is $100/mo below the field. The buyer reads the gap as risk, not value. Adding $99 + better proof at anchor tier will <em>raise</em> conversion, not drop it.</p>
-        </section>
-
-        <section>
-          <h3>Ranked Action Sheet · what to ship, in order</h3>
-          <ol class="v5-action-list">
-            <li>
-              <div class="a-title">Build /enterprise as a parallel path</div>
-              <div class="a-meta">
-                <span><strong>By:</strong> Week 3</span>
-                <span><strong>Effort:</strong> 1 designer · 1 PM · 1 eng (light)</span>
-                <span><strong>Owner:</strong> growth lead</span>
-              </div>
-            </li>
-            <li>
-              <div class="a-title">Reprice anchor tier to $229 + bundle 2 integrations free</div>
-              <div class="a-meta">
-                <span><strong>By:</strong> Week 4</span>
-                <span><strong>Effort:</strong> Stripe + comms only</span>
-                <span><strong>Owner:</strong> CEO sign-off · CRO execute</span>
-              </div>
-            </li>
-            <li>
-              <div class="a-title">Ship 4 proof assets (1 video, 3 written case studies) above pricing table</div>
-              <div class="a-meta">
-                <span><strong>By:</strong> Week 5</span>
-                <span><strong>Effort:</strong> 2 customer interviews · 1 production day</span>
-              </div>
-            </li>
-            <li>
-              <div class="a-title">Add team-size selector on pricing page → routed pricing display</div>
-              <div class="a-meta">
-                <span><strong>By:</strong> Week 6</span>
-                <span><strong>Effort:</strong> 1 eng · 2 days</span>
-              </div>
-            </li>
-            <li>
-              <div class="a-title">Onboarding email retrofit · address Cluster 3 stall risk by day 14</div>
-              <div class="a-meta">
-                <span><strong>By:</strong> Week 7</span>
-                <span><strong>Effort:</strong> 1 lifecycle marketer · 5 emails</span>
-              </div>
-            </li>
-            <li>
-              <div class="a-title">Re-evaluate full reposition Q4 board · with the above as evidence</div>
-              <div class="a-meta">
-                <span><strong>By:</strong> Q4 board prep</span>
-                <span><strong>Effort:</strong> dashboard reading</span>
-              </div>
-            </li>
-          </ol>
-        </section>
-
-        <section>
-          <h3>What This Sprint Did Not Cover</h3>
-          <p>Brand identity refresh, hiring strategy, product roadmap. Out of scope. Three follow-on signals worth tracking next quarter:</p>
-          <p>→ Whether competitor B's recent series-C will push them into enterprise, opens lane below them.<br>
-          → Whether the Cluster 2 pricing confusion drops 50%+ after restage (validates the diagnosis).<br>
-          → Whether your two largest customers (Tier 3) want what looks like enterprise procurement support, that would invert the question.</p>
-        </section>
-
-        <footer class="v5-brief-foot">
-          <div><strong>LoopWorker</strong> · Atlas brief · prepared by Alex Lamb</div>
-          <div>Filed 11d before Q3 board · source-backed recommendation</div>
-        </footer>
-      </article>
     </section>
 
-    <!-- CLOSING -->
-    <section class="v5-closing">
-      <div class="v5-closing-grid">
-        <div class="v5-closing-main">
-          <span class="v5-eyebrow-plain">Ready to file your question</span>
-          <h2>Bring the decision. We'll find the <span class="grad-text">signals.</span></h2>
-          <p>Atlas is the standard tier: 10 days, full brief, ranked actions. Signal Snapshot is only for a narrow 48-hour signal check.</p>
-          <div class="v5-cta-row">
-            <a href="/book.html?intent=atlas" class="v5-btn v5-btn-primary" data-track="Sample Brief Book">Book a 30-min review</a>
-            <a href="/sprint.html" class="v5-btn v5-btn-ghost" data-track="Sample Brief Sprint">See the Sprint ladder</a>
-          </div>
-          <div class="v5-closing-note">14-day quality standard · 2 active Atlas at a time</div>
+    <!-- ANATOMY -->
+    <section class="anatomy">
+      <div class="a-item marks">
+        <span class="a-num">01</span>
+        <h3>The claim</h3>
+        <p>The answer in one paragraph. First thing on the page, not buried on page nine.</p>
+      </div>
+      <div class="a-item marks">
+        <span class="a-num">02</span>
+        <h3>The evidence</h3>
+        <p>Numbered and sourced. When the facts read two ways, the other reading is on the page too.</p>
+      </div>
+      <div class="a-item marks">
+        <span class="a-num">03</span>
+        <h3>On record</h3>
+        <p>One dated call I can be wrong about, with the grade date attached. Hold me to it.</p>
+      </div>
+    </section>
+
+    <!-- THE DOCUMENT -->
+    <div class="sheet-wrap">
+      <article class="rsheet" aria-label="Sample Decision Read, redacted">
+
+        <div class="redact">Sample Decision Read · client, rival firms, market, and all partner names redacted</div>
+
+        <div class="top">
+          <div class="wm">LoopWorker &middot; Threat Read</div>
+          <div class="rt">Prepared for the CMO of an Am Law 200 firm [redacted]<br>July 2026</div>
         </div>
 
-        <div class="v5-email-card">
-          <div class="v5-email-eyebrow">Browse the ladder</div>
-          <h4>Signal Snapshot, Competitive Intelligence Brief, Atlas, OS.</h4>
-          <p>Four tiers. One method. Pick the depth that fits the decision on your desk.</p>
-          <div class="v5-mt-sm">
-            <a href="/sprint.html" class="v5-btn v5-btn-ghost" data-track="Sample Brief Sprints">See Sprint ladder →</a>
+        <span class="label claimlabel">The claim</span>
+        <div class="claim">A rival is turning three of your private equity partners into the market's middle-market PE brand. Your hiring since October is roughly even, so the ground you are losing is not the bench. <b>It is the story the next rainmaker and the next fund read before they choose.</b></div>
+        <div class="sub">The story that names the market's mid-market PE leader is what pulls the next portable book, and what tilts a fund's read when both firms chase one mandate. The rival is marketing that story, on a platform it built partly from your departed partners, after every hire. Below is what I read from it, and the call I will be graded on.</div>
+
+        <div class="sec">
+          <span class="label">The evidence</span>
+          <div class="ei"><span class="m">01</span><div><b>A chain, not scattered churn.</b> A senior partner left the client's PE group for the rival in October 2025. Four months later two more from his group followed him, joining, in the rival's own announcement, on the heels of the first. One partner first, then two of his group behind him. That is the signature of a targeted pull, not random attrition.</div></div>
+          <div class="ei"><span class="m">02</span><div><b>The single largest feeder of a multi-firm build.</b> The rival also took PE partners from two elite national firms and a third large firm in the same window. Ten partners joined it in 2026, and it was the No. 1 Am Law 200 firm for lateral hires in its state in 2025. Across that build, the client supplied more of the rival's PE partners than any other single firm, and the only connected group.</div></div>
+          <div class="ei"><span class="m">03</span><div><b>The bench is rebuilt and roughly even.</b> This is not a firm bleeding out. The client's corporate group added about ten attorneys since October 2025, including a new Private Equity Finance chair hired from a global firm and a senior M&amp;A partner, on top of sixteen new partners named for 2026. On headcount, the raid is close to matched.</div></div>
+          <div class="ei"><span class="m">04</span><div><b>The telling is not even at all.</b> The rival runs a press release after nearly every hire and markets a top-10 league-table practice and a $40B+ deal-value platform. The client's equal build is nearly silent next to it. In a market where recruiters, reporters and deal teams name the leader before a mandate is ever pitched, that description is the asset, and right now the rival is the one writing it.</div></div>
+          <div class="ei"><span class="m">05</span><div><b>The one claim the rival cannot buy.</b> The client built its office in this market from three lawyers to well over a hundred in seven years, around exactly this middle-market PE and corporate lane. The rival is assembling its version in quarters. Having been the market's middle-market PE bench for nearly a decade is available to the client and to no lateral-built rival. That is the ground the rival is renting.</div></div>
+
+          <div class="take">
+            <span class="label">The hinge</span>
+            <div class="t">On bodies, this is close to a draw: you replaced roughly what you lost. On story, it is not close. The rival narrates every hire into a middle-market PE brand, and a brand is what a portable book weighs before it moves and what a fund reads before it short-lists. <b>You are winning the part that is countable and losing the part that compounds.</b></div>
           </div>
         </div>
+
+        <div class="pos">
+          <span class="label">Where it leaves you</span>
+          <div class="pi"><span class="k">Recruiting</span><div>The next PE rainmaker weighing the two firms reads the rival as the market's mid-market PE place, because that is the only story being told. Your hiring since October is real and roughly even, but it is unnarrated, so it does not reach the candidate as a reason to choose you. Each book that picks the rival is revenue that chose a story over a scoreboard.</div></div>
+          <div class="pi"><span class="k">Pitches</span><div>When a fund short-lists both firms for a mid-market mandate, the tie-breaker on the close ones is which firm the market already calls the leader. That naming is uncontested at the moment, which means it is being decided in the rival's favor by default.</div></div>
+          <div class="pi"><span class="k">Tempo</span><div>The rival added a PE lateral roughly monthly from October to March and marketed each one. Every cycle the story goes unanswered, the name sets a little harder, and it sets before the next lateral or mandate is ever in play.</div></div>
+        </div>
+
+        <div class="firm">
+          <span class="label">The honest other reading</span>
+          <div class="t"><b>The client holds the tenure and the rebuilt bench. The rival holds the microphone.</b> The same facts read two ways, and the difference is the whole call. Three departures plus a loud rival can mean a positioning contest you can still win on ground you already own. It can also mean the first months of a talent drift that even hiring numbers mask for a year.</div>
+          <div class="field">I take the first position and stake the dated call below on it. If you read it the second way, the moves change, and I would rather say that here than sell you the version that reads cleaner.</div>
+        </div>
+
+        <div class="watch">
+          <span class="label">What to watch</span>
+          <div class="wi">Whether the rival announces another PE lateral before year-end, and whether any of them come again from the client's bench. A fourth from that bench moves this from pattern to campaign.</div>
+          <div class="wi">Whether a counter-narrative appears: a middle-market PE platform claim from the client, a ranking push, or a lateral reclaimed from the rival. Its absence is the gap staying open.</div>
+          <div class="wi">Whether the next fund both firms pitch names the rival as the market's middle-market PE leader in its own words. That is the narrative pricing in.</div>
+        </div>
+
+        <div class="how">
+          <span class="label">How I know</span>
+          <div class="hlx">Every move here sits on the public record the reader already works from: firm releases, national legal trade press, the 2026 laterals report. The call is checkable against your own sources. The judgment on top of it is mine.</div>
+        </div>
+
+        <div class="rec">
+          <span class="label">On record</span>
+          <div class="t">By December 31, 2026, the rival keeps publicly marketing its middle-market PE build while the client mounts no comparable public answer, so the narrative lead widens even though hiring stays roughly even. <b>I am wrong if, before year-end, the client stakes a visible middle-market PE positioning claim of its own or pulls a lateral back from the rival. The fastest way to make me wrong is to answer it. Grade me on it.</b></div>
+        </div>
+
+        <div class="src"><span><b>Sources:</b> rival firm press releases for each lateral [names redacted] &middot; national legal trade press coverage of each move &middot; the 2026 laterals report &middot; the client's own hiring announcements &middot; league-table and deal-value figures from the rival's practice pages. All dated and re-pullable.</span><span>Alex &middot; LoopWorker &middot; loopworker.com</span></div>
+
+      </article>
+    </div>
+
+    <!-- CTA -->
+    <section class="sample-cta">
+      <span class="eyebrow">Your question next</span>
+      <h2>Bring me the one you keep <span class="hl">circling.</span></h2>
+      <div class="cta-row">
+        <a href="/#send-question" class="btn btn-primary" data-track="Sample Get The Read">Get the Read →</a>
+        <a href="/downloads/read-threat-redacted.pdf" download class="btn btn-ghost" data-track="Download Threat Read">Download this Read (PDF) ↓</a>
       </div>
+      <p class="more">Three more redacted Reads, three different verticals, on the <a href="/#reads">Recent Reads</a> shelf.</p>
     </section>
 
   </main>
 
-  <footer class="v5-foot">
-    <div class="v5-foot-inner">
-      <div class="v5-foot-logo">LoopWorker</div>
-      <p>Evidence before execution.</p>
-      <p>© 2026 · <a href="/sprint.html">Sprints</a> · <a href="/case-studies.html">Customers</a> · <a href="/blog/">Signals</a> · <a href="/about.html">About</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
-      <p class="v5-foot-small">alex@loopworker.com · <a href="https://instagram.com/loopworker">@loopworker</a></p>
+  <!-- FOOTER -->
+  <footer class="v6-foot">
+    <div class="foot-inner">
+      <div class="foot-logo">LoopWorker</div>
+      <p>One question. One ranked answer. Every claim graded and sourced.</p>
+      <p>© 2026 · <a href="/sample-brief.html">Sample</a> · <a href="/#pricing">Pricing</a> · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a></p>
+      <p class="foot-small">alex@loopworker.com</p>
     </div>
   </footer>
 
-  <script defer src="/v5-revenue.js"></script>
 </body>
 </html>

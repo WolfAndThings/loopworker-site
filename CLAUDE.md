@@ -11,7 +11,8 @@ Positioning pivoted May 21 2026 from DFY brand photography → market intelligen
 | File | Page |
 |------|------|
 | `index.html` | Homepage — The Decision Read (Jul 16: question-voice hero, 4 buyer-question cards, Recent Reads proof section w/ 3 downloadable redacted sample PDFs, 8 sections total). Source copy: `home-decision-read.html` (kept in sync) |
-| `downloads/` | 3 redacted sample Reads (BW editorial style, Lora/WorkSans/JetBrains Mono): `read-law-redacted` (RWI Law growth read), `read-coach-redacted` (Jocelyn audit), `read-brand-redacted` (Gesine exec summary). All verified zero client identifiers in HTML + PDF. Originals: `client_reads/rwi_law/`, `Projects/Jocelyn/audit/`, `Projects/Gesine/sprint/`. NEVER regenerate from originals without re-running the full redaction verification |
+| `downloads/` | 4 redacted sample Reads (BW editorial style, Lora/WorkSans/JetBrains Mono): `read-law-redacted` (RWI Law growth read), `read-coach-redacted` (Jocelyn audit), `read-brand-redacted` (Gesine exec summary), `read-threat-redacted` (Benesch/Honigman Threat Read; original: `Memory/Strategy/benesch_hammerstrom_read/`). All verified zero client identifiers in HTML + PDF. NEVER regenerate from originals without re-running the full redaction verification |
+| `sample-brief.html` | Sample Read page (hero "See a sample" + footer link). Rebuilt Jul 16 2026 in V6: real redacted Benesch Threat Read embedded inline + PDF download. REPLACED the fabricated "Decision Brief #247" placeholder — never restore it |
 | `sprint.html` | The Sprint — full product walkthrough + 4-tier pricing |
 | `pricing.html` | Pricing — Signal Snapshot/Competitive Intelligence Brief/Atlas/Market Operating System + Systems Retainer |
 | `services.html` | Implementation / signal environments |
