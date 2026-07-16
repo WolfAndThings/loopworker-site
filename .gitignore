@@ -14,5 +14,6 @@ images/case_studies/references/
 # v5 rebuild scratch — local only, never deploy
 _backup_pre_v5/
 funnel_audit/
+distribution/
 *.draft
 *.html.draft

@@ -9,7 +9,7 @@ Positioning pivoted May 21 2026 from DFY brand photography → market intelligen
 |------|------|
 | `index.html` | Homepage (Market Intelligence for Modern Brands) |
 | `sprint.html` | The Sprint — full product walkthrough + 4-tier pricing |
-| `pricing.html` | Pricing — Surface/Compass/Atlas/Operating System + Systems Retainer |
+| `pricing.html` | Pricing — Signal Snapshot/Competitive Intelligence Brief/Atlas/Market Operating System + Systems Retainer |
 | `services.html` | Implementation / signal environments |
 | `case-studies.html` | Case studies (4 anonymized engagements) |
 | `about.html` | About |
@@ -18,12 +18,14 @@ Positioning pivoted May 21 2026 from DFY brand photography → market intelligen
 | `audit.html` | Standalone audit form |
 | `404.html` | 404 page |
 
-## Sprint ladder (renamed Jun 1 2026)
-- **Surface** — $750 / 48 hours — gateway, surface scan (web + social + 3 next moves)
-- **Compass** — $3,200 / 5 days — competitive read + your strategic answer (leads / launch / X)
-- **Atlas** — $8,000 / 10 days — answer + 3 outlets dialed for your niche
-- **Operating System** — $25,000 / 14 days + 3-month support — data + answer + deep dive + positioning + 90-day social roadmap + execution playbook
-- **Systems Retainer** — $4,500/mo — post-Sprint execution
+## Decision Read ladder (renamed Jul 15 2026 — descriptive names convert better cold; durations synced to live pricing.html)
+Everything is "The Decision Read" at four depths. Guarantee = usefulness, 14-day window, money back. Dated-call wedge REJECTED (see auto-memory `project_loopworker_offer_spine`).
+- **Signal Snapshot** — $750 / 48 hours — gateway, one narrow question, fast second opinion (web + social + 3 next moves)
+- **Competitive Intelligence Brief** — $3,200 / 5 days — competitive read + your strategic answer + 30-min call
+- **Atlas** — $8,000 / 10 days — answer + full decision-grade read (competitor, customer, pricing, market) + call
+- **Market Operating System** — $25,000 / 30 days + 3-month support — Atlas + positioning architecture + 90-day roadmap + execution playbook; billed per milestone
+- **Systems Retainer** — $4,500/mo — post-engagement execution
+- OLD names (do not use, pre Jul 15): Surface→Signal Snapshot, Compass→Competitive Intelligence Brief, Operating System→Market Operating System. Atlas unchanged.
 
 Stripe ledger: `Memory/Code_Scripts/STRIPE_PAYMENT_LINKS.json` (all 5 links click-tested Jun 1 2026, 6/6 verified clean including Operating System).
 

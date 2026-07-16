@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/site-pages.css">
-    <title>Video Clipper — Cut Clips Instantly | LoopWorker</title>
+    <title>Video Clipper, Cut Clips Instantly | LoopWorker</title>
     <meta name="description" content="Upload a video, paste timecodes or let AI find the best moments. Download clips instantly. Free tool from LoopWorker.">
     <link rel="canonical" href="https://www.loopworker.com/clipper.html">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
@@ -261,12 +261,12 @@
         <div class="nav-inner">
             <a href="/" class="nav-logo">LoopWorker</a>
             <ul class="nav-links">
-                <li><a href="/sprint.html">The Sprint</a></li>
+                <li><a href="/sprint.html">Sprints</a></li>
                 <li><a href="/pricing.html" data-track="Nav Pricing">Pricing</a></li>
-                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/case-studies.html">Customers</a></li>
                 <li><a href="/blog/">Signals</a></li>
                 <li><a href="/about.html">About</a></li>
-                <li><a href="/book.html" class="nav-cta" data-track="Nav Book CTA">Book a Call</a></li>
+                <li><a href="/book.html" class="nav-cta" data-track="Nav Book CTA">Book a Review</a></li>
             </ul>
             <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
                 <span></span><span></span><span></span>
@@ -274,12 +274,12 @@
         </div>
     </nav>
     <div class="mobile-nav" id="mobileNav">
-        <a href="/sprint.html">The Sprint</a>
+        <a href="/sprint.html">Sprints</a>
         <a href="/pricing.html" data-track="Mobile Nav Pricing">Pricing</a>
-        <a href="/case-studies.html">Case Studies</a>
+        <a href="/case-studies.html">Customers</a>
         <a href="/blog/">Signals</a>
         <a href="/about.html">About</a>
-        <a href="/book.html" class="nav-cta" data-track="Mobile Nav Book CTA">Book a Call</a>
+        <a href="/book.html" class="nav-cta" data-track="Mobile Nav Book CTA">Book a Review</a>
     </div>
 
     <main id="main">
@@ -301,7 +301,7 @@
                         <strong>Drop a video or click to upload</strong>
                         Upload from your computer
                     </div>
-                    <div class="drop-zone-formats">.mp4 .mov .mkv .webm — max 2GB</div>
+                    <div class="drop-zone-formats">.mp4 .mov .mkv .webm, max 2GB</div>
                     <input type="file" id="fileInput" accept=".mp4,.mov,.mkv,.webm,.avi">
                 </div>
 
@@ -330,7 +330,7 @@
                     <div class="mode-card" id="modeManual" data-track="Clipper Mode Manual">
                         <span class="mode-card-icon">&#9998;</span>
                         <h3>Paste Timecodes</h3>
-                        <p>Already have your timecodes? Paste them in any format — we'll find the start and end times.</p>
+                        <p>Already have your timecodes? Paste them in any format, we'll find the start and end times.</p>
                     </div>
                     <div class="mode-card" id="modeAI" data-track="Clipper Mode AI">
                         <span class="mode-card-icon">&#9733;</span>
@@ -341,7 +341,7 @@
 
                 <!-- Manual panel -->
                 <div class="panel" id="panelManual">
-                    <textarea class="timecode-input" id="timecodeInput" placeholder="Paste timecodes in any format. Examples:&#10;&#10;00:29:11:19 - 00:30:05:08&#10;00:31:13:23 - 00:32:11:10&#10;&#10;Or paste your full edit notes — we'll find the time pairs."></textarea>
+                    <textarea class="timecode-input" id="timecodeInput" placeholder="Paste timecodes in any format. Examples:&#10;&#10;00:29:11:19 - 00:30:05:08&#10;00:31:13:23 - 00:32:11:10&#10;&#10;Or paste your full edit notes, we'll find the time pairs."></textarea>
                     <div class="action-row">
                         <button type="button" class="btn-action" id="btnCutManual">Cut Clips</button>
                     </div>
@@ -408,9 +408,9 @@
                 <div class="footer-meta">Evidence before execution.</div>
             </div>
             <ul class="footer-links">
-                <li><a href="/sprint.html">The Sprint</a></li>
+                <li><a href="/sprint.html">Sprints</a></li>
                 <li><a href="/pricing.html" data-track="Nav Pricing">Pricing</a></li>
-                <li><a href="/case-studies.html">Case Studies</a></li>
+                <li><a href="/case-studies.html">Customers</a></li>
                 <li><a href="/blog/">Signals</a></li>
                 <li><a href="/about.html">About</a></li>
                 <li><a href="/privacy.html">Privacy</a></li>
@@ -551,11 +551,11 @@
                     progressLabel.textContent = 'Transcribing...';
                     startPolling();
                 } catch (e) {
-                    showError(uploadError, 'Upload failed — unexpected response');
+                    showError(uploadError, 'Upload failed, unexpected response');
                 }
             });
 
-            xhr.addEventListener('error', () => showError(uploadError, 'Upload failed — network error'));
+            xhr.addEventListener('error', () => showError(uploadError, 'Upload failed, network error'));
             xhr.open('POST', API + '/upload');
             xhr.send(formData);
         }
@@ -729,7 +729,7 @@
                     card.innerHTML = `
                         <div class="clip-card-header">
                             <span class="clip-card-title">${clip.title}</span>
-                            <span class="clip-card-time">${clip.start} — ${clip.end}</span>
+                            <span class="clip-card-time">${clip.start}, ${clip.end}</span>
                         </div>
                         ${clip.reason ? `<div class="clip-card-reason">${clip.reason}</div>` : ''}
                     `;

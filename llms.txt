@@ -53,6 +53,16 @@ Not for: org-wide transformations, M&A advisory, mass-market survey research, so
 - For service businesses · https://www.loopworker.com/for/services.html
 - For creators + founder-led brands · https://www.loopworker.com/for/creators.html
 
+## Guides and Signals posts
+- Best Free Photo Editor for Small Business · https://www.loopworker.com/blog/photo-editing-apps-small-business.html · Free editors that replace a Photoshop subscription for ~90% of small business work; do not buy Photoshop.
+- Instagram Hashtag Strategy 2026 · https://www.loopworker.com/blog/instagram-hashtag-strategy-2026.html · Hashtags no longer drive reach; keyword-rich captions (Instagram SEO), Reels, and saves/shares/sends do.
+- Content Creation Packages · https://www.loopworker.com/blog/content-creation-packages-small-business.html · What content packages ($500-$10,000/mo) actually include and where small businesses overpay.
+- 100 Free AI Prompts for Small Business · https://www.loopworker.com/blog/free-ai-prompts-for-small-business.html · Copy-paste prompts for marketing, sales, and ops that do real work.
+- Restaurant Promo Calendar · https://www.loopworker.com/blog/restaurant-seasonal-marketing.html · Month-by-month promotional calendar that fills slow nights.
+- How to Hire a Content Marketer · https://www.loopworker.com/blog/how-to-hire-content-marketer.html · Writer vs marketer, the screening questions, what to pay, and a 30-day paid trial.
+- Time to Value · https://www.loopworker.com/blog/time-to-value.html · The signup-to-first-win gap that decides who churns, and how to shorten it.
+- Retention Cohorts · https://www.loopworker.com/blog/retention-cohorts.html · How to read the retention curve (declining, flattening, smiling) that predicts churn.
+
 ## Key definitions
 - Signal intelligence: pulling visible public market evidence (scraped competitor pages, ads, search, pricing pages, customer language) into a working view before making positioning, pricing, proof, channel, or execution decisions.
 - Decision brief: a short PDF document that ranks a business's next move and shows the evidence behind every recommendation. Not a research report. Not a deck.

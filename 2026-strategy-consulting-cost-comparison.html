@@ -11,14 +11,14 @@
   <meta property="og:url" content="https://www.loopworker.com/2026-strategy-consulting-cost-comparison.html">
   <meta property="og:title" content="2026 Strategy Consulting Cost Comparison · 11 Firms Ranked">
   <meta property="og:description" content="Cost ranges + timelines for McKinsey, BCG, Bain, Big 4, and alternatives. Open data, free to cite.">
-  <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+  <meta property="og:image" content="https://www.loopworker.com/images/loopworker-og.png">
   <meta name="theme-color" content="#07070C">
   <meta name="color-scheme" content="dark">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/v5-system.css">
+  <link rel="stylesheet" href="/v5-system.css?v=uniform-shell-1">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
 
   <style>
@@ -204,16 +204,29 @@
 
   <nav class="v5-nav">
     <div class="v5-nav-inner">
-      <a href="/" class="v5-logo"><span class="v5-logo-mark">L</span>LoopWorker</a>
+      <a href="/" class="v5-logo">
+        <span class="v5-logo-mark">L</span>
+        LoopWorker
+      </a>
       <div class="v5-nav-links">
         <a href="/sprint.html">Sprints</a>
         <a href="/pricing.html">Pricing</a>
-        <a href="/tools/">Tools</a>
         <a href="/case-studies.html">Customers</a>
-        <a href="/blog/">Signals</a>
+        <a href="/blog/" class="active">Signals</a>
         <a href="/about.html">About</a>
-        <a href="/book.html" class="v5-nav-cta">Book a Call</a>
+        <a href="/book.html" class="v5-nav-cta" data-track="Nav Book CTA">Book a Review</a>
       </div>
+      <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="v5-mobile-nav" id="mobileNav">
+      <a href="/sprint.html">Sprints</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/case-studies.html">Customers</a>
+      <a href="/blog/" class="active">Signals</a>
+      <a href="/about.html">About</a>
+      <a href="/book.html" class="v5-nav-cta">Book a Review</a>
     </div>
   </nav>
 
@@ -401,7 +414,7 @@
         <div class="cmp-firm-section" id="freelance">
           <span class="tag">10 · Alternative</span>
           <h2>Independent strategists</h2>
-          <p class="summary">Solo consultants — often former Big 3 partners, agency strategy directors, or in-house leaders. Highest signal-to-noise. Direct access to senior brain. Limited bandwidth.</p>
+          <p class="summary">Solo consultants, often former Big 3 partners, agency strategy directors, or in-house leaders. Highest signal-to-noise. Direct access to senior brain. Limited bandwidth.</p>
           <div class="cmp-stats">
             <div class="cmp-stat"><div class="l">Cost</div><div class="v">$10K–$80K</div></div>
             <div class="cmp-stat"><div class="l">Timeline</div><div class="v">4–10 weeks</div></div>
@@ -422,7 +435,7 @@
             <div class="cmp-stat"><div class="l">Team size</div><div class="v">1 (Alex)</div></div>
             <div class="cmp-stat"><div class="l">Your time</div><div class="v">2 × 30-min calls</div></div>
           </div>
-          <div class="best-for"><strong>Best for</strong>Single big decisions — pricing, positioning, channel, launches, repositioning · founder-led or growth-stage companies · operators who want evidence over opinion.</div>
+          <div class="best-for"><strong>Best for</strong>Single big decisions, pricing, positioning, channel, launches, repositioning · founder-led or growth-stage companies · operators who want evidence over opinion.</div>
           <div class="skip-if"><strong>Skip if</strong>You need org-wide transformation · F500 board-level work · M&amp;A diligence · audit-firm credibility.</div>
           <div style="margin-top: 1.4rem;">
             <a href="/sprint.html" class="v5-btn v5-btn-primary">See the Sprint ladder →</a>

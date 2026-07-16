@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/site-pages.css">
-    <title>Sprint Kickoff — Welcome | LoopWorker</title>
+    <title>Sprint Kickoff, Welcome | LoopWorker</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
 
     <style>
@@ -163,7 +163,7 @@
                 <span class="eyebrow">◆ Kickoff · Welcome to your Sprint</span>
                 <h1>We've got the payment. <em>Now we need 5 minutes of context</em> to get the audit pointed at the right things.</h1>
                 <p class="lead">This is the only intake form you'll fill out. Two screens, four sections, no fluff. Once you submit, we kick off the scrape today and you'll have a Loom intro from Alex within 24 hours.</p>
-                <span class="kc-tier-confirm" id="tierConfirm" style="display:none;">◆ Payment received · Tier: <strong id="tierName">—</strong></span>
+                <span class="kc-tier-confirm" id="tierConfirm" style="display:none;">◆ Payment received · Tier: <strong id="tierName">✕</strong></span>
 
                 <!-- LOOM INTRO -->
                 <div class="kc-loom-shell">
@@ -181,10 +181,10 @@
             <div class="container">
                 <span class="section-eyebrow">◆ The 5-min intake</span>
                 <h2>Four sections. <em>Direct answers beat polished ones.</em></h2>
-                <p style="color:#999; max-width:680px; margin-bottom:0;">If you're stuck on a question, write "skip" and move on — we'll catch it on the kickoff Zoom. Don't let the form block momentum.</p>
+                <p style="color:#999; max-width:680px; margin-bottom:0;">If you're stuck on a question, write "skip" and move on, we'll catch it on the kickoff Zoom. Don't let the form block momentum.</p>
 
                 <form id="kickoffForm" class="kc-form" action="https://formspree.io/f/xbdpddrn" method="POST">
-                    <input type="hidden" name="_subject" value="Sprint Kickoff — Intake Submitted">
+                    <input type="hidden" name="_subject" value="Sprint Kickoff, Intake Submitted">
                     <input type="hidden" name="source" value="loopworker.com/sprint/kickoff">
                     <input type="hidden" name="tier" id="hiddenTier" value="">
                     <input type="hidden" name="checkout_session_id" id="hiddenSession" value="">
@@ -193,7 +193,7 @@
                     <!-- SECTION 1: BRAND BASICS -->
                     <div class="kc-form-section">
                         <h3>1 · Brand basics</h3>
-                        <p class="sub">Where we'll look first. Public handles only — we don't need passwords for any of this.</p>
+                        <p class="sub">Where we'll look first. Public handles only, we don't need passwords for any of this.</p>
                         <div class="kc-row">
                             <div class="kc-field">
                                 <label for="business_name">Business name</label>
@@ -234,29 +234,29 @@
                         <div class="kc-field">
                             <label>Which tier did you buy?</label>
                             <div class="kc-radios">
-                                <label><input type="radio" name="tier_confirm" value="Compass" required> <span>Compass ($754)</span></label>
+                                <label><input type="radio" name="tier_confirm" value="Competitive Intelligence Brief" required> <span>Competitive Intelligence Brief ($754)</span></label>
                                 <label><input type="radio" name="tier_confirm" value="Atlas"> <span>Atlas ($1,334)</span></label>
-                                <label><input type="radio" name="tier_confirm" value="Operating System"> <span>Operating System ($4,900)</span></label>
+                                <label><input type="radio" name="tier_confirm" value="Market Operating System"> <span>Market Operating System ($4,900)</span></label>
                             </div>
                         </div>
                         <div class="kc-field">
                             <label for="want_most">What do you want most from this audit?</label>
-                            <textarea id="want_most" name="want_most" placeholder="The honest answer. 'I want bookings,' 'I want to stop posting in the dark,' 'I want a calendar I can hand to an operator' — whatever it actually is."></textarea>
+                            <textarea id="want_most" name="want_most" placeholder="The honest answer. 'I want bookings,' 'I want to stop posting in the dark,' 'I want a calendar I can hand to an operator', whatever it actually is."></textarea>
                         </div>
                         <div class="kc-field">
                             <label for="competitors">Which competitors do you watch?</label>
-                            <textarea id="competitors" name="competitors" placeholder="3-8 handles or URLs. Doesn't have to be direct competitors — could be 'brands I admire whose feed I'd want mine to look like.'"></textarea>
+                            <textarea id="competitors" name="competitors" placeholder="3-8 handles or URLs. Doesn't have to be direct competitors, could be 'brands I admire whose feed I'd want mine to look like.'"></textarea>
                         </div>
                         <div class="kc-field">
                             <label for="recent_posts">3 most recent post links you'd want analyzed</label>
-                            <textarea id="recent_posts" name="recent_posts" placeholder="One per line. Posts that worked, didn't work, or that you have questions about — anything you want our eyes on first."></textarea>
+                            <textarea id="recent_posts" name="recent_posts" placeholder="One per line. Posts that worked, didn't work, or that you have questions about, anything you want our eyes on first."></textarea>
                         </div>
                     </div>
 
                     <!-- SECTION 3: GOALS -->
                     <div class="kc-form-section">
                         <h3>3 · Your goals</h3>
-                        <p class="sub">What we're optimizing for. Be specific — "more bookings" is a different deck from "more reach."</p>
+                        <p class="sub">What we're optimizing for. Be specific, "more bookings" is a different deck from "more reach."</p>
                         <div class="kc-field">
                             <label>Primary goal (pick one)</label>
                             <div class="kc-radios">
@@ -269,11 +269,11 @@
                         </div>
                         <div class="kc-field">
                             <label for="secondary_goal">Secondary goal</label>
-                            <textarea id="secondary_goal" name="secondary_goal" placeholder="The next thing you want this to move. 'Build a real founder voice,' 'open a B2B lane,' 'lock my pricing tier' — whatever's underneath the primary."></textarea>
+                            <textarea id="secondary_goal" name="secondary_goal" placeholder="The next thing you want this to move. 'Build a real founder voice,' 'open a B2B lane,' 'lock my pricing tier', whatever's underneath the primary."></textarea>
                         </div>
                         <div class="kc-field">
                             <label for="blocking">What's blocking you right now?</label>
-                            <textarea id="blocking" name="blocking" placeholder="The honest list. Time, content ideas, camera shyness, no team, content fatigue, conflicting advice — anything in the way."></textarea>
+                            <textarea id="blocking" name="blocking" placeholder="The honest list. Time, content ideas, camera shyness, no team, content fatigue, conflicting advice, anything in the way."></textarea>
                         </div>
                     </div>
 
@@ -303,8 +303,8 @@
                 <!-- CONFIRMATION BLOCK -->
                 <div class="kc-confirm-block" id="confirmBlock">
                     <h3>Got it. Sprint is officially queued.</h3>
-                    <p>Intake received. We're already pulling the live feed. Within 24 hours you'll get a Loom from Alex with the first-pass read — what stood out, what we're prioritizing, where the openings are.</p>
-                    <p>Pick a slot below for the kickoff Zoom — 30 minutes, screen-share, we walk through the brief together so nothing gets lost in translation.</p>
+                    <p>Intake received. We're already pulling the live feed. Within 24 hours you'll get a Loom from Alex with the first-pass read, what stood out, what we're prioritizing, where the openings are.</p>
+                    <p>Pick a slot below for the kickoff Zoom, 30 minutes, screen-share, we walk through the brief together so nothing gets lost in translation.</p>
 
                     <div class="kc-cal-shell">
                         <h3>Lock the kickoff Zoom</h3>
@@ -315,7 +315,7 @@
                     </div>
 
                     <div class="kc-checklist">
-                        <h4>While you wait — the only 3 things to do</h4>
+                        <h4>While you wait, the only 3 things to do</h4>
                         <ul>
                             <li>Watch the 3-min Loom intro at the top of this page (if you haven't yet).</li>
                             <li>Whitelist <strong>alex@loopworker.com</strong> so the deliverable doesn't land in spam.</li>
@@ -354,7 +354,7 @@
         const params = new URLSearchParams(location.search);
         const tier = (params.get('tier') || '').toLowerCase();
         const session = params.get('session') || '';
-        const tierMap = { lite: 'Compass', pro: 'Atlas', full: 'Operating System' };
+        const tierMap = { lite: 'Competitive Intelligence Brief', pro: 'Atlas', full: 'Market Operating System' };
         const tierLabel = tierMap[tier] || '';
         if (tierLabel) {
           document.getElementById('tierName').textContent = tierLabel;
@@ -395,7 +395,7 @@
           } catch (err) {
             btn.textContent = originalText;
             btn.disabled = false;
-            alert('Network error. Please email alex@loopworker.com — we will sort it out.');
+            alert('Network error. Please email alex@loopworker.com, we will sort it out.');
           }
         });
       })();

@@ -82,9 +82,9 @@
       '<div class="v5-sticky-cta-inner">' +
         '<div class="v5-sticky-cta-text">' +
           'Know what to do next.' +
-          '<small>Free 30-min · no pitch</small>' +
+          '<small>30-min decision review</small>' +
         '</div>' +
-        '<a href="/book.html" data-track="Sticky Mobile CTA">Book a call →</a>' +
+        '<a href="/book.html" data-track="Sticky Mobile CTA">Book review →</a>' +
       '</div>';
     document.body.appendChild(cta);
 

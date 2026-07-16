@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://www.loopworker.com/2026-founder-compensation-report.html">
   <meta property="og:title" content="2026 Founder + Executive Compensation by Stage">
   <meta property="og:description" content="Founder + executive comp ranges across pre-seed → Series C, sourced from Pave/Carta/Kruze/AngelList. Free citable dataset.">
-  <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+  <meta property="og:image" content="https://www.loopworker.com/images/loopworker-og.png">
   <meta name="theme-color" content="#07070C">
   <meta name="color-scheme" content="dark">
 
@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/v5-system.css">
+  <link rel="stylesheet" href="/v5-system.css?v=uniform-shell-1">
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
 
@@ -79,16 +79,29 @@
 
   <nav class="v5-nav">
     <div class="v5-nav-inner">
-      <a href="/" class="v5-logo"><span class="v5-logo-mark">L</span>LoopWorker</a>
+      <a href="/" class="v5-logo">
+        <span class="v5-logo-mark">L</span>
+        LoopWorker
+      </a>
       <div class="v5-nav-links">
         <a href="/sprint.html">Sprints</a>
         <a href="/pricing.html">Pricing</a>
-        <a href="/tools/">Tools</a>
         <a href="/case-studies.html">Customers</a>
-        <a href="/blog/">Signals</a>
+        <a href="/blog/" class="active">Signals</a>
         <a href="/about.html">About</a>
-        <a href="/book.html" class="v5-nav-cta">Book a Call</a>
+        <a href="/book.html" class="v5-nav-cta" data-track="Nav Book CTA">Book a Review</a>
       </div>
+      <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="v5-mobile-nav" id="mobileNav">
+      <a href="/sprint.html">Sprints</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/case-studies.html">Customers</a>
+      <a href="/blog/" class="active">Signals</a>
+      <a href="/about.html">About</a>
+      <a href="/book.html" class="v5-nav-cta">Book a Review</a>
     </div>
   </nav>
 
@@ -204,7 +217,7 @@
         <div class="rep-section">
           <h2>Where this fits in a <em>Sprint</em>.</h2>
           <p>Compensation benchmarks alone don't decide a hire. They set the price band. The decision is which role to hire next, in what shape, at what level. That's a signal-mapping problem (positioning + channel mix + product depth) and a category-pattern problem (what your competitors are doing).</p>
-          <p>An Atlas Sprint maps that shape across 10 competitors in 10 days. Compensation data goes inside the brief alongside competitor org charts + open roles signal. <a href="/sprint.html">See the Sprint ladder</a> or <a href="/2026-strategy-consulting-cost-comparison.html">compare to strategy consultants</a>.</p>
+          <p>An Atlas Sprint maps that shape across the relevant competitor set in 10 days. Compensation data goes inside the brief alongside competitor org charts + open roles signal. <a href="/sprint.html">See the Sprint ladder</a> or <a href="/2026-strategy-consulting-cost-comparison.html">compare to strategy consultants</a>.</p>
         </div>
 
         <div class="rep-section">
@@ -223,10 +236,10 @@
       <div class="v5-closing-grid">
         <div class="v5-closing-main">
           <span class="v5-eyebrow-plain">Bigger decision than a hire?</span>
-          <h2>Run a <span class="grad-text">Sprint.</span></h2>
-          <p>Founder-led market intelligence. 10 days. $8,000. Decision brief with ranked next moves.</p>
+          <h2>Book a <span class="grad-text">review.</span></h2>
+          <p>Founder-led market intelligence. Atlas maps the decision in 10 days for $8,000. Decision brief with ranked next moves.</p>
           <div class="v5-cta-row">
-            <a href="/book.html" class="v5-btn v5-btn-primary">Book a free 30-min review →</a>
+            <a href="/book.html" class="v5-btn v5-btn-primary">Book a 30-min review →</a>
             <a href="/sprint.html" class="v5-btn v5-btn-ghost">See the Sprint ladder</a>
           </div>
         </div>

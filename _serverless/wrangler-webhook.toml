@@ -1,0 +1,8 @@
+name = "loopworker-webhook-forwarder"
+main = "webhook-forwarder.js"
+compatibility_date = "2024-11-01"
+
+# Secrets (set after deploy):
+# wrangler secret put STRIPE_WEBHOOK_SECRET --config wrangler-webhook.toml
+# wrangler secret put BEEHIIV_API_KEY --config wrangler-webhook.toml
+# wrangler secret put BEEHIIV_PUBLICATION_ID --config wrangler-webhook.toml

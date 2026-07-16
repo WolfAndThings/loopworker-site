@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/v5-system.css">
+  <link rel="stylesheet" href="/v5-system.css?v=uniform-shell-1">
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
 
@@ -78,10 +78,22 @@
       <div class="v5-nav-links">
         <a href="/sprint.html">Sprints</a>
         <a href="/pricing.html">Pricing</a>
-        <a href="/tools/">Tools</a>
         <a href="/case-studies.html">Customers</a>
+        <a href="/blog/">Signals</a>
         <a href="/about.html">About</a>
+        <a href="/book.html" class="v5-nav-cta" data-track="Nav Book CTA">Book a Review</a>
       </div>
+      <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="v5-mobile-nav" id="mobileNav">
+      <a href="/sprint.html">Sprints</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/case-studies.html">Customers</a>
+      <a href="/blog/">Signals</a>
+      <a href="/about.html">About</a>
+      <a href="/book.html" class="v5-nav-cta">Book a Review</a>
     </div>
   </nav>
 
@@ -97,7 +109,7 @@
 
         <div class="v5-intake-card">
           <form action="https://formsubmit.co/alex@loopworker.com" method="POST">
-            <input type="hidden" name="_subject" value="🔔 Sprint Intake — new customer">
+            <input type="hidden" name="_subject" value="🔔 Sprint Intake, new customer">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_next" value="https://www.loopworker.com/thank-you.html?intake=sprint">
             <input type="hidden" name="_captcha" value="false">
@@ -140,7 +152,7 @@
             <button type="submit" class="v5-form-submit">Start the clock →</button>
           </form>
 
-          <p class="v5-intake-foot">14-day refund if the brief doesn't give you a defensible move. — Alex, LoopWorker.<br>Questions: <a href="mailto:alex@loopworker.com">alex@loopworker.com</a></p>
+          <p class="v5-intake-foot">14-day quality standard: if the brief does not give you a defensible move, we correct the miss or refund it., Alex, LoopWorker.<br>Questions: <a href="mailto:alex@loopworker.com">alex@loopworker.com</a></p>
         </div>
       </div>
     </section>
@@ -156,23 +168,23 @@
   <script>
     const tier = new URLSearchParams(location.search).get('tier') || '3';
     const labels = {
-      '1': 'Surface', '2': 'Compass', '3': 'Atlas', '4': 'Operating System',
-      surface: 'Surface', compass: 'Compass', atlas: 'Atlas', os: 'Operating System',
-      lite: 'Compass', pro: 'Atlas', full: 'Operating System'
+      '1': 'Signal Snapshot', '2': 'Competitive Intelligence Brief', '3': 'Atlas', '4': 'Market Operating System',
+      surface: 'Signal Snapshot', compass: 'Competitive Intelligence Brief', atlas: 'Atlas', os: 'Market Operating System',
+      lite: 'Competitive Intelligence Brief', pro: 'Atlas', full: 'Market Operating System'
     };
     document.getElementById('tierField').value = labels[tier] || labels['3'];
     const tta = {
-      '1': 'Surface · 48 hours · $750',
-      '2': 'Compass · 5 days · $3,200',
+      '1': 'Signal Snapshot · 48 hours · $750',
+      '2': 'Competitive Intelligence Brief · 5 days · $3,200',
       '3': 'Atlas · 10 days · $8,000',
-      '4': 'Operating System · 30 days + 3mo · $25,000',
-      surface: 'Surface · 48 hours · $750',
-      compass: 'Compass · 5 days · $3,200',
+      '4': 'Market Operating System · 30 days + 3mo · $25,000',
+      surface: 'Signal Snapshot · 48 hours · $750',
+      compass: 'Competitive Intelligence Brief · 5 days · $3,200',
       atlas: 'Atlas · 10 days · $8,000',
-      os: 'Operating System · 30 days + 3mo · $25,000',
-      lite: 'Compass · 5 days · $3,200',
+      os: 'Market Operating System · 30 days + 3mo · $25,000',
+      lite: 'Competitive Intelligence Brief · 5 days · $3,200',
       pro: 'Atlas · 10 days · $8,000',
-      full: 'Operating System · 30 days + 3mo · $25,000'
+      full: 'Market Operating System · 30 days + 3mo · $25,000'
     };
     document.getElementById('ttaTier').textContent = tta[tier] || tta['3'];
     document.title = (tta[tier] || tta['3']) + ' · Intake | LoopWorker';

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Four Content Pillars, Kind Bubbles | LoopWorker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: #080808; color: #D4D4D4; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+.audit-container { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+
+.cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding: 4rem 0 2rem; }
+.cover-badge { display: inline-block; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.22em; color: #888; border: 1px solid rgba(255,255,255,0.1); padding: 0.45rem 1rem; border-radius: 100px; margin-bottom: 2rem; }
+.cover-eyebrow { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.24em; color: #6BB6E3; margin-bottom: 1.2rem; font-weight: 600; }
+.cover-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 7vw, 4.4rem); font-weight: 500; color: #FFF; line-height: 1.02; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+.cover-title em { font-style: italic; color: #6BB6E3; font-weight: 400; }
+.cover-lede { font-size: 1.15rem; color: #AAA; line-height: 1.55; max-width: 580px; margin-bottom: 2rem; }
+.cover-meta { font-size: 0.9rem; color: #777; line-height: 1.8; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.06); }
+.cover-meta strong { color: #BBB; font-weight: 600; }
+.cover-bottom { font-size: 0.7rem; color: #555; letter-spacing: 0.15em; text-transform: uppercase; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.04); }
+
+.audit-section { margin-bottom: 4rem; }
+.audit-section .eyebrow { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.22em; color: #6BB6E3; font-weight: 600; margin-bottom: 0.7rem; }
+.audit-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 500; color: #FFF; margin-bottom: 1.2rem; letter-spacing: -0.02em; line-height: 1.15; }
+.audit-section h2 em { font-style: italic; color: #6BB6E3; font-weight: 400; }
+.audit-section h3 { font-size: 1.05rem; font-weight: 600; color: #FFF; margin: 1.4rem 0 0.5rem; letter-spacing: -0.01em; }
+.audit-section p { margin-bottom: 1rem; color: #B5B5B5; font-size: 0.97rem; }
+.audit-section p strong { color: #FFF; font-weight: 600; }
+.audit-section em { color: #D4D4D4; font-style: italic; }
+.audit-divider { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 4rem 0; }
+
+.pull { border-left: 2px solid #6BB6E3; padding: 0.6rem 0 0.6rem 1.4rem; margin: 1.8rem 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.25rem; line-height: 1.45; color: #E8E8E8; }
+.pull span { color: #6BB6E3; font-style: normal; font-family: 'Inter', sans-serif; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; display: block; margin-top: 0.6rem; font-weight: 600; }
+
+/* PILLAR HEAD */
+.pillar { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 2rem 1.8rem; margin-bottom: 1.5rem; }
+.pillar.featured { border-color: rgba(107,182,227,0.3); background: linear-gradient(180deg, rgba(107,182,227,0.05), rgba(107,182,227,0.01)); }
+.pillar .p-num { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: #6BB6E3; font-weight: 700; margin-bottom: 0.6rem; }
+.pillar h3.p-name { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: #FFF; font-weight: 500; line-height: 1.15; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+.pillar h3.p-name em { color: #6BB6E3; font-style: italic; }
+.pillar .p-tag { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: #888; margin-bottom: 1.3rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.pillar .p-tag strong { color: #6BB6E3; font-weight: 600; }
+
+.pillar .p-block { margin-top: 1.3rem; padding-top: 1rem; border-top: 1px dashed rgba(255,255,255,0.05); }
+.pillar .p-block:first-of-type { border-top: none; padding-top: 0; }
+.pillar .p-label { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: #6BB6E3; font-weight: 700; margin-bottom: 0.5rem; }
+.pillar .p-text { font-size: 0.95rem; color: #CCC; }
+.pillar ul { list-style: none; padding: 0; margin-top: 0.4rem; }
+.pillar ul li { padding: 0.4rem 0 0.4rem 1.2rem; font-size: 0.93rem; color: #BBB; position: relative; }
+.pillar ul li::before { content: "·"; color: #6BB6E3; position: absolute; left: 0.4rem; font-weight: 700; }
+
+.pillar .hooks-list li { padding: 0.5rem 0 0.5rem 1.2rem; color: #DDD; font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; line-height: 1.4; }
+.pillar .hooks-list li::before { content: "”"; color: #6BB6E3; position: absolute; left: 0.2rem; font-size: 1.4rem; top: 0.3rem; font-style: italic; }
+
+.pillar .frame-box { background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.04); border-radius: 8px; padding: 1rem 1.2rem; margin: 0.6rem 0; font-size: 0.92rem; color: #BBB; }
+.pillar .frame-box strong { color: #6BB6E3; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; display: block; margin-bottom: 0.3rem; font-weight: 700; }
+.pillar .frame-box code { font-family: 'Cormorant Garamond', serif; font-size: 1.02rem; color: #DDD; font-style: italic; line-height: 1.5; }
+
+.pillar .meta-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 1rem; }
+@media (max-width: 600px) { .pillar .meta-row { grid-template-columns: 1fr; } }
+.pillar .meta-row .meta-cell { background: rgba(0,0,0,0.25); border-radius: 8px; padding: 0.9rem 1rem; }
+.pillar .meta-row .meta-cell .ml { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: #888; font-weight: 600; margin-bottom: 0.3rem; }
+.pillar .meta-row .meta-cell .mv { font-size: 0.92rem; color: #FFF; font-weight: 500; }
+.pillar .meta-row .meta-cell .mv em { color: #6BB6E3; font-style: normal; }
+
+.audit-footer { text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.8rem; color: #555; letter-spacing: 0.1em; text-transform: uppercase; }
+
+@page { size: Letter; margin: 0; }
+@media print {
+    html, body { background: #080808 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; color-adjust: exact; margin: 0 !important; }
+    .audit-container { padding: 0.55in 0.55in 0.55in !important; max-width: 100% !important; }
+    .cover { min-height: 9.5in; padding: 0.2in 0 0; page-break-after: always; }
+    .audit-section { page-break-inside: avoid; break-inside: avoid; margin-bottom: 1.8rem; }
+    .pillar { page-break-inside: avoid; break-inside: avoid; padding: 1.4rem 1.4rem; margin-bottom: 1rem; }
+    .pillar h3.p-name { font-size: 1.6rem; }
+    .pull, .frame-box, .meta-row { page-break-inside: avoid; break-inside: avoid; }
+    .audit-divider { margin: 1.5rem 0; }
+    a { color: inherit; text-decoration: none; }
+}
+
+/* BACK LINK */
+.back-link { position:fixed; top:1.4rem; left:1.4rem; z-index:100; font-family:'Inter',sans-serif; font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; color:#6BB6E3; text-decoration:none; padding:0.55rem 1rem; background:rgba(8,8,8,0.88); border:1px solid rgba(107,182,227,0.35); border-radius:100px; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); transition:all 0.15s; font-weight:600; }
+.back-link:hover { border-color:#6BB6E3; background:rgba(107,182,227,0.12); transform:translateX(-2px); }
+@media print { .back-link { display:none !important; } }
+</style>
+</head>
+<body>
+<a href="00_index.html" class="back-link">← Index</a>
+
+<div class="audit-container">
+
+<div class="cover">
+    <div>
+        <div class="cover-badge">Deep Audit · Module 03</div>
+        <div class="cover-eyebrow">Content Pillars · derived from your 55-post scrape</div>
+        <h1 class="cover-title">Four pillars,<br>two <em>multipliers</em>.</h1>
+        <p class="cover-lede">Four content categories pulled directly from what's already worked on @kind.bubbles in 21 months. Not invented. Not aspirational. Each one is a real cluster of posts your feed already has, with measured performance and a clear job to do. Plus two "lift mechanics" that ride on top of any pillar to multiply reach.</p>
+    </div>
+    <div>
+        <div class="cover-meta">
+            <strong>Prepared for</strong> Chris Steele · Founder, Kind Bubbles<br>
+            <strong>Source</strong> 55 posts on @kind.bubbles · May 2024 → Feb 2026 · Apify scrape<br>
+            <strong>Pillars</strong> Founder &amp; Family · Reaction &amp; Show · Bubble Science · Counter-Position<br>
+            <strong>Multipliers</strong> Collab Tag · Comment Trigger<br>
+            <strong>Cadence</strong> 12–16 posts / month
+        </div>
+        <div class="cover-bottom">Phase 1 · Social Audit + Content</div>
+    </div>
+</div>
+
+
+<!-- DATA-DERIVED NOTE -->
+<div class="audit-section" style="margin-top:2rem;">
+    <div class="eyebrow">How these pillars were chosen</div>
+    <h2>Derived from <em>your feed</em>, not invented.</h2>
+    <p>Every post in the 55-post sample was tagged by what it actually is, origin/family content, reaction footage, science/recipe, counter-position takes, and then performance was measured per tag. The four pillars below are the four clusters that performed and that you already produce. Generic "showcase" posts (n=11, avg 10 likes) got their own bucket, labeled below as the lane to <em>cut</em>.</p>
+    <p>The <strong>two multipliers</strong> at the end of this doc, Collab Tag and Comment Trigger, aren't pillars themselves. They're tactics that ride on top of any pillar to multiply reach. <em>Both are measured top performers in the data.</em></p>
+</div>
+
+<hr class="audit-divider">
+
+<!-- INTRO -->
+<div class="audit-section">
+    <div class="eyebrow">Why these four · what each one does</div>
+    <h2>Each pillar does <em>one specific job</em>.</h2>
+    <p>Each of the four pillars below pulls a different lever:</p>
+    <p><strong>Founder &amp; Family</strong> drives <em>views</em>, origin and dad-daughter content reaches the most people per post. <br>
+    <strong>Reaction &amp; Show</strong> drives <em>likes</em>, kid-face footage is the most likeable content on the feed. <br>
+    <strong>Bubble Science</strong> drives <em>saves</em>, recipe + technique posts are the lane parents come back to. <br>
+    <strong>Counter-Position</strong> drives <em>shares</em>, "what we don't do" content has the highest median views per post.</p>
+    <div class="pull">"A feed running only one of these is a single-instrument band. A feed running all four, with the two multipliers laid on top, is a full record."<span>,  The Pillar Logic</span></div>
+</div>
+
+<hr class="audit-divider">
+
+
+<!-- PILLAR 1, FOUNDER & FAMILY (FEATURED) -->
+<div class="pillar featured">
+    <div class="p-num">Pillar 01 · The Moat</div>
+    <h3 class="p-name">Founder &amp; <em>Family</em></h3>
+    <div class="p-tag"><strong>Job</strong> · Drive views. Build trust. The lane parents actually book on.</div>
+
+    <div class="p-block">
+        <div class="p-label">From the data</div>
+        <p class="p-text"><strong>16 of 55 posts</strong> in the sample fit this pillar (origin, single-dad, daddy-daughter, family business). The highest-watched <em>founder-origin</em> post in the feed, <em>"Why did we start Kind Bubbles?"</em>, sits in this lane at <strong>1,046 video views (7× the median)</strong>. (Two other posts pulled higher views, 1,880 and 1,422, but those sit in Reaction &amp; Show and Counter-Position respectively. This is the highest-watched founder post.) The Sacramento Daddy–Daughter Pop-Up carousels (#5 + #8 in the top 10 by likes) are also in this pillar.</p>
+    </div>
+
+    <div class="p-block">
+        <div class="p-label">Definition</div>
+        <p class="p-text">You, on camera, telling the truth. The biochemist-turned-teacher-turned-single-dad arc. The first event for your daughter. The hard year. The why-we-started story. The Daddy–Daughter event format. This pillar is not about bubbles, it's about <em>the man holding the wand and the kid he started this for</em>.</p>
+    </div>
+
+    <div class="p-block">
+        <div class="p-label">5 example post topics</div>
+        <ul>
+            <li>The afternoon I realized this was a business (face-to-camera reel, 60–90s)</li>
+            <li>What being a single dad taught me about how kids actually play</li>
+            <li>My daughter's first Kind Bubbles event, and what it taught me</li>
+            <li>The next Daddy–Daughter Pop-Up (recurring event format, repeat quarterly)</li>
+            <li>One year of Kind Bubbles, what changed, what didn't</li>
+        </ul>
+    </div>
+
+    <div class="p-block">
+        <div class="p-label">3 example hooks</div>
+        <ul class="hooks-list">
+            <li>Single dad. Bubble guy. Now this.</li>
+            <li>I almost didn't start Kind Bubbles. Here's what changed my mind.</li>
+            <li>The first event I ever did was for my own daughter. I cried in the car after.</li>
+        </ul>
+    </div>
+
+    <div class="meta-row">
+        <div class="meta-cell"><div class="ml">Cadence</div><div class="mv"><em>3–4 of 14</em> · ~25%</div></div>
+        <div class="meta-cell"><div class="ml">Best format</div><div class="mv">60–90s reels · face-to-camera</div></div>
+    </div>
+</div>
+
+
+<!-- PILLAR 2, REACTION & SHOW -->
+<div class="pillar">
+    <div class="p-num">Pillar 02</div>
+    <h3 class="p-name">Reaction &amp; <em>Show</em></h3>
+    <div class="p-tag"><strong>Job</strong> · Drive likes. Visual proof, the actual <em>work</em> + the human reaction to it.</div>
+
+    <div class="p-block">
+        <div class="p-label">From the data</div>
+        <p class="p-text">Top performers in this pillar split between <strong>kid faces</strong> and <strong>the show itself</strong>, sometimes one, sometimes both in the same frame. Your single highest-engagement post (<strong>370 likes, captionless still</strong>) is a kid mid-reaction <em>inside a giant bubble</em>, face + craft together. Your highest-views post (<strong>1,880 views</strong>, "Can your favorite bounce house do THIS?") is a kid <em>disappearing inside a bubble</em>, the trick is the hook. Your "Smoke Bubble Catch" reel pulled <strong>309 views</strong> on the trick alone. <em>Both halves of this pillar earn engagement.</em></p>
+    </div>
+
+    <div class="p-block">
+        <div class="p-label">Definition</div>
+        <p class="p-text">This pillar covers <strong>two things, often together</strong>:</p>
+        <p class="p-text"><strong>(1) The Show</strong>, your actual work. Giant bubbles forming. Smoke bubbles. Fire + bubble tricks. Bubbles inside bubbles. The trick that took weeks of practice to land. ASMR slow-mo of a wand pulling through solution. The craft on its own, proof that you do this at a level nobody else does.</p>
+        <p class="p-text"><strong>(2) The Reaction</strong>, kid faces, mid-laugh. Parents putting phones down. The 4-year-old's mouth open. The 7-year-old too cool dropping their guard. The room going quiet. The "I want my kid to be that kid" moment.</p>
+        <p class="p-text">When both show up in one frame, a kid mid-reaction <em>inside</em> a giant bubble, engagement compounds. That's your 370-like still. <strong>Lead with either half. Avoid setup shots and wide pans.</strong></p>
+    </div>
+
+    <div class="p-block">
+        <div class="p-label">5 example post topics, split across The Show + The Reaction</div>
+        <ul>
+            <li><strong>Show:</strong> ASMR macro of a giant bubble forming on the wand (no music, sound on, satisfying)</li>
+            <li><strong>Show:</strong> Named trick demo, Smoke Bubble Catch · Tunnel of Bubbles · fire + bubbles · bubble-inside-a-bubble (slow-mo, 240fps)</li>
+            <li><strong>Show + Reaction:</strong> Kid disappearing inside a giant bubble, optical-illusion trick + wide eyes (your 1,880-view post structure)</li>
+            <li><strong>Reaction:</strong> Captionless reaction-shot still, kid face inside a bubble (your 370-like post structure)</li>
+            <li><strong>Reaction:</strong> "Watch the older kid stop pretending to be cool", slow-mo of a 7–10-year-old dropping their guard</li>
+        </ul>
+    </div>
+
+    <div class="p-block">
+        <div class="p-label">3 example hooks · 2 reaction, 1 show</div>
+        <ul class="hooks-list">
+            <li>This is what 4 years old looks like. <em>(reaction)</em></li>
+            <li>Watch the older kid stop pretending to be cool. <em>(reaction)</em></li>
+            <li>The smoke bubble catch, watch what happens when intentional play meets perfect timing. <em>(show)</em></li>
+        </ul>
+    </div>
+
+    <div class="meta-row">
+        <div class="meta-cell"><div class="ml">Cadence</div><div class="mv"><em>4 of 14</em> · ~28%</div></div>
+        <div class="meta-cell"><div class="ml">Best format</div><div class="mv">15–30s reels · face-led OR craft-led · 240fps slow-mo for tricks</div></div>
+    </div>
+</div>
+
+
+<!-- PILLAR 3, BUBBLE SCIENCE -->
+<div class="pillar">
+    <div class="p-num">Pillar 03</div>
+    <h3 class="p-name">Bubble <em>Science</em></h3>
+    <div class="p-tag"><strong>Job</strong> · Drive saves. Build authority. Prove you know more than the next vendor.</div>
+
+    <div class="p-block">
+        <div class="p-label">From the data</div>
+        <p class="p-text"><strong>16 of 55 posts</strong> already fit this pillar (recipes, surface tension, ASMR, sensory mechanics, freeze-a-bubble). Performance is consistent (~28 likes / 335 video views avg), <strong>the best video-views average across all four pillars</strong>. Where this pillar leaks is short captions on teaching content (e.g., "Big bubble recipe" → 2 likes). Captions need to do the teaching the video implies.</p>
+    </div>
+
+    <div class="p-block">
+        <div class="p-label">Definition</div>
+        <p class="p-text">The "how does this actually work" pillar. You're a biochemist, this is the lane where you teach without lecturing. Recipe, surface tension, prismatic light, freeze-a-bubble, why it doesn't sting eyes. The post answers a question the kid is about to ask, and gives the parent a reason to bookmark.</p>
+    </div>
+
+    <div class="p-block">
+        <div class="p-label">5 example post topics</div>
+        <ul>
+            <li>The 3-ingredient recipe I use at every event (numbered carousel, save-bait)</li>
+            <li>Why bubbles always come out round (surface tension, 30s reel)</li>
+            <li>The "three layers" of every bubble (illustrated cross-section)</li>
+            <li>Freeze-a-bubble experiment (winter reel, slow-mo)</li>
+            <li>Why our bubble solution doesn't sting kids' eyes (proof + chemistry)</li>
+        </ul>
+    </div>
+
+    <div class="p-block">
+        <div class="p-label">3 example hooks</div>
+        <ul class="hooks-list">
+            <li>Bubbles are technically three layers thick. Most people think one.</li>
+            <li>Why does a bubble pop the second your kid touches it? (Spoiler: it's not their fault.)</li>
+            <li>The actual chemistry that makes a giant bubble hold its shape.</li>
+        </ul>
+    </div>
+
+    <div class="meta-row">
+        <div class="meta-cell"><div class="ml">Cadence</div><div class="mv"><em>3 of 14</em> · ~22%</div></div>
+        <div class="meta-cell"><div class="ml">Best format</div><div class="mv">60–90s reels · numbered carousels (3–5 slides)</div></div>
+    </div>
+</div>
+
+
+<!-- PILLAR 4, COUNTER-POSITION -->
+<div class="pillar">
+    <div class="p-num">Pillar 04 · The under-used lane</div>
+    <h3 class="p-name">Counter-<em>Position</em></h3>
+    <div class="p-tag"><strong>Job</strong> · Drive shares + median views. Separate the brand from the category.</div>
+
+    <div class="p-block">
+        <div class="p-label">From the data</div>
+        <p class="p-text"><strong>Only 4 of 55 posts</strong> use this pattern, and yet it has the <strong>highest median views per post in the entire feed (272 vs 147 across other pillars).</strong> Your "<em>Goodbye to bounce houses</em>" post pulled 1,422 views, the second-highest video in the sample. <em>This is the most under-built lane on the account.</em></p>
+    </div>
+
+    <div class="p-block">
+        <div class="p-label">Definition</div>
+        <p class="p-text">"What we <strong>don't</strong> do, and why." No bounce houses. No balloons. No face paint. No screens. No DJ. No grand-finale fireworks. Each one is a stake in the ground that defines the brand by contrast, and gives the parent a reason to choose you over the generic alternative they were already considering.</p>
+    </div>
+
+    <div class="p-block">
+        <div class="p-label">5 example post topics</div>
+        <ul>
+            <li>"Goodbye to the bounce house. Hello to the bubble that doesn't pop." (proven · 1,422 views)</li>
+            <li>"Why we don't do balloons" (environmental + safety case, carousel)</li>
+            <li>"Why we don't do face paint" (cleanup-on-the-parent argument)</li>
+            <li>"Not your average kids' party", what makes a Kind Bubbles event different in 30 seconds</li>
+            <li>"Pinterest birthday vs Kind Bubbles birthday", counter-positioning carousel</li>
+        </ul>
+    </div>
+
+    <div class="p-block">
+        <div class="p-label">3 example hooks</div>
+        <ul class="hooks-list">
+            <li>Goodbye to the bounce house. Hello to the bubble that doesn't pop.</li>
+            <li>Three things we don't do at a Kind Bubbles party. (And why parents thank us for it.)</li>
+            <li>Most kids' parties make the parent the cleanup crew. Ours doesn't.</li>
+        </ul>
+    </div>
+
+    <div class="meta-row">
+        <div class="meta-cell"><div class="ml">Cadence</div><div class="mv"><em>3 of 14</em> · ~22%</div></div>
+        <div class="meta-cell"><div class="ml">Best format</div><div class="mv">30–60s reels · carousels (counter-position lists)</div></div>
+    </div>
+</div>
+
+
+<hr class="audit-divider">
+
+
+<!-- THE LANE TO CUT -->
+<div class="audit-section">
+    <div class="eyebrow">The lane to cut</div>
+    <h2>The "showcase" lane is <em>filler</em>.</h2>
+    <p>11 of 55 posts in your feed don't fit any of the four pillars above. They're generic "look at this bubble" posts, vendor thank-yous, or hashtag-only filler. <strong>Average performance: 10 likes, the lowest across all categories.</strong> Examples from your feed: "Biz partner" (1♥), "Thanks @oogubievents for a great night in the city!" (3♥), hashtag-only posts (1–2♥).</p>
+    <p>These aren't bad content, they're <em>private content posted in a public format</em>. They belong in Stories, not the grid. Cutting these and reallocating into the four pillars above is roughly 20% of the feed re-pointed at lanes that already perform.</p>
+</div>
+
+
+<hr class="audit-divider">
+
+
+<!-- LIFT MECHANICS -->
+<div class="audit-section">
+    <div class="eyebrow">The two multipliers</div>
+    <h2>Two tactics that <em>ride on top</em> of any pillar.</h2>
+    <p>These aren't pillars, they're mechanics that multiply reach when applied to a post in <em>any</em> pillar. Both are measured top performers in your data.</p>
+
+    <div class="pillar" style="background:rgba(125,184,138,0.04); border-color:rgba(125,184,138,0.2);">
+        <div class="p-num" style="color:#7DB88A;">Multiplier 01 · The Distribution Lever</div>
+        <h3 class="p-name">Collab <em>Tag</em></h3>
+        <div class="p-tag"><strong>Job</strong> · Multiply distribution. Borrow another account's audience.</div>
+
+        <div class="p-block">
+            <div class="p-label">From the data</div>
+            <p class="p-text">Posts that tag a partner account average <strong>100 likes, roughly 3× the next-best lane</strong> in your feed (n=9). The 280-like Magical Birthday post (#2 in the top 10) carried by @fabricated.fantasy. The 54-like Rose Garden post carried by @bayarea_toddlersplay. <em>Cross-account tagging is the single fastest reach lever you have.</em></p>
+        </div>
+
+        <div class="p-block">
+            <div class="p-label">How to use it</div>
+            <p class="p-text">Plan one collab per month minimum. Doesn't matter which pillar the post sits in, Founder, Reaction, Science, or Counter-Position. The collab tag is what gets the post seen by the partner's audience too. <strong>Pre-schedule them, don't wait for one to "happen."</strong></p>
+            <ul>
+                <li>Best partners: Bay Area parent creators, kids' photographers, party stylists, sensory-play educators</li>
+                <li>Pitch trade-experience offers, not paid posts (lower barrier to yes)</li>
+                <li>Always tag with the @ in the caption AND in the post mentions, both surface differently</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="pillar" style="background:rgba(232,68,32,0.04); border-color:rgba(232,68,32,0.18);">
+        <div class="p-num" style="color:#E87E3A;">Multiplier 02 · The Comment Lever</div>
+        <h3 class="p-name">Comment <em>Trigger</em></h3>
+        <div class="p-tag"><strong>Job</strong> · Multiply comments. Train the algorithm to surface the post.</div>
+
+        <div class="p-block">
+            <div class="p-label">From the data</div>
+            <p class="p-text">Two posts in your top 10 use this pattern: the May 31 launch (<strong>71 comments</strong>) and the Early Bird post (<strong>52 comments</strong>). Together they hold <strong>~70% of all caption-driven comments in the entire 55-post feed</strong>. Both used a literal "Comment 'BUBBLE'" prompt. The next-highest comment count on any other post in the feed is 9.</p>
+        </div>
+
+        <div class="p-block">
+            <div class="p-label">How to use it</div>
+            <p class="p-text">Pair every date-bound or offer-bound post (Launch CTAs) with a memorable single-word trigger. The trigger word should be relevant to the offer, "BUBBLE" for an event, "DAD" for a daddy-daughter pop-up, "SUMMER" for booking-window content.</p>
+            <ul>
+                <li>One trigger word per post, make it short and uppercase in the caption</li>
+                <li>Reply with the link via DM (preserves the comment count and starts a 1:1 conversation)</li>
+                <li>Use 1× per launch, overuse trains the audience to ignore the prompt</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<hr class="audit-divider">
+
+
+<!-- SEQUENCING -->
+<div class="audit-section">
+    <div class="eyebrow">The sequencing</div>
+    <h2>How to <em>order</em> the pillars across a 14-post month.</h2>
+    <p>You don't drop all your Founder &amp; Family content in one week. You don't run three Reaction &amp; Show posts back-to-back. The order is part of the strategy.</p>
+    <p>Week 1 → <strong>Founder &amp; Family</strong> · <strong>Reaction &amp; Show</strong> · <strong>Bubble Science</strong> · <strong>Counter-Position</strong><br>
+    Week 2 → <strong>Reaction &amp; Show</strong> · <strong>Founder &amp; Family</strong> · <strong>Bubble Science</strong><br>
+    Week 3 → <strong>Counter-Position</strong> · <strong>Reaction &amp; Show</strong> · <strong>Founder &amp; Family</strong> · <strong>Bubble Science</strong><br>
+    Week 4 → <strong>Founder &amp; Family</strong> · <strong>Reaction &amp; Show</strong> · <strong>Counter-Position</strong></p>
+    <p><strong>Layer on top:</strong> One Collab Tag in any of the 14 posts. One Comment Trigger paired with each Launch / event-bound post.</p>
+    <p>Founder &amp; Family opens the month, sets the trust baseline. Reaction &amp; Show anchors weekends, when parents are scrolling for what to do next Saturday. Bubble Science holds mid-week curiosity slots. Counter-Position lands on Thursday/Sunday, the parent-mental-load timeslots when "wait, why don't they do bounce houses?" lands hardest.</p>
+    <div class="pull">"Every week of every month must contain at least one <em>Founder &amp; Family</em> post and at least one <em>Counter-Position</em> post. The first is your moat. The second is the most under-built lane on your feed."<span>,  The Pillar Rule</span></div>
+</div>
+
+<div class="audit-footer">
+    Module 03 of 05 · Content Pillars · @kind.bubbles · derived from the 55-post Apify scrape
+</div>
+
+</div>
+</body>
+</html>

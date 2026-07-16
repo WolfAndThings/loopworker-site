@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Delivery, Kind Bubbles | LoopWorker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:#080808; color:#D4D4D4; font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased; }
+.wrap { max-width:780px; margin:0 auto; padding:3rem 2rem 6rem; }
+
+.cover { min-height:100vh; display:flex; flex-direction:column; justify-content:space-between; padding:4rem 0 2rem; }
+.cover-badge { display:inline-block; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.22em; color:#888; border:1px solid rgba(255,255,255,0.1); padding:0.45rem 1rem; border-radius:100px; margin-bottom:2rem; }
+.cover-eyebrow { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.24em; color:#6BB6E3; margin-bottom:1.2rem; font-weight:600; }
+.cover-title { font-family:'Cormorant Garamond', serif; font-size:clamp(2.8rem, 7vw, 4.6rem); font-weight:500; color:#FFF; line-height:1.02; letter-spacing:-0.02em; margin-bottom:1.5rem; }
+.cover-title em { font-style:italic; color:#6BB6E3; font-weight:400; }
+.cover-lede { font-size:1.15rem; color:#AAA; line-height:1.55; max-width:600px; margin-bottom:2rem; }
+.cover-meta { font-size:0.9rem; color:#777; line-height:1.8; margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.06); }
+.cover-meta strong { color:#BBB; font-weight:600; }
+.cover-bottom { font-size:0.7rem; color:#555; letter-spacing:0.15em; text-transform:uppercase; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.04); }
+
+.section { margin-bottom:4rem; }
+.eyebrow { font-size:0.65rem; text-transform:uppercase; letter-spacing:0.22em; color:#6BB6E3; font-weight:600; margin-bottom:0.7rem; }
+.section h2 { font-family:'Cormorant Garamond', serif; font-size:2.2rem; font-weight:500; color:#FFF; margin-bottom:1.2rem; letter-spacing:-0.02em; line-height:1.15; }
+.section h2 em { font-style:italic; color:#6BB6E3; font-weight:400; }
+.section h3 { font-size:1.05rem; font-weight:600; color:#FFF; margin:1.4rem 0 0.5rem; letter-spacing:-0.01em; }
+.section p { margin-bottom:1rem; color:#B5B5B5; font-size:0.97rem; }
+.section p strong { color:#FFF; font-weight:600; }
+.section em { color:#D4D4D4; font-style:italic; }
+.divider { border:none; border-top:1px solid rgba(255,255,255,0.06); margin:4rem 0; }
+
+/* DELIVERY LETTER */
+.letter { background:linear-gradient(180deg, rgba(107,182,227,0.04), rgba(107,182,227,0.01)); border:1px solid rgba(107,182,227,0.18); border-radius:14px; padding:2.4rem 2.2rem; margin:2rem 0; }
+.letter h3 { color:#6BB6E3; font-size:0.7rem; letter-spacing:0.22em; text-transform:uppercase; margin-bottom:1rem; font-weight:600; }
+.letter h2 { font-family:'Cormorant Garamond', serif; font-size:1.9rem; color:#FFF; font-weight:500; line-height:1.25; margin-bottom:1.4rem; letter-spacing:-0.01em; }
+.letter h2 em { color:#6BB6E3; font-style:italic; }
+.letter p { color:#C5C5C5; font-size:1.0rem; line-height:1.65; margin-bottom:1rem; }
+.letter p strong { color:#FFF; font-weight:600; }
+.letter .signoff { font-family:'Cormorant Garamond', serif; font-style:italic; color:#6BB6E3; font-size:1.15rem; margin-top:1.4rem; }
+
+/* TOC CARDS */
+.toc { display:grid; grid-template-columns:1fr; gap:0.7rem; margin:2rem 0; }
+.toc a { display:block; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.4rem 1.6rem; text-decoration:none; transition:all 0.15s; }
+.toc a:hover { border-color:#6BB6E3; background:rgba(107,182,227,0.04); transform:translateY(-1px); }
+.toc-row { display:grid; grid-template-columns:auto 1fr auto; gap:1.2rem; align-items:center; }
+.toc-num { font-family:'Cormorant Garamond', serif; font-size:2rem; color:#6BB6E3; line-height:1; font-weight:500; min-width:2.5rem; }
+.toc-title { font-family:'Cormorant Garamond', serif; font-size:1.35rem; color:#FFF; font-weight:500; line-height:1.2; margin-bottom:0.3rem; letter-spacing:-0.005em; }
+.toc-desc { font-size:0.88rem; color:#999; line-height:1.5; }
+.toc-arrow { font-size:1.2rem; color:#6BB6E3; }
+
+.toc a.bonus { background:linear-gradient(180deg, rgba(107,182,227,0.06), rgba(107,182,227,0.015)); border-color:rgba(107,182,227,0.25); }
+.toc a.bonus .toc-num { font-style:italic; }
+
+/* READ-FIRST GUIDANCE */
+.guidance { display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.8rem; margin:1.8rem 0; }
+@media (max-width:680px){ .guidance { grid-template-columns:1fr; } }
+.guidance-card { padding:1.4rem 1.4rem; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.05); border-radius:10px; }
+.guidance-tag { font-size:0.62rem; text-transform:uppercase; letter-spacing:0.2em; color:#6BB6E3; font-weight:600; margin-bottom:0.6rem; }
+.guidance-title { font-family:'Cormorant Garamond', serif; font-size:1.2rem; color:#FFF; font-weight:500; margin-bottom:0.5rem; line-height:1.2; }
+.guidance-text { font-size:0.85rem; color:#AAA; line-height:1.55; }
+.guidance-text strong { color:#FFF; font-weight:600; }
+
+/* NEXT STEPS BLOCK */
+.next-block { background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.07); border-radius:14px; padding:2rem 1.8rem; margin:2rem 0; }
+.next-block h3 { color:#6BB6E3; font-size:0.7rem; letter-spacing:0.22em; text-transform:uppercase; margin-bottom:1rem; font-weight:600; }
+.next-block h2 { font-family:'Cormorant Garamond', serif; font-size:1.6rem; color:#FFF; font-weight:500; line-height:1.25; margin-bottom:1.2rem; letter-spacing:-0.01em; }
+.next-block h2 em { color:#6BB6E3; font-style:italic; }
+.next-block ol { padding-left:1.2rem; margin-top:0.8rem; }
+.next-block ol li { color:#C5C5C5; font-size:0.93rem; padding:0.45rem 0; line-height:1.55; }
+.next-block ol li strong { color:#FFF; }
+
+.footer { text-align:center; margin-top:4rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.05); font-size:0.8rem; color:#555; letter-spacing:0.1em; text-transform:uppercase; }
+
+@page { size:Letter; margin:0; }
+@media print {
+  html, body { background:#080808 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; color-adjust:exact; margin:0 !important; }
+  .toc a { break-inside:avoid; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- COVER -->
+<div class="cover">
+  <div>
+    <span class="cover-badge">Delivery · May 2026</span>
+    <div class="cover-eyebrow">Kind Bubbles · Phase 1, Social Audit + Content</div>
+    <h1 class="cover-title">The audit,<br>the pillars,<br>the content<br>that <em>ships.</em></h1>
+    <p class="cover-lede">The Phase 1 scope: a deep audit of <strong>@kind.bubbles</strong> from a fresh 55-post Apify scrape, four logical content pillars, thirty paste-ready hooks, ten caption rewrites grounded in your real posts, a Bay Area competitor map, and a shoot-ready 30-day content sprint. Plus an add-on appendix exploring how the brand could expand if you want to go national.</p>
+
+    <div class="cover-meta">
+      <strong>For:</strong> Chris Steele, founder, Kind Bubbles<br>
+      <strong>From:</strong> Alex Lamb<br>
+      <strong>Scope:</strong> Phase 1 social audit + content sprint (paid) · Expansion appendix (add-on, no extra charge)<br>
+      <strong>Delivered:</strong> May 1, 2026
+    </div>
+  </div>
+
+  <div class="cover-bottom">Phase 1 core: docs 01–08 · Expansion appendix: docs +1 to +5</div>
+</div>
+
+
+<!-- DELIVERY LETTER -->
+<section class="section">
+  <div class="letter">
+    <h3>Hey Chris</h3>
+    <h2>What you paid for, plus a few <em>add-ons</em> for where this could go.</h2>
+    <p>The job we agreed on was a <strong>social audit + content system</strong> for Kind Bubbles. That's docs <strong>01–08</strong> below, the audit, the four pillars, the hooks, the caption rewrites, the Bay Area competitor map, the 30-day sprint. Every metric, post link, and caption excerpt comes from a fresh Apify scrape of your live feed. Nothing made up. Nothing paraphrased.</p>
+    <p>The <strong>expansion appendix (+1 to +5)</strong> is a separate, no-extra-charge add-on, sketches of what scaling Kind Bubbles into a multi-city, founder-led brand could look like (operator network, Therapy Dad authority track, corporate wellness sales). Not part of the paid scope. Read it if it sparks something; ignore it if not. None of the Phase 1 work depends on it.</p>
+    <p class="signoff">,  Alex</p>
+  </div>
+</section>
+
+
+<!-- PHASE 1 TOC, PAID SCOPE -->
+<section class="section">
+  <div class="eyebrow">Phase 1 · Social audit + content (paid scope)</div>
+  <h2>Eight docs.<br><em>One running content system.</em></h2>
+  <p>Sequence matters, 01 frames where you are, 02 brings in proven patterns from outside accounts, 03 sets the strategy, 04–05 give you the words, 06 maps the local field, 07 gives you 30 days of shoot-ready content, 08 turns every event into recurring content. Each tile opens in a new tab.</p>
+
+  <div class="toc">
+    <a href="01_deep_audit.html" target="_blank">
+      <div class="toc-row">
+        <div class="toc-num">01</div>
+        <div>
+          <div class="toc-title">Deep Audit · 55 Posts</div>
+          <div class="toc-desc">Every post on @kind.bubbles, May 2024 → Feb 2026, pulled via Apify. Scorecard, top 10 winners, bottom 5 buried, format mix, hook patterns, save/share signals, and the five highest-leverage moves.</div>
+        </div>
+        <div class="toc-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="02_adjacent_patterns.html" target="_blank">
+      <div class="toc-row">
+        <div class="toc-num">02</div>
+        <div>
+          <div class="toc-title">Bay Area Adjacent Patterns</div>
+          <div class="toc-desc">7 proven content patterns from a 241-post Apify scrape of Bay Area kid + family creators. Every pattern cites real top-performing posts (350♥ weekend round-ups, 276♥ event launches, etc.) with a concrete steal-it move for Kind Bubbles. Gives you new patterns to test, grounded in what already works in this geography.</div>
+        </div>
+        <div class="toc-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="03_four_pillars.html" target="_blank">
+      <div class="toc-row">
+        <div class="toc-num">03</div>
+        <div>
+          <div class="toc-title">The Four Content Pillars</div>
+          <div class="toc-desc">Founder &amp; Family · Reaction &amp; Show · Bubble Science · Counter-Position. Four data-derived content buckets, pulled directly from what's already worked on @kind.bubbles. Plus 2 lift mechanics (Collab Tag, Comment Trigger) that ride on top.</div>
+        </div>
+        <div class="toc-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="04_30_hooks.html" target="_blank">
+      <div class="toc-row">
+        <div class="toc-num">04</div>
+        <div>
+          <div class="toc-title">30 Hooks</div>
+          <div class="toc-desc">Thirty paste-ready opening lines, sorted by pillar. Reel-first. Designed for stop-scroll in the first 1.5 seconds.</div>
+        </div>
+        <div class="toc-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="05_caption_rewrites.html" target="_blank">
+      <div class="toc-row">
+        <div class="toc-num">05</div>
+        <div>
+          <div class="toc-title">Caption Rewrites · Real Posts</div>
+          <div class="toc-desc">Ten of your actual captions, quoted verbatim with original post URLs, then rewritten line-by-line to pull more comments, more saves, more booking inquiries.</div>
+        </div>
+        <div class="toc-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="06_bay_area_map.html" target="_blank">
+      <div class="toc-row">
+        <div class="toc-num">06</div>
+        <div>
+          <div class="toc-title">Bay Area Competitor Map</div>
+          <div class="toc-desc"><strong>Pulled live via Apify website crawler.</strong> SF Bubble Man, The Bubble Lady (Marin), Miss Molly Bubbles (San Jose). Positioning shift toward "wellness-coded sensory-experience studio", out of head-to-head bubble-entertainer comparison.</div>
+        </div>
+        <div class="toc-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="07_content_sprint.html" target="_blank">
+      <div class="toc-row">
+        <div class="toc-num">07</div>
+        <div>
+          <div class="toc-title">30-Day Content Sprint</div>
+          <div class="toc-desc"><strong>Shoot-ready.</strong> 8 reels with full beat-by-beat shoot lists, voiceover scripts, and paste-ready captions. 4 educational carousels. 1 pinned founder anchor. 16 daily Story prompts. 30-day calendar. Production tips (gear, what to avoid, what to repeat).</div>
+        </div>
+        <div class="toc-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="08_event_capture_system.html" target="_blank">
+      <div class="toc-row">
+        <div class="toc-num">08</div>
+        <div>
+          <div class="toc-title">Event Capture &amp; Tag System</div>
+          <div class="toc-desc"><strong>Run at every show.</strong> Pre-show prep · 12 mandatory shots · 4 video clips per pillar · 5-layer tag stack · 6 paste-ready call-out templates · 5 pre-built hashtag sets · the permission flow. Every event becomes 2+ posts on autopilot.</div>
+        </div>
+        <div class="toc-arrow">→</div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+
+<hr class="divider">
+
+
+<!-- ADD-ON APPENDIX -->
+<section class="section">
+  <div class="eyebrow">Add-on appendix · expansion thinking (no extra charge)</div>
+  <h2>If the brand wants to <em>go bigger.</em></h2>
+  <p>Five docs sketching what Kind Bubbles could look like as a multi-city, founder-led brand, operator network, founder authority track, corporate wellness sales. Not part of the Phase 1 paid scope. Forward-looking thinking, here if it's useful, easy to skip if not.</p>
+
+  <div class="toc">
+    <a href="10_kiwico_model.html" target="_blank" class="bonus">
+      <div class="toc-row">
+        <div class="toc-num">+1</div>
+        <div>
+          <div class="toc-title">National Brand · Local Operators</div>
+          <div class="toc-desc">The "KiwiCo + Mad Science" model decoded, three precedents (Mad Science, Big Little Feelings + Dr. Becky, KiwiCo + Lovevery), Therapy Dad voice locked, suggested 5-city rollout, three revenue stacks.</div>
+        </div>
+        <div class="toc-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="11_operator_playbook.html" target="_blank" class="bonus">
+      <div class="toc-row">
+        <div class="toc-num">+2</div>
+        <div>
+          <div class="toc-title">Operator Recruitment Playbook</div>
+          <div class="toc-desc">How to source, screen, train, and launch the first five local operators outside the Bay Area. Application questions, training week structure, 90-day support model.</div>
+        </div>
+        <div class="toc-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="12_phase2_buildplan.html" target="_blank" class="bonus">
+      <div class="toc-row">
+        <div class="toc-num">+3</div>
+        <div>
+          <div class="toc-title">Phase 2 Build Plan · Social → Web → Blog</div>
+          <div class="toc-desc">A six-month sequenced build: founder-on-camera content cadence (weeks 1–24), Webflow rebuild (weeks 5–10), blog + SEO + newsletter (weeks 11–24).</div>
+        </div>
+        <div class="toc-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="13_therapy_dad_track.html" target="_blank" class="bonus">
+      <div class="toc-row">
+        <div class="toc-num">+4</div>
+        <div>
+          <div class="toc-title">Therapy Dad Authority Track</div>
+          <div class="toc-desc">Founder-led brand assets, newsletter, podcast, course, book proposal, speaking, running parallel to Kind Bubbles, sharing the same audience.</div>
+        </div>
+        <div class="toc-arrow">→</div>
+      </div>
+    </a>
+
+    <a href="14_corporate_wellness_engine.html" target="_blank" class="bonus">
+      <div class="toc-row">
+        <div class="toc-num">+5</div>
+        <div>
+          <div class="toc-title">Corporate Wellness Sales Engine</div>
+          <div class="toc-desc">B2B pipeline for wellness-program buyers (Genentech, EdTech retreats, school sensory days). Buyer personas, cold-email templates, pitch deck outline.</div>
+        </div>
+        <div class="toc-arrow">→</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+<hr class="divider">
+
+
+<!-- READ-FIRST GUIDANCE -->
+<section class="section">
+  <div class="eyebrow">How to use it</div>
+  <h2>Three ways<br>to <em>read this.</em></h2>
+
+  <div class="guidance">
+    <div class="guidance-card">
+      <div class="guidance-tag">Path 01</div>
+      <div class="guidance-title">If you have 10 minutes</div>
+      <div class="guidance-text">Read the <strong>Four Pillars</strong> (D03), then the <strong>Hook list</strong> (D04). You'll have enough to brief whoever runs your camera or your captions for the next two weeks.</div>
+    </div>
+    <div class="guidance-card">
+      <div class="guidance-tag">Path 02</div>
+      <div class="guidance-title">If you have an hour</div>
+      <div class="guidance-text">Read 01–08 in order. The <strong>Audit</strong> tells you where you are. The <strong>Pillars</strong> set direction. The <strong>Hooks</strong>, <strong>Captions</strong>, and <strong>Sprint</strong> tell you what to ship next month.</div>
+    </div>
+    <div class="guidance-card">
+      <div class="guidance-tag">Path 03</div>
+      <div class="guidance-title">If you're thinking expansion</div>
+      <div class="guidance-text">Read 01–08 first so the foundation makes sense. Then dip into the <strong>add-on appendix (+1 to +5)</strong>, separate, optional, no extra charge. Pure forward-looking thinking on what scaling could look like.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- WHAT'S NEXT -->
+<section class="section">
+  <div class="eyebrow">Where this goes</div>
+
+  <div class="next-block">
+    <h3>If you want help shipping it</h3>
+    <h2>The audit is done.<br><em>The execution is the next conversation.</em></h2>
+    <p style="font-size:0.95rem; color:#B5B5B5; margin-bottom:1.2rem;">The Phase 1 docs are the playbook. If you want a partner running the production side, shooting, editing, scheduling, measuring, that's a separate engagement. Not pitched here, just available.</p>
+
+    <ol>
+      <li><strong>Founder-on-camera content cadence</strong>, 2 reels/week shot in your voice, laddered into the four pillars from D03.</li>
+      <li><strong>School + corporate sales deck</strong>, built around the Founder &amp; Family pillar.</li>
+      <li><strong>Booking-page conversion rebuild</strong>, split-test against the four hook patterns from D04.</li>
+      <li><strong>Caption + reel scripts engine</strong>, using D04 + D05 as the prompt library, generate 30 days of captions in under an hour.</li>
+      <li><strong>Adjacent-creator collab outreach</strong>, pitch list of Bay Area creators (sourced via fresh Apify scrape in Phase 2).</li>
+    </ol>
+
+    <p style="font-size:0.88rem; color:#999; margin-top:1.4rem; padding-top:1.2rem; border-top:1px solid rgba(255,255,255,0.06);"><em>Reach out if you want to talk about it. No pressure either way, the Phase 1 work stands on its own.</em></p>
+  </div>
+</section>
+
+<div class="footer">Kind Bubbles · Phase 1, Social Audit + Content · May 2026</div>
+
+</div>
+</body>
+</html>

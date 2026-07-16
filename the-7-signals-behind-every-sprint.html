@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://www.loopworker.com/the-7-signals-behind-every-sprint.html">
   <meta property="og:title" content="The 7 Signals Behind Every Sprint">
   <meta property="og:description" content="The 7 public signals LoopWorker pulls in every Sprint. Method explained.">
-  <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+  <meta property="og:image" content="https://www.loopworker.com/images/loopworker-og.png">
   <meta name="theme-color" content="#07070C">
   <meta name="color-scheme" content="dark">
 
@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/v5-system.css">
+  <link rel="stylesheet" href="/v5-system.css?v=uniform-shell-1">
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
 
@@ -85,16 +85,29 @@
 
   <nav class="v5-nav">
     <div class="v5-nav-inner">
-      <a href="/" class="v5-logo"><span class="v5-logo-mark">L</span>LoopWorker</a>
+      <a href="/" class="v5-logo">
+        <span class="v5-logo-mark">L</span>
+        LoopWorker
+      </a>
       <div class="v5-nav-links">
         <a href="/sprint.html">Sprints</a>
         <a href="/pricing.html">Pricing</a>
-        <a href="/tools/">Tools</a>
         <a href="/case-studies.html">Customers</a>
-        <a href="/blog/">Signals</a>
+        <a href="/blog/" class="active">Signals</a>
         <a href="/about.html">About</a>
-        <a href="/book.html" class="v5-nav-cta">Book a Call</a>
+        <a href="/book.html" class="v5-nav-cta" data-track="Nav Book CTA">Book a Review</a>
       </div>
+      <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="v5-mobile-nav" id="mobileNav">
+      <a href="/sprint.html">Sprints</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/case-studies.html">Customers</a>
+      <a href="/blog/" class="active">Signals</a>
+      <a href="/about.html">About</a>
+      <a href="/book.html" class="v5-nav-cta">Book a Review</a>
     </div>
   </nav>
 
@@ -147,7 +160,7 @@
             <li>Scrape homepage hero, pricing hero, about page lede, primary social bio for 5-10 competitors</li>
             <li>Extract the 1-3 promises per page</li>
             <li>Tag by promise type: speed, price, expertise, outcome, ease, prestige</li>
-            <li>Collide them in a matrix — find claims used by 4+ competitors (commodity) and zero (white space)</li>
+            <li>Collide them in a matrix, find claims used by 4+ competitors (commodity) and zero (white space)</li>
             <li>Verbatim quote the strongest white-space claim a competitor almost made but pulled back from</li>
           </ul>
 
@@ -161,10 +174,10 @@
         <div class="sig-section" id="s2">
           <span class="sig-num-tag">Signal 02</span>
           <h2>Competitor ad creative <em>pacing.</em></h2>
-          <p>What your competitors are actually buying — across Meta, LinkedIn, Google. Ad spend is a behavioral signal stronger than any press release.</p>
+          <p>What your competitors are actually buying, across Meta, LinkedIn, Google. Ad spend is a behavioral signal stronger than any press release.</p>
 
           <h3>Why it matters</h3>
-          <p>When a competitor pushes 40 creatives in a week and one survives the cut, that survivor tells you what their audience is responding to. Free to read in public ad libraries. Hard to interpret without category context. The pacing — frequency + concentration + creative drift — usually predicts a channel pivot 60-90 days before it shows up in earnings.</p>
+          <p>When a competitor pushes 40 creatives in a week and one survives the cut, that survivor tells you what their audience is responding to. Free to read in public ad libraries. Hard to interpret without category context. The pacing, frequency + concentration + creative drift, usually predicts a channel pivot 60-90 days before it shows up in earnings.</p>
 
           <h3>How we pull it</h3>
           <ul>
@@ -203,7 +216,7 @@
           <p>What every competitor charges, how they tier, what each tier signals. The pricing surface of your category as a single map.</p>
 
           <h3>Why it matters</h3>
-          <p>Pricing is positioning made dollars. The anchor tier signals what category you think you're in. The modal tier signals where you expect volume. The floor signals how aggressive you are at acquisition. Reading the full <a href="/glossary/pricing-band.html">pricing band</a> across 10 competitors usually reveals you're 20-40% off the modal — in either direction.</p>
+          <p>Pricing is positioning made dollars. The anchor tier signals what category you think you're in. The modal tier signals where you expect volume. The floor signals how aggressive you are at acquisition. Reading the full <a href="/glossary/pricing-band.html">pricing band</a> across 10 competitors usually reveals you're 20-40% off the modal, in either direction.</p>
 
           <h3>How we pull it</h3>
           <ul>
@@ -214,7 +227,7 @@
             <li>Identify where your pricing breaks the category's expected shape</li>
           </ul>
 
-          <p>Try the free interactive: <a href="/tools/pricing-band-finder.html"><strong>Pricing Band Finder</strong></a> — get your 3-tier band in 30 seconds. Or read the open dataset: <a href="/2026-saas-pricing-benchmark-report.html">2026 SaaS Pricing Benchmark Report</a>.</p>
+          <p>Try the free interactive: <a href="/tools/pricing-band-finder.html"><strong>Pricing Band Finder</strong></a>, get your 3-tier band in 30 seconds. Or read the open dataset: <a href="/2026-saas-pricing-benchmark-report.html">2026 SaaS Pricing Benchmark Report</a>.</p>
 
           <p>Related: <a href="/glossary/anchor-pricing.html">Anchor Pricing</a> · <a href="/glossary/price-anchoring.html">Price Anchoring</a> · <a href="/glossary/offer-architecture.html">Offer Architecture</a> · <a href="/glossary/willingness-to-pay.html">Willingness to Pay</a></p>
         </div>
@@ -232,7 +245,7 @@
             <li>Filter your top buyer terms by 10-20 metro areas via public search engines</li>
             <li>Cross-reference with scraped Google Maps result density by metro</li>
             <li>Compare interest scores: where is demand concentrated, where is it growing, where is it underserved</li>
-            <li>Map: hot vs second-tier metros — second-tier usually has same hunger, less competition</li>
+            <li>Map: hot vs second-tier metros, second-tier usually has same hunger, less competition</li>
           </ul>
 
           <p>Related: <a href="/glossary/distribution.html">Distribution</a> · <a href="/glossary/discovery.html">Discovery</a> · <a href="/glossary/customer-segment.html">Customer Segment</a></p>
@@ -244,13 +257,13 @@
           <p>Does your category trust founders more than companies? Get this wrong and your content engine pushes the wrong face.</p>
 
           <h3>Why it matters</h3>
-          <p>Some categories — services, advisory, premium DTC — reward founder visibility. Others — SaaS, infrastructure, enterprise — reward team or company visibility. Pick the wrong face and you compound a brand mismatch every post for years. Reading the visible faces of the top 10 brands in your category usually settles the question in 5 minutes.</p>
+          <p>Some categories, services, advisory, premium DTC, reward founder visibility. Others, SaaS, infrastructure, enterprise, reward team or company visibility. Pick the wrong face and you compound a brand mismatch every post for years. Reading the visible faces of the top 10 brands in your category usually settles the question in 5 minutes.</p>
 
           <h3>How we pull it</h3>
           <ul>
             <li>Pull top 10 brands in your category on LinkedIn</li>
             <li>Note: does the founder post under their own name, the company name, or both</li>
-            <li>Check engagement: which posts get higher reach — founder-led or company-led</li>
+            <li>Check engagement: which posts get higher reach, founder-led or company-led</li>
             <li>Look at podcast appearances: are founders the guests, or product team</li>
             <li>Map: who's the public face of each top brand. Pattern emerges fast.</li>
           </ul>
@@ -268,7 +281,7 @@
           <p>The gap between how your customers describe you and how you describe yourself. The most expensive signal to miss.</p>
 
           <h3>Why it matters</h3>
-          <p>Brand says "AI-powered workflow automation." Customer says "it stopped my 6pm spreadsheet panic." Same product. Different language. The customer's version converts 3-5x better because they're describing the outcome they paid for. The delta — what they say minus what you say — is your homepage rewrite, in their words.</p>
+          <p>Brand says "AI-powered workflow automation." Customer says "it stopped my 6pm spreadsheet panic." Same product. Different language. The customer's version converts 3-5x better because they're describing the outcome they paid for. The delta, what they say minus what you say, is your homepage rewrite, in their words.</p>
 
           <h3>How we pull it</h3>
           <ul>
@@ -284,23 +297,23 @@
 
         <div class="sig-section" id="how">
           <h2>How the 7 signals <em>combine</em> into a decision.</h2>
-          <p>Pulling one signal is research. Pulling all seven creates a decision space where every line in the brief connects to two or more signals. That's the <a href="/glossary/evidence-chain.html">evidence chain</a> — every recommendation has at least two public sources behind it, named, dated, replaceable.</p>
+          <p>Pulling one signal is research. Pulling all seven creates a decision space where every line in the brief connects to two or more signals. That's the <a href="/glossary/evidence-chain.html">evidence chain</a>, every recommendation has at least two public sources behind it, named, dated, replaceable.</p>
 
           <p>A typical Sprint brief reads like this:</p>
           <ol>
-            <li><strong>Top recommendation</strong> — one sentence, ranked first.</li>
-            <li><strong>Why now</strong> — pulled from signals 02 (ad pacing) + 03 (search demand)</li>
-            <li><strong>How buyers will hear it</strong> — pulled from signal 07 (customer language)</li>
-            <li><strong>Where it fits competitively</strong> — pulled from signal 01 (positioning surface)</li>
-            <li><strong>What it should cost</strong> — pulled from signal 04 (pricing architecture)</li>
-            <li><strong>Where to push it geographically</strong> — pulled from signal 05 (geo demand)</li>
-            <li><strong>Who should say it</strong> — pulled from signal 06 (founder visibility)</li>
+            <li><strong>Top recommendation</strong>, one sentence, ranked first.</li>
+            <li><strong>Why now</strong>, pulled from signals 02 (ad pacing) + 03 (search demand)</li>
+            <li><strong>How buyers will hear it</strong>, pulled from signal 07 (customer language)</li>
+            <li><strong>Where it fits competitively</strong>, pulled from signal 01 (positioning surface)</li>
+            <li><strong>What it should cost</strong>, pulled from signal 04 (pricing architecture)</li>
+            <li><strong>Where to push it geographically</strong>, pulled from signal 05 (geo demand)</li>
+            <li><strong>Who should say it</strong>, pulled from signal 06 (founder visibility)</li>
           </ol>
 
           <p>That's how seven signals become one defensible page-1 recommendation. The remaining brief pages walk the rejected paths + why each was downgraded. Buyers + boards can audit every claim.</p>
 
           <div class="sig-pull">
-            <p>The brief isn't a research report. It's a <a href="/glossary/decision-brief.html">decision brief</a> — ranked moves, evidence column, owner-named action sheet. That's the difference between strategy consulting + decision delivery.</p>
+            <p>The brief isn't a research report. It's a <a href="/glossary/decision-brief.html">decision brief</a>, ranked moves, evidence column, owner-named action sheet. That's the difference between strategy consulting + decision delivery.</p>
           </div>
         </div>
 
@@ -308,28 +321,28 @@
           <h2>Free tools we built to help you pull these <em>yourself.</em></h2>
           <p>The method is documented. If you want to apply it without buying a Sprint, here are the free tools we built around it:</p>
           <ul>
-            <li><a href="/tools/pricing-band-finder.html"><strong>Pricing Band Finder</strong></a> — Signal 04 in 30 seconds. Pick category + stage + differentiation, get your 3-tier band.</li>
-            <li><a href="/tools/channel-mix-diagnoser.html"><strong>Channel Mix Diagnoser</strong></a> — Slide each channel to its revenue share, get concentration risk + next channel to build.</li>
-            <li><a href="/tools/brand-audit-score.html"><strong>Brand Audit Score</strong></a> — 5-dimension self-audit. Weighted 0-100 score in 60 seconds.</li>
-            <li><a href="/tools/roi-calculator.html"><strong>ROI Calculator</strong></a> — What a Sprint saves vs in-house research, given your spend + senior rate.</li>
-            <li><a href="/quiz/positioning.html"><strong>Positioning Quiz</strong></a> — 5 questions, 4 archetypes, the one move that wins for your type.</li>
+            <li><a href="/tools/pricing-band-finder.html"><strong>Pricing Band Finder</strong></a>, Signal 04 in 30 seconds. Pick category + stage + differentiation, get your 3-tier band.</li>
+            <li><a href="/tools/channel-mix-diagnoser.html"><strong>Channel Mix Diagnoser</strong></a>, Slide each channel to its revenue share, get concentration risk + next channel to build.</li>
+            <li><a href="/tools/brand-audit-score.html"><strong>Brand Audit Score</strong></a>, 5-dimension self-audit. Weighted 0-100 score in 60 seconds.</li>
+            <li><a href="/tools/roi-calculator.html"><strong>ROI Calculator</strong></a>, What a Sprint saves vs in-house research, given your spend + senior rate.</li>
+            <li><a href="/quiz/positioning.html"><strong>Positioning Quiz</strong></a>, 5 questions, 4 archetypes, the one move that wins for your type.</li>
           </ul>
 
           <p>Open data + reports cited everywhere:</p>
           <ul>
-            <li><a href="/2026-strategy-consulting-cost-comparison.html"><strong>2026 Strategy Consulting Cost Comparison</strong></a> — 11 firms (McKinsey, BCG, Bain, Big 4, boutique, independent, LoopWorker)</li>
-            <li><a href="/2026-saas-pricing-benchmark-report.html"><strong>2026 SaaS Pricing Benchmark Report</strong></a> — 12 categories, anchor/modal/floor ranges</li>
-            <li><a href="/2026-founder-compensation-report.html"><strong>2026 Founder + Executive Compensation by Stage</strong></a> — Pave, Carta, Kruze sources</li>
+            <li><a href="/2026-strategy-consulting-cost-comparison.html"><strong>2026 Strategy Consulting Cost Comparison</strong></a>, 11 firms (McKinsey, BCG, Bain, Big 4, boutique, independent, LoopWorker)</li>
+            <li><a href="/2026-saas-pricing-benchmark-report.html"><strong>2026 SaaS Pricing Benchmark Report</strong></a>, 12 categories, anchor/modal/floor ranges</li>
+            <li><a href="/2026-founder-compensation-report.html"><strong>2026 Founder + Executive Compensation by Stage</strong></a>, Pave, Carta, Kruze sources</li>
           </ul>
 
-          <p>And the longest-form resource: <a href="/resources/field-manual.html"><strong>The Signals Field Manual</strong></a> — 12-page PDF, every signal in long-form, every tool listed, every trap named.</p>
+          <p>And the longest-form resource: <a href="/resources/field-manual.html"><strong>The Signals Field Manual</strong></a>, 12-page PDF, every signal in long-form, every tool listed, every trap named.</p>
         </div>
 
         <div class="sig-cta">
-          <h4>Skip the math. <span class="grad-text">Run a Sprint.</span></h4>
-          <p>The 7 signals take 80-150 senior hours to pull yourself across 10 competitors. Atlas Sprint compresses that into 10 days for $8,000. Decision brief on your desk in two weeks.</p>
+          <h4>Skip the math. <span class="grad-text">Book a review.</span></h4>
+          <p>The 7 signals take 80-150 senior hours to pull yourself across a competitor set. Atlas Sprint compresses that into 10 days for $8,000. Decision brief on your desk before the spend starts.</p>
           <div class="v5-cta-row">
-            <a href="/book.html" class="v5-btn v5-btn-primary">Book a free 30-min review →</a>
+            <a href="/book.html" class="v5-btn v5-btn-primary">Book a 30-min review →</a>
             <a href="/sprint.html" class="v5-btn v5-btn-ghost">See the Sprint ladder</a>
           </div>
         </div>

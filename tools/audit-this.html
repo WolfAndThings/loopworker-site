@@ -10,10 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/site-pages.css">
-    <title>Audit This Page — 5-Point Heuristic Audit | LoopWorker</title>
-    <meta name="description" content="Paste your URL or IG handle, get a 5-point heuristic audit instantly. Free. Or upgrade to a written audit with sample shots.">
+    <title>Free Signal Scanner, Messaging Gaps + Content Angles | LoopWorker</title>
+    <meta name="description" content="Enter a website or Instagram handle and get a lightweight signal report with likely messaging gaps, positioning opportunities, customer-language cues, and content angles.">
     <link rel="canonical" href="https://www.loopworker.com/tools/audit-this.html">
-    <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+    <meta property="og:image" content="https://www.loopworker.com/images/loopworker-og.png">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
     <style>
       .tool-shell { padding: 7rem 1.5rem 5rem; max-width: 880px; margin: 0 auto; }
@@ -37,11 +37,12 @@
         <div class="nav-inner">
             <a href="/" class="nav-logo">LoopWorker</a>
             <ul class="nav-links">
-                <li><a href="/sprint.html">The Sprint</a></li>
-                <li><a href="/case-studies.html">Case Studies</a></li>
-                <li><a href="/blog/">Signals</a></li>
+                <li><a href="/sprint.html">Signal Sprint</a></li>
+                <li><a href="/sample-brief.html">Market Read</a></li>
+                <li><a href="/blog/">Evidence Library</a></li>
+                <li><a href="/case-studies.html">Customer Stories</a></li>
                 <li><a href="/about.html">About</a></li>
-                <li><a href="/book.html" class="nav-cta" data-track="Nav Book CTA">Book a Call</a></li>
+                <li><a href="/book.html?intent=sprint" class="nav-cta" data-track="Nav Book CTA">Run a Sprint</a></li>
             </ul>
             <button type="button" class="hamburger" onclick="toggleSiteMenu()" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
                 <span></span><span></span><span></span>
@@ -49,23 +50,24 @@
         </div>
     </nav>
     <div class="mobile-nav" id="mobileNav">
-        <a href="/sprint.html">The Sprint</a>
-        <a href="/case-studies.html">Case Studies</a>
-        <a href="/blog/">Signals</a>
+        <a href="/sprint.html">Signal Sprint</a>
+        <a href="/sample-brief.html">Market Read</a>
+        <a href="/blog/">Evidence Library</a>
+        <a href="/case-studies.html">Customer Stories</a>
         <a href="/about.html">About</a>
-        <a href="/book.html" class="nav-cta" data-track="Mobile Nav Book CTA">Book a Call</a>
+        <a href="/book.html?intent=sprint" class="nav-cta" data-track="Mobile Nav Book CTA">Run a Sprint</a>
     </div>
     <main>
         <section class="tool-shell">
-            <span class="eyebrow">Free Tool · Heuristic Audit · Instant</span>
-            <h1>Paste your URL. <em>Get five fixes</em> in five seconds.</h1>
-            <p class="cs-lead">Heuristic-based audit using LoopWorker's 6-axis framework. Paste your IG handle or website URL, pick your industry, and get five specific fixes ranked by impact. For a deeper written audit with sample shots, use the booking form.</p>
+            <span class="eyebrow">Free Tool · Signal Scanner · Instant</span>
+            <h1>Enter a site. <em>Get a signal report</em> in under a minute.</h1>
+            <p class="cs-lead">This is a lightweight heuristic scanner, not a full Sprint. Paste a URL or IG handle, pick your market, and get likely messaging gaps, positioning opportunities, customer-language cues, and content angles.</p>
             
 <div class="input-card">
-  <label for="url">Page URL or Instagram handle</label>
+  <label for="url">Website URL or Instagram handle</label>
   <input id="url" placeholder="https://yourbrand.com OR @yourbrand">
 
-  <label for="industry">Industry</label>
+  <label for="industry">Market</label>
   <select id="industry">
     <option value="restaurant">Restaurant / Cafe</option>
     <option value="medspa">Med Spa / Aesthetics</option>
@@ -77,27 +79,27 @@
     <option value="other">Other</option>
   </select>
 
-  <label for="lastposts">What did your last 3 posts feature? (one line)</label>
-  <textarea id="lastposts" placeholder="e.g., menu items, before/afters, workout clips"></textarea>
+  <label for="lastposts">What are your last 3-5 posts or homepage sections saying?</label>
+  <textarea id="lastposts" placeholder="e.g., service pages, founder posts, customer stories, pricing, before/afters"></textarea>
 
-  <button onclick="audit()">Run Audit</button>
+  <button onclick="audit()">Generate Signal Report</button>
 </div>
 
 <div id="result"></div>
 
 <div style="margin-top:3rem;padding:1.6rem 1.8rem;background:rgba(212,160,23,0.05);border:1px dashed rgba(212,160,23,0.3);border-radius:10px;text-align:center;display:none;" id="cta">
-  <strong style="color:var(--accent,#D4A017);display:block;margin-bottom:0.5rem;letter-spacing:0.1em;text-transform:uppercase;font-size:0.78rem;">Want a deeper, written audit with sample shots?</strong>
-  <p style="margin:0 auto 1.2rem;color:#C7C7C7;">Free 5-point audit, 48-hour turnaround. Or skip to the signal review.</p>
+  <strong style="color:var(--accent,#D4A017);display:block;margin-bottom:0.5rem;letter-spacing:0.1em;text-transform:uppercase;font-size:0.78rem;">Want the full read?</strong>
+  <p style="margin:0 auto 1.2rem;color:#C7C7C7;">The full Sprint pulls real competitor pages, customer language, proof gaps, and campaign angles into a Market Read and 30-day growth plan.</p>
   <div style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;">
-    <a href="/audit.html" class="btn btn-primary">Book a Call</a>
-    <a href="/book.html" class="btn btn-outline">Book Signal Review</a>
+    <a href="/book.html?intent=sprint" class="btn btn-primary">Run a Sprint</a>
+    <a href="/sample-brief.html" class="btn btn-outline">See Market Read</a>
   </div>
 </div>
 
 <script>
 const RULES = {
   restaurant: [
-    {h:"Menu post overuse", p:"If your last 3 posts are menu items with 'come try this', you're showing dishes not creating cravings. Add a Ritual or Crew shot."},
+    {h:"Menu post overuse", p:"If your last 3 posts are menu items with 'come try this', you're showing dishes but not creating cravings. Add ritual, staff, or customer-moment proof."},
     {h:"Same-day urgency missing", p:"Restaurant posts should give people a reason to come TONIGHT. Specials end, sellouts happen, time-bound moments work."},
     {h:"No human in frame", p:"Empty plates kill conversion. Always show a hand, a server, a customer mid-bite."},
   ],
@@ -117,7 +119,7 @@ const RULES = {
     {h:"No human warmth", p:"Empty hotel rooms feel sterile. Add a guest, a staffer, a candle being lit."},
   ],
   realestate: [
-    {h:"Drone-shot overuse", p:"Aerials are commodity. Add lifestyle imagery — what living there feels like."},
+    {h:"Drone-shot overuse", p:"Aerials are commodity. Add lifestyle imagery, what living there feels like."},
     {h:"Front-elevation as hero", p:"Front of the house is rarely the most emotional shot. Lead with kitchen, view, or detail."},
     {h:"No 'lived-in' shots", p:"Empty staged rooms convert worse than 'here\'s morning coffee on this island'."},
   ],
@@ -129,7 +131,7 @@ const RULES = {
   ecommerce: [
     {h:"Generic product shots", p:"Studio cutouts work for PDP. They flatten on social. Add lifestyle + use case."},
     {h:"Missing pre-purchase questions", p:"Customers have specific objections. Content should answer them BEFORE they hit the page."},
-    {h:"Post-purchase content invisible", p:"Unboxing, real customers, testimonials — your most valuable content rarely makes the feed."},
+    {h:"Post-purchase content invisible", p:"Unboxing, real customers, testimonials, your most valuable content rarely makes the feed."},
   ],
   other: [
     {h:"Generic content treatment", p:"Most service businesses post generic content because they don't have a locked Brand DNA."},
@@ -150,14 +152,15 @@ function audit() {
   const last = document.getElementById('lastposts').value;
 
   const rules = RULES[industry] || RULES.other;
-  let html = `<h2 style="margin:1rem 0 1.5rem;">5-point audit · <em style="color:var(--accent,#D4A017);">${url || 'your page'}</em></h2>`;
+  let html = `<h2 style="margin:1rem 0 1.5rem;">Signal report · <em style="color:var(--accent,#D4A017);">${url || 'your page'}</em></h2>`;
 
   rules.concat(UNIVERSAL.slice(0, 2)).forEach((r, i) => {
     const cls = i < 2 ? 'fail' : (i < 4 ? 'warn' : 'pass');
     html += `<div class="check ${cls}"><h4>#${i+1} · ${r.h}</h4><p>${r.p}</p></div>`;
   });
 
-  html += `<p style="color:#888;margin-top:1.5rem;font-size:0.88rem;">This audit uses heuristic rules. For a deeper written audit with sample shots in your brand style, use the booking form.</p>`;
+  html += `<div class="check pass"><h4>What to inspect next</h4><p>Compare this page against 3 competitors and look for the language customers repeat, the proof they trust, and the content format they react to. That is where a full Sprint gets specific.</p></div>`;
+  html += `<p style="color:#888;margin-top:1.5rem;font-size:0.88rem;">This scanner uses heuristic rules. A paid Sprint uses live public evidence, source tracking, a Market Read, and a 30-day growth plan.</p>`;
 
   document.getElementById('result').innerHTML = html;
   document.getElementById('cta').style.display = 'block';
@@ -173,12 +176,13 @@ function audit() {
         <div class="container footer-inner">
             <div>
                 <div class="footer-brand">LoopWorker</div>
-                <div class="footer-meta">Evidence before execution.</div>
+                <div class="footer-meta">Market evidence before execution.</div>
             </div>
             <ul class="footer-links">
-                <li><a href="/sprint.html">The Sprint</a></li>
-                <li><a href="/case-studies.html">Case Studies</a></li>
-                <li><a href="/blog/">Signals</a></li>
+                <li><a href="/sprint.html">Signal Sprint</a></li>
+                <li><a href="/sample-brief.html">Market Read</a></li>
+                <li><a href="/blog/">Evidence Library</a></li>
+                <li><a href="/case-studies.html">Customer Stories</a></li>
                 <li><a href="/about.html">About</a></li>
                 <li><a href="/privacy.html">Privacy</a></li>
                 <li><a href="/terms.html">Terms</a></li>

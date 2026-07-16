@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
   <title>Pricing · Strategy Sprints | LoopWorker</title>
-  <meta name="description" content="Four Sprint tiers, founder-led, 48 hours to 30 days. Surface $750. Compass $3,200. Atlas $8,000. Operating System $25,000. Systems Retainer $4,500/mo.">
+  <meta name="description" content="Four Sprint tiers, founder-led, 48 hours to 30 days. Signal Snapshot $750. Competitive Intelligence Brief $3,200. Atlas $8,000. Market Operating System $25,000. Systems Retainer $4,500/mo.">
   <link rel="canonical" href="https://www.loopworker.com/pricing.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.loopworker.com/pricing.html">
   <meta property="og:title" content="Pricing · Strategy Sprints | LoopWorker">
   <meta property="og:description" content="Four Sprint tiers, founder-led, 48 hours to 30 days. Scope and quote tailored per project.">
-  <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+  <meta property="og:image" content="https://www.loopworker.com/images/loopworker-og.png">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="LoopWorker">
   <meta name="theme-color" content="#07070C">
@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/v5-system.css">
+  <link rel="stylesheet" href="/v5-system.css?v=uniform-shell-1">
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
   <link rel="dns-prefetch" href="https://buy.stripe.com">
@@ -51,6 +51,10 @@
       font-size: 1.1rem; color: var(--text-2); line-height: 1.55;
       margin: 0 auto; max-width: 600px;
     }
+    .v5-pricing-hero .v5-cta-row {
+      justify-content: center;
+      margin-top: 1.6rem;
+    }
     .v5-compare {
       width: 100%; border-collapse: collapse;
       margin: 0; font-size: 0.9rem;
@@ -78,11 +82,19 @@
       color: var(--text-3); font-family: var(--mono);
       font-size: 0.78rem; letter-spacing: 0.04em;
     }
+    .v5-compare td .src {
+      display: block;
+      margin-top: 0.3rem;
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--text-3);
+    }
     .v5-compare .yes { color: var(--emerald); font-weight: 700; }
     .v5-compare .no { color: var(--text-4); }
     .v5-compare-anchor { background: rgba(99,102,241,0.04); }
     @media (max-width: 720px) {
-      .v5-compare { font-size: 0.82rem; }
+      .v5-compare { display: block; max-width: 100%; overflow-x: auto; font-size: 0.82rem; -webkit-overflow-scrolling: touch; }
       .v5-compare th, .v5-compare td { padding: 0.7rem 0.6rem; }
     }
     .v5-retainer-card {
@@ -120,16 +132,16 @@
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "The Sprint — Private Market Intelligence",
+    "name": "The Sprint, Private Market Intelligence",
     "brand": "LoopWorker",
     "provider": { "@type": "Organization", "name": "LoopWorker", "url": "https://www.loopworker.com/" },
     "description": "Founder-led private market intelligence rounds built from public market signals: competitor reconstruction, search demand, customer voice, pricing, website conversion, proof gaps, authority channels.",
     "offers": [
-      { "@type": "Offer", "name": "Surface", "url": "https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D", "price": "750", "priceCurrency": "USD", "description": "48-hour gateway sprint." },
-      { "@type": "Offer", "name": "Compass", "url": "https://buy.stripe.com/28E28q52nahp3pg6VmcEw0I", "price": "3200", "priceCurrency": "USD", "description": "5-day focused market intelligence round." },
-      { "@type": "Offer", "name": "Atlas", "url": "https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J", "price": "8000", "priceCurrency": "USD", "description": "10-day decision brief connecting several market signals." },
-      { "@type": "Offer", "name": "Operating System", "url": "https://buy.stripe.com/28E14m52n9dlgc2gvWcEw0G", "price": "25000", "priceCurrency": "USD", "description": "14-day launch / repositioning sprint + 3 months execution support." },
-      { "@type": "Offer", "name": "Systems Retainer", "url": "https://buy.stripe.com/eVqfZg7av9dl8JA1B2cEw0H", "price": "4500", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M", "price": "4500", "priceCurrency": "USD" }, "description": "Monthly post-Sprint execution retainer." }
+      { "@type": "Offer", "name": "Signal Snapshot", "url": "https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D", "price": "750", "priceCurrency": "USD", "description": "48-hour gateway Read. One narrow question, fast second opinion." },
+      { "@type": "Offer", "name": "Competitive Intelligence Brief", "url": "https://buy.stripe.com/28E28q52nahp3pg6VmcEw0I", "price": "3200", "priceCurrency": "USD", "description": "5-day focused answer. Competitor read + clear answer to one big question." },
+      { "@type": "Offer", "name": "Atlas", "url": "https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J", "price": "8000", "priceCurrency": "USD", "description": "10-day full picture for six-figure decisions: pricing, launches, repositioning, and key hires." },
+      { "@type": "Offer", "name": "Market Operating System", "url": "https://www.loopworker.com/book.html", "price": "25000", "priceCurrency": "USD", "description": "30-day launch / repositioning engagement + 3 months execution support." },
+      { "@type": "Offer", "name": "Systems Retainer", "url": "https://www.loopworker.com/book.html", "price": "4500", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M", "price": "4500", "priceCurrency": "USD" }, "description": "Monthly post-Sprint execution retainer." }
     ]
   }
   </script>
@@ -149,7 +161,7 @@
         <a href="/case-studies.html">Customers</a>
         <a href="/blog/">Signals</a>
         <a href="/about.html">About</a>
-        <a href="/book.html" class="v5-nav-cta" data-track="Nav Book CTA">Book a Call</a>
+        <a href="/book.html" class="v5-nav-cta" data-track="Nav Book CTA">Book a Review</a>
       </div>
       <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -157,12 +169,11 @@
     </div>
     <div class="v5-mobile-nav" id="mobileNav">
       <a href="/sprint.html">Sprints</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/tools/">Tools</a>
+      <a href="/pricing.html" class="active">Pricing</a>
       <a href="/case-studies.html">Customers</a>
       <a href="/blog/">Signals</a>
       <a href="/about.html">About</a>
-      <a href="/book.html" class="v5-nav-cta">Book a Call</a>
+      <a href="/book.html" class="v5-nav-cta">Book a Review</a>
     </div>
   </nav>
 
@@ -172,7 +183,11 @@
       <div class="v5-pricing-hero-inner">
         <span class="v5-eyebrow">Pricing · Sprint Ladder</span>
         <h1>Priced against the decision, <span class="grad-text">not the deliverable.</span></h1>
-        <p>Every tier below costs a fraction of what the wrong call does. Find your decision's stakes in the left column; that's your tier. If the stakes are under $25K, start with Surface or the free tools and keep your money.</p>
+        <p>Every tier below is priced against the business risk it reduces. Find the decision's stakes in the left column; that's the smallest Sprint worth considering. If the stakes are under $25K, start with the Signal Snapshot or the free tools and keep your money.</p>
+        <div class="v5-cta-row">
+          <a href="/book.html" class="v5-btn v5-btn-primary" data-track="Pricing Hero Book">Book a 30-min review →</a>
+          <a href="/sample-brief.html" class="v5-btn v5-btn-ghost" data-track="Pricing Hero Sample">View sample Market Read</a>
+        </div>
       </div>
     </section>
 
@@ -187,10 +202,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>Under $25K</td><td>Free tools, or Surface ($750)</td></tr>
-            <tr><td>$25K – $100K</td><td>Compass ($3,200)</td></tr>
+            <tr><td>Under $25K</td><td>Free tools, or Signal Snapshot ($750)</td></tr>
+            <tr><td>$25K – $100K</td><td>Competitive Intelligence Brief ($3,200)</td></tr>
             <tr><td class="v5-compare-anchor">$100K+ (pricing, launch, repositioning, key hire)</td><td class="v5-compare-anchor"><strong>Atlas ($8,000)</strong></td></tr>
-            <tr><td>The company's next 12 months</td><td>Operating System ($25,000)</td></tr>
+            <tr><td>The company's next 12 months</td><td>Market Operating System ($25,000)</td></tr>
           </tbody>
         </table>
       </div>
@@ -201,61 +216,65 @@
       <div class="v5-section-inner">
         <div class="v5-tier-row">
           <div class="v5-tier">
-            <div class="v5-tier-eyebrow">Surface</div>
-            <h3>Surface scan</h3>
+            <div class="v5-tier-eyebrow">Signal Snapshot</div>
+            <h3>Quick look</h3>
             <div class="v5-tier-price">$750<small>· 48h</small></div>
             <div class="v5-tier-frame">"The scout." One signal pulled deep when the question is narrow, or when your team wants a paid look at the method before commissioning an Atlas.</div>
+            <div class="v5-tier-roi">Best when the wrong next move would waste a week, not a quarter.</div>
             <ul>
-              <li>One signal pulled deep</li>
-              <li>3 next-move recommendations</li>
-              <li>Refund if not actionable</li>
+              <li>One area researched deep</li>
+              <li>3 next steps to take</li>
+              <li>Money back if not useful</li>
             </ul>
-            <a href="https://buy.stripe.com/8x2fZgdyTdtBcZQ7ZqcEw0D" class="v5-tier-cta v5-tier-cta-ghost" data-track="Pricing Surface">Begin Surface</a>
+            <a href="/book.html?intent=surface" class="v5-tier-cta v5-tier-cta-ghost" data-track="Pricing Signal Snapshot">Book review for Signal Snapshot</a>
           </div>
 
           <div class="v5-tier">
-            <div class="v5-tier-eyebrow">Compass</div>
-            <h3>Direction set</h3>
+            <div class="v5-tier-eyebrow">Competitive Intelligence Brief</div>
+            <h3>Focused answer</h3>
             <div class="v5-tier-price">$3,200<small>· 5d</small></div>
-            <div class="v5-tier-frame">For decisions in the $25-100K range. Most upgrade to Atlas for the full picture.</div>
+            <div class="v5-tier-frame">One big question, fully answered. For decisions in the $25-100K range.</div>
+            <div class="v5-tier-roi">Use before a pricing, launch, or channel call with $25K-100K at stake.</div>
             <ul>
-              <li>Competitive read</li>
-              <li>Strategic answer to one question</li>
-              <li>Leads · launch · channel focus</li>
+              <li>Competitor read</li>
+              <li>Clear answer to your question</li>
+              <li>For pricing, launches, or channels</li>
             </ul>
-            <a href="https://buy.stripe.com/28E28q52nahp3pg6VmcEw0I" class="v5-tier-cta v5-tier-cta-ghost" data-track="Pricing Compass">Begin Compass</a>
+            <a href="/book.html?intent=compass" class="v5-tier-cta v5-tier-cta-ghost" data-track="Pricing Competitive Intelligence Brief">Book review for Competitive Intelligence Brief</a>
           </div>
 
           <div class="v5-tier v5-tier-anchor">
-            <div class="v5-tier-ribbon">Most chosen · 70%</div>
+            <div class="v5-tier-ribbon">Most popular · 70%</div>
             <div class="v5-tier-eyebrow">Atlas</div>
-            <h3>Full territory map</h3>
+            <h3>The full picture</h3>
             <div class="v5-tier-price">$8,000<small>· 10d</small></div>
-            <div class="v5-tier-frame">Built for six-figure decisions: pricing, launches, repositioning, key hires. Default for SaaS, DTC, services, founder-led brands.</div>
+            <div class="v5-tier-frame">Everything you need to decide. Built for six-figure decisions: pricing, launches, repositioning, key hires.</div>
+            <div class="v5-tier-roi">Default when being wrong costs more than one month of agency, ads, or senior time.</div>
             <ul>
-              <li>Competitor analysis · 5-7 direct + adjacent</li>
-              <li>Customer language clusters</li>
-              <li>Pricing tear-down + band</li>
-              <li>3 outlets dialed for your niche</li>
-              <li>Ranked, dated action sheet</li>
-              <li>30-min walkthrough on delivery</li>
+              <li>10 competitors broken down</li>
+              <li>What customers actually say</li>
+              <li>Pricing + where you should sit</li>
+              <li>3 channels worth your time</li>
+              <li>Ranked list of next moves</li>
+              <li>30-min call to walk it through</li>
             </ul>
-            <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="v5-tier-cta v5-tier-cta-anchor" data-track="Pricing Atlas">Begin Atlas →</a>
+            <a href="/book.html?intent=atlas" class="v5-tier-cta v5-tier-cta-anchor" data-track="Pricing Atlas">Book review for Atlas →</a>
           </div>
 
           <div class="v5-tier">
-            <div class="v5-tier-eyebrow">Operating System</div>
-            <h3>Company-level bet</h3>
+            <div class="v5-tier-eyebrow">Market Operating System</div>
+            <h3>Big bet</h3>
             <div class="v5-tier-price">$25,000<small>· 30d + 3mo</small></div>
-            <div class="v5-tier-frame">Launches, repositioning, 90-day execution.</div>
+            <div class="v5-tier-frame">For decisions the company is named after. Comparable boutique engagements run $40-80K and take twice as long.</div>
+            <div class="v5-tier-roi">Use before a 12-month bet: raise, rebrand, repositioning, or market entry.</div>
             <ul>
               <li>Everything in Atlas</li>
-              <li>Deep dive + positioning</li>
-              <li>90-day social roadmap</li>
-              <li>Execution playbook</li>
-              <li>3 months support</li>
+              <li>Full positioning rebuild</li>
+              <li>90-day social plan</li>
+              <li>Step-by-step playbook</li>
+              <li>3 months of support</li>
             </ul>
-            <a href="https://buy.stripe.com/28E14m52n9dlgc2gvWcEw0G" class="v5-tier-cta v5-tier-cta-ghost" data-track="Pricing OS">Begin OS</a>
+            <a href="/book.html?intent=operating-system" class="v5-tier-cta v5-tier-cta-ghost" data-track="Pricing OS">Book review for OS</a>
           </div>
         </div>
       </div>
@@ -265,31 +284,35 @@
     <section class="v5-section v5-section-tight">
       <div class="v5-section-inner">
         <div class="v5-section-intro">
-          <span class="v5-eyebrow">What gets pulled</span>
-          <h2>The same signals, <span class="grad-text">at different depths.</span></h2>
+          <span class="v5-eyebrow">What gets pulled · how it's read</span>
+          <h2>The same instruments, <span class="grad-text">read at different depths.</span></h2>
+          <p class="v5-section-sub">Every signal below is pulled live from a named instrument, matched to your market, ad libraries for DTC, dockets and filings for legal, sold boards for collectibles. The pull is the evidence. The read, what it means and what to do next, is what you're paying for.</p>
         </div>
 
         <table class="v5-compare">
           <thead>
             <tr>
-              <th>Signal</th>
-              <th>Surface</th>
-              <th>Compass</th>
+              <th>Signal · pulled from</th>
+              <th>Signal Snapshot</th>
+              <th>Competitive Intelligence Brief</th>
               <th class="v5-compare-anchor">Atlas ★</th>
               <th>OS</th>
             </tr>
           </thead>
           <tbody>
+            <tr><td colspan="5" class="v5-compare-anchor">the pull · found live, instruments named</td></tr>
+            <tr><td>Competitor reconstruction<span class="src">meta ad library · semrush · apify</span></td><td>one angle</td><td class="yes">3–5 ✓</td><td class="v5-compare-anchor yes">10 ✓</td><td class="yes">10 + adj</td></tr>
+            <tr><td>Customer voice / scraped fragment clusters<span class="src">reddit sentiment · apify actors</span></td><td>one angle</td><td>pick 2</td><td class="v5-compare-anchor yes">✓</td><td class="yes">deep</td></tr>
+            <tr><td>Search demand + channel fit<span class="src">google trends · semrush</span></td><td>one angle</td><td>pick 2</td><td class="v5-compare-anchor yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Pricing tear-down + band<span class="src">ebay/stockx sold boards · live price pages</span></td><td class="no">✕</td><td>pick 2</td><td class="v5-compare-anchor yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>Proof gaps + authority channels<span class="src">edgar/sec filings · pacer/state dockets</span></td><td class="no">✕</td><td>pick 2</td><td class="v5-compare-anchor yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td colspan="5" class="v5-compare-anchor">the read · what it means, what to do. no dashboard hands you this</td></tr>
             <tr><td>Decision question scoped</td><td class="yes">✓</td><td class="yes">✓</td><td class="v5-compare-anchor yes">✓</td><td class="yes">✓</td></tr>
-            <tr><td>Competitor reconstruction</td><td>one angle</td><td>as needed</td><td class="v5-compare-anchor yes">5–7 ✓</td><td class="yes">5–7 + adj</td></tr>
-            <tr><td>Customer voice / scraped fragment clusters</td><td>one angle</td><td>as needed</td><td class="v5-compare-anchor yes">✓</td><td class="yes">deep</td></tr>
-            <tr><td>Search demand + channel fit</td><td>one angle</td><td>as needed</td><td class="v5-compare-anchor yes">✓</td><td class="yes">✓</td></tr>
-            <tr><td>Pricing tear-down + band</td><td class="no">—</td><td>as needed</td><td class="v5-compare-anchor yes">✓</td><td class="yes">✓</td></tr>
-            <tr><td>Proof gaps + authority channels</td><td class="no">—</td><td>as needed</td><td class="v5-compare-anchor yes">✓</td><td class="yes">✓</td></tr>
             <tr><td>Ranked action sheet (dated)</td><td>one move</td><td class="yes">✓</td><td class="v5-compare-anchor yes">✓</td><td class="yes">90-day</td></tr>
-            <tr><td>Pitch-ready slides</td><td class="no">—</td><td class="no">—</td><td class="v5-compare-anchor no">—</td><td class="yes">✓</td></tr>
-            <tr><td>Strategic options modeled</td><td class="no">—</td><td class="no">—</td><td class="v5-compare-anchor no">—</td><td class="yes">2 modeled</td></tr>
-            <tr><td>Execution support</td><td class="no">—</td><td class="no">—</td><td class="v5-compare-anchor no">—</td><td class="yes">3 months</td></tr>
+            <tr><td>Strategic options modeled</td><td class="no">✕</td><td class="no">✕</td><td class="v5-compare-anchor no">✕</td><td class="yes">2 modeled</td></tr>
+            <tr><td colspan="5" class="v5-compare-anchor">the ship · format + support</td></tr>
+            <tr><td>Pitch-ready slides</td><td class="no">✕</td><td class="no">✕</td><td class="v5-compare-anchor no">✕</td><td class="yes">✓</td></tr>
+            <tr><td>Execution support</td><td class="no">✕</td><td class="no">✕</td><td class="v5-compare-anchor no">✕</td><td class="yes">3 months</td></tr>
             <tr><td>Delivery time</td><td>48h</td><td>5d</td><td class="v5-compare-anchor"><strong>10d</strong></td><td>30d + 3mo</td></tr>
           </tbody>
         </table>
@@ -307,11 +330,11 @@
           <div>
             <h3>Continuous shipping against the action sheet.</h3>
             <p style="margin-bottom:1rem;">You saw this coming: it's the stage we mention on every call and every delivery. The retainer exists for clients who want the action sheet executed, not admired.</p>
-            <p>Most Sprint clients attach a Systems Retainer once the brief lands. We turn the recommendation into shipped work: positioning rewrites, content cadence, channel build, conversion fixes, automation wiring. Founder-led, subcontracted hands. Slack channel, weekly check-in, monthly market refresh. Month-to-month. Cancel anytime.</p>
+            <p>Most Sprint clients attach a Systems Retainer once the Market Read lands. We turn the recommendation into shipped work: positioning rewrites, content cadence, channel build, conversion fixes, automation wiring. Founder-led, subcontracted hands. Slack channel, weekly check-in, monthly market refresh. Month-to-month. Cancel anytime.</p>
           </div>
           <div class="v5-center">
             <span class="v5-retainer-price">$4,500<small>/ month</small></span>
-            <a href="https://buy.stripe.com/eVqfZg7av9dl8JA1B2cEw0H" class="v5-btn v5-btn-primary v5-mt-md" data-track="Pricing Retainer">Attach Retainer →</a>
+            <a href="/book.html?intent=retainer" class="v5-btn v5-btn-primary v5-mt-md" data-track="Pricing Retainer">Book retainer review →</a>
           </div>
         </div>
       </div>
@@ -331,11 +354,11 @@
           </details>
           <details class="v5-faq-item">
             <summary>What do I actually get?</summary>
-            <p>One decision brief with the relevant evidence, the recommendation, and a ranked action sheet. PDF plus editable doc. Atlas + Operating System include a 30-min walkthrough call on delivery.</p>
+            <p>A Market Read, 30-day growth plan, campaign kit, and tracking board. PDF plus editable doc. Atlas + Market Operating System include a 30-min walkthrough call on delivery.</p>
           </details>
           <details class="v5-faq-item">
             <summary>Which tier should I choose?</summary>
-            <p>Surface to test the method. Compass for one narrow question. Atlas for the standard connected market brief — most clients land here. Operating System for a launch, repositioning, pitch-deck, or pricing architecture rewrite where 3 months of execution support actually matters.</p>
+            <p>Signal Snapshot to test the method. Competitive Intelligence Brief for one narrow question. Atlas for the full Market Read and growth plan, most clients land here. Market Operating System for a launch, repositioning, pitch-deck, or pricing architecture rewrite where 3 months of execution support actually matters.</p>
           </details>
           <details class="v5-faq-item">
             <summary>Can this use sensitive data?</summary>
@@ -343,15 +366,15 @@
           </details>
           <details class="v5-faq-item">
             <summary>Refund policy?</summary>
-            <p>14-day refund. If the brief lands and you cannot act on a single line, write back. Happened once in two years.</p>
+            <p>If the Market Read and growth plan do not give you a defensible move, write back within 14 days. We either correct the miss or refund it.</p>
           </details>
           <details class="v5-faq-item">
             <summary>Who is this NOT for?</summary>
-            <p>Companies under roughly $1M in revenue without funding, decisions with less than $25K at stake, and anyone shopping for the cheapest option. The free tools and the $750 Surface exist precisely so we never have to stretch a small budget over a big-ticket method.</p>
+            <p>Companies under roughly $1M in revenue without funding, decisions with less than $25K at stake, and buyers looking for commodity research. Signal Snapshot is for narrow questions; Atlas and Market Operating System are for decisions where being wrong is meaningfully expensive.</p>
           </details>
           <details class="v5-faq-item">
             <summary>Why is Atlas $8,000 when consultants charge $50K+?</summary>
-            <p>No partners, no pyramid, no 80-slide theater. Founder-led research, a small operator team, and a brief designed to be acted on rather than presented. The <a href="/2026-strategy-consulting-cost-comparison.html">cost comparison page</a> shows the full market; we sit where we sit on purpose.</p>
+            <p>No partners, no pyramid, no 80-slide theater. Founder-led research, a small operator team, and a Market Read designed to be acted on rather than presented. The <a href="/2026-strategy-consulting-cost-comparison.html">cost comparison page</a> shows the full market; we sit where we sit on purpose.</p>
           </details>
         </div>
       </div>
@@ -363,20 +386,20 @@
         <div class="v5-closing-main">
           <span class="v5-eyebrow-plain">Still deciding</span>
           <h2>Bring the decision. We'll find the <span class="grad-text">signals.</span></h2>
-          <p>Free 30-min signal review. We talk through the decision you need answered and pick the smallest Sprint that can answer it well.</p>
+          <p>Start with a 30-minute signal review. We talk through the decision you need answered and pick the smallest Sprint that can answer it well.</p>
           <div class="v5-cta-row">
-            <a href="/book.html" class="v5-btn v5-btn-primary" data-track="Pricing Closing Book">Book a 30-min review · Free</a>
-            <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="v5-btn v5-btn-ghost" data-track="Pricing Closing Atlas">Begin Atlas · $8,000</a>
+            <a href="/book.html" class="v5-btn v5-btn-primary" data-track="Pricing Closing Book">Book a 30-min review</a>
+            <a href="/sample-brief.html" class="v5-btn v5-btn-ghost" data-track="Pricing Closing Sample">View sample Market Read</a>
           </div>
-          <div class="v5-closing-note">14-day refund · happened once in 2 years · 2 active Atlas at a time</div>
+          <div class="v5-closing-note">14-day quality standard · 2 active Atlas at a time</div>
         </div>
 
         <div class="v5-email-card">
           <div class="v5-email-eyebrow">Want a sample first</div>
-          <h4>Read an anonymized brief.</h4>
+          <h4>Read an anonymized Market Read.</h4>
           <p>Full structure, real depth, names stripped. 4-minute read.</p>
           <div class="v5-mt-sm">
-            <a href="/sample-brief.html" class="v5-btn v5-btn-ghost" data-track="Pricing Sample Brief">View sample brief →</a>
+            <a href="/sample-brief.html" class="v5-btn v5-btn-ghost" data-track="Pricing Sample Market Read">View sample Market Read →</a>
           </div>
         </div>
       </div>

@@ -109,7 +109,39 @@ After capture lands in Stripe, fire automation:
 
 ### Option B: Stripe → another Worker → Beehiiv API (free, no Zapier)
 
-Build a second Worker subscribed to Stripe webhook → calls Beehiiv create-subscriber API directly. Adds ~50 lines of code, saves $20/mo Zapier.
+Already built: `webhook-forwarder.js` + `wrangler-webhook.toml`. ~80 lines, verifies Stripe HMAC signature, calls Beehiiv API directly. Saves $20/mo Zapier.
+
+**Deploy:**
+```bash
+# Use the webhook-specific config:
+wrangler deploy --config wrangler-webhook.toml
+```
+
+Worker deploys to `loopworker-webhook-forwarder.{your-subdomain}.workers.dev`.
+
+**Set secrets:**
+```bash
+wrangler secret put STRIPE_WEBHOOK_SECRET --config wrangler-webhook.toml
+# Paste whsec_... from Stripe Dashboard → Developers → Webhooks → endpoint signing secret
+
+wrangler secret put BEEHIIV_API_KEY --config wrangler-webhook.toml
+# Paste bh_pk_... from Beehiiv → Settings → API
+
+wrangler secret put BEEHIIV_PUBLICATION_ID --config wrangler-webhook.toml
+# Paste pub_... from Beehiiv URL
+```
+
+**Register with Stripe:**
+1. Stripe Dashboard → Developers → Webhooks → Add endpoint
+2. URL: `https://loopworker-webhook-forwarder.{your-subdomain}.workers.dev/`
+3. Event: `customer.created`
+4. Reveal signing secret → use it in `STRIPE_WEBHOOK_SECRET`
+
+**What it does:**
+- Filters `customer.created` events to ones tagged `lead_type: email_capture` (skips Sprint purchase events)
+- Calls Beehiiv create-subscriber API with email + source + all Stripe metadata as custom_fields
+- Sends Beehiiv welcome email
+- Beehiiv automation picks up the subscriber + fires the right nurture flow based on `utm_source` tag
 
 ## Cost
 

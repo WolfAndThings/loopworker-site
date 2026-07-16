@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://www.loopworker.com/sample-brief.html">
   <meta property="og:title" content="Sample Atlas Brief · LoopWorker">
   <meta property="og:description" content="Anonymized Sprint Pro deliverable. See what you get back.">
-  <meta property="og:image" content="https://www.loopworker.com/images/cards/card_02.webp">
+  <meta property="og:image" content="https://www.loopworker.com/images/loopworker-og.png">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="LoopWorker">
   <meta name="theme-color" content="#07070C">
@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/v5-system.css">
+  <link rel="stylesheet" href="/v5-system.css?v=uniform-shell-1">
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
   <link rel="dns-prefetch" href="https://buy.stripe.com">
@@ -48,7 +48,7 @@
     }
     .v5-brief-meta-row strong { color: var(--text); }
 
-    /* the brief artifact — looks like a real PDF page */
+    /* the brief artifact, looks like a real PDF page */
     .v5-brief {
       max-width: 940px; margin: 0 auto;
       background: var(--surface);
@@ -268,12 +268,22 @@
       <div class="v5-nav-links">
         <a href="/sprint.html">Sprints</a>
         <a href="/pricing.html">Pricing</a>
-        <a href="/tools/">Tools</a>
         <a href="/case-studies.html">Customers</a>
         <a href="/blog/">Signals</a>
         <a href="/about.html">About</a>
-        <a href="/book.html" class="v5-nav-cta">Book a Call</a>
+        <a href="/book.html" class="v5-nav-cta" data-track="Nav Book CTA">Book a Review</a>
       </div>
+      <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="v5-mobile-nav" id="mobileNav">
+      <a href="/sprint.html">Sprints</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/case-studies.html">Customers</a>
+      <a href="/blog/">Signals</a>
+      <a href="/about.html">About</a>
+      <a href="/book.html" class="v5-nav-cta">Book a Review</a>
     </div>
   </nav>
 
@@ -327,7 +337,7 @@
 
         <section>
           <h3>The Question Behind the Question</h3>
-          <p class="lede">Client framed this as a positioning question. The signals say it's a pricing-page and proof-asset question. The reposition is real but premature — the buyer is reading you wrong, not finding you wrong.</p>
+          <p class="lede">Client framed this as a positioning question. The signals say it's a pricing-page and proof-asset question. The reposition is real but premature, the buyer is reading you wrong, not finding you wrong.</p>
           <p>Submitted question: <em>"Should we drop SMB messaging and rebuild the homepage around mid-market and enterprise?"</em></p>
           <p>The market is already pulling the brand mid-market. Pricing tier 3 closes 4.2x more revenue than tiers 1+2 combined. But three competitors that ran the same play in 2024-2025 lost 38-52% of their organic search traffic in the 90 days post-reposition. The bridge is buildable without the breakage.</p>
         </section>
@@ -382,7 +392,7 @@
             <span class="c-count">211 fragments · 16.1%</span>
             <blockquote>"Loved it in week one. Stalled out before we'd wired it to the rest of our stack. Cancelled at month two."</blockquote>
           </div>
-          <p class="lede">Notice what's <em>not</em> here. Zero clusters around "wrong segment" or "wish you served bigger teams." The repositioning hypothesis isn't validated in customer language — pricing and proof are.</p>
+          <p class="lede">Notice what's <em>not</em> here. Zero clusters around "wrong segment" or "wish you served bigger teams." The repositioning hypothesis isn't validated in customer language, pricing and proof are.</p>
         </section>
 
         <section>
@@ -399,7 +409,7 @@
               <tr class="you-row"><td><strong>You</strong></td><td class="num">$39/mo</td><td class="num">$129/mo</td><td class="num">$329/mo</td><td>No</td></tr>
             </tbody>
           </table>
-          <p>Anchor tier is $100/mo below the field. You're cheap by accident — the buyer reads cheap as risky. Adding $99 + better proof at anchor tier will <em>raise</em> conversion, not drop it.</p>
+          <p>Anchor tier is $100/mo below the field. The buyer reads the gap as risk, not value. Adding $99 + better proof at anchor tier will <em>raise</em> conversion, not drop it.</p>
         </section>
 
         <section>
@@ -455,14 +465,14 @@
         <section>
           <h3>What This Sprint Did Not Cover</h3>
           <p>Brand identity refresh, hiring strategy, product roadmap. Out of scope. Three follow-on signals worth tracking next quarter:</p>
-          <p>→ Whether competitor B's recent series-C will push them into enterprise — opens lane below them.<br>
+          <p>→ Whether competitor B's recent series-C will push them into enterprise, opens lane below them.<br>
           → Whether the Cluster 2 pricing confusion drops 50%+ after restage (validates the diagnosis).<br>
-          → Whether your two largest customers (Tier 3) want what looks like enterprise procurement support — that would invert the question.</p>
+          → Whether your two largest customers (Tier 3) want what looks like enterprise procurement support, that would invert the question.</p>
         </section>
 
         <footer class="v5-brief-foot">
           <div><strong>LoopWorker</strong> · Atlas brief · prepared by Alex Lamb</div>
-          <div>Filed 11d before Q3 board · 14-day refund offered if zero lines actionable</div>
+          <div>Filed 11d before Q3 board · source-backed recommendation</div>
         </footer>
       </article>
     </section>
@@ -473,17 +483,17 @@
         <div class="v5-closing-main">
           <span class="v5-eyebrow-plain">Ready to file your question</span>
           <h2>Bring the decision. We'll find the <span class="grad-text">signals.</span></h2>
-          <p>Atlas is the standard tier — 10 days, full brief, ranked actions. Or test the waters with a 48-hour Surface scan for $750.</p>
+          <p>Atlas is the standard tier: 10 days, full brief, ranked actions. Signal Snapshot is only for a narrow 48-hour signal check.</p>
           <div class="v5-cta-row">
-            <a href="https://buy.stripe.com/3cI14mbqLgFN5xogvWcEw0J" class="v5-btn v5-btn-primary" data-track="Sample Brief Atlas">Begin Atlas · $8,000</a>
-            <a href="/book.html" class="v5-btn v5-btn-ghost" data-track="Sample Brief Book">Book a 30-min review</a>
+            <a href="/book.html?intent=atlas" class="v5-btn v5-btn-primary" data-track="Sample Brief Book">Book a 30-min review</a>
+            <a href="/sprint.html" class="v5-btn v5-btn-ghost" data-track="Sample Brief Sprint">See the Sprint ladder</a>
           </div>
-          <div class="v5-closing-note">14-day refund · happened once in 2 years · 2 active Atlas at a time</div>
+          <div class="v5-closing-note">14-day quality standard · 2 active Atlas at a time</div>
         </div>
 
         <div class="v5-email-card">
           <div class="v5-email-eyebrow">Browse the ladder</div>
-          <h4>Surface, Compass, Atlas, OS.</h4>
+          <h4>Signal Snapshot, Competitive Intelligence Brief, Atlas, OS.</h4>
           <p>Four tiers. One method. Pick the depth that fits the decision on your desk.</p>
           <div class="v5-mt-sm">
             <a href="/sprint.html" class="v5-btn v5-btn-ghost" data-track="Sample Brief Sprints">See Sprint ladder →</a>
