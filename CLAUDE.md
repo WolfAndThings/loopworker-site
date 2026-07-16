@@ -4,10 +4,14 @@ Static HTML site for LoopWorker — **Market Intelligence for Modern Brands**. T
 
 Positioning pivoted May 21 2026 from DFY brand photography → market intelligence Sprint + Systems Retainer.
 
+## Design system — V6 "Graded Evidence" (locked Jul 16 2026)
+`v6-system.css` — amber `#E3A44A` accent (indigo is dead), sharp 2-4px corners, Instrument Serif display + Inter body + JetBrains Mono evidence tags, mono `►` labels, crop marks (`.marks`), VERIFIED/FLAGGED stamp chips, glass cards, one warm glow per section, film-grain overlay. Refs: Craft Agency + Perplexity Personal Computer + Spade (Mobbin). **index.html converted Jul 16 (copy 100% verbatim); all other pages still `v5-system.css` — roll page by page.** Revenue widgets (v5-revenue.js) keep v5-* class names, re-skinned inside v6-system.css. Reference mock: `_mocks/index_v6_mock.html`.
+
 ## Core pages
 | File | Page |
 |------|------|
-| `index.html` | Homepage (Market Intelligence for Modern Brands) |
+| `index.html` | Homepage — The Decision Read (Jul 16: question-voice hero, 4 buyer-question cards, Recent Reads proof section w/ 3 downloadable redacted sample PDFs, 8 sections total). Source copy: `home-decision-read.html` (kept in sync) |
+| `downloads/` | 3 redacted sample Reads (BW editorial style, Lora/WorkSans/JetBrains Mono): `read-law-redacted` (RWI Law growth read), `read-coach-redacted` (Jocelyn audit), `read-brand-redacted` (Gesine exec summary). All verified zero client identifiers in HTML + PDF. Originals: `client_reads/rwi_law/`, `Projects/Jocelyn/audit/`, `Projects/Gesine/sprint/`. NEVER regenerate from originals without re-running the full redaction verification |
 | `sprint.html` | The Sprint — full product walkthrough + 4-tier pricing |
 | `pricing.html` | Pricing — Signal Snapshot/Competitive Intelligence Brief/Atlas/Market Operating System + Systems Retainer |
 | `services.html` | Implementation / signal environments |

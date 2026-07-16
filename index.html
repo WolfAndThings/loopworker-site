@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/v6-system.css?v=graded-evidence-1">
+  <link rel="stylesheet" href="/v6-system.css?v=graded-evidence-2">
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070708' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%23E3A44A' font-family='Georgia' font-weight='400'>L</text></svg>">
   <link rel="dns-prefetch" href="https://formspree.io">
@@ -112,53 +112,56 @@
 
   <main id="main">
 
-    <!-- HERO -->
+    <!-- HERO — full-bleed statement, organic amber field behind -->
     <section class="hero">
+      <div class="hero-blob" aria-hidden="true"></div>
       <div class="hero-inner">
-        <div>
-          <div class="hero-chip marks">
-            <span class="dot"></span>
-            <span class="tag tag-amber">The Decision Read</span>
-            <span class="tag">one question · every claim graded</span>
-          </div>
-
-          <h1>Bring me the question you keep <span class="hl">circling.</span> I'll bring back the answer, with the proof.</h1>
-          <p class="hero-sub">I investigate the public evidence, rank your options, and grade every material claim high, medium, or low confidence. Sources shown.</p>
-
-          <div class="cta-row">
-            <a href="#send-question" class="btn btn-primary" data-track="Hero Send Question">Get the Read →</a>
-            <a href="/sample-brief.html" class="btn btn-ghost" data-track="Hero Sample Read">See a sample</a>
-          </div>
-
-          <div class="hero-trust">
-            <div class="avatars"><span></span><span></span><span></span><span></span></div>
-            <span><strong>Free fit check.</strong> No call. Fixed price before you pay.</span>
-          </div>
+        <div class="hero-chip marks">
+          <span class="dot"></span>
+          <span class="tag tag-amber">The Decision Read</span>
+          <span class="tag">one question · every claim graded</span>
         </div>
 
-        <!-- UI MOCKUP: the Read anatomy -->
-        <aside class="read-card marks">
-          <div class="read-bar">
-            <div class="read-dots"><span></span><span></span><span></span></div>
-            <div class="read-tab">decision-read · <strong>page 1</strong></div>
-          </div>
-          <div class="read-body">
-            <div class="read-eyebrow">The answer first</div>
-            <div class="read-h">Answer on top. Evidence underneath.</div>
-            <div class="verdict">
-              <div class="verdict-label">Recommendation</div>
-              <p>A direct call, ranked against the alternatives.</p>
-            </div>
-            <div class="grade-block">
-              <div class="grade-title">Every claim graded</div>
-              <div class="grade-row"><span>High</span><p>strong sources agree</p></div>
-              <div class="grade-row"><span>Med</span><p>useful but incomplete</p></div>
-              <div class="grade-row"><span>Low</span><p>thin or not provable</p></div>
-            </div>
-            <div class="read-footer">Recommendation → Confidence → Evidence → Risks → Next Moves</div>
-          </div>
-        </aside>
+        <h1>Bring me the question you keep <span class="hl">circling.</span> I'll bring back the answer, <em>with the proof.</em></h1>
+        <p class="hero-sub">I investigate the public evidence, rank your options, and grade every material claim high, medium, or low confidence. Sources shown.</p>
+
+        <div class="cta-row">
+          <a href="#send-question" class="btn btn-primary" data-track="Hero Send Question">Get the Read →</a>
+          <a href="/sample-brief.html" class="btn btn-ghost" data-track="Hero Sample Read">See a sample</a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="avatars"><span></span><span></span><span></span><span></span></div>
+          <span><strong>Free fit check.</strong> No call. Fixed price before you pay.</span>
+        </div>
       </div>
+    </section>
+
+    <!-- THE SPECIMEN — the Read anatomy, floating alone -->
+    <section class="specimen">
+      <div class="specimen-glow" aria-hidden="true"></div>
+      <!-- UI MOCKUP: the Read anatomy -->
+      <aside class="read-card marks">
+        <div class="read-bar">
+          <div class="read-dots"><span></span><span></span><span></span></div>
+          <div class="read-tab">decision-read · <strong>page 1</strong></div>
+        </div>
+        <div class="read-body">
+          <div class="read-eyebrow">The answer first</div>
+          <div class="read-h">Answer on top. Evidence underneath.</div>
+          <div class="verdict">
+            <div class="verdict-label">Recommendation</div>
+            <p>A direct call, ranked against the alternatives.</p>
+          </div>
+          <div class="grade-block">
+            <div class="grade-title">Every claim graded</div>
+            <div class="grade-row"><span>High</span><p>strong sources agree</p></div>
+            <div class="grade-row"><span>Med</span><p>useful but incomplete</p></div>
+            <div class="grade-row"><span>Low</span><p>thin or not provable</p></div>
+          </div>
+          <div class="read-footer">Recommendation → Confidence → Evidence → Risks → Next Moves</div>
+        </div>
+      </aside>
     </section>
 
     <!-- PROOF STRIP -->
@@ -194,12 +197,12 @@
             <p>The objections, triggers, and unmet needs across reviews, search, and communities.</p>
           </div>
         </div>
-        <p class="q-foot">If you can frame it as one important decision, send it.</p>
+        <p class="q-foot statement">If you can frame it as <em>one important decision,</em> send it.</p>
       </div>
     </section>
 
-    <!-- RECENT READS -->
-    <section class="block" id="reads">
+    <!-- RECENT READS — Spade inset panel -->
+    <section class="block panel marks" id="reads">
       <div class="block-inner">
 
         <div class="intro">
@@ -358,8 +361,8 @@
           </div>
         </div>
 
-        <div class="pricing-foot">
-          Not sure which fits? Don't choose. Send the question and I'll recommend the smallest useful depth.
+        <div class="pricing-foot statement">
+          Not sure which fits? <em>Don't choose.</em> Send the question and I'll recommend the smallest useful depth.
         </div>
       </div>
     </section>
