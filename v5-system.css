@@ -20,18 +20,18 @@
   --text-3:       #8A8A98;
   --text-4:       #5A5A66;
 
-  /* accent */
-  --indigo:       #6366F1;
-  --indigo-bright: #818CF8;
-  --purple:       #A855F7;
-  --pink:         #EC4899;
-  --cyan:         #22D3EE;
-  --emerald:      #22D3EE;
+  /* accent — retheme to v6 amber (Jul 17), keeps the whole v5 tail on-brand */
+  --indigo:       #E3A44A;
+  --indigo-bright: #F2BC63;
+  --purple:       #C8843A;
+  --pink:         #F2BC63;
+  --cyan:         #F2BC63;
+  --emerald:      #8FB878;
 
   /* gradients */
-  --grad-hero:    linear-gradient(135deg, #6366F1 0%, #A855F7 50%, #EC4899 100%);
-  --grad-cta:     linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
-  --grad-cta-hover: linear-gradient(135deg, #818CF8 0%, #A78BFA 100%);
+  --grad-hero:    linear-gradient(135deg, #E3A44A 0%, #C8843A 50%, #F2BC63 100%);
+  --grad-cta:     linear-gradient(135deg, #E3A44A 0%, #F2BC63 100%);
+  --grad-cta-hover: linear-gradient(135deg, #F2BC63 0%, #E3A44A 100%);
 
   /* type */
   --sans:         'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
