@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/v6-system.css?v=graded-evidence-5">
+  <link rel="stylesheet" href="/v6-system.css?v=graded-evidence-6">
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070708' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%23E3A44A' font-family='Georgia' font-weight='400'>L</text></svg>">
   <link rel="dns-prefetch" href="https://formspree.io">
@@ -60,10 +60,10 @@
         "description": "An independent second opinion for one important business question. The evidence is investigated, the options ranked, and every material claim graded high, medium, or low confidence and sourced.",
         "brand": { "@id": "https://www.loopworker.com/#organization" },
         "offers": [
-          { "@type": "Offer", "name": "Signal Snapshot", "price": "750", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "48-hour Decision Read for one narrow, time-sensitive, reasonably reversible question." },
-          { "@type": "Offer", "name": "Competitive Intelligence Brief", "price": "3200", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "Five-day Decision Read for one focused decision with real tradeoffs, including a 30-minute review call." },
-          { "@type": "Offer", "name": "Atlas", "price": "8000", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "Ten-day Decision Read for a six-figure decision: full competitor, customer, pricing, and market investigation with full source trail." },
-          { "@type": "Offer", "name": "Market Operating System", "price": "25000", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "30-day engagement: the full Atlas investigation plus the operating change that follows it. Billed by milestone." }
+          { "@type": "Offer", "name": "The 48-hour Read", "price": "750", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "48-hour Decision Read for one narrow, time-sensitive, reasonably reversible question." },
+          { "@type": "Offer", "name": "The 5-day Read", "price": "3200", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "Five-day Decision Read for one focused decision with real tradeoffs, including a 30-minute review call." },
+          { "@type": "Offer", "name": "The 10-day Read", "price": "8000", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "Ten-day Decision Read for a six-figure decision: full competitor, customer, pricing, and market investigation with full source trail." },
+          { "@type": "Offer", "name": "The 30-day Engagement", "price": "25000", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "30-day engagement: the full ten-day investigation plus the operating change that follows it. Billed by milestone." }
         ]
       },
       {
@@ -137,31 +137,84 @@
       </div>
     </section>
 
-    <!-- THE SPECIMEN — the Read anatomy, floating alone -->
-    <section class="specimen">
-      <div class="specimen-glow" aria-hidden="true"></div>
-      <!-- UI MOCKUP: the Read anatomy -->
-      <aside class="read-card marks">
-        <div class="read-bar">
-          <div class="read-dots"><span></span><span></span><span></span></div>
-          <div class="read-tab">decision-read · <strong>page 1</strong></div>
+    <!-- THE SPECIMEN — the Read anatomy, 3 pages swiping on scroll -->
+    <section class="specimen" id="specimen">
+      <div class="spec-sticky">
+        <div class="specimen-glow" aria-hidden="true"></div>
+        <div class="spec-stack">
+
+          <!-- page 1 -->
+          <aside class="read-card marks spec-card is-active">
+            <div class="read-bar">
+              <div class="read-dots"><span></span><span></span><span></span></div>
+              <div class="read-tab">decision-read · <strong>page 1</strong></div>
+            </div>
+            <div class="read-body">
+              <div class="read-eyebrow">The answer first</div>
+              <div class="read-h">Answer on top. Evidence underneath.</div>
+              <div class="verdict">
+                <div class="verdict-label">Recommendation</div>
+                <p>A direct call, ranked against the alternatives.</p>
+              </div>
+              <div class="grade-block">
+                <div class="grade-title">Every claim graded</div>
+                <div class="grade-row"><span>High</span><p>strong sources agree</p></div>
+                <div class="grade-row"><span>Med</span><p>useful but incomplete</p></div>
+                <div class="grade-row"><span>Low</span><p>thin or not provable</p></div>
+              </div>
+              <div class="read-footer">Recommendation → Confidence → Evidence → Risks → Next Moves</div>
+            </div>
+          </aside>
+
+          <!-- page 2 -->
+          <aside class="read-card marks spec-card" aria-hidden="true">
+            <div class="read-bar">
+              <div class="read-dots"><span></span><span></span><span></span></div>
+              <div class="read-tab">decision-read · <strong>page 2</strong></div>
+            </div>
+            <div class="read-body">
+              <div class="read-eyebrow">The evidence</div>
+              <div class="read-h">Numbered. Sourced. Checkable.</div>
+              <div class="verdict">
+                <div class="verdict-label">What you can check</div>
+                <p>Every material claim carries its source, dated.</p>
+              </div>
+              <div class="grade-block">
+                <div class="grade-title">Stamped as it's verified</div>
+                <div class="grade-row"><span>01</span><p>the claim, in plain words</p></div>
+                <div class="grade-row"><span>SRC</span><p>where it comes from, re-pullable</p></div>
+                <div class="grade-row"><span>Flag</span><p>what didn't check out stays on the page</p></div>
+              </div>
+              <div class="read-footer">No black box. Re-pull any source yourself.</div>
+            </div>
+          </aside>
+
+          <!-- page 3 -->
+          <aside class="read-card marks spec-card" aria-hidden="true">
+            <div class="read-bar">
+              <div class="read-dots"><span></span><span></span><span></span></div>
+              <div class="read-tab">decision-read · <strong>page 3</strong></div>
+            </div>
+            <div class="read-body">
+              <div class="read-eyebrow">The tripwires</div>
+              <div class="read-h">What would flip the answer.</div>
+              <div class="verdict">
+                <div class="verdict-label">Next moves</div>
+                <p>Ranked, dated, ready to hand to whoever executes.</p>
+              </div>
+              <div class="grade-block">
+                <div class="grade-title">Watch for</div>
+                <div class="grade-row"><span>T1</span><p>the event that flips the call</p></div>
+                <div class="grade-row"><span>T2</span><p>the counter-move worth answering</p></div>
+                <div class="grade-row"><span>T3</span><p>the sign the window is closing</p></div>
+              </div>
+              <div class="read-footer">Useful, or your money back.</div>
+            </div>
+          </aside>
+
+          <div class="spec-dots" aria-hidden="true"><span class="on"></span><span></span><span></span></div>
         </div>
-        <div class="read-body">
-          <div class="read-eyebrow">The answer first</div>
-          <div class="read-h">Answer on top. Evidence underneath.</div>
-          <div class="verdict">
-            <div class="verdict-label">Recommendation</div>
-            <p>A direct call, ranked against the alternatives.</p>
-          </div>
-          <div class="grade-block">
-            <div class="grade-title">Every claim graded</div>
-            <div class="grade-row"><span>High</span><p>strong sources agree</p></div>
-            <div class="grade-row"><span>Med</span><p>useful but incomplete</p></div>
-            <div class="grade-row"><span>Low</span><p>thin or not provable</p></div>
-          </div>
-          <div class="read-footer">Recommendation → Confidence → Evidence → Risks → Next Moves</div>
-        </div>
-      </aside>
+      </div>
     </section>
 
     <!-- PROOF STRIP — scrolling ticker -->
@@ -222,14 +275,14 @@
           <!-- Card 1 · Law -->
           <div class="read-doc marks">
             <span class="doc-tag">Law · four-attorney firm</span>
-            <p class="doc-q">&ldquo;Where should a small, fast team spend its next dollar and hour to grow, given what every rival is already doing?&rdquo;</p>
+            <p class="doc-q">&ldquo;We're a four-lawyer firm. Where should our next dollar go?&rdquo;</p>
             <div class="receipts">
               <div class="receipts-title">The receipts</div>
-              <div class="receipt-row"><span class="verified">VERIFIED</span><p>The field fights over the wrong channel: rivals buy the top of every search with paid ads, the lane 82% of firms say they regret.</p></div>
-              <div class="receipt-row"><span class="verified">VERIFIED</span><p>The best-return channel sits unguarded: a top-50-ranked rival's blog dead since 2019, a 3.7 review rating.</p></div>
-              <div class="receipt-row"><span class="flagged">FLAGGED</span><p>The firm's own site hid its Google rating, linked an empty YouTube, and still sold a law the state voided in 2023.</p></div>
+              <div class="receipt-row"><span class="verified">VERIFIED</span><p>Every rival is buying search ads, the channel 82% of firms say they regret.</p></div>
+              <div class="receipt-row"><span class="verified">VERIFIED</span><p>The channel with the best return is wide open: a top-50 rival hasn't touched its blog since 2019 and sits at a 3.7 review rating.</p></div>
+              <div class="receipt-row"><span class="flagged">FLAGGED</span><p>The firm's own site hid its Google rating, linked to an empty YouTube channel, and still advertised a law the state scrapped in 2023.</p></div>
             </div>
-            <p class="doc-call"><strong>The call:</strong> point the intake machine they already run at the channel nobody is guarding: a review ask on every closed matter, the live rating where clients can see it.</p>
+            <p class="doc-call"><strong>The call:</strong> skip the ad war. Ask every closed client for a review and put the rating where people can see it.</p>
             <p class="doc-sources">rival ad, content + review footprints · 2025-26 channel data · own-site teardown</p>
             <a href="/downloads/read-law-redacted.pdf" download data-track="Download Law Read" class="doc-dl">Download this Read (PDF) ↓</a>
           </div>
@@ -237,14 +290,14 @@
           <!-- Card 2 · Coaching -->
           <div class="read-doc marks">
             <span class="doc-tag">Coaching · Founder brand</span>
-            <p class="doc-q">&ldquo;I have the deepest product stack in my niche. Why is none of it converting?&rdquo;</p>
+            <p class="doc-q">&ldquo;I've built more products than anyone in my niche. Why is nobody buying?&rdquo;</p>
             <div class="receipts">
               <div class="receipts-title">The receipts</div>
-              <div class="receipt-row"><span class="verified">VERIFIED</span><p>5x the product assets of the closest competitor, one sixth the engagement: 4.23 avg likes per post vs 26.40 for the niche leader.</p></div>
-              <div class="receipt-row"><span class="verified">VERIFIED</span><p>Two flagship pages returning 404, a 9-document lead magnet series buried off-nav, every CTA routing to one calendar link.</p></div>
-              <div class="receipt-row"><span class="verified">VERIFIED</span><p>A 10,000-name email list sitting dormant.</p></div>
+              <div class="receipt-row"><span class="verified">VERIFIED</span><p>Five times more products than the closest competitor, one sixth the engagement: 4.23 likes per post vs 26.40 for the niche leader.</p></div>
+              <div class="receipt-row"><span class="verified">VERIFIED</span><p>Two flagship pages were dead 404s, a 9-part lead magnet series sat where no menu reaches it, and every button on the site pointed to one calendar link.</p></div>
+              <div class="receipt-row"><span class="verified">VERIFIED</span><p>A 10,000-person email list, untouched.</p></div>
             </div>
-            <p class="doc-call"><strong>The call:</strong> stop publishing more, reposition the fragments as one system, surface the hidden assets, reactivate the list.</p>
+            <p class="doc-call"><strong>The call:</strong> stop making new things. Package what exists as one system, fix the dead pages, and email the list.</p>
             <p class="doc-sources">1,151 competitor posts + 425 own posts analyzed · 30 scrape queries</p>
             <a href="/downloads/read-coach-redacted.pdf" download data-track="Download Coach Read" class="doc-dl">Download this Read (PDF) ↓</a>
           </div>
@@ -252,14 +305,14 @@
           <!-- Card 3 · Consumer brand -->
           <div class="read-doc marks">
             <span class="doc-tag">Consumer brand · Pre-launch</span>
-            <p class="doc-q">&ldquo;Who acquires a brand like ours, at what price, and what has to happen between launch and exit?&rdquo;</p>
+            <p class="doc-q">&ldquo;Who would buy a brand like ours one day, and for how much?&rdquo;</p>
             <div class="receipts">
               <div class="receipts-title">The receipts</div>
-              <div class="receipt-row"><span class="verified">VERIFIED</span><p>The exit lane is proven twice: the archetype cleared roughly 5.5x trailing sales at the same strategic acquirer, $630M in 2022 and up to $880M in 2025.</p></div>
-              <div class="receipt-row"><span class="verified">VERIFIED</span><p>14 closest competitors mapped on two axes: the target quadrant is empty.</p></div>
-              <div class="receipt-row"><span class="flagged">FLAGGED</span><p>Four claims in the client's own investor deck were wrong or unverifiable, corrected before the next circulation.</p></div>
+              <div class="receipt-row"><span class="verified">VERIFIED</span><p>Brands like this one have sold twice to the same buyer, at roughly 5.5x sales: $630M in 2022, up to $880M in 2025.</p></div>
+              <div class="receipt-row"><span class="verified">VERIFIED</span><p>The 14 closest competitors, mapped: the spot this brand wants is empty.</p></div>
+              <div class="receipt-row"><span class="flagged">FLAGGED</span><p>Four claims in the client's own investor deck didn't check out. Fixed before it went out again.</p></div>
             </div>
-            <p class="doc-call"><strong>The call:</strong> plan around the proven strategic-acquisition lane, stack four revenue channels in sequence, file trademarks now against a just-detected copycat.</p>
+            <p class="doc-call"><strong>The call:</strong> build toward the proven buyer, add revenue channels one at a time, and file trademarks now. A copycat just appeared.</p>
             <p class="doc-sources">12 brand teardowns · 14 cited exits · 11 buyers ranked</p>
             <a href="/downloads/read-brand-redacted.pdf" download data-track="Download Brand Read" class="doc-dl">Download this Read (PDF) ↓</a>
           </div>
@@ -312,9 +365,9 @@
 
         <div class="tier-row marks">
           <div class="tier">
-            <div class="tier-eyebrow">Signal Snapshot</div>
+            <div class="tier-eyebrow">The 48-hour Read</div>
             <h3>Fast second opinion</h3>
-            <div class="tier-price">$750<small>· 48h</small></div>
+            <div class="tier-price">$750</div>
             <ul>
               <li>One focused Read</li>
               <li>Key evidence and sources</li>
@@ -325,9 +378,9 @@
           </div>
 
           <div class="tier">
-            <div class="tier-eyebrow">Competitive Intelligence Brief</div>
+            <div class="tier-eyebrow">The 5-day Read</div>
             <h3>Focused decision</h3>
-            <div class="tier-price">$3,200<small>· 5d</small></div>
+            <div class="tier-price">$3,200</div>
             <ul>
               <li>Several evidence sources</li>
               <li>Main options compared</li>
@@ -339,9 +392,9 @@
           </div>
 
           <div class="tier">
-            <div class="tier-eyebrow">Atlas</div>
+            <div class="tier-eyebrow">The 10-day Read</div>
             <h3>Six-figure decision</h3>
-            <div class="tier-price">$8,000<small>· 10d</small></div>
+            <div class="tier-price">$8,000</div>
             <ul>
               <li>Full competitor + market dig</li>
               <li>~10 comparables</li>
@@ -353,11 +406,11 @@
           </div>
 
           <div class="tier">
-            <div class="tier-eyebrow">Market Operating System</div>
+            <div class="tier-eyebrow">The 30-day Engagement</div>
             <h3>Decision + the change</h3>
-            <div class="tier-price">$25,000<small>· 30d</small></div>
+            <div class="tier-price">$25,000</div>
             <ul>
-              <li>The full Atlas dig</li>
+              <li>The full 10-day dig</li>
               <li>Positioning or offer rebuild</li>
               <li>An implementation playbook</li>
               <li>Ranked operating priorities</li>
@@ -402,6 +455,7 @@
             <p>If the Read doesn't improve the evidence for your decision, tell me within 14 days and I refund the fee. It doesn't promise a particular outcome.</p>
           </details>
         </div>
+        <p class="q-foot faq-more">More questions? <a href="/faq.html">The full FAQ →</a></p>
       </div>
     </section>
 
@@ -447,10 +501,35 @@
     <div class="foot-inner">
       <div class="foot-logo">LoopWorker</div>
       <p>One question. One ranked answer. Every claim graded and sourced.</p>
-      <p>© 2026 · <a href="/sample-brief.html">Sample</a> · <a href="#pricing">Pricing</a> · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a></p>
+      <p>© 2026 · <a href="/sample-brief.html">Sample</a> · <a href="#pricing">Pricing</a> · <a href="/faq.html">FAQ</a> · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a></p>
       <p class="foot-small">alex@loopworker.com</p>
     </div>
   </footer>
 
+  <script>
+    (function () {
+      var sec = document.getElementById('specimen');
+      if (!sec) return;
+      var cards = [].slice.call(sec.querySelectorAll('.spec-card'));
+      var dots = [].slice.call(sec.querySelectorAll('.spec-dots span'));
+      var cur = -1;
+      function upd() {
+        var total = sec.offsetHeight - window.innerHeight;
+        var p = Math.max(0, Math.min(1, -sec.getBoundingClientRect().top / Math.max(1, total)));
+        var i = Math.min(cards.length - 1, Math.floor(p * cards.length));
+        if (i === cur) return;
+        cur = i;
+        cards.forEach(function (c, k) {
+          c.classList.toggle('is-active', k === i);
+          c.classList.toggle('is-past', k < i);
+          c.setAttribute('aria-hidden', k === i ? 'false' : 'true');
+        });
+        dots.forEach(function (d, k) { d.classList.toggle('on', k === i); });
+      }
+      window.addEventListener('scroll', upd, { passive: true });
+      window.addEventListener('resize', upd);
+      upd();
+    })();
+  </script>
 </body>
 </html>
