@@ -239,18 +239,33 @@ nav.v6-nav{
 /* ---------- PROOF STRIP ---------- */
 .proof{
   border-top:1px solid var(--border-soft); border-bottom:1px solid var(--border-soft);
-  padding:1.5rem 2rem;
+  padding:1.5rem 0; overflow:hidden; position:relative;
 }
+.proof::before, .proof::after{
+  content:""; position:absolute; top:0; bottom:0; width:90px; z-index:2; pointer-events:none;
+}
+.proof::before{left:0; background:linear-gradient(90deg, var(--bg), transparent);}
+.proof::after{right:0; background:linear-gradient(270deg, var(--bg), transparent);}
+.proof-track{
+  display:flex; width:max-content;
+  animation:proof-scroll 30s linear infinite;
+}
+.proof:hover .proof-track{animation-play-state:paused;}
 .proof-inner{
-  max-width:1200px; margin:0 auto;
-  display:flex; align-items:center; justify-content:center; gap:2.8rem; flex-wrap:wrap;
+  display:flex; align-items:center; gap:2.8rem; flex:none;
+  padding-right:2.8rem;
 }
-.proof-label{font-family:var(--mono); font-size:0.66rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--text-3);}
+.proof-label{font-family:var(--mono); font-size:0.66rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--text-3); white-space:nowrap;}
 .proof-item{
   font-family:var(--mono); font-size:0.74rem; letter-spacing:0.1em;
-  text-transform:uppercase; color:var(--text-2);
+  text-transform:uppercase; color:var(--text-2); white-space:nowrap;
 }
 .proof-item::before{content:"► "; color:var(--amber); font-size:0.62em; vertical-align:0.18em;}
+@keyframes proof-scroll{to{transform:translateX(-50%);}}
+@media (prefers-reduced-motion: reduce){
+  .proof-track{animation:none; width:auto; flex-wrap:wrap; justify-content:center;}
+  .proof-inner + .proof-inner{display:none;}
+}
 
 /* ---------- SECTION SHELL ---------- */
 section.block{padding:9.5rem 2rem;}
@@ -302,7 +317,7 @@ section.block.panel{
   padding:2rem 1.9rem; display:flex; flex-direction:column;
 }
 .read-doc .doc-tag{
-  font-family:var(--mono); font-size:0.66rem; font-weight:500; letter-spacing:0.16em;
+  font-family:var(--mono); font-size:0.88rem; font-weight:700; letter-spacing:0.14em;
   text-transform:uppercase; color:var(--amber);
 }
 .read-doc .doc-tag::before{content:"► "; font-size:0.6em; vertical-align:0.15em;}
