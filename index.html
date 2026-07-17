@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/v6-system.css?v=graded-evidence-17">
+  <link rel="stylesheet" href="/v6-system.css?v=graded-evidence-18">
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070708' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%23E3A44A' font-family='Georgia' font-weight='400'>L</text></svg>">
   <link rel="dns-prefetch" href="https://formspree.io">
@@ -553,21 +553,34 @@
       var cards = [].slice.call(sec.querySelectorAll('.spec-card'));
       var dots = [].slice.call(sec.querySelectorAll('.spec-dots span'));
       var cur = -1;
+      function place(active) {
+        // all three cards stay visible; each sits fanned by its distance from
+        // the active card, so the deck slides through instead of popping in.
+        var fan = window.innerWidth < 640 ? 26 : 46;
+        cards.forEach(function (c, k) {
+          var d = k - active;          // signed distance
+          var ad = Math.abs(d);
+          c.classList.toggle('is-active', d === 0);
+          c.setAttribute('aria-hidden', d === 0 ? 'false' : 'true');
+          c.style.zIndex = String(3 - ad);
+          c.style.opacity = String(Math.max(0, 1 - ad * 0.62));
+          c.style.transform =
+            'translateX(' + (d * fan) + 'px) translateY(' + (ad * 13) + 'px) ' +
+            'scale(' + (1 - ad * 0.08) + ') rotate(' + (d * 2.2) + 'deg)';
+        });
+        dots.forEach(function (dt, k) { dt.classList.toggle('on', k === active); });
+      }
       function upd() {
         var total = sec.offsetHeight - window.innerHeight;
         var p = Math.max(0, Math.min(1, -sec.getBoundingClientRect().top / Math.max(1, total)));
         var i = Math.min(cards.length - 1, Math.floor(p * cards.length));
         if (i === cur) return;
         cur = i;
-        cards.forEach(function (c, k) {
-          c.classList.toggle('is-active', k === i);
-          c.classList.toggle('is-past', k < i);
-          c.setAttribute('aria-hidden', k === i ? 'false' : 'true');
-        });
-        dots.forEach(function (d, k) { d.classList.toggle('on', k === i); });
+        place(i);
       }
       window.addEventListener('scroll', upd, { passive: true });
-      window.addEventListener('resize', upd);
+      window.addEventListener('resize', function () { place(cur < 0 ? 0 : cur); });
+      place(0); cur = 0;
       upd();
     })();
   </script>
