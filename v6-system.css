@@ -215,7 +215,7 @@ nav.v6-nav.scrolled{
 }
 /* JS positions each card by its distance from the active one (deck fan).
    Fallback with no JS: all three fanned so it never reads as one card. */
-.spec-card{opacity:0.4; transform:translateX(44px) translateY(14px) scale(0.9); z-index:1;}
+.spec-card{opacity:0.5; transform:translateX(88px) translateY(10px) scale(0.93); z-index:1;}
 .spec-card:first-child{opacity:1; transform:none; z-index:3;}
 .spec-card:not(.is-active){pointer-events:none;}
 .spec-card.is-active{box-shadow:0 28px 90px rgba(0,0,0,0.6);}
