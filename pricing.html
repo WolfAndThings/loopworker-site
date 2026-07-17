@@ -57,6 +57,19 @@
 
     .retainer-line { max-width: 720px; margin: 2.2rem auto 0; text-align: center; font-size: .88rem; color: var(--text-3, #8a867e); }
 
+    /* depth detail — what lands on your desk */
+    .dd { border: 1px solid rgba(255,255,255,.09); padding: 1.8rem 1.8rem 1.5rem; margin-top: 1rem; }
+    .dd.hot { border-color: #E3A44A; }
+    .dd-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.1rem; }
+    .dd-name { font-family: 'JetBrains Mono', monospace; font-size: .82rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #E3A44A; }
+    .dd-price { font-family: 'JetBrains Mono', monospace; font-size: .82rem; color: var(--text-2, #b9b7b2); }
+    .dd-before { font-size: .9rem; color: var(--text-2, #b9b7b2); border-left: 2px solid #E3A44A; padding: .35rem 0 .35rem .9rem; margin-bottom: 1.1rem; }
+    .dd-doc { display: grid; grid-template-columns: 86px 1fr; gap: .9rem; padding: .7rem 0; border-top: 1px solid rgba(255,255,255,.07); font-size: .92rem; line-height: 1.55; color: var(--text-2, #b9b7b2); }
+    .dd-doc .d-k { font-family: 'JetBrains Mono', monospace; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-3, #7E7A72); padding-top: .15rem; }
+    .dd-doc strong { color: var(--text, #efece6); }
+    .dd-plus { font-size: .85rem; color: var(--text-3, #8a867e); margin-top: .9rem; font-family: 'JetBrains Mono', monospace; letter-spacing: .04em; }
+    @media (max-width: 560px){ .dd-doc { grid-template-columns: 1fr; gap: .15rem; } }
+
     .price-close { max-width: 880px; margin: 0 auto; padding: 1rem 2rem 5rem; text-align: center; }
     .price-close .cta-row { justify-content: center; margin-top: 1.4rem; }
     .price-close .closing-note { margin-top: 1.4rem; }
@@ -230,6 +243,48 @@
           <span class="g-eyebrow">► The guarantee</span>
           <h2>100% money back.</h2>
           <p>If the Read doesn't improve the evidence for your decision, tell me within 14 days and I refund the full fee. Your call, not mine.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT LANDS ON YOUR DESK -->
+    <section class="block" id="whats-inside">
+      <div class="block-inner">
+        <div class="intro">
+          <span class="eyebrow">What lands on your desk</span>
+          <h2>Every depth, <span class="hl">broken down.</span></h2>
+          <p class="section-sub">Every engagement starts the same way: we sit down before I pull anything. You tell me the decision; I tell you exactly what I'll go get.</p>
+        </div>
+
+        <div class="dd marks">
+          <div class="dd-head"><span class="dd-name">► The 48-hour Read</span><span class="dd-price">$750 · one document</span></div>
+          <div class="dd-before">Starts with a sit-down: you frame the decision, I confirm what I'll pull.</div>
+          <div class="dd-doc"><span class="d-k">Doc 01</span><div><strong>The Read.</strong> One page. The answer to your narrow question, the graded evidence behind it, and three next moves.</div></div>
+        </div>
+
+        <div class="dd marks">
+          <div class="dd-head"><span class="dd-name">► The 5-day Read</span><span class="dd-price">$3,200 · two documents</span></div>
+          <div class="dd-before">Starts with a sit-down: you frame the decision, I confirm what I'll pull.</div>
+          <div class="dd-doc"><span class="d-k">Doc 01</span><div><strong>The Read.</strong> The verdict on top, your options ranked, every material claim graded and sourced.</div></div>
+          <div class="dd-doc"><span class="d-k">Doc 02</span><div><strong>The Evidence Record.</strong> Every pull behind the Read: dated, sourced, re-pullable. Check any line yourself.</div></div>
+          <div class="dd-plus">+ 30-minute review call on delivery</div>
+        </div>
+
+        <div class="dd hot marks">
+          <div class="dd-head"><span class="dd-name">► The 10-day Read</span><span class="dd-price">$8,000 · three documents</span></div>
+          <div class="dd-before">Starts with a sit-down: you frame the decision, I confirm what I'll pull.</div>
+          <div class="dd-doc"><span class="d-k">Doc 01</span><div><strong>The Read.</strong> The answer to your six-figure question, every claim graded and sourced.</div></div>
+          <div class="dd-doc"><span class="d-k">Doc 02</span><div><strong>The Market Map.</strong> ~10 rivals torn down: what they charge, where they show up, what their buyers say, where the gap is.</div></div>
+          <div class="dd-doc"><span class="d-k">Doc 03</span><div><strong>The Move Plan.</strong> Your next moves, ranked, with the tripwires that would change the answer.</div></div>
+          <div class="dd-plus">+ decision review call on delivery</div>
+        </div>
+
+        <div class="dd marks">
+          <div class="dd-head"><span class="dd-name">► The 30-day Engagement</span><span class="dd-price">$25,000 · four documents</span></div>
+          <div class="dd-before">Starts with a sit-down, then one before each milestone.</div>
+          <div class="dd-doc"><span class="d-k">Docs 01-03</span><div><strong>Everything in the 10-day Read.</strong> The Read, the Market Map, the Move Plan.</div></div>
+          <div class="dd-doc"><span class="d-k">Doc 04</span><div><strong>The Operating Playbook.</strong> The positioning or offer rebuild and a 90-day roadmap, step by step, ready to execute.</div></div>
+          <div class="dd-plus">+ milestone reviews · billed per milestone</div>
         </div>
       </div>
     </section>
