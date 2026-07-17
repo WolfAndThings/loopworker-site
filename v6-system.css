@@ -230,7 +230,8 @@ nav.v6-nav{
 }
 .read-eyebrow::before{content:"► "; font-size:0.6em; vertical-align:0.15em;}
 .read-h{
-  font-family:var(--serif); font-size:1.65rem; line-height:1.15; margin-bottom:1.3rem;
+  font-weight:600; letter-spacing:-0.01em;
+  font-size:1.3rem; line-height:1.35; margin-bottom:1.3rem;
 }
 .verdict{
   border-left:2px solid var(--amber); background:var(--amber-dim);
