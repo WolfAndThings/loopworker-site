@@ -1,6 +1,9 @@
 User-agent: *
 Allow: /
 Allow: /tools/roi-calculator.html
+Allow: /tools/pricing-band-finder.html
+Allow: /tools/brand-audit-score.html
+Allow: /tools/channel-mix-diagnoser.html
 
 Disallow: /clients/
 Disallow: /proposals/

@@ -59,6 +59,7 @@
     @media (max-width: 720px) { .v5-founder { grid-template-columns: 1fr; gap: 2rem; text-align: center; } }
     .v5-founder-photo {
       width: 200px; height: 200px; border-radius: 50%;
+      object-fit: cover;
       background: var(--grad-cta);
       display: flex; align-items: center; justify-content: center;
       font-family: var(--sans-tight); font-weight: 900;
@@ -116,7 +117,7 @@
       color: var(--emerald); font-weight: 700;
     }
     .v5-fit-card.bad li::before {
-      content: ', '; position: absolute; left: 0;
+      content: '✕'; position: absolute; left: 0;
       color: var(--text-4);
     }
   </style>
@@ -199,7 +200,7 @@
           <h2>Built and run by <span class="grad-text">Alex Lamb.</span></h2>
         </div>
         <div class="v5-founder">
-          <div class="v5-founder-photo">AL</div>
+          <img class="v5-founder-photo" src="/images/founder/alex-lamb.jpg" width="200" height="200" alt="Alex Lamb, founder of LoopWorker" loading="lazy">
           <div>
             <p>I built LoopWorker because most strategy work happens before the evidence shows up. Founders ship positioning, pricing, and campaigns built on the loudest opinion in the room, and three months later, rebuild.</p>
             <p>The signals to make the call honestly are public. Competitor ads, scraped competitor pages, search demand, pricing pages, customer language. Pulling them takes 4-12 hours per signal done right. Most teams don't have that time. So they guess.</p>

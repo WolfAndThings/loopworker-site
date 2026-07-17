@@ -399,8 +399,10 @@
       set('landing_url', location.href);
       const tier = params.get('tier');
       const vertical = params.get('vertical');
+      const intent = params.get('intent');
       if (vertical) set('vertical_pre', vertical);
       if (tier) set('vertical_pre', 'tier:' + tier);
+      if (intent) set('vertical_pre', 'tier:' + intent);
 
       const form = document.getElementById('bookingForm');
       if (form) {
