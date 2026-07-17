@@ -388,6 +388,13 @@ section.block.panel{
   font-size:1.25rem; line-height:1.4; margin-bottom:0.8rem;
 }
 .q-card p{color:var(--text-2); font-size:0.97rem;}
+.q-eg{
+  margin-top:1rem; padding-top:0.9rem; border-top:1px solid var(--border-soft);
+  font-family:var(--mono); font-size:0.72rem; line-height:1.5; letter-spacing:0.02em;
+  color:var(--text-3);
+}
+.q-eg b{color:var(--amber); font-weight:500;}
+.q-eg::before{content:"► "; color:var(--amber); font-size:0.82em;}
 .q-foot{margin:2.2rem auto 0; max-width:620px; text-align:center; color:var(--text-2); font-size:1.02rem;}
 .faq-more{margin-top:2rem;}
 .faq-more a{color:var(--amber); text-decoration:none;}
