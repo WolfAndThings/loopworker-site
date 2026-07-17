@@ -292,6 +292,13 @@ nav.v6-nav{
   .proof-inner + .proof-inner{display:none;}
 }
 
+/* ---------- SCROLL REVEAL (class added by v6-reveal.js only) ---------- */
+.rv{
+  opacity:0; transform:translateY(26px);
+  transition:opacity 0.55s cubic-bezier(.22,.61,.36,1), transform 0.55s cubic-bezier(.22,.61,.36,1);
+}
+.rv.in{opacity:1; transform:translateY(0);}
+
 /* ---------- GUARANTEE BAND ---------- */
 .guarantee{
   max-width:820px; margin:0 auto; padding:3rem 2.5rem;
