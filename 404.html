@@ -4,118 +4,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
-  <title>Page Not Found · LoopWorker</title>
+  <title>Not found · LoopWorker</title>
   <meta name="robots" content="noindex">
-  <meta name="description" content="That page doesn't exist. Head back home or explore The Sprint.">
-  <meta name="theme-color" content="#07070C">
+  <meta name="theme-color" content="#070708">
   <meta name="color-scheme" content="dark">
-
-  <script>
-    // GitHub Pages clean URL routing
-    var path = window.location.pathname;
-    var cleanPaths = ['/services', '/portfolio', '/about', '/sprint', '/pricing', '/book', '/case-studies'];
-    if (cleanPaths.indexOf(path) !== -1) {
-      window.location.replace(path + '.html');
-    }
-  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/v5-system.css?v=uniform-shell-1">
+  <link rel="stylesheet" href="/v6-system.css?v=graded-evidence-17">
 
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070708' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%23E3A44A' font-family='Georgia' font-weight='400'>L</text></svg>">
 
   <style>
-    .v5-404 {
-      min-height: 80vh;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center;
-      padding: 4rem 2rem;
-      position: relative; overflow: hidden;
-    }
-    .v5-404::before {
-      content: ''; position: absolute; inset: 0; pointer-events: none;
-      background:
-        radial-gradient(ellipse 900px 600px at 50% 30%, rgba(99,102,241,0.18), transparent 65%),
-        radial-gradient(ellipse 700px 400px at 50% 80%, rgba(236,72,153,0.10), transparent 70%);
-    }
-    .v5-404-inner { position: relative; z-index: 2; max-width: 560px; }
-    .v5-404-code {
-      font-family: var(--sans-tight);
-      font-size: clamp(6rem, 16vw, 12rem);
-      font-weight: 900;
-      letter-spacing: -0.06em;
-      line-height: 0.9;
-      background: var(--grad-hero);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 1rem;
-    }
-    .v5-404 h1 {
-      font-size: clamp(1.8rem, 3.6vw, 2.6rem);
-      margin: 0 0 1rem;
-    }
-    .v5-404 p {
-      font-size: 1.1rem; color: var(--text-2);
-      line-height: 1.55; margin: 0 0 2.4rem;
-    }
+    .nf { min-height: 82vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; max-width: 640px; margin: 0 auto; }
+    .nf .code { font-family: 'JetBrains Mono', monospace; font-size: .8rem; letter-spacing: .18em; text-transform: uppercase; color: #E3A44A; }
+    .nf h1 { margin: 1.2rem 0 1rem; }
+    .nf p { color: var(--text-2, #b9b7b2); line-height: 1.6; margin: 0 0 2rem; }
+    .nf .cta-row { justify-content: center; }
   </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to content</a>
-
-  <nav class="v5-nav">
-    <div class="v5-nav-inner">
-      <a href="/" class="v5-logo">
-        <span class="v5-logo-mark">L</span>
-        LoopWorker
-      </a>
-      <div class="v5-nav-links">
-        <a href="/sprint.html">Sprints</a>
+  <nav class="v6-nav">
+    <div class="nav-inner">
+      <a href="/" class="logo"><span class="logo-mark">L</span> LoopWorker</a>
+      <div class="nav-links">
+        <a href="/#reads">Recent Reads</a>
+        <a href="/#free-teardown">Free teardown</a>
         <a href="/pricing.html">Pricing</a>
-        <a href="/case-studies.html">Customers</a>
-        <a href="/blog/">Signals</a>
-        <a href="/about.html">About</a>
-        <a href="/book.html" class="v5-nav-cta" data-track="Nav Book CTA">Book a Review</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/#send-question" class="nav-cta">Get the Read</a>
       </div>
-      <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="v5-mobile-nav" id="mobileNav">
-      <a href="/sprint.html">Sprints</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/case-studies.html">Customers</a>
-      <a href="/blog/">Signals</a>
-      <a href="/about.html">About</a>
-      <a href="/book.html" class="v5-nav-cta">Book a Review</a>
     </div>
   </nav>
 
-  <main id="main">
-    <section class="v5-404">
-      <div class="v5-404-inner">
-        <div class="v5-404-code">404</div>
-        <h1>That signal isn't <span class="grad-text">indexed.</span></h1>
-        <p>The page you're looking for doesn't exist or has been moved. Try one of these instead.</p>
-        <div class="v5-cta-row v5-cta-row-center">
-          <a href="/" class="v5-btn v5-btn-primary">Home</a>
-          <a href="/sprint.html" class="v5-btn v5-btn-ghost">See the Sprints</a>
-          <a href="/book.html" class="v5-btn v5-btn-ghost">Book a Review</a>
-        </div>
+  <main>
+    <section class="nf">
+      <span class="code">► 404 · not on the record</span>
+      <h1>That page <span class="hl">isn't here.</span></h1>
+      <p>The link is dead or the page moved. What you're after is probably one of these.</p>
+      <div class="cta-row">
+        <a href="/" class="btn btn-primary">Back to home →</a>
+        <a href="/#free-teardown" class="btn btn-ghost">Free teardown</a>
       </div>
     </section>
   </main>
 
-  <footer class="v5-foot">
-    <div class="v5-foot-inner">
-      <div class="v5-foot-logo">LoopWorker</div>
-      <p>Evidence before execution.</p>
-      <p>© 2026 · <a href="/sprint.html">Sprints</a> · <a href="/case-studies.html">Customers</a> · <a href="/blog/">Signals</a> · <a href="/about.html">About</a></p>
-      <p class="v5-foot-small">alex@loopworker.com</p>
+  <footer class="v6-foot">
+    <div class="foot-inner">
+      <div class="foot-logo">LoopWorker</div>
+      <p>One question. One ranked answer. Every claim graded and sourced.</p>
+      <p>© 2026 · <a href="/sample-brief.html">Sample</a> · <a href="/pricing.html">Pricing</a> · <a href="/faq.html">FAQ</a> · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a></p>
+      <p class="foot-small">alex@loopworker.com</p>
     </div>
   </footer>
 </body>
