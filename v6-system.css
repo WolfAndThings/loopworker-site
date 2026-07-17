@@ -391,7 +391,7 @@ section.block.panel{
 .q-eg{
   margin-top:1rem; padding-top:0.9rem; border-top:1px solid var(--border-soft);
   font-family:var(--mono); font-size:0.72rem; line-height:1.5; letter-spacing:0.02em;
-  color:var(--text-3);
+  color:var(--text-2);
 }
 .q-eg b{color:var(--amber); font-weight:500;}
 .q-eg::before{content:"► "; color:var(--amber); font-size:0.82em;}
