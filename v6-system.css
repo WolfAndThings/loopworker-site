@@ -26,9 +26,9 @@
   --mono:'JetBrains Mono', monospace;
 }
 *{margin:0; padding:0; box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth; background:var(--bg);}
 body{
-  background:var(--bg);
+  background:transparent;
   color:var(--text);
   font-family:var(--sans);
   font-size:16px;
@@ -36,6 +36,23 @@ body{
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
+
+/* Ambient aurora — the amber field breathes across the whole page */
+body::before{
+  content:""; position:fixed; inset:-22%; z-index:-1; pointer-events:none;
+  background:
+    radial-gradient(38% 30% at 18% 20%, rgba(227,164,74,0.075), transparent 70%),
+    radial-gradient(46% 38% at 84% 78%, rgba(146,92,32,0.065), transparent 70%),
+    radial-gradient(30% 26% at 70% 10%, rgba(242,188,99,0.05), transparent 70%);
+  filter:blur(58px);
+  animation:aurora 80s ease-in-out infinite alternate;
+}
+@keyframes aurora{
+  0%{transform:translate3d(0,0,0) scale(1);}
+  50%{transform:translate3d(3%,-2%,0) scale(1.07);}
+  100%{transform:translate3d(-3%,2.5%,0) scale(1.02);}
+}
+@media (prefers-reduced-motion: reduce){body::before{animation:none;}}
 
 /* Film grain — everything looks real */
 body::after{
@@ -299,6 +316,19 @@ nav.v6-nav{
   transition:opacity 0.55s cubic-bezier(.22,.61,.36,1), transform 0.55s cubic-bezier(.22,.61,.36,1);
 }
 .rv.in{opacity:1; transform:translateY(0);}
+
+/* ---------- CARD LIFE — lift + warm on hover ---------- */
+.q-card, .tier, .prod, .read-doc, .dd, .a-item{
+  transition:transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background 0.3s ease;
+}
+.q-card:hover, .tier:hover, .prod:hover, .read-doc:hover, .dd:hover, .a-item:hover{
+  transform:translateY(-4px);
+  border-color:rgba(227,164,74,0.38);
+  box-shadow:0 14px 44px rgba(0,0,0,0.35), 0 4px 26px rgba(227,164,74,0.09);
+}
+@media (prefers-reduced-motion: reduce){
+  .q-card:hover, .tier:hover, .prod:hover, .read-doc:hover, .dd:hover, .a-item:hover{transform:none;}
+}
 
 /* ---------- GUARANTEE BAND ---------- */
 .guarantee{

@@ -27,6 +27,12 @@
       if (e.isIntersecting) {
         e.target.classList.add('in');
         io.unobserve(e.target);
+        // once revealed, hand the element back to its normal hover transitions
+        e.target.addEventListener('transitionend', function done() {
+          e.target.classList.remove('rv', 'in');
+          e.target.style.transitionDelay = '';
+          e.target.removeEventListener('transitionend', done);
+        });
       }
     });
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
