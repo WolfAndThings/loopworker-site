@@ -162,6 +162,12 @@ nav.v6-nav.scrolled{
   line-height:1.02; letter-spacing:-0.015em;
   margin-bottom:2.2rem; max-width:18ch;
 }
+/* secondary-page heroes (verticals, reports, about, faq, etc.) - responsive so
+   headlines never overflow small screens. .vhero/.rpt had no font-size = 32px default. */
+.vhero h1, .rpt h1, .ft-hero h1, .ab-hero h1, .faq-hero h1, .nf h1, .price-hero h1{
+  font-family:var(--serif); font-weight:400; line-height:1.12;
+  font-size:clamp(1.95rem, 5vw, 3.3rem);
+}
 .hero h1 .hl{font-style:italic; color:var(--amber-bright);}
 .hero h1 em{font-style:italic; font-weight:400;}
 .hero-sub{

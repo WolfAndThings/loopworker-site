@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoopWorker | The Decision Read for Important Business Questions — V6 MOCK</title>
+  <meta name="description" content="DESIGN MOCK — not linked, not indexed. Copy identical to live index.html.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#070708">
+  <meta name="color-scheme" content="dark">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       LOOPWORKER V6 MOCK — "Graded Evidence" system
+       Type voice: Craft/Perplexity (oversized serif, italic mixes, statements)
+       Evidence layer: Spade (mono tags, crop marks, grade stamps)
+       Atmosphere: Perplexity (black bleed, glass cards, one warm glow)
+       ============================================================ */
+    :root{
+      --bg:#070708;
+      --bg-2:#0B0B0E;
+      --surface:rgba(255,255,255,0.025);
+      --glass:rgba(255,255,255,0.04);
+      --border:rgba(240,236,227,0.10);
+      --border-soft:rgba(240,236,227,0.06);
+      --text:#F0ECE3;
+      --text-2:#A7A299;
+      --text-3:#6E6A62;
+      --amber:#E3A44A;
+      --amber-bright:#F2BC63;
+      --amber-dim:rgba(227,164,74,0.14);
+      --green:#8FB878;
+      --flag:#D08153;
+      --serif:'Instrument Serif', Georgia, serif;
+      --sans:'Inter', -apple-system, sans-serif;
+      --mono:'JetBrains Mono', monospace;
+    }
+    *{margin:0; padding:0; box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:var(--sans);
+      font-size:16px;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+
+    /* Film grain — everything looks real */
+    body::after{
+      content:""; position:fixed; inset:0; z-index:2000; pointer-events:none;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+      opacity:0.05;
+    }
+
+    .skip-link{position:absolute; left:-9999px;}
+    a{color:inherit;}
+
+    /* ---------- utilities ---------- */
+    .tag{
+      font-family:var(--mono); font-size:0.68rem; font-weight:500;
+      letter-spacing:0.14em; text-transform:uppercase; color:var(--text-3);
+    }
+    .tag-amber{color:var(--amber);}
+    .tag-arrow::before{content:"► "; font-size:0.6em; vertical-align:0.15em;}
+    /* Spade crop marks — two diagonal corners */
+    .marks{position:relative;}
+    .marks::before,.marks::after{
+      content:""; position:absolute; width:11px; height:11px;
+      border:1px solid rgba(240,236,227,0.28); z-index:1;
+    }
+    .marks::before{top:-1px; left:-1px; border-right:none; border-bottom:none;}
+    .marks::after{bottom:-1px; right:-1px; border-left:none; border-top:none;}
+
+    /* ---------- NAV ---------- */
+    nav{
+      position:fixed; top:0; left:0; right:0; z-index:100;
+      background:rgba(7,7,8,0.72); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--border-soft);
+    }
+    .nav-inner{
+      max-width:1200px; margin:0 auto; padding:0 2rem;
+      height:64px; display:flex; align-items:center; justify-content:space-between;
+    }
+    .logo{
+      font-family:var(--serif); font-size:1.45rem; letter-spacing:0.01em;
+      text-decoration:none; display:flex; align-items:center; gap:0.6rem;
+    }
+    .logo-mark{
+      width:26px; height:26px; border:1px solid var(--amber); border-radius:6px;
+      display:grid; place-items:center; font-size:0.95rem; color:var(--amber);
+    }
+    .nav-links{display:flex; align-items:center; gap:2rem;}
+    .nav-links a{
+      font-family:var(--mono); font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase;
+      color:var(--text-2); text-decoration:none; transition:color 0.2s;
+    }
+    .nav-links a:hover{color:var(--text);}
+    .nav-cta{
+      padding:0.55rem 1.1rem !important; border:1px solid var(--amber); border-radius:999px;
+      color:var(--amber) !important; transition:all 0.25s !important;
+    }
+    .nav-cta:hover{background:var(--amber); color:var(--bg) !important; box-shadow:0 0 24px rgba(227,164,74,0.35);}
+    .hamburger{display:none; background:none; border:none; cursor:pointer; flex-direction:column; gap:5px; padding:6px;}
+    .hamburger span{width:22px; height:1.5px; background:var(--text);}
+    .mobile-nav{display:none;}
+
+    /* ---------- HERO ---------- */
+    .hero{
+      position:relative; min-height:100vh;
+      display:flex; align-items:center;
+      padding:9rem 2rem 5rem;
+      overflow:hidden;
+    }
+    /* Perplexity atmosphere: black bleed + one warm glow */
+    .hero::before{
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background:
+        radial-gradient(ellipse 70% 55% at 78% 18%, rgba(227,164,74,0.10), transparent 62%),
+        radial-gradient(ellipse 55% 45% at 12% 88%, rgba(227,164,74,0.05), transparent 60%);
+    }
+    .hero-inner{
+      position:relative; max-width:1200px; margin:0 auto; width:100%;
+      display:grid; grid-template-columns:1.05fr 0.95fr; gap:4.5rem; align-items:center;
+    }
+    .hero-chip{
+      display:inline-flex; align-items:center; gap:0.7rem;
+      padding:0.45rem 1rem; border:1px solid var(--border); border-radius:2px;
+      margin-bottom:2.2rem;
+    }
+    .hero-chip .dot{width:5px; height:5px; border-radius:50%; background:var(--amber); box-shadow:0 0 8px var(--amber);}
+    .hero h1{
+      font-family:var(--serif); font-weight:400;
+      font-size:clamp(2.9rem, 5.2vw, 4.9rem);
+      line-height:1.06; letter-spacing:-0.01em;
+      margin-bottom:1.8rem;
+    }
+    .hero h1 .hl{font-style:italic; color:var(--amber-bright);}
+    .hero-sub{
+      font-size:1.08rem; color:var(--text-2); max-width:34rem; margin-bottom:2.4rem;
+    }
+    .cta-row{display:flex; gap:1rem; align-items:center; flex-wrap:wrap; margin-bottom:2.6rem;}
+    .btn{
+      font-family:var(--sans); font-size:0.95rem; font-weight:600;
+      padding:0.85rem 1.7rem; border-radius:2px; text-decoration:none;
+      transition:all 0.25s; letter-spacing:0.01em;
+    }
+    .btn-primary{
+      background:var(--amber); color:#141007;
+      box-shadow:0 0 32px rgba(227,164,74,0.28);
+    }
+    .btn-primary:hover{background:var(--amber-bright); box-shadow:0 0 48px rgba(227,164,74,0.45); transform:translateY(-1px);}
+    .btn-ghost{
+      border:1px solid var(--border); color:var(--text-2);
+    }
+    .btn-ghost:hover{border-color:var(--text-2); color:var(--text);}
+    .hero-trust{display:flex; align-items:center; gap:0.9rem; font-size:0.9rem; color:var(--text-2);}
+    .hero-trust strong{color:var(--text); font-weight:600;}
+    .avatars{display:flex;}
+    .avatars span{
+      width:26px; height:26px; border-radius:50%; border:1.5px solid var(--bg);
+      background:linear-gradient(135deg, #3d3a33, #201e19); margin-left:-8px;
+    }
+    .avatars span:first-child{margin-left:0;}
+
+    /* The Read anatomy — glass evidence card */
+    .read-card{
+      background:var(--glass);
+      backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
+      border:1px solid var(--border); border-radius:4px;
+      box-shadow:0 24px 80px rgba(0,0,0,0.5);
+    }
+    .read-bar{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0.8rem 1.2rem; border-bottom:1px solid var(--border-soft);
+    }
+    .read-dots{display:flex; gap:5px;}
+    .read-dots span{width:8px; height:8px; border-radius:50%; background:rgba(240,236,227,0.14);}
+    .read-tab{font-family:var(--mono); font-size:0.68rem; letter-spacing:0.1em; color:var(--text-3);}
+    .read-tab strong{color:var(--amber);}
+    .read-body{padding:1.7rem 1.6rem 1.5rem;}
+    .read-eyebrow{
+      font-family:var(--mono); font-size:0.66rem; letter-spacing:0.16em;
+      text-transform:uppercase; color:var(--amber); margin-bottom:0.7rem;
+    }
+    .read-eyebrow::before{content:"► "; font-size:0.6em; vertical-align:0.15em;}
+    .read-h{
+      font-family:var(--serif); font-size:1.65rem; line-height:1.15; margin-bottom:1.3rem;
+    }
+    .verdict{
+      border-left:2px solid var(--amber); background:var(--amber-dim);
+      padding:0.9rem 1.1rem; margin-bottom:1.2rem;
+    }
+    .verdict-label{
+      font-family:var(--mono); font-size:0.64rem; letter-spacing:0.16em;
+      text-transform:uppercase; color:var(--amber); margin-bottom:0.3rem;
+    }
+    .verdict p{font-size:0.93rem; color:var(--text);}
+    .grade-block{border:1px solid var(--border-soft); padding:1rem 1.1rem; margin-bottom:1.2rem;}
+    .grade-title{
+      font-family:var(--mono); font-size:0.64rem; letter-spacing:0.16em;
+      text-transform:uppercase; color:var(--text-3); margin-bottom:0.75rem;
+    }
+    .grade-row{display:flex; align-items:baseline; gap:0.8rem; padding:0.4rem 0;}
+    .grade-row + .grade-row{border-top:1px solid var(--border-soft);}
+    .grade-row span{
+      font-family:var(--mono); font-size:0.64rem; font-weight:700; letter-spacing:0.1em;
+      text-transform:uppercase; min-width:3.4rem;
+    }
+    .grade-row:nth-child(2) span{color:var(--green);}
+    .grade-row:nth-child(3) span{color:var(--amber);}
+    .grade-row:nth-child(4) span{color:var(--text-3);}
+    .grade-row p{font-size:0.88rem; color:var(--text-2);}
+    .read-footer{
+      font-family:var(--mono); font-size:0.66rem; letter-spacing:0.08em;
+      color:var(--text-3); padding-top:1rem; border-top:1px solid var(--border-soft);
+    }
+
+    /* ---------- PROOF STRIP (Spade ledger strip) ---------- */
+    .proof{
+      border-top:1px solid var(--border-soft); border-bottom:1px solid var(--border-soft);
+      padding:1.5rem 2rem;
+    }
+    .proof-inner{
+      max-width:1200px; margin:0 auto;
+      display:flex; align-items:center; justify-content:center; gap:2.8rem; flex-wrap:wrap;
+    }
+    .proof-label{font-family:var(--mono); font-size:0.66rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--text-3);}
+    .proof-item{
+      font-family:var(--mono); font-size:0.74rem; letter-spacing:0.1em;
+      text-transform:uppercase; color:var(--text-2);
+    }
+    .proof-item::before{content:"► "; color:var(--amber); font-size:0.62em; vertical-align:0.18em;}
+
+    /* ---------- SECTION SHELL ---------- */
+    section.block{padding:7.5rem 2rem;}
+    .block-inner{max-width:1200px; margin:0 auto;}
+    .intro{text-align:center; max-width:760px; margin:0 auto 3.5rem;}
+    .eyebrow{
+      font-family:var(--mono); font-size:0.68rem; letter-spacing:0.18em;
+      text-transform:uppercase; color:var(--amber); display:block; margin-bottom:1.1rem;
+    }
+    .eyebrow::before{content:"► "; font-size:0.6em; vertical-align:0.15em;}
+    .block h2{
+      font-family:var(--serif); font-weight:400;
+      font-size:clamp(2.3rem, 4vw, 3.6rem); line-height:1.08; letter-spacing:-0.005em;
+    }
+    .block h2 .hl{font-style:italic; color:var(--amber-bright);}
+    .section-sub{color:var(--text-2); font-size:1.05rem; margin-top:1.1rem;}
+
+    /* ---------- QUESTIONS ---------- */
+    .q-grid{
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+      gap:1px; background:var(--border-soft); border:1px solid var(--border-soft);
+      margin-top:2.5rem;
+    }
+    .q-card{
+      background:var(--bg); padding:2.2rem 2rem;
+      transition:background 0.3s;
+    }
+    .q-card:hover{background:var(--bg-2);}
+    .q-card h3{
+      font-family:var(--serif); font-weight:400; font-style:italic;
+      font-size:1.65rem; line-height:1.2; margin-bottom:0.8rem;
+    }
+    .q-card p{color:var(--text-2); font-size:0.97rem;}
+    .q-foot{margin:2.2rem auto 0; max-width:620px; text-align:center; color:var(--text-2); font-size:1.02rem;}
+
+    /* ---------- RECENT READS (Spade evidence documents) ---------- */
+    #reads{background:var(--bg-2); border-top:1px solid var(--border-soft); border-bottom:1px solid var(--border-soft);}
+    .reads-grid{
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+      gap:1.4rem; margin-top:2.5rem;
+    }
+    .read-doc{
+      background:var(--bg); border:1px solid var(--border);
+      padding:2rem 1.9rem; display:flex; flex-direction:column;
+    }
+    .read-doc .doc-tag{
+      font-family:var(--mono); font-size:0.66rem; font-weight:500; letter-spacing:0.16em;
+      text-transform:uppercase; color:var(--amber);
+    }
+    .read-doc .doc-tag::before{content:"► "; font-size:0.6em; vertical-align:0.15em;}
+    .read-doc .doc-q{
+      font-family:var(--serif); font-style:italic; font-size:1.5rem; font-weight:400;
+      line-height:1.25; margin:1.1rem 0 1.5rem;
+    }
+    .receipts{border:1px solid var(--border-soft); padding:1.1rem 1.2rem;}
+    .receipts-title{
+      font-family:var(--mono); font-size:0.64rem; letter-spacing:0.16em;
+      text-transform:uppercase; color:var(--text-3); margin-bottom:0.8rem;
+    }
+    .receipt-row{display:flex; align-items:baseline; gap:0.8rem; padding:0.55rem 0;}
+    .receipt-row + .receipt-row{border-top:1px solid var(--border-soft);}
+    .receipt-row span{
+      font-family:var(--mono); font-size:0.6rem; font-weight:700; letter-spacing:0.1em;
+      padding:0.14rem 0.45rem; border-radius:2px; white-space:nowrap;
+    }
+    .receipt-row span.verified{color:var(--green); border:1px solid rgba(143,184,120,0.35); background:rgba(143,184,120,0.07);}
+    .receipt-row span.flagged{color:var(--flag); border:1px solid rgba(208,129,83,0.4); background:rgba(208,129,83,0.08);}
+    .receipt-row p{font-size:0.88rem; color:var(--text-2); line-height:1.55;}
+    .doc-call{font-size:0.97rem; color:var(--text-2); margin:1.5rem 0 1.6rem;}
+    .doc-call strong{color:var(--text); font-weight:600;}
+    .doc-sources{
+      font-family:var(--mono); font-size:0.7rem; color:var(--text-3); letter-spacing:0.04em;
+      margin-top:auto; padding-top:1.1rem; border-top:1px solid var(--border-soft);
+    }
+    .doc-dl{
+      font-family:var(--mono); font-size:0.74rem; color:var(--amber); text-decoration:none;
+      font-weight:700; letter-spacing:0.04em; display:inline-block; margin-top:0.8rem;
+      transition:color 0.2s;
+    }
+    .doc-dl:hover{color:var(--amber-bright);}
+    .reads-cta{text-align:center; margin-top:3rem;}
+
+    /* ---------- HOW IT WORKS (Giga day-columns + Trawelt numerals) ---------- */
+    .rule{
+      height:1px; max-width:1200px; margin:3rem auto 0;
+      background:linear-gradient(90deg, transparent, var(--amber) 30%, var(--amber) 70%, transparent);
+      opacity:0.45;
+    }
+    .steps{
+      max-width:1200px; margin:3.2rem auto 0;
+      display:grid; grid-template-columns:repeat(3, 1fr); gap:3rem;
+    }
+    .step-num{
+      font-family:var(--serif); font-size:5.6rem; line-height:1; color:var(--amber);
+      opacity:0.5; margin-bottom:1rem;
+    }
+    .step h4{font-family:var(--sans); font-size:1.15rem; font-weight:600; margin-bottom:0.5rem;}
+    .step p{color:var(--text-2); font-size:0.97rem;}
+
+    /* ---------- PRICING (Public: hairline columns, no boxes) ---------- */
+    .tier-row{
+      display:grid; grid-template-columns:repeat(4, 1fr);
+      border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+      margin-top:2.5rem;
+    }
+    .tier{
+      padding:2.6rem 1.9rem; display:flex; flex-direction:column;
+      transition:background 0.3s;
+    }
+    .tier + .tier{border-left:1px solid var(--border);}
+    .tier:hover{background:var(--surface);}
+    .tier-eyebrow{
+      font-family:var(--mono); font-size:0.62rem; letter-spacing:0.15em;
+      text-transform:uppercase; color:var(--amber); margin-bottom:1rem; min-height:2em;
+    }
+    .tier-eyebrow::before{content:"► "; font-size:0.6em; vertical-align:0.15em;}
+    .tier h3{
+      font-family:var(--serif); font-weight:400; font-size:1.55rem; line-height:1.15;
+      margin-bottom:1.2rem;
+    }
+    .tier-price{
+      font-size:2.1rem; font-weight:600; letter-spacing:-0.02em; margin-bottom:1.6rem;
+    }
+    .tier-price small{
+      font-family:var(--mono); font-size:0.7rem; font-weight:400; color:var(--text-3);
+      letter-spacing:0.06em; margin-left:0.4rem;
+    }
+    .tier ul{list-style:none; margin-bottom:2rem; flex:1;}
+    .tier li{
+      font-size:0.9rem; color:var(--text-2); padding:0.55rem 0;
+    }
+    .tier li + li{border-top:1px solid var(--border-soft);}
+    .tier-cta{
+      font-family:var(--mono); font-size:0.72rem; font-weight:700; letter-spacing:0.1em;
+      text-transform:uppercase; text-align:center; text-decoration:none;
+      padding:0.8rem 1rem; border:1px solid var(--border); border-radius:2px;
+      color:var(--text-2); transition:all 0.25s;
+    }
+    .tier-cta:hover{border-color:var(--amber); color:var(--amber); box-shadow:0 0 20px rgba(227,164,74,0.18);}
+    .pricing-foot{
+      text-align:center; margin-top:2.6rem; color:var(--text-2); font-size:1rem;
+    }
+
+    /* ---------- FAQ ---------- */
+    .faq-list{max-width:720px; margin:2.5rem auto 0; border-top:1px solid var(--border);}
+    .faq-item{border-bottom:1px solid var(--border);}
+    .faq-item summary{
+      cursor:pointer; list-style:none; padding:1.4rem 0;
+      font-size:1.08rem; font-weight:500; display:flex; justify-content:space-between; align-items:center;
+      transition:color 0.2s;
+    }
+    .faq-item summary::-webkit-details-marker{display:none;}
+    .faq-item summary::after{
+      content:"+"; font-family:var(--serif); font-size:1.5rem; color:var(--amber);
+      transition:transform 0.25s;
+    }
+    .faq-item[open] summary::after{transform:rotate(45deg);}
+    .faq-item summary:hover{color:var(--amber-bright);}
+    .faq-item p{color:var(--text-2); font-size:0.98rem; padding:0 2.5rem 1.4rem 0;}
+
+    /* ---------- CLOSING (Superpower end-cap) ---------- */
+    .closing{
+      position:relative; padding:9rem 2rem 8rem; overflow:hidden;
+      border-top:1px solid var(--border-soft);
+    }
+    .closing::before{
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background:radial-gradient(ellipse 60% 65% at 50% 105%, rgba(227,164,74,0.16), transparent 65%);
+    }
+    .closing-grid{
+      position:relative; max-width:1120px; margin:0 auto;
+      display:grid; grid-template-columns:1.05fr 0.95fr; gap:4.5rem; align-items:center;
+    }
+    .eyebrow-plain{
+      font-family:var(--mono); font-size:0.68rem; letter-spacing:0.18em;
+      text-transform:uppercase; color:var(--amber); display:block; margin-bottom:1.2rem;
+    }
+    .eyebrow-plain::before{content:"► "; font-size:0.6em; vertical-align:0.15em;}
+    .closing h2{
+      font-family:var(--serif); font-weight:400;
+      font-size:clamp(2.5rem, 4.4vw, 3.9rem); line-height:1.07; margin-bottom:1.4rem;
+    }
+    .closing h2 .hl{font-style:italic; color:var(--amber-bright);}
+    .closing-main > p{color:var(--text-2); font-size:1.06rem; max-width:30rem; margin-bottom:1.6rem;}
+    .closing-note{
+      font-family:var(--mono); font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase;
+      color:var(--text-3); margin-bottom:2.2rem;
+    }
+    .founder{display:flex; align-items:center; gap:0.9rem;}
+    .founder img{width:52px; height:52px; border-radius:50%; border:1px solid var(--border); object-fit:cover;}
+    .founder-name{font-weight:600; font-size:0.98rem;}
+    .founder-role{font-family:var(--mono); font-size:0.7rem; color:var(--text-3); letter-spacing:0.08em; text-transform:uppercase;}
+
+    .email-card{
+      background:var(--glass);
+      backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px);
+      border:1px solid var(--border); border-radius:4px;
+      padding:2.2rem 2rem; box-shadow:0 24px 80px rgba(0,0,0,0.45);
+    }
+    .email-eyebrow{
+      font-family:var(--mono); font-size:0.64rem; letter-spacing:0.16em;
+      text-transform:uppercase; color:var(--amber); margin-bottom:0.6rem;
+    }
+    .email-eyebrow::before{content:"► "; font-size:0.6em; vertical-align:0.15em;}
+    .email-card h4{font-family:var(--serif); font-weight:400; font-size:1.7rem; margin-bottom:1.4rem;}
+    .email-form{display:flex; flex-direction:column; gap:0.7rem;}
+    .email-form textarea, .email-form input{
+      width:100%; padding:0.8rem 0.95rem;
+      background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:2px;
+      color:var(--text); font-family:var(--sans); font-size:0.97rem;
+      transition:border-color 0.2s;
+    }
+    .email-form textarea{resize:vertical;}
+    .email-form textarea:focus, .email-form input:focus{outline:none; border-color:var(--amber);}
+    .email-form ::placeholder{color:var(--text-3);}
+    .email-form button{
+      margin-top:0.4rem; padding:0.95rem 1rem;
+      background:var(--amber); color:#141007; border:none; border-radius:2px;
+      font-family:var(--sans); font-size:0.98rem; font-weight:600; cursor:pointer;
+      box-shadow:0 0 28px rgba(227,164,74,0.3); transition:all 0.25s;
+    }
+    .email-form button:hover{background:var(--amber-bright); box-shadow:0 0 44px rgba(227,164,74,0.5);}
+    .email-tiny{
+      font-family:var(--mono); font-size:0.68rem; color:var(--text-3);
+      letter-spacing:0.04em; margin-top:1rem;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer{
+      border-top:1px solid var(--border-soft); padding:3.5rem 2rem 3rem;
+    }
+    .foot-inner{max-width:1200px; margin:0 auto; text-align:center;}
+    .foot-logo{font-family:var(--serif); font-size:1.5rem; margin-bottom:0.9rem;}
+    .foot-inner p{color:var(--text-3); font-size:0.88rem; margin-bottom:0.5rem;}
+    .foot-inner a{color:var(--text-2); text-decoration:none;}
+    .foot-inner a:hover{color:var(--amber);}
+    .foot-small{font-family:var(--mono); font-size:0.72rem; letter-spacing:0.06em;}
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width:1000px){
+      .hero-inner{grid-template-columns:1fr; gap:3rem;}
+      .closing-grid{grid-template-columns:1fr; gap:3rem;}
+      .tier-row{grid-template-columns:1fr 1fr;}
+      .tier:nth-child(3), .tier:nth-child(4){border-top:1px solid var(--border);}
+      .tier:nth-child(3){border-left:none;}
+      .steps{grid-template-columns:1fr; gap:2.2rem;}
+      .nav-links{display:none;}
+      .hamburger{display:flex;}
+      .mobile-nav.open{
+        display:flex; flex-direction:column; gap:0;
+        border-top:1px solid var(--border-soft); background:rgba(7,7,8,0.96);
+      }
+      .mobile-nav a{
+        font-family:var(--mono); font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase;
+        color:var(--text-2); text-decoration:none; padding:1rem 2rem;
+        border-bottom:1px solid var(--border-soft);
+      }
+    }
+    @media (max-width:640px){
+      .tier-row{grid-template-columns:1fr;}
+      .tier + .tier{border-left:none; border-top:1px solid var(--border);}
+      section.block{padding:5rem 1.3rem;}
+      .hero{padding:7rem 1.3rem 4rem;}
+      .closing{padding:6rem 1.3rem;}
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="logo">
+        <span class="logo-mark">L</span>
+        LoopWorker
+      </a>
+      <div class="nav-links">
+        <a href="#how">How it works</a>
+        <a href="#reads">Recent Reads</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#send-question" class="nav-cta" data-track="Nav Send Question">Get the Read</a>
+      </div>
+      <button type="button" class="hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#how">How it works</a>
+      <a href="#reads">Recent Reads</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#send-question" class="nav-cta">Get the Read</a>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-chip marks">
+            <span class="dot"></span>
+            <span class="tag tag-amber">The Decision Read</span>
+            <span class="tag">one question · every claim graded</span>
+          </div>
+
+          <h1>Bring me the question you keep <span class="hl">circling.</span> I'll bring back the answer, with the proof.</h1>
+          <p class="hero-sub">I investigate the public evidence, rank your options, and grade every material claim high, medium, or low confidence. Sources shown.</p>
+
+          <div class="cta-row">
+            <a href="#send-question" class="btn btn-primary" data-track="Hero Send Question">Get the Read →</a>
+            <a href="/sample-brief.html" class="btn btn-ghost" data-track="Hero Sample Read">See a sample</a>
+          </div>
+
+          <div class="hero-trust">
+            <div class="avatars"><span></span><span></span><span></span><span></span></div>
+            <span><strong>Free fit check.</strong> No call. Fixed price before you pay.</span>
+          </div>
+        </div>
+
+        <!-- UI MOCKUP: the Read anatomy -->
+        <aside class="read-card marks">
+          <div class="read-bar">
+            <div class="read-dots"><span></span><span></span><span></span></div>
+            <div class="read-tab">decision-read · <strong>page 1</strong></div>
+          </div>
+          <div class="read-body">
+            <div class="read-eyebrow">The answer first</div>
+            <div class="read-h">Answer on top. Evidence underneath.</div>
+            <div class="verdict">
+              <div class="verdict-label">Recommendation</div>
+              <p>A direct call, ranked against the alternatives.</p>
+            </div>
+            <div class="grade-block">
+              <div class="grade-title">Every claim graded</div>
+              <div class="grade-row"><span>High</span><p>strong sources agree</p></div>
+              <div class="grade-row"><span>Med</span><p>useful but incomplete</p></div>
+              <div class="grade-row"><span>Low</span><p>thin or not provable</p></div>
+            </div>
+            <div class="read-footer">Recommendation → Confidence → Evidence → Risks → Next Moves</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PROOF STRIP -->
+    <section class="proof">
+      <div class="proof-inner">
+        <div class="proof-label">Every Read holds to</div>
+        <span class="proof-item">One question</span><span class="proof-item">Fixed price</span><span class="proof-item">Every claim graded &amp; sourced</span><span class="proof-item">Money back if not useful</span>
+      </div>
+    </section>
+
+    <!-- QUESTIONS -->
+    <section class="block" id="questions">
+      <div class="block-inner">
+        <div class="intro">
+          <span class="eyebrow">Start with the question on your desk</span>
+          <h2>Bring the decision, not a category.</h2>
+        </div>
+        <div class="q-grid">
+          <div class="q-card">
+            <h3>“How did my competitor do that?”</h3>
+            <p>Their pricing, ads, hiring, and timing, reconstructed. What to copy, counter, and ignore.</p>
+          </div>
+          <div class="q-card">
+            <h3>“Should I make this hire?”</h3>
+            <p>Is the role the real constraint? What to try before headcount, and the signs that flip the answer.</p>
+          </div>
+          <div class="q-card">
+            <h3>“What should I charge?”</h3>
+            <p>Competitor prices, demand, and buyer tradeoffs. Ranked price moves and the risks to watch.</p>
+          </div>
+          <div class="q-card">
+            <h3>“What are my buyers saying?”</h3>
+            <p>The objections, triggers, and unmet needs across reviews, search, and communities.</p>
+          </div>
+        </div>
+        <p class="q-foot">If you can frame it as one important decision, send it.</p>
+      </div>
+    </section>
+
+    <!-- RECENT READS -->
+    <section class="block" id="reads">
+      <div class="block-inner">
+
+        <div class="intro">
+          <span class="eyebrow">Recent Reads</span>
+          <h2>Three questions, three calls <span class="hl">on record.</span></h2>
+          <p class="section-sub">Real engagements, clients redacted. Every claim below is graded and sourced in the full document.</p>
+        </div>
+
+        <div class="reads-grid">
+
+          <!-- Card 1 · Law -->
+          <div class="read-doc marks">
+            <span class="doc-tag">Law · four-attorney firm</span>
+            <p class="doc-q">&ldquo;Where should a small, fast team spend its next dollar and hour to grow, given what every rival is already doing?&rdquo;</p>
+            <div class="receipts">
+              <div class="receipts-title">The receipts</div>
+              <div class="receipt-row"><span class="verified">VERIFIED</span><p>The field fights over the wrong channel: rivals buy the top of every search with paid ads, the lane 82% of firms say they regret.</p></div>
+              <div class="receipt-row"><span class="verified">VERIFIED</span><p>The best-return channel sits unguarded: a top-50-ranked rival's blog dead since 2019, a 3.7 review rating.</p></div>
+              <div class="receipt-row"><span class="flagged">FLAGGED</span><p>The firm's own site hid its Google rating, linked an empty YouTube, and still sold a law the state voided in 2023.</p></div>
+            </div>
+            <p class="doc-call"><strong>The call:</strong> point the intake machine they already run at the channel nobody is guarding: a review ask on every closed matter, the live rating where clients can see it.</p>
+            <p class="doc-sources">rival ad, content + review footprints · 2025-26 channel data · own-site teardown</p>
+            <a href="/downloads/read-law-redacted.pdf" download data-track="Download Law Read" class="doc-dl">Download this Read (PDF) ↓</a>
+          </div>
+
+          <!-- Card 2 · Coaching -->
+          <div class="read-doc marks">
+            <span class="doc-tag">Coaching · Founder brand</span>
+            <p class="doc-q">&ldquo;I have the deepest product stack in my niche. Why is none of it converting?&rdquo;</p>
+            <div class="receipts">
+              <div class="receipts-title">The receipts</div>
+              <div class="receipt-row"><span class="verified">VERIFIED</span><p>5x the product assets of the closest competitor, one sixth the engagement: 4.23 avg likes per post vs 26.40 for the niche leader.</p></div>
+              <div class="receipt-row"><span class="verified">VERIFIED</span><p>Two flagship pages returning 404, a 9-document lead magnet series buried off-nav, every CTA routing to one calendar link.</p></div>
+              <div class="receipt-row"><span class="verified">VERIFIED</span><p>A 10,000-name email list sitting dormant.</p></div>
+            </div>
+            <p class="doc-call"><strong>The call:</strong> stop publishing more, reposition the fragments as one system, surface the hidden assets, reactivate the list.</p>
+            <p class="doc-sources">1,151 competitor posts + 425 own posts analyzed · 30 scrape queries</p>
+            <a href="/downloads/read-coach-redacted.pdf" download data-track="Download Coach Read" class="doc-dl">Download this Read (PDF) ↓</a>
+          </div>
+
+          <!-- Card 3 · Consumer brand -->
+          <div class="read-doc marks">
+            <span class="doc-tag">Consumer brand · Pre-launch</span>
+            <p class="doc-q">&ldquo;Who acquires a brand like ours, at what price, and what has to happen between launch and exit?&rdquo;</p>
+            <div class="receipts">
+              <div class="receipts-title">The receipts</div>
+              <div class="receipt-row"><span class="verified">VERIFIED</span><p>The exit lane is proven twice: the archetype cleared roughly 5.5x trailing sales at the same strategic acquirer, $630M in 2022 and up to $880M in 2025.</p></div>
+              <div class="receipt-row"><span class="verified">VERIFIED</span><p>14 closest competitors mapped on two axes: the target quadrant is empty.</p></div>
+              <div class="receipt-row"><span class="flagged">FLAGGED</span><p>Four claims in the client's own investor deck were wrong or unverifiable, corrected before the next circulation.</p></div>
+            </div>
+            <p class="doc-call"><strong>The call:</strong> plan around the proven strategic-acquisition lane, stack four revenue channels in sequence, file trademarks now against a just-detected copycat.</p>
+            <p class="doc-sources">12 brand teardowns · 14 cited exits · 11 buyers ranked</p>
+            <a href="/downloads/read-brand-redacted.pdf" download data-track="Download Brand Read" class="doc-dl">Download this Read (PDF) ↓</a>
+          </div>
+
+        </div>
+
+        <div class="reads-cta">
+          <a href="#send-question" class="btn btn-primary" data-track="Reads Get The Read">Get the Read &rarr;</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="block" id="how">
+      <div class="block-inner">
+        <div class="intro">
+          <span class="eyebrow">Three steps</span>
+          <h2>Send it. Scope it. Get it.</h2>
+        </div>
+        <div class="rule"></div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">01</div>
+            <h4>Send the question</h4>
+            <p>What you're deciding, the stakes, the deadline. No call to start.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <h4>Get a fixed scope</h4>
+            <p>Price, delivery date, and depth. You approve before I start.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <h4>Get the Read</h4>
+            <p>Recommendation, sources, grades, risks, next moves.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="block" id="pricing">
+      <div class="block-inner">
+        <div class="intro">
+          <span class="eyebrow">Same product. Right depth.</span>
+          <h2>Sized to the stakes, <span class="hl">not the package.</span></h2>
+          <p class="section-sub">I recommend the smallest depth that answers it.</p>
+        </div>
+
+        <div class="tier-row marks">
+          <div class="tier">
+            <div class="tier-eyebrow">Signal Snapshot</div>
+            <h3>Fast second opinion</h3>
+            <div class="tier-price">$750<small>· 48h</small></div>
+            <ul>
+              <li>One focused Read</li>
+              <li>Key evidence and sources</li>
+              <li>A confidence grade</li>
+              <li>Three next moves</li>
+            </ul>
+            <a href="#send-question" class="tier-cta" data-track="Pricing Snapshot">Get the Read</a>
+          </div>
+
+          <div class="tier">
+            <div class="tier-eyebrow">Competitive Intelligence Brief</div>
+            <h3>Focused decision</h3>
+            <div class="tier-price">$3,200<small>· 5d</small></div>
+            <ul>
+              <li>Several evidence sources</li>
+              <li>Main options compared</li>
+              <li>A ranked recommendation</li>
+              <li>Risks and unknowns</li>
+              <li>30-minute review call</li>
+            </ul>
+            <a href="#send-question" class="tier-cta" data-track="Pricing Brief">Get the Read</a>
+          </div>
+
+          <div class="tier">
+            <div class="tier-eyebrow">Atlas</div>
+            <h3>Six-figure decision</h3>
+            <div class="tier-price">$8,000<small>· 10d</small></div>
+            <ul>
+              <li>Full competitor + market dig</li>
+              <li>~10 comparables</li>
+              <li>A ranked action plan</li>
+              <li>Full grading + source trail</li>
+              <li>Decision review call</li>
+            </ul>
+            <a href="#send-question" class="tier-cta" data-track="Pricing Atlas">Get the Read</a>
+          </div>
+
+          <div class="tier">
+            <div class="tier-eyebrow">Market Operating System</div>
+            <h3>Decision + the change</h3>
+            <div class="tier-price">$25,000<small>· 30d</small></div>
+            <ul>
+              <li>The full Atlas dig</li>
+              <li>Positioning or offer rebuild</li>
+              <li>An implementation playbook</li>
+              <li>Ranked operating priorities</li>
+              <li>Milestone reviews</li>
+            </ul>
+            <a href="#send-question" class="tier-cta" data-track="Pricing OS">Get the Read</a>
+          </div>
+        </div>
+
+        <div class="pricing-foot">
+          Not sure which fits? Don't choose. Send the question and I'll recommend the smallest useful depth.
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="block" id="faq">
+      <div class="block-inner">
+        <div class="intro">
+          <span class="eyebrow">FAQ</span>
+          <h2>Asked first.</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>What kind of question fits?</summary>
+            <p>One business decision where better evidence could change what you do: pricing, hiring, a competitor's move, buyer understanding, market entry, positioning, or diligence. Real stakes, guessing feels expensive.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is this just an AI report?</summary>
+            <p>No. Software collects the evidence. I decide what counts, test contradictions, grade the claims, and write the call. The judgment is mine.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What if the evidence is weak?</summary>
+            <p>The Read says so. Weak evidence gets a lower grade, and I say what would change the answer. Sometimes the answer is: don't move yet.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do I pick the depth?</summary>
+            <p>No. Send the question. I recommend the smallest depth that answers it.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What does the guarantee cover?</summary>
+            <p>If the Read doesn't improve the evidence for your decision, tell me within 14 days and I refund the fee. It doesn't promise a particular outcome.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING + FORM -->
+    <section class="closing" id="send-question">
+      <div class="closing-grid">
+        <div class="closing-main">
+          <span class="eyebrow-plain">Start with the decision</span>
+          <h2>Bring the question. I'll turn it into the <span class="hl">answer.</span></h2>
+          <p>Send the decision, the stakes, and your deadline. I'll tell you if it's a fit and the smallest Read that answers it.</p>
+          <div class="closing-note">Free fit check · No call · Fixed price before you pay</div>
+          <div class="founder">
+            <img src="../images/founder/alex-lamb.jpg" width="52" height="52" alt="Alex Lamb, founder of LoopWorker" loading="lazy">
+            <div>
+              <div class="founder-name">Alex Lamb</div>
+              <div class="founder-role">Founder, LoopWorker</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="email-card marks">
+          <div class="email-eyebrow">Get the Read</div>
+          <h4>What are you deciding?</h4>
+          <form class="email-form" action="https://formspree.io/f/xbdpddrn" method="POST" data-track="Decision Read Inquiry">
+            <input type="hidden" name="_subject" value="Decision Read inquiry · loopworker.com">
+            <input type="hidden" name="_next" value="https://www.loopworker.com/thank-you.html?from=decision-read">
+            <input type="hidden" name="source" value="loopworker.com decision-read">
+            <textarea name="decision" placeholder="The decision you're trying to make" required aria-label="The decision you're trying to make" rows="2"></textarea>
+            <input type="text" name="deadline" placeholder="When you need the answer" aria-label="When you need the answer">
+            <input type="text" name="name" placeholder="Name" required aria-label="Name">
+            <input type="email" name="email" placeholder="Work email" required aria-label="Work email">
+            <button type="submit">Get the Read →</button>
+          </form>
+          <div class="email-tiny">I reply with the smallest Read that could answer it.</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="foot-inner">
+      <div class="foot-logo">LoopWorker</div>
+      <p>One question. One ranked answer. Every claim graded and sourced.</p>
+      <p>© 2026 · <a href="/sample-brief.html">Sample</a> · <a href="#pricing">Pricing</a> · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a></p>
+      <p class="foot-small">alex@loopworker.com</p>
+    </div>
+  </footer>
+</body>
+</html>
