@@ -443,8 +443,8 @@ section.block.panel{
 }
 .read-doc .doc-tag::before{content:"► "; font-size:0.6em; vertical-align:0.15em;}
 .read-doc .doc-q{
-  font-family:var(--serif); font-style:italic; font-size:1.5rem; font-weight:400;
-  line-height:1.25; margin:1.1rem 0 1.5rem;
+  font-weight:600; font-size:1.18rem; letter-spacing:-0.01em;
+  line-height:1.4; margin:1.1rem 0 1.5rem; color:var(--text);
 }
 .receipts{border:1px solid var(--border-soft); padding:1.1rem 1.2rem;}
 .receipts-title{
