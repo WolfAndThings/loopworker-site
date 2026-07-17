@@ -4,196 +4,101 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
-  <title>You're In | LoopWorker</title>
-  <meta name="description" content="Got your message. I reply within 24 hours with fit and the smallest Read that answers it.">
+  <title>You're in · LoopWorker</title>
+  <meta name="description" content="Got it. I reply within 24 hours.">
   <link rel="canonical" href="https://www.loopworker.com/thank-you.html">
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#07070C">
+  <meta name="theme-color" content="#070708">
   <meta name="color-scheme" content="dark">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/v5-system.css?v=uniform-shell-1">
+  <link rel="stylesheet" href="/v6-system.css?v=graded-evidence-17">
 
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070708' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%23E3A44A' font-family='Georgia' font-weight='400'>L</text></svg>">
 
   <style>
-    .v5-thanks {
-      position: relative; overflow: hidden;
-      padding: 6rem 2rem 6rem; min-height: 80vh;
-    }
-    .v5-thanks::before {
-      content: ''; position: absolute; inset: 0; pointer-events: none;
-      background:
-        radial-gradient(ellipse 1000px 600px at 50% 0%, rgba(99,102,241,0.18), transparent 60%),
-        radial-gradient(ellipse 800px 500px at 50% 100%, rgba(34,211,238,0.10), transparent 70%);
-    }
-    .v5-thanks-inner {
-      position: relative; z-index: 2;
-      max-width: 720px; margin: 0 auto;
-    }
-    .v5-thanks-inner h1 {
-      font-size: clamp(2.2rem, 4.6vw, 3.4rem); margin: 0 0 1.4rem;
-    }
-    .v5-thanks-inner .lede {
-      font-size: 1.1rem; color: var(--text-2);
-      line-height: 1.6; margin: 0 0 2.6rem;
-    }
-    .v5-steps {
-      margin: 2.6rem 0; display: grid; gap: 0.7rem;
-    }
-    .v5-steps h2 {
-      font-family: var(--mono); font-size: 0.74rem;
-      color: var(--indigo-bright); letter-spacing: 0.16em;
-      text-transform: uppercase; font-weight: 700;
-      margin: 0 0 1rem;
-    }
-    .v5-step-row {
-      display: grid; grid-template-columns: 36px 1fr;
-      gap: 1rem; align-items: center;
-      padding: 1rem 1.2rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-    }
-    .v5-step-num {
-      width: 36px; height: 36px; border-radius: 8px;
-      background: linear-gradient(135deg, rgba(99,102,241,0.14), rgba(168,85,247,0.06));
-      border: 1px solid rgba(99,102,241,0.2);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--mono); font-size: 0.78rem; font-weight: 700;
-      color: var(--indigo-bright);
-    }
-    .v5-step-row p {
-      font-size: 0.96rem; color: var(--text-2); margin: 0; line-height: 1.4;
-    }
-    .v5-thanks-cta-grid {
-      margin-top: 2.4rem;
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem;
-    }
-    @media (max-width: 720px) { .v5-thanks-cta-grid { grid-template-columns: 1fr; } }
-    .v5-thanks-cta-grid a {
-      padding: 1rem 1.2rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      font-family: var(--sans); color: var(--text);
-      font-size: 0.92rem; font-weight: 600; letter-spacing: -0.005em;
-      transition: all 0.18s ease;
-    }
-    .v5-thanks-cta-grid a:hover {
-      border-color: var(--indigo);
-      background: rgba(99,102,241,0.06);
-      transform: translateY(-2px);
-    }
-    .v5-thanks-cta-grid a strong {
-      display: block; color: var(--text);
-      font-family: var(--sans-tight); font-size: 1rem; font-weight: 700;
-      letter-spacing: -0.018em; margin-bottom: 0.2rem;
-    }
-    .v5-thanks-cta-grid a span {
-      font-size: 0.84rem; color: var(--text-3);
-    }
-    .v5-thanks-support {
-      margin-top: 2.4rem; padding-top: 1.6rem;
-      border-top: 1px solid var(--border);
-      font-family: var(--mono); font-size: 0.78rem;
-      color: var(--text-3); letter-spacing: 0.02em;
-    }
-    .v5-thanks-support a {
-      color: var(--indigo-bright);
-      border-bottom: 1px solid rgba(129,140,248,0.3);
-    }
+    .ty { position: relative; min-height: 78vh; padding: 8rem 2rem 5rem; max-width: 720px; margin: 0 auto; }
+    .ty h1 { margin: 1.2rem 0 1.2rem; }
+    .ty .lede { font-size: 1.1rem; color: var(--text-2, #b9b7b2); line-height: 1.6; margin: 0 0 2.6rem; }
+    .ty-steps { display: grid; gap: 0.6rem; margin: 0 0 2.8rem; }
+    .ty-step { display: grid; grid-template-columns: 2rem 1fr; gap: 1rem; align-items: baseline; padding: 0.9rem 0; border-top: 1px solid rgba(255,255,255,.08); }
+    .ty-step:last-child { border-bottom: 1px solid rgba(255,255,255,.08); }
+    .ty-step .n { font-family: 'JetBrains Mono', monospace; font-size: .8rem; color: #E3A44A; }
+    .ty-step p { margin: 0; color: var(--text-2, #b9b7b2); font-size: .98rem; line-height: 1.5; }
+    .ty-cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    @media (max-width: 640px){ .ty-cta-grid { grid-template-columns: 1fr; } }
+    .ty-cta-grid a { border: 1px solid var(--border, rgba(255,255,255,.12)); padding: 1.1rem 1.2rem; text-decoration: none; transition: border-color .3s, transform .3s; display: block; }
+    .ty-cta-grid a:hover { border-color: rgba(227,164,74,.4); transform: translateY(-3px); }
+    .ty-cta-grid strong { display: block; color: var(--text, #efece6); font-size: .98rem; margin-bottom: .25rem; }
+    .ty-cta-grid span { color: var(--text-3, #8a867e); font-size: .82rem; font-family: 'JetBrains Mono', monospace; letter-spacing: .03em; }
+    .ty-support { margin-top: 2.4rem; font-size: .9rem; color: var(--text-3, #8a867e); }
+    .ty-support a { color: #E3A44A; }
   </style>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
 
-  <nav class="v5-nav">
-    <div class="v5-nav-inner">
-      <a href="/" class="v5-logo">
-        <span class="v5-logo-mark">L</span>
-        LoopWorker
-      </a>
-      <div class="v5-nav-links">
-        <a href="/sprint.html">Sprints</a>
+  <nav class="v6-nav">
+    <div class="nav-inner">
+      <a href="/" class="logo"><span class="logo-mark">L</span> LoopWorker</a>
+      <div class="nav-links">
+        <a href="/#reads">Recent Reads</a>
+        <a href="/#free-teardown">Free teardown</a>
         <a href="/pricing.html">Pricing</a>
-        <a href="/case-studies.html">Customers</a>
-        <a href="/blog/">Signals</a>
-        <a href="/about.html">About</a>
-        <a href="/book.html" class="v5-nav-cta" data-track="Nav Book CTA">Book a Review</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/#send-question" class="nav-cta">Get the Read</a>
       </div>
-      <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="v5-mobile-nav" id="mobileNav">
-      <a href="/sprint.html">Sprints</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/case-studies.html">Customers</a>
-      <a href="/blog/">Signals</a>
-      <a href="/about.html">About</a>
-      <a href="/book.html" class="v5-nav-cta">Book a Review</a>
     </div>
   </nav>
 
   <main id="main">
-    <section class="v5-thanks">
-      <div class="v5-thanks-inner">
-        <div class="v5-chip">
-          <span class="v5-chip-dot"></span>
-          <span>Got it · reply within 24 hours</span>
-        </div>
-        <h1>You're <span class="grad-text">in.</span></h1>
-        <p class="lede">I'll read the decision you sent, tell you if it's a fit, and recommend the smallest Read that answers it. Check your inbox and spam folder over the next day.</p>
+    <section class="ty">
+      <span class="eyebrow" id="ty-eyebrow">► Got it · reply within 24 hours</span>
+      <h1 id="ty-head">You're <span class="hl">in.</span></h1>
+      <p class="lede" id="ty-lede">I read the decision you sent, check the public evidence around it, and reply within 24 hours with fit and a fixed price. Check your inbox and spam folder over the next day.</p>
 
-        <div class="v5-steps">
-          <h2>What happens next</h2>
-          <div class="v5-step-row">
-            <span class="v5-step-num">1</span>
-            <p>I read the decision, the stakes, and the deadline you sent</p>
-          </div>
-          <div class="v5-step-row">
-            <span class="v5-step-num">2</span>
-            <p>I check the public evidence surface around it</p>
-          </div>
-          <div class="v5-step-row">
-            <span class="v5-step-num">3</span>
-            <p>I reply with fit, a fixed price, and the smallest Read that answers it</p>
-          </div>
-        </div>
-
-        <div class="v5-thanks-cta-grid">
-          <a href="/pricing.html" data-track="Thank You Pricing">
-            <strong>See the four Reads →</strong>
-            <span>Four depths, 48h to 30d</span>
-          </a>
-          <a href="/case-studies.html" data-track="Thank You Cases">
-            <strong>Customer stories →</strong>
-            <span>5 anonymized briefs</span>
-          </a>
-          <a href="/sample-brief.html" data-track="Thank You Sample">
-            <strong>Sample brief →</strong>
-            <span>What you get back</span>
-          </a>
-        </div>
-
-        <div class="v5-thanks-support">
-          Don't see a reply within 24 hours? <a href="mailto:alex@loopworker.com" data-track="Thank You Email">alex@loopworker.com</a>
-        </div>
+      <div class="ty-steps" id="ty-steps">
+        <div class="ty-step"><span class="n">01</span><p>I read what you sent: the decision, the stakes, the deadline.</p></div>
+        <div class="ty-step"><span class="n">02</span><p>I check the public evidence surface around it.</p></div>
+        <div class="ty-step"><span class="n">03</span><p>I reply with fit, a fixed price, and the smallest Read that answers it.</p></div>
       </div>
+
+      <div class="ty-cta-grid">
+        <a href="/pricing.html"><strong>The four Reads →</strong><span>Four depths, 48h to 30d</span></a>
+        <a href="/sample-brief.html"><strong>See a sample →</strong><span>What comes back</span></a>
+        <a href="/#reads"><strong>Recent Reads →</strong><span>Real, redacted</span></a>
+      </div>
+
+      <div class="ty-support">Don't see a reply within 24 hours? <a href="mailto:alex@loopworker.com">alex@loopworker.com</a></div>
     </section>
   </main>
 
-  <footer class="v5-foot">
-    <div class="v5-foot-inner">
-      <div class="v5-foot-logo">LoopWorker</div>
-      <p>Evidence before execution.</p>
-      <p>© 2026 · <a href="/sprint.html">Sprints</a> · <a href="/case-studies.html">Customers</a> · <a href="/about.html">About</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p>
-      <p class="v5-foot-small">alex@loopworker.com · <a href="https://instagram.com/loopworker">@loopworker</a></p>
+  <footer class="v6-foot">
+    <div class="foot-inner">
+      <div class="foot-logo">LoopWorker</div>
+      <p>One question. One ranked answer. Every claim graded and sourced.</p>
+      <p>© 2026 · <a href="/sample-brief.html">Sample</a> · <a href="/pricing.html">Pricing</a> · <a href="/faq.html">FAQ</a> · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a></p>
+      <p class="foot-small">alex@loopworker.com</p>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var from = new URLSearchParams(location.search).get('from');
+      if (from === 'free-teardown') {
+        var set = function (id, html) { var el = document.getElementById(id); if (el) el.innerHTML = html; };
+        set('ty-eyebrow', '► Free teardown · back within 48 hours');
+        set('ty-head', 'On <span class="hl">it.</span>');
+        set('ty-lede', "I pull your competitor's public playbook, grade what I find, and send the teardown to your inbox within 48 hours. No call, no card. Check your spam folder too.");
+        set('ty-steps',
+          '<div class="ty-step"><span class="n">01</span><p>I pull the competitor you named from public signals: ads, messaging, pricing, hiring.</p></div>' +
+          '<div class="ty-step"><span class="n">02</span><p>I grade what I find and write what it means for your next move.</p></div>' +
+          '<div class="ty-step"><span class="n">03</span><p>It lands in your inbox within 48 hours. If it is useful, the full Read covers your whole field.</p></div>');
+      }
+    })();
+  </script>
 </body>
 </html>
