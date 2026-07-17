@@ -349,6 +349,10 @@ section.block.panel{
   transition:background 0.3s;
 }
 .q-card:hover{background:var(--bg-2);}
+.q-tag{
+  display:block; font-family:var(--mono); font-size:0.7rem; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--amber); margin-bottom:0.7rem;
+}
 .q-card h3{
   font-weight:600; font-style:normal; letter-spacing:-0.01em;
   font-size:1.25rem; line-height:1.4; margin-bottom:0.8rem;
