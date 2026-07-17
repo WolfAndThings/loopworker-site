@@ -5,6 +5,16 @@
  */
 (function () {
   'use strict';
+
+  /* Nav gains a solid background once you scroll past the fold.
+     Runs regardless of reduced-motion (it's a state change, not motion). */
+  var nav = document.querySelector('.v6-nav');
+  if (nav) {
+    var onNavScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 40); };
+    window.addEventListener('scroll', onNavScroll, { passive: true });
+    onNavScroll();
+  }
+
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (!('IntersectionObserver' in window)) return;
 
@@ -26,6 +36,7 @@
     entries.forEach(function (e) {
       if (e.isIntersecting) {
         e.target.classList.add('in');
+        e.target.classList.add('seen'); // permanent hook (e.g. receipt stamp-in)
         io.unobserve(e.target);
         // once revealed, hand the element back to its normal hover transitions
         e.target.addEventListener('transitionend', function done() {

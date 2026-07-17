@@ -84,8 +84,12 @@ a{color:inherit;}
 /* ---------- NAV ---------- */
 nav.v6-nav{
   position:fixed; top:0; left:0; right:0; z-index:100;
-  background:rgba(7,7,8,0.72); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--border-soft);
+  background:rgba(7,7,8,0.35); border-bottom:1px solid transparent;
+  transition:background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+nav.v6-nav.scrolled{
+  background:rgba(7,7,8,0.82); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+  border-bottom-color:var(--border-soft);
 }
 .nav-inner{
   max-width:1200px; margin:0 auto; padding:0 2rem;
@@ -463,6 +467,22 @@ section.block.panel{
 .receipt-row span.verified{color:var(--green); border:1px solid rgba(143,184,120,0.35); background:rgba(143,184,120,0.07);}
 .receipt-row span.flagged{color:var(--flag); border:1px solid rgba(208,129,83,0.4); background:rgba(208,129,83,0.08);}
 .receipt-row p{font-size:0.88rem; color:var(--text-2); line-height:1.55;}
+/* stamp-in: grade chips land like physical stamps once the card is seen */
+.read-doc.seen .receipt-row span.verified,
+.read-doc.seen .receipt-row span.flagged{
+  animation:stampIn 0.3s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+.read-doc.seen .receipt-row:nth-of-type(1) span{animation-delay:0.25s;}
+.read-doc.seen .receipt-row:nth-of-type(2) span{animation-delay:0.37s;}
+.read-doc.seen .receipt-row:nth-of-type(3) span{animation-delay:0.49s;}
+@keyframes stampIn{
+  from{opacity:0; transform:scale(1.55) rotate(-4deg);}
+  to{opacity:1; transform:none;}
+}
+@media (prefers-reduced-motion: reduce){
+  .read-doc.seen .receipt-row span.verified,
+  .read-doc.seen .receipt-row span.flagged{animation:none;}
+}
 .doc-call{font-size:0.97rem; color:var(--text-2); margin:1.5rem 0 1.6rem;}
 .doc-call strong{color:var(--text); font-weight:600;}
 .doc-sources{
