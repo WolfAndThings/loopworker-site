@@ -65,16 +65,23 @@
         "publisher": { "@id": "https://www.loopworker.com/#organization" }
       },
       {
-        "@type": "Product",
+        "@type": "Service",
+        "@id": "https://www.loopworker.com/#service",
         "name": "The Decision Read",
+        "serviceType": "Market intelligence and competitive research",
         "description": "An independent second opinion for one important business question. The evidence is investigated, the options ranked, and every material claim graded high, medium, or low confidence and sourced.",
-        "brand": { "@id": "https://www.loopworker.com/#organization" },
-        "offers": [
-          { "@type": "Offer", "name": "The 48-hour Read", "price": "750", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "48-hour Decision Read for one narrow, time-sensitive, reasonably reversible question." },
-          { "@type": "Offer", "name": "The 5-day Read", "price": "3200", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "Five-day Decision Read for one focused decision with real tradeoffs, including a 30-minute review call." },
-          { "@type": "Offer", "name": "The 10-day Read", "price": "8000", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "Ten-day Decision Read for a six-figure decision: full competitor, customer, pricing, and market investigation with full source trail." },
-          { "@type": "Offer", "name": "The 30-day Engagement", "price": "25000", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "30-day engagement: the full ten-day investigation plus the operating change that follows it. Billed by milestone." }
-        ]
+        "provider": { "@id": "https://www.loopworker.com/#organization" },
+        "areaServed": "US",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Decision Reads",
+          "itemListElement": [
+            { "@type": "Offer", "name": "The One-Page Read", "price": "750", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "48-hour Decision Read for one narrow, time-sensitive, reasonably reversible question." },
+            { "@type": "Offer", "name": "The Focused Read", "price": "3200", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "Five-day Decision Read for one focused decision with real tradeoffs, including a 30-minute review call." },
+            { "@type": "Offer", "name": "The Deep Read", "price": "8000", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "Ten-day Decision Read for a six-figure decision: full competitor, customer, pricing, and market investigation with full source trail." },
+            { "@type": "Offer", "name": "The Engagement", "price": "25000", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "30-day engagement: the full ten-day investigation plus the operating change that follows it. Billed by milestone." }
+          ]
+        }
       },
       {
         "@type": "FAQPage",
@@ -415,7 +422,7 @@
 
         <div class="tier-row marks">
           <div class="tier">
-            <div class="tier-eyebrow">The 48-hour Read</div>
+            <div class="tier-eyebrow">The One-Page Read</div>
             <h3>Fast second opinion</h3>
             <div class="tier-price">$750</div>
             <ul>
@@ -424,13 +431,13 @@
               <li>A confidence grade</li>
               <li>Three next moves</li>
             </ul>
-            <a href="#send-question" class="tier-cta" data-track="Pricing 48h Read">Get the Read</a>
+            <a href="#send-question" class="tier-cta" data-track="Pricing One-Page Read">Get the Read</a>
           </div>
 
           <div class="tier">
-            <div class="tier-eyebrow">The 5-day Read</div>
+            <div class="tier-eyebrow">The Focused Read</div>
             <h3>Focused decision</h3>
-            <div class="tier-price">$3,200</div>
+            <div class="tier-price">$3,200<small>· 5 days</small></div>
             <ul>
               <li>Several evidence sources</li>
               <li>Main options compared</li>
@@ -438,13 +445,13 @@
               <li>Risks and unknowns</li>
               <li>30-minute review call</li>
             </ul>
-            <a href="#send-question" class="tier-cta" data-track="Pricing 5-day Read">Get the Read</a>
+            <a href="#send-question" class="tier-cta" data-track="Pricing Focused Read">Get the Read</a>
           </div>
 
           <div class="tier">
-            <div class="tier-eyebrow">The 10-day Read</div>
+            <div class="tier-eyebrow">The Deep Read</div>
             <h3>Six-figure decision</h3>
-            <div class="tier-price">$8,000</div>
+            <div class="tier-price">$8,000<small>· 10 days</small></div>
             <ul>
               <li>Full competitor + market dig</li>
               <li>~10 comparables</li>
@@ -452,13 +459,13 @@
               <li>Full grading + source trail</li>
               <li>Decision review call</li>
             </ul>
-            <a href="#send-question" class="tier-cta" data-track="Pricing 10-day Read">Get the Read</a>
+            <a href="#send-question" class="tier-cta" data-track="Pricing Deep Read">Get the Read</a>
           </div>
 
           <div class="tier">
-            <div class="tier-eyebrow">The 30-day Engagement</div>
+            <div class="tier-eyebrow">The Engagement</div>
             <h3>Decision + the change</h3>
-            <div class="tier-price">$25,000</div>
+            <div class="tier-price">$25,000<small>· 30 days</small></div>
             <ul>
               <li>The full 10-day dig</li>
               <li>Positioning or offer rebuild</li>
@@ -466,7 +473,7 @@
               <li>Ranked operating priorities</li>
               <li>Milestone reviews</li>
             </ul>
-            <a href="#send-question" class="tier-cta" data-track="Pricing 30-day Engagement">Get the Read</a>
+            <a href="#send-question" class="tier-cta" data-track="Pricing Engagement">Get the Read</a>
           </div>
         </div>
 

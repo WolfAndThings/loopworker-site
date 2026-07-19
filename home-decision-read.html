@@ -55,16 +55,23 @@
         "publisher": { "@id": "https://www.loopworker.com/#organization" }
       },
       {
-        "@type": "Product",
+        "@type": "Service",
+        "@id": "https://www.loopworker.com/#service",
         "name": "The Decision Read",
+        "serviceType": "Market intelligence and competitive research",
         "description": "An independent second opinion for one important business question. The evidence is investigated, the options ranked, and every material claim graded high, medium, or low confidence and sourced.",
-        "brand": { "@id": "https://www.loopworker.com/#organization" },
-        "offers": [
-          { "@type": "Offer", "name": "Signal Snapshot", "price": "750", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "48-hour Decision Read for one narrow, time-sensitive, reasonably reversible question." },
-          { "@type": "Offer", "name": "Competitive Intelligence Brief", "price": "3200", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "Five-day Decision Read for one focused decision with real tradeoffs, including a 30-minute review call." },
-          { "@type": "Offer", "name": "Atlas", "price": "8000", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "Ten-day Decision Read for a six-figure decision: full competitor, customer, pricing, and market investigation with full source trail." },
-          { "@type": "Offer", "name": "Market Operating System", "price": "25000", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "30-day engagement: the full Atlas investigation plus the operating change that follows it. Billed by milestone." }
-        ]
+        "provider": { "@id": "https://www.loopworker.com/#organization" },
+        "areaServed": "US",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Decision Reads",
+          "itemListElement": [
+            { "@type": "Offer", "name": "The One-Page Read", "price": "750", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "48-hour Decision Read for one narrow, time-sensitive, reasonably reversible question." },
+            { "@type": "Offer", "name": "The Focused Read", "price": "3200", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "Five-day Decision Read for one focused decision with real tradeoffs, including a 30-minute review call." },
+            { "@type": "Offer", "name": "The Deep Read", "price": "8000", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "Ten-day Decision Read for a six-figure decision: full competitor, customer, pricing, and market investigation with full source trail." },
+            { "@type": "Offer", "name": "The Engagement", "price": "25000", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "30-day engagement: the full ten-day investigation plus the operating change that follows it. Billed by milestone." }
+          ]
+        }
       },
       {
         "@type": "FAQPage",
@@ -307,7 +314,7 @@
 
         <div class="v5-tier-row">
           <div class="v5-tier">
-            <div class="v5-tier-eyebrow">Signal Snapshot</div>
+            <div class="v5-tier-eyebrow">The One-Page Read</div>
             <h3>Fast second opinion</h3>
             <div class="v5-tier-price">$750<small>· 48h</small></div>
             <ul>
@@ -320,7 +327,7 @@
           </div>
 
           <div class="v5-tier">
-            <div class="v5-tier-eyebrow">Competitive Intelligence Brief</div>
+            <div class="v5-tier-eyebrow">The Focused Read</div>
             <h3>Focused decision</h3>
             <div class="v5-tier-price">$3,200<small>· 5d</small></div>
             <ul>
@@ -334,7 +341,7 @@
           </div>
 
           <div class="v5-tier">
-            <div class="v5-tier-eyebrow">Atlas</div>
+            <div class="v5-tier-eyebrow">The Deep Read</div>
             <h3>Six-figure decision</h3>
             <div class="v5-tier-price">$8,000<small>· 10d</small></div>
             <ul>
@@ -344,15 +351,15 @@
               <li>Full grading + source trail</li>
               <li>Decision review call</li>
             </ul>
-            <a href="#send-question" class="v5-tier-cta v5-tier-cta-ghost" data-track="Pricing Atlas">Get the Read</a>
+            <a href="#send-question" class="v5-tier-cta v5-tier-cta-ghost" data-track="Pricing Deep Read">Get the Read</a>
           </div>
 
           <div class="v5-tier">
-            <div class="v5-tier-eyebrow">Market Operating System</div>
+            <div class="v5-tier-eyebrow">The Engagement</div>
             <h3>Decision + the change</h3>
             <div class="v5-tier-price">$25,000<small>· 30d</small></div>
             <ul>
-              <li>The full Atlas dig</li>
+              <li>The full Deep Read dig</li>
               <li>Positioning or offer rebuild</li>
               <li>An implementation playbook</li>
               <li>Ranked operating priorities</li>

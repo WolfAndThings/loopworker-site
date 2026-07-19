@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
   <title>Pricing · The Decision Read | LoopWorker</title>
-  <meta name="description" content="One product, four Reads, four depths. The 48-hour Read $750. The 5-day Read $3,200. The 10-day Read $8,000. The 30-day Engagement $25,000. Fixed price before you pay, money back if the Read is not useful.">
+  <meta name="description" content="One product, four Reads, four depths. The One-Page Read $750. The Focused Read $3,200. The Deep Read $8,000. The Engagement $25,000. Fixed price before you pay, money back if the Read is not useful.">
   <link rel="canonical" href="https://www.loopworker.com/pricing.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.loopworker.com/pricing.html">
@@ -78,16 +78,22 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "Service",
     "name": "The Decision Read",
+    "serviceType": "Market intelligence and competitive research",
     "description": "An independent second opinion for one important business question. The evidence is investigated, the options ranked, and every material claim graded high, medium, or low confidence and sourced.",
-    "brand": { "@type": "Organization", "name": "LoopWorker", "url": "https://www.loopworker.com/" },
-    "offers": [
-      { "@type": "Offer", "name": "The 48-hour Read", "price": "750", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "48-hour Decision Read for one narrow, time-sensitive, reasonably reversible question." },
-      { "@type": "Offer", "name": "The 5-day Read", "price": "3200", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "Five-day Decision Read for one focused decision with real tradeoffs, including a 30-minute review call." },
-      { "@type": "Offer", "name": "The 10-day Read", "price": "8000", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "Ten-day Decision Read for a six-figure decision: full competitor, customer, pricing, and market investigation with full source trail." },
-      { "@type": "Offer", "name": "The 30-day Engagement", "price": "25000", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "30-day engagement: the full ten-day investigation plus the operating change that follows it. Billed by milestone." }
-    ]
+    "provider": { "@type": "Organization", "name": "LoopWorker", "url": "https://www.loopworker.com/" },
+    "areaServed": "US",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Decision Reads",
+      "itemListElement": [
+        { "@type": "Offer", "name": "The One-Page Read", "price": "750", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "48-hour Decision Read for one narrow, time-sensitive, reasonably reversible question." },
+        { "@type": "Offer", "name": "The Focused Read", "price": "3200", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "Five-day Decision Read for one focused decision with real tradeoffs, including a 30-minute review call." },
+        { "@type": "Offer", "name": "The Deep Read", "price": "8000", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "Ten-day Decision Read for a six-figure decision: full competitor, customer, pricing, and market investigation with full source trail." },
+        { "@type": "Offer", "name": "The Engagement", "price": "25000", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "30-day engagement: the full ten-day investigation plus the operating change that follows it. Billed by milestone." }
+      ]
+    }
   }
   </script>
 </head>
@@ -179,22 +185,22 @@
 
         <div class="tier-row marks">
           <div class="tier">
-            <div class="tier-eyebrow">The 48-hour Read</div>
+            <div class="tier-eyebrow">The One-Page Read</div>
             <h3>Fast second opinion</h3>
-            <div class="tier-price">$750<small>· smallest paid step</small></div>
+            <div class="tier-price">$750<small>· 48 hours · smallest paid step</small></div>
             <ul>
               <li>One narrow question</li>
               <li>Key evidence and sources</li>
               <li>A confidence grade</li>
               <li>Three next moves</li>
             </ul>
-            <a href="/#send-question" class="tier-cta" data-track="Pricing 48h Read">Get the Read</a>
+            <a href="/#send-question" class="tier-cta" data-track="Pricing One-Page Read">Get the Read</a>
           </div>
 
           <div class="tier">
-            <div class="tier-eyebrow">The 5-day Read</div>
+            <div class="tier-eyebrow">The Focused Read</div>
             <h3>Focused decision</h3>
-            <div class="tier-price">$3,200</div>
+            <div class="tier-price">$3,200<small>· 5 days</small></div>
             <ul>
               <li>Several evidence sources</li>
               <li>Main options compared</li>
@@ -202,14 +208,14 @@
               <li>Risks and unknowns</li>
               <li>30-minute review call</li>
             </ul>
-            <a href="/#send-question" class="tier-cta" data-track="Pricing 5-day Read">Get the Read</a>
+            <a href="/#send-question" class="tier-cta" data-track="Pricing Focused Read">Get the Read</a>
           </div>
 
           <div class="tier anchor">
             <span class="tier-tag">Default for six-figure decisions</span>
-            <div class="tier-eyebrow">The 10-day Read</div>
+            <div class="tier-eyebrow">The Deep Read</div>
             <h3>Six-figure decision</h3>
-            <div class="tier-price">$8,000</div>
+            <div class="tier-price">$8,000<small>· 10 days</small></div>
             <ul>
               <li>Full competitor + market dig</li>
               <li>~10 comparables</li>
@@ -217,13 +223,13 @@
               <li>Full grading + source trail</li>
               <li>Decision review call</li>
             </ul>
-            <a href="/#send-question" class="tier-cta" data-track="Pricing 10-day Read">Get the Read →</a>
+            <a href="/#send-question" class="tier-cta" data-track="Pricing Deep Read">Get the Read →</a>
           </div>
 
           <div class="tier">
-            <div class="tier-eyebrow">The 30-day Engagement</div>
+            <div class="tier-eyebrow">The Engagement</div>
             <h3>Decision + the change</h3>
-            <div class="tier-price">$25,000</div>
+            <div class="tier-price">$25,000<small>· 30 days</small></div>
             <ul>
               <li>The full 10-day dig</li>
               <li>Positioning or offer rebuild</li>
@@ -231,7 +237,7 @@
               <li>Milestone reviews</li>
               <li>Billed per milestone</li>
             </ul>
-            <a href="/#send-question" class="tier-cta" data-track="Pricing 30-day Engagement">Get the Read</a>
+            <a href="/#send-question" class="tier-cta" data-track="Pricing Engagement">Get the Read</a>
           </div>
         </div>
 
@@ -256,13 +262,13 @@
         </div>
 
         <div class="dd marks">
-          <div class="dd-head"><span class="dd-name">► The 48-hour Read</span><span class="dd-price">$750 · one document</span></div>
+          <div class="dd-head"><span class="dd-name">► The One-Page Read</span><span class="dd-price">$750 · one document</span></div>
           <div class="dd-before">Starts with a sit-down: you frame the decision, I confirm what I'll pull.</div>
           <div class="dd-doc"><span class="d-k">Doc 01</span><div><strong>The Read.</strong> One page. The answer to your narrow question, the graded evidence behind it, and three next moves.</div></div>
         </div>
 
         <div class="dd marks">
-          <div class="dd-head"><span class="dd-name">► The 5-day Read</span><span class="dd-price">$3,200 · two documents</span></div>
+          <div class="dd-head"><span class="dd-name">► The Focused Read</span><span class="dd-price">$3,200 · two documents</span></div>
           <div class="dd-before">Starts with a sit-down: you frame the decision, I confirm what I'll pull.</div>
           <div class="dd-doc"><span class="d-k">Doc 01</span><div><strong>The Read.</strong> The verdict on top, your options ranked, the risks named.</div></div>
           <div class="dd-doc"><span class="d-k">Doc 02</span><div><strong>The Evidence Record.</strong> Every pull behind the Read: dated, sourced, re-pullable. Check any line yourself.</div></div>
@@ -270,7 +276,7 @@
         </div>
 
         <div class="dd hot marks">
-          <div class="dd-head"><span class="dd-name">► The 10-day Read</span><span class="dd-price">$8,000 · three documents</span></div>
+          <div class="dd-head"><span class="dd-name">► The Deep Read</span><span class="dd-price">$8,000 · three documents</span></div>
           <div class="dd-before">Starts with a sit-down: you frame the decision, I confirm what I'll pull.</div>
           <div class="dd-doc"><span class="d-k">Doc 01</span><div><strong>The Read.</strong> The answer to your six-figure question, with the risks and the confidence on each call.</div></div>
           <div class="dd-doc"><span class="d-k">Doc 02</span><div><strong>The Market Map.</strong> ~10 rivals torn down: what they charge, where they show up, what their buyers say, where the gap is.</div></div>
@@ -279,9 +285,9 @@
         </div>
 
         <div class="dd marks">
-          <div class="dd-head"><span class="dd-name">► The 30-day Engagement</span><span class="dd-price">$25,000 · four documents</span></div>
+          <div class="dd-head"><span class="dd-name">► The Engagement</span><span class="dd-price">$25,000 · four documents</span></div>
           <div class="dd-before">Starts with a sit-down, then one before each milestone.</div>
-          <div class="dd-doc"><span class="d-k">Docs 01-03</span><div><strong>Everything in the 10-day Read.</strong> The Read, the Market Map, the Move Plan.</div></div>
+          <div class="dd-doc"><span class="d-k">Docs 01-03</span><div><strong>Everything in the Deep Read.</strong> The Read, the Market Map, the Move Plan.</div></div>
           <div class="dd-doc"><span class="d-k">Doc 04</span><div><strong>The Operating Playbook.</strong> The positioning or offer rebuild and a 90-day roadmap, step by step, ready to execute.</div></div>
           <div class="dd-plus">+ milestone reviews · billed per milestone</div>
         </div>
@@ -296,10 +302,10 @@
           <h2>Find the stakes. <span class="hl">That's the depth.</span></h2>
         </div>
         <div class="stakes">
-          <div class="stakes-row"><span class="s-k">Under $25K at stake</span><span class="s-v">The 48-hour Read ($750), or read the <a href="/sample-brief.html">free sample</a> first</span></div>
-          <div class="stakes-row"><span class="s-k">$25K-$100K</span><span class="s-v">The 5-day Read ($3,200)</span></div>
-          <div class="stakes-row hot"><span class="s-k">$100K+ · pricing, launch, repositioning</span><span class="s-v"><strong>The 10-day Read ($8,000)</strong></span></div>
-          <div class="stakes-row"><span class="s-k">The company's next 12 months</span><span class="s-v">The 30-day Engagement ($25,000)</span></div>
+          <div class="stakes-row"><span class="s-k">Under $25K at stake</span><span class="s-v">The One-Page Read ($750), or read the <a href="/sample-brief.html">free sample</a> first</span></div>
+          <div class="stakes-row"><span class="s-k">$25K-$100K</span><span class="s-v">The Focused Read ($3,200)</span></div>
+          <div class="stakes-row hot"><span class="s-k">$100K+ · pricing, launch, repositioning</span><span class="s-v"><strong>The Deep Read ($8,000)</strong></span></div>
+          <div class="stakes-row"><span class="s-k">The company's next 12 months</span><span class="s-v">The Engagement ($25,000)</span></div>
         </div>
         <p class="retainer-line">After an engagement, execution is available at $4,500 a month. Offered on delivery, not before.</p>
       </div>
@@ -319,7 +325,7 @@
           </details>
           <details class="faq-item">
             <summary>What do I actually get?</summary>
-            <p>A written Read: the recommendation on top, the evidence under it, every material claim graded high, medium, or low confidence, sources shown, risks and next moves. Everything from the 5-day Read up includes a review call.</p>
+            <p>A written Read: the recommendation on top, the evidence under it, every material claim graded high, medium, or low confidence, sources shown, risks and next moves. Everything from the Focused Read up includes a review call.</p>
           </details>
           <details class="faq-item">
             <summary>Which depth should I choose?</summary>
@@ -338,7 +344,7 @@
             <p>Companies under roughly $1M in revenue without funding, decisions with less than $25K at stake, and buyers looking for commodity research.</p>
           </details>
           <details class="faq-item">
-            <summary>Why is the 10-day Read $8,000 when consultants charge $50K+?</summary>
+            <summary>Why is the Deep Read $8,000 when consultants charge $50K+?</summary>
             <p>No partners, no pyramid, no 80-slide theater. Founder-led research and a Read built to be acted on rather than presented. The <a href="/2026-strategy-consulting-cost-comparison.html">cost comparison page</a> shows the full market; I sit where I sit on purpose.</p>
           </details>
         </div>
