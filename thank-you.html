@@ -88,6 +88,12 @@
   <script>
     (function () {
       var from = new URLSearchParams(location.search).get('from');
+      var leadType = from === 'free-teardown' ? 'Free Teardown' : 'Decision Read';
+      window.plausible = window.plausible || function () {
+        (window.plausible.q = window.plausible.q || []).push(arguments);
+      };
+      window.plausible('Lead', { props: { type: leadType }, interactive: false });
+
       if (from === 'free-teardown') {
         var set = function (id, html) { var el = document.getElementById(id); if (el) el.innerHTML = html; };
         set('ty-eyebrow', '► Free teardown · back within 48 hours');

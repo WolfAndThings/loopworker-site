@@ -19,27 +19,27 @@
   <link rel="stylesheet" href="/v5-system.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070710' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%236366F1' font-family='Inter' font-weight='900'>L</text></svg>">
   <style>
-    .gloss-shell {{ padding: 4rem 2rem 5rem; position: relative; overflow: hidden; }}
-    .gloss-shell::before {{ content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 800px 400px at 50% 0%, rgba(99,102,241,0.12), transparent 60%); }}
-    .gloss-inner {{ position: relative; z-index: 2; max-width: 760px; margin: 0 auto; }}
-    .gloss-eyebrow {{ font-family: var(--mono); font-size: 0.74rem; color: var(--indigo-bright); letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.8rem; display: inline-block; padding: 0.3rem 0.7rem; background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.2); border-radius: 6px; }}
-    .gloss-h1 {{ font-size: clamp(2.4rem, 5vw, 3.6rem); margin: 0 0 1rem; line-height: 1.05; }}
-    .gloss-h1 em {{ font-style: normal; background: var(--grad-hero); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }}
-    .gloss-short {{ font-size: 1.18rem; color: var(--text-2); line-height: 1.55; margin: 0 0 2.4rem; }}
-    .gloss-section {{ margin: 2.4rem 0; }}
-    .gloss-section h2 {{ font-family: var(--sans-tight); font-size: 1.3rem; font-weight: 700; letter-spacing: -0.025em; margin: 0 0 0.6rem; color: var(--text); }}
-    .gloss-section p {{ font-size: 1.05rem; color: var(--text-2); line-height: 1.7; margin: 0; }}
-    .gloss-related {{ margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); }}
-    .gloss-related h3 {{ font-family: var(--mono); font-size: 0.74rem; color: var(--text-3); letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; margin: 0 0 1rem; }}
-    .gloss-related a {{ display: inline-block; margin: 0 0.6rem 0.5rem 0; padding: 0.5rem 0.9rem; background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.2); border-radius: 999px; font-size: 0.86rem; color: var(--text); }}
-    .gloss-related a:hover {{ background: rgba(99,102,241,0.15); }}
-    .gloss-cta {{ margin-top: 2.4rem; padding: 1.8rem 2rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; position: relative; overflow: hidden; }}
-    .gloss-cta::before {{ content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--grad-hero); }}
-    .gloss-cta h4 {{ font-family: var(--sans-tight); font-size: 1.2rem; margin: 0 0 0.5rem; font-weight: 700; }}
-    .gloss-cta p {{ color: var(--text-3); font-size: 0.94rem; line-height: 1.55; margin: 0 0 1.2rem; }}
+    .gloss-shell { padding: 4rem 2rem 5rem; position: relative; overflow: hidden; }
+    .gloss-shell::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 800px 400px at 50% 0%, rgba(99,102,241,0.12), transparent 60%); }
+    .gloss-inner { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; }
+    .gloss-eyebrow { font-family: var(--mono); font-size: 0.74rem; color: var(--indigo-bright); letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.8rem; display: inline-block; padding: 0.3rem 0.7rem; background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.2); border-radius: 6px; }
+    .gloss-h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); margin: 0 0 1rem; line-height: 1.05; }
+    .gloss-h1 em { font-style: normal; background: var(--grad-hero); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .gloss-short { font-size: 1.18rem; color: var(--text-2); line-height: 1.55; margin: 0 0 2.4rem; }
+    .gloss-section { margin: 2.4rem 0; }
+    .gloss-section h2 { font-family: var(--sans-tight); font-size: 1.3rem; font-weight: 700; letter-spacing: -0.025em; margin: 0 0 0.6rem; color: var(--text); }
+    .gloss-section p { font-size: 1.05rem; color: var(--text-2); line-height: 1.7; margin: 0; }
+    .gloss-related { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+    .gloss-related h3 { font-family: var(--mono); font-size: 0.74rem; color: var(--text-3); letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; margin: 0 0 1rem; }
+    .gloss-related a { display: inline-block; margin: 0 0.6rem 0.5rem 0; padding: 0.5rem 0.9rem; background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.2); border-radius: 999px; font-size: 0.86rem; color: var(--text); }
+    .gloss-related a:hover { background: rgba(99,102,241,0.15); }
+    .gloss-cta { margin-top: 2.4rem; padding: 1.8rem 2rem; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; position: relative; overflow: hidden; }
+    .gloss-cta::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--grad-hero); }
+    .gloss-cta h4 { font-family: var(--sans-tight); font-size: 1.2rem; margin: 0 0 0.5rem; font-weight: 700; }
+    .gloss-cta p { color: var(--text-3); font-size: 0.94rem; line-height: 1.55; margin: 0 0 1.2rem; }
   </style>
   <script type="application/ld+json">
-  {{ "@context": "https://schema.org", "@type": "DefinedTerm", "name": "Net Revenue Retention (NRR)", "description": "NRR = (renewing + expansion - downgrades - churn) ÷ starting revenue. Includes expansion.", "inDefinedTermSet": "https://www.loopworker.com/glossary/", "url": "https://www.loopworker.com/glossary/net-revenue-retention.html" }}
+  { "@context": "https://schema.org", "@type": "DefinedTerm", "name": "Net Revenue Retention (NRR)", "description": "NRR = (renewing + expansion - downgrades - churn) ÷ starting revenue. Includes expansion.", "inDefinedTermSet": "https://www.loopworker.com/glossary/", "url": "https://www.loopworker.com/glossary/net-revenue-retention.html" }
   </script>
 </head>
 <body>
