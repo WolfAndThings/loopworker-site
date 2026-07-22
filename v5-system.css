@@ -174,7 +174,7 @@ h4 { font-size: 1.2rem; line-height: 1.25; font-weight: 700; }
 .v5-mobile-nav.open { display: flex; flex-direction: column; gap: 0.2rem; }
 .v5-mobile-nav a { padding: 0.7rem 0; color: var(--text-2); border-bottom: 1px solid var(--border); }
 .v5-mobile-nav a:last-child { border-bottom: 0; }
-.v5-mobile-nav .v5-nav-cta { display: inline-block; margin-top: 0.5rem; }
+.v5-mobile-nav .v5-nav-cta { display: inline-block; margin: 0.5rem 0 0; }
 
 /* ━━━ HERO ━━━ */
 .v5-hero {
@@ -1142,17 +1142,22 @@ h4 { font-size: 1.2rem; line-height: 1.25; font-weight: 700; }
   line-height: 1.55; margin: 0 0 1.2rem;
 }
 .v5-email-form { display: flex; gap: 0.5rem; }
-.v5-email-form input {
+.v5-email-form input,
+.v5-email-form textarea {
   flex: 1; padding: 0.8rem 0.9rem;
   background: rgba(0,0,0,0.4);
   border: 1px solid var(--border); border-radius: 8px;
   color: var(--text); font-family: var(--sans); font-size: 0.92rem;
 }
-.v5-email-form input::placeholder { color: var(--text-4); }
-.v5-email-form input:focus {
+.v5-email-form textarea { min-height: 88px; resize: vertical; }
+.v5-email-form input::placeholder,
+.v5-email-form textarea::placeholder { color: var(--text-4); }
+.v5-email-form input:focus,
+.v5-email-form textarea:focus {
   outline: none; border-color: var(--indigo);
   box-shadow: 0 0 0 3px rgba(99,102,241,0.18);
 }
+.v5-inquiry-form { flex-direction: column; }
 .v5-email-form button {
   background: var(--grad-cta); color: #FFF;
   border: 0; padding: 0.8rem 1.1rem;
