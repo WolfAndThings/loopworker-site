@@ -3,20 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#171614">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
 <title>Three concepts for FeedingBird &middot; 50+ launch</title>
 <meta name="description" content="Campaign concepts. Private client deliverable.">
+<style>html{background:#171614;}</style>
 <style>
   :root{
     --coral:#F6655E; --dark-blue:#1E617D; --blue:#87D5E8;
     --green:#4A8D7C; --light-blue:#E8F1F0; --beige:#FFF5EB;
-    --surface:#EDEBE7; --surface-2:#F7F6F3; --ink:#23211E; --note:#6E6860; --hair:#D8D4CE;
+    --surface:#171614; --surface-2:#201E1B; --ink:#EFECE6; --note:#A29A8F; --hair:#332F2A;
   }
-  @media (prefers-color-scheme: dark){
-    :root{ --surface:#1A1917; --surface-2:#232220; --ink:#EDEBE7; --note:#9A938A; --hair:#332F2B; }
-  }
-  :root[data-theme="dark"]{ --surface:#1A1917; --surface-2:#232220; --ink:#EDEBE7; --note:#9A938A; --hair:#332F2B; }
-  :root[data-theme="light"]{ --surface:#EDEBE7; --surface-2:#F7F6F3; --ink:#23211E; --note:#6E6860; --hair:#D8D4CE; }
+  
+  
+  
   *{box-sizing:border-box;}
   body{margin:0;background:var(--surface);color:var(--ink);
     font-family:ui-rounded,"SF Pro Rounded","Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -52,9 +53,9 @@
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.5rem;margin:1.4rem 0 1.2rem;}
   .unit{display:flex;flex-direction:column;gap:.65rem;}
   .card{aspect-ratio:4/5;padding:1.4rem 1.3rem;display:flex;flex-direction:column;justify-content:space-between;color:#fff;}
-  .card.coral{background:var(--coral);} .card.dblue{background:var(--dark-blue);}
-  .card.green{background:var(--green);} .card.beige{background:var(--beige);color:var(--dark-blue);}
-  .card.lblue{background:var(--light-blue);color:var(--dark-blue);} .card.blue{background:var(--blue);color:var(--dark-blue);}
+  .card.coral{background:var(--coral);color:#000;} .card.dblue{background:var(--dark-blue);}
+  .card.green{background:var(--green);color:#000;} .card.beige{background:var(--beige);color:#000;}
+  .card.lblue{background:var(--light-blue);color:#000;} .card.blue{background:var(--blue);color:#000;}
   .item{font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;font-weight:800;opacity:.72;}
   .line{font-size:1.22rem;line-height:1.28;font-weight:720;letter-spacing:-.015em;margin:.85rem 0 0;text-wrap:balance;}
   .foot{display:flex;flex-direction:column;gap:.1rem;}
@@ -66,7 +67,7 @@
   .board{display:grid;grid-template-columns:repeat(auto-fit,minmax(12.5rem,1fr));gap:1.1rem;margin:1.3rem 0;}
   .frame{background:var(--surface-2);border:1px solid var(--hair);display:flex;flex-direction:column;}
   .vis{aspect-ratio:9/12;display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem;
-    font-size:12px;color:var(--note);line-height:1.45;
+    font-size:12px;color:#3a352f;line-height:1.45;
     background:linear-gradient(180deg,rgba(255,245,235,.85),rgba(232,241,240,.85));}
   .vis.endcard{background:var(--dark-blue);color:#fff;}
   .vis.shot{padding:0;background:none;overflow:hidden;}
@@ -82,7 +83,7 @@
   .fmeta b{color:var(--ink);}
 
   .two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.8rem;align-items:start;margin-top:1.2rem;}
-  .sheetmock{background:var(--beige);color:var(--dark-blue);padding:1.6rem 1.4rem;border:1px solid var(--hair);}
+  .sheetmock{background:var(--beige);color:#000;padding:1.6rem 1.4rem;border:1px solid var(--hair);}
   .sheetmock h4{margin:0 0 .15rem;font-size:1.2rem;font-weight:800;}
   .sm-sub{margin:0 0 1rem;font-size:12px;opacity:.75;}
   .grp{font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--coral);margin:1rem 0 .35rem;}
@@ -108,7 +109,13 @@
   td b{color:var(--coral);}
 
   .mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:1rem;margin:1.3rem 0;}
-  .mcard{aspect-ratio:1/1;padding:1.1rem;display:flex;flex-direction:column;justify-content:space-between;color:#fff;}
+  .mcard{aspect-ratio:1/1;padding:1.1rem;display:flex;flex-direction:column;justify-content:space-between;
+    background:var(--dark-blue);color:#fff;}
+  .mcard.coral{background:var(--coral);color:#000;} .mcard.dblue{background:var(--dark-blue);color:#fff;}
+  .mcard.green{background:var(--green);color:#000;}
+  .mcard.beige{background:var(--beige);color:#000;}
+  .mcard.lblue{background:var(--light-blue);color:#000;}
+  .mcard.blue{background:var(--blue);color:#000;}
   .mcard .mi{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;opacity:.7;}
   .mcard .ml{font-size:1.02rem;line-height:1.3;font-weight:730;letter-spacing:-.01em;margin:.6rem 0 0;}
   .mcard .mc{font-size:11px;font-weight:700;opacity:.85;}
@@ -121,7 +128,7 @@
   .aibox li::marker{color:var(--note);}
 
   .lists{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.4rem;margin:1.4rem 0 1rem;}
-  .lcard{background:var(--beige);color:var(--dark-blue);padding:1.35rem 1.25rem;border:1px solid var(--hair);
+  .lcard{background:var(--beige);color:#000;padding:1.35rem 1.25rem;border:1px solid var(--hair);
     display:flex;flex-direction:column;}
   .lcard.alt{background:var(--light-blue);}
   .lnum{font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:800;color:var(--coral);margin:0 0 .35rem;}
@@ -139,8 +146,8 @@
 
   .reels{display:grid;grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr));gap:1.4rem;margin:1.4rem 0 1rem;}
   .reel{background:var(--dark-blue);color:#fff;padding:1.3rem 1.2rem;display:flex;flex-direction:column;min-height:22rem;}
-  .reel.c2{background:var(--coral);} .reel.c3{background:var(--green);}
-  .reel.c4{background:var(--beige);color:var(--dark-blue);} .reel.c5{background:var(--light-blue);color:var(--dark-blue);}
+  .reel.c2{background:var(--coral);color:#000;} .reel.c3{background:var(--green);color:#000;}
+  .reel.c4{background:var(--beige);color:#000;} .reel.c5{background:var(--light-blue);color:#000;}
   .rtag{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;opacity:.65;margin:0 0 .5rem;}
   .rhook{font-size:1.14rem;font-weight:800;line-height:1.22;letter-spacing:-.015em;margin:0 0 .9rem;text-wrap:balance;}
   .rbox{border:1.5px solid currentColor;padding:.32rem .5rem;margin-bottom:.34rem;font-size:12.5px;
