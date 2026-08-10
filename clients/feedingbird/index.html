@@ -12,9 +12,7 @@
     --green:#4A8D7C; --light-blue:#E8F1F0; --beige:#FFF5EB;
     --surface:#171614; --surface-2:#201E1B; --ink:#EFECE6; --note:#A29A8F; --hair:#332F2A;
   }
-  
-  
-  
+
   *{box-sizing:border-box;}
   body{margin:0;background:var(--surface);color:var(--ink);
     font-family:ui-rounded,"SF Pro Rounded","Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -215,6 +213,11 @@
   .mail:last-child{border-bottom:none;}
   .mail i{font-style:normal;color:var(--coral);font-weight:800;flex:0 0 2.4rem;font-size:12px;letter-spacing:.08em;}
   .mail b{color:var(--ink);}
+
+  .jump{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 2.2rem;}
+  .jump a{font-size:12px;letter-spacing:.03em;color:var(--note);text-decoration:none;
+    border:1px solid var(--hair);padding:.3rem .6rem;border-radius:2px;}
+  .jump a:hover{color:var(--ink);border-color:var(--note);}
   .comp{border-top:1px solid var(--hair);padding-top:1rem;margin-top:1rem;}
   .comp:first-of-type{border-top:none;}
   .cname{font-size:1.05rem;font-weight:760;margin:0 0 .1rem;}
@@ -234,7 +237,13 @@
     <p class="byline">Alex Lamb · August 2026 · for Tasha Willingham</p>
   </div>
 
-  <div class="col">
+  <div class="jump">
+    <a href="#concepts">Three concepts</a><a href="#cards">The cards</a><a href="#film">The film</a>
+    <a href="#reels">The reels</a><a href="#founder">Founder videos</a><a href="#series">The series</a>
+    <a href="#cadence">Cadence</a><a href="#evidence">The numbers</a>
+  </div>
+
+  <div class="col" id="concepts">
     <p>All three come from the same place: the top reason people give for having no estate documents is not cost and not fear. It is <em>"I do not think I have enough assets to need one,"</em> at twenty seven percent in Trust and Will's 2026 report. Cost is fifteen. Complexity twelve. Discomfort twelve.</p>
     <p>So the three big blockers are self-exclusion, inertia, and disbelief that it is quick. Each concept below attacks one of them. They are not variations on a theme, they are three different arguments, and they produce differently.</p>
   </div>
@@ -272,7 +281,7 @@
     <p class="num">Execution</p>
     <h2>What It Counts looks like</h2>
 
-    <h3>A · Static series</h3>
+    <h3 id="cards">A · Static series</h3>
     <p class="h3sub">Facebook · built to be forwarded to one person, not posted at an audience</p>
     <div class="col"><p style="font-size:13.5px;color:var(--note);">Everything in this section is a working layout: real copy, indicative type, so you can judge the idea rather than imagine it. Finished art direction is a decision we make once, after a concept is chosen.</p></div>
 
@@ -370,7 +379,7 @@
       <p style="font-size:13.5px;color:var(--note);">Fourteen cards in the first batch, which is roughly seven weeks of a twice weekly cadence from one writing session. The format is the asset: once the frame is set, new items cost minutes rather than a concept meeting.</p>
     </div>
 
-    <h3>B · Short-form video</h3>
+    <h3 id="film">B · Short-form video</h3>
     <p class="h3sub">Facebook and YouTube · one room, one thing, thirty seconds</p>
 
     <div class="warn" style="max-width:40rem;margin-bottom:1.2rem;"><b>The five frames below are AI look development,</b> built from a still of your own brand film so the color and light carry across. On the day this is shot with a real performer in a real house. I am showing them so we agree on a look rather than on a paragraph describing one. It is the use described in the AI split further down.</div>
@@ -437,7 +446,7 @@
 
   <div class="sec">
     <p class="num">The series inside the series</p>
-    <h2>Five standalone reels</h2>
+    <h2 id="reels">Five standalone reels</h2>
     <div class="col">
       <p>Each one is its own video and stands alone. Same build every time: the consequence is the hook, the things slam on screen one at a time on a beat, then the ask, said plainly. Nobody has to have seen any of the others.</p>
       <p><strong>The formula underneath all five.</strong> If you own it and it is not in your will, somebody else decides what happens to it. That sentence is the campaign, and every reel is one category of proof.</p>
@@ -574,7 +583,7 @@
 
     <div class="col">
       <p style="font-size:13.5px;color:var(--note);">Rough, drawn in five minutes to show the idea. Hers would be better and would actually be hers. The point is that the hand of the brand shows up on every card without anybody waiting on a drawing.</p>
-      <p><strong>That is the pattern for the whole team.</strong> Nobody has to learn a new craft. Each person does the thing they are already good at, once, in a form that gets reused.</p>
+      <p><strong>That is the pattern for the team.</strong> Nobody learns a new craft. Each person does what they are already good at, once, in a form that gets reused.</p>
     </div>
 
     <h3>The kit, doing its job</h3>
@@ -629,7 +638,6 @@
 
     </div>
 
-    
     <div class="col">
       <p style="font-size:13.5px;color:var(--note);">Four marks, four jobs, one drawing session. The same kit works on the reels, the printable page and the end card of the film, so the brand's hand shows up everywhere while the illustrator stays on the things only she can make.</p>
     </div>
@@ -648,7 +656,7 @@
 
   <div class="sec">
     <p class="num">The one that keeps running</p>
-    <h2>Does this count?</h2>
+    <h2 id="founder">Does this count?</h2>
     <div class="col">
       <p>Everything above needs a shoot day. This one needs a phone and forty minutes a month. I would start here, because it is the only format that keeps running when everyone is busy.</p>
       <p><strong>One founder, one question, thirty seconds.</strong> Somebody asks whether a thing counts as an estate. The founder answers plainly and says what to do about it. That is the whole format.</p>
@@ -699,7 +707,7 @@
 
   <div class="sec">
     <p class="num">The long game</p>
-    <h2>Straight Answers, the series that earns the search</h2>
+    <h2 id="series">Straight Answers, the series that earns the search</h2>
     <div class="col">
       <p>YouTube reaches this audience better than anything else. Eighty five percent of people aged fifty to sixty four. Right now you have nothing there. This is what I would put in that space. It is also the only part of the plan that grows in value every month.</p>
       <p><strong>The premise is that nobody explains this properly.</strong> The category either sells or scares. A calm four minute answer to a question somebody typed into Google at eleven at night is worth more than any ad, and it keeps working for years.</p>
@@ -746,7 +754,7 @@
     <div class="col">
       <p><strong>Episode fifteen is the one I would not cut.</strong> It tells people when your product is the wrong answer. Complex estates. A business with partners. Blended families with real money. Anyone with a special needs dependent. Four minutes of that buys more trust than anything else you could film, and it turns away the customers who would have been unhappy anyway.</p>
 
-      <p><strong>One correction on the way in, and it matters.</strong> The common version of this content says the government takes everything if you have no will. That is not what happens. An estate company is the right one to correct it, not repeat it. With no will the state applies a formula and distributes to relatives, and the formula is often simply not what the person would have chosen. Property only genuinely goes to the state in narrow cases, mainly when no heir can be found, or when an account sits unclaimed long enough. The honest version is more useful and it is more persuasive, because the viewer can check it.</p>
+      <p><strong>One correction on the way in, and it matters.</strong> The common version of this content says the government takes everything if you have no will. That is not what happens. An estate company is the right one to correct it, not repeat it. With no will the state applies a formula and distributes to relatives, and the formula is often not what the person would have chosen. Property only genuinely goes to the state in narrow cases, mainly when no heir can be found, or when an account sits unclaimed long enough. The honest version is more useful and it is more persuasive, because the viewer can check it.</p>
     </div>
 
     <div class="flag">
@@ -807,7 +815,7 @@
 
   <div class="sec col">
     <p class="num">Cadence</p>
-    <h2>Three weeks, launch relative</h2>
+    <h2 id="cadence">Three weeks, launch relative</h2>
     <p><strong>One thing up front, because it changes the shape of everything below.</strong> I looked at the accounts. Instagram is at thirty one followers with nothing posted, Facebook at twenty nine. That is a standing start rather than a slow channel, and the two call for opposite plans. So paid carries distribution from day one, and organic does a different job: the library, and the proof the brand exists when somebody checks.</p>
 
     <div class="week"><b>Week one · let cold traffic vote</b>
@@ -817,13 +825,13 @@
     <div class="week"><b>Week three · answer the legitimacy question</b>
       The objection that stops purchases rather than attention. Attorney-reviewed, state-specific, valid where you live, said in the It Counts voice rather than as a trust badge nobody reads. One walkthrough film showing the actual thirty minutes, which is Concept Three earning its keep. Retarget everyone who took the list and did not start a plan.</div>
 
-    <p><strong>What this buys beyond the three weeks.</strong> Eight to twelve pieces of tested creative and a first read on which objects travel, which is the input for everything after. Follower count is not the goal in this window and I would not report it as one.</p>
+    <p><strong>What this buys beyond three weeks.</strong> Eight to twelve pieces of tested creative, and a first read on which objects travel. Follower count is not the goal here, and I would not report it as one.</p>
     <p><strong>What I would watch instead of impressions.</strong> Cost per click by item. Share rate on paid. List downloads. And how many of those downloads start a plan within a week. That last one is the only number that tells you whether the idea sells or just travels.</p>
   </div>
 
   <div class="sec">
     <p class="num">Evidence</p>
-    <h2>The pulls behind all of it</h2>
+    <h2 id="evidence">The pulls behind all of it</h2>
     <div class="col">
       <p>None of the above is a hunch. Here is what I pulled before writing a word of it.</p>
     </div>
@@ -843,8 +851,8 @@
     </div>
 
     <div class="col">
-      <p><strong>Longevity is the only honest signal in an ad library.</strong> Trust and Will has kept six of thirty seven alive, and every one of them is Spanish. The durable one leads on the guardian question, not on assets.</p>
-      <p><strong>What that means for you.</strong> There is a proven, underserved Spanish language 50+ audience in this category and the leader has quietly found it. It is not a translation job, it is documents, support and state nuance, which is exactly why the lane stays open. I would not put it in this campaign, and I would put it on the roadmap. Honest limit: six ads on a single day's pull, so treat it as a signal to test, not a proven channel.</p>
+      <p><strong>Longevity is the only honest signal in an ad library.</strong> Six of thirty seven have stayed alive, and every one is Spanish. The durable one leads on the guardian question, not on assets.</p>
+      <p><strong>What that means for you.</strong> There is an underserved Spanish speaking 50+ audience here and the leader has quietly found it. Not a translation job. Documents, support and state detail, which is why the lane stays open. Roadmap, not this campaign. Honest limit: six ads on one day's pull, so treat it as a signal to test.</p>
       <p><strong>And LegalZoom's two hundred and twenty nine with nothing surviving says the biggest spender in the category has not landed on a message that holds either.</strong> tells you the biggest spender in the category has not found a message that holds. That is the gap to walk into.</p>
     </div>
 
@@ -852,7 +860,7 @@
     <p class="h3sub">The hundred most recent App Store reviews of Ethos, formerly Tomorrow, the most reviewed app that makes wills, at 6,681 ratings</p>
 
     <div class="col">
-      <p>I ranked the complaints by how often they repeat. The order surprised me.</p>
+      <p>Ranked by how often they repeat. The order surprised me.</p>
     </div>
 
     <div class="datatable">
@@ -893,24 +901,7 @@
     <p class="num">The content</p>
     <h2>What we could be making, and where AI belongs</h2>
     <div class="col">
-      <p>You said you want a pipeline rather than a package. Here is the full list of what this brand could be producing, and my honest split on where the tools help and where they cost you the audience.</p>
-    </div>
-
-    <div class="datatable">
-      <table>
-        <thead><tr><th>Format</th><th>Volume</th><th>How it gets made</th></tr></thead>
-        <tbody>
-          <tr><td>It Counts cards</td><td>2 per week</td><td>Copy written by hand. Layout templated once, then variants are minutes.</td></tr>
-          <tr><td>Thirty second films</td><td>6 to 8 per shoot day</td><td>Real people, real rooms. One day a month covers the month.</td></tr>
-          <tr><td>State cards, fifty of them</td><td>One batch</td><td>Same frame, real state requirements. Assembled with tooling, checked by a person.</td></tr>
-          <tr><td>Podcast cutdowns</td><td>10 to 15 per episode</td><td>You proved this yourself in sixteen minutes. Machine finds the moments, a person picks and tops and tails them.</td></tr>
-          <tr><td>Did you know explainers</td><td>Weekly</td><td>Eighteen months of probate, what happens with no will, what a healthcare directive actually does.</td></tr>
-          <tr><td>Customer story films</td><td>Monthly</td><td>The strongest asset you can own and the one nothing can fake.</td></tr>
-          <tr><td>The printable list</td><td>Once, then seasonal</td><td>Worth an illustrator's week. This is where the hand drawn style earns its cost.</td></tr>
-          <tr><td>Email sequence</td><td>5 to 7 mails</td><td>Drafted fast, edited slowly. Procrastination addressed at mail two and five per the book.</td></tr>
-          <tr><td>Comment and DM replies</td><td>Daily</td><td>A person. Always. This is where trust is won or lost on a category like this.</td></tr>
-        </tbody>
-      </table>
+      <p>You said you want a pipeline rather than a package. Here is my honest split on where the tools help, and where they cost you the audience.</p>
     </div>
 
     <div class="aisplit">
@@ -965,17 +956,6 @@
         <p class="clearn"><b>What to take.</b> Brand and volume. People search for them by name. <b>What to leave.</b> With the biggest budget in the category, nothing has held for a month. Volume without a message is expensive, and it is the clearest sign the winning line in this category is still there to be written.</p>
       </div>
 
-      <div class="comp">
-        <p class="cname">Ethos</p>
-        <p class="cnum">6,681 app ratings, the most reviewed app that makes wills</p>
-        <p class="clearn"><b>What to take.</b> They bundled wills with insurance, so the will is the entry and the policy is the revenue. <b>What to leave.</b> Their reviews are the complaint list in the pulls above. Their scale is the reason that list is worth reading, not a reason to copy the product.</p>
-      </div>
-
-      <div class="comp">
-        <p class="cname">The individual attorneys</p>
-        <p class="cnum">The largest legal accounts on social run into the millions of followers, none of them brands</p>
-        <p class="clearn"><b>What to take.</b> In this category faces outperform logos, consistently. A named person explaining one thing beats a brand explaining the same thing. <b>What that argues for here.</b> A recurring on camera presence, whether that is a founder, the attorney who reviews the documents, or a cast performer who becomes familiar. It is the cheapest advantage on this list and nobody in your direct set has taken it.</p>
-      </div>
     </div>
   </div>
 
