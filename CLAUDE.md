@@ -43,6 +43,7 @@ Duration-only names (48-hour/5-day/10-day Read) are retired — don't reintroduc
 | `law-firms/`, `beauty/`, `apparel/`, `food-beverage/`, `private-equity/` | ICP vertical landing pages (each = free-teardown funnel + Service/FAQ schema) |
 | `reports/vitamin-c-serum-ads/`, `reports/functional-beverage-ads/` | Ad-library micro-reports built from REAL on-disk data (Dataset schema, free-to-cite) |
 | `downloads/read-{law,coach,brand,threat}-redacted.html` + `.pdf` | 4 redacted sample Reads. HTML versions are indexable (canonical, web fonts). **NEVER regenerate from originals without re-running the full redaction verification** |
+| `vs/index.html` | Comparison hub (v6). Groups the 14 live vs pages: consultancies, Big Four, tools. Carries the caveat that competitor prices come from published rate cards and public reporting, not quotes. Linked sitewide from the footer "More:" row |
 | `vs/*.html` | Comparison pages (mckinsey/bain/bcg/semrush/etc.) — v5 shell, amber, funnel-wired. Weak tool pages (ahrefs/zoominfo/crunchbase/g2/foreplay) redirect to free-teardown |
 | `404.html`, `terms.html`, `privacy.html` | Utility |
 
@@ -58,6 +59,14 @@ Top-level vertical pages for restaurants · med-spa · fitness · ecommerce · c
 
 ## Blog + glossary (SEO, v5 shell, amber)
 `blog/` (~39 articles) + `glossary/` — kept for SEO, on v5-system.css (amber). Some still carry legacy "Sprint" copy in body/nav; scrub opportunistically, don't mass-rewrite. Some glossary pages have broken `{{ }}` inline CSS (base v5-css still applies).
+
+## SEO + AEO baseline (clean as of Aug 10 2026 — keep it that way)
+Every indexable page: title ≤62 chars, description 110-165, canonical, og:image, exactly one h1, JSON-LD. Verify after any page work with an attribute-aware regex; a `content=["\']` pattern silently truncates at the first apostrophe and under-reports lengths.
+- **`llms.txt` is offer copy, not boilerplate.** It feeds ChatGPT and Perplexity. Re-check it against the NAMING CANON whenever pricing or product names move; it shipped retired duration names for weeks after the Jul 18 rename.
+- **`robots.txt` names the AI crawlers** (GPTBot, OAI-SearchBot, ChatGPT-User, PerplexityBot, Perplexity-User, ClaudeBot, Claude-User, Google-Extended, Applebot-Extended). A named user-agent group REPLACES the wildcard group, so every group repeats the full disallow list. Never add a group without the disallows.
+- **FAQPage markup must match visible text exactly.** Site FAQs live in `<details><summary>`, not headings, so a heading-only grep will wrongly report "no FAQ."
+- **New pages need an inbound internal link,** not just a sitemap entry. Sitemap presence alone left 37 pages orphaned. Hubs: footer "More:" row (13 core pages) → `/vs/`, `/reports/`, `/glossary/`, `/blog/`; `for/{vert}.html` → its 5 children.
+- **Never generate a page with `canvas-design` fonts left in place** — those `@font-face` rules point at `/Users/alexlamb/.claude/skills/...`, which 404s in production and publishes the local path. Swap to Google Fonts before shipping.
 
 ## Hard rules
 - **NEVER fake data.** Micro-reports use only verified numbers from real on-disk pulls, dated, with methodology + caveats. No fabricated stats, no invented client names, no guessed LinkedIn URLs.
