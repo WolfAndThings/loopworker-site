@@ -67,6 +67,14 @@ Every indexable page: title ≤62 chars, description 110-165, canonical, og:imag
 - **FAQPage markup must match visible text exactly.** Site FAQs live in `<details><summary>`, not headings, so a heading-only grep will wrongly report "no FAQ."
 - **New pages need an inbound internal link,** not just a sitemap entry. Sitemap presence alone left 37 pages orphaned. Hubs: footer "More:" row (13 core pages) → `/vs/`, `/reports/`, `/glossary/`, `/blog/`; `for/{vert}.html` → its 5 children.
 - **Never generate a page with `canvas-design` fonts left in place** — those `@font-face` rules point at `/Users/alexlamb/.claude/skills/...`, which 404s in production and publishes the local path. Swap to Google Fonts before shipping.
+- **After any deploy that changes titles, descriptions, pricing or `llms.txt`, run `./_blog_tools/indexnow_ping.sh`.** Pings Bing, Yandex, Naver, Seznam, Yep. The hosted key is the 48-hex `.txt` in the repo root; `.indexnow-key` holds a local copy and is gitignored. **Google does not participate in IndexNow** — Google needs a Search Console re-index request.
+
+## Search Console and analytics access (state as of Aug 11 2026)
+- GSC property **is verified** (`google9258fb3826a9df03.html`, live, 200). Sitemap is live and valid at 145 URLs.
+- **No API credentials on this machine.** `google_auth.py --check` reports tier -1; there is no `~/.config/claude-seo/google-api.json`. So no session can read ranking, impression, or indexation data until that is set up. Do not claim performance numbers without it.
+- To wire it: Google Cloud project → enable Search Console API → OAuth desktop client → `claude-seo run google_auth.py --auth --creds <client_secret.json>`. A plain `GOOGLE_API_KEY` alone unlocks PageSpeed and CrUX but NOT Search Console.
+- **Bing Webmaster Tools is not set up** (no `BingSiteAuth.xml`). It imports from GSC in one click and it is what feeds Copilot.
+- The seo skill runtime is missing `requests` and `playwright`, so its network and screenshot scripts fail. Either `pip install -r ~/.claude/skills/seo/requirements.txt` or do the call directly.
 
 ## Hard rules
 - **NEVER fake data.** Micro-reports use only verified numbers from real on-disk pulls, dated, with methodology + caveats. No fabricated stats, no invented client names, no guessed LinkedIn URLs.
