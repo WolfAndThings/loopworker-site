@@ -76,25 +76,123 @@
   </style>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "The Decision Read",
-    "serviceType": "Market intelligence and competitive research",
-    "description": "An independent second opinion for one important business question. The evidence is investigated, the options ranked, and every material claim graded high, medium, or low confidence and sourced.",
-    "provider": { "@type": "Organization", "name": "LoopWorker", "url": "https://www.loopworker.com/" },
-    "areaServed": "US",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Decision Reads",
-      "itemListElement": [
-        { "@type": "Offer", "name": "The One-Page Read", "price": "750", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "48-hour Decision Read for one narrow, time-sensitive, reasonably reversible question." },
-        { "@type": "Offer", "name": "The Focused Read", "price": "3200", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "Five-day Decision Read for one focused decision with real tradeoffs, including a 30-minute review call." },
-        { "@type": "Offer", "name": "The Deep Read", "price": "8000", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "Ten-day Decision Read for a six-figure decision: full competitor, customer, pricing, and market investigation with full source trail." },
-        { "@type": "Offer", "name": "The Engagement", "price": "25000", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "30-day engagement: the full ten-day investigation plus the operating change that follows it. Billed by milestone." }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "The Decision Read",
+      "serviceType": "Market intelligence and competitive research",
+      "description": "An independent second opinion for one important business question. The evidence is investigated, the options ranked, and every material claim graded high, medium, or low confidence and sourced.",
+      "provider": {
+        "@type": "Organization",
+        "name": "LoopWorker",
+        "url": "https://www.loopworker.com/"
+      },
+      "areaServed": "US",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Decision Reads",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "The One-Page Read",
+            "price": "750",
+            "priceCurrency": "USD",
+            "url": "https://www.loopworker.com/#send-question",
+            "description": "48-hour Decision Read for one narrow, time-sensitive, reasonably reversible question."
+          },
+          {
+            "@type": "Offer",
+            "name": "The Focused Read",
+            "price": "3200",
+            "priceCurrency": "USD",
+            "url": "https://www.loopworker.com/#send-question",
+            "description": "Five-day Decision Read for one focused decision with real tradeoffs, including a 30-minute review call."
+          },
+          {
+            "@type": "Offer",
+            "name": "The Deep Read",
+            "price": "8000",
+            "priceCurrency": "USD",
+            "url": "https://www.loopworker.com/#send-question",
+            "description": "Ten-day Decision Read for a six-figure decision: full competitor, customer, pricing, and market investigation with full source trail."
+          },
+          {
+            "@type": "Offer",
+            "name": "The Engagement",
+            "price": "25000",
+            "priceCurrency": "USD",
+            "url": "https://www.loopworker.com/#send-question",
+            "description": "30-day engagement: the full ten-day investigation plus the operating change that follows it. Billed by milestone."
+          }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.loopworker.com/pricing.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this an audit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. An audit grades what you already have. A Read pulls the public evidence around one decision and turns it into a ranked answer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do I actually get?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A written Read: the recommendation on top, the evidence under it, every material claim graded high, medium, or low confidence, sources shown, risks and next moves. Everything from the Focused Read up includes a review call."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which depth should I choose?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Don't. Send the question and I recommend the smallest depth that answers it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can this use sensitive data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Engagements are private by default. Public case studies are anonymized or only published with permission."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Refund policy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If the Read doesn't improve the evidence for your decision, tell me within 14 days and I refund the fee. It doesn't promise a particular outcome."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is this NOT for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Companies under roughly $1M in revenue without funding, decisions with less than $25K at stake, and buyers looking for commodity research."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is the Deep Read $8,000 when consultants charge $50K+?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No partners, no pyramid, no 80-slide theater. Founder-led research and a Read built to be acted on rather than presented. The cost comparison page shows the full market; I sit where I sit on purpose."
+          }
+        }
       ]
     }
-  }
+  ]
+}
   </script>
 </head>
 <body>
@@ -258,7 +356,7 @@
         <div class="intro">
           <span class="eyebrow">What lands on your desk</span>
           <h2>Every depth, <span class="hl">broken down.</span></h2>
-          <p class="section-sub">Every engagement starts the same way: we sit down before I pull anything. You tell me the decision; I tell you exactly what I'll go get.</p>
+          <p class="section-sub">Every engagement starts the same way: we sit down before I pull anything. You tell me the decision; I tell you exactly what I'll go get. The <a href="/the-7-signals-behind-every-sprint.html">seven signals behind every Read</a> are the same each time.</p>
         </div>
 
         <div class="dd marks">
@@ -370,6 +468,7 @@
       <div class="foot-logo">LoopWorker</div>
       <p>One question. One ranked answer. Every claim graded and sourced.</p>
       <p class="foot-verticals">Reads for: <a href="/law-firms/">Law firms</a> · <a href="/beauty/">Beauty</a> · <a href="/apparel/">Apparel</a> · <a href="/food-beverage/">Food &amp; CPG</a> · <a href="/private-equity/">PE</a></p>
+      <p class="foot-verticals">More: <a href="/vs/">Compare</a> · <a href="/reports/">Free reports</a> · <a href="/glossary/">Glossary</a> · <a href="/blog/">Field notes</a></p>
       <p>© 2026 · <a href="/sample-brief.html">Sample</a> · <a href="/pricing.html">Pricing</a> · <a href="/faq.html">FAQ</a> · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a></p>
       <p class="foot-small">alex@loopworker.com</p>
     </div>
