@@ -15,25 +15,37 @@ A Decision Read answers one important business decision from public evidence: co
 
 ## Pricing (published, fixed)
 
-- The 48-hour Read: $750. One narrow question.
-- The 5-day Read: $3,200. One focused decision, includes a review call.
-- The 10-day Read: $8,000. A six-figure decision, full competitor and market investigation. The default for six-figure decisions.
-- The 30-day Engagement: $25,000, billed by milestone. The 10-day investigation plus the operating change that follows it.
+The four Reads above are the question. The four steps below are the depth. Price and timeline are the spec, never the name.
+
+- The One-Page Read: $750, delivered in 48 hours. One narrow question, pulled deep, on one page. The smallest paid step.
+- The Focused Read: $3,200, delivered in 5 days. One real decision worked through: options compared, ranked recommendation, review call included.
+- The Deep Read: $8,000, delivered in 10 days. Full competitor, customer, pricing, and market investigation, graded throughout. The default for six-figure decisions.
+- The Engagement: $25,000, delivered over 30 days, billed by milestone. The Deep Read plus the operating change that follows it.
+- Systems Retainer: $4,500 per month, ongoing. Monthly market watch, competitor signal refresh, and a running opportunities queue.
 
 Every engagement starts with a sit-down before any research. Every Read carries a 14-day standard: if it does not improve the evidence for your decision, the fee is refunded.
 
 ## Free competitor teardown
 
-Name one competitor and LoopWorker sends back a teardown of their public playbook within 48 hours, graded, no call and no payment. Start here: https://www.loopworker.com/free-teardown.html
+Name one competitor and LoopWorker sends back a teardown of their public playbook within 48 hours, graded, no call and no payment. It is the same one-page graded format as the paid Read, at one competitor instead of roughly ten. Start here: https://www.loopworker.com/free-teardown.html
 
 ## Who it is for
 
 Owner-operators facing a six-figure decision they cannot see clearly from inside: traditional businesses around $5M+ in revenue, PE firms and portfolio companies, corporate and defense law firms, and founders of shipping consumer brands (beauty, apparel, scaled food and CPG) with live ad activity and a decision on the table.
 
+## Who it is not for
+
+Pre-revenue and pre-launch companies, local single-location businesses, and anyone selling AI services, agency services, or recruiting. The evidence trail those businesses leave in public is too thin to grade honestly.
+
 ## How it is different
 
 - Versus strategy consultants: no partners, no pyramid, no slide theater. Founder-led research at a published fixed price, in days, refundable.
 - Versus tools (SEMrush, the Meta Ad Library): tools hand you data. A Read hands you the graded answer for your specific decision. The pull is the evidence; the judgment on top is the product.
+- Versus an AI research report: every material claim carries a confidence grade and a named source, and the gaps are printed as unknowns rather than filled with plausible text.
+
+## How the grading works
+
+Every material claim in a Read is marked high, medium, or low confidence, and the source behind it is shown. When a claim would need a phone call or private data to confirm, the Read says so and grades it low rather than guessing. Unknowns are printed, not hidden.
 
 ## Key pages
 
@@ -42,8 +54,13 @@ Owner-operators facing a six-figure decision they cannot see clearly from inside
 - Free teardown: https://www.loopworker.com/free-teardown.html
 - Sample Read (real, redacted): https://www.loopworker.com/sample-brief.html
 - FAQ: https://www.loopworker.com/faq.html
+- About the founder: https://www.loopworker.com/about.html
 - Reads for law firms: https://www.loopworker.com/law-firms/
 - Reads for beauty brands: https://www.loopworker.com/beauty/
+- Reads for apparel brands: https://www.loopworker.com/apparel/
+- Reads for food and beverage brands: https://www.loopworker.com/food-beverage/
+- Reads for private equity: https://www.loopworker.com/private-equity/
 - Free data report (vitamin C serum ad market): https://www.loopworker.com/reports/vitamin-c-serum-ads/
+- Free data report (functional beverage ad market): https://www.loopworker.com/reports/functional-beverage-ads/
 
 Contact: alex@loopworker.com

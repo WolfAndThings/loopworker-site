@@ -17,11 +17,12 @@ Everything is **the Decision Read**, sold by the buyer's question (lead with the
 - **The Pricing Read** — "What should I charge?"
 - **The Market Read** — "Is this market worth entering?"
 
-**Depth ladder = duration-only names** (tier names dropped Jul 16):
-- **The 48-hour Read** — $750 (smallest paid step)
-- **The 5-day Read** — $3,200 (includes review call)
-- **The 10-day Read** — $8,000 (anchor: "default for six-figure decisions")
-- **The 30-day Engagement** — $25,000, billed per milestone
+**Depth ladder = depth-of-deliverable names** (locked Jul 18; duration is spec next to price, never the label):
+- **The One-Page Read** — $750 · 48h (smallest paid step)
+- **The Focused Read** — $3,200 · 5 days (includes review call)
+- **The Deep Read** — $8,000 · 10 days (anchor: "default for six-figure decisions")
+- **The Engagement** — $25,000 · 30 days, billed per milestone
+Duration-only names (48-hour/5-day/10-day Read) are retired — don't reintroduce them as labels.
 
 **Free competitor teardown = top-of-funnel tripwire** (`/free-teardown.html` + `#free-teardown` on index): name one competitor, get a 48h public-signal teardown free, email-captured (Formspree `xbdpddrn`, tagged FREE TEARDOWN), bridges to the paid Read. This is the primary cold-traffic entry — the hero leads with it.
 

@@ -17,4 +17,181 @@ Disallow: /templates/
 Disallow: /_backup_pre_v5/
 Disallow: /funnel_audit/
 
+# AI assistants and answer engines are welcome to read and cite this site.
+# The market reports and sample Reads are published to be quoted, with the
+# date and method shown on the page. Private client work stays disallowed,
+# and each group below repeats the full disallow list because a named
+# user-agent group replaces the wildcard group rather than adding to it.
+
+User-agent: GPTBot
+Allow: /
+Allow: /tools/roi-calculator.html
+Allow: /tools/pricing-band-finder.html
+Allow: /tools/brand-audit-score.html
+Allow: /tools/channel-mix-diagnoser.html
+
+Disallow: /clients/
+Disallow: /proposals/
+Disallow: /audits/
+Disallow: /book/
+Disallow: /offers/
+Disallow: /tools/
+Disallow: /courses/
+Disallow: /internal/
+Disallow: /templates/
+Disallow: /_backup_pre_v5/
+Disallow: /funnel_audit/
+
+User-agent: OAI-SearchBot
+Allow: /
+Allow: /tools/roi-calculator.html
+Allow: /tools/pricing-band-finder.html
+Allow: /tools/brand-audit-score.html
+Allow: /tools/channel-mix-diagnoser.html
+
+Disallow: /clients/
+Disallow: /proposals/
+Disallow: /audits/
+Disallow: /book/
+Disallow: /offers/
+Disallow: /tools/
+Disallow: /courses/
+Disallow: /internal/
+Disallow: /templates/
+Disallow: /_backup_pre_v5/
+Disallow: /funnel_audit/
+
+User-agent: ChatGPT-User
+Allow: /
+Allow: /tools/roi-calculator.html
+Allow: /tools/pricing-band-finder.html
+Allow: /tools/brand-audit-score.html
+Allow: /tools/channel-mix-diagnoser.html
+
+Disallow: /clients/
+Disallow: /proposals/
+Disallow: /audits/
+Disallow: /book/
+Disallow: /offers/
+Disallow: /tools/
+Disallow: /courses/
+Disallow: /internal/
+Disallow: /templates/
+Disallow: /_backup_pre_v5/
+Disallow: /funnel_audit/
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /tools/roi-calculator.html
+Allow: /tools/pricing-band-finder.html
+Allow: /tools/brand-audit-score.html
+Allow: /tools/channel-mix-diagnoser.html
+
+Disallow: /clients/
+Disallow: /proposals/
+Disallow: /audits/
+Disallow: /book/
+Disallow: /offers/
+Disallow: /tools/
+Disallow: /courses/
+Disallow: /internal/
+Disallow: /templates/
+Disallow: /_backup_pre_v5/
+Disallow: /funnel_audit/
+
+User-agent: Perplexity-User
+Allow: /
+Allow: /tools/roi-calculator.html
+Allow: /tools/pricing-band-finder.html
+Allow: /tools/brand-audit-score.html
+Allow: /tools/channel-mix-diagnoser.html
+
+Disallow: /clients/
+Disallow: /proposals/
+Disallow: /audits/
+Disallow: /book/
+Disallow: /offers/
+Disallow: /tools/
+Disallow: /courses/
+Disallow: /internal/
+Disallow: /templates/
+Disallow: /_backup_pre_v5/
+Disallow: /funnel_audit/
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /tools/roi-calculator.html
+Allow: /tools/pricing-band-finder.html
+Allow: /tools/brand-audit-score.html
+Allow: /tools/channel-mix-diagnoser.html
+
+Disallow: /clients/
+Disallow: /proposals/
+Disallow: /audits/
+Disallow: /book/
+Disallow: /offers/
+Disallow: /tools/
+Disallow: /courses/
+Disallow: /internal/
+Disallow: /templates/
+Disallow: /_backup_pre_v5/
+Disallow: /funnel_audit/
+
+User-agent: Claude-User
+Allow: /
+Allow: /tools/roi-calculator.html
+Allow: /tools/pricing-band-finder.html
+Allow: /tools/brand-audit-score.html
+Allow: /tools/channel-mix-diagnoser.html
+
+Disallow: /clients/
+Disallow: /proposals/
+Disallow: /audits/
+Disallow: /book/
+Disallow: /offers/
+Disallow: /tools/
+Disallow: /courses/
+Disallow: /internal/
+Disallow: /templates/
+Disallow: /_backup_pre_v5/
+Disallow: /funnel_audit/
+
+User-agent: Google-Extended
+Allow: /
+Allow: /tools/roi-calculator.html
+Allow: /tools/pricing-band-finder.html
+Allow: /tools/brand-audit-score.html
+Allow: /tools/channel-mix-diagnoser.html
+
+Disallow: /clients/
+Disallow: /proposals/
+Disallow: /audits/
+Disallow: /book/
+Disallow: /offers/
+Disallow: /tools/
+Disallow: /courses/
+Disallow: /internal/
+Disallow: /templates/
+Disallow: /_backup_pre_v5/
+Disallow: /funnel_audit/
+
+User-agent: Applebot-Extended
+Allow: /
+Allow: /tools/roi-calculator.html
+Allow: /tools/pricing-band-finder.html
+Allow: /tools/brand-audit-score.html
+Allow: /tools/channel-mix-diagnoser.html
+
+Disallow: /clients/
+Disallow: /proposals/
+Disallow: /audits/
+Disallow: /book/
+Disallow: /offers/
+Disallow: /tools/
+Disallow: /courses/
+Disallow: /internal/
+Disallow: /templates/
+Disallow: /_backup_pre_v5/
+Disallow: /funnel_audit/
+
 Sitemap: https://www.loopworker.com/sitemap.xml

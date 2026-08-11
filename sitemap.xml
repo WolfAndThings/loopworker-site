@@ -171,4 +171,9 @@
   <url><loc>https://www.loopworker.com/blog/time-to-value.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.loopworker.com/blog/retention-cohorts.html</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
+  <!-- ADDED 2026-08-10: indexable pages missing from sitemap -->
+  <url><loc>https://www.loopworker.com/downloads/read-threat-redacted.html</loc><lastmod>2026-08-10</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.loopworker.com/privacy.html</loc><lastmod>2026-08-10</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://www.loopworker.com/terms.html</loc><lastmod>2026-08-10</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+
 </urlset>
