@@ -17,3 +17,4 @@ funnel_audit/
 distribution/
 *.draft
 *.html.draft
+.indexnow-key
