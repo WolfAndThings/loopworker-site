@@ -27,7 +27,7 @@ Every engagement starts with a sit-down before any research. Every Read carries 
 
 ## Free competitor teardown
 
-Name one competitor and LoopWorker sends back a teardown of their public playbook within 48 hours, graded, no call and no payment. It is the same one-page graded format as the paid Read, at one competitor instead of roughly ten. Start here: https://www.loopworker.com/free-teardown.html
+Name one competitor and LoopWorker sends back a Read of their public playbook within 48 hours, graded, with unknowns printed. $750, credited in full against the build that follows. It is the same one-page graded format as the paid Read, at one competitor instead of roughly ten. Start here: https://www.loopworker.com/free-teardown.html
 
 ## Who it is for
 
@@ -51,7 +51,7 @@ Every material claim in a Read is marked high, medium, or low confidence, and th
 
 - Home: https://www.loopworker.com/
 - Pricing: https://www.loopworker.com/pricing.html
-- Free teardown: https://www.loopworker.com/free-teardown.html
+- One-Page Read: https://www.loopworker.com/free-teardown.html
 - Sample Read (real, redacted): https://www.loopworker.com/sample-brief.html
 - FAQ: https://www.loopworker.com/faq.html
 - About the founder: https://www.loopworker.com/about.html

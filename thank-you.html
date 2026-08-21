@@ -46,7 +46,7 @@
       <a href="/" class="logo"><span class="logo-mark">L</span> LoopWorker</a>
       <div class="nav-links">
         <a href="/#reads">Recent Reads</a>
-        <a href="/free-teardown.html">Free teardown</a>
+        <a href="/#entry-read">The Read</a>
         <a href="/pricing.html">Pricing</a>
         <a href="/faq.html">FAQ</a>
         <a href="/#send-question" class="nav-cta">Get the Read</a>
@@ -88,15 +88,15 @@
   <script>
     (function () {
       var from = new URLSearchParams(location.search).get('from');
-      var leadType = from === 'free-teardown' ? 'Free Teardown' : 'Decision Read';
+      var leadType = (from === 'one-page-read' || from === 'free-teardown') ? 'One-Page Read' : 'Decision Read';
       window.plausible = window.plausible || function () {
         (window.plausible.q = window.plausible.q || []).push(arguments);
       };
       window.plausible('Lead', { props: { type: leadType }, interactive: false });
 
-      if (from === 'free-teardown') {
+      if (from === 'one-page-read' || from === 'free-teardown') {
         var set = function (id, html) { var el = document.getElementById(id); if (el) el.innerHTML = html; };
-        set('ty-eyebrow', '► Free teardown · back within 48 hours');
+        set('ty-eyebrow', '► One-Page Read · back within 48 hours');
         set('ty-head', 'On <span class="hl">it.</span>');
         set('ty-lede', "I pull your competitor's public playbook, grade what I find, and send the teardown to your inbox within 48 hours. No call, no card. Check your spam folder too.");
         set('ty-steps',
