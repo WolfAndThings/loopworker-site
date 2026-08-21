@@ -24,27 +24,29 @@ Everything is **the Decision Read**, sold by the buyer's question (lead with the
 - **The Engagement** — $25,000 · 30 days, billed per milestone
 Duration-only names (48-hour/5-day/10-day Read) are retired — don't reintroduce them as labels.
 
-**Free competitor teardown = top-of-funnel tripwire** (`/free-teardown.html` + `#free-teardown` on index): name one competitor, get a 48h public-signal teardown free, email-captured (Formspree `xbdpddrn`, tagged FREE TEARDOWN), bridges to the paid Read. This is the primary cold-traffic entry — the hero leads with it.
+**The One-Page Read = paid entry offer** (`/free-teardown.html` + `#entry-read` on index): name one competitor, get a 48h public-signal Read for **$750**, credited in full against the build that follows. Email-captured (Formspree `xbdpddrn`, tagged ONE-PAGE READ). This is the primary cold-traffic entry — the hero leads with it.
+
+**The free teardown is DEAD (replaced 2026-08-20).** Never reintroduce "free", "no charge", "no card", or `"price": "0"` anywhere it describes a teardown or Read. The `/free-teardown.html` URL is kept only so existing inbound links and indexed results keep resolving; the page itself sells the $750 One-Page Read.
 
 **Guarantee:** quiet "Terms of work / You're the judge of the work", 14-day usefulness refund. NEVER a loud slogan ("100% money back" and "useful or you don't pay" both rejected as cheap).
 
-**No live Stripe checkout on the site** — all dead-product buy-links were killed Jul 17. CTAs route to `/free-teardown.html` or the `#send-question` form. Form-first, "no call to start."
+**No live Stripe checkout on the site** — all dead-product buy-links were killed Jul 17. CTAs route to `/free-teardown.html` (the One-Page Read page) or the `#send-question` form. Form-first, "no call to start." The One-Page Read is invoiced manually before work starts.
 
 ## Core pages (all v6 unless noted)
 | Path | Page |
 |------|------|
-| `index.html` | Homepage — hero (free-teardown CTA), specimen 3-card deck, proof ticker, 4 question cards, Recent Reads (3 real redacted receipts), how it works, pricing, FAQ, form |
+| `index.html` | Homepage — hero (One-Page Read CTA, `#entry-read`), specimen 3-card deck, proof ticker, 4 question cards, Recent Reads (3 real redacted receipts), how it works, pricing, FAQ, form |
 | `pricing.html` | Four Reads + depth ladder + "what lands on your desk" doc breakdown + quiet terms |
 | `faq.html` | AEO FAQ, FAQPage schema, grouped Q&A |
 | `sample-brief.html` | Real redacted Competitor Read (Benesch Threat Read) embedded inline + PDF |
-| `free-teardown.html` | Standalone free-teardown landing + Service/FAQ schema |
+| `free-teardown.html` | Standalone One-Page Read landing ($750) + Service/FAQ schema. Legacy filename, paid offer |
 | `about.html` | Founder page (real photo, honest fit) |
-| `thank-you.html` | Path-aware (free-teardown vs Read) via `?from=` |
-| `law-firms/`, `beauty/`, `apparel/`, `food-beverage/`, `private-equity/` | ICP vertical landing pages (each = free-teardown funnel + Service/FAQ schema) |
+| `thank-you.html` | Path-aware via `?from=` (accepts both `one-page-read` and the legacy `free-teardown`) |
+| `law-firms/`, `beauty/`, `apparel/`, `food-beverage/`, `private-equity/` | ICP vertical landing pages (each = One-Page Read funnel + Service/FAQ schema) |
 | `reports/vitamin-c-serum-ads/`, `reports/functional-beverage-ads/` | Ad-library micro-reports built from REAL on-disk data (Dataset schema, free-to-cite) |
 | `downloads/read-{law,coach,brand,threat}-redacted.html` + `.pdf` | 4 redacted sample Reads. HTML versions are indexable (canonical, web fonts). **NEVER regenerate from originals without re-running the full redaction verification** |
 | `vs/index.html` | Comparison hub (v6). Groups the 14 live vs pages: consultancies, Big Four, tools. Carries the caveat that competitor prices come from published rate cards and public reporting, not quotes. Linked sitewide from the footer "More:" row |
-| `vs/*.html` | Comparison pages (mckinsey/bain/bcg/semrush/etc.) — v5 shell, amber, funnel-wired. Weak tool pages (ahrefs/zoominfo/crunchbase/g2/foreplay) redirect to free-teardown |
+| `vs/*.html` | Comparison pages (mckinsey/bain/bcg/semrush/etc.) — v5 shell, amber, funnel-wired. Weak tool pages (ahrefs/zoominfo/crunchbase/g2/foreplay) redirect to `/free-teardown.html` |
 | `404.html`, `terms.html`, `privacy.html` | Utility |
 
 Redirect stubs (noindex, preserve old inbound links): `sprint.html`→pricing, killed verticals (medspas/restaurants/etc.), `book.html`→#send-question, thank-you variants→thank-you.
