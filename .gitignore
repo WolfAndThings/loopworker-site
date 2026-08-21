@@ -18,3 +18,7 @@ distribution/
 *.draft
 *.html.draft
 .indexnow-key
+
+# Local backups — never publish
+.bak-*/
+*.bak-*
