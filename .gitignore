@@ -22,3 +22,9 @@ distribution/
 # Local backups — never publish
 .bak-*/
 *.bak-*
+
+# Orphaned internal/client work — kept locally, never deployed (2026-08-26)
+internal/
+copy_research/
+competitor_data/
+index-sprint-legacy-2026-07-15.html
