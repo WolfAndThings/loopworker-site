@@ -17,7 +17,8 @@ Everything is **the Decision Read**, sold by the buyer's question (lead with the
 - **The Pricing Read** — "What should I charge?"
 - **The Market Read** — "Is this market worth entering?"
 
-**Depth ladder = depth-of-deliverable names** (locked Jul 18; duration is spec next to price, never the label):
+**Depth ladder = depth-of-deliverable names** (locked Jul 18; duration is spec next to price, never the label).
+🚨 **The three tiers below are ANCHORS, not the sellable ladder** (Alex, 2026-08-26). They have **zero buyers across the life of the business** and are published so the $25,000 ceiling makes a $6-12K build read as small. Keep them on the page; never quote them to a client. What actually sells: rung 1 $750-1,500 · rung 2 build $6,000-12,000 · rung 3 direction $4,500/mo floor. See `Now.md` §3.
 - **The One-Page Read** — $750 · 48h (smallest paid step)
 - **The Focused Read** — $3,200 · 5 days (includes review call)
 - **The Deep Read** — $8,000 · 10 days (anchor: "default for six-figure decisions")
