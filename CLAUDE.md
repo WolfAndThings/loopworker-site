@@ -2,7 +2,7 @@
 
 ## 🚨 CURRENT STATE (Oct 14 2026). This overrides everything below it.
 - **Positioning:** competitive marketing intelligence for **law firms only**. Buyer = law firm CMO / marketing director / managing partner.
-- **Offers (the only ones):** Free snapshot (one evidence-backed observation + source + next step) · **Market Read $750** one-time (up to 3 competitors, credited to month one) · **Intelligence + Content $4,999/mo** (8 concepts + 8 scripts) · **Intelligence + Production $8,999/mo** (+ edit up to 8 videos, max 90s, 1 aspect ratio, 2 revision rounds each).
+- **Offers (the only ones):** Free snapshot (one evidence-backed observation + source + next step) · **Market Read $750** one-time (up to 3 competitors, credited to month one) · **Intelligence + Content $4,999/mo** (up to 5 swappable competitors, 8 to 15 concepts + scripts by length) · **Intelligence + Production $8,999/mo** (up to 8 competitors across markets, 8 to 15 edited videos by length, one vertical edit for 2 channels, 5 statics paid/organic, 2 carousels, 2 revision rounds per video and 1 per static/carousel; firm approves ads, firm posts). Changed Oct 14 per Alex; no length tiers on purpose.
 - **Dead:** Decision Read, One-Page/Focused/Deep Read, Engagement, $3,200/$8,000/$25,000, free teardown, Sprint. The sections below describing them are history.
 - **Homepage** `index.html` is built from `_mocks/home-v7-draft.html` (noindex copy; images live in `_mocks/img/`, published copies in `images/home/`).
 - 🚨 **The 41-video data section (`section#how`, its CSS block, its script) is LOCKED by Alex.** Never edit it. After any homepage change, diff its computed styles against the previous version.
