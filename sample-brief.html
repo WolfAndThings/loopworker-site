@@ -14,35 +14,48 @@
   <meta property="og:image" content="https://www.loopworker.com/images/loopworker-og.png">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="LoopWorker">
-  <meta name="theme-color" content="#070708">
-  <meta name="color-scheme" content="dark">
-
+  <meta name="theme-color" content="#F2F1EE">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Lora:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="/v6-system.css?v=graded-evidence-22">
-
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070708' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%23E3A44A' font-family='Georgia' font-weight='400'>L</text></svg>">
-
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;700&family=Lora:wght@400;700&family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* page-local */
-    .sample-hero { padding: 7.5rem 2rem 3.5rem; max-width: 880px; margin: 0 auto; text-align: center; }
-    .sample-hero h1 { margin: 1.2rem 0 1rem; }
-    .sample-hero .section-sub { max-width: 640px; margin: 0 auto; }
-    .sample-meta { display: flex; justify-content: center; gap: 1.6rem; flex-wrap: wrap; margin-top: 2rem; font-family: 'JetBrains Mono', monospace; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--t3, #8a8a90); }
-    .sample-meta span b { color: #E3A44A; font-weight: 500; }
-
-    .anatomy { max-width: 880px; margin: 0 auto 3.5rem; padding: 0 2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    .anatomy .a-item { border: 1px solid rgba(255,255,255,.09); padding: 1.1rem 1.2rem; }
-    .anatomy .a-num { font-family: 'JetBrains Mono', monospace; font-size: .7rem; color: #E3A44A; letter-spacing: .12em; }
-    .anatomy .a-item h3 { font-size: .95rem; margin: .45rem 0 .35rem; }
-    .anatomy .a-item p { font-size: .82rem; line-height: 1.5; color: var(--t3, #9a9aa0); margin: 0; }
-    @media (max-width: 720px){ .anatomy { grid-template-columns: 1fr; } }
-
+    :root { --bg: #F2F1EE; --paper: #FAFAF8; --ink: #0E0E0E; --ink-2: #4A4A47; --muted: #6B6B66; --line: #D6D5D0; --accent: #E0482A; --font: "Archivo", "Helvetica Neue", Arial, sans-serif; --ease: cubic-bezier(.16,1,.3,1); }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .skip { position: absolute; left: -9999px; top: 8px; z-index: 50; background: var(--ink); color: #fff; padding: 10px 14px; }
+    .skip:focus { left: 8px; }
+    .wrap { max-width: 1320px; margin: 0 auto; padding: 0 40px; }
+    h1, h2, h3 { font-weight: 800; font-stretch: 112%; letter-spacing: -0.03em; line-height: 0.98; }
+    .kicker { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: var(--ink); color: #fff; text-decoration: none; font-weight: 600; font-size: 16px; padding: 17px 26px; white-space: nowrap; transition: background .25s, color .25s; }
+    .btn:hover { background: var(--accent); }
+    .btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
+    .btn.ghost:hover { background: var(--ink); color: #fff; }
+    nav { position: sticky; top: 0; z-index: 20; background: rgba(242,241,238,.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { font-weight: 800; font-stretch: 118%; font-size: 20px; letter-spacing: -0.02em; text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: 15px; font-weight: 500; }
+    .nav-links a:not(.btn) { text-decoration: none; color: var(--ink-2); }
+    .nav-links a:not(.btn):hover, .nav-links a[aria-current] { color: var(--ink); }
+    .nav-links a[aria-current] { box-shadow: inset 0 -2px 0 var(--accent); }
+    .nav-links .btn { padding: 12px 18px; font-size: 15px; }
+    .hero { padding: 88px 0 48px; }
+    .hero h1 { font-size: clamp(40px, 6vw, 88px); font-stretch: 116%; letter-spacing: -0.045em; line-height: .95; max-width: 14ch; margin-top: 18px; }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero p { margin-top: 26px; font-size: 19px; color: var(--ink-2); max-width: 56ch; }
+    .meta { display: flex; gap: 12px 32px; flex-wrap: wrap; margin-top: 26px; font-size: 14px; color: var(--muted); }
+    .meta b { color: var(--ink); font-weight: 600; }
+    .anatomy { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--ink); margin: 16px 0 64px; }
+    .anatomy div { padding: 26px 24px 8px 0; }
+    .anatomy div + div { padding-left: 24px; border-left: 1px solid var(--line); }
+    .anatomy .n { font-size: 13px; font-weight: 700; letter-spacing: .1em; color: var(--accent); }
+    .anatomy h3 { font-size: 22px; margin-top: 14px; }
+    .anatomy p { font-size: 16px; color: var(--ink-2); margin-top: 10px; }
     /* the embedded document, scoped under .rsheet */
     .sheet-wrap { padding: 0 1rem 3rem; display: flex; justify-content: center; }
-    .rsheet { width: 772px; max-width: 100%; background: #FCFCFB; padding: 54px 60px 48px; color: #3B3B41; box-shadow: 0 30px 80px rgba(0,0,0,.55); }
+    .rsheet { width: 772px; max-width: 100%; background: #FCFCFB; padding: 54px 60px 48px; color: #3B3B41; box-shadow: 0 24px 60px rgba(14,14,14,.14); border: 1px solid #D6D5D0; }
     @media (max-width: 640px){ .rsheet { padding: 34px 24px 32px; } }
     .rsheet .label { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: #7C7C83; display: block; }
     .rsheet .redact { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: #7C7C83; border: 1px solid #E2E1DC; background: #F4F3EE; padding: 8px 12px; margin-bottom: 20px; }
@@ -86,10 +99,20 @@
     .rsheet .src { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; line-height: 1.7; color: #7C7C83; margin-top: 34px; padding-top: 18px; border-top: 1.5px solid #0C0C0E; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
     .rsheet .src b { color: #3B3B41; }
 
-    .sample-cta { max-width: 880px; margin: 0 auto; padding: 1rem 2rem 5rem; text-align: center; }
-    .sample-cta .cta-row { justify-content: center; margin-top: 1.4rem; }
-    .sample-cta p.more { margin-top: 1.6rem; font-size: .88rem; color: var(--t3, #9a9aa0); }
-    .sample-cta p.more a { color: #E3A44A; }
+    .cta { padding: 40px 0 112px; }
+    .cta h2 { font-size: clamp(32px, 4.4vw, 60px); max-width: 18ch; }
+    .cta p { margin-top: 18px; font-size: 18px; color: var(--ink-2); max-width: 52ch; }
+    .cta .row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+    .cta .more { font-size: 15px; }
+    .cta .more a { text-underline-offset: 3px; }
+    footer { background: var(--ink); color: rgba(255,255,255,.6); padding: 44px 0 52px; font-size: 15px; }
+    footer .wrap { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px 48px; flex-wrap: wrap; }
+    footer .brand b { display: block; color: #fff; font-weight: 800; font-stretch: 118%; font-size: 18px; letter-spacing: -0.02em; }
+    footer .brand span { display: block; margin-top: 6px; }
+    footer ul { list-style: none; display: flex; gap: 12px 28px; flex-wrap: wrap; }
+    footer a { color: #fff; text-underline-offset: 3px; }
+    @media (max-width: 900px) { .nav-links a:not(.btn) { display: none; } .anatomy { grid-template-columns: 1fr; } .anatomy div, .anatomy div + div { padding: 22px 0 6px; border-left: 0; border-bottom: 1px solid var(--line); } }
+    @media (max-width: 600px) { .wrap { padding: 0 16px; } .hero { padding: 56px 0 36px; } .hero p { font-size: 17px; } .logo { font-size: 17px; } .nav-links .btn { padding: 10px 12px; font-size: 14px; } .cta .row .btn { width: 100%; } .sheet-wrap { padding: 0 0 2rem; } }
   </style>
   <script type="application/ld+json">
 {
@@ -133,69 +156,38 @@
   </script>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to content</a>
-
-  <!-- NAV -->
-  <nav class="v6-nav">
-    <div class="nav-inner">
-      <a href="/" class="logo">
-        <span class="logo-mark">L</span>
-        LoopWorker
-      </a>
+  <a class="skip" href="#main">Skip to content</a>
+  <nav aria-label="Main">
+    <div class="wrap nav-inner">
+      <a href="/" class="logo">LoopWorker</a>
       <div class="nav-links">
-        <a href="/#process">How it works</a>
-        <a href="/#how">Example read</a>
+        <a href="/#opportunity">The opportunity</a>
+        <a href="/sample-brief.html" aria-current="page">Example read</a>
+        <a href="/#covers">What's included</a>
         <a href="/#pricing">Pricing</a>
-        <a href="/#faq">FAQ</a>
-        <a href="/#read" class="nav-cta" data-track="Nav Send Question">Free snapshot</a>
+        <a href="/#read" class="btn" data-track="Sample Nav Free Snapshot">Free snapshot</a>
       </div>
-      <button type="button" class="hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="mobile-nav" id="mobileNav">
-      <a href="/#process">How it works</a>
-      <a href="/#how">Example read</a>
-      <a href="/#pricing">Pricing</a>
-      <a href="/#faq">FAQ</a>
-      <a href="/#read" class="nav-cta">Free snapshot</a>
     </div>
   </nav>
 
   <main id="main">
-
-    <!-- INTRO -->
-    <section class="sample-hero">
-      <span class="eyebrow">Sample · real engagement, client redacted</span>
-      <h1>This is what <span class="hl">comes back.</span></h1>
-      <p class="section-sub">A real Market Read, delivered to the chief marketing officer of an Am Law 200 firm in July 2026. Names redacted, nothing else changed. The verdict sits on top, the evidence under it, and the tripwires that would change the answer at the bottom.</p>
-      <div class="sample-meta">
-        <span>Format · <b>Competitor Read</b></span>
-        <span>Delivered · <b>July 2026</b></span>
-        <span>Read time · <b>4 minutes</b></span>
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Sample · delivered to a real CMO, client redacted</p>
+        <h1>This is what <em>comes back.</em></h1>
+        <p>A real read, delivered to the chief marketing officer of an Am Law 200 firm in July 2026. Names redacted, nothing else changed. The verdict sits on top, the evidence under it, and the tripwires that would change the answer at the bottom.</p>
+        <div class="meta"><span>Format · <b>Competitor Read</b></span><span>Delivered · <b>July 2026</b></span><span>Read time · <b>4 minutes</b></span></div>
       </div>
     </section>
 
-    <!-- ANATOMY -->
-    <section class="anatomy">
-      <div class="a-item marks">
-        <span class="a-num">01</span>
-        <h3>The claim</h3>
-        <p>The answer in one paragraph. First thing on the page, not buried on page nine.</p>
-      </div>
-      <div class="a-item marks">
-        <span class="a-num">02</span>
-        <h3>The evidence</h3>
-        <p>Numbered and sourced. When the facts read two ways, the other reading is on the page too.</p>
-      </div>
-      <div class="a-item marks">
-        <span class="a-num">03</span>
-        <h3>The tripwires</h3>
-        <p>Three observable events that flip the answer. Watch for them; the Read says what each one means.</p>
+    <section class="wrap" aria-label="How a read is laid out">
+      <div class="anatomy">
+        <div><span class="n">01</span><h3>The claim</h3><p>The answer in one paragraph. First thing on the page, not buried on page nine.</p></div>
+        <div><span class="n">02</span><h3>The evidence</h3><p>Numbered and sourced. When the facts read two ways, the other reading is on the page too.</p></div>
+        <div><span class="n">03</span><h3>The tripwires</h3><p>Three observable events that flip the answer. Watch for them; the read says what each one means.</p></div>
       </div>
     </section>
 
-    <!-- THE DOCUMENT -->
     <div class="sheet-wrap">
       <article class="rsheet" aria-label="Sample Market Read, redacted">
 
@@ -254,31 +246,32 @@
       </article>
     </div>
 
-    <!-- CTA -->
-    <section class="sample-cta">
-      <span class="eyebrow">Your question next</span>
-      <h2>Bring me the one you keep <span class="hl">circling.</span></h2>
-      <div class="cta-row">
-        <a href="/#read" class="btn btn-primary" data-track="Sample Get The Read">Get the Read →</a>
-        <a href="/downloads/read-threat-redacted.pdf" download class="btn btn-ghost" data-track="Download Competitor Read">Download this Read (PDF) ↓</a>
-      </div>
-      <p class="more">Prefer it as a page? Read the same thing <a href="/downloads/read-threat-redacted.html">in your browser</a>. Three more redacted Reads, three different verticals, on the <a href="/#how">Example read</a> shelf.</p>
-    </section>
 
+    <section class="cta">
+      <div class="wrap">
+        <p class="kicker">Your firm next</p>
+        <h2>See one thing your firm could be missing.</h2>
+        <p>Start with a free snapshot: one relevant observation from your competitive environment, with the source and a practical next step. A $750 Market Read also includes a suggested content direction for your firm.</p>
+        <div class="row">
+          <a href="/#read" class="btn" data-track="Sample Free Snapshot">Get a free snapshot</a>
+          <a href="/downloads/read-threat-redacted.pdf" download class="btn ghost" data-track="Download Competitor Read">Download this read (PDF)</a>
+        </div>
+        <p class="more">Prefer it as a page? Read the same thing <a href="/downloads/read-threat-redacted.html">in your browser</a>. Or <a href="/#pricing">see pricing</a>.</p>
+      </div>
+    </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="v6-foot">
-    <div class="foot-inner">
-      <div class="foot-logo">LoopWorker</div>
-      <p>One question. One ranked answer. Every claim graded and sourced.</p>
-      <p class="foot-verticals">More: <a href="/reports/">Free reports</a> · <a href="/glossary/">Glossary</a> · <a href="/blog/">Field notes</a></p>
-      <p>© 2026 · <a href="/sample-brief.html">Sample</a> · <a href="/#pricing">Pricing</a> · <a href="/#faq">FAQ</a> · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a></p>
-      <p class="foot-small">alex@loopworker.com</p>
+  <footer>
+    <div class="wrap">
+      <div class="brand"><b>LoopWorker</b><span>Competitive intelligence and content production.</span></div>
+      <ul>
+        <li><a href="mailto:alex@loopworker.com">alex@loopworker.com</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+        <li><a href="/terms.html">Terms</a></li>
+        <li><a href="mailto:alex@loopworker.com">Contact</a></li>
+      </ul>
     </div>
   </footer>
-
-  <script defer src="/v6-reveal.js"></script>
   <script defer src="/site-runtime.js"></script>
 </body>
 </html>

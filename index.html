@@ -22,6 +22,7 @@
      {"@type":"Offer","name":"Intelligence + Production","price":"8999","priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":"8999","priceCurrency":"USD","unitText":"MONTH"}}]}}
   </script>
   <meta name="theme-color" content="#F2F1EE">
+  <script>document.documentElement.className += " js";</script>
   <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
   <link rel="preconnect" href="https://plausible.io">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -419,8 +420,8 @@
       .hero .kicker { animation-delay: .1s; }
       @keyframes rise { to { opacity: 1; transform: none; } }
       @keyframes fade { to { opacity: 1; } }
-      .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: calc(var(--i, 0) * 80ms); }
-      .reveal.in { opacity: 1; transform: none; }
+      .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: calc(var(--i, 0) * 80ms); }
+      .js .reveal.in { opacity: 1; transform: none; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
@@ -436,7 +437,7 @@
         <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu<i aria-hidden="true"></i></button>
         <div class="nav-links" id="nav-links">
           <a href="#opportunity">The opportunity</a>
-          <a href="#how">Example read</a>
+          <a href="/sample-brief.html">Example read</a>
           <a href="#covers">What's included</a>
           <a href="#pricing">Pricing</a>
           <a href="#read" class="btn" data-track="Nav Free Snapshot">Free snapshot</a>
@@ -455,8 +456,7 @@
         <h1><span class="w" style="--i:0">Your</span> <span class="w" style="--i:1">competitors</span> <span class="w" style="--i:2">are</span> <span class="w" style="--i:3">showing</span> <span class="w" style="--i:4">you</span> <span class="w" style="--i:5">what's</span> <span class="w" style="--i:6">working.</span> <em><span style="white-space:nowrap"><span class="w" style="--i:7">Use</span> <span class="w" style="--i:8">it.</span></span></em></h1>
         <div class="hero-foot">
           <div class="copy">
-            <p>Law firms invest in content, advertising, and search without always knowing which efforts deserve more attention.</p>
-            <p>LoopWorker studies your market, finds the gaps, and turns the evidence into a focused content plan your team can put to work.</p>
+            <p>Your rivals' videos, ads, reviews and hires are public. I read them and tell you what to make next.</p>
           </div>
           <div class="hero-cta">
             <div class="row">
@@ -591,7 +591,7 @@
             <div><span class="cat">Competitive advertising</span><h3>See what competitors are putting money behind.</h3></div>
             <div>
               <p><span class="lbl">What gets examined</span>Review visible competitor advertising activity, creative messaging, offers, and landing pages to understand how rival firms position themselves and compete for attention. Built from public ad libraries and search results. Competitors' budgets, conversions, and returns are private and not claimed.</p>
-              <p class="past"><span class="lbl">From a past read</span>Every rival was buying search ads, the channel 82% of firms say they regret.</p>
+              <p class="past"><span class="lbl">From a past read</span>Every rival was buying search ads, the most expensive channel in the field.</p>
             </div>
             <div>
               <span class="lbl">You receive</span>
@@ -713,7 +713,7 @@
         <div class="head">
           <div>
             <h2 class="reveal">Research first. Then decide how much you want handled.</h2>
-            <p class="reveal">Start with a Market Read to understand the opportunities. Then choose whether your team wants to produce the content or have LoopWorker deliver finished videos. The snapshot is free.</p>
+            <p class="reveal">Start with a Market Read to understand the opportunities. Then choose whether your team wants to produce the content or have LoopWorker deliver finished videos. The snapshot is free. <a href="/sample-brief.html">See a real read, client redacted.</a></p>
           </div>
         </div>
         <div class="plans">
@@ -732,7 +732,7 @@
               <li>Suggested content direction</li>
             </ul>
             <div class="cta-wrap">
-              <a href="#read" class="btn" data-track="Pricing Market Read">Request a Market Read</a>
+              <a href="#read" class="btn" data-plan="market-read" data-track="Pricing Market Read">Request a Market Read</a>
               <p class="fine">The full $750 is credited toward the first month of either monthly plan.</p>
             </div>
           </article>
@@ -760,7 +760,7 @@
               <p><b>Your team handles:</b> filming, editing, publishing, and account management.</p>
             </div>
             <div class="cta-wrap">
-              <a href="#read" class="btn" data-track="Pricing Content">Get started with a Market Read</a>
+              <a href="#read" class="btn" data-plan="market-read" data-track="Pricing Content">Get started with a Market Read</a>
             </div>
           </article>
 
@@ -830,6 +830,7 @@
             <label for="f-concern">Primary marketing concern <span class="opt">(optional)</span>
               <select id="f-concern" name="concern">
                 <option value="">Pick one</option>
+                <option value="I want the $750 Market Read">I want the $750 Market Read</option>
                 <option>Competitors are getting more visibility</option>
                 <option>Our content isn't performing</option>
                 <option>We're unsure where to invest</option>
@@ -958,7 +959,7 @@
 
       // active nav link
       var navA = Array.prototype.slice.call(links.querySelectorAll('a:not(.btn)'));
-      var secs = navA.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+      var secs = navA.map(function (a) { var h = a.getAttribute('href'); return h.charAt(0) === '#' ? document.querySelector(h) : null; });
       function activeLink() {
         var mid = window.innerHeight * .35, cur = -1;
         secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top <= mid && s.getBoundingClientRect().bottom > mid) cur = i; });
@@ -997,6 +998,9 @@
   </script>
 
   <script>
+    document.querySelectorAll('[data-plan="market-read"]').forEach(function (a) {
+      a.addEventListener('click', function () { var s = document.getElementById('f-concern'); if (s) s.value = 'I want the $750 Market Read'; });
+    });
     // Free snapshot form. Posts to the existing Formspree endpoint. With JavaScript it validates,
     // blocks double sends and confirms inline; without JavaScript it falls back to a normal POST.
     (function () {
