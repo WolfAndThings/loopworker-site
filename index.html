@@ -3,608 +3,1190 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
-  <title>Competitive Intelligence and Market Research | LoopWorker</title>
-  <meta name="description" content="Independent competitive intelligence for pricing, market entry, growth, and competitor moves. One ranked answer, every material claim graded and sourced.">
+  <title>LoopWorker | Competitive Marketing Intelligence for Law Firms</title>
+  <meta name="description" content="Research-backed competitive marketing intelligence, content strategy, and video production for law firms. Understand your market before deciding what to make next.">
   <link rel="canonical" href="https://www.loopworker.com/">
-
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.loopworker.com/">
-  <meta property="og:title" content="Competitive Intelligence and Market Research">
-  <meta property="og:description" content="Independent competitive intelligence for pricing, market entry, growth, and competitor moves. One ranked answer, every material claim graded and sourced.">
+  <meta property="og:title" content="LoopWorker | Competitive Marketing Intelligence for Law Firms">
+  <meta property="og:description" content="Research-backed competitive marketing intelligence, content strategy, and video production for law firms. Understand your market before deciding what to make next.">
   <meta property="og:image" content="https://www.loopworker.com/images/loopworker-og.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:site_name" content="LoopWorker">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Competitive Intelligence and Market Research">
-  <meta name="twitter:description" content="Independent competitive intelligence for pricing, market entry, growth, and competitor moves. One ranked answer, every material claim graded and sourced.">
-  <meta name="twitter:image" content="https://www.loopworker.com/images/loopworker-og.png">
-  <meta name="theme-color" content="#070708">
-  <meta name="color-scheme" content="dark">
-
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"LoopWorker","url":"https://www.loopworker.com/","email":"alex@loopworker.com",
+   "description":"Competitive marketing intelligence, content strategy, and video production for law firms.",
+   "founder":{"@type":"Person","name":"Alex Lamb"},
+   "hasOfferCatalog":{"@type":"OfferCatalog","name":"LoopWorker services","itemListElement":[
+     {"@type":"Offer","name":"Market Read","price":"750","priceCurrency":"USD"},
+     {"@type":"Offer","name":"Intelligence + Content","price":"4999","priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":"4999","priceCurrency":"USD","unitText":"MONTH"}},
+     {"@type":"Offer","name":"Intelligence + Production","price":"8999","priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":"8999","priceCurrency":"USD","unitText":"MONTH"}}]}}
+  </script>
+  <meta name="theme-color" content="#F2F1EE">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/v6-system.css?v=graded-evidence-22">
+  <!-- TODO: add Microsoft Clarity (free heatmaps + scroll depth) once there is a project ID from clarity.microsoft.com. -->
 
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23070708' width='100' height='100' rx='22'/><text x='50' y='66' font-size='52' text-anchor='middle' fill='%23E3A44A' font-family='Georgia' font-weight='400'>L</text></svg>">
-  <link rel="dns-prefetch" href="https://formspree.io">
-  <link rel="preconnect" href="https://plausible.io">
+  <style>
+    :root {
+      --bg: #F2F1EE;
+      --paper: #FAFAF8;
+      --ink: #0E0E0E;
+      --ink-2: #4A4A47;
+      --ink-3: #75756F;
+      --line: #D6D5D0;
+      --accent: #E0482A;
+      --font: "Archivo", "Helvetica Neue", Arial, sans-serif;
+      --wrap: 1320px;
+      --ease: cubic-bezier(.16,1,.3,1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { color: inherit; }
+    img, video { display: block; max-width: 100%; }
+    figure { margin: 0; }
+    .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 40px; }
+    h1, h2, h3 { font-weight: 800; font-stretch: 112%; letter-spacing: -0.03em; line-height: 0.98; }
+    h2 { font-size: clamp(36px, 5vw, 72px); }
+    p { color: var(--ink-2); }
+    .kicker { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+    .skip { position: absolute; left: -9999px; top: 8px; z-index: 50; background: var(--ink); color: #fff; padding: 10px 14px; }
+    .skip:focus { left: 8px; }
+    /* keyboard focus ring everywhere except inside the locked data section */
+    body :focus-visible:not(#how *) { outline: 2px solid var(--accent); outline-offset: 3px; }
+    /* anchors land below the fixed nav; the locked data section keeps its own behaviour */
+    main [id]:not(#how):not(#how *) { scroll-margin-top: 84px; }
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://www.loopworker.com/#organization",
-        "name": "LoopWorker",
-        "url": "https://www.loopworker.com/",
-        "logo": "https://www.loopworker.com/images/loopworker-og.png",
-        "email": "alex@loopworker.com",
-        "slogan": "Bring me the question you keep circling.",
-        "description": "LoopWorker delivers the Decision Read: an independent, evidence-backed second opinion on one important business question, with every material claim graded and sourced.",
-        "founder": { "@id": "https://www.loopworker.com/#alex" }
-      },
-      {
-        "@type": "Person",
-        "@id": "https://www.loopworker.com/#alex",
-        "name": "Alex Lamb",
-        "jobTitle": "Founder",
-        "worksFor": { "@id": "https://www.loopworker.com/#organization" },
-        "url": "https://www.loopworker.com/about.html",
-        "description": "Founder of LoopWorker. Pulls public market evidence into a graded Decision Read for one important business decision."
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://www.loopworker.com/#website",
-        "name": "LoopWorker",
-        "url": "https://www.loopworker.com/",
-        "publisher": { "@id": "https://www.loopworker.com/#organization" }
-      },
-      {
-        "@type": "Service",
-        "@id": "https://www.loopworker.com/#service",
-        "name": "The Decision Read",
-        "serviceType": "Market intelligence and competitive research",
-        "description": "An independent second opinion for one important business question. The evidence is investigated, the options ranked, and every material claim graded high, medium, or low confidence and sourced.",
-        "provider": { "@id": "https://www.loopworker.com/#organization" },
-        "areaServed": "US",
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Decision Reads",
-          "itemListElement": [
-            { "@type": "Offer", "name": "The One-Page Read", "price": "750", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "48-hour Decision Read for one narrow, time-sensitive, reasonably reversible question." },
-            { "@type": "Offer", "name": "The Focused Read", "price": "3200", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "Five-day Decision Read for one focused decision with real tradeoffs, including a 30-minute review call." },
-            { "@type": "Offer", "name": "The Deep Read", "price": "8000", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "Ten-day Decision Read for a six-figure decision: full competitor, customer, pricing, and market investigation with full source trail." },
-            { "@type": "Offer", "name": "The Engagement", "price": "25000", "priceCurrency": "USD", "url": "https://www.loopworker.com/#send-question", "description": "30-day engagement: the full ten-day investigation plus the operating change that follows it. Billed by milestone." }
-          ]
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          { "@type": "Question", "name": "What kind of question is a good fit?", "acceptedAnswer": { "@type": "Answer", "text": "One clear business decision where better external evidence could change what you do: pricing, hiring, competitive response, customer understanding, market entry, channel choice, positioning, or diligence. A strong fit is when the decision has real stakes and guessing feels expensive." } },
-          { "@type": "Question", "name": "Is this just an AI-generated report?", "acceptedAnswer": { "@type": "Answer", "text": "No. Software helps collect the evidence. I decide what counts, test contradictions, grade the claims, and write the recommendation. The judgment is mine." } },
-          { "@type": "Question", "name": "What happens when the evidence is weak?", "acceptedAnswer": { "@type": "Answer", "text": "The Read says so. Weak evidence gets a lower grade, and I explain what would change the answer. Sometimes the useful conclusion is that the evidence does not justify the move." } },
-          { "@type": "Question", "name": "Do I need to know which depth I want?", "acceptedAnswer": { "@type": "Answer", "text": "No. Send the question. I recommend the smallest depth that answers it." } },
-          { "@type": "Question", "name": "What does the guarantee cover?", "acceptedAnswer": { "@type": "Answer", "text": "If the Read does not materially improve the evidence for your decision, tell me within 14 days and I refund the fee. It does not guarantee a particular business outcome." } }
-        ]
-      }
-    ]
-  }
-  </script>
+    .btn { display: inline-flex; align-items: center; gap: 12px; background: var(--ink); color: #fff; text-decoration: none; font-weight: 600; font-size: 16px; padding: 17px 26px; border: 0; cursor: pointer; white-space: nowrap; font-family: var(--font); transition: background .25s, color .25s, transform .1s; }
+    .btn::after { content: "\2192"; transition: transform .3s var(--ease); }
+    .btn:hover { background: var(--accent); }
+    .btn:hover::after { transform: translateX(4px); }
+    .btn:active { transform: translateY(1px); }
+    .btn.light { background: #fff; color: var(--ink); }
+    .btn.light:hover { background: var(--accent); color: #fff; }
+    .btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
+    .btn.ghost::after { content: "\2193"; }
+    .btn.ghost:hover { background: var(--ink); color: #fff; }
+    .btn.ghost:hover::after { transform: translateY(3px); }
+    .btn[disabled] { opacity: .55; pointer-events: none; }
+
+    /* nav */
+    nav { position: fixed; inset: 0 0 auto 0; z-index: 20; color: var(--ink); transition: background .35s, color .35s, border-color .35s; border-bottom: 1px solid transparent; }
+    nav.dim { background: rgba(242,241,238,.85); backdrop-filter: blur(10px); }
+    nav.solid { background: rgba(242,241,238,.94); backdrop-filter: blur(10px); color: var(--ink); border-color: var(--line); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { font-weight: 800; font-stretch: 118%; font-size: 20px; letter-spacing: -0.02em; text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: 15px; font-weight: 500; }
+    .nav-links a:not(.btn) { text-decoration: none; color: var(--ink-2); padding: 6px 0; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; }
+    .nav-links a:not(.btn):hover { color: var(--ink); }
+    .nav-links a.active { color: var(--ink); border-bottom-color: var(--accent); }
+    .nav-links .btn { padding: 12px 18px; font-size: 15px; }
+    .nav-links .btn::after { display: none; }
+    .menu-btn { display: none; background: none; border: 0; font: inherit; font-size: 15px; font-weight: 600; color: var(--ink); padding: 12px 4px; cursor: pointer; }
+    .menu-btn i { display: inline-block; width: 18px; height: 10px; margin-left: 8px; border-top: 2px solid; border-bottom: 2px solid; vertical-align: -1px; }
+    @media (max-width: 1060px) {
+      .menu-btn { display: inline-flex; align-items: center; }
+      .nav-right { display: flex; align-items: center; gap: 14px; }
+      .nav-links a:not(.btn) { display: none; }
+      nav.open { background: var(--bg); border-color: var(--line); }
+      nav.open .nav-links { position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: var(--bg); border-bottom: 1px solid var(--line); padding: 8px 16px 20px; }
+      nav.open .nav-links a:not(.btn) { display: block; padding: 14px 0; font-size: 18px; border-bottom: 1px solid var(--line); }
+      nav.open .nav-links .btn { margin-top: 16px; justify-content: center; padding: 16px; }
+    }
+    @media (min-width: 1061px) { .nav-right { display: contents; } }
+
+    /* hero */
+    .hero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; color: var(--ink); background: var(--bg); overflow: hidden; }
+    #hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(242,241,238,0) 40%, rgba(242,241,238,.9) 100%); pointer-events: none; }
+    .hero .wrap { position: relative; z-index: 1; width: 100%; padding-bottom: 64px; }
+    .hero .kicker { color: var(--ink); margin-bottom: 22px; }
+    .hero h1 { font-size: clamp(40px, 6vw, 96px); font-stretch: 116%; letter-spacing: -0.045em; line-height: .95; max-width: 16ch; }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero-foot { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-top: 36px; }
+    .hero-foot .copy { max-width: 46ch; }
+    .hero-foot .copy p { color: var(--ink-2); font-size: 19px; line-height: 1.5; }
+    .hero-foot .copy p + p { margin-top: 12px; }
+    .hero-cta { display: grid; gap: 14px; justify-items: start; }
+    .hero-cta .row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-cta small { font-size: 14px; color: #6B6B66; max-width: 44ch; }
+    .hero-credit { position: absolute; right: 40px; top: 96px; z-index: 2; font-size: 13px; color: #6B6B66; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    .hero-credit:hover { color: var(--ink); }
+    .hero-credit i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent); }
+
+    /* mobile sticky CTA */
+    .sticky-cta { display: none; }
+    @media (max-width: 760px) {
+      .sticky-cta { display: flex; justify-content: center; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 30; transform: translateY(140%); transition: transform .35s var(--ease); box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+      .sticky-cta.on { transform: none; }
+    }
+
+    /* credibility band */
+    .proof { background: var(--ink); color: #fff; }
+    .proof-grid { display: grid; grid-template-columns: 1.7fr 1fr; }
+    .stat { padding: 48px 32px 44px 0; }
+    .stat + .stat { padding-left: 32px; border-left: 1px solid rgba(255,255,255,.14); }
+    .stat h2 { font-size: clamp(30px, 3.4vw, 50px); letter-spacing: -0.035em; line-height: 1.02; color: #fff; }
+    .stat h2 .hot { color: var(--accent); }
+    .stat .big { display: block; font-size: clamp(40px, 4.4vw, 64px); font-weight: 800; font-stretch: 112%; letter-spacing: -0.04em; line-height: 1; color: #fff; }
+    .stat p { color: rgba(255,255,255,.66); font-size: 16px; margin-top: 14px; max-width: 52ch; }
+    .brands { border-top: 1px solid rgba(255,255,255,.14); padding: 30px 0 36px; display: grid; gap: 18px; }
+    .brands-label { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+    .brand-row { display: flex; align-items: center; flex-wrap: wrap; gap: 28px 52px; }
+    .brand-row img { flex: none; opacity: .88; filter: brightness(0) invert(1); }
+    .brand-row .lg-text { flex: none; font-weight: 800; font-stretch: 112%; font-size: 22px; letter-spacing: -0.02em; color: rgba(255,255,255,.9); white-space: nowrap; }
+    .lg-cambria { height: 28px; }
+    .lg-arbys { height: 42px; }
+    .lg-ruggable { height: 22px; }
+    .lg-pr { height: 24px; }
+    .brands .more { font-size: 14px; color: rgba(255,255,255,.55); }
+
+    section { padding: 128px 0; }
+    .head { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 32px; margin-bottom: 56px; }
+    .head p { max-width: 46ch; font-size: 18px; margin-top: 20px; }
+
+    /* bridge */
+    .bridge { padding: 112px 0; border-bottom: 1px solid var(--line); }
+    .bridge-grid { display: grid; grid-template-columns: 6fr 5fr; gap: 80px; align-items: start; }
+    .bridge h2 { font-size: clamp(32px, 4vw, 58px); }
+    .bridge-copy p { font-size: 19px; max-width: 46ch; }
+    .bridge-copy p + p { margin-top: 16px; }
+    .bridge .line { margin-top: 28px; padding-top: 20px; border-top: 2px solid var(--ink); font-weight: 700; font-stretch: 108%; font-size: 20px; color: var(--ink); }
+    .bridge .line span { color: var(--accent); }
+
+    /* what the Market Read covers */
+    .areas { border-top: 2px solid var(--ink); }
+    .area { display: grid; grid-template-columns: 1.15fr 1.6fr 1.15fr; gap: 48px; align-items: start; padding: 36px 0; border-bottom: 1px solid var(--line); }
+    .area .cat { display: block; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .area h3 { font-size: 26px; line-height: 1.05; }
+    .area p { font-size: 17px; line-height: 1.55; }
+    .area .lbl { display: block; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #6B6B66; margin-bottom: 8px; }
+    .area .past { margin-top: 16px; padding-left: 14px; border-left: 2px solid var(--line); font-size: 15px; }
+    .area ul { list-style: none; display: grid; gap: 8px; }
+    .area li { position: relative; padding-left: 18px; font-size: 16px; color: var(--ink); line-height: 1.4; }
+    .area li::before { content: ""; position: absolute; left: 0; top: .55em; width: 7px; height: 7px; background: var(--accent); }
+    .areas-note { margin-top: 20px; font-size: 14px; color: #6B6B66; max-width: 80ch; }
+
+    /* how it works */
+    .process { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .flow { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 2px solid var(--ink); }
+    .flow li { padding: 32px 28px 8px 0; }
+    .flow li + li { padding-left: 28px; border-left: 1px solid var(--line); }
+    .flow .n { display: block; font-size: 13px; font-weight: 700; letter-spacing: .1em; color: var(--accent); margin-bottom: 32px; }
+    .flow h3 { font-size: 26px; }
+    .flow p { font-size: 17px; margin-top: 14px; }
+    .terms-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 32px; margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); }
+    .terms-list li { position: relative; padding-left: 26px; font-size: 15px; color: var(--ink-2); line-height: 1.45; }
+    .terms-list li::before { content: "\2713"; position: absolute; left: 0; top: 0; color: var(--accent); font-weight: 700; }
+
+    /* founder */
+    .about-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: center; }
+    .about-photo { aspect-ratio: 4/5; overflow: hidden; }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); }
+    .about h2 { font-size: clamp(32px, 3.8vw, 54px); }
+    .about-copy p { font-size: 18px; margin-top: 18px; max-width: 50ch; }
+    .about-copy p strong { color: var(--ink); font-weight: 600; }
+    .sig { margin-top: 30px; font-weight: 700; font-stretch: 112%; font-size: 18px; }
+    .sig span { display: block; font-weight: 400; font-stretch: 100%; font-size: 15px; color: #6B6B66; }
+
+    /* pricing */
+    .pricing { border-top: 1px solid var(--line); }
+    .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+    .plan { display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--ink); padding: 32px 28px 28px; }
+    .plan.feature { border-top-color: var(--accent); }
+    .plan .name { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #6B6B66; }
+    .plan .amount { margin-top: 18px; font-size: clamp(40px, 3.6vw, 52px); font-weight: 800; font-stretch: 110%; letter-spacing: -0.04em; line-height: 1; }
+    .plan .amount small { font-size: 16px; font-weight: 500; font-stretch: 100%; letter-spacing: 0; color: #6B6B66; }
+    .plan .short { margin-top: 10px; font-size: 15px; font-weight: 600; color: var(--ink); }
+    .plan h3 { margin-top: 26px; font-size: 24px; line-height: 1.08; }
+    .plan .desc { margin-top: 12px; font-size: 16px; }
+    .plan .lbl { display: block; margin-top: 24px; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #6B6B66; }
+    .plan ul { list-style: none; display: grid; gap: 9px; margin-top: 12px; }
+    .plan li { position: relative; padding-left: 22px; font-size: 15px; line-height: 1.4; color: var(--ink); }
+    .plan li::before { content: "\2713"; position: absolute; left: 0; top: 0; color: var(--accent); font-weight: 700; font-size: 14px; }
+    .plan li.plus::before { content: "+"; font-size: 17px; top: -2px; }
+    .plan .split { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); display: grid; gap: 10px; }
+    .plan .split p { font-size: 14px; line-height: 1.45; }
+    .plan .split b { color: var(--ink); font-weight: 600; }
+    .plan .btn { margin-top: auto; justify-content: center; white-space: normal; text-align: center; }
+    .plan .cta-wrap { margin-top: 28px; display: grid; }
+    .plan .fine { margin-top: 12px; font-size: 13px; color: #6B6B66; }
+    .compare { margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; border-top: 2px solid var(--ink); }
+    .compare div { padding: 18px 20px 18px 0; font-size: 16px; color: var(--ink-2); }
+    .compare div + div { padding-left: 20px; border-left: 1px solid var(--line); }
+    .compare b { color: var(--ink); font-weight: 700; font-size: 18px; margin-right: 6px; }
+    .scope-note { margin-top: 28px; display: grid; grid-template-columns: 1fr 2fr; gap: 40px; padding: 28px 0 0; border-top: 1px solid var(--line); }
+    .scope-note h3 { font-size: 20px; }
+    .scope-note p { font-size: 15px; }
+    .scope-note p + p { margin-top: 10px; }
+
+    /* free snapshot: dark */
+    .read { background: var(--ink); color: #fff; }
+    .read h2 { color: #fff; }
+    .read p { color: rgba(255,255,255,.72); }
+    .read-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .read .lead { font-size: 19px; margin-top: 24px; max-width: 40ch; }
+    .read .lead + .lead { margin-top: 14px; }
+    .read .assure { margin-top: 26px; font-size: 15px; color: rgba(255,255,255,.55); }
+    .read .tool { background: #1A1A19; border: 1px solid #2E2E2C; padding: 36px; display: grid; gap: 20px; }
+    form { display: grid; gap: 18px; }
+    label { display: grid; gap: 8px; font-size: 14px; font-weight: 600; color: #fff; }
+    label .opt { font-weight: 400; color: rgba(255,255,255,.5); }
+    input, select, textarea { font: inherit; font-size: 17px; color: #fff; background: #0E0E0E; border: 1px solid #3A3A38; border-radius: 0; padding: 15px 18px; width: 100%; }
+    textarea { min-height: 96px; resize: vertical; }
+    select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, #aaa 50%), linear-gradient(135deg, #aaa 50%, transparent 50%); background-position: calc(100% - 22px) 50%, calc(100% - 16px) 50%; background-size: 6px 6px; background-repeat: no-repeat; padding-right: 44px; }
+    input::placeholder, textarea::placeholder { color: #8a8a85; }
+    input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: var(--accent); }
+    input[aria-invalid="true"] { border-color: #FF8A73; }
+    .err { font-size: 13px; font-weight: 500; color: #FF9A86; min-height: 0; }
+    .err:empty { display: none; }
+    form .btn { justify-self: start; }
+    .read .btn { background: #fff; color: var(--ink); }
+    .read .btn:hover { background: var(--accent); color: #fff; }
+    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .form-status { font-size: 15px; }
+    .form-status.bad { color: #FF9A86; }
+    .done h3 { font-size: 30px; color: #fff; }
+    .done p { margin-top: 12px; font-size: 17px; }
+    .done[hidden] { display: none; }
+    .tool-note { font-size: 13px; color: rgba(255,255,255,.5) !important; }
+
+    /* faq */
+    .faq-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; }
+    .faq-grid .side p { margin-top: 18px; font-size: 16px; max-width: 32ch; }
+    details { border-bottom: 1px solid var(--line); }
+    details:first-child { border-top: 2px solid var(--ink); }
+    summary { list-style: none; cursor: pointer; padding: 22px 44px 22px 0; font-size: 19px; font-weight: 600; position: relative; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; position: absolute; right: 4px; top: 16px; font-size: 28px; font-weight: 400; color: var(--accent); transition: transform .3s var(--ease); }
+    details[open] summary::after { transform: rotate(45deg); }
+    details p { padding: 0 44px 24px 0; font-size: 17px; max-width: 64ch; }
+
+    /* closing */
+    .close { padding: 128px 0; border-top: 1px solid var(--line); }
+    .close h2 { font-size: clamp(40px, 6vw, 96px); max-width: 16ch; }
+    .close p { margin-top: 24px; font-size: 19px; max-width: 50ch; }
+    .close .row { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; margin-top: 36px; }
+    .close .mail { font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: 3px; }
+
+    footer { background: var(--ink); color: rgba(255,255,255,.6); padding: 44px 0 52px; font-size: 15px; }
+    footer .wrap { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px 48px; flex-wrap: wrap; }
+    footer .brand b { display: block; color: #fff; font-weight: 800; font-stretch: 118%; font-size: 18px; letter-spacing: -0.02em; }
+    footer .brand span { display: block; margin-top: 6px; }
+    footer ul { list-style: none; display: flex; gap: 12px 28px; flex-wrap: wrap; }
+    footer a { color: #fff; text-underline-offset: 3px; }
+
+    @media (max-width: 1060px) {
+      .plans { grid-template-columns: 1fr 1fr; }
+      .plans .plan:first-child { grid-column: 1 / -1; }
+    }
+    @media (max-width: 960px) {
+      .read-grid, .faq-grid, .about-grid, .bridge-grid { grid-template-columns: 1fr; gap: 40px; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .stat, .stat + .stat { padding: 32px 0 28px; border-left: 0; }
+      .stat:first-child { border-bottom: 1px solid rgba(255,255,255,.14); }
+      .head { grid-template-columns: 1fr; }
+      .about-photo { max-width: 420px; }
+      .area { grid-template-columns: 1fr 1fr; gap: 20px 32px; }
+      .area > :first-child { grid-column: 1 / -1; }
+      .flow { grid-template-columns: 1fr 1fr; }
+      .flow li, .flow li + li { padding: 28px 20px 20px 0; border-left: 0; border-bottom: 1px solid var(--line); }
+      .flow .n { margin-bottom: 14px; }
+      .scope-note { grid-template-columns: 1fr; gap: 12px; }
+      .hero-foot { flex-direction: column; align-items: flex-start; gap: 28px; }
+    }
+    @media (max-width: 760px) {
+      .plans { grid-template-columns: 1fr; }
+      .compare { grid-template-columns: 1fr; }
+      .compare div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
+    }
+    @media (max-width: 600px) {
+      .wrap { padding: 0 16px; }
+      section { padding: 80px 0; }
+      .bridge { padding: 80px 0; }
+      .logo { font-size: 17px; }
+      .nav-right { gap: 6px; }
+      .menu-btn { padding: 10px 6px; font-size: 14px; }
+      .menu-btn i { margin-left: 6px; width: 15px; }
+      .nav-links .btn { padding: 10px 12px; font-size: 14px; }
+      .hero { align-items: flex-start; }
+      .hero .wrap { padding-top: 280px; padding-bottom: 48px; }
+      .hero .kicker { font-size: 11px; margin-bottom: 16px; }
+      .hero-foot .copy p { font-size: 17px; }
+      .hero-cta .row { flex-direction: column; align-items: stretch; width: 100%; }
+      .hero-cta .btn { justify-content: center; }
+      .hero-cta { width: 100%; }
+      .hero-credit { right: 16px; left: 16px; top: 86px; font-size: 12px; }
+      .area { grid-template-columns: 1fr; }
+      .area h3 { font-size: 22px; }
+      .flow { grid-template-columns: 1fr; }
+      .flow h3 { font-size: 22px; }
+      .brand-row { gap: 22px 36px; }
+      .read .tool { padding: 24px 18px; }
+      form .btn { justify-self: stretch; justify-content: center; }
+      summary { font-size: 17px; }
+      .close { padding: 88px 0; }
+    }
+
+    /* data demo: pinned scroll story over a particle chart */
+    .demo { position: relative; height: 320vh; padding: 0; background: #0B0B0B; color: #fff; }
+    .demo-pin { position: sticky; top: 0; height: 100vh; height: 100svh; display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
+    .demo-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: center; width: 100%; }
+    .demo .kicker { color: var(--accent); margin-bottom: 28px; }
+    .demo-steps { display: grid; }
+    .dstep { grid-area: 1 / 1; opacity: 0; transform: translateY(24px); transition: opacity .6s var(--ease), transform .6s var(--ease); pointer-events: none; }
+    .dstep.on { opacity: 1; transform: none; pointer-events: auto; }
+    .dstep h2 { font-size: clamp(32px, 3.6vw, 56px); }
+    .dstep p { color: rgba(255,255,255,.72); font-size: 19px; margin-top: 22px; max-width: 38ch; }
+    .dstep p b { color: #fff; font-weight: 700; }
+    .dstep .btn { margin-top: 30px; background: #fff; color: var(--ink); }
+    .dstep .btn:hover { background: var(--accent); color: #fff; }
+
+    .traits { margin-top: 22px; border-top: 1px solid rgba(255,255,255,.16); max-width: 44ch; }
+    .traits > div { display: grid; grid-template-columns: 112px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .traits dt { font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.5); padding-top: 3px; }
+    .traits dd { margin: 0; font-size: 16px; color: rgba(255,255,255,.78); line-height: 1.45; }
+    .traits dd b { color: var(--accent); font-weight: 700; }
+    .traits .locked dt, .traits .star dt { color: var(--accent); }
+    .traits .star dd { color: #fff; }
+    .traits .locked dd { color: rgba(255,255,255,.55); font-style: italic; }
+    @media (max-width: 960px) {
+      .traits { margin-top: 10px; }
+      .traits > div { grid-template-columns: 92px 1fr; gap: 10px; padding: 7px 0; }
+      .traits dt { font-size: 10px; }
+      .traits dd { font-size: 13px; }
+    }
+    .demo-dots { display: flex; gap: 8px; margin-top: 28px; }
+    .demo-dots i { width: 28px; height: 3px; background: rgba(255,255,255,.18); transition: background .4s; }
+    .demo-dots i.on { background: var(--accent); }
+    .demo-stage { position: relative; height: min(68vh, 620px); }
+    #demo-canvas { width: 100%; height: 100%; display: block; }
+    .demo-legend { position: absolute; right: 0; top: 0; display: flex; gap: 18px; font-size: 13px; color: rgba(255,255,255,.6); opacity: 0; transition: opacity .5s; }
+    .demo-legend.on { opacity: 1; }
+    .demo-legend span::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: 1px; }
+    .lg-a::before { background: var(--accent); }
+    .lg-b::before { background: #8A8A86; }
+    .lg-c::before { background: #4A4A47; }
+    .demo-note { position: absolute; left: 0; right: 0; bottom: 22px; font-size: 12px; color: rgba(255,255,255,.4); }
+    @media (max-width: 960px) {
+      .demo-grid { grid-template-columns: 1fr; gap: 12px; }
+      .demo-stage { order: -1; height: 34vh; }
+      .demo .kicker { margin-bottom: 12px; }
+      .demo-pin { justify-content: flex-start; padding-top: 84px; }
+      .dstep h2 { font-size: 30px; }
+      .dstep p { font-size: 16px; margin-top: 12px; }
+      .dstep .btn { margin-top: 18px; }
+      .demo-dots { margin-top: 8px; }
+      .demo-note { position: static; margin-top: 10px; font-size: 10px; }
+      .demo-legend { top: auto; bottom: -4px; right: auto; left: 0; }
+    }
+    @media (max-width: 960px) and (max-height: 720px) {
+      .demo-stage { height: 24vh; }
+      .demo-pin { padding-top: 76px; }
+      .dstep h2 { font-size: 24px; }
+      .traits > div { padding: 5px 0; }
+      .traits dd { font-size: 12px; }
+      .dstep p { font-size: 14px; }
+    }
+    /* no scroll story under reduced motion: show the final frame and all four steps */
+    @media (prefers-reduced-motion: reduce) {
+      .demo { height: auto; }
+      .demo-pin { position: static; height: auto; padding: 100px 0 80px; }
+      .demo-steps { gap: 36px; }
+      .dstep { grid-area: auto; }
+      .dstep { position: static; opacity: 1; transform: none; }
+      .demo-dots { display: none; }
+      .demo-note { position: static; margin-top: 32px; }
+    }
+    /* motion: all of it switches off under reduced motion */
+    @media (prefers-reduced-motion: no-preference) {
+      .hero h1 .w { display: inline-block; opacity: 0; transform: translateY(.5em); animation: rise 1s var(--ease) forwards; animation-delay: calc(.2s + var(--i) * 70ms); }
+      .hero-foot, .hero .kicker { opacity: 0; animation: fade 1s ease .9s forwards; }
+      .hero .kicker { animation-delay: .1s; }
+      @keyframes rise { to { opacity: 1; transform: none; } }
+      @keyframes fade { to { opacity: 1; } }
+      .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: calc(var(--i, 0) * 80ms); }
+      .reveal.in { opacity: 1; transform: none; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to content</a>
 
-  <!-- NAV -->
-  <nav class="v6-nav">
-    <div class="nav-inner">
-      <a href="/" class="logo">
-        <span class="logo-mark">L</span>
-        LoopWorker
-      </a>
-      <div class="nav-links">
-        <a href="#reads">Recent Reads</a>
-        <a href="#entry-read">The Read</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-        <a href="#send-question" class="nav-cta" data-track="Nav Send Question">Get the Read</a>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <nav id="nav" aria-label="Main">
+    <div class="wrap nav-inner">
+      <a href="#top" class="logo">LoopWorker</a>
+      <div class="nav-right">
+        <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu<i aria-hidden="true"></i></button>
+        <div class="nav-links" id="nav-links">
+          <a href="#opportunity">The opportunity</a>
+          <a href="#how">Example read</a>
+          <a href="#covers">What's included</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#read" class="btn" data-track="Nav Free Snapshot">Free snapshot</a>
+        </div>
       </div>
-      <button type="button" class="hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="mobile-nav" id="mobileNav">
-      <a href="#reads">Recent Reads</a>
-      <a href="#entry-read">The Read</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a href="#send-question" class="nav-cta">Get the Read</a>
     </div>
   </nav>
 
   <main id="main">
 
-    <!-- HERO — full-bleed statement, organic amber field behind -->
-    <section class="hero">
-      <div class="hero-blob" aria-hidden="true"></div>
-      <div class="hero-inner">
-        <div class="hero-chip marks">
-          <span class="dot"></span>
-          <span class="tag tag-amber">The Decision Read</span>
-          <span class="tag">competitive intelligence · strategic market research</span>
+    <header class="hero" id="top">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <a href="#how" class="hero-credit"><i></i>41 real videos from one law firm. Red did 3x the typical.</a>
+      <div class="wrap">
+        <p class="kicker">Competitive marketing intelligence for law firms</p>
+        <h1><span class="w" style="--i:0">Your</span> <span class="w" style="--i:1">competitors</span> <span class="w" style="--i:2">are</span> <span class="w" style="--i:3">showing</span> <span class="w" style="--i:4">you</span> <span class="w" style="--i:5">what's</span> <span class="w" style="--i:6">working.</span> <em><span style="white-space:nowrap"><span class="w" style="--i:7">Use</span> <span class="w" style="--i:8">it.</span></span></em></h1>
+        <div class="hero-foot">
+          <div class="copy">
+            <p>Law firms invest in content, advertising, and search without always knowing which efforts deserve more attention.</p>
+            <p>LoopWorker studies your market, finds the gaps, and turns the evidence into a focused content plan your team can put to work.</p>
+          </div>
+          <div class="hero-cta">
+            <div class="row">
+              <a href="#read" class="btn" data-track="Hero Free Snapshot">Get a free snapshot</a>
+              <a href="#process" class="btn ghost" data-track="Hero How It Works">See how it works</a>
+            </div>
+            <small>Publicly sourced research. Clear recommendations. No account access required for the initial snapshot.</small>
+          </div>
         </div>
+      </div>
+    </header>
 
-        <h1>Bring me the question you keep <span class="hl">circling.</span> I'll bring back the answer, <em>with the proof.</em></h1>
-        <p class="hero-sub">Competitive intelligence and strategic market research for pricing, market entry, growth, and competitor analysis. I investigate the public evidence, rank your options, and grade every material claim high, medium, or low confidence. Sources shown.</p>
-
-        <div class="cta-row">
-          <a href="#entry-read" class="btn btn-primary" data-track="Hero One-Page Read">Start with the One-Page Read →</a>
-          <a href="#send-question" class="btn btn-ghost" data-track="Hero Send Question">Bring me a question</a>
+    <div class="proof" aria-label="Experience">
+      <div class="wrap">
+        <div class="proof-grid">
+          <div class="stat reveal">
+            <h2>From <span class="hot">$250K</span> to <span class="hot">$<span class="count" data-from="250" data-to="74">74</span>K</span> in quarterly ad spend.</h2>
+            <p>At Cambria, I worked alongside the in-house team on research-informed content strategy and production. Over that period, quarterly ad spending decreased from approximately $250,000 to $74,000 while engagement increased.</p>
+          </div>
+          <div class="stat reveal">
+            <span class="big">14 years</span>
+            <p>Making marketing content professionally since 2012. Senior social media strategist at Cambria, producer at Wondros.</p>
+          </div>
         </div>
+        <div class="brands">
+          <span class="brands-label">Work across previous roles, agencies, and independent projects</span>
+          <div class="brand-row">
+            <img src="/images/home/logo_cambria.svg" alt="Cambria" class="lg-cambria" width="140" height="28">
+            <span class="lg-text">Red Wing</span>
+            <img src="/images/home/logo_arbys.svg" alt="Arby's" class="lg-arbys" width="60" height="42">
+            <span class="lg-text">NIH</span>
+            <img src="/images/home/logo_ruggable.svg" alt="Ruggable" class="lg-ruggable" width="120" height="22">
+            <img src="/images/home/logo_propertyradar.png" alt="PropertyRadar" class="lg-pr" width="150" height="24">
+          </div>
+          <p class="more">Also: WOW Skin Science, iD Tech, Cann, Juiced Bikes, Wondros, Blennd, Levity, Videfy, Nate's Keto.</p>
+        </div>
+      </div>
+    </div>
 
-        <div class="hero-trust">
-          <div class="avatars"><span></span><span></span><span></span><span></span></div>
-          <span><strong>One competitor, $750.</strong> Credited against the build. Or <a href="/sample-brief.html">see a sample Read</a>.</span>
+
+    <section class="demo" id="how">
+      <div class="demo-pin">
+        <div class="wrap demo-grid">
+          <div class="demo-copy">
+            <p class="kicker">What the data does</p>
+            <div class="demo-steps">
+              <div class="dstep on" data-step="0">
+                <h2>Every dot is a real video.</h2>
+                <p>A large US law firm's last 41 YouTube videos. Public view counts, nothing estimated. This is one source. A read counts all of them: posts on every channel, ads, prices, reviews, hiring, and sites, theirs and their competitors'.</p>
+              </div>
+              <div class="dstep" data-step="1">
+                <h2>Find the typical.</h2>
+                <p>The middle video gets <b>181 views</b>. That's the line to beat. Seven videos did three times that or more.</p>
+              </div>
+              <div class="dstep" data-step="2">
+                <h2>Find what the winners share.</h2>
+                <p>The 7 breakouts, against the other 34:</p>
+                <dl class="traits">
+                  <div><dt>Length</dt><dd><b>5 of 7</b> run under two minutes. Only 9 of the other 34 do.</dd></div>
+                  <div><dt>Topic</dt><dd><b>6 of 7</b> are about people and places, not a practice area.</dd></div>
+                  <div><dt>Kind</dt><dd>2 holiday cards, 3 recruiting and culture, 1 office tour.</dd></div>
+                  <div class="star"><dt>The 7th</dt><dd>A practice video broke out: <b>"Customs and International Trade,"</b> 1:52, 774 views. Five times the practice typical. Finding why is the read.</dd></div>
+                  <div class="locked"><dt>Calls booked</dt><dd>Not public. With your analytics, the read ties each video to calls.</dd></div>
+                </dl>
+              </div>
+              <div class="dstep" data-step="3">
+                <h2>Then make more of that.</h2>
+                <p>The plan moves output toward what people already watch, and tests it each month. Same budget, aimed better. A free snapshot shows your numbers. The read does the rest.</p>
+                <a href="#read" class="btn" data-track="Demo Free Snapshot">Get a free snapshot</a>
+              </div>
+            </div>
+            <div class="demo-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="demo-stage">
+            <canvas id="demo-canvas" role="img" aria-label="Chart of 41 videos by views. The typical video gets 181 views. Practice-area videos typically get 152 views; videos about people and places typically get 406."></canvas>
+            <div class="demo-legend"><span class="lg-a">People and places</span><span class="lg-b">Practice areas</span><span class="lg-c">Other</span></div>
+          </div>
+        </div>
+        <p class="wrap demo-note">Public counts from one firm's channel, pulled October 11, 2026. Firm not named. Videos grouped by topic, read from their titles. Counts can include paid promotion; a full read checks for it.</p>
+      </div>
+    </section>
+
+    <section class="bridge" id="opportunity">
+      <div class="wrap bridge-grid">
+        <h2 class="reveal">The point isn't more data. It's knowing what to do next.</h2>
+        <div class="bridge-copy">
+          <p class="reveal">A competitor's successful post is a clue, not a strategy.</p>
+          <p class="reveal">LoopWorker looks for patterns across the market, checks whether they're relevant to your firm, and turns the strongest opportunities into content ideas, messaging, scripts, and practical next steps.</p>
+          <p class="reveal">The goal isn't to copy competitors. It's to make better decisions about where your team's time and budget go.</p>
+          <p class="line reveal">Find the opportunity. Build the plan. <span>Test what works.</span></p>
         </div>
       </div>
     </section>
 
-    <!-- THE SPECIMEN — the Read anatomy, 3 pages swiping on scroll -->
-    <section class="specimen" id="specimen">
-      <div class="spec-sticky">
-        <div class="specimen-glow" aria-hidden="true"></div>
-        <div class="spec-stack">
-
-          <!-- page 1 -->
-          <aside class="read-card marks spec-card is-active">
-            <div class="read-bar">
-              <div class="read-dots"><span></span><span></span><span></span></div>
-              <div class="read-tab">decision-read · <strong>page 1</strong></div>
-            </div>
-            <div class="read-body">
-              <div class="read-eyebrow">Page one</div>
-              <div class="read-h">You get the answer first.</div>
-              <div class="verdict">
-                <div class="verdict-label">The answer</div>
-                <p>Do this, not that. With the why.</p>
-              </div>
-              <div class="grade-block">
-                <div class="grade-title">How sure I am, on every point</div>
-                <div class="grade-row"><span>High</span><p>solid, several sources agree</p></div>
-                <div class="grade-row"><span>Med</span><p>good signal, not complete</p></div>
-                <div class="grade-row"><span>Low</span><p>thin, treat as a lead</p></div>
-              </div>
-              <div class="read-footer">Answer → How sure → Proof → Risks → Next moves</div>
-            </div>
-          </aside>
-
-          <!-- page 2 -->
-          <aside class="read-card marks spec-card" aria-hidden="true">
-            <div class="read-bar">
-              <div class="read-dots"><span></span><span></span><span></span></div>
-              <div class="read-tab">decision-read · <strong>page 2</strong></div>
-            </div>
-            <div class="read-body">
-              <div class="read-eyebrow">Page two</div>
-              <div class="read-h">Every claim shows its proof.</div>
-              <div class="verdict">
-                <div class="verdict-label">Check me</div>
-                <p>Each point shows where it came from.</p>
-              </div>
-              <div class="grade-block">
-                <div class="grade-title">On every line</div>
-                <div class="grade-row"><span>01</span><p>the claim, in plain words</p></div>
-                <div class="grade-row"><span>Src</span><p>the source, dated</p></div>
-                <div class="grade-row"><span>Flag</span><p>anything that didn't check out, kept on the page</p></div>
-              </div>
-              <div class="read-footer">No black box. You can re-check everything.</div>
-            </div>
-          </aside>
-
-          <!-- page 3 -->
-          <aside class="read-card marks spec-card" aria-hidden="true">
-            <div class="read-bar">
-              <div class="read-dots"><span></span><span></span><span></span></div>
-              <div class="read-tab">decision-read · <strong>page 3</strong></div>
-            </div>
-            <div class="read-body">
-              <div class="read-eyebrow">Page three</div>
-              <div class="read-h">What to do next, and what to watch.</div>
-              <div class="verdict">
-                <div class="verdict-label">Next moves</div>
-                <p>Ranked. Ready to hand to whoever executes.</p>
-              </div>
-              <div class="grade-block">
-                <div class="grade-title">Watch for</div>
-                <div class="grade-row"><span>1</span><p>the event that changes the answer</p></div>
-                <div class="grade-row"><span>2</span><p>the rival move worth answering</p></div>
-                <div class="grade-row"><span>3</span><p>the sign to act now</p></div>
-              </div>
-              <div class="read-footer">Fixed scope. Fixed price. You judge whether it cleared the bar.</div>
-            </div>
-          </aside>
-
-          <div class="spec-dots" aria-hidden="true"><span class="on"></span><span></span><span></span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROOF STRIP — scrolling ticker -->
-    <section class="proof" aria-label="Every Read holds to: one question, fixed price, every claim graded and sourced, answer first with proof attached">
-      <div class="proof-track" aria-hidden="true">
-        <div class="proof-inner">
-          <span class="proof-label">Every Read holds to</span>
-          <span class="proof-item">One question</span><span class="proof-item">Fixed price</span><span class="proof-item">Every claim graded &amp; sourced</span><span class="proof-item">Answer first, proof attached</span>
-        </div>
-        <div class="proof-inner">
-          <span class="proof-label">Every Read holds to</span>
-          <span class="proof-item">One question</span><span class="proof-item">Fixed price</span><span class="proof-item">Every claim graded &amp; sourced</span><span class="proof-item">Answer first, proof attached</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- QUESTIONS -->
-    <section class="block" id="questions">
-      <div class="block-inner">
-        <div class="intro">
-          <span class="eyebrow">Start with the question on your desk</span>
-          <h2>Bring the decision, not a category.</h2>
-        </div>
-        <div class="q-grid">
-          <div class="q-card">
-            <span class="q-tag">► The Competitor Read</span>
-            <h3>“How did my competitor do that?”</h3>
-            <p>A rival is suddenly everywhere: new hires, new prices, ads in every channel. I reconstruct the playbook behind the move and rank what's real, what to counter, and what to safely ignore.</p>
-            <div class="q-eg"><b>I read:</b> their paid ads, site and social messaging, posting cadence, hiring, and launch timing.</div>
-          </div>
-          <div class="q-card">
-            <span class="q-tag">► The Growth Read</span>
-            <h3>“Where should my next dollar go?”</h3>
-            <p>Growth has flattened and every option costs real money: more ads, another hire, a new channel. I rank them against what your market is actually rewarding. Sometimes the winner is the channel nobody is guarding.</p>
-            <div class="q-eg"><b>I read:</b> which channels rivals keep paying for, how long each ad survives, review ratings, and how crowded each lane really is.</div>
-          </div>
-          <div class="q-card">
-            <span class="q-tag">► The Pricing Read</span>
-            <h3>“What should I charge?”</h3>
-            <p>You suspect the number is low, but raising it feels like a gamble. I put every rival's real prices on one page, read what buyers trade off, and rank your moves with the risk sitting next to each one.</p>
-            <div class="q-eg"><b>I read:</b> rival price pages, tiers and anchors, public discounts, and how buyers talk about price in reviews.</div>
-          </div>
-          <div class="q-card">
-            <span class="q-tag">► The Market Read</span>
-            <h3>“Is this market worth entering?”</h3>
-            <p>A new offer, market, or location looks promising and expensive. I map who is already there, where the demand actually sits, and what has to be true before you commit. Sometimes the honest answer is not yet.</p>
-            <div class="q-eg"><b>I read:</b> the full competitor set and its footprint, search demand, and what buyers ask for in reviews and forums.</div>
-          </div>
-        </div>
-        <p class="q-foot statement">If you can frame it as <em>one important decision,</em> send it.</p>
-      </div>
-    </section>
-
-    <!-- RECENT READS — Spade inset panel -->
-    <section class="block panel marks" id="reads">
-      <div class="block-inner">
-
-        <div class="intro">
-          <span class="eyebrow">Recent Reads</span>
-          <h2>Three questions, three answers <span class="hl">with receipts.</span></h2>
-          <p class="section-sub">Real engagements, clients redacted. Every claim below is graded and sourced in the full document.</p>
-        </div>
-
-        <div class="reads-grid">
-
-          <!-- Card 1 · Law -->
-          <div class="read-doc marks">
-            <span class="doc-tag">Law · four-attorney firm</span>
-            <p class="doc-q">&ldquo;We're a four-lawyer firm. Where should our next dollar go?&rdquo;</p>
-            <div class="receipts">
-              <div class="receipts-title">The receipts</div>
-              <div class="receipt-row"><span class="verified">VERIFIED</span><p>Every rival is buying search ads, the channel 82% of firms say they regret.</p></div>
-              <div class="receipt-row"><span class="verified">VERIFIED</span><p>The channel with the best return is wide open: a top-50 rival hasn't touched its blog since 2019 and sits at a 3.7 review rating.</p></div>
-              <div class="receipt-row"><span class="flagged">FLAGGED</span><p>The firm's own site hid its Google rating, linked to an empty YouTube channel, and still advertised a law the state scrapped in 2023.</p></div>
-            </div>
-            <p class="doc-call"><strong>The call:</strong> skip the ad war. Ask every closed client for a review and put the rating where people can see it.</p>
-            <p class="doc-sources">rival ad, content + review footprints · 2025-26 channel data · own-site teardown</p>
-            <a href="/downloads/read-law-redacted.html" data-track="Read Online Law" class="doc-dl">Read this online →</a> <a href="/downloads/read-law-redacted.pdf" download data-track="Download Law Read" class="doc-dl">PDF ↓</a>
-          </div>
-
-          <!-- Card 2 · Coaching -->
-          <div class="read-doc marks">
-            <span class="doc-tag">Coaching · Founder brand</span>
-            <p class="doc-q">&ldquo;I've built more products than anyone in my niche. Why is nobody buying?&rdquo;</p>
-            <div class="receipts">
-              <div class="receipts-title">The receipts</div>
-              <div class="receipt-row"><span class="verified">VERIFIED</span><p>Five times more products than the closest competitor, one sixth the engagement: 4.23 likes per post vs 26.40 for the niche leader.</p></div>
-              <div class="receipt-row"><span class="verified">VERIFIED</span><p>Two flagship pages were dead 404s, a 9-part lead magnet series sat where no menu reaches it, and every button on the site pointed to one calendar link.</p></div>
-              <div class="receipt-row"><span class="verified">VERIFIED</span><p>A 10,000-person email list, untouched.</p></div>
-            </div>
-            <p class="doc-call"><strong>The call:</strong> stop making new things. Package what exists as one system, fix the dead pages, and email the list.</p>
-            <p class="doc-sources">1,151 competitor posts + 425 own posts analyzed · 30 scrape queries</p>
-            <a href="/downloads/read-coach-redacted.html" data-track="Read Online Coach" class="doc-dl">Read this online →</a> <a href="/downloads/read-coach-redacted.pdf" download data-track="Download Coach Read" class="doc-dl">PDF ↓</a>
-          </div>
-
-          <!-- Card 3 · Consumer brand -->
-          <div class="read-doc marks">
-            <span class="doc-tag">Consumer brand · Pre-launch</span>
-            <p class="doc-q">&ldquo;Who would buy a brand like ours one day, and for how much?&rdquo;</p>
-            <div class="receipts">
-              <div class="receipts-title">The receipts</div>
-              <div class="receipt-row"><span class="verified">VERIFIED</span><p>Brands like this one have sold twice to the same buyer, at roughly 5.5x sales: $630M in 2022, up to $880M in 2025.</p></div>
-              <div class="receipt-row"><span class="verified">VERIFIED</span><p>The 14 closest competitors, mapped: the spot this brand wants is empty.</p></div>
-              <div class="receipt-row"><span class="flagged">FLAGGED</span><p>Four claims in the client's own investor deck didn't check out. Fixed before it went out again.</p></div>
-            </div>
-            <p class="doc-call"><strong>The call:</strong> build toward the proven buyer, add revenue channels one at a time, and file trademarks now. A copycat just appeared.</p>
-            <p class="doc-sources">12 brand teardowns · 14 cited exits · 11 buyers ranked</p>
-            <a href="/downloads/read-brand-redacted.html" data-track="Read Online Brand" class="doc-dl">Read this online →</a> <a href="/downloads/read-brand-redacted.pdf" download data-track="Download Brand Read" class="doc-dl">PDF ↓</a>
-          </div>
-
-        </div>
-
-        <div class="reads-cta">
-          <a href="#entry-read" class="btn btn-primary" data-track="Reads One-Page Read">See it on your competitor &rarr;</a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ENTRY OFFER — the paid first step. Replaced the free teardown 2026-08-20. -->
-    <section class="block panel marks" id="entry-read">
-      <div class="block-inner">
-        <div class="teardown-grid">
+    <section class="covers" id="covers">
+      <div class="wrap">
+        <div class="head">
           <div>
-            <span class="eyebrow">The first step</span>
-            <h2>Name one competitor. Get the <span class="hl">One-Page Read.</span></h2>
-            <p class="section-sub">Pick the rival you can&rsquo;t stop thinking about. In 48 hours I pull their public playbook and send back what I find, graded, with the unknowns printed. $750, and it comes off the price of whatever we do next.</p>
-            <ul class="teardown-list">
-              <li>One competitor, reconstructed from public signals: ads, messaging, pricing, hiring.</li>
-              <li>What they&rsquo;re actually doing, and what it means for your next move.</li>
-              <li>Back in 48 hours. Credited in full against the build if you go ahead.</li>
-            </ul>
-            <p class="section-sub"><a href="/sample-brief.html">Want to judge the work first? Read a real one.</a></p>
-          </div>
-          <div class="email-card marks">
-            <div class="email-eyebrow">The One-Page Read &middot; $750</div>
-            <h4>Which competitor?</h4>
-            <form class="email-form" action="https://formspree.io/f/xbdpddrn" method="POST" data-track="One-Page Read Request">
-              <input type="hidden" name="_subject" value="ONE-PAGE READ request &middot; loopworker.com">
-              <input type="hidden" name="_next" value="https://www.loopworker.com/thank-you.html?from=one-page-read">
-              <input type="hidden" name="source" value="loopworker.com one-page-read">
-              <input type="text" name="competitor" placeholder="Competitor name or website" required aria-label="Competitor name or website">
-              <input type="text" name="name" placeholder="Your name" required aria-label="Your name">
-              <input type="email" name="email" placeholder="Work email" required aria-label="Work email">
-              <button type="submit">Start the Read &rarr;</button>
-            </form>
-            <div class="email-tiny">$750, invoiced before I start. Credited against the build.</div>
+            <h2 class="reveal">What the Market Read covers.</h2>
+            <p class="reveal">Five areas, one picture of your market. Each one separates what was observed from what it means and what to do about it.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="block" id="how">
-      <div class="block-inner">
-        <div class="intro">
-          <span class="eyebrow">Three steps</span>
-          <h2>Send it. Scope it. Get it.</h2>
-        </div>
-        <div class="rule"></div>
-        <div class="steps">
-          <div class="step">
-            <div class="step-num">01</div>
-            <h4>Send the question</h4>
-            <p>What you're deciding, the stakes, the deadline. No call to start.</p>
-          </div>
-          <div class="step">
-            <div class="step-num">02</div>
-            <h4>Get a fixed scope</h4>
-            <p>Price, delivery date, and depth. You approve before I start.</p>
-          </div>
-          <div class="step">
-            <div class="step-num">03</div>
-            <h4>Get the Read</h4>
-            <p>Recommendation, sources, grades, risks, next moves.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRICING -->
-    <section class="block" id="pricing">
-      <div class="block-inner">
-        <div class="intro">
-          <span class="eyebrow">Same product. Right depth.</span>
-          <h2>Sized to the stakes, <span class="hl">not the package.</span></h2>
-          <p class="section-sub">I recommend the smallest depth that answers it.</p>
-        </div>
-
-        <div class="tier-row marks">
-          <div class="tier">
-            <div class="tier-eyebrow">The One-Page Read</div>
-            <h3>Fast second opinion</h3>
-            <div class="tier-price">$750</div>
-            <ul>
-              <li>One focused Read</li>
-              <li>Key evidence and sources</li>
-              <li>A confidence grade</li>
-              <li>Three next moves</li>
-            </ul>
-            <a href="#send-question" class="tier-cta" data-track="Pricing One-Page Read">Get the Read</a>
-          </div>
-
-          <div class="tier">
-            <div class="tier-eyebrow">The Focused Read</div>
-            <h3>Focused decision</h3>
-            <div class="tier-price">$3,200<small>· 5 days</small></div>
-            <ul>
-              <li>Several evidence sources</li>
-              <li>Main options compared</li>
-              <li>A ranked recommendation</li>
-              <li>Risks and unknowns</li>
-              <li>30-minute review call</li>
-            </ul>
-            <a href="#send-question" class="tier-cta" data-track="Pricing Focused Read">Get the Read</a>
-          </div>
-
-          <div class="tier">
-            <div class="tier-eyebrow">The Deep Read</div>
-            <h3>Six-figure decision</h3>
-            <div class="tier-price">$8,000<small>· 10 days</small></div>
-            <ul>
-              <li>Full competitor + market dig</li>
-              <li>~10 comparables</li>
-              <li>A ranked action plan</li>
-              <li>Full grading + source trail</li>
-              <li>Decision review call</li>
-            </ul>
-            <a href="#send-question" class="tier-cta" data-track="Pricing Deep Read">Get the Read</a>
-          </div>
-
-          <div class="tier">
-            <div class="tier-eyebrow">The Engagement</div>
-            <h3>Decision + the change</h3>
-            <div class="tier-price">$25,000<small>· 30 days</small></div>
-            <ul>
-              <li>The full 10-day dig</li>
-              <li>Positioning or offer rebuild</li>
-              <li>An implementation playbook</li>
-              <li>Ranked operating priorities</li>
-              <li>Milestone reviews</li>
-            </ul>
-            <a href="#send-question" class="tier-cta" data-track="Pricing Engagement">Get the Read</a>
-          </div>
-        </div>
-
-        <div class="pricing-foot statement">
-          Not sure which fits? <em>Don't choose.</em> Send the question and I'll recommend the smallest useful depth. Every Read is fixed price, and you have 14 days to judge whether it cleared the bar. <a href="/pricing.html#terms">The terms →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="block" id="faq">
-      <div class="block-inner">
-        <div class="intro">
-          <span class="eyebrow">FAQ</span>
-          <h2>Asked first.</h2>
-        </div>
-        <div class="faq-list">
-          <details class="faq-item">
-            <summary>What kind of question fits?</summary>
-            <p>One business decision where better evidence could change what you do: pricing, hiring, a competitor's move, buyer understanding, market entry, positioning, or diligence. Real stakes, guessing feels expensive.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Is this just an AI report?</summary>
-            <p>No. Software collects the evidence. I decide what counts, test contradictions, grade the claims, and write the call. The judgment is mine.</p>
-          </details>
-          <details class="faq-item">
-            <summary>What if the evidence is weak?</summary>
-            <p>The Read says so. Weak evidence gets a lower grade, and I say what would change the answer. Sometimes the answer is: don't move yet.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Do I pick the depth?</summary>
-            <p>No. Send the question. I recommend the smallest depth that answers it.</p>
-          </details>
-          <details class="faq-item">
-            <summary>What does the guarantee cover?</summary>
-            <p>If the Read doesn't improve the evidence for your decision, tell me within 14 days and I refund the fee. It doesn't promise a particular outcome.</p>
-          </details>
-        </div>
-        <p class="q-foot faq-more">More questions? <a href="/faq.html">The full FAQ →</a></p>
-      </div>
-    </section>
-
-    <!-- CLOSING + FORM -->
-    <section class="closing" id="send-question">
-      <div class="closing-grid">
-        <div class="closing-main">
-          <span class="eyebrow-plain">Start with the decision</span>
-          <h2>Bring the question. I'll turn it into the <span class="hl">answer.</span></h2>
-          <p>Send the decision, the stakes, and your deadline. I'll tell you if it's a fit and the smallest Read that answers it.</p>
-          <div class="closing-note">Free fit check · No call · Fixed price before you pay</div>
-          <div class="founder">
-            <img src="/images/founder/alex-lamb.jpg" width="52" height="52" alt="Alex Lamb, founder of LoopWorker" loading="lazy">
+        <div class="areas">
+          <div class="area reveal">
+            <div><span class="cat">Competitive advertising</span><h3>See what competitors are putting money behind.</h3></div>
             <div>
-              <div class="founder-name">Alex Lamb</div>
-              <div class="founder-role">Founder, LoopWorker</div>
+              <p><span class="lbl">What gets examined</span>Review visible competitor advertising activity, creative messaging, offers, and landing pages to understand how rival firms position themselves and compete for attention. Built from public ad libraries and search results. Competitors' budgets, conversions, and returns are private and not claimed.</p>
+              <p class="past"><span class="lbl">From a past read</span>Every rival was buying search ads, the channel 82% of firms say they regret.</p>
+            </div>
+            <div>
+              <span class="lbl">You receive</span>
+              <ul>
+                <li>Competitor advertising observations</li>
+                <li>Messaging gaps</li>
+                <li>Campaign angles worth testing</li>
+                <li>Copy and creative recommendations</li>
+              </ul>
+            </div>
+          </div>
+          <div class="area reveal">
+            <div><span class="cat">Social and video content</span><h3>Find the content people actually respond to.</h3></div>
+            <div>
+              <p><span class="lbl">What gets examined</span>Examine your firm's public content alongside relevant competitors. Identify the topics, formats, people, and messaging patterns associated with stronger audience response. Views show attention, not business value. They are one signal among several.</p>
+            </div>
+            <div>
+              <span class="lbl">You receive</span>
+              <ul>
+                <li>Content opportunity analysis</li>
+                <li>Recommended formats</li>
+                <li>Monthly topic priorities</li>
+                <li>Scripts and creative briefs</li>
+              </ul>
+            </div>
+          </div>
+          <div class="area reveal">
+            <div><span class="cat">Search and editorial</span><h3>Find the questions your market isn't answering well.</h3></div>
+            <div>
+              <p><span class="lbl">What gets examined</span>Review relevant search topics, competitor editorial content, and visible gaps in the market to identify useful subjects your firm could address. No specific Google rankings are promised.</p>
+              <p class="past"><span class="lbl">From a past read</span>A top-50 rival hadn't touched its blog since 2019.</p>
+            </div>
+            <div>
+              <span class="lbl">You receive</span>
+              <ul>
+                <li>Prioritized content topics</li>
+                <li>Search-informed editorial recommendations</li>
+                <li>Content briefs</li>
+                <li>Article and video angles</li>
+              </ul>
+            </div>
+          </div>
+          <div class="area reveal">
+            <div><span class="cat">Competitive movement</span><h3>Understand where your competitors are heading.</h3></div>
+            <div>
+              <p><span class="lbl">What gets examined</span>Examine relevant public developments such as lateral hires, practice-area expansion, new offices, partnerships, and shifts in market positioning.</p>
+            </div>
+            <div>
+              <span class="lbl">You receive</span>
+              <ul>
+                <li>Relevant competitive developments</li>
+                <li>Practical implications</li>
+                <li>Messaging opportunities</li>
+                <li>Areas to investigate, address, or avoid</li>
+              </ul>
+            </div>
+          </div>
+          <div class="area reveal">
+            <div><span class="cat">Reviews and website experience</span><h3>Fix the gaps prospects can already see.</h3></div>
+            <div>
+              <p><span class="lbl">What gets examined</span>Examine public reviews, visible website issues, messaging consistency, and problems that may make it harder for prospective clients to understand or trust the firm. Uses what's publicly visible. Visitor behavior needs your analytics, shared with permission.</p>
+              <p class="past"><span class="lbl">From a past read</span>The firm's own site hid its Google rating and linked to an empty YouTube channel.</p>
+            </div>
+            <div>
+              <span class="lbl">You receive</span>
+              <ul>
+                <li>Prioritized improvement list</li>
+                <li>Messaging fixes</li>
+                <li>Website content recommendations</li>
+                <li>Review and reputation observations</li>
+              </ul>
             </div>
           </div>
         </div>
+        <p class="areas-note">Past-read examples are from real client work, clients not named. Everything is gathered from public sources. Private data such as competitor ad budgets, conversions, and site traffic is not visible and is never claimed.</p>
+      </div>
+    </section>
 
-        <div class="email-card marks">
-          <div class="email-eyebrow">Get the Read</div>
-          <h4>What are you deciding?</h4>
-          <form class="email-form" action="https://formspree.io/f/xbdpddrn" method="POST" data-track="Decision Read Inquiry">
-            <input type="hidden" name="_subject" value="Decision Read inquiry · loopworker.com">
-            <input type="hidden" name="_next" value="https://www.loopworker.com/thank-you.html?from=decision-read">
-            <input type="hidden" name="source" value="loopworker.com decision-read">
-            <textarea name="decision" placeholder="The decision you're trying to make" required aria-label="The decision you're trying to make" rows="2"></textarea>
-            <input type="text" name="deadline" placeholder="When you need the answer" aria-label="When you need the answer">
-            <input type="text" name="name" placeholder="Name" required aria-label="Name">
-            <input type="email" name="email" placeholder="Work email" required aria-label="Work email">
-            <button type="submit">Get the Read →</button>
+    <section class="process" id="process">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2 class="reveal">One process. A clearer decision every month.</h2>
+            <p class="reveal">I handle the research, strategy, and creative direction personally. Your team retains control of its accounts and publishing.</p>
+          </div>
+        </div>
+        <ol class="flow">
+          <li class="reveal"><span class="n">Step 01</span><h3>Read the market</h3><p>I examine the firm's public marketing alongside relevant competitors, looking for patterns, weaknesses, and opportunities that deserve a closer look.</p></li>
+          <li class="reveal"><span class="n">Step 02</span><h3>Decide what matters</h3><p>I separate meaningful opportunities from interesting numbers and prioritize recommendations according to relevance, effort, and likely business value.</p></li>
+          <li class="reveal"><span class="n">Step 03</span><h3>Build the content plan</h3><p>I turn the findings into specific topics, messaging, scripts, creative direction, and production requirements based on the agreed scope.</p></li>
+          <li class="reveal"><span class="n">Step 04</span><h3>Review and improve</h3><p>Your team publishes the content. Available performance results and new market developments inform the next cycle.</p></li>
+        </ol>
+        <ul class="terms-list">
+          <li>Work scope is agreed in writing.</li>
+          <li>Clients keep their marketing accounts.</li>
+          <li>LoopWorker does not post on behalf of clients.</li>
+          <li>Production uses footage your team supplies, unless otherwise agreed.</li>
+          <li>Legal claims and attorney statements stay subject to your firm's review and approval.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap about-grid">
+        <div class="about-photo reveal"><img src="/images/home/alex.jpg" alt="Alex Lamb, founder of LoopWorker" loading="lazy"></div>
+        <div class="about-copy">
+          <h2 class="reveal">One person doing the research and the creative work.</h2>
+          <p class="reveal">I'm the founder of LoopWorker.</p>
+          <p class="reveal">I've spent more than a decade producing and shaping marketing content across consumer brands, technology, healthcare, and professional organizations. My background includes content strategy at Cambria, production work at Wondros, and creative projects involving organizations from Arby's to the National Institutes of Health.</p>
+          <p class="reveal">I built LoopWorker around a simple belief: the best content decisions start with understanding what the market is already telling you.</p>
+          <p class="reveal"><strong>I handle the research, strategy, and creative direction personally.</strong> No rotating account manager. No handoff between the person selling the work and the person responsible for it.</p>
+          <div class="sig reveal">Alex Lamb<span>Founder, LoopWorker</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2 class="reveal">Research first. Then decide how much you want handled.</h2>
+            <p class="reveal">Start with a Market Read to understand the opportunities. Then choose whether your team wants to produce the content or have LoopWorker deliver finished videos. The snapshot is free.</p>
+          </div>
+        </div>
+        <div class="plans">
+          <article class="plan reveal">
+            <span class="name">Market Read</span>
+            <div class="amount">$750 <small>one-time</small></div>
+            <p class="short">Credited toward your first month</p>
+            <h3>Find the opportunity before committing to production.</h3>
+            <p class="desc">A focused competitive analysis and recommendations for your firm's next content priorities. A focused first engagement, not a full audit of every channel and competitor.</p>
+            <span class="lbl">Includes</span>
+            <ul>
+              <li>Review of your firm's public-facing marketing</li>
+              <li>Review of up to 3 relevant competitors</li>
+              <li>Meaningful competitive opportunities</li>
+              <li>Prioritized recommendations</li>
+              <li>Suggested content direction</li>
+            </ul>
+            <div class="cta-wrap">
+              <a href="#read" class="btn" data-track="Pricing Market Read">Request a Market Read</a>
+              <p class="fine">The full $750 is credited toward the first month of either monthly plan.</p>
+            </div>
+          </article>
+
+          <article class="plan feature reveal">
+            <span class="name">Intelligence + Content</span>
+            <div class="amount">$4,999 <small>/ month</small></div>
+            <p class="short">Strategy and scripts</p>
+            <h3>Know what to make. Know why it matters.</h3>
+            <p class="desc">For firms with an internal team that records, edits, and publishes.</p>
+            <span class="lbl">Each month</span>
+            <ul>
+              <li>Competitive intelligence update on relevant market activity</li>
+              <li>Review of up to 3 agreed competitors</li>
+              <li>Content strategy and a prioritized editorial calendar</li>
+              <li>8 researched content concepts</li>
+              <li>8 ready-to-film video scripts</li>
+              <li>Talking points and recording guidance</li>
+              <li>Creative briefs with hooks, formats, and calls to action</li>
+              <li>One strategy and performance review</li>
+              <li>One consolidated revision round on the monthly package</li>
+            </ul>
+            <div class="split">
+              <p><b>You receive:</b> a research-backed monthly production package your team can execute.</p>
+              <p><b>Your team handles:</b> filming, editing, publishing, and account management.</p>
+            </div>
+            <div class="cta-wrap">
+              <a href="#read" class="btn" data-track="Pricing Content">Get started with a Market Read</a>
+            </div>
+          </article>
+
+          <article class="plan reveal">
+            <span class="name">Intelligence + Production</span>
+            <div class="amount">$8,999 <small>/ month</small></div>
+            <p class="short">Strategy, scripts, and finished videos</p>
+            <h3>The strategy and the finished content.</h3>
+            <p class="desc">For firms that want the intelligence, the creative direction, and completed videos without managing the editing.</p>
+            <span class="lbl">Everything in Intelligence + Content, plus</span>
+            <ul>
+              <li class="plus">Editing of up to 8 finished core videos a month</li>
+              <li class="plus">Footage review and selection</li>
+              <li class="plus">Professional editing, pacing, and sound cleanup</li>
+              <li class="plus">Captions and simple branded graphics</li>
+              <li class="plus">One primary aspect ratio per video, agreed in advance</li>
+              <li class="plus">Export-ready delivery files</li>
+              <li class="plus">Up to 2 consolidated revision rounds per finished video</li>
+            </ul>
+            <div class="split">
+              <p><b>You receive:</b> the research, the scripts, the production direction, and finished video files ready for your team to publish.</p>
+              <p><b>Your team handles:</b> on-camera talent, filming, publishing, and account management.</p>
+            </div>
+            <div class="cta-wrap">
+              <a href="mailto:alex@loopworker.com?subject=Intelligence%20%2B%20Production" class="btn" data-track="Pricing Production">Discuss production</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="compare reveal" aria-label="The difference between the monthly plans">
+          <div><b>$4,999/month</b> Strategy and scripts. Your team edits.</div>
+          <div><b>$8,999/month</b> Strategy, scripts, and finished videos. I edit up to 8.</div>
+        </div>
+
+        <div class="scope-note">
+          <h3>What the production scope covers</h3>
+          <div>
+            <p>Eight edited videos a month, each up to 90 seconds finished, cut from usable footage your team supplies. Standard editing, captions, and simple graphics, in one agreed primary aspect ratio.</p>
+            <p>Extra versions, other aspect ratios, complex animation, new filming, heavy footage reconstruction, and videos beyond the eight are quoted and agreed separately before work starts. Revisions are limited to the rounds listed above.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="read" id="read">
+      <div class="wrap read-grid">
+        <div>
+          <h2 class="reveal">See one thing your firm could be missing.</h2>
+          <p class="lead reveal">I'll review your firm's public-facing marketing and identify one relevant observation from your competitive environment.</p>
+          <p class="lead reveal">You'll receive the evidence, the source, and a practical next step.</p>
+          <p class="assure reveal">No account access required. No obligation to buy.</p>
+        </div>
+        <div class="tool">
+          <form id="snap" action="https://formspree.io/f/xbdpddrn" method="POST" novalidate data-track="Free Snapshot Submit">
+            <input type="hidden" name="_subject" value="FREE SNAPSHOT request · loopworker.com">
+            <input type="hidden" name="_next" value="https://www.loopworker.com/thank-you.html?from=free-read">
+            <input type="hidden" name="source" value="loopworker.com free snapshot">
+            <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+            <label for="f-email">Work email
+              <input id="f-email" type="email" name="email" required autocomplete="email" inputmode="email" placeholder="you@yourfirm.com" aria-describedby="e-email">
+              <span class="err" id="e-email" aria-live="polite"></span>
+            </label>
+            <label for="f-site">Law firm website
+              <input id="f-site" type="text" name="website" required autocomplete="url" inputmode="url" placeholder="yourfirm.com" aria-describedby="e-site">
+              <span class="err" id="e-site" aria-live="polite"></span>
+            </label>
+            <label for="f-concern">Primary marketing concern <span class="opt">(optional)</span>
+              <select id="f-concern" name="concern">
+                <option value="">Pick one</option>
+                <option>Competitors are getting more visibility</option>
+                <option>Our content isn't performing</option>
+                <option>We're unsure where to invest</option>
+                <option>We need more effective content</option>
+                <option>Not sure yet</option>
+              </select>
+            </label>
+            <label for="f-notes">Anything specific you'd like examined? <span class="opt">(optional)</span>
+              <textarea id="f-notes" name="notes" maxlength="1000"></textarea>
+            </label>
+            <button type="submit" class="btn" id="snap-btn">Get a free snapshot</button>
+            <p class="form-status" id="snap-status" role="status" aria-live="polite"></p>
           </form>
-          <div class="email-tiny">I reply with the smallest Read that could answer it.</div>
+          <div class="done" id="snap-done" hidden tabindex="-1">
+            <h3>Your request is in.</h3>
+            <p>Thanks for sending your firm. I'll review the information and follow up using the email you provided.</p>
+          </div>
+          <p class="tool-note">I read every request myself. Your details go to my inbox through Formspree and are used only to reply to you.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="wrap faq-grid">
+        <div class="side">
+          <h2 class="reveal">Questions.</h2>
+          <p class="reveal">Anything else: <a href="mailto:alex@loopworker.com">alex@loopworker.com</a></p>
+        </div>
+        <div>
+          <details>
+            <summary>What does the free snapshot include?</summary>
+            <p>A short, evidence-backed observation about your firm's public marketing or competitive environment, including a relevant source and a practical next step. It is a sample of the research process, not a full market analysis.</p>
+          </details>
+          <details>
+            <summary>What's included in the $750 Market Read?</summary>
+            <p>A focused review of your firm's public-facing marketing and up to 3 relevant competitors, the meaningful opportunities, prioritized recommendations, and a suggested content direction. It is a focused first engagement, not a comprehensive audit of every channel or competitor.</p>
+          </details>
+          <details>
+            <summary>What's the difference between the monthly plans?</summary>
+            <p>Both plans include ongoing competitive research, a monthly content plan, and eight ready-to-film scripts. The $8,999 plan also includes editing up to eight finished videos from footage your team supplies.</p>
+          </details>
+          <details>
+            <summary>Can we change the number of videos?</summary>
+            <p>Yes. Eight videos is the standard monthly production scope. A different quantity or production complexity can be quoted separately and documented before work starts.</p>
+          </details>
+          <details>
+            <summary>How does this differ from a traditional marketing agency?</summary>
+            <p>LoopWorker focuses on understanding the market before deciding what to make. It provides the research, recommendations, and creative direction your team can use, with optional editing and production.</p>
+          </details>
+          <details>
+            <summary>Can LoopWorker work with our existing marketing team?</summary>
+            <p>Yes. The service is designed to complement an existing internal marketing team or agency.</p>
+          </details>
+          <details>
+            <summary>Do you need access to our accounts?</summary>
+            <p>No account access is required for the public-data snapshot. Deeper performance analysis may benefit from reports supplied by your team, but your firm retains account ownership and control.</p>
+          </details>
+          <details>
+            <summary>Who films the videos?</summary>
+            <p>Your firm's attorneys, partners, or designated spokespeople. LoopWorker provides scripts and recording guidance. Your team records and uploads the footage.</p>
+          </details>
+          <details>
+            <summary>Does LoopWorker post the content?</summary>
+            <p>No. Your team retains control of its accounts and handles publishing.</p>
+          </details>
+          <details>
+            <summary>Are revisions included?</summary>
+            <p>Yes. Intelligence + Content includes one consolidated revision round on the monthly content package. Intelligence + Production also includes up to two consolidated revision rounds for each finished video, within the agreed scope.</p>
+          </details>
+          <details>
+            <summary>Can you guarantee new clients or leads?</summary>
+            <p>No. LoopWorker helps improve marketing decisions and content direction using observable evidence. It does not guarantee rankings, inquiries, signed matters, or revenue.</p>
+          </details>
+          <details>
+            <summary>How are legal advertising rules handled?</summary>
+            <p>Your firm remains responsible for reviewing and approving legal claims, testimonials, attorney statements, and other materials subject to applicable professional advertising requirements.</p>
+          </details>
+          <details>
+            <summary>Is the $750 Market Read credited toward monthly service?</summary>
+            <p>Yes. The full $750 is credited toward the first month of either monthly plan.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="close">
+      <div class="wrap">
+        <h2 class="reveal">Make the next marketing decision with better information.</h2>
+        <p class="reveal">Start with a free look at your market. See how LoopWorker turns competitive activity into practical recommendations before committing to a full read or monthly engagement.</p>
+        <div class="row reveal">
+          <a href="#read" class="btn" data-track="Close Free Snapshot">Get a free snapshot</a>
+          <a href="mailto:alex@loopworker.com" class="mail">Email alex@loopworker.com</a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="v6-foot">
-    <div class="foot-inner">
-      <div class="foot-logo">LoopWorker</div>
-      <p>One question. One ranked answer. Every claim graded and sourced.</p>
-      <p class="foot-verticals">Reads for: <a href="/law-firms/">Law firms</a> · <a href="/beauty/">Beauty</a> · <a href="/apparel/">Apparel</a> · <a href="/food-beverage/">Food &amp; CPG</a> · <a href="/private-equity/">PE</a></p>
-      <p class="foot-verticals">More: <a href="/vs/">Compare</a> · <a href="/reports/">Free reports</a> · <a href="/glossary/">Glossary</a> · <a href="/blog/">Field notes</a></p>
-      <p>© 2026 · <a href="/sample-brief.html">Sample</a> · <a href="#pricing">Pricing</a> · <a href="/faq.html">FAQ</a> · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a></p>
-      <p class="foot-small">alex@loopworker.com</p>
+  <a href="#read" class="btn sticky-cta" id="sticky-cta" data-track="Sticky Free Snapshot">Get a free snapshot</a>
+
+  <footer>
+    <div class="wrap">
+      <div class="brand"><b>LoopWorker</b><span>Competitive intelligence and content production.</span></div>
+      <ul>
+        <li><a href="mailto:alex@loopworker.com">alex@loopworker.com</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+        <li><a href="/terms.html">Terms</a></li>
+        <li><a href="mailto:alex@loopworker.com">Contact</a></li>
+      </ul>
     </div>
   </footer>
 
   <script>
     (function () {
-      var sec = document.getElementById('specimen');
-      if (!sec) return;
-      var cards = [].slice.call(sec.querySelectorAll('.spec-card'));
-      var dots = [].slice.call(sec.querySelectorAll('.spec-dots span'));
-      var cur = -1;
-      function place(active) {
-        // all three cards stay visible; each sits fanned by its distance from
-        // the active card, spread wide so both background cards read clearly.
-        var fan = window.innerWidth < 640 ? 36 : 92;
-        cards.forEach(function (c, k) {
-          var d = k - active;          // signed distance
-          var ad = Math.abs(d);
-          c.classList.toggle('is-active', d === 0);
-          c.setAttribute('aria-hidden', d === 0 ? 'false' : 'true');
-          c.style.zIndex = String(3 - ad);
-          c.style.opacity = String(Math.max(0.28, 1 - ad * 0.3));
-          c.style.transform =
-            'translateX(' + (d * fan) + 'px) translateY(' + (ad * 10) + 'px) ' +
-            'scale(' + (1 - ad * 0.07) + ') rotate(' + (d * 2.6) + 'deg)';
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var nav = document.getElementById('nav'), hero = document.querySelector('.hero');
+      function navState() { var y = window.scrollY, past = y > hero.offsetHeight - 90; nav.classList.toggle('solid', past); nav.classList.toggle('dim', !past && y > 40); }
+      window.addEventListener('scroll', navState, { passive: true }); navState();
+
+      // mobile menu
+      var mb = document.getElementById('menu-btn'), links = document.getElementById('nav-links');
+      function setMenu(open) { nav.classList.toggle('open', open); mb.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+      mb.addEventListener('click', function () { setMenu(!nav.classList.contains('open')); });
+      links.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.classList.contains('open')) { setMenu(false); mb.focus(); } });
+
+      // active nav link
+      var navA = Array.prototype.slice.call(links.querySelectorAll('a:not(.btn)'));
+      var secs = navA.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+      function activeLink() {
+        var mid = window.innerHeight * .35, cur = -1;
+        secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top <= mid && s.getBoundingClientRect().bottom > mid) cur = i; });
+        navA.forEach(function (a, i) { a.classList.toggle('active', i === cur); });
+      }
+      window.addEventListener('scroll', activeLink, { passive: true }); activeLink();
+
+      ['.proof-grid', '.flow', '.plans', '.about-copy', '.bridge-copy'].forEach(function (g) {
+        document.querySelectorAll(g + ' .reveal').forEach(function (el, i) { el.style.setProperty('--i', i); });
+      });
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          e.target.classList.add('in');
+          var c = e.target.querySelector('.count');
+          if (c && !c.dataset.done) { c.dataset.done = 1; countDown(c); }
+          io.unobserve(e.target);
         });
-        dots.forEach(function (dt, k) { dt.classList.toggle('on', k === active); });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+      function countDown(el) {
+        var from = +el.dataset.from, to = +el.dataset.to;
+        if (reduce) { el.textContent = to; return; }
+        el.textContent = from;
+        var start = null, dur = 1600;
+        function step(t) {
+          if (!start) start = t;
+          var p = Math.min((t - start) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.round(from + (to - from) * e);
+          if (p < 1) requestAnimationFrame(step);
+        }
+        setTimeout(function () { requestAnimationFrame(step); }, 400);
       }
-      function upd() {
-        var total = sec.offsetHeight - window.innerHeight;
-        var p = Math.max(0, Math.min(1, -sec.getBoundingClientRect().top / Math.max(1, total)));
-        var i = Math.min(cards.length - 1, Math.floor(p * cards.length));
-        if (i === cur) return;
-        cur = i;
-        place(i);
-      }
-      window.addEventListener('scroll', upd, { passive: true });
-      window.addEventListener('resize', function () { place(cur < 0 ? 0 : cur); });
-      place(0); cur = 0;
-      upd();
     })();
   </script>
-  <script defer src="/v6-reveal.js"></script>
-  <script defer src="/site-runtime.js"></script>
+
+  <script>
+    // Free snapshot form. Posts to the existing Formspree endpoint. With JavaScript it validates,
+    // blocks double sends and confirms inline; without JavaScript it falls back to a normal POST.
+    (function () {
+      var f = document.getElementById('snap'), btn = document.getElementById('snap-btn'), status = document.getElementById('snap-status');
+      var email = document.getElementById('f-email'), site = document.getElementById('f-site'), done = document.getElementById('snap-done');
+      var sending = false;
+      function setErr(input, msg) { input.setAttribute('aria-invalid', msg ? 'true' : 'false'); document.getElementById(input.getAttribute('aria-describedby')).textContent = msg; }
+      function checkEmail() {
+        var v = email.value.trim();
+        if (!v) return setErr(email, 'Enter your work email.'), false;
+        if (!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(v)) return setErr(email, 'That email doesn’t look right. Check for typos.'), false;
+        return setErr(email, ''), true;
+      }
+      function normalSite(v) {
+        v = v.trim(); if (!v) return '';
+        if (!/^https?:\/\//i.test(v)) v = 'https://' + v;
+        try { var u = new URL(v); if (!/^[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}$/i.test(u.hostname)) return null; return u.origin + (u.pathname === '/' ? '' : u.pathname); } catch (e) { return null; }
+      }
+      function checkSite() {
+        if (!site.value.trim()) return setErr(site, 'Enter your firm’s website.'), false;
+        var n = normalSite(site.value);
+        if (!n) return setErr(site, 'Enter a website address, for example yourfirm.com.'), false;
+        return setErr(site, ''), n;
+      }
+      email.addEventListener('blur', function () { if (email.value) checkEmail(); });
+      site.addEventListener('blur', function () { if (site.value) checkSite(); });
+      f.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (sending) return;
+        var okE = checkEmail(), okS = checkSite();
+        if (!okE) { email.focus(); return; }
+        if (!okS) { site.focus(); return; }
+        site.value = okS;
+        sending = true; btn.disabled = true; btn.textContent = 'Sending…'; status.textContent = ''; status.classList.remove('bad');
+        fetch(f.action, { method: 'POST', body: new FormData(f), headers: { Accept: 'application/json' } })
+          .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { ok: r.ok, d: d }; }); })
+          .then(function (res) {
+            if (!res.ok) throw new Error((res.d && res.d.errors && res.d.errors.map(function (x) { return x.message; }).join(' ')) || 'Send failed');
+            f.hidden = true; done.hidden = false; done.focus();
+          })
+          .catch(function () {
+            sending = false; btn.disabled = false; btn.textContent = 'Get a free snapshot';
+            status.classList.add('bad');
+            status.innerHTML = 'That didn’t send. Try again, or email <a href="mailto:alex@loopworker.com">alex@loopworker.com</a>.';
+          });
+      });
+    })();
+  </script>
+  <script>
+    // Data demo. 41 real videos (public YouTube counts, Oct 11 2026), oldest first.
+    // t: "a" = people and places, "b" = practice areas, "o" = other.
+    (function () {
+      var V = [[774,"b"],[295,"b"],[326,"b"],[56,"a"],[44,"a"],[4100,"a"],[242,"b"],[240,"a"],[181,"b"],[3000,"a"],[74,"o"],[189,"b"],[139,"b"],[93,"b"],[143,"b"],[1800,"a"],[801,"a"],[108,"b"],[1000,"a"],[158,"b"],[166,"b"],[340,"o"],[642,"a"],[181,"b"],[49,"b"],[259,"a"],[124,"b"],[86,"b"],[140,"b"],[246,"b"],[107,"b"],[263,"b"],[349,"a"],[462,"a"],[152,"b"],[46,"b"],[252,"a"],[221,"a"],[78,"b"],[155,"b"],[99,"b"]];
+      var MED = 181, MED_A = 406, MED_B = 152;
+      var sec = document.getElementById("how"), cv = document.getElementById("demo-canvas"), cx = cv.getContext("2d");
+      var steps = sec.querySelectorAll(".dstep"), bars = sec.querySelectorAll(".demo-dots i"), legend = sec.querySelector(".demo-legend");
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var W, H, dpr, step = reduce ? 3 : 0, shown = -1, t0 = performance.now(), stepAt = 0, nowT = 0;
+      // step 4 grid order: people and places first, then other, then practice areas
+      var ORDER = [], FLIP = 12;
+      ["a", "o", "b"].forEach(function (t) { V.forEach(function (w, i) { if (w[1] === t) ORDER.push(i); }); });
+      var PRACTICE = V.map(function (w, i) { return w[1] === "b" ? i : -1; }).filter(function (i) { return i >= 0; });
+      function flipped(i) { var j = PRACTICE.indexOf(i); return j >= 0 && j < FLIP && (reduce || nowT - stepAt > 1.1 + j * .11); }
+      function planOn() { return step === 3 && (reduce || nowT - stepAt > 1.1); }
+      var ACC = [224, 72, 42], GREY = [138, 138, 134];
+
+      // each video = one core dot plus a few drifting motes
+      var P = [];
+      V.forEach(function (v, i) {
+        var n = 1 + Math.round(Math.log10(v[0]) * 3);
+        for (var k = 0; k < n; k++) P.push({ i: i, core: k === 0, x: Math.random(), y: Math.random(), ox: (Math.random() - .5), oy: (Math.random() - .5), ph: Math.random() * 6.28, sp: .4 + Math.random() * .8, c: [255, 255, 255], a: 0 });
+      });
+
+      function size() {
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var r = cv.getBoundingClientRect(); W = r.width; H = r.height;
+        cv.width = W * dpr; cv.height = H * dpr; cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      var pad = { l: 8, r: 96, t: 36, b: 28 };
+      function yOf(v) { var lo = Math.log10(30), hi = Math.log10(6000); return pad.t + (1 - (Math.log10(v) - lo) / (hi - lo)) * (H - pad.t - pad.b); }
+      function xOf(i) { return pad.l + (i / (V.length - 1)) * (W - pad.l - pad.r); }
+      function rOf(v) { return 2.5 + Math.sqrt(v) / 9; }
+
+      // where each video sits at each step
+      function target(i) {
+        var v = V[i][0], t = V[i][1];
+        if (step === 0) return { x: xOf(i), y: yOf(v), c: [235, 235, 230], a: .9 };
+        if (step === 1) { var hot = v >= MED * 3; return { x: xOf(i), y: yOf(v), c: hot ? ACC : [235, 235, 230], a: hot ? 1 : .28 }; }
+        if (step === 3) {
+          // the plan: every video drops into one grid, then practice videos flip toward what works
+          var cols = W < 520 ? 7 : 9, cell = Math.min((W - pad.l - pad.r) / cols, (H - 120) / Math.ceil(V.length / cols));
+          var gx = pad.l + ((W - pad.l - pad.r) - cell * cols) / 2, gy = 70, k = ORDER.indexOf(i);
+          var red = t === "a" || flipped(i);
+          return { x: gx + (k % cols + .5) * cell, y: gy + (Math.floor(k / cols) + .5) * cell, c: red ? ACC : t === "o" ? [90, 90, 88] : GREY, a: red ? 1 : .55, grid: cell };
+        }
+        // step 2: split into two columns by type
+        var col = t === "a" ? 0.72 : t === "b" ? 0.28 : 0.5, same = V.filter(function (w) { return w[1] === t; }), j = same.indexOf(V[i]);
+        var spread = (W - pad.l - pad.r) * 0.32, jx = same.length > 1 ? (j / (same.length - 1) - .5) * spread : 0;
+        var c = t === "a" ? ACC : t === "b" ? GREY : [90, 90, 88];
+        return { x: pad.l + col * (W - pad.l - pad.r) + jx, y: yOf(v), c: c, a: t === "o" ? .25 : (step === 3 && t === "b" ? .35 : 1) };
+      }
+
+      function line(y, label, alpha, x1, x2) {
+        cx.save(); cx.globalAlpha = alpha; cx.strokeStyle = "rgba(255,255,255,.55)"; cx.setLineDash([4, 6]); cx.lineWidth = 1;
+        cx.beginPath(); cx.moveTo(x1, y); cx.lineTo(x2, y); cx.stroke(); cx.setLineDash([]);
+        cx.fillStyle = "rgba(255,255,255,.8)"; cx.font = "600 12px Archivo, sans-serif"; cx.fillText(label, x2 + 8, y + 4); cx.restore();
+      }
+      var la = [0, 0, 0];
+      function frame(now) {
+        var tm = (now - t0) / 1000; nowT = tm;
+        cx.clearRect(0, 0, W, H);
+        // axis hint
+        cx.fillStyle = "rgba(255,255,255,.35)"; cx.font = "500 11px Archivo, sans-serif";
+        if (step < 3) cx.fillText("views (log scale)", pad.l, 14);
+        else {
+          var flips = PRACTICE.filter(function (i) { return flipped(i); }).length;
+          cx.font = "600 15px Archivo, sans-serif"; cx.fillStyle = "rgba(255,255,255,.9)";
+          cx.fillText(planOn() ? "The plan: " + (14 + flips) + " of 41 aimed at what works" : "Last 41 videos: 14 about people and places", pad.l, 30);
+          cx.font = "500 12px Archivo, sans-serif"; cx.fillStyle = "rgba(255,255,255,.6)";
+          cx.fillText(planOn() ? "Illustration of the plan, tested each month. Not a result." : "Each dot is one video", pad.l, 48);
+        }
+        // guide lines fade with the step
+        la[0] += ((step === 1 ? 1 : 0) - la[0]) * .08;
+        la[1] += ((step === 2 ? 1 : 0) - la[1]) * .08;
+        if (la[0] > .01) { var y3 = yOf(MED * 3); line(yOf(MED), "typical 181", la[0], pad.l, W - pad.r); line(y3, "3x", la[0] * .6, pad.l, W - pad.r); }
+        if (la[1] > .01) {
+          var cw = (W - pad.l - pad.r) * .2;
+          var xa = pad.l + .72 * (W - pad.l - pad.r), xb = pad.l + .28 * (W - pad.l - pad.r);
+          line(yOf(MED_A), "406", la[1], xa - cw, xa + cw);
+          line(yOf(MED_B), "152", la[1], xb - cw, xb + cw);
+        }
+        cx.globalCompositeOperation = "lighter";
+        for (var k = 0; k < P.length; k++) {
+          var p = P[k], tg = target(p.i), v = V[p.i][0];
+          var r = tg.grid ? tg.grid * .2 : rOf(v), wob = p.core ? 0 : r * 2.4;
+          var tx = tg.x + (p.core ? 0 : p.ox * wob + Math.sin(tm * p.sp + p.ph) * r * .8);
+          var ty = tg.y + (p.core ? 0 : p.oy * wob + Math.cos(tm * p.sp + p.ph) * r * .8);
+          var ease = reduce ? 1 : (p.core ? .075 : .05);
+          p.x += (tx - p.x) * ease; p.y += (ty - p.y) * ease;
+          for (var c = 0; c < 3; c++) p.c[c] += (tg.c[c] - p.c[c]) * .08;
+          p.a += (tg.a - p.a) * .08;
+          var pulse = step === 3 && p.core && (V[p.i][1] === "a" || flipped(p.i)) ? 1 + .14 * Math.sin(tm * 3 + p.i) : 1;
+          var rr = p.core ? r * pulse : 1.1;
+          var col = "rgba(" + (p.c[0] | 0) + "," + (p.c[1] | 0) + "," + (p.c[2] | 0) + ",";
+          if (p.core) {
+            var g = cx.createRadialGradient(p.x, p.y, 0, p.x, p.y, rr * 3.2);
+            g.addColorStop(0, col + (p.a * .55) + ")"); g.addColorStop(1, col + "0)");
+            cx.fillStyle = g; cx.beginPath(); cx.arc(p.x, p.y, rr * 3.2, 0, 6.29); cx.fill();
+          }
+          cx.fillStyle = col + (p.core ? p.a : p.a * .5) + ")";
+          cx.beginPath(); cx.arc(p.x, p.y, rr, 0, 6.29); cx.fill();
+        }
+        cx.globalCompositeOperation = "source-over";
+        if (!reduce) requestAnimationFrame(frame);
+      }
+
+      function setStep(s) {
+        step = s;
+        if (s === shown) return; shown = s; stepAt = nowT;
+        steps.forEach(function (el, i) { el.classList.toggle("on", i === s); });
+        bars.forEach(function (el, i) { el.classList.toggle("on", i <= s); });
+        legend.classList.toggle("on", s >= 2);
+      }
+      function onScroll() {
+        var r = sec.getBoundingClientRect(), span = sec.offsetHeight - window.innerHeight;
+        var p = Math.min(Math.max(-r.top / span, 0), .999);
+        setStep(Math.floor(p * 4));
+      }
+      size();
+      // start scattered across the stage
+      P.forEach(function (p) { p.x = Math.random() * W; p.y = Math.random() * H; });
+      window.addEventListener("resize", size);
+      if (reduce) { setStep(3); for (var n = 0; n < 200; n++) frame(performance.now()); }
+      else { window.addEventListener("scroll", onScroll, { passive: true }); onScroll(); requestAnimationFrame(frame); }
+    })();
+  </script>
+  <script>
+    // Hero field: the same 41 real videos, drifting. Red = 3x the typical (181).
+    (function () {
+      var V = [774,295,326,56,44,4100,242,240,181,3000,74,189,139,93,143,1800,801,108,1000,158,166,340,642,181,49,259,124,86,140,246,107,263,349,462,152,46,252,221,78,155,99];
+      var cv = document.getElementById("hero-canvas"), cx = cv.getContext("2d"), hero = cv.parentNode;
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var W, H, mx = 0, my = 0, sx = 0, sy = 0, t0 = performance.now(), live = true;
+      var D = V.map(function (v, i) { return { v: v, i: i, hot: v >= 543, ph: Math.random() * 6.28, sp: .25 + Math.random() * .35, dz: .3 + Math.random() * .7, jx: (Math.random() - .5), jy: (Math.random() - .5) }; });
+      function size() { var d = Math.min(window.devicePixelRatio || 1, 2); W = hero.offsetWidth; H = hero.offsetHeight; cv.width = W * d; cv.height = H * d; cx.setTransform(d, 0, 0, d, 0, 0); }
+      function pos(p, tm) {
+        var narrow = W < 700, x0 = narrow ? .06 : .3, x1 = .96, y0 = narrow ? .17 : .13, y1 = narrow ? .3 : .4;
+        var lx = x0 + (p.i / 40) * (x1 - x0), ly = 1 - (Math.log10(p.v) - 1.5) / 2.2;
+        var x = (lx + p.jx * .05) * W + Math.sin(tm * p.sp + p.ph) * 14 + sx * 30 * p.dz;
+        var y = (narrow ? 125 + ly * 130 : (y0 + ly * (y1 - y0)) * H) + p.jy * (narrow ? 10 : 24) + Math.cos(tm * p.sp * .8 + p.ph) * 12 + sy * 20 * p.dz;
+        return [x, y];
+      }
+      function frame(now) {
+        var tm = (now - t0) / 1000;
+        sx += (mx - sx) * .04; sy += (my - sy) * .04;
+        cx.clearRect(0, 0, W, H);
+        var pts = D.map(function (p) { return pos(p, tm); });
+        // faint threads between neighbours in time
+        cx.strokeStyle = "rgba(0,0,0,.08)"; cx.lineWidth = 1; cx.beginPath();
+        pts.forEach(function (q, i) { if (i) { cx.moveTo(pts[i - 1][0], pts[i - 1][1]); cx.lineTo(q[0], q[1]); } }); cx.stroke();
+        D.forEach(function (p, i) {
+          var x = pts[i][0], y = pts[i][1], r = 2.5 + Math.sqrt(p.v) / 8, c = p.hot ? "224,72,42" : "22,22,22";
+          var a = p.hot ? 1 : .5, pulse = p.hot ? 1 + .12 * Math.sin(tm * 2 + i) : 1;
+          var g = cx.createRadialGradient(x, y, 0, x, y, r * 4 * pulse);
+          g.addColorStop(0, "rgba(" + c + "," + (p.hot ? .28 : .06) + ")"); g.addColorStop(1, "rgba(" + c + ",0)");
+          cx.fillStyle = g; cx.beginPath(); cx.arc(x, y, r * 4 * pulse, 0, 6.29); cx.fill();
+          cx.fillStyle = "rgba(" + c + "," + a + ")"; cx.beginPath(); cx.arc(x, y, r, 0, 6.29); cx.fill();
+        });
+        cx.font = "600 12px Archivo, sans-serif"; cx.fillStyle = "rgba(0,0,0,.7)";
+        D.forEach(function (p, i) { if (p.v >= 1800 && W >= 700) cx.fillText(p.v.toLocaleString() + " views", pts[i][0] + 2.5 + Math.sqrt(p.v) / 8 + 10, pts[i][1] + 4); });
+        if (!reduce && live) requestAnimationFrame(frame);
+      }
+      size(); window.addEventListener("resize", size);
+      hero.addEventListener("pointermove", function (e) { mx = e.clientX / W - .5; my = e.clientY / H - .5; });
+      // pause when the hero is off screen
+      new IntersectionObserver(function (es) { var was = live; live = es[0].isIntersecting; if (live && !was && !reduce) requestAnimationFrame(frame); }).observe(hero);
+      requestAnimationFrame(frame);
+    })();
+  </script>
+  <script>
+    // sticky CTA shows between the hero and the form
+    (function () {
+      var cta = document.getElementById("sticky-cta"), hero = document.querySelector(".hero"), read = document.getElementById("read"), seen = { hero: true, read: false };
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { seen[e.target === hero ? "hero" : "read"] = e.isIntersecting; });
+        cta.classList.toggle("on", !seen.hero && !seen.read);
+      });
+      io.observe(hero); io.observe(read);
+    })();
+  </script>
 </body>
 </html>
