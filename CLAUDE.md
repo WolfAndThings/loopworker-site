@@ -1,5 +1,16 @@
 # LoopWorker Website — loopworker-site
 
+## 🚨 CURRENT STATE (Oct 14 2026). This overrides everything below it.
+- **Positioning:** competitive marketing intelligence for **law firms only**. Buyer = law firm CMO / marketing director / managing partner.
+- **Offers (the only ones):** Free snapshot (one evidence-backed observation + source + next step) · **Market Read $750** one-time (up to 3 competitors, credited to month one) · **Intelligence + Content $4,999/mo** (8 concepts + 8 scripts) · **Intelligence + Production $8,999/mo** (+ edit up to 8 videos, max 90s, 1 aspect ratio, 2 revision rounds each).
+- **Dead:** Decision Read, One-Page/Focused/Deep Read, Engagement, $3,200/$8,000/$25,000, free teardown, Sprint. The sections below describing them are history.
+- **Homepage** `index.html` is built from `_mocks/home-v7-draft.html` (noindex copy; images live in `_mocks/img/`, published copies in `images/home/`).
+- 🚨 **The 41-video data section (`section#how`, its CSS block, its script) is LOCKED by Alex.** Never edit it. After any homepage change, diff its computed styles against the previous version.
+- **Redirects:** GitHub Pages cannot send 301s. Moved pages are noindex meta-refresh stubs with a canonical: pricing → `/#pricing`, faq → `/#faq`, free-teardown → `/#read`, about → `/#about`, law-firms/law/legal → `/`.
+- **Analytics:** Plausible + `/site-runtime.js` (click and form tracking, adds landing_page/utm fields). Every page needs both.
+- **Form:** Formspree `xbdpddrn`. Notifications do NOT go to alex@loopworker.com (0 ever found there). Check the Formspree dashboard for which inbox receives them.
+- Full page inventory: `_audit/URL_INVENTORY_2026-10-14.csv`.
+
 Static HTML site for LoopWorker — **the Decision Read**: an independent, evidence-backed second opinion on one important business decision. Public evidence investigated, options ranked, every material claim graded high/med/low with its source. Founder-led (Alex Lamb). Fixed price, days not months, money back if not useful.
 
 Positioning pivoted May 21 2026 (DFY brand photography → market intelligence), then Jul 2026 to the current **Decision Read** framing. **The old "Sprint" brand is dead — never reintroduce Sprint / Atlas / Signal Snapshot / Compass / Surface / "Operating System" names.**

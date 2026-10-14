@@ -1,66 +1,40 @@
 # LoopWorker
 
-> LoopWorker delivers the Decision Read: an independent, evidence-backed second opinion on one important business decision. You bring the question; the public evidence is investigated, the options ranked, and every material claim graded high, medium, or low confidence with its source shown. Founder-led by Alex Lamb. Fixed price, days not months, money back if the Read is not useful.
-
-## What it is
-
-A Decision Read answers one important business decision from public evidence: competitor ads, pricing pages, reviews, hiring, and search demand, pulled and graded into a ranked recommendation. It is not an AI report and not a dashboard. Software helps collect the evidence; the judgment, grading, and recommendation are the founder's.
-
-## The four Reads (by the question they answer)
-
-- The Competitor Read: "How did my competitor do that?" A rival's playbook reconstructed from public signals: ads, messaging, pricing, hiring, timing. What to counter, answer, or safely ignore.
-- The Growth Read: "Where should my next dollar go?" Each channel's activity and returns, read against what the market is rewarding.
-- The Pricing Read: "What should I charge?" Competitor prices, buyer tradeoffs, and demand, into ranked price moves with the risk on each.
-- The Market Read: "Is this market worth entering?" Who holds the ground, where demand sits, and what has to be true before committing.
-
-## Pricing (published, fixed)
-
-The four Reads above are the question. The four steps below are the depth. Price and timeline are the spec, never the name.
-
-- The One-Page Read: $750, delivered in 48 hours. One narrow question, pulled deep, on one page. The smallest paid step.
-- The Focused Read: $3,200, delivered in 5 days. One real decision worked through: options compared, ranked recommendation, review call included.
-- The Deep Read: $8,000, delivered in 10 days. Full competitor, customer, pricing, and market investigation, graded throughout. The default for six-figure decisions.
-- The Engagement: $25,000, delivered over 30 days, billed by milestone. The Deep Read plus the operating change that follows it.
-- Systems Retainer: $4,500 per month, ongoing. Monthly market watch, competitor signal refresh, and a running opportunities queue.
-
-Every engagement starts with a sit-down before any research. Every Read carries a 14-day standard: if it does not improve the evidence for your decision, the fee is refunded.
-
-## The One-Page Read
-
-Name one competitor and LoopWorker sends back a Read of their public playbook within 48 hours, graded, with unknowns printed. $750, credited in full against the build that follows. It is the same one-page graded format as the paid Read, at one competitor instead of roughly ten. Start here: https://www.loopworker.com/free-teardown.html
+> LoopWorker provides competitive marketing intelligence, content strategy, and video production for law firms. It studies a firm's public marketing alongside its competitors, finds what deserves attention, and turns the evidence into a focused content plan the firm's team can use. Run personally by founder Alex Lamb.
 
 ## Who it is for
 
-Owner-operators facing a six-figure decision they cannot see clearly from inside: traditional businesses around $5M+ in revenue, PE firms and portfolio companies, corporate and defense law firms, and founders of shipping consumer brands (beauty, apparel, scaled food and CPG) with live ad activity and a decision on the table.
+Marketing decision-makers at established law firms: chief marketing officers, marketing directors, heads of marketing, and managing partners responsible for marketing. Mid-sized and established boutique firms with an existing marketing budget.
 
-## Who it is not for
+## What the Market Read covers
 
-Pre-revenue and pre-launch companies, local single-location businesses, and anyone selling AI services, agency services, or recruiting. The evidence trail those businesses leave in public is too thin to grade honestly.
+All research uses public sources. Competitors' private data, such as ad budgets, conversions, and site traffic, is not visible and is not claimed.
 
-## How it is different
+- Competitive advertising: visible competitor ads, messaging, offers, and landing pages.
+- Social and video content: the firm's public content alongside competitors, and the topics, formats, and people that draw stronger response.
+- Search and editorial: search topics and competitor editorial content, and the questions the market isn't answering well.
+- Competitive movement: public developments such as lateral hires, practice-area expansion, new offices, and positioning shifts.
+- Reviews and website experience: public reviews and visible website issues that make a firm harder to understand or trust.
 
-- Versus strategy consultants: no partners, no pyramid, no slide theater. Founder-led research at a published fixed price, in days, refundable.
-- Versus tools (SEMrush, the Meta Ad Library): tools hand you data. A Read hands you the graded answer for your specific decision. The pull is the evidence; the judgment on top is the product.
-- Versus an AI research report: every material claim carries a confidence grade and a named source, and the gaps are printed as unknowns rather than filled with plausible text.
+## Services and pricing
 
-## How the grading works
+- Free snapshot: free. One relevant, evidence-backed observation about the firm's public marketing or competitive environment, with the source and a practical next step. A sample of the research, not a full analysis.
+- Market Read: $750 one-time. A focused review of the firm's public-facing marketing and up to 3 relevant competitors, with prioritized recommendations and a suggested content direction. The $750 is credited toward the first month of either monthly plan.
+- Intelligence + Content: $4,999 per month. Competitive research update, review of up to 3 agreed competitors, a prioritized editorial calendar, 8 researched content concepts, 8 ready-to-film scripts, recording guidance, creative briefs, one monthly strategy review, and one consolidated revision round. The firm's team films, edits, and publishes.
+- Intelligence + Production: $8,999 per month. Everything in Intelligence + Content, plus editing of up to 8 finished videos a month from footage the firm supplies: up to 90 seconds each, captions, simple branded graphics, one agreed aspect ratio, and up to 2 consolidated revision rounds per video. The firm's team handles on-camera talent, filming, and publishing.
 
-Every material claim in a Read is marked high, medium, or low confidence, and the source behind it is shown. When a claim would need a phone call or private data to confirm, the Read says so and grades it low rather than guessing. Unknowns are printed, not hidden.
+Work beyond the standard scope is quoted and agreed in writing before it starts. LoopWorker does not post to client accounts, and clients keep ownership and control of their accounts. LoopWorker does not guarantee rankings, inquiries, signed matters, or revenue.
 
 ## Key pages
 
-- Home: https://www.loopworker.com/
-- Pricing: https://www.loopworker.com/pricing.html
-- One-Page Read: https://www.loopworker.com/free-teardown.html
-- Sample Read (real, redacted): https://www.loopworker.com/sample-brief.html
-- FAQ: https://www.loopworker.com/faq.html
-- About the founder: https://www.loopworker.com/about.html
-- Reads for law firms: https://www.loopworker.com/law-firms/
-- Reads for beauty brands: https://www.loopworker.com/beauty/
-- Reads for apparel brands: https://www.loopworker.com/apparel/
-- Reads for food and beverage brands: https://www.loopworker.com/food-beverage/
-- Reads for private equity: https://www.loopworker.com/private-equity/
-- Free data report (vitamin C serum ad market): https://www.loopworker.com/reports/vitamin-c-serum-ads/
-- Free data report (functional beverage ad market): https://www.loopworker.com/reports/functional-beverage-ads/
+- Home, services, and pricing: https://www.loopworker.com/
+- Pricing: https://www.loopworker.com/#pricing
+- Free snapshot request: https://www.loopworker.com/#read
+- Sample redacted read for an Am Law 200 firm: https://www.loopworker.com/sample-brief.html
+- Ad-market reports: https://www.loopworker.com/reports/
+- Glossary: https://www.loopworker.com/glossary/
+- Field notes: https://www.loopworker.com/blog/
 
-Contact: alex@loopworker.com
+## Contact
+
+Alex Lamb, founder. alex@loopworker.com

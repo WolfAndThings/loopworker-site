@@ -22,6 +22,8 @@
      {"@type":"Offer","name":"Intelligence + Production","price":"8999","priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","price":"8999","priceCurrency":"USD","unitText":"MONTH"}}]}}
   </script>
   <meta name="theme-color" content="#F2F1EE">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <link rel="preconnect" href="https://plausible.io">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
@@ -132,16 +134,26 @@
     .stat h2 .hot { color: var(--accent); }
     .stat .big { display: block; font-size: clamp(40px, 4.4vw, 64px); font-weight: 800; font-stretch: 112%; letter-spacing: -0.04em; line-height: 1; color: #fff; }
     .stat p { color: rgba(255,255,255,.66); font-size: 16px; margin-top: 14px; max-width: 52ch; }
-    .brands { border-top: 1px solid rgba(255,255,255,.14); padding: 30px 0 36px; display: grid; gap: 18px; }
-    .brands-label { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.5); }
-    .brand-row { display: flex; align-items: center; flex-wrap: wrap; gap: 28px 52px; }
-    .brand-row img { flex: none; opacity: .88; filter: brightness(0) invert(1); }
-    .brand-row .lg-text { flex: none; font-weight: 800; font-stretch: 112%; font-size: 22px; letter-spacing: -0.02em; color: rgba(255,255,255,.9); white-space: nowrap; }
+    .brands { border-top: 1px solid rgba(255,255,255,.14); padding: 30px 0 36px; display: flex; align-items: center; gap: 32px; }
+    .brands-label { flex: none; max-width: 17ch; font-size: 12px; font-weight: 600; letter-spacing: .14em; line-height: 1.5; text-transform: uppercase; color: rgba(255,255,255,.5); }
+    .marquee { flex: 1; display: flex; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+    .track { flex: none; display: flex; align-items: center; gap: 64px; padding-right: 64px; animation: slide 60s linear infinite; }
+    .marquee:hover .track { animation-play-state: paused; }
+    @keyframes slide { to { transform: translateX(-100%); } }
+    .track img { flex: none; opacity: .85; filter: brightness(0) invert(1); }
     .lg-cambria { height: 28px; }
     .lg-arbys { height: 42px; }
     .lg-ruggable { height: 22px; }
+    .lg-wow { height: 42px; }
+    .lg-idtech { height: 34px; }
+    .lg-cann { height: 58px; }
+    .lg-juiced { height: 24px; }
     .lg-pr { height: 24px; }
-    .brands .more { font-size: 14px; color: rgba(255,255,255,.55); }
+    .lg-blennd { height: 28px; }
+    .lg-text { flex: none; font-weight: 800; font-stretch: 112%; font-size: 22px; letter-spacing: -0.02em; color: rgba(255,255,255,.88); white-space: nowrap; }
+    @media (max-width: 600px) { .brands { flex-direction: column; align-items: flex-start; gap: 18px; } .marquee { width: 100%; } .track { gap: 44px; padding-right: 44px; } }
+    @media (prefers-reduced-motion: reduce) { .track { animation: none; flex-wrap: wrap; row-gap: 24px; } .track[aria-hidden] { display: none; } .marquee { -webkit-mask-image: none; mask-image: none; } }
+
 
     section { padding: 128px 0; }
     .head { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 32px; margin-bottom: 56px; }
@@ -323,7 +335,7 @@
       .area h3 { font-size: 22px; }
       .flow { grid-template-columns: 1fr; }
       .flow h3 { font-size: 22px; }
-      .brand-row { gap: 22px 36px; }
+      .brands-label { max-width: none; }
       .read .tool { padding: 24px 18px; }
       form .btn { justify-self: stretch; justify-content: center; }
       summary { font-size: 17px; }
@@ -471,15 +483,42 @@
         </div>
         <div class="brands">
           <span class="brands-label">Work across previous roles, agencies, and independent projects</span>
-          <div class="brand-row">
-            <img src="/images/home/logo_cambria.svg" alt="Cambria" class="lg-cambria" width="140" height="28">
+          <div class="marquee">
+            <div class="track">
+            <img src="/images/home/logo_cambria.svg" alt="Cambria" class="lg-cambria">
             <span class="lg-text">Red Wing</span>
-            <img src="/images/home/logo_arbys.svg" alt="Arby's" class="lg-arbys" width="60" height="42">
+            <img src="/images/home/logo_arbys.svg" alt="Arby's" class="lg-arbys">
+            <img src="/images/home/logo_ruggable.svg" alt="Ruggable" class="lg-ruggable">
+            <img src="/images/home/logo_wow.png" alt="WOW Skin Science" class="lg-wow">
+            <img src="/images/home/logo_idtech_w.png" alt="iD Tech" class="lg-idtech">
+            <img src="/images/home/logo_cann_w.png" alt="Cann" class="lg-cann">
+            <img src="/images/home/logo_juiced.svg" alt="Juiced Bikes" class="lg-juiced">
             <span class="lg-text">NIH</span>
-            <img src="/images/home/logo_ruggable.svg" alt="Ruggable" class="lg-ruggable" width="120" height="22">
-            <img src="/images/home/logo_propertyradar.png" alt="PropertyRadar" class="lg-pr" width="150" height="24">
+            <span class="lg-text">Wondros</span>
+            <img src="/images/home/logo_propertyradar.png" alt="PropertyRadar" class="lg-pr">
+            <img src="/images/home/logo_blennd.svg" alt="Blennd" class="lg-blennd">
+            <span class="lg-text">Levity</span>
+            <span class="lg-text">Videfy</span>
+            <span class="lg-text">Nate's Keto</span>
+            </div>
+            <div class="track" aria-hidden="true">
+            <img src="/images/home/logo_cambria.svg" alt="Cambria" class="lg-cambria">
+            <span class="lg-text">Red Wing</span>
+            <img src="/images/home/logo_arbys.svg" alt="Arby's" class="lg-arbys">
+            <img src="/images/home/logo_ruggable.svg" alt="Ruggable" class="lg-ruggable">
+            <img src="/images/home/logo_wow.png" alt="WOW Skin Science" class="lg-wow">
+            <img src="/images/home/logo_idtech_w.png" alt="iD Tech" class="lg-idtech">
+            <img src="/images/home/logo_cann_w.png" alt="Cann" class="lg-cann">
+            <img src="/images/home/logo_juiced.svg" alt="Juiced Bikes" class="lg-juiced">
+            <span class="lg-text">NIH</span>
+            <span class="lg-text">Wondros</span>
+            <img src="/images/home/logo_propertyradar.png" alt="PropertyRadar" class="lg-pr">
+            <img src="/images/home/logo_blennd.svg" alt="Blennd" class="lg-blennd">
+            <span class="lg-text">Levity</span>
+            <span class="lg-text">Videfy</span>
+            <span class="lg-text">Nate's Keto</span>
+            </div>
           </div>
-          <p class="more">Also: WOW Skin Science, iD Tech, Cann, Juiced Bikes, Wondros, Blennd, Levity, Videfy, Nate's Keto.</p>
         </div>
       </div>
     </div>
@@ -808,7 +847,7 @@
             <h3>Your request is in.</h3>
             <p>Thanks for sending your firm. I'll review the information and follow up using the email you provided.</p>
           </div>
-          <p class="tool-note">I read every request myself. Your details go to my inbox through Formspree and are used only to reply to you.</p>
+          <p class="tool-note">I read every request myself. Your details go to my inbox through Formspree. See the <a href="/privacy.html">privacy policy</a>.</p>
         </div>
       </div>
     </section>
@@ -992,16 +1031,17 @@
         if (!okS) { site.focus(); return; }
         site.value = okS;
         sending = true; btn.disabled = true; btn.textContent = 'Sending…'; status.textContent = ''; status.classList.remove('bad');
-        fetch(f.action, { method: 'POST', body: new FormData(f), headers: { Accept: 'application/json' } })
-          .then(function (r) { return r.json().catch(function () { return {}; }).then(function (d) { return { ok: r.ok, d: d }; }); })
-          .then(function (res) {
-            if (!res.ok) throw new Error((res.d && res.d.errors && res.d.errors.map(function (x) { return x.message; }).join(' ')) || 'Send failed');
-            f.hidden = true; done.hidden = false; done.focus();
-          })
+        // Send in the page. If that fails or stalls (for example a spam check on Formspree's side),
+        // fall back to a normal form post, which shows Formspree's own page and then the thank-you page.
+        var fallback = function () { HTMLFormElement.prototype.submit.call(f); };
+        var ctl = window.AbortController ? new AbortController() : null;
+        var timer = setTimeout(function () { if (ctl) ctl.abort(); }, 10000);
+        fetch(f.action, { method: 'POST', body: new FormData(f), headers: { Accept: 'application/json' }, signal: ctl ? ctl.signal : undefined })
+          .then(function (r) { clearTimeout(timer); if (!r.ok) throw new Error('Send failed ' + r.status); f.hidden = true; done.hidden = false; done.focus(); })
           .catch(function () {
-            sending = false; btn.disabled = false; btn.textContent = 'Get a free snapshot';
-            status.classList.add('bad');
-            status.innerHTML = 'That didn’t send. Try again, or email <a href="mailto:alex@loopworker.com">alex@loopworker.com</a>.';
+            clearTimeout(timer);
+            status.textContent = 'Still sending. One moment\u2026';
+            fallback();
           });
       });
     })();
@@ -1188,5 +1228,6 @@
       io.observe(hero); io.observe(read);
     })();
   </script>
+  <script defer src="/site-runtime.js"></script>
 </body>
 </html>
