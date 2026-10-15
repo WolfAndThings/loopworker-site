@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site-pages.css">
+  <link rel="stylesheet" href="/v5-system.css">
+  <style>
+    body { background: var(--bg) !important; color: var(--text-2) !important; font-family: var(--sans) !important; }
+    .sig-article { max-width: 760px; margin: 0 auto; padding: 7rem 1.25rem 4rem; position: relative; }
+    .sig-article h1 { font-family: var(--sans-tight) !important; font-size: clamp(2rem, 4.4vw, 3rem) !important; font-weight: 800 !important; letter-spacing: -0.03em !important; line-height: 1.08 !important; color: var(--text) !important; margin: 0 0 1.1rem !important; }
+    .sig-article h2 { font-family: var(--sans-tight) !important; font-size: clamp(1.35rem, 2.4vw, 1.7rem) !important; font-weight: 700 !important; letter-spacing: -0.02em !important; color: var(--text) !important; margin: 2.4rem 0 0.9rem !important; }
+    .sig-article p, .sig-article li { color: var(--text-2) !important; font-size: 1.05rem !important; line-height: 1.7 !important; }
+    .sig-article p { margin: 0 0 1rem !important; }
+    .sig-article a { color: var(--indigo-bright); border-bottom: 1px solid rgba(227,164,74,0.35); text-decoration: none; }
+    .sig-article strong { color: var(--text); }
+    .sig-article ul { padding-left: 1.3rem; margin: 0 0 1.2rem; }
+    .sig-article li { margin-bottom: 0.45rem; }
+    .article-tag { display:inline-block; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--indigo-bright); margin-bottom: 1rem; }
+    .article-dek { font-size: 1.15rem !important; color: var(--text-2) !important; }
+    .article-meta { font-family: var(--mono); font-size: 0.75rem; color: var(--text-3); margin: 0 0 2rem; }
+    .quick-answer { border-left: 3px solid var(--indigo-bright); background: rgba(227,164,74,0.06); padding: 1.1rem 1.3rem; margin: 0 0 2rem; border-radius: 0 6px 6px 0; }
+    .quick-answer .qa-label, .key-takeaways .qa-label { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.5rem; display:block; }
+    .quick-answer p { margin: 0 !important; color: var(--text) !important; }
+    .key-takeaways { border: 1px solid var(--border); background: var(--surface); border-radius: 8px; padding: 1.2rem 1.4rem 0.6rem; margin: 0 0 2.4rem; }
+    .data-figure { margin: 2rem 0; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; background: var(--surface); }
+    .data-figure svg { width: 100%; height: auto; display: block; }
+    .data-figure figcaption { font-family: var(--mono); font-size: 0.74rem; color: var(--text-3); margin-top: 0.6rem; line-height: 1.5; }
+    .num-table { width: 100%; border-collapse: collapse; margin: 1.4rem 0 2rem; font-size: 0.95rem; }
+    .num-table th, .num-table td { text-align: left; padding: 0.55rem 0.6rem; border-bottom: 1px solid var(--border); color: var(--text-2); vertical-align: top; }
+    .num-table th { color: var(--text-3); font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+    .num-table td.n { font-family: var(--mono); color: var(--text); white-space: nowrap; }
+    .bar-row { display: grid; grid-template-columns: minmax(0, 11rem) 1fr auto; gap: 0.6rem; align-items: center; margin: 0.45rem 0; font-size: 0.9rem; }
+    .bar-row .bar { height: 10px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+    .bar-row .bar span { display: block; height: 100%; background: var(--indigo-bright); }
+    .bar-row .v { font-family: var(--mono); color: var(--text); font-size: 0.85rem; }
+    .faq details { border-bottom: 1px solid var(--border); padding: 0.9rem 0; }
+    .faq summary { cursor: pointer; color: var(--text); font-weight: 600; font-size: 1.05rem; }
+    .faq details p { margin: 0.7rem 0 0 !important; }
+    .method-note, .caveat { font-size: 0.92rem !important; color: var(--text-3) !important; }
+    .method-note { border-top: 1px solid var(--border); padding-top: 1.4rem; margin-top: 2.6rem !important; }
+    .post-cta { border: 1px solid var(--border); border-radius: 8px; padding: 1.4rem; margin: 2.6rem 0 1rem; background: var(--surface); }
+    .post-cta h2 { margin-top: 0 !important; }
+    .post-cta .cta-row { display:flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.8rem; }
+    .post-cta .cta-row a { border-bottom: 0; }
+    @media (max-width: 560px) { .bar-row { grid-template-columns: 1fr auto; } .bar-row .bar { grid-column: 1 / -1; grid-row: 2; } }
+    .moves-table td a { border-bottom: 0; }
+    .moves-table td.d { font-family: var(--mono); font-size: 0.8rem; color: var(--text-3); white-space: nowrap; }
+    .table-wrap { overflow-x: auto; margin: 1.4rem 0 2rem; }
+    .table-wrap .num-table { margin: 0; min-width: 560px; }
+  </style>
+  <title>New York led law firm lateral moves this week | LoopWorker</title>
+  <meta name="description" content="New York drew 5 of 15 reported law firm moves from 2026-10-09 to 2026-10-15, with Haynes Boone, McDermott Will &amp; Schulte and Mayer Brown among the hires.">
+  <meta name="author" content="Alex Lamb">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <link rel="canonical" href="https://www.loopworker.com/blog/new-york-leads-law-firm-lateral-moves.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.loopworker.com/blog/new-york-leads-law-firm-lateral-moves.html">
+  <meta property="og:title" content="New York led law firm lateral moves this week">
+  <meta property="og:description" content="New York drew 5 of 15 reported law firm moves from 2026-10-09 to 2026-10-15, with Haynes Boone, McDermott Will &amp; Schulte and Mayer Brown among the hires.">
+  <meta property="og:image" content="https://www.loopworker.com/images/loopworker-og.png">
+  <meta property="article:published_time" content="2026-10-15">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.loopworker.com/#organization",
+   "name": "LoopWorker",
+   "url": "https://www.loopworker.com/"
+  },
+  {
+   "@type": "Article",
+   "headline": "New York drew the most reported law firm moves this week",
+   "description": "New York drew 5 of 15 reported law firm moves from 2026-10-09 to 2026-10-15, with Haynes Boone, McDermott Will & Schulte and Mayer Brown among the hires.",
+   "url": "https://www.loopworker.com/blog/new-york-leads-law-firm-lateral-moves.html",
+   "datePublished": "2026-10-15",
+   "dateModified": "2026-10-15",
+   "author": {
+    "@type": "Person",
+    "name": "Alex Lamb"
+   },
+   "publisher": {
+    "@id": "https://www.loopworker.com/#organization"
+   },
+   "mainEntityOfPage": "https://www.loopworker.com/blog/new-york-leads-law-firm-lateral-moves.html",
+   "image": "https://www.loopworker.com/images/loopworker-og.png"
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Which city had the most reported moves?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "New York, with 5 of the 15 reported moves. Houston, Washington, DC and Miami each had 2. Every New York move was a lateral hire."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Were there any mergers in the window?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The count shows 0 mergers between 2026-10-09 and 2026-10-15. The 15 moves were 11 laterals, 3 group moves and 1 office opening."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Which firm gained and lost people in the same window?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Tyson & Mendes. It opened an Austin office with 3 lawyers from Chartwell Law Offices and lost a former prosecutor to Thompson Coburn in New York. It is the only firm on both lists."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does this include every move that happened?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. It counts moves that public news feeds reported in the window. Moves nobody announced are not here."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.loopworker.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Signals",
+     "item": "https://www.loopworker.com/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "New York drew the most reported law firm moves this week",
+     "item": "https://www.loopworker.com/blog/new-york-leads-law-firm-lateral-moves.html"
+    }
+   ]
+  }
+ ]
+}
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav class="v5-nav">
+    <div class="v5-nav-inner">
+      <a href="/" class="v5-logo">
+        <span class="v5-logo-mark">L</span>
+        LoopWorker
+      </a>
+      <div class="v5-nav-links">
+        <a href="/#pricing">Pricing</a>
+
+        <a href="/resources/field-manual.html">Field manual</a>
+        <a href="/#how">Example read</a>
+        <a href="/blog/" class="active">Signals</a>
+        <a href="/#about">About</a>
+        <a href="/#read" class="v5-nav-cta">Free snapshot</a>
+      </div>
+      <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="v5-mobile-nav" id="mobileNav">
+      <a href="/#pricing">Pricing</a>
+
+      <a href="/resources/field-manual.html">Field manual</a>
+      <a href="/#how">Example read</a>
+      <a href="/blog/">Signals</a>
+      <a href="/#about">About</a>
+      <a href="/#read" class="v5-nav-cta">Free snapshot</a>
+    </div>
+  </nav>
+  <main id="main">
+  <article class="sig-article">
+    <span class="article-tag">Market moves</span>
+    <h1>New York drew the most reported law firm moves this week</h1>
+    <p class="article-dek">Public law news reported 15 moves from 2026-10-09 to 2026-10-15. New York had 5 of them, every one a lateral hire, in fund finance, real estate, real estate finance and capital markets.</p>
+    <p class="article-meta">October 15, 2026 · Alex Lamb</p>
+    <div class="quick-answer"><span class="qa-label">Quick answer</span><p>New York led the window with 5 of 15 reported moves, and every New York move was a lateral hire. Hogan Lovells Cadwalader, Haynes Boone, Thompson Coburn, McDermott Will &amp; Schulte and Mayer Brown were the gaining firms there.</p></div>
+    <div class="key-takeaways"><span class="qa-label">Key takeaways</span><ul><li>New York had 5 of 15 reported moves, more than any other metro.</li><li>Every New York move was a lateral hire, with fund finance, real estate, real estate finance and capital markets named.</li><li>Skadden Arps Slate Meagher &amp; Flom added 5 DLA Piper mass torts lawyers in Chicago.</li><li>Tyson &amp; Mendes opened in Austin and lost a lawyer to Thompson Coburn in the same window.</li><li>The window had 0 mergers and 1 office opening.</li></ul></div>
+    <h2>Where the moves clustered</h2>
+    <p>Public law news reported 15 moves between 2026-10-09 and 2026-10-15. Of those, 11 were laterals, 3 were group moves and 1 was an office opening. There were 0 mergers.</p>
+    <p>I sorted the list by city. New York had 5 of the 15. No other metro had more than 2. Houston, Washington, DC and Miami each had 2.</p>
+    <p>Every New York move was a lateral hire. None was a group move or an office opening. The New York side of the window was individual arrivals, firm by firm.</p>
+    <table class="num-table"><tbody>
+        <tr><td>Moves reported</td><td class="n">15</td></tr>
+        <tr><td>Individual laterals</td><td class="n">11</td></tr>
+        <tr><td>Group moves</td><td class="n">3</td></tr>
+        <tr><td>Office openings</td><td class="n">1</td></tr>
+        <tr><td>Mergers</td><td class="n">0</td></tr>
+      </tbody></table>
+    <table class="num-table"><thead><tr><th>Firm adding people</th><th>Moves</th></tr></thead><tbody><tr><td>Sorrels Law</td><td class="n">1</td></tr><tr><td>Sidley Austin</td><td class="n">1</td></tr><tr><td>Jones Walker</td><td class="n">1</td></tr><tr><td>Hogan Lovells Cadwalader</td><td class="n">1</td></tr><tr><td>Haynes Boone</td><td class="n">1</td></tr><tr><td>Clark Hill PLC</td><td class="n">1</td></tr></tbody></table><table class="num-table"><thead><tr><th>City</th><th>Moves</th></tr></thead><tbody><tr><td>New York</td><td class="n">5</td></tr><tr><td>Houston</td><td class="n">2</td></tr><tr><td>Washington, DC</td><td class="n">2</td></tr><tr><td>Miami</td><td class="n">2</td></tr><tr><td>Pittsburgh</td><td class="n">1</td></tr><tr><td>Austin</td><td class="n">1</td></tr></tbody></table>
+    <h2>The New York hires, firm by firm</h2>
+    <p>Hogan Lovells Cadwalader added a fund finance lawyer. Haynes Boone added a real estate lawyer from Loeb &amp; Loeb. McDermott Will &amp; Schulte hired Paul K. Kovachev, a real estate finance lawyer from Greenberg Traurig, for its New York office.</p>
+    <p>Mayer Brown added a former CFTC senior counsel in capital markets. Thompson Coburn hired a former prosecutor from Tyson &amp; Mendes.</p>
+    <p>The practices named in New York were fund finance, real estate, real estate finance and capital markets. Loeb &amp; Loeb and Greenberg Traurig each lost a real estate lawyer to a rival hiring in New York.</p>
+    <h2>Group moves and a new office elsewhere</h2>
+    <p>The group moves all happened outside New York. Skadden Arps Slate Meagher &amp; Flom added 5 mass torts and products liability litigation lawyers from DLA Piper to its Chicago office. Clark Hill PLC expanded in Pittsburgh with an estate planning group from Strassburger McKenna Gutnick &amp; Gefsky. Sorrels Law added 2 Houston litigators from solo firms.</p>
+    <p>Tyson &amp; Mendes opened an Austin office and added 3 lawyers from Chartwell Law Offices. In the same window, Tyson &amp; Mendes lost a former prosecutor to Thompson Coburn. It is the only firm on both the gaining and losing lists.</p>
+    <h2>The rest of the map</h2>
+    <p>In Washington, DC, Sidley Austin hired a Treasury official as a litigation partner. Dentons added a K&amp;L Gates lawyer to its Healthcare practice there.</p>
+    <p>In Miami, Jones Walker added a maritime lawyer from Maltzman &amp; Partners PA. Nelson Mullins Riley &amp; Scarborough added an international tax, estate planning and private wealth lawyer from Berger Singerman.</p>
+    <p>In Houston, Bissinger Oshman Williams &amp; Strasburger added a litigation and trial lawyer. In Denver, Berry Appleman &amp; Leiden brought in an immigration lawyer from Ogletree Deakins Nash Smoak &amp; Stewart PC to lead the office. By practice, litigation led with 2 moves.</p>
+    <h2>What it means if you compete in New York</h2>
+    <p>If your firm competes for real estate or finance work in New York, the field shifted this week. Haynes Boone, McDermott Will &amp; Schulte, Hogan Lovells Cadwalader and Mayer Brown each have a new arrival in those practices to put in front of the market.</p>
+    <p>A lateral arrival is the moment a firm&#x27;s marketing team has the most to announce. The rival&#x27;s news, bio and practice page go live while the hire is fresh. Your own practice pages sit next to that news in the same searches and the same inboxes.</p>
+    <p>For Loeb &amp; Loeb and Greenberg Traurig, the same week is a departure. Any firm in that position has a practice page that now describes a team that changed.</p>
+    <p>This is a count of reported moves only. It shows what public law news carried in 7 days.</p>
+    <h2>Every move in the count</h2>
+    <div class="table-wrap"><table class="num-table moves-table">
+      <thead><tr><th>Date</th><th>Type</th><th>Firm</th><th>From</th><th>Practice</th><th>City</th><th>Source</th></tr></thead>
+      <tbody>
+<tr><td class="d">10-14</td><td>Group</td><td>Sorrels Law</td><td></td><td>litigation</td><td>Houston</td><td><a href="https://www.law360.com/pulse/texas-pulse/articles/2537593?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse Texas</a></td></tr>
+<tr><td class="d">10-14</td><td>Lateral</td><td>Sidley Austin</td><td></td><td>litigation</td><td>Washington, DC</td><td><a href="https://www.law360.com/pulse/dc-pulse/articles/2537717?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse DC</a></td></tr>
+<tr><td class="d">10-14</td><td>Lateral</td><td>Jones Walker</td><td>Maltzman &amp; Partners PA</td><td>maritime</td><td>Miami</td><td><a href="https://www.law360.com/pulse/mid-law/articles/2537304?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse Mid-Law</a></td></tr>
+<tr><td class="d">10-14</td><td>Lateral</td><td>Hogan Lovells Cadwalader</td><td></td><td>fund finance</td><td>New York</td><td><a href="https://www.law360.com/privateequity/articles/2537842?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Private Equity</a></td></tr>
+<tr><td class="d">10-14</td><td>Lateral</td><td>Haynes Boone</td><td>Loeb &amp; Loeb</td><td>real estate</td><td>New York</td><td><a href="https://www.law360.com/legalindustry/articles/2537340?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Legal Industry</a></td></tr>
+<tr><td class="d">10-14</td><td>Group</td><td>Clark Hill PLC</td><td>Strassburger McKenna Gutnick &amp; Gefsky</td><td>estate planning</td><td>Pittsburgh</td><td><a href="https://www.law360.com/pulse/pennsylvania-pulse/articles/2537844?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse Pennsylvania</a></td></tr>
+<tr><td class="d">10-13</td><td>Office</td><td>Tyson &amp; Mendes</td><td>Chartwell Law Offices</td><td></td><td>Austin</td><td><a href="https://www.law360.com/pulse/mid-law/articles/2537127?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse Mid-Law</a></td></tr>
+<tr><td class="d">10-13</td><td>Lateral</td><td>Thompson Coburn</td><td>Tyson &amp; Mendes</td><td></td><td>New York</td><td><a href="https://www.law360.com/pulse/mid-law/articles/2537316?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse Mid-Law</a></td></tr>
+<tr><td class="d">10-13</td><td>Group</td><td>Skadden Arps Slate Meagher &amp; Flom</td><td>DLA Piper</td><td>mass torts and products liability litigation</td><td>Chicago</td><td><a href="https://www.law360.com/legalindustry/articles/2537318?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Legal Industry</a></td></tr>
+<tr><td class="d">10-13</td><td>Lateral</td><td>Nelson Mullins Riley &amp; Scarborough</td><td>Berger Singerman</td><td>international tax, estate planning and private wealth</td><td>Miami</td><td><a href="https://www.law360.com/pulse/florida-pulse/articles/2537132?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse Florida</a></td></tr>
+<tr><td class="d">10-13</td><td>Lateral</td><td>McDermott Will &amp; Schulte</td><td>Greenberg Traurig</td><td>real estate finance</td><td>New York</td><td><a href="https://www.law360.com/privateequity/articles/2537151?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Private Equity</a></td></tr>
+<tr><td class="d">10-13</td><td>Lateral</td><td>Mayer Brown</td><td></td><td>capital markets</td><td>New York</td><td><a href="https://www.law360.com/pulse/new-york-pulse/articles/2537140?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse NY</a></td></tr>
+<tr><td class="d">10-13</td><td>Lateral</td><td>Dentons</td><td>K&amp;L Gates</td><td>Healthcare</td><td>Washington, DC</td><td><a href="https://www.law360.com/pulse/dc-pulse/articles/2537146?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse DC</a></td></tr>
+<tr><td class="d">10-09</td><td>Lateral</td><td>Bissinger Oshman Williams &amp; Strasburger</td><td></td><td>litigation and trial</td><td>Houston</td><td><a href="https://www.law360.com/pulse/texas-pulse/articles/2536356?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse Texas</a></td></tr>
+<tr><td class="d">10-09</td><td>Lateral</td><td>Berry Appleman &amp; Leiden</td><td>Ogletree Deakins Nash Smoak &amp; Stewart PC</td><td>immigration</td><td>Denver</td><td><a href="https://www.law360.com/pulse/mid-law/articles/2535331?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse Mid-Law</a></td></tr>
+      </tbody></table></div>
+    <section class="faq">
+    <h2>Frequently asked questions</h2>
+    <details><summary>Which city had the most reported moves?</summary><p>New York, with 5 of the 15 reported moves. Houston, Washington, DC and Miami each had 2. Every New York move was a lateral hire.</p></details>
+    <details><summary>Were there any mergers in the window?</summary><p>No. The count shows 0 mergers between 2026-10-09 and 2026-10-15. The 15 moves were 11 laterals, 3 group moves and 1 office opening.</p></details>
+    <details><summary>Which firm gained and lost people in the same window?</summary><p>Tyson &amp; Mendes. It opened an Austin office with 3 lawyers from Chartwell Law Offices and lost a former prosecutor to Thompson Coburn in New York. It is the only firm on both lists.</p></details>
+    <details><summary>Does this include every move that happened?</summary><p>No. It counts moves that public news feeds reported in the window. Moves nobody announced are not here.</p></details>
+    </section>
+    <div class="post-cta">
+      <h2>See where your firm stands</h2>
+      <p>A free snapshot gives you one evidence-backed observation about your firm's public marketing, with the source and a practical next step.</p>
+      <p>Want the full picture against up to 3 competitors? The <a href="/#pricing">$750 Market Read</a> covers it, credited toward your first month.</p>
+      <div class="cta-row"><a href="/#read" class="btn btn-primary">Get a free snapshot</a><a href="/blog/" class="btn btn-outline">More signals</a></div>
+    </div>
+    <p class="method-note">Method: law firm news headlines from 35 public RSS feeds, captured daily, October 9, 2026 to October 15, 2026. Firm, practice and city are read from each headline and summary; a field the text does not state is left blank. The same move reported twice is counted once. US moves only.</p>
+    <p class="caveat">This counts moves that public news feeds reported in the window. Moves nobody announced are not here.</p>
+  </article>
+  </main>
+  <footer class="v5-foot">
+    <div class="v5-foot-inner">
+      <div class="v5-foot-logo">LoopWorker</div>
+      <p>Evidence before execution.</p>
+      <p>© 2026 · <a href="/#pricing">Pricing</a> · <a href="/#how">Example read</a> · <a href="/blog/">Signals</a> · <a href="/#about">About</a></p>
+      <p class="v5-foot-small">alex@loopworker.com · <a href="https://instagram.com/loopworker">@loopworker</a></p>
+    </div>
+  </footer>
+  <script defer src="/site-pages.js"></script>
+  <script defer src="/site-runtime.js"></script>
+</body>
+</html>
