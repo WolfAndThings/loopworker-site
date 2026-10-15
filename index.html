@@ -413,6 +413,9 @@
       .demo-dots { display: none; }
       .demo-note { position: static; margin-top: 32px; }
     }
+    /* highlighter: hard-coded yellow, no :root var (keeps the locked section's computed styles identical) */
+    .hl { background-image: linear-gradient(100deg, rgba(255,226,61,0) .5%, #FFE23D 2%, #FFE85A 97%, rgba(255,226,61,0) 99.5%); background-repeat: no-repeat; background-size: 100% 72%; background-position: 0 85%; padding: 0 .1em; margin: 0 -.05em; -webkit-box-decoration-break: clone; box-decoration-break: clone; color: var(--ink); }
+    .proof .hl, .read .hl { background-size: 100% 100%; background-position: 0 50%; color: #0B0B0B; }
     /* motion: all of it switches off under reduced motion */
     @media (prefers-reduced-motion: no-preference) {
       .hero h1 .w { display: inline-block; opacity: 0; transform: translateY(.5em); animation: rise 1s var(--ease) forwards; animation-delay: calc(.2s + var(--i) * 70ms); }
@@ -422,6 +425,12 @@
       @keyframes fade { to { opacity: 1; } }
       .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: calc(var(--i, 0) * 80ms); }
       .js .reveal.in { opacity: 1; transform: none; }
+      .js .reveal .hl { background-size: 0% 72%; transition: background-size .9s cubic-bezier(.3,.7,.2,1); transition-delay: calc(.5s + var(--i, 0) * 80ms); }
+      .js .reveal.in .hl { background-size: 100% 72%; }
+      .js .proof .reveal .hl, .js .read .reveal .hl { background-size: 0% 100%; color: inherit; transition: background-size .9s cubic-bezier(.3,.7,.2,1), color .3s ease; transition-delay: calc(.5s + var(--i, 0) * 80ms), calc(.75s + var(--i, 0) * 80ms); }
+      .js .proof .reveal.in .hl, .js .read .reveal.in .hl { background-size: 100% 100%; color: #0B0B0B; }
+      .hero .hl { animation: hlsweep 1s cubic-bezier(.3,.7,.2,1) 1.7s both; }
+      @keyframes hlsweep { from { background-size: 0% 72%; } to { background-size: 100% 72%; } }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
@@ -456,7 +465,7 @@
         <h1><span class="w" style="--i:0">Your</span> <span class="w" style="--i:1">competitors</span> <span class="w" style="--i:2">are</span> <span class="w" style="--i:3">showing</span> <span class="w" style="--i:4">you</span> <span class="w" style="--i:5">what's</span> <span class="w" style="--i:6">working.</span> <em><span style="white-space:nowrap"><span class="w" style="--i:7">Use</span> <span class="w" style="--i:8">it.</span></span></em></h1>
         <div class="hero-foot">
           <div class="copy">
-            <p>Your rivals' videos, ads, reviews and hires are public. I read them and tell you what to make next.</p>
+            <p>Your rivals' videos, ads, reviews and hires are public. I read them and tell you <span class="hl">what to make next</span>.</p>
           </div>
           <div class="hero-cta">
             <div class="row">
@@ -474,7 +483,7 @@
         <div class="proof-grid">
           <div class="stat reveal">
             <h2>From <span class="hot">$250K</span> to <span class="hot">$<span class="count" data-from="250" data-to="74">74</span>K</span> in quarterly ad spend.</h2>
-            <p>At Cambria, I worked alongside the in-house team on research-informed content strategy and production. Over that period, quarterly ad spending decreased from approximately $250,000 to $74,000 while engagement increased.</p>
+            <p>At Cambria, I worked alongside the in-house team on research-informed content strategy and production. Over that period, quarterly ad spending decreased from approximately $250,000 to $74,000 while <span class="hl">engagement increased</span>.</p>
           </div>
           <div class="stat reveal">
             <span class="big">14 years</span>
@@ -570,9 +579,9 @@
       <div class="wrap bridge-grid">
         <h2 class="reveal">The point isn't more data. It's knowing what to do next.</h2>
         <div class="bridge-copy">
-          <p class="reveal">A competitor's successful post is a clue, not a strategy.</p>
+          <p class="reveal">A competitor's successful post is <span class="hl">a clue, not a strategy</span>.</p>
           <p class="reveal">LoopWorker looks for patterns across the market, checks whether they're relevant to your firm, and turns the strongest opportunities into content ideas, messaging, scripts, and practical next steps.</p>
-          <p class="reveal">The goal isn't to copy competitors. It's to make better decisions about where your team's time and budget go.</p>
+          <p class="reveal">The goal isn't to copy competitors. It's to make <span class="hl">better decisions</span> about where your team's time and budget go.</p>
           <p class="line reveal">Find the opportunity. Build the plan. <span>Test what works.</span></p>
         </div>
       </div>
@@ -590,8 +599,8 @@
           <div class="area reveal">
             <div><span class="cat">Competitive advertising</span><h3>See what competitors are putting money behind.</h3></div>
             <div>
-              <p><span class="lbl">What gets examined</span>Review visible competitor advertising activity, creative messaging, offers, and landing pages to understand how rival firms position themselves and compete for attention. Built from public ad libraries and search results. Competitors' budgets, conversions, and returns are private and not claimed.</p>
-              <p class="past"><span class="lbl">From a past read</span>Every rival was buying search ads, the most expensive channel in the field.</p>
+              <p><span class="lbl">What gets examined</span>Review <span class="hl">visible competitor advertising</span> activity, creative messaging, offers, and landing pages to understand how rival firms position themselves and compete for attention. Built from public ad libraries and search results. Competitors' budgets, conversions, and returns are private and not claimed.</p>
+              <p class="past"><span class="lbl">From a past read</span>Every rival was <span class="hl">buying search ads</span>, the most expensive channel in the field.</p>
             </div>
             <div>
               <span class="lbl">You receive</span>
@@ -606,7 +615,7 @@
           <div class="area reveal">
             <div><span class="cat">Social and video content</span><h3>Find the content people actually respond to.</h3></div>
             <div>
-              <p><span class="lbl">What gets examined</span>Examine your firm's public content alongside relevant competitors. Identify the topics, formats, people, and messaging patterns associated with stronger audience response. Views show attention, not business value. They are one signal among several.</p>
+              <p><span class="lbl">What gets examined</span>Examine your firm's public content alongside relevant competitors. Identify the topics, formats, people, and messaging patterns associated with <span class="hl">stronger audience response</span>. Views show attention, not business value. They are one signal among several.</p>
             </div>
             <div>
               <span class="lbl">You receive</span>
@@ -621,8 +630,8 @@
           <div class="area reveal">
             <div><span class="cat">Search and editorial</span><h3>Find the questions your market isn't answering well.</h3></div>
             <div>
-              <p><span class="lbl">What gets examined</span>Review relevant search topics, competitor editorial content, and visible gaps in the market to identify useful subjects your firm could address. No specific Google rankings are promised.</p>
-              <p class="past"><span class="lbl">From a past read</span>A top-50 rival hadn't touched its blog since 2019.</p>
+              <p><span class="lbl">What gets examined</span>Review relevant search topics, competitor editorial content, and <span class="hl">visible gaps in the market</span> to identify useful subjects your firm could address. No specific Google rankings are promised.</p>
+              <p class="past"><span class="lbl">From a past read</span>A top-50 rival <span class="hl">hadn't touched its blog since 2019</span>.</p>
             </div>
             <div>
               <span class="lbl">You receive</span>
@@ -637,7 +646,7 @@
           <div class="area reveal">
             <div><span class="cat">Competitive movement</span><h3>Understand where your competitors are heading.</h3></div>
             <div>
-              <p><span class="lbl">What gets examined</span>Examine relevant public developments such as lateral hires, practice-area expansion, new offices, partnerships, and shifts in market positioning.</p>
+              <p><span class="lbl">What gets examined</span>Examine relevant public developments such as <span class="hl">lateral hires, practice-area expansion, new offices</span>, partnerships, and shifts in market positioning.</p>
             </div>
             <div>
               <span class="lbl">You receive</span>
@@ -652,8 +661,8 @@
           <div class="area reveal">
             <div><span class="cat">Reviews and website experience</span><h3>Fix the gaps prospects can already see.</h3></div>
             <div>
-              <p><span class="lbl">What gets examined</span>Examine public reviews, visible website issues, messaging consistency, and problems that may make it harder for prospective clients to understand or trust the firm. Uses what's publicly visible. Visitor behavior needs your analytics, shared with permission.</p>
-              <p class="past"><span class="lbl">From a past read</span>The firm's own site hid its Google rating and linked to an empty YouTube channel.</p>
+              <p><span class="lbl">What gets examined</span>Examine <span class="hl">public reviews, visible website issues</span>, messaging consistency, and problems that may make it harder for prospective clients to understand or trust the firm. Uses what's publicly visible. Visitor behavior needs your analytics, shared with permission.</p>
+              <p class="past"><span class="lbl">From a past read</span>The firm's own site <span class="hl">hid its Google rating</span> and linked to an empty YouTube channel.</p>
             </div>
             <div>
               <span class="lbl">You receive</span>
@@ -679,9 +688,9 @@
           </div>
         </div>
         <ol class="flow">
-          <li class="reveal"><span class="n">Step 01</span><h3>Read the market</h3><p>I examine the firm's public marketing alongside relevant competitors, looking for patterns, weaknesses, and opportunities that deserve a closer look.</p></li>
-          <li class="reveal"><span class="n">Step 02</span><h3>Decide what matters</h3><p>I separate meaningful opportunities from interesting numbers and prioritize recommendations according to relevance, effort, and likely business value.</p></li>
-          <li class="reveal"><span class="n">Step 03</span><h3>Build the content plan</h3><p>I turn the findings into specific topics, messaging, scripts, creative direction, and production requirements based on the agreed scope.</p></li>
+          <li class="reveal"><span class="n">Step 01</span><h3>Read the market</h3><p>I examine the firm's public marketing alongside relevant competitors, looking for <span class="hl">patterns, weaknesses, and opportunities</span> that deserve a closer look.</p></li>
+          <li class="reveal"><span class="n">Step 02</span><h3>Decide what matters</h3><p>I separate <span class="hl">meaningful opportunities</span> from interesting numbers and prioritize recommendations according to relevance, effort, and likely business value.</p></li>
+          <li class="reveal"><span class="n">Step 03</span><h3>Build the content plan</h3><p>I turn the findings into <span class="hl">specific topics, messaging, scripts</span>, creative direction, and production requirements based on the agreed scope.</p></li>
           <li class="reveal"><span class="n">Step 04</span><h3>Review and improve</h3><p>Your team publishes the content. Available performance results and new market developments inform the next cycle.</p></li>
         </ol>
         <ul class="terms-list">
@@ -702,7 +711,7 @@
           <p class="reveal">I'm the founder of LoopWorker.</p>
           <p class="reveal">I've spent more than a decade producing and shaping marketing content across consumer brands, technology, healthcare, and professional organizations. My background includes content strategy at Cambria, production work at Wondros, and creative projects involving organizations from Arby's to the National Institutes of Health.</p>
           <p class="reveal">I built LoopWorker around a simple belief: the best content decisions start with understanding what the market is already telling you.</p>
-          <p class="reveal"><strong>I handle the research, strategy, and creative direction personally.</strong> No rotating account manager. No handoff between the person selling the work and the person responsible for it.</p>
+          <p class="reveal"><strong>I handle the research, strategy, and creative direction personally.</strong> <span class="hl">No rotating account manager.</span> No handoff between the person selling the work and the person responsible for it.</p>
           <div class="sig reveal">Alex Lamb<span>Founder, LoopWorker</span></div>
         </div>
       </div>
@@ -810,7 +819,7 @@
         <div>
           <h2 class="reveal">See one thing your firm could be missing.</h2>
           <p class="lead reveal">I'll review your firm's public-facing marketing and identify one relevant observation from your competitive environment.</p>
-          <p class="lead reveal">You'll receive the evidence, the source, and a practical next step.</p>
+          <p class="lead reveal">You'll receive <span class="hl">the evidence, the source, and a practical next step</span>.</p>
           <p class="assure reveal">No account access required. No obligation to buy.</p>
         </div>
         <div class="tool">
