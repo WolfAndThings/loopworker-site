@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site-pages.css">
+  <link rel="stylesheet" href="/v5-system.css">
+  <style>
+    body { background: var(--bg) !important; color: var(--text-2) !important; font-family: var(--sans) !important; }
+    .sig-article { max-width: 760px; margin: 0 auto; padding: 7rem 1.25rem 4rem; position: relative; }
+    .sig-article h1 { font-family: var(--sans-tight) !important; font-size: clamp(2rem, 4.4vw, 3rem) !important; font-weight: 800 !important; letter-spacing: -0.03em !important; line-height: 1.08 !important; color: var(--text) !important; margin: 0 0 1.1rem !important; }
+    .sig-article h2 { font-family: var(--sans-tight) !important; font-size: clamp(1.35rem, 2.4vw, 1.7rem) !important; font-weight: 700 !important; letter-spacing: -0.02em !important; color: var(--text) !important; margin: 2.4rem 0 0.9rem !important; }
+    .sig-article p, .sig-article li { color: var(--text-2) !important; font-size: 1.05rem !important; line-height: 1.7 !important; }
+    .sig-article p { margin: 0 0 1rem !important; }
+    .sig-article a { color: var(--indigo-bright); border-bottom: 1px solid rgba(227,164,74,0.35); text-decoration: none; }
+    .sig-article strong { color: var(--text); }
+    .sig-article ul { padding-left: 1.3rem; margin: 0 0 1.2rem; }
+    .sig-article li { margin-bottom: 0.45rem; }
+    .article-tag { display:inline-block; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--indigo-bright); margin-bottom: 1rem; }
+    .article-dek { font-size: 1.15rem !important; color: var(--text-2) !important; }
+    .article-meta { font-family: var(--mono); font-size: 0.75rem; color: var(--text-3); margin: 0 0 2rem; }
+    .quick-answer { border-left: 3px solid var(--indigo-bright); background: rgba(227,164,74,0.06); padding: 1.1rem 1.3rem; margin: 0 0 2rem; border-radius: 0 6px 6px 0; }
+    .quick-answer .qa-label, .key-takeaways .qa-label { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.5rem; display:block; }
+    .quick-answer p { margin: 0 !important; color: var(--text) !important; }
+    .key-takeaways { border: 1px solid var(--border); background: var(--surface); border-radius: 8px; padding: 1.2rem 1.4rem 0.6rem; margin: 0 0 2.4rem; }
+    .data-figure { margin: 2rem 0; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; background: var(--surface); }
+    .data-figure svg { width: 100%; height: auto; display: block; }
+    .data-figure figcaption { font-family: var(--mono); font-size: 0.74rem; color: var(--text-3); margin-top: 0.6rem; line-height: 1.5; }
+    .num-table { width: 100%; border-collapse: collapse; margin: 1.4rem 0 2rem; font-size: 0.95rem; }
+    .num-table th, .num-table td { text-align: left; padding: 0.55rem 0.6rem; border-bottom: 1px solid var(--border); color: var(--text-2); vertical-align: top; }
+    .num-table th { color: var(--text-3); font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+    .num-table td.n { font-family: var(--mono); color: var(--text); white-space: nowrap; }
+    .bar-row { display: grid; grid-template-columns: minmax(0, 11rem) 1fr auto; gap: 0.6rem; align-items: center; margin: 0.45rem 0; font-size: 0.9rem; }
+    .bar-row .bar { height: 10px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+    .bar-row .bar span { display: block; height: 100%; background: var(--indigo-bright); }
+    .bar-row .v { font-family: var(--mono); color: var(--text); font-size: 0.85rem; }
+    .faq details { border-bottom: 1px solid var(--border); padding: 0.9rem 0; }
+    .faq summary { cursor: pointer; color: var(--text); font-weight: 600; font-size: 1.05rem; }
+    .faq details p { margin: 0.7rem 0 0 !important; }
+    .method-note, .caveat { font-size: 0.92rem !important; color: var(--text-3) !important; }
+    .method-note { border-top: 1px solid var(--border); padding-top: 1.4rem; margin-top: 2.6rem !important; }
+    .post-cta { border: 1px solid var(--border); border-radius: 8px; padding: 1.4rem; margin: 2.6rem 0 1rem; background: var(--surface); }
+    .post-cta h2 { margin-top: 0 !important; }
+    .post-cta .cta-row { display:flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.8rem; }
+    .post-cta .cta-row a { border-bottom: 0; }
+    @media (max-width: 560px) { .bar-row { grid-template-columns: 1fr auto; } .bar-row .bar { grid-column: 1 / -1; grid-row: 2; } }
+    .moves-table td a { border-bottom: 0; }
+    .moves-table td.d { font-family: var(--mono); font-size: 0.8rem; color: var(--text-3); white-space: nowrap; }
+    .table-wrap { overflow-x: auto; margin: 1.4rem 0 2rem; }
+    .table-wrap .num-table { margin: 0; min-width: 560px; }
+  </style>
+  <title>Chambers USA rankings explained: process and cost | LoopWorker</title>
+  <meta name="description" content="How Chambers USA rankings work, what US firms told reporters they paid for profiles, and what is actually known about the return on the effort.">
+  <meta name="author" content="Alex Lamb">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <link rel="canonical" href="https://www.loopworker.com/blog/chambers-usa-rankings-explained-cost-return.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.loopworker.com/blog/chambers-usa-rankings-explained-cost-return.html">
+  <meta property="og:title" content="Chambers USA rankings explained: process and cost">
+  <meta property="og:description" content="How Chambers USA rankings work, what US firms told reporters they paid for profiles, and what is actually known about the return on the effort.">
+  <meta property="og:image" content="https://www.loopworker.com/images/loopworker-og.png">
+  <meta property="article:published_time" content="2026-10-15">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chambers USA rankings explained: process and cost">
+  <meta name="twitter:description" content="How Chambers USA rankings work, what US firms told reporters they paid for profiles, and what is actually known about the return on the effort.">
+  <meta property="og:site_name" content="LoopWorker">
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.loopworker.com/#organization",
+   "name": "LoopWorker",
+   "url": "https://www.loopworker.com/"
+  },
+  {
+   "@type": "Article",
+   "headline": "Chambers USA rankings explained: how they work, what firms pay, what is known about the return",
+   "description": "How Chambers USA rankings work, what US firms told reporters they paid for profiles, and what is actually known about the return on the effort.",
+   "url": "https://www.loopworker.com/blog/chambers-usa-rankings-explained-cost-return.html",
+   "datePublished": "2026-10-15",
+   "dateModified": "2026-10-15",
+   "publisher": {
+    "@id": "https://www.loopworker.com/#organization"
+   },
+   "mainEntityOfPage": "https://www.loopworker.com/blog/chambers-usa-rankings-explained-cost-return.html",
+   "image": "https://www.loopworker.com/images/loopworker-og.png",
+   "author": {
+    "@type": "Person",
+    "name": "Alex Lamb",
+    "url": "https://www.loopworker.com/#about"
+   },
+   "inLanguage": "en-US",
+   "isAccessibleForFree": true,
+   "keywords": "chambers rankings, chambers usa, chambers rankings explained, how do chambers rankings work",
+   "citation": [
+    {
+     "@type": "CreativeWork",
+     "name": "Chambers and Partners, How-to Chambers: USA 2023 FAQs",
+     "url": "https://chambers.com/topics/how-to-chambers-usa-2023",
+     "datePublished": "2023"
+    },
+    {
+     "@type": "CreativeWork",
+     "name": "Chambers and Partners, Chambers Submissions Process",
+     "url": "https://chambers.com/info/submissions",
+     "datePublished": "2026"
+    },
+    {
+     "@type": "CreativeWork",
+     "name": "Bloomberg Tax, Justin Wise (quoting Tim Noble, CEO, Chambers and Partners)",
+     "url": "https://news.bloombergtax.com/legal-ethics/chambers-revenue-model-tests-law-firms-appetite-for-exposure",
+     "datePublished": "2024-04-23"
+    },
+    {
+     "@type": "CreativeWork",
+     "name": "National Law Review (Tier One Rankings)",
+     "url": "https://natlawreview.com/article/chambers-usa-2027-new-submission-areas-nationwide-referee-changes-key-deadlines",
+     "datePublished": "2026-06-10"
+    },
+    {
+     "@type": "CreativeWork",
+     "name": "Porter Wright press release",
+     "url": "https://www.porterwright.com/media/chambers-usa-guide-2026-ranks-22-porter-wright-attorneys-10-firm-practices/",
+     "datePublished": "2026-06-04"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "How do Chambers USA rankings work?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A firm uploads a submission document and a referee spreadsheet. Researchers review the submission, contact referees, and rank those who stand out, in bands from 1 (highest) to 6 (lowest) depending on the section. Chambers says feedback from clients and the wider market also counts."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does paying for a Chambers profile improve a ranking?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The sources disagree. Bloomberg Tax reported Chambers sales material describing a profile as a way to secure the best possible ranking. Asked whether paying for Chambers products brings better rankings, Chambers CEO Tim Noble said the answer is a categorical no."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How much do US firms pay for a Chambers profile?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Bloomberg Tax reported a US firm profile priced at $10,800, and another large firm quoted more than $30,000 for a 2024 US website profile. These figures came from firms speaking to a reporter, not from a published price list."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "When are the Chambers USA 2027 deadlines?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The National Law Review reported that the earliest deadlines were July 16, 2026, and later ones run to December 3, 2026. Research for the guide began in August 2026. Check the deadline for each submission area separately."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.loopworker.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Signals",
+     "item": "https://www.loopworker.com/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Chambers USA rankings explained: how they work, what firms pay, what is known about the return",
+     "item": "https://www.loopworker.com/blog/chambers-usa-rankings-explained-cost-return.html"
+    }
+   ]
+  }
+ ]
+}
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav class="v5-nav">
+    <div class="v5-nav-inner">
+      <a href="/" class="v5-logo">
+        <span class="v5-logo-mark">L</span>
+        LoopWorker
+      </a>
+      <div class="v5-nav-links">
+        <a href="/#pricing">Pricing</a>
+
+        <a href="/resources/field-manual.html">Field manual</a>
+        <a href="/#how">Example read</a>
+        <a href="/blog/" class="active">Signals</a>
+        <a href="/#about">About</a>
+        <a href="/#read" class="v5-nav-cta">Free snapshot</a>
+      </div>
+      <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="v5-mobile-nav" id="mobileNav">
+      <a href="/#pricing">Pricing</a>
+
+      <a href="/resources/field-manual.html">Field manual</a>
+      <a href="/#how">Example read</a>
+      <a href="/blog/">Signals</a>
+      <a href="/#about">About</a>
+      <a href="/#read" class="v5-nav-cta">Free snapshot</a>
+    </div>
+  </nav>
+  <main id="main">
+  <article class="sig-article">
+    <span class="article-tag">Guide</span>
+    <h1>Chambers USA rankings explained: how they work, what firms pay, what is known about the return</h1>
+    <p class="article-dek">A Chambers ranking is built from a submission, a referee list and feedback from the market. The reported spend is on website profiles, and most of the public evidence on return comes from Chambers itself.</p>
+    <p class="article-meta">October 15, 2026 · Alex Lamb</p>
+    <div class="quick-answer"><span class="qa-label">Quick answer</span><p>Chambers ranks US firms and lawyers in bands from 1 (highest) to 6 (lowest), depending on the section, based on a firm&#x27;s submission, client feedback and feedback from the wider market. Bloomberg Tax reported US website profile prices of $10,800 and more than $30,000, and the main return figure available is Chambers&#x27; own claim that 85% of law firms say a ranking helps them win and retain business.</p></div>
+    <div class="key-takeaways"><span class="qa-label">Key takeaways</span><ul><li>Bands run from 1 (highest) to 6 (lowest), depending on the section.</li><li>For some Nationwide sections, Chambers no longer contacts referees and relies on its state-based research.</li><li>Chambers added 32 new submission areas for Chambers USA 2027, with deadlines running to December 3, 2026.</li><li>Bloomberg Tax reported US profile prices of $10,800 and, for another firm, more than $30,000.</li><li>The only return figure in these sources comes from Chambers itself.</li></ul></div>
+    <h2>How Chambers rankings work</h2>
+    <p>Chambers and Partners ranks law firms and individual lawyers in bands. Depending on the section, the bands run from 1, the highest, to 6, the lowest.</p>
+    <p>Research starts when a firm uploads a submission document and a referee spreadsheet. Researchers review the submission, contact referees, and rank those who stand out. Chambers says research typically runs over about a month per area. Larger and more complex areas can take much longer.</p>
+    <p>Chambers says rankings rest on the submission&#x27;s evidence of work, feedback from clients on service skills and technical quality, and feedback from the wider market: peer attorneys, members of the judiciary, governmental figures and law professors. Bloomberg Tax reported that Chambers employs roughly 250 researchers in offices in London and New York.</p>
+    
+    <h2>Where the referee list matters, and where it no longer does</h2>
+    <p>The Chambers USA 2023 FAQ set the maximum at 30 referees per submission area for that research cycle. That cap is dated. Check the current cycle&#x27;s guidance before building the list.</p>
+    <p>The National Law Review, in a piece from Tier One Rankings, reported that Chambers no longer contacts referees for some Nationwide sections, including Nationwide Litigation: General Commercial. For those sections, Chambers relies on its state-based research instead.</p>
+    <p>This is hard to see from inside a single firm. For a practice in an affected Nationwide section, the Nationwide referee list is not called. The state-level submissions are what Chambers draws on.</p>
+    <h2>The calendar for Chambers USA 2027</h2>
+    <p>The Chambers USA 2026 guide was published June 4, 2026, and firms announced their rankings that day. Porter Wright issued its press release on June 4, 2026.</p>
+    <p>The National Law Review reported that research for the Chambers USA 2027 guide began in August 2026. Chambers added 32 new submission areas: 27 state-level categories across 20 states and 5 new Nationwide categories. The earliest deadlines were July 16, 2026. Later deadlines run to December 3, 2026.</p>
+    <p>The decision here is narrow. Does any of the 32 new areas match a practice the firm has not submitted before, and is its deadline still open?</p>
+    <h2>What US firms report paying</h2>
+    <p>The price figures here do not come from a Chambers price list. They come from firms that spoke to Bloomberg Tax.</p>
+    <p>Bloomberg Tax&#x27;s Justin Wise reported that a US firm profile on the Chambers website was priced at $10,800, well above that firm&#x27;s 2018 profile price. Another large firm was quoted more than $30,000 for a 2024 US website profile. Bloomberg Tax also reported that Abry Partners bought Chambers from Inflexion Partners in a deal valuing it at $492.4 million.</p>
+    <p>The sources disagree on what a profile buys. Bloomberg Tax reported that Chambers sales material described buying a profile as a way to “secure the best possible ranking for the firm and for your individuals.” Asked whether firms can expect better rankings by paying for Chambers products, Chambers CEO Tim Noble said “the answer is a categorical no.”</p>
+    <h2>What is known about the return</h2>
+    <p>The return figure in these sources comes from Chambers. Bloomberg Tax cited Chambers saying 85% of law firms say a Chambers ranking helps them win and retain business.</p>
+    <p>That figure measures what firms say. It does not measure revenue, and it comes from the company that sells the profiles. None of these sources measure the return independently, and none separate the value of a ranking from the value of a paid profile.</p>
+    <p>So the decision has separate parts. Is the submission work worth it for a given practice and state? Is a profile worth its quoted price on top of that? Each needs evidence from inside the firm, because the public sources do not supply it.</p>
+    <h2>Sources</h2>
+    <ul><li><a href="https://chambers.com/topics/how-to-chambers-usa-2023" rel="nofollow noopener" target="_blank">Chambers and Partners, How-to Chambers: USA 2023 FAQs</a>, 2023</li><li><a href="https://chambers.com/info/submissions" rel="nofollow noopener" target="_blank">Chambers and Partners, Chambers Submissions Process</a>, 2026</li><li><a href="https://news.bloombergtax.com/legal-ethics/chambers-revenue-model-tests-law-firms-appetite-for-exposure" rel="nofollow noopener" target="_blank">Bloomberg Tax, Justin Wise</a>, 2024-04-23</li><li><a href="https://natlawreview.com/article/chambers-usa-2027-new-submission-areas-nationwide-referee-changes-key-deadlines" rel="nofollow noopener" target="_blank">National Law Review (Tier One Rankings)</a>, 2026-06-10</li><li><a href="https://www.porterwright.com/media/chambers-usa-guide-2026-ranks-22-porter-wright-attorneys-10-firm-practices/" rel="nofollow noopener" target="_blank">Porter Wright press release</a>, 2026-06-04</li></ul>
+    <section class="faq">
+    <h2>Frequently asked questions</h2>
+    <details><summary>How do Chambers USA rankings work?</summary><p>A firm uploads a submission document and a referee spreadsheet. Researchers review the submission, contact referees, and rank those who stand out, in bands from 1 (highest) to 6 (lowest) depending on the section. Chambers says feedback from clients and the wider market also counts.</p></details>
+    <details><summary>Does paying for a Chambers profile improve a ranking?</summary><p>The sources disagree. Bloomberg Tax reported Chambers sales material describing a profile as a way to secure the best possible ranking. Asked whether paying for Chambers products brings better rankings, Chambers CEO Tim Noble said the answer is a categorical no.</p></details>
+    <details><summary>How much do US firms pay for a Chambers profile?</summary><p>Bloomberg Tax reported a US firm profile priced at $10,800, and another large firm quoted more than $30,000 for a 2024 US website profile. These figures came from firms speaking to a reporter, not from a published price list.</p></details>
+    <details><summary>When are the Chambers USA 2027 deadlines?</summary><p>The National Law Review reported that the earliest deadlines were July 16, 2026, and later ones run to December 3, 2026. Research for the guide began in August 2026. Check the deadline for each submission area separately.</p></details>
+    </section>
+    <div class="post-cta">
+      <h2>See where your firm stands</h2>
+      <p>A free snapshot gives you one evidence-backed observation about your firm's public marketing, with the source and a practical next step.</p>
+      <p>Want the full picture against up to 3 competitors? The <a href="/#pricing">$750 Market Read</a> covers it, credited toward your first month.</p>
+      <div class="cta-row"><a href="/#read" class="btn btn-primary">Get a free snapshot</a><a href="/blog/" class="btn btn-outline">More signals</a></div>
+    </div>
+    <p class="method-note">Method: every figure on this page is quoted from the dated sources listed above. Nothing is estimated.</p>
+    <p class="caveat">Prices come from figures firms gave reporters, not a published Chambers price list. US sources only. Each figure is dated; check the source before relying on it.</p>
+  </article>
+  </main>
+  <footer class="v5-foot">
+    <div class="v5-foot-inner">
+      <div class="v5-foot-logo">LoopWorker</div>
+      <p>Evidence before execution.</p>
+      <p>© 2026 · <a href="/#pricing">Pricing</a> · <a href="/#how">Example read</a> · <a href="/blog/">Signals</a> · <a href="/#about">About</a></p>
+      <p class="v5-foot-small">alex@loopworker.com · <a href="https://instagram.com/loopworker">@loopworker</a></p>
+    </div>
+  </footer>
+  <script defer src="/site-pages.js"></script>
+  <script defer src="/site-runtime.js"></script>
+</body>
+</html>
