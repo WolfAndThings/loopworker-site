@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
-  <title>Sample Market Read · LoopWorker</title>
-  <meta name="description" content="A real Market Read delivered to the CMO of an Am Law 200 firm in July 2026. Names redacted, nothing else changed. Four-minute read.">
+  <title>Market Read: Charleston · LoopWorker</title>
+  <meta name="description" content="A Market Read on three real Charleston, WV law firms, names redacted: goal, problem, rivals, solution, and a three-month plan, built from public data pulled October 14, 2026.">
   <link rel="canonical" href="https://www.loopworker.com/sample-brief.html">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.loopworker.com/sample-brief.html">
-  <meta property="og:title" content="Sample Market Read · LoopWorker">
-  <meta property="og:description" content="A real Read, client redacted. The verdict on top, the evidence under it, and the tripwires that would change it.">
+  <meta property="og:title" content="Market Read: Charleston · LoopWorker">
+  <meta property="og:description" content="Three real law firms, one market, public data. Goal, problem, rivals, solution, implementation.">
   <meta property="og:image" content="https://www.loopworker.com/images/loopworker-og.png">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="LoopWorker">
@@ -113,6 +113,79 @@
     footer a { color: #fff; text-underline-offset: 3px; }
     @media (max-width: 900px) { .nav-links a:not(.btn) { display: none; } .anatomy { grid-template-columns: 1fr; } .anatomy div, .anatomy div + div { padding: 22px 0 6px; border-left: 0; border-bottom: 1px solid var(--line); } }
     @media (max-width: 600px) { .wrap { padding: 0 16px; } .hero { padding: 56px 0 36px; } .hero p { font-size: 17px; } .logo { font-size: 17px; } .nav-links .btn { padding: 10px 12px; font-size: 14px; } .cta .row .btn { width: 100%; } .sheet-wrap { padding: 0 0 2rem; } }
+    /* read document */
+    .doc { background: var(--paper); border: 1px solid var(--line); margin: 8px 0 96px; box-shadow: 0 30px 60px -40px rgba(0,0,0,.25); }
+    .doc .lbl, .snip .lbl, .unknown .lbl, .plan-grid .lbl { display: block; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .doc-top { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 28px 40px; border-bottom: 2px solid var(--ink); font-size: 15px; color: var(--ink-2); }
+    .doc-top b { color: var(--ink); }
+    .redact { display: inline-block; width: 7em; height: .95em; background: var(--ink); vertical-align: -2px; margin: 0 4px; }
+    .step { display: grid; grid-template-columns: 90px 1fr; gap: 24px; padding: 44px 40px; border-bottom: 1px solid var(--line); }
+    .step .n { font-size: 13px; font-weight: 700; letter-spacing: .1em; color: var(--accent); padding-top: 10px; }
+    .step h2 { font-size: clamp(30px, 3.4vw, 44px); font-weight: 800; font-stretch: 112%; letter-spacing: -0.035em; line-height: 1; }
+    .step h3 { margin-top: 34px; font-size: 20px; font-weight: 800; font-stretch: 108%; letter-spacing: -0.02em; }
+    .step .big { margin-top: 18px; font-size: clamp(19px, 1.7vw, 23px); line-height: 1.4; max-width: 46ch; color: var(--ink); }
+    .facts { list-style: none; margin-top: 16px; display: grid; gap: 10px; max-width: 70ch; }
+    .facts li { position: relative; padding-left: 20px; font-size: 16px; line-height: 1.45; color: var(--ink-2); }
+    .facts li::before { content: ""; position: absolute; left: 0; top: .6em; width: 7px; height: 7px; background: var(--accent); }
+    .facts b { color: var(--ink); font-weight: 700; }
+    .means { margin-top: 18px; padding: 16px 18px; border-left: 3px solid var(--ink); background: var(--bg); font-size: 16px; line-height: 1.5; max-width: 70ch; }
+    .moves { margin-top: 22px; padding-left: 22px; display: grid; gap: 14px; max-width: 70ch; }
+    .moves li { font-size: 16px; line-height: 1.5; color: var(--ink-2); padding-left: 6px; }
+    .moves li::marker { color: var(--accent); font-weight: 700; }
+    .moves b { color: var(--ink); }
+    .plan-grid { margin-top: 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--line); border: 1px solid var(--line); }
+    .plan-grid > div { background: var(--paper); padding: 20px; }
+    .plan-grid p { font-size: 15px; line-height: 1.5; color: var(--ink-2); }
+    .unknown { padding: 36px 40px 40px; }
+    .unknown ul { list-style: none; display: grid; gap: 8px; margin-top: 6px; }
+    .unknown li { font-size: 15px; color: var(--ink-2); padding-left: 20px; position: relative; }
+    .unknown li::before { content: "?"; position: absolute; left: 0; color: var(--muted); font-weight: 700; }
+    .src { margin-top: 20px; font-size: 13px; color: var(--muted); line-height: 1.5; }
+    .hl { background-image: linear-gradient(100deg, rgba(255,226,61,0) .5%, #FFE23D 2%, #FFE85A 97%, rgba(255,226,61,0) 99.5%); background-repeat: no-repeat; background-size: 100% 72%; background-position: 0 85%; padding: 0 .1em; margin: 0 -.05em; -webkit-box-decoration-break: clone; box-decoration-break: clone; color: var(--ink); }
+    .snippets { padding-bottom: 100px; }
+    .snippets h2 { margin-top: 14px; font-size: clamp(34px, 4.4vw, 60px); font-weight: 800; font-stretch: 114%; letter-spacing: -0.04em; line-height: .98; }
+    .snippets .intro { margin-top: 16px; font-size: 18px; color: var(--ink-2); max-width: 52ch; }
+    .snip { margin-top: 36px; padding-top: 28px; border-top: 2px solid var(--ink); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 16px 48px; }
+    .snip-head h3 { font-size: 24px; font-weight: 800; font-stretch: 110%; letter-spacing: -0.025em; line-height: 1.1; }
+    .snip .facts, .snip .means, .snip .table-wrap, .snip .src { grid-column: 2; }
+    .snip .facts { margin-top: 0; }
+    .snip .means { margin-top: 0; }
+    .table-wrap { overflow-x: auto; }
+    .snip table { width: 100%; border-collapse: collapse; font-size: 15px; }
+    .snip th { text-align: left; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 0 12px 10px 0; border-bottom: 1px solid var(--line); }
+    .snip td { padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); color: var(--ink-2); }
+    .snip td:not(:first-child), .snip th:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+    .snip td:not(:first-child) { color: var(--ink); font-weight: 600; }
+    .hero .meta span { margin-right: 22px; }
+    .tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 3px 7px; margin-right: 4px; vertical-align: 1px; white-space: nowrap; }
+    .tag.up { background: #FFE23D; color: var(--ink); }
+    .tag.down { background: var(--ink); color: #fff; }
+    .money { margin-top: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--line); border: 1px solid var(--line); max-width: 860px; }
+    .money > div { background: var(--paper); padding: 20px; }
+    .money p { margin-top: 10px; font-size: 16px; line-height: 1.5; color: var(--ink-2); }
+    .snip .goal { margin-top: 12px; font-size: 15px; line-height: 1.5; color: var(--ink-2); }
+    @media (max-width: 860px) { .money { grid-template-columns: 1fr; } }
+    .path { margin-top: 26px; max-width: 860px; }
+    .path ol { list-style: none; counter-reset: q; border-top: 2px solid var(--ink); }
+    .path li { counter-increment: q; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 6px 28px; padding: 14px 0 14px 34px; border-bottom: 1px solid var(--line); position: relative; }
+    .path li::before { content: counter(q); position: absolute; left: 0; top: 13px; width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--ink); font-size: 12px; font-weight: 700; display: grid; place-items: center; }
+    .path li.verdict::before { content: "\2192"; background: var(--ink); color: #fff; }
+    .path .q { font-weight: 700; font-size: 16px; color: var(--ink); }
+    .path .a { font-size: 16px; line-height: 1.5; color: var(--ink-2); }
+    .path li.verdict .a { color: var(--ink); }
+    .snip .path.mini { grid-column: 2; margin-top: 0; }
+    @media (max-width: 860px) { .path li { grid-template-columns: 1fr; } .snip .path.mini { grid-column: 1; } }
+    @media (max-width: 860px) {
+      .doc-top { grid-template-columns: 1fr; padding: 22px 20px; }
+      .step { grid-template-columns: 1fr; gap: 6px; padding: 32px 20px; }
+      .step .n { padding-top: 0; }
+      .plan-grid { grid-template-columns: 1fr; }
+      .unknown { padding: 28px 20px 32px; }
+      .snip { grid-template-columns: 1fr; }
+      .snip .facts, .snip .means, .snip .table-wrap, .snip .src { grid-column: 1; }
+      .hero .meta { display: flex; flex-wrap: wrap; gap: 6px 0; }
+    }
+
   </style>
   <script type="application/ld+json">
 {
@@ -173,90 +246,206 @@
   <main id="main">
     <section class="hero">
       <div class="wrap">
-        <p class="kicker">Sample · delivered to a real CMO, client redacted</p>
+        <p class="kicker">Market Read · Charleston, WV</p>
         <h1>This is what <em>comes back.</em></h1>
-        <p>A real read, delivered to the chief marketing officer of an Am Law 200 firm in July 2026. Names redacted, nothing else changed. The verdict sits on top, the evidence under it, and the tripwires that would change the answer at the bottom.</p>
-        <div class="meta"><span>Format · <b>Competitor Read</b></span><span>Delivered · <b>July 2026</b></span><span>Read time · <b>4 minutes</b></span></div>
+        <p>Three real law firms in one market, read from public data pulled on October 14, 2026. Where the money is being made, where it is being lost, and the plan to fix it. Every number below is a public count you could check yourself.</p>
+        <div class="meta"><span>Firms <b>3</b></span><span>Sources <b>4</b></span><span>Pulled <b>Oct 14, 2026</b></span><span>Read time <b>5 minutes</b></span></div>
       </div>
     </section>
 
-    <section class="wrap" aria-label="How a read is laid out">
-      <div class="anatomy">
-        <div><span class="n">01</span><h3>The claim</h3><p>The answer in one paragraph. First thing on the page, not buried on page nine.</p></div>
-        <div><span class="n">02</span><h3>The evidence</h3><p>Numbered and sourced. When the facts read two ways, the other reading is on the page too.</p></div>
-        <div><span class="n">03</span><h3>The tripwires</h3><p>Three observable events that flip the answer. Watch for them; the read says what each one means.</p></div>
-      </div>
-    </section>
+    <section class="wrap" aria-label="The read">
+      <article class="doc">
+        <header class="doc-top">
+          <div><span class="lbl">Prepared for</span><b>The Firm</b> <span class="redact" aria-hidden="true"></span> 250 staff, Charleston, WV</div>
+          <div><span class="lbl">Rivals read</span><b>Rival 1</b>, 380 staff · <b>Rival 2</b>, 230 staff · same city, overlapping practices</div>
+        </header>
 
-    <div class="sheet-wrap">
-      <article class="rsheet" aria-label="Sample Market Read, redacted">
-
-        <div class="redact">Sample Market Read · client, rival firms, market, and all partner names redacted</div>
-
-        <div class="top">
-          <div class="wm">LoopWorker &middot; Competitor Read</div>
-          <div class="rt">Prepared for the CMO of an Am Law 200 firm [redacted]<br>July 2026</div>
-        </div>
-
-        <span class="label claimlabel">The claim</span>
-        <div class="claim">A rival is turning three of your private equity partners into the market's middle-market PE brand. Your hiring since October is roughly even, so the ground you are losing is not the bench. <b>It is the story the next rainmaker and the next fund read before they choose.</b></div>
-        <div class="sub">The story that names the market's mid-market PE leader is what pulls the next portable book, and what tilts a fund's read when both firms chase one mandate. The rival is marketing that story, on a platform it built partly from your departed partners, after every hire. Below is what I read from it, and the tripwires that would change the answer.</div>
-
-        <div class="sec">
-          <span class="label">The evidence</span>
-          <div class="ei"><span class="m">01</span><div><b>A chain, not scattered churn.</b> A senior partner left the client's PE group for the rival in October 2025. Four months later two more from his group followed him, joining, in the rival's own announcement, on the heels of the first. One partner first, then two of his group behind him. That is the signature of a targeted pull, not random attrition.</div></div>
-          <div class="ei"><span class="m">02</span><div><b>The single largest feeder of a multi-firm build.</b> The rival also took PE partners from two elite national firms and a third large firm in the same window. Ten partners joined it in 2026, and it was the No. 1 Am Law 200 firm for lateral hires in its state in 2025. Across that build, the client supplied more of the rival's PE partners than any other single firm, and the only connected group.</div></div>
-          <div class="ei"><span class="m">03</span><div><b>The bench is rebuilt and roughly even.</b> This is not a firm bleeding out. The client's corporate group added about ten attorneys since October 2025, including a new Private Equity Finance chair hired from a global firm and a senior M&amp;A partner, on top of sixteen new partners named for 2026. On headcount, the raid is close to matched.</div></div>
-          <div class="ei"><span class="m">04</span><div><b>The telling is not even at all.</b> The rival runs a press release after nearly every hire and markets a top-10 league-table practice and a $40B+ deal-value platform. The client's equal build is nearly silent next to it. In a market where recruiters, reporters and deal teams name the leader before a mandate is ever pitched, that description is the asset, and right now the rival is the one writing it.</div></div>
-          <div class="ei"><span class="m">05</span><div><b>The one claim the rival cannot buy.</b> The client built its office in this market from three lawyers to well over a hundred in seven years, around exactly this middle-market PE and corporate lane. The rival is assembling its version in quarters. Having been the market's middle-market PE bench for nearly a decade is available to the client and to no lateral-built rival. That is the ground the rival is renting.</div></div>
-
-          <div class="take">
-            <span class="label">The hinge</span>
-            <div class="t">On bodies, this is close to a draw: you replaced roughly what you lost. On story, it is not close. The rival narrates every hire into a middle-market PE brand, and a brand is what a portable book weighs before it moves and what a fund reads before it short-lists. <b>You are winning the part that is countable and losing the part that compounds.</b></div>
+        <div class="step">
+          <span class="n">01</span>
+          <div class="body">
+            <h2>Goal</h2>
+            <p class="big">Bring in more paying work. <span class="hl">Stop spending attorney hours on content nobody sees.</span></p>
+            <div class="money">
+              <div><span class="tag up">Make more money</span><p>Win more matters from in-house counsel and business owners who don't see The Firm today. It just added four associates and two laterals. New people need new work.</p></div>
+              <div><span class="tag down">Stop losing money</span><p>Webinars are partner time. 13 of its 19 videos run over 20 minutes, and the typical one has been seen by 99 people.</p></div>
+            </div>
+            <div class="path" aria-label="How the read decides">
+              <span class="lbl">How the read decides</span>
+              <ol>
+                <li><span class="q">How does The Firm get attention now?</span><span class="a">Writing. 30 pieces in 90 days, republished on JD Supra.</span></li>
+                <li><span class="q">Can that be turned up?</span><span class="a">Not by writing more. Of its 17 Google News mentions in 180 days, 16 are its own reposted articles. Only 1 is someone else writing about it. The lever is reach: the same expertise in a format more people see.</span></li>
+                <li><span class="q">How are rivals using the same channel?</span><span class="a">Rival 2 earns press instead: 9 mentions by other outlets, 3 in the Charleston Gazette-Mail. Rival 1 went to video and appears to pay for it: 10 client videos at 14,906 to 21,962 views each, with 11 likes or fewer.</span></li>
+                <li><span class="q">Are they at the extreme?</span><span class="a">On bought video views, Rival 1 is spending. On video people choose to watch, nobody is. So don't outspend. <span class="hl">Find the gap.</span></span></li>
+                <li class="verdict"><span class="q">The gap</span><span class="a">Attorneys answering one question on camera. Rival 1 does it only for summer associates: typical 1,204 views, against 27 for its practice promos of the same length. Nobody has pointed that format at clients.</span></li>
+              </ol>
+            </div>
           </div>
         </div>
 
-        <div class="pos">
-          <span class="label">Where it leaves you</span>
-          <div class="pi"><span class="k">Recruiting</span><div>The next PE rainmaker weighing the two firms reads the rival as the market's mid-market PE place, because that is the only story being told. Your hiring since October is real and roughly even, but it is unnarrated, so it does not reach the candidate as a reason to choose you. Each book that picks the rival is revenue that chose a story over a scoreboard.</div></div>
-          <div class="pi"><span class="k">Pitches</span><div>When a fund short-lists both firms for a mid-market mandate, the tie-breaker on the close ones is which firm the market already calls the leader. That naming is uncontested at the moment, which means it is being decided in the rival's favor by default.</div></div>
-          <div class="pi"><span class="k">Tempo</span><div>The rival added a PE lateral roughly monthly from October to March and marketed each one. Every cycle the story goes unanswered, the name sets a little harder, and it sets before the next lateral or mandate is ever in play.</div></div>
+        <div class="step">
+          <span class="n">02</span>
+          <div class="body">
+            <h2>Problem</h2>
+            <p class="big">The Firm writes constantly. <span class="hl">None of it reaches buyers as video,</span> so the hours behind it earn less than they could.</p>
+            <ul class="facts">
+              <li><b>30</b> written pieces in the last 90 days: 12 articles, 13 newsletter issues, 5 press releases.</li>
+              <li><b>1,093</b> articles and <b>738</b> newsletter issues on its site in total.</li>
+              <li><b>19</b> YouTube videos. Typical length <b>33 minutes</b>. 13 of the 19 run over 20 minutes.</li>
+              <li>The typical video gets <b>99 views</b>. The channel has <b>251</b> subscribers.</li>
+              <li>No new video since <b>February 27, 2025</b>. The homepage still links to the channel.</li>
+              <li><b>0</b> Shorts.</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="firm">
-          <span class="label">The honest other reading</span>
-          <div class="t"><b>The client holds the tenure and the rebuilt bench. The rival holds the microphone.</b> The same facts read two ways, and the difference is the whole call. Three departures plus a loud rival can mean a positioning contest you can still win on ground you already own. It can also mean the first months of a talent drift that even hiring numbers mask for a year.</div>
-          <div class="field">I take the first position. If you read it the second way, the moves change, and I would rather say that here than sell you the version that reads cleaner.</div>
+        <div class="step">
+          <span class="n">03</span>
+          <div class="body">
+            <h2>Rivals</h2>
+            <h3>Social and video</h3>
+            <ul class="facts">
+              <li>Rival 1 posts Shorts: <b>25</b> of them, typical <b>560 views</b>.</li>
+              <li><b>16</b> are one series: attorneys answering a summer associate's question in about 27 seconds. Typical: <b>1,204 views</b>. 11 of the 16 passed 1,000.</li>
+              <li>Its <b>5</b> practice-area Shorts are the same length. Typical: <b>27 views</b>.</li>
+              <li>Its last <b>30</b> regular uploads: typical <b>5.5 views</b>. Most are practice promos under a minute.</li>
+              <li><b>10</b> client videos show <b>14,906 to 21,962</b> views each, with 11 likes or fewer. That pattern usually means paid promotion.</li>
+              <li>Rival 2: <b>14</b> videos, <b>3</b> subscribers, last upload <b>July 2018</b>.</li>
+            </ul>
+            <p class="means"><span class="lbl">What it means</span>At the same firm, at the same length, <span class="hl">a person answering a question drew about 44 times the views of a practice promo.</span> Rival 1 uses it only for recruiting. Its client videos got their views another way, most likely paid. Nobody in this market uses the question format for clients.</p>
+
+            <h3>Advertising</h3>
+            <ul class="facts">
+              <li>Rival 1: <b>0</b> Facebook or Instagram ads from its own page, at any time.</li>
+              <li>Rival 2: <b>0</b>, at any time.</li>
+              <li>The Firm: none running. The only ad found ran March 18 to 20, 2020.</li>
+            </ul>
+            <p class="means"><span class="lbl">What it means</span>Nobody buys Facebook or Instagram reach here. Rival 1's YouTube numbers suggest it buys video views instead, which Meta's library does not show. Paid only works once you know which topics pull.</p>
+
+            <h3>Movement</h3>
+            <ul class="facts">
+              <li>Google News, last 180 days: The Firm <b>17</b> mentions, Rival 1 <b>2</b>, Rival 2 <b>9</b>.</li>
+              <li>Of The Firm's 17, <b>16</b> are its own articles republished on JD Supra. Rival 2's 9 are other outlets writing about it, 3 in the Charleston Gazette-Mail.</li>
+              <li>The Firm's own announcements since June: <b>four associates</b> (August 25), a litigation lateral (September 3), and a former assistant U.S. Attorney (June 23).</li>
+              <li>Google News shows no hire or office news for either rival in that window.</li>
+            </ul>
+            <p class="means"><span class="lbl">What it means</span>The Firm is the one announcing growth. <span class="hl">Its new hires are people nobody has filmed yet.</span></p>
+
+            <h3>Website</h3>
+            <ul class="facts">
+              <li>The Firm's homepage carries about 900 characters of text, built around three rotating lines under "Expect different."</li>
+              <li>Rival 2's homepage features rankings: 44 of its attorneys named to the 2027 Best Lawyers list.</li>
+              <li>Rival 1's site blocked automated reading. Not assessed.</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="how">
-          <span class="label">How I know</span>
-          <div class="hlx">Every move here sits on the public record the reader already works from: firm releases, national legal trade press, the 2026 laterals report. Every claim is checkable against your own sources. The judgment on top of it is mine.</div>
+        <div class="step">
+          <span class="n">04</span>
+          <div class="body">
+            <h2>Solution</h2>
+            <p class="big">Stop filming only webinars. <span class="hl">Turn what The Firm already writes into short answers from its attorneys.</span> Same expertise, a fraction of the partner time, in front of more of the people who hire.</p>
+            <ol class="moves">
+              <li><span class="tag up">More money</span> <b>Each newsletter becomes Shorts.</b> One attorney, one question, under 30 seconds. Its energy, technology, construction, healthcare, and employment newsletters already come out regularly. That is the script supply.</li>
+              <li><span class="tag up">More money</span> <b>Film the new hires.</b> Four associates and the new laterals. "Why I joined" in 30 seconds. Recruiting is where the rival's views come from, and The Firm has more hires to show.</li>
+              <li><span class="tag down">Stop losing</span> <b>Cut webinars down, don't drop them.</b> Keep the 60 seconds that answer one question. Post that, link the full session.</li>
+              <li><span class="tag down">Stop losing</span> <b>Fix the homepage.</b> Put a person and a Short on it, or remove the YouTube link until there is something new behind it.</li>
+              <li><span class="tag down">Stop losing</span> <b>Hold paid.</b> After two months of Shorts, boost the two topics with the highest typical views. Not before.</li>
+            </ol>
+          </div>
         </div>
 
-        <div class="rec">
-          <span class="label">The tripwires</span>
-          <div class="wi">Whether the rival announces another PE lateral before year-end, and whether any of them come again from the client's bench. A fourth from that bench moves this from pattern to campaign.</div>
-          <div class="wi">Whether a counter-narrative appears: a middle-market PE platform claim from the client, a ranking push, or a lateral reclaimed from the rival. Its absence is the gap staying open.</div>
-          <div class="wi">Whether the next fund both firms pitch names the rival as the market's middle-market PE leader in its own words. That is the narrative pricing in.</div>
+        <div class="step">
+          <span class="n">05</span>
+          <div class="body">
+            <h2>Implementation</h2>
+            <div class="plan-grid">
+              <div><span class="lbl">Month 1</span><p>8 Shorts from the latest 5 newsletter issues and 3 new-hire intros. One vertical edit each, for YouTube Shorts and LinkedIn. 5 statics pulling the sharpest line from recent articles. 2 carousels: one practice explainer, one "meet the new class."</p></div>
+              <div><span class="lbl">Month 2</span><p>Same mix, weighted toward whichever topics beat The Firm's own typical. Homepage updated with the best-performing Short and a named attorney.</p></div>
+              <div><span class="lbl">Month 3</span><p>First paid test on the top two topics. Webinar clips added. The read is re-run against both rivals.</p></div>
+            </div>
+            <p class="means"><span class="lbl">How we'll know</span>Typical views per Short, checked monthly against Rival 1's 560. Partner hours per video, against the webinars they replace. New-matter inquiries and recruit applications that mention a video, if The Firm tracks them.</p>
+          </div>
         </div>
 
-        <div class="src"><span><b>Sources:</b> rival firm press releases for each lateral [names redacted] &middot; national legal trade press coverage of each move &middot; the 2026 laterals report &middot; the client's own hiring announcements &middot; league-table and deal-value figures from the rival's practice pages. All dated and re-pullable.</span><span>Alex &middot; LoopWorker &middot; loopworker.com</span></div>
-
+        <div class="unknown">
+          <span class="lbl">What this read could not see</span>
+          <ul>
+            <li>Google reviews and ratings for all three firms. Not pulled for this read.</li>
+            <li>Rival 1's website and blog. The site blocked automated reading.</li>
+            <li>Rival 2's article volume. Not counted.</li>
+            <li>LinkedIn and Instagram activity. Not checked behind a login.</li>
+            <li>Whether any views were bought. Rival 1's client videos look paid; only its ad account would prove it.</li>
+            <li>Calls, matters, or hires that came from any video. Private to each firm.</li>
+          </ul>
+          <p class="src">Sources: Meta Ad Library, each firm's own page · YouTube public counts · each firm's website · Google News, 180 days. All pulled October 14, 2026.</p>
+        </div>
       </article>
-    </div>
+    </section>
 
+    <section class="wrap snippets" aria-label="From other reads">
+      <p class="kicker">From other reads</p>
+      <h2>When the market is louder.</h2>
+      <p class="intro">Excerpts from reads on other markets. Same method, firm names redacted.</p>
+
+      <div class="snip">
+        <div class="snip-head"><span class="lbl">Phoenix · personal injury · advertising</span><h3>The rival bought volume on one message.</h3><p class="goal"><span class="tag up">Make more money</span> Sign more car-accident cases without trying to outspend a rival running 418 ads.</p></div>
+        <ul class="facts">
+          <li>The rival: <b>418</b> live.</li>
+          <li><b>198</b> of the 418 carry one message, "Injured in a Car Accident?", all running since September 1, 2026.</li>
+          <li><b>210</b> show only template text.</li>
+        </ul>
+        <div class="path mini">
+          <ol>
+            <li><span class="q">How does the firm get cases now?</span><span class="a">Facebook ads, a small set.</span></li>
+            <li><span class="q">Is the rival on the same channel?</span><span class="a">Yes, at the extreme. 418 live.</span></li>
+            <li class="verdict"><span class="q">So</span><span class="a"><span class="hl">Switch strategy.</span> Stop competing on volume. Test the firm's ads against the messages the rival has paid for longest, and look for the lane it is not buying.</span></li>
+          </ol>
+        </div>
+        
+      </div>
+
+      <div class="snip">
+        <div class="snip-head"><span class="lbl">10 markets · advertising</span><h3>How long a rival keeps paying for one ad.</h3><p class="goal"><span class="tag down">Stop losing money</span> An ad a rival keeps paying for after a year is one that brings in cases. Test against that, not against guesses.</p></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Market</th><th>Rival's live ads</th><th>Its longest-running ad</th></tr></thead>
+            <tbody>
+              <tr><td>Phoenix, personal injury</td><td>418</td><td>43 days</td></tr>
+              <tr><td>Phoenix, personal injury</td><td>97</td><td>13 days</td></tr>
+              <tr><td>Fort Worth, family law</td><td>36</td><td>265 days</td></tr>
+              <tr><td>York, PA</td><td>34</td><td>132 days</td></tr>
+              <tr><td>Springfield, MO, elder law</td><td>29</td><td>273 days</td></tr>
+              <tr><td>Bronx, personal injury</td><td>27</td><td>83 days</td></tr>
+              <tr><td>Fort Lauderdale, bankruptcy</td><td>25</td><td>526 days</td></tr>
+              <tr><td>Little Rock, personal injury</td><td>18</td><td>366 days</td></tr>
+              <tr><td>Lexington, bankruptcy</td><td>16</td><td>69 days</td></tr>
+              <tr><td>Hartford, criminal defense</td><td>14</td><td>463 days</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="src">Meta Ad Library, each rival's own page, pulled October 14, 2026. Run lengths are lower bounds.</p>
+      </div>
+
+      <div class="snip">
+        <div class="snip-head"><span class="lbl">Minnesota · three practice areas · website</span><h3>The proof was there, out of sight.</h3><p class="goal"><span class="tag down">Stop losing money</span> Prospects who check ratings first were leaving before they called.</p></div>
+        <ul class="facts">
+          <li>The homepage showed written testimonials, but not the Google star rating or review count.</li>
+          <li>It linked to a YouTube channel with nothing on it.</li>
+          <li>A practice page still marketed non-compete work. Minnesota voided new non-competes on July 1, 2023.</li>
+        </ul>
+        <p class="means"><span class="lbl">What it means</span>Three fixes that cost almost nothing, ahead of any new content.</p>
+      </div>
+    </section>
 
     <section class="cta">
       <div class="wrap">
         <p class="kicker">Your firm next</p>
         <h2>See one thing your firm could be missing.</h2>
-        <p>Start with a free snapshot: one relevant observation from your competitive environment, with the source and a practical next step. A $750 Market Read also includes a suggested content direction for your firm.</p>
+        <p>Start with a free snapshot: one observation from your market, with the source and a practical next step. The $750 Market Read is the full version of the page above, for your firm and up to 3 competitors.</p>
         <div class="row">
           <a href="/#read" class="btn" data-track="Sample Free Snapshot">Get a free snapshot</a>
-          <a href="/downloads/read-threat-redacted.pdf" download class="btn ghost" data-track="Download Competitor Read">Download this read (PDF)</a>
+          <a href="/#pricing" class="btn ghost" data-track="Sample Pricing">See pricing</a>
         </div>
-        <p class="more">Prefer it as a page? Read the same thing <a href="/downloads/read-threat-redacted.html">in your browser</a>. Or <a href="/#pricing">see pricing</a>.</p>
       </div>
     </section>
   </main>
