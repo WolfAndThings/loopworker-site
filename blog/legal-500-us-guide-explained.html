@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site-pages.css">
+  <link rel="stylesheet" href="/v5-system.css">
+  <style>
+    body { background: var(--bg) !important; color: var(--text-2) !important; font-family: var(--sans) !important; }
+    .sig-article { max-width: 760px; margin: 0 auto; padding: 7rem 1.25rem 4rem; position: relative; }
+    .sig-article h1 { font-family: var(--sans-tight) !important; font-size: clamp(2rem, 4.4vw, 3rem) !important; font-weight: 800 !important; letter-spacing: -0.03em !important; line-height: 1.08 !important; color: var(--text) !important; margin: 0 0 1.1rem !important; }
+    .sig-article h2 { font-family: var(--sans-tight) !important; font-size: clamp(1.35rem, 2.4vw, 1.7rem) !important; font-weight: 700 !important; letter-spacing: -0.02em !important; color: var(--text) !important; margin: 2.4rem 0 0.9rem !important; }
+    .sig-article p, .sig-article li { color: var(--text-2) !important; font-size: 1.05rem !important; line-height: 1.7 !important; }
+    .sig-article p { margin: 0 0 1rem !important; }
+    .sig-article a { color: var(--indigo-bright); border-bottom: 1px solid rgba(227,164,74,0.35); text-decoration: none; }
+    .sig-article strong { color: var(--text); }
+    .sig-article ul { padding-left: 1.3rem; margin: 0 0 1.2rem; }
+    .sig-article li { margin-bottom: 0.45rem; }
+    .article-tag { display:inline-block; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--indigo-bright); margin-bottom: 1rem; }
+    .article-dek { font-size: 1.15rem !important; color: var(--text-2) !important; }
+    .article-meta { font-family: var(--mono); font-size: 0.75rem; color: var(--text-3); margin: 0 0 2rem; }
+    .quick-answer { border-left: 3px solid var(--indigo-bright); background: rgba(227,164,74,0.06); padding: 1.1rem 1.3rem; margin: 0 0 2rem; border-radius: 0 6px 6px 0; }
+    .quick-answer .qa-label, .key-takeaways .qa-label { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.5rem; display:block; }
+    .quick-answer p { margin: 0 !important; color: var(--text) !important; }
+    .key-takeaways { border: 1px solid var(--border); background: var(--surface); border-radius: 8px; padding: 1.2rem 1.4rem 0.6rem; margin: 0 0 2.4rem; }
+    .data-figure { margin: 2rem 0; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; background: var(--surface); }
+    .data-figure svg { width: 100%; height: auto; display: block; }
+    .data-figure figcaption { font-family: var(--mono); font-size: 0.74rem; color: var(--text-3); margin-top: 0.6rem; line-height: 1.5; }
+    .num-table { width: 100%; border-collapse: collapse; margin: 1.4rem 0 2rem; font-size: 0.95rem; }
+    .num-table th, .num-table td { text-align: left; padding: 0.55rem 0.6rem; border-bottom: 1px solid var(--border); color: var(--text-2); vertical-align: top; }
+    .num-table th { color: var(--text-3); font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+    .num-table td.n { font-family: var(--mono); color: var(--text); white-space: nowrap; }
+    .bar-row { display: grid; grid-template-columns: minmax(0, 11rem) 1fr auto; gap: 0.6rem; align-items: center; margin: 0.45rem 0; font-size: 0.9rem; }
+    .bar-row .bar { height: 10px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+    .bar-row .bar span { display: block; height: 100%; background: var(--indigo-bright); }
+    .bar-row .v { font-family: var(--mono); color: var(--text); font-size: 0.85rem; }
+    .faq details { border-bottom: 1px solid var(--border); padding: 0.9rem 0; }
+    .faq summary { cursor: pointer; color: var(--text); font-weight: 600; font-size: 1.05rem; }
+    .faq details p { margin: 0.7rem 0 0 !important; }
+    .method-note, .caveat { font-size: 0.92rem !important; color: var(--text-3) !important; }
+    .method-note { border-top: 1px solid var(--border); padding-top: 1.4rem; margin-top: 2.6rem !important; }
+    .post-cta { border: 1px solid var(--border); border-radius: 8px; padding: 1.4rem; margin: 2.6rem 0 1rem; background: var(--surface); }
+    .post-cta h2 { margin-top: 0 !important; }
+    .post-cta .cta-row { display:flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.8rem; }
+    .post-cta .cta-row a { border-bottom: 0; }
+    @media (max-width: 560px) { .bar-row { grid-template-columns: 1fr auto; } .bar-row .bar { grid-column: 1 / -1; grid-row: 2; } }
+    .moves-table td a { border-bottom: 0; }
+    .moves-table td.d { font-family: var(--mono); font-size: 0.8rem; color: var(--text-3); white-space: nowrap; }
+    .table-wrap { overflow-x: auto; margin: 1.4rem 0 2rem; }
+    .table-wrap .num-table { margin: 0; min-width: 560px; }
+  </style>
+  <title>Legal 500 US explained: cycle, size and Chambers | LoopWorker</title>
+  <meta name="description" content="What the Legal 500 US guide is, how its research cycle runs, what the 2026 edition covered, and how its timeline lines up with Chambers USA.">
+  <meta name="author" content="Alex Lamb">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <link rel="canonical" href="https://www.loopworker.com/blog/legal-500-us-guide-explained.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.loopworker.com/blog/legal-500-us-guide-explained.html">
+  <meta property="og:title" content="Legal 500 US explained: cycle, size and Chambers">
+  <meta property="og:description" content="What the Legal 500 US guide is, how its research cycle runs, what the 2026 edition covered, and how its timeline lines up with Chambers USA.">
+  <meta property="og:image" content="https://www.loopworker.com/images/loopworker-og.png">
+  <meta property="article:published_time" content="2026-10-16">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Legal 500 US explained: cycle, size and Chambers">
+  <meta name="twitter:description" content="What the Legal 500 US guide is, how its research cycle runs, what the 2026 edition covered, and how its timeline lines up with Chambers USA.">
+  <meta property="og:site_name" content="LoopWorker">
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.loopworker.com/#organization",
+   "name": "LoopWorker",
+   "url": "https://www.loopworker.com/"
+  },
+  {
+   "@type": "Article",
+   "headline": "The Legal 500 US: what it is, how it runs, and how it lines up with Chambers USA",
+   "description": "What the Legal 500 US guide is, how its research cycle runs, what the 2026 edition covered, and how its timeline lines up with Chambers USA.",
+   "url": "https://www.loopworker.com/blog/legal-500-us-guide-explained.html",
+   "datePublished": "2026-10-16",
+   "dateModified": "2026-10-16",
+   "publisher": {
+    "@id": "https://www.loopworker.com/#organization"
+   },
+   "mainEntityOfPage": "https://www.loopworker.com/blog/legal-500-us-guide-explained.html",
+   "image": "https://www.loopworker.com/images/loopworker-og.png",
+   "author": {
+    "@type": "Person",
+    "name": "Alex Lamb",
+    "url": "https://www.loopworker.com/#about"
+   },
+   "inLanguage": "en-US",
+   "isAccessibleForFree": true,
+   "keywords": "legal 500, legal 500 us, legal 500 rankings, legal 500 united states, legal 500 vs chambers",
+   "citation": [
+    {
+     "@type": "CreativeWork",
+     "name": "Legal 500 press release (Newsfile)",
+     "url": "https://www.newsfilecorp.com/release/300872",
+     "datePublished": "2026-06-10"
+    },
+    {
+     "@type": "CreativeWork",
+     "name": "Tier One Rankings",
+     "url": "https://tieronerankings.com/?p=2413",
+     "datePublished": "2025"
+    },
+    {
+     "@type": "CreativeWork",
+     "name": "Porter Wright press release",
+     "url": "https://www.porterwright.com/media/chambers-usa-guide-2026-ranks-22-porter-wright-attorneys-10-firm-practices/",
+     "datePublished": "2026-06-04"
+    },
+    {
+     "@type": "CreativeWork",
+     "name": "Chambers and Partners FAQ; National Law Review (Tier One Rankings)",
+     "url": "https://natlawreview.com/article/chambers-usa-2027-new-submission-areas-nationwide-referee-changes-key-deadlines",
+     "datePublished": "2026-06-10"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "When were the Legal 500 US 2026 rankings released?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Legal 500 announced the United States 2026 Nationwide rankings went live June 10, 2026. Chambers USA 2026 was published June 4, 2026, according to a Porter Wright press release."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "When are Legal 500 US submissions due?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "For the 2026 guide, client referees and editorial submissions were due November 14, 2025, Tier One Rankings reported. Interviews ran December 2025 to February 2026. The sources here do not state the 2027 deadlines, so confirm them with Legal 500."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What changes in the Legal 500 US for 2027?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Starting with the 2027 guides, Legal 500 organises US research into Nationwide, State and US Elite. Nationwide is for firms with national reach and multi-state capability. State is for firms with strong statewide presence. US Elite is for boutique and specialist firms."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How does Chambers USA rank firms compared with Legal 500?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chambers and Partners ranks firms and lawyers in bands from 1, the highest, to 6, the lowest. Legal 500 recognises lawyers as Hall of Fame, Leading Partners, Next Generation Partners or Leading Associates. Research for Chambers USA 2027 began in August 2026, with deadlines to December 3, 2026."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.loopworker.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Signals",
+     "item": "https://www.loopworker.com/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "The Legal 500 US: what it is, how it runs, and how it lines up with Chambers USA",
+     "item": "https://www.loopworker.com/blog/legal-500-us-guide-explained.html"
+    }
+   ]
+  }
+ ]
+}
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav class="v5-nav">
+    <div class="v5-nav-inner">
+      <a href="/" class="v5-logo">
+        <span class="v5-logo-mark">L</span>
+        LoopWorker
+      </a>
+      <div class="v5-nav-links">
+        <a href="/#pricing">Pricing</a>
+
+        <a href="/resources/field-manual.html">Field manual</a>
+        <a href="/#how">Example read</a>
+        <a href="/blog/" class="active">Signals</a>
+        <a href="/#about">About</a>
+        <a href="/#read" class="v5-nav-cta">Free snapshot</a>
+      </div>
+      <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="v5-mobile-nav" id="mobileNav">
+      <a href="/#pricing">Pricing</a>
+
+      <a href="/resources/field-manual.html">Field manual</a>
+      <a href="/#how">Example read</a>
+      <a href="/blog/">Signals</a>
+      <a href="/#about">About</a>
+      <a href="/#read" class="v5-nav-cta">Free snapshot</a>
+    </div>
+  </nav>
+  <main id="main">
+  <article class="sig-article">
+    <span class="article-tag">Guide</span>
+    <h1>The Legal 500 US: what it is, how it runs, and how it lines up with Chambers USA</h1>
+    <p class="article-dek">The 2026 edition ranked more firms and named more lawyers than the 2025 edition. Its research calendar sits close to the Chambers USA calendar, and the structure changes for 2027.</p>
+    <p class="article-meta">October 16, 2026 · Alex Lamb</p>
+    <div class="quick-answer"><span class="qa-label">Quick answer</span><p>The Legal 500 US is a guide that ranks US law firms by practice area and recognises individual lawyers, and its 2026 rankings went live June 10, 2026, covering 126 practice areas. Chambers USA 2026 was published June 4, 2026, 6 days earlier, so both guides now publish in June and both ask for submissions in the late months of the year.</p></div>
+    <div class="key-takeaways"><span class="qa-label">Key takeaways</span><ul><li>Legal 500 says the 2026 US edition ranked over 440 firms, a 39% increase from 2025.</li><li>The guide recognised 3,659 lawyers in 2026, up from 3,423 in 2025, according to Legal 500.</li><li>For the 2026 guide, client referees and editorial submissions were due November 14, 2025, Tier One Rankings reported.</li><li>Starting with the 2027 guides, Legal 500 splits US research into Nationwide, State and US Elite.</li><li>Chambers USA 2026 published June 4, 2026, and its 2027 deadlines run to December 3, 2026.</li></ul></div>
+    <h2>What the Legal 500 US is</h2>
+    <p>The Legal 500 US is a guide that ranks US law firms by practice area and names individual lawyers within them. Legal 500 announced in a press release on Newsfile that the United States 2026 Nationwide rankings went live June 10, 2026.</p>
+    <p>The 2026 edition covers 126 practice areas. Lawyers are recognised under 4 labels in the release: Hall of Fame, Leading Partners, Next Generation Partners and Leading Associates.</p>
+    <p>Tier One Rankings wrote that the guide has broadened its scope to recognise mid-market firms and specialist boutiques, not just top-tier work. That matters for firms that have never thought of themselves as Legal 500 candidates.</p>
+    
+    <h2>How big the 2026 edition was</h2>
+    <p>Every figure in this section comes from the Legal 500 press release. These are the publisher&#x27;s own counts. I found no independent count in the sources.</p>
+    <p>Legal 500 reported over 440 ranked firms, a 39% increase from 2025. It recognised 3,659 lawyers, up from 3,423 in 2025. The split: 647 Hall of Fame lawyers, 2,126 Leading Partners, 736 Next Generation Partners and 228 Leading Associates.</p>
+    <p>Leading Partners is the largest group. Leading Associates is the smallest. For a firm deciding which lawyers to put forward, that shows where most of the recognition sits.</p>
+    <p>The edition also added new categories for boutique firms in white collar crime and commercial disputes. A boutique in either area now has a category built for it.</p>
+    <h2>How the research cycle runs</h2>
+    <p>I took the 2026 timeline from Tier One Rankings. Client referees and editorial submissions were both due November 14, 2025. Firm interviews ran December 2025 to February 2026. The guide published in June 2026.</p>
+    <p>The structure changes next. Starting with the 2027 guides, Legal 500 organises US research into Nationwide, State and US Elite, according to its press release. Nationwide covers firms with national reach and multi-state capability. State covers firms with strong statewide presence and market visibility. US Elite covers boutique and specialist firms with concentrated geographic or practice-specific reputations.</p>
+    <p>The sources here do not give the 2027 Legal 500 deadlines. Check them with Legal 500 before planning the submission calendar.</p>
+    <h2>Legal 500 vs Chambers USA: the timeline</h2>
+    <p>Chambers USA 2026 was published June 4, 2026, according to a Porter Wright press release. That was 6 days before the Legal 500 US 2026 release. Porter Wright reported 22 attorneys and 10 firm practices ranked.</p>
+    <p>The ranking formats differ. Chambers and Partners says it ranks firms and lawyers in bands from 1, the highest, to 6, the lowest. The Legal 500 press release describes its lawyer recognition through the Hall of Fame, Leading Partners, Next Generation Partners and Leading Associates labels.</p>
+    <p>The calendars overlap. National Law Review reported that research for the Chambers USA 2027 guide began in August 2026, with deadlines running to December 3, 2026. Legal 500&#x27;s deadline for the 2026 guide was November 14, 2025. A team that submits to both should expect the work for each to land in the same autumn months.</p>
+    <h2>What to weigh before committing</h2>
+    <p>Track first. Under the 2027 structure, a firm has to know whether it reads as Nationwide, State or US Elite. That choice shapes which peers it is measured against.</p>
+    <p>Then fit. A boutique in white collar crime or commercial disputes now has a category designed for it. A mid-market firm sits inside the broader scope Tier One Rankings described.</p>
+    <p>Then capacity. Referees, submissions and interviews for both guides fall in the same stretch of the year. The question is whether the team can do both well, or should put its effort into one.</p>
+    <h2>Sources</h2>
+    <ul><li><a href="https://www.newsfilecorp.com/release/300872" rel="nofollow noopener" target="_blank">Legal 500 press release (Newsfile)</a>, 2026-06-10</li><li><a href="https://tieronerankings.com/?p=2413" rel="nofollow noopener" target="_blank">Tier One Rankings, Legal500 US Guide 2026: New and Amended Sections</a>, 2025</li><li><a href="https://www.porterwright.com/media/chambers-usa-guide-2026-ranks-22-porter-wright-attorneys-10-firm-practices/" rel="nofollow noopener" target="_blank">Porter Wright press release</a>, 2026-06-04</li><li><a href="https://natlawreview.com/article/chambers-usa-2027-new-submission-areas-nationwide-referee-changes-key-deadlines" rel="nofollow noopener" target="_blank">Chambers and Partners FAQ; National Law Review (Tier One Rankings)</a>, 2026-06-10</li></ul>
+    <section class="faq">
+    <h2>Frequently asked questions</h2>
+    <details><summary>When were the Legal 500 US 2026 rankings released?</summary><p>Legal 500 announced the United States 2026 Nationwide rankings went live June 10, 2026. Chambers USA 2026 was published June 4, 2026, according to a Porter Wright press release.</p></details>
+    <details><summary>When are Legal 500 US submissions due?</summary><p>For the 2026 guide, client referees and editorial submissions were due November 14, 2025, Tier One Rankings reported. Interviews ran December 2025 to February 2026. The sources here do not state the 2027 deadlines, so confirm them with Legal 500.</p></details>
+    <details><summary>What changes in the Legal 500 US for 2027?</summary><p>Starting with the 2027 guides, Legal 500 organises US research into Nationwide, State and US Elite. Nationwide is for firms with national reach and multi-state capability. State is for firms with strong statewide presence. US Elite is for boutique and specialist firms.</p></details>
+    <details><summary>How does Chambers USA rank firms compared with Legal 500?</summary><p>Chambers and Partners ranks firms and lawyers in bands from 1, the highest, to 6, the lowest. Legal 500 recognises lawyers as Hall of Fame, Leading Partners, Next Generation Partners or Leading Associates. Research for Chambers USA 2027 began in August 2026, with deadlines to December 3, 2026.</p></details>
+    </section>
+    <div class="post-cta">
+      <h2>See where your firm stands</h2>
+      <p>A free snapshot gives you one evidence-backed observation about your firm's public marketing, with the source and a practical next step.</p>
+      <p>Want the full picture against up to 3 competitors? The <a href="/#pricing">$750 Market Read</a> covers it, credited toward your first month.</p>
+      <div class="cta-row"><a href="/#read" class="btn btn-primary">Get a free snapshot</a><a href="/blog/" class="btn btn-outline">More signals</a></div>
+    </div>
+    <p class="method-note">Method: every figure on this page is quoted from the dated sources listed above. Nothing is estimated.</p>
+    <p class="caveat">No US profile prices for Legal 500 turned up in the public reporting used here, so this page states none. US guide figures only. Each figure is dated; check the source before relying on it.</p>
+  </article>
+  </main>
+  <footer class="v5-foot">
+    <div class="v5-foot-inner">
+      <div class="v5-foot-logo">LoopWorker</div>
+      <p>Evidence before execution.</p>
+      <p>© 2026 · <a href="/#pricing">Pricing</a> · <a href="/#how">Example read</a> · <a href="/blog/">Signals</a> · <a href="/#about">About</a></p>
+      <p class="v5-foot-small">alex@loopworker.com · <a href="https://instagram.com/loopworker">@loopworker</a></p>
+    </div>
+  </footer>
+  <script defer src="/site-pages.js"></script>
+  <script defer src="/site-runtime.js"></script>
+</body>
+</html>
