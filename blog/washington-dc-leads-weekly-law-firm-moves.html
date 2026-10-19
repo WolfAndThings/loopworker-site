@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site-pages.css">
+  <link rel="stylesheet" href="/v5-system.css">
+  <style>
+    body { background: var(--bg) !important; color: var(--text-2) !important; font-family: var(--sans) !important; }
+    .sig-article { max-width: 760px; margin: 0 auto; padding: 7rem 1.25rem 4rem; position: relative; }
+    .sig-article h1 { font-family: var(--sans-tight) !important; font-size: clamp(2rem, 4.4vw, 3rem) !important; font-weight: 800 !important; letter-spacing: -0.03em !important; line-height: 1.08 !important; color: var(--text) !important; margin: 0 0 1.1rem !important; }
+    .sig-article h2 { font-family: var(--sans-tight) !important; font-size: clamp(1.35rem, 2.4vw, 1.7rem) !important; font-weight: 700 !important; letter-spacing: -0.02em !important; color: var(--text) !important; margin: 2.4rem 0 0.9rem !important; }
+    .sig-article p, .sig-article li { color: var(--text-2) !important; font-size: 1.05rem !important; line-height: 1.7 !important; }
+    .sig-article p { margin: 0 0 1rem !important; }
+    .sig-article a { color: var(--indigo-bright); border-bottom: 1px solid rgba(227,164,74,0.35); text-decoration: none; }
+    .sig-article strong { color: var(--text); }
+    .sig-article ul { padding-left: 1.3rem; margin: 0 0 1.2rem; }
+    .sig-article li { margin-bottom: 0.45rem; }
+    .article-tag { display:inline-block; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--indigo-bright); margin-bottom: 1rem; }
+    .article-dek { font-size: 1.15rem !important; color: var(--text-2) !important; }
+    .article-meta { font-family: var(--mono); font-size: 0.75rem; color: var(--text-3); margin: 0 0 2rem; }
+    .quick-answer { border-left: 3px solid var(--indigo-bright); background: rgba(227,164,74,0.06); padding: 1.1rem 1.3rem; margin: 0 0 2rem; border-radius: 0 6px 6px 0; }
+    .quick-answer .qa-label, .key-takeaways .qa-label { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.5rem; display:block; }
+    .quick-answer p { margin: 0 !important; color: var(--text) !important; }
+    .key-takeaways { border: 1px solid var(--border); background: var(--surface); border-radius: 8px; padding: 1.2rem 1.4rem 0.6rem; margin: 0 0 2.4rem; }
+    .data-figure { margin: 2rem 0; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; background: var(--surface); }
+    .data-figure svg { width: 100%; height: auto; display: block; }
+    .data-figure figcaption { font-family: var(--mono); font-size: 0.74rem; color: var(--text-3); margin-top: 0.6rem; line-height: 1.5; }
+    .num-table { width: 100%; border-collapse: collapse; margin: 1.4rem 0 2rem; font-size: 0.95rem; }
+    .num-table th, .num-table td { text-align: left; padding: 0.55rem 0.6rem; border-bottom: 1px solid var(--border); color: var(--text-2); vertical-align: top; }
+    .num-table th { color: var(--text-3); font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+    .num-table td.n { font-family: var(--mono); color: var(--text); white-space: nowrap; }
+    .bar-row { display: grid; grid-template-columns: minmax(0, 11rem) 1fr auto; gap: 0.6rem; align-items: center; margin: 0.45rem 0; font-size: 0.9rem; }
+    .bar-row .bar { height: 10px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+    .bar-row .bar span { display: block; height: 100%; background: var(--indigo-bright); }
+    .bar-row .v { font-family: var(--mono); color: var(--text); font-size: 0.85rem; }
+    .faq details { border-bottom: 1px solid var(--border); padding: 0.9rem 0; }
+    .faq summary { cursor: pointer; color: var(--text); font-weight: 600; font-size: 1.05rem; }
+    .faq details p { margin: 0.7rem 0 0 !important; }
+    .method-note, .caveat { font-size: 0.92rem !important; color: var(--text-3) !important; }
+    .method-note { border-top: 1px solid var(--border); padding-top: 1.4rem; margin-top: 2.6rem !important; }
+    .post-cta { border: 1px solid var(--border); border-radius: 8px; padding: 1.4rem; margin: 2.6rem 0 1rem; background: var(--surface); }
+    .post-cta h2 { margin-top: 0 !important; }
+    .post-cta .cta-row { display:flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.8rem; }
+    .post-cta .cta-row a { border-bottom: 0; }
+    @media (max-width: 560px) { .bar-row { grid-template-columns: 1fr auto; } .bar-row .bar { grid-column: 1 / -1; grid-row: 2; } }
+    .moves-table td a { border-bottom: 0; }
+    .moves-table td.d { font-family: var(--mono); font-size: 0.8rem; color: var(--text-3); white-space: nowrap; }
+    .table-wrap { overflow-x: auto; margin: 1.4rem 0 2rem; }
+    .table-wrap .num-table { margin: 0; min-width: 560px; }
+  </style>
+  <title>Law firm lateral moves: Washington, DC leads the week</title>
+  <meta name="description" content="Law firm market moves for October 12 to October 18, 2026: 10 reported moves, 7 laterals, and Washington, DC as the only city with 2.">
+  <meta name="author" content="Alex Lamb">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <link rel="canonical" href="https://www.loopworker.com/blog/washington-dc-leads-weekly-law-firm-moves.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.loopworker.com/blog/washington-dc-leads-weekly-law-firm-moves.html">
+  <meta property="og:title" content="Law firm lateral moves: Washington, DC leads the week">
+  <meta property="og:description" content="Law firm market moves for October 12 to October 18, 2026: 10 reported moves, 7 laterals, and Washington, DC as the only city with 2.">
+  <meta property="og:image" content="https://www.loopworker.com/images/loopworker-og.png">
+  <meta property="article:published_time" content="2026-10-19">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Law firm lateral moves: Washington, DC leads the week">
+  <meta name="twitter:description" content="Law firm market moves for October 12 to October 18, 2026: 10 reported moves, 7 laterals, and Washington, DC as the only city with 2.">
+  <meta property="og:site_name" content="LoopWorker">
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.loopworker.com/#organization",
+   "name": "LoopWorker",
+   "url": "https://www.loopworker.com/"
+  },
+  {
+   "@type": "Article",
+   "headline": "Market moves, October 12 to October 18, 2026: Washington, DC is where the moves clustered",
+   "description": "Law firm market moves for October 12 to October 18, 2026: 10 reported moves, 7 laterals, and Washington, DC as the only city with 2.",
+   "url": "https://www.loopworker.com/blog/washington-dc-leads-weekly-law-firm-moves.html",
+   "datePublished": "2026-10-19",
+   "dateModified": "2026-10-19",
+   "publisher": {
+    "@id": "https://www.loopworker.com/#organization"
+   },
+   "mainEntityOfPage": "https://www.loopworker.com/blog/washington-dc-leads-weekly-law-firm-moves.html",
+   "image": "https://www.loopworker.com/images/loopworker-og.png",
+   "author": {
+    "@type": "Person",
+    "name": "Alex Lamb",
+    "url": "https://www.loopworker.com/#about"
+   },
+   "inLanguage": "en-US",
+   "isAccessibleForFree": true
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Which city saw the most law firm moves this week?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Washington, DC, with 2 moves. Every other city on the list had 1. Both Washington, DC moves were lateral hires, by Wilson Sonsini Goodrich & Rosati PC and Foley Hoag."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Were there any law firm mergers this week?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Public law news reported 0 mergers in October 12 to October 18, 2026. The 10 moves were 7 laterals, 2 group moves and 1 office opening."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Did any firm add more than one lawyer or office this week?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No firm appears more than once on the gaining list. Womble's move from K&L Gates was reported as a team, and Dykema Gossett's Houston move was reported as an energy lawyer and a trial lawyer. Each still counts as 1 move."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does this list include every lateral move that happened?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. It counts only moves that public news feeds reported in the window. A move nobody announced does not appear here."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.loopworker.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Signals",
+     "item": "https://www.loopworker.com/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Market moves, October 12 to October 18, 2026: Washington, DC is where the moves clustered",
+     "item": "https://www.loopworker.com/blog/washington-dc-leads-weekly-law-firm-moves.html"
+    }
+   ]
+  }
+ ]
+}
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav class="v5-nav">
+    <div class="v5-nav-inner">
+      <a href="/" class="v5-logo">
+        <span class="v5-logo-mark">L</span>
+        LoopWorker
+      </a>
+      <div class="v5-nav-links">
+        <a href="/#pricing">Pricing</a>
+
+        <a href="/resources/field-manual.html">Field manual</a>
+        <a href="/#how">Example read</a>
+        <a href="/blog/" class="active">Signals</a>
+        <a href="/#about">About</a>
+        <a href="/#read" class="v5-nav-cta">Free snapshot</a>
+      </div>
+      <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="v5-mobile-nav" id="mobileNav">
+      <a href="/#pricing">Pricing</a>
+
+      <a href="/resources/field-manual.html">Field manual</a>
+      <a href="/#how">Example read</a>
+      <a href="/blog/">Signals</a>
+      <a href="/#about">About</a>
+      <a href="/#read" class="v5-nav-cta">Free snapshot</a>
+    </div>
+  </nav>
+  <main id="main">
+  <article class="sig-article">
+    <span class="article-tag">Market moves</span>
+    <h1>Market moves, October 12 to October 18, 2026: Washington, DC is where the moves clustered</h1>
+    <p class="article-dek">Public law news reported 10 moves this week. Washington, DC was the only city with 2, both of them lateral hires.</p>
+    <p class="article-meta">October 19, 2026 · Alex Lamb</p>
+    <div class="quick-answer"><span class="qa-label">Quick answer</span><p>Public law news reported 10 moves in October 12 to October 18, 2026, and Washington, DC was the only city with more than 1. Wilson Sonsini Goodrich &amp; Rosati PC hired a national security lead from Baker Botts there, and Foley Hoag hired a mergers and acquisitions and private equity lawyer from Miles &amp; Stockbridge PC.</p></div>
+    <div class="key-takeaways"><span class="qa-label">Key takeaways</span><ul><li>Public law news reported 10 moves this week: 7 laterals, 2 group moves, 1 office opening and 0 mergers.</li><li>Washington, DC had 2 moves, and every other city on the list had 1.</li><li>Wilson Sonsini Goodrich &amp; Rosati PC and Foley Hoag each added a lateral in Washington, DC.</li><li>No firm appears more than once on either the gaining or the losing side.</li><li>Energy hires landed in Houston and Austin, and litigation hires landed in Boston, Pensacola and Pittsburgh.</li></ul></div>
+    <h2>Washington, DC was the only city with 2 moves</h2>
+    <p>Public law news reported 10 moves in October 12 to October 18, 2026. Washington, DC was the only metro with more than 1. Every other city on the list had 1.</p>
+    <p>Both Washington, DC moves were laterals. Wilson Sonsini Goodrich &amp; Rosati PC hired the national security and trade risk mitigation lead from Baker Botts. Foley Hoag hired a mergers and acquisitions and private equity lawyer from Miles &amp; Stockbridge PC.</p>
+    <p>The 2 practices are different. What they share is the city. If your firm competes in Washington, DC, this is the week a rival got something new to say.</p>
+    <table class="num-table"><tbody>
+        <tr><td>Moves reported</td><td class="n">10</td></tr>
+        <tr><td>Individual laterals</td><td class="n">7</td></tr>
+        <tr><td>Group moves</td><td class="n">2</td></tr>
+        <tr><td>Office openings</td><td class="n">1</td></tr>
+        <tr><td>Mergers</td><td class="n">0</td></tr>
+      </tbody></table>
+    <table class="num-table"><thead><tr><th>Firm adding people</th><th>Moves</th></tr></thead><tbody><tr><td>Womble</td><td class="n">1</td></tr><tr><td>Mandelbaum Barrett PC</td><td class="n">1</td></tr><tr><td>Greenberg Traurig</td><td class="n">1</td></tr><tr><td>GrayRobinson PA</td><td class="n">1</td></tr><tr><td>Dykema Gossett</td><td class="n">1</td></tr><tr><td>Wilson Sonsini Goodrich &amp; Rosati PC</td><td class="n">1</td></tr></tbody></table><table class="num-table"><thead><tr><th>City</th><th>Moves</th></tr></thead><tbody><tr><td>Washington, DC</td><td class="n">2</td></tr><tr><td>Boston</td><td class="n">1</td></tr><tr><td>Lakewood</td><td class="n">1</td></tr><tr><td>Chicago</td><td class="n">1</td></tr><tr><td>Pensacola</td><td class="n">1</td></tr><tr><td>Houston</td><td class="n">1</td></tr></tbody></table>
+    <h2>What it means if you compete in Washington, DC</h2>
+    <p>If your firm sells national security and trade risk mitigation work in Washington, DC, Wilson Sonsini Goodrich &amp; Rosati PC now has a fresh name in that practice. Law360 Legal Industry reported the hire. Your clients and prospects in that practice may have read it.</p>
+    <p>The same goes for mergers and acquisitions and private equity. Foley Hoag&#x27;s hire ran in Law360 Private Equity.</p>
+    <p>A lateral arrival is the moment a firm&#x27;s marketing team has the most to announce. The gaining firm has a new bio, a new voice and a reason to contact the market. If you compete with Wilson Sonsini Goodrich &amp; Rosati PC or Foley Hoag in these practices, your next decision is whether your own people in that practice are visible this month.</p>
+    <p>For Baker Botts and Miles &amp; Stockbridge PC, the news runs the other way. Each now has a departure on the public record in Washington, DC.</p>
+    <h2>Energy and litigation, spread across cities</h2>
+    <p>Energy shows up in Houston and Austin. Dykema Gossett added an energy lawyer and a trial lawyer in Houston, reported as a group move. Troutman Pepper Locke added an energy regulatory lawyer in Austin, coming from an in-house role at Lower Colorado River Authority. Both ran in Law360 Energy.</p>
+    <p>Litigation moves landed in different cities. Womble added a financial litigation team from K&amp;L Gates in Boston, reported by Global Legal Post. GrayRobinson PA hired a litigator from Clark Partington in Pensacola. WH Burkley added a commercial litigation and election law lawyer from Leech Tishman in Pittsburgh.</p>
+    <p>The rest of the week: Greenberg Traurig hired a private funds lawyer from Sidley Austin in Chicago. Marshall Dennehey added a casualty lawyer from Quintairos Prieto Wood &amp; Boyer PA in Orlando. Mandelbaum Barrett PC opened an office in Lakewood.</p>
+    <h2>The firms on each side</h2>
+    <p>No firm appears more than once on the gaining side. No firm appears more than once on the losing side. Each firm named this week has 1 move.</p>
+    <p>Womble&#x27;s move is the only group move with a source firm named in the reporting. Dykema Gossett&#x27;s group move in Houston names no source firm.</p>
+    <p>That matters for how you read your own market. If a competitor appears on this list, it appears for a single hire or office. The signal is the practice and the city, not a firm on a hiring run.</p>
+    <h2>What this count covers</h2>
+    <p>This is a count of reported moves only. It comes from headlines across 35 public RSS feeds. A move nobody announced is not here.</p>
+    <p>One week is one week. Washington, DC led this window with 2 moves. That describes October 12 to October 18, 2026, and nothing beyond it.</p>
+    <h2>Every move in the count</h2>
+    <div class="table-wrap"><table class="num-table moves-table">
+      <thead><tr><th>Date</th><th>Type</th><th>Firm</th><th>From</th><th>Practice</th><th>City</th><th>Source</th></tr></thead>
+      <tbody>
+<tr><td class="d">10-16</td><td>Group</td><td>Womble</td><td>K&amp;L Gates</td><td>financial litigation</td><td>Boston</td><td><a href="https://www.globallegalpost.com/news/womble-adds-five-lawyer-financial-litigation-team-in-boston-new-york-from-kl-gates-1007440716" rel="nofollow noopener" target="_blank">Global Legal Post</a></td></tr>
+<tr><td class="d">10-16</td><td>Office</td><td>Mandelbaum Barrett PC</td><td></td><td></td><td>Lakewood</td><td><a href="https://www.law360.com/pulse/mid-law/articles/2538879?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse Mid-Law</a></td></tr>
+<tr><td class="d">10-16</td><td>Lateral</td><td>Greenberg Traurig</td><td>Sidley Austin</td><td>private funds</td><td>Chicago</td><td><a href="https://www.law360.com/legalindustry/articles/2538636?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Legal Industry</a></td></tr>
+<tr><td class="d">10-16</td><td>Lateral</td><td>GrayRobinson PA</td><td>Clark Partington</td><td>litigation</td><td>Pensacola</td><td><a href="https://www.law360.com/florida/articles/2538876?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Florida</a></td></tr>
+<tr><td class="d">10-16</td><td>Group</td><td>Dykema Gossett</td><td></td><td>energy</td><td>Houston</td><td><a href="https://www.law360.com/energy/articles/2539072?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Energy</a></td></tr>
+<tr><td class="d">10-15</td><td>Lateral</td><td>Wilson Sonsini Goodrich &amp; Rosati PC</td><td>Baker Botts</td><td>national security and trade risk mitigation</td><td>Washington, DC</td><td><a href="https://www.law360.com/legalindustry/articles/2537758?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Legal Industry</a></td></tr>
+<tr><td class="d">10-15</td><td>Lateral</td><td>WH Burkley</td><td>Leech Tishman</td><td>commercial litigation and election law</td><td>Pittsburgh</td><td><a href="https://www.law360.com/pulse/mid-law/articles/2537846?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse Mid-Law</a></td></tr>
+<tr><td class="d">10-15</td><td>Lateral</td><td>Troutman Pepper Locke</td><td>Lower Colorado River Authority</td><td>energy regulatory</td><td>Austin</td><td><a href="https://www.law360.com/energy/articles/2538100?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Energy</a></td></tr>
+<tr><td class="d">10-15</td><td>Lateral</td><td>Marshall Dennehey</td><td>Quintairos Prieto Wood &amp; Boyer PA</td><td>casualty</td><td>Orlando</td><td><a href="https://www.law360.com/pulse/mid-law/articles/2538092?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse Mid-Law</a></td></tr>
+<tr><td class="d">10-15</td><td>Lateral</td><td>Foley Hoag</td><td>Miles &amp; Stockbridge PC</td><td>mergers and acquisitions and private equity</td><td>Washington, DC</td><td><a href="https://www.law360.com/privateequity/articles/2538362?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Private Equity</a></td></tr>
+      </tbody></table></div>
+    <section class="faq">
+    <h2>Frequently asked questions</h2>
+    <details><summary>Which city saw the most law firm moves this week?</summary><p>Washington, DC, with 2 moves. Every other city on the list had 1. Both Washington, DC moves were lateral hires, by Wilson Sonsini Goodrich &amp; Rosati PC and Foley Hoag.</p></details>
+    <details><summary>Were there any law firm mergers this week?</summary><p>No. Public law news reported 0 mergers in October 12 to October 18, 2026. The 10 moves were 7 laterals, 2 group moves and 1 office opening.</p></details>
+    <details><summary>Did any firm add more than one lawyer or office this week?</summary><p>No firm appears more than once on the gaining list. Womble&#x27;s move from K&amp;L Gates was reported as a team, and Dykema Gossett&#x27;s Houston move was reported as an energy lawyer and a trial lawyer. Each still counts as 1 move.</p></details>
+    <details><summary>Does this list include every lateral move that happened?</summary><p>No. It counts only moves that public news feeds reported in the window. A move nobody announced does not appear here.</p></details>
+    </section>
+    <div class="post-cta">
+      <h2>See where your firm stands</h2>
+      <p>A free snapshot gives you one evidence-backed observation about your firm's public marketing, with the source and a practical next step.</p>
+      <p>Want the full picture against up to 3 competitors? The <a href="/#pricing">$750 Market Read</a> covers it, credited toward your first month.</p>
+      <div class="cta-row"><a href="/#read" class="btn btn-primary">Get a free snapshot</a><a href="/blog/" class="btn btn-outline">More signals</a></div>
+    </div>
+    <p class="method-note">Method: law firm news headlines from 35 public RSS feeds, captured daily, October 12, 2026 to October 18, 2026. Firm, practice and city are read from each headline and summary; a field the text does not state is left blank. The same move reported twice is counted once. US moves only.</p>
+    <p class="caveat">This counts moves that public news feeds reported in the window. Moves nobody announced are not here.</p>
+  </article>
+  </main>
+  <footer class="v5-foot">
+    <div class="v5-foot-inner">
+      <div class="v5-foot-logo">LoopWorker</div>
+      <p>Evidence before execution.</p>
+      <p>© 2026 · <a href="/#pricing">Pricing</a> · <a href="/#how">Example read</a> · <a href="/blog/">Signals</a> · <a href="/#about">About</a></p>
+      <p class="v5-foot-small">alex@loopworker.com · <a href="https://instagram.com/loopworker">@loopworker</a></p>
+    </div>
+  </footer>
+  <script defer src="/site-pages.js"></script>
+  <script defer src="/site-runtime.js"></script>
+</body>
+</html>
