@@ -265,6 +265,7 @@
     .done p { margin-top: 12px; font-size: 17px; }
     .done[hidden] { display: none; }
     .tool-note { font-size: 13px; color: rgba(255,255,255,.5) !important; }
+    .read-note { font-size: 15px; line-height: 1.5; padding-left: 14px; border-left: 2px solid #E0482A; }
 
     /* faq */
     .faq-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; }
@@ -828,9 +829,11 @@
                 <option>Not sure yet</option>
               </select>
             </label>
-            <label for="f-notes">Anything specific you'd like examined? <span class="opt">(optional)</span>
-              <textarea id="f-notes" name="notes" maxlength="1000"></textarea>
+            <label for="f-notes">What decision is on your desk right now? <span class="opt" id="notes-opt">(optional)</span>
+              <textarea id="f-notes" name="decision" maxlength="1000" placeholder="For example: whether to start running Facebook ads" aria-describedby="e-notes"></textarea>
+              <span class="err" id="e-notes" aria-live="polite"></span>
             </label>
+            <p class="read-note" id="read-note" hidden>The Market Read is $750, credited toward your first month of either plan. I'll reply by email with an invoice, and work starts once it's paid. The Read is built to answer the decision you name above.</p>
             <button type="submit" class="btn" id="snap-btn">Get a free snapshot</button>
             <p class="form-status" id="snap-status" role="status" aria-live="polite"></p>
           </form>
@@ -961,9 +964,25 @@
 
   <script>
     if (window.matchMedia('(min-width: 761px)').matches) document.querySelectorAll('.plan .incl').forEach(function (d) { d.open = true; });
+    // Market Read mode: picking the $750 Read (from a plan button, the dropdown, or ?plan=market-read
+    // from the pricing page) turns the form into a Read request and makes the decision question required.
+    var READ = 'I want the $750 Market Read';
+    function readMode() {
+      var on = document.getElementById('f-concern').value === READ;
+      document.querySelector('#snap [name="_subject"]').value = on ? 'MARKET READ request ($750) · loopworker.com' : 'FREE SNAPSHOT request · loopworker.com';
+      document.getElementById('snap-btn').textContent = on ? 'Request the $750 Market Read' : 'Get a free snapshot';
+      document.getElementById('notes-opt').hidden = on;
+      document.getElementById('read-note').hidden = !on;
+      document.getElementById('f-notes').required = on;
+      document.querySelector('#snap-done p').textContent = on
+        ? "Thanks. I'll reply with an invoice at the email you provided, and start the Read once it's paid."
+        : "Thanks for sending your firm. I'll review the information and follow up using the email you provided.";
+    }
     document.querySelectorAll('[data-plan="market-read"]').forEach(function (a) {
-      a.addEventListener('click', function () { var s = document.getElementById('f-concern'); if (s) s.value = 'I want the $750 Market Read'; });
+      a.addEventListener('click', function () { document.getElementById('f-concern').value = READ; readMode(); });
     });
+    document.getElementById('f-concern').addEventListener('change', readMode);
+    if (/[?&]plan=market-read\b/.test(location.search)) { document.getElementById('f-concern').value = READ; readMode(); }
     // Free snapshot form. Posts to the existing Formspree endpoint. With JavaScript it validates,
     // blocks double sends and confirms inline; without JavaScript it falls back to a normal POST.
     (function () {
@@ -993,9 +1012,12 @@
       f.addEventListener('submit', function (e) {
         e.preventDefault();
         if (sending) return;
-        var okE = checkEmail(), okS = checkSite();
+        var okE = checkEmail(), okS = checkSite(), notes = document.getElementById('f-notes');
+        var okD = !notes.required || !!notes.value.trim();
+        setErr(notes, okD ? '' : 'Name the decision so the Read can answer it.');
         if (!okE) { email.focus(); return; }
         if (!okS) { site.focus(); return; }
+        if (!okD) { notes.focus(); return; }
         site.value = okS;
         sending = true; btn.disabled = true; btn.textContent = 'Sending…'; status.textContent = ''; status.classList.remove('bad');
         // Send in the page. If that fails or stalls (for example a spam check on Formspree's side),
