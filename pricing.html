@@ -3,13 +3,722 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, follow">
-  <title>Moved | LoopWorker</title>
-  <link rel="canonical" href="https://www.loopworker.com/#pricing">
-  <meta http-equiv="refresh" content="0; url=/#pricing">
-  <script>location.replace("/#pricing" + location.search);</script>
+  <title>Pricing | LoopWorker Market Read and Monthly Plans</title>
+  <meta name="description" content="Market Read $750, credited to month one. Intelligence + Content $4,999 a month. Intelligence + Production $8,999 a month. Scope, terms and what you receive.">
+  <link rel="canonical" href="https://www.loopworker.com/pricing.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.loopworker.com/pricing.html">
+  <meta property="og:title" content="Pricing | LoopWorker Market Read and Monthly Plans">
+  <meta property="og:description" content="Market Read $750, credited to month one. Intelligence + Content $4,999 a month. Intelligence + Production $8,999 a month. Scope, terms and what you receive.">
+  <meta property="og:image" content="https://www.loopworker.com/images/loopworker-og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "LoopWorker", "url": "https://www.loopworker.com/pricing.html", "email": "alex@loopworker.com", "description": "Competitive marketing intelligence, content strategy, and video production for law firms.", "founder": {"@type": "Person", "name": "Alex Lamb"}, "hasOfferCatalog": {"@type": "OfferCatalog", "name": "LoopWorker services", "itemListElement": [{"@type": "Offer", "name": "Market Read", "price": "750", "priceCurrency": "USD"}, {"@type": "Offer", "name": "Intelligence + Content", "price": "4999", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "4999", "priceCurrency": "USD", "unitText": "MONTH"}}, {"@type": "Offer", "name": "Intelligence + Production", "price": "8999", "priceCurrency": "USD", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "8999", "priceCurrency": "USD", "unitText": "MONTH"}}]}}</script>
+  <meta name="theme-color" content="#F2F1EE">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F2F1EE;
+      --paper: #FAFAF8;
+      --ink: #0E0E0E;
+      --ink-2: #4A4A47;
+      --ink-3: #75756F;
+      --line: #D6D5D0;
+      --accent: #E0482A;
+      --font: "Archivo", "Helvetica Neue", Arial, sans-serif;
+      --wrap: 1320px;
+      --ease: cubic-bezier(.16,1,.3,1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { color: inherit; }
+    img, video { display: block; max-width: 100%; }
+    figure { margin: 0; }
+    .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 40px; }
+    h1, h2, h3 { font-weight: 800; font-stretch: 112%; letter-spacing: -0.03em; line-height: 0.98; }
+    h2 { font-size: clamp(36px, 5vw, 72px); }
+    p { color: var(--ink-2); }
+    .kicker { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+    .skip { position: absolute; left: -9999px; top: 8px; z-index: 50; background: var(--ink); color: #fff; padding: 10px 14px; }
+    .skip:focus { left: 8px; }
+    /* keyboard focus ring everywhere except inside the locked data section */
+    body :focus-visible:not(#how *) { outline: 2px solid var(--accent); outline-offset: 3px; }
+    /* anchors land below the fixed nav; the locked data section keeps its own behaviour */
+    main [id]:not(#how):not(#how *) { scroll-margin-top: 84px; }
+
+    .btn { display: inline-flex; align-items: center; gap: 12px; background: var(--ink); color: #fff; text-decoration: none; font-weight: 600; font-size: 16px; padding: 17px 26px; border: 0; cursor: pointer; white-space: nowrap; font-family: var(--font); transition: background .25s, color .25s, transform .1s; }
+    .btn::after { content: "\2192"; transition: transform .3s var(--ease); }
+    .btn:hover { background: var(--accent); }
+    .btn:hover::after { transform: translateX(4px); }
+    .btn:active { transform: translateY(1px); }
+    .btn.light { background: #fff; color: var(--ink); }
+    .btn.light:hover { background: var(--accent); color: #fff; }
+    .btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
+    .btn.ghost::after { content: "\2193"; }
+    .btn.ghost:hover { background: var(--ink); color: #fff; }
+    .btn.ghost:hover::after { transform: translateY(3px); }
+    .btn[disabled] { opacity: .55; pointer-events: none; }
+
+    /* nav */
+    nav { position: fixed; inset: 0 0 auto 0; z-index: 20; color: var(--ink); transition: background .35s, color .35s, border-color .35s; border-bottom: 1px solid transparent; }
+    nav.dim { background: rgba(242,241,238,.85); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+    nav.solid { background: rgba(242,241,238,.94); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); color: var(--ink); border-color: var(--line); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { font-weight: 800; font-stretch: 118%; font-size: 20px; letter-spacing: -0.02em; text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: 15px; font-weight: 500; }
+    .nav-links a:not(.btn) { text-decoration: none; color: var(--ink-2); padding: 6px 0; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; }
+    .nav-links a:not(.btn):hover { color: var(--ink); }
+    .nav-links a.active { color: var(--ink); border-bottom-color: var(--accent); }
+    .nav-links .btn { padding: 12px 18px; font-size: 15px; }
+    .nav-links .btn::after { display: none; }
+    .menu-btn { display: none; background: none; border: 0; font: inherit; font-size: 15px; font-weight: 600; color: var(--ink); padding: 12px 4px; cursor: pointer; }
+    .menu-btn i { display: inline-block; width: 18px; height: 10px; margin-left: 8px; border-top: 2px solid; border-bottom: 2px solid; vertical-align: -1px; }
+    @media (max-width: 1060px) {
+      .menu-btn { display: inline-flex; align-items: center; }
+      .nav-right { display: flex; align-items: center; gap: 14px; }
+      .nav-links a:not(.btn) { display: none; }
+      nav.open { background: var(--bg); border-color: var(--line); }
+      nav.open .nav-links { position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: var(--bg); border-bottom: 1px solid var(--line); padding: 8px 16px 20px; }
+      nav.open .nav-links a:not(.btn) { display: block; padding: 14px 0; font-size: 18px; border-bottom: 1px solid var(--line); }
+      nav.open .nav-links .btn { margin-top: 16px; justify-content: center; padding: 16px; }
+    }
+    @media (min-width: 1061px) { .nav-right { display: contents; } }
+
+    /* hero */
+    .hero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; color: var(--ink); background: var(--bg); overflow: hidden; }
+    #hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(242,241,238,0) 40%, rgba(242,241,238,.9) 100%); pointer-events: none; }
+    .hero .wrap { position: relative; z-index: 1; width: 100%; padding-bottom: 64px; }
+    .hero .kicker { color: var(--ink); margin-bottom: 22px; }
+    .hero h1 { font-size: clamp(40px, 6vw, 96px); font-stretch: 116%; letter-spacing: -0.045em; line-height: .95; max-width: 16ch; }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero-foot { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin-top: 36px; }
+    .hero-foot .copy { max-width: 46ch; }
+    .hero-foot .copy p { color: var(--ink-2); font-size: 19px; line-height: 1.5; }
+    .hero-foot .copy p + p { margin-top: 12px; }
+    .hero-cta { display: grid; gap: 14px; justify-items: start; }
+    .hero-cta .row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-cta small { font-size: 14px; color: #6B6B66; max-width: 44ch; }
+    .hero-credit { position: absolute; right: 40px; top: 96px; z-index: 2; font-size: 13px; color: #6B6B66; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    .hero-credit:hover { color: var(--ink); }
+    .hero-credit i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent); }
+
+    /* mobile sticky CTA */
+    .sticky-cta { display: none; }
+    @media (max-width: 760px) {
+      .sticky-cta { display: flex; justify-content: center; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 30; transform: translateY(140%); transition: transform .35s var(--ease); box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+      .sticky-cta.on { transform: none; }
+    }
+
+    /* credibility band */
+    .proof { background: var(--ink); color: #fff; }
+    .proof-grid { display: grid; grid-template-columns: 1.7fr 1fr; }
+    .stat { padding: 48px 32px 44px 0; }
+    .stat + .stat { padding-left: 32px; border-left: 1px solid rgba(255,255,255,.14); }
+    .stat h2 { font-size: clamp(30px, 3.4vw, 50px); letter-spacing: -0.035em; line-height: 1.02; color: #fff; }
+    .stat h2 .hot { color: var(--accent); }
+    .stat .big { display: block; font-size: clamp(40px, 4.4vw, 64px); font-weight: 800; font-stretch: 112%; letter-spacing: -0.04em; line-height: 1; color: #fff; }
+    .stat p { color: rgba(255,255,255,.66); font-size: 16px; margin-top: 14px; max-width: 52ch; }
+    .brands { border-top: 1px solid rgba(255,255,255,.14); padding: 30px 0 36px; display: flex; align-items: center; gap: 32px; }
+    .brands-label { flex: none; max-width: 17ch; font-size: 12px; font-weight: 600; letter-spacing: .14em; line-height: 1.5; text-transform: uppercase; color: rgba(255,255,255,.5); }
+    .marquee { flex: 1; display: flex; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+    .track { flex: none; display: flex; align-items: center; gap: 64px; padding-right: 64px; animation: slide 60s linear infinite; }
+    .marquee:hover .track { animation-play-state: paused; }
+    @keyframes slide { to { transform: translateX(-100%); } }
+    .track img { flex: none; opacity: .85; filter: brightness(0) invert(1); }
+    .lg-cambria { height: 28px; }
+    .lg-arbys { height: 42px; }
+    .lg-ruggable { height: 22px; }
+    .lg-wow { height: 42px; }
+    .lg-idtech { height: 34px; }
+    .lg-cann { height: 58px; }
+    .lg-juiced { height: 24px; }
+    .lg-pr { height: 24px; }
+    .lg-blennd { height: 28px; }
+    .lg-text { flex: none; font-weight: 800; font-stretch: 112%; font-size: 22px; letter-spacing: -0.02em; color: rgba(255,255,255,.88); white-space: nowrap; }
+    @media (max-width: 600px) { .brands { flex-direction: column; align-items: flex-start; gap: 18px; } .marquee { width: 100%; } .track { gap: 44px; padding-right: 44px; } }
+    @media (prefers-reduced-motion: reduce) { .track { animation: none; flex-wrap: wrap; row-gap: 24px; } .track[aria-hidden] { display: none; } .marquee { -webkit-mask-image: none; mask-image: none; } }
+
+
+    section { padding: 128px 0; }
+    .head { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 32px; margin-bottom: 56px; }
+    .head p { max-width: 46ch; font-size: 18px; margin-top: 20px; }
+
+    /* bridge */
+    .bridge { padding: 112px 0; border-bottom: 1px solid var(--line); }
+    .bridge-grid { display: grid; grid-template-columns: 6fr 5fr; gap: 80px; align-items: start; }
+    .bridge h2 { font-size: clamp(32px, 4vw, 58px); }
+    .bridge-copy p { font-size: 19px; max-width: 46ch; }
+    .bridge-copy p + p { margin-top: 16px; }
+    .bridge .line { margin-top: 28px; padding-top: 20px; border-top: 2px solid var(--ink); font-weight: 700; font-stretch: 108%; font-size: 20px; color: var(--ink); }
+    .bridge .line span { color: var(--accent); }
+
+    /* what the Market Read covers */
+    .areas { border-top: 2px solid var(--ink); }
+    .area { display: grid; grid-template-columns: 1.15fr 1.6fr 1.15fr; gap: 48px; align-items: start; padding: 36px 0; border-bottom: 1px solid var(--line); }
+    .area .cat { display: block; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .area h3 { font-size: 26px; line-height: 1.05; }
+    .area p { font-size: 17px; line-height: 1.55; }
+    .area .lbl { display: block; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #6B6B66; margin-bottom: 8px; }
+    .area .past { margin-top: 16px; padding-left: 14px; border-left: 2px solid var(--line); font-size: 15px; }
+    .area ul { list-style: none; display: grid; gap: 8px; }
+    .area li { position: relative; padding-left: 18px; font-size: 16px; color: var(--ink); line-height: 1.4; }
+    .area li::before { content: ""; position: absolute; left: 0; top: .55em; width: 7px; height: 7px; background: var(--accent); }
+    .areas-note { margin-top: 20px; font-size: 14px; color: #6B6B66; max-width: 80ch; }
+
+    /* how it works */
+    .process { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .flow { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 2px solid var(--ink); }
+    .flow li { padding: 32px 28px 8px 0; }
+    .flow li + li { padding-left: 28px; border-left: 1px solid var(--line); }
+    .flow .n { display: block; font-size: 13px; font-weight: 700; letter-spacing: .1em; color: var(--accent); margin-bottom: 32px; }
+    .flow h3 { font-size: 26px; }
+    .flow p { font-size: 17px; margin-top: 14px; }
+    .terms-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px 32px; margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); }
+    .terms-list li { position: relative; padding-left: 26px; font-size: 15px; color: var(--ink-2); line-height: 1.45; }
+    .terms-list li::before { content: "\2713"; position: absolute; left: 0; top: 0; color: var(--accent); font-weight: 700; }
+
+    /* founder */
+    .about-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: center; }
+    .about-photo { aspect-ratio: 4/5; overflow: hidden; }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); }
+    .about h2 { font-size: clamp(32px, 3.8vw, 54px); }
+    .about-copy p { font-size: 18px; margin-top: 18px; max-width: 50ch; }
+    .about-copy p strong { color: var(--ink); font-weight: 600; }
+    .sig { margin-top: 30px; font-weight: 700; font-stretch: 112%; font-size: 18px; }
+    .sig span { display: block; font-weight: 400; font-stretch: 100%; font-size: 15px; color: #6B6B66; }
+
+    /* pricing */
+    .pricing { border-top: 1px solid var(--line); }
+    .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+    .plan { display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--ink); padding: 32px 28px 28px; }
+    .plan.feature { border-top-color: var(--accent); }
+    .plan .name { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #6B6B66; }
+    .plan .amount { margin-top: 18px; font-size: clamp(40px, 3.6vw, 52px); font-weight: 800; font-stretch: 110%; letter-spacing: -0.04em; line-height: 1; }
+    .plan .amount small { font-size: 16px; font-weight: 500; font-stretch: 100%; letter-spacing: 0; color: #6B6B66; }
+    .plan .short { margin-top: 10px; font-size: 15px; font-weight: 600; color: var(--ink); }
+    .plan h3 { margin-top: 26px; font-size: 24px; line-height: 1.08; }
+    .plan .desc { margin-top: 12px; font-size: 16px; }
+    .plan .lbl { display: block; margin-top: 24px; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: #6B6B66; }
+    .plan ul { list-style: none; display: grid; gap: 9px; margin-top: 12px; }
+    .plan li { position: relative; padding-left: 22px; font-size: 15px; line-height: 1.4; color: var(--ink); }
+    .plan li::before { content: "\2713"; position: absolute; left: 0; top: 0; color: var(--accent); font-weight: 700; font-size: 14px; }
+    .plan li.plus::before { content: "+"; font-size: 17px; top: -2px; }
+    .plan .split { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); display: grid; gap: 10px; }
+    .plan .split p { font-size: 14px; line-height: 1.45; }
+    .plan .split b { color: var(--ink); font-weight: 600; }
+    .plan .btn { margin-top: auto; justify-content: center; white-space: normal; text-align: center; }
+    .plan .cta-wrap { margin-top: 28px; display: grid; }
+    .plan .fine { margin-top: 12px; font-size: 13px; color: #6B6B66; }
+    .compare { margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; border-top: 2px solid var(--ink); }
+    .compare div { padding: 18px 20px 18px 0; font-size: 16px; color: var(--ink-2); }
+    .compare div + div { padding-left: 20px; border-left: 1px solid var(--line); }
+    .compare b { color: var(--ink); font-weight: 700; font-size: 18px; margin-right: 6px; }
+    .scope-note { margin-top: 28px; display: grid; grid-template-columns: 1fr 2fr; gap: 40px; padding: 28px 0 0; border-top: 1px solid var(--line); }
+    .scope-note h3 { font-size: 20px; }
+    .scope-note p { font-size: 15px; }
+    .scope-note p + p { margin-top: 10px; }
+
+    /* free snapshot: dark */
+    .read { background: var(--ink); color: #fff; }
+    .read h2 { color: #fff; }
+    .read p { color: rgba(255,255,255,.72); }
+    .read-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .read .lead { font-size: 19px; margin-top: 24px; max-width: 40ch; }
+    .read .lead + .lead { margin-top: 14px; }
+    .read .assure { margin-top: 26px; font-size: 15px; color: rgba(255,255,255,.55); }
+    .read .tool { background: #1A1A19; border: 1px solid #2E2E2C; padding: 36px; display: grid; gap: 20px; }
+    form { display: grid; gap: 18px; }
+    label { display: grid; gap: 8px; font-size: 14px; font-weight: 600; color: #fff; }
+    label .opt { font-weight: 400; color: rgba(255,255,255,.5); }
+    input, select, textarea { font: inherit; font-size: 17px; color: #fff; background: #0E0E0E; border: 1px solid #3A3A38; border-radius: 0; padding: 15px 18px; width: 100%; }
+    textarea { min-height: 96px; resize: vertical; }
+    select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, #aaa 50%), linear-gradient(135deg, #aaa 50%, transparent 50%); background-position: calc(100% - 22px) 50%, calc(100% - 16px) 50%; background-size: 6px 6px; background-repeat: no-repeat; padding-right: 44px; }
+    input::placeholder, textarea::placeholder { color: #8a8a85; }
+    input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 0; border-color: var(--accent); }
+    input[aria-invalid="true"] { border-color: #FF8A73; }
+    .err { font-size: 13px; font-weight: 500; color: #FF9A86; min-height: 0; }
+    .err:empty { display: none; }
+    form .btn { justify-self: start; }
+    .read .btn { background: #fff; color: var(--ink); }
+    .read .btn:hover { background: var(--accent); color: #fff; }
+    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .form-status { font-size: 15px; }
+    .form-status.bad { color: #FF9A86; }
+    .done h3 { font-size: 30px; color: #fff; }
+    .done p { margin-top: 12px; font-size: 17px; }
+    .done[hidden] { display: none; }
+    .tool-note { font-size: 13px; color: rgba(255,255,255,.5) !important; }
+
+    /* faq */
+    .faq-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; }
+    .faq-grid .side p { margin-top: 18px; font-size: 16px; max-width: 32ch; }
+    details { border-bottom: 1px solid var(--line); }
+    details:first-child { border-top: 2px solid var(--ink); }
+    summary { list-style: none; cursor: pointer; padding: 22px 44px 22px 0; font-size: 19px; font-weight: 600; position: relative; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; position: absolute; right: 4px; top: 16px; font-size: 28px; font-weight: 400; color: var(--accent); transition: transform .3s var(--ease); }
+    details[open] summary::after { transform: rotate(45deg); }
+    details p { padding: 0 44px 24px 0; font-size: 17px; max-width: 64ch; }
+
+    /* closing */
+    .close { padding: 128px 0; border-top: 1px solid var(--line); }
+    .close h2 { font-size: clamp(40px, 6vw, 96px); max-width: 16ch; }
+    .close p { margin-top: 24px; font-size: 19px; max-width: 50ch; }
+    .close .row { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; margin-top: 36px; }
+    .close .mail { font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: 3px; }
+
+    footer { background: var(--ink); color: rgba(255,255,255,.6); padding: 44px 0 52px; font-size: 15px; }
+    footer .wrap { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px 48px; flex-wrap: wrap; }
+    footer .brand b { display: block; color: #fff; font-weight: 800; font-stretch: 118%; font-size: 18px; letter-spacing: -0.02em; }
+    footer .brand span { display: block; margin-top: 6px; }
+    footer ul { list-style: none; display: flex; gap: 12px 28px; flex-wrap: wrap; }
+    footer a { color: #fff; text-underline-offset: 3px; }
+
+    @media (max-width: 1060px) {
+      .plans { grid-template-columns: 1fr 1fr; }
+      .plans .plan:first-child { grid-column: 1 / -1; }
+    }
+    @media (max-width: 960px) {
+      .read-grid, .faq-grid, .about-grid, .bridge-grid { grid-template-columns: 1fr; gap: 40px; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .stat, .stat + .stat { padding: 32px 0 28px; border-left: 0; }
+      .stat:first-child { border-bottom: 1px solid rgba(255,255,255,.14); }
+      .head { grid-template-columns: 1fr; }
+      .about-photo { max-width: 420px; }
+      .area { grid-template-columns: 1fr 1fr; gap: 20px 32px; }
+      .area > :first-child { grid-column: 1 / -1; }
+      .flow { grid-template-columns: 1fr 1fr; }
+      .flow li, .flow li + li { padding: 28px 20px 20px 0; border-left: 0; border-bottom: 1px solid var(--line); }
+      .flow .n { margin-bottom: 14px; }
+      .scope-note { grid-template-columns: 1fr; gap: 12px; }
+      .hero-foot { flex-direction: column; align-items: flex-start; gap: 28px; }
+    }
+    @media (max-width: 760px) {
+      .plans { grid-template-columns: 1fr; }
+      .compare { grid-template-columns: 1fr; }
+      .compare div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
+    }
+    @media (max-width: 600px) {
+      .wrap { padding: 0 16px; }
+      section { padding: 80px 0; }
+      .bridge { padding: 80px 0; }
+      .logo { font-size: 17px; }
+      .nav-right { gap: 6px; }
+      .menu-btn { padding: 10px 6px; font-size: 14px; }
+      .menu-btn i { margin-left: 6px; width: 15px; }
+      .nav-links .btn { padding: 10px 12px; font-size: 14px; }
+      .hero { align-items: flex-start; }
+      .hero .wrap { padding-top: 280px; padding-bottom: 48px; }
+      .hero .kicker { font-size: 11px; margin-bottom: 16px; }
+      .hero-foot .copy p { font-size: 17px; }
+      .hero-cta .row { flex-direction: column; align-items: stretch; width: 100%; }
+      .hero-cta .btn { justify-content: center; }
+      .hero-cta { width: 100%; }
+      .hero-credit { right: 16px; left: 16px; top: 86px; font-size: 12px; }
+      .area { grid-template-columns: 1fr; }
+      .area h3 { font-size: 22px; }
+      .flow { grid-template-columns: 1fr; }
+      .flow h3 { font-size: 22px; }
+      .brands-label { max-width: none; }
+      .read .tool { padding: 24px 18px; }
+      form .btn { justify-self: stretch; justify-content: center; }
+      summary { font-size: 17px; }
+      .close { padding: 88px 0; }
+    }
+
+    /* data demo: pinned scroll story over a particle chart */
+    .demo { position: relative; height: 320vh; padding: 0; background: #0B0B0B; color: #fff; }
+    .demo-pin { position: sticky; top: 0; height: 100vh; height: 100svh; display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
+    .demo-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: center; width: 100%; }
+    .demo .kicker { color: var(--accent); margin-bottom: 28px; }
+    .demo-steps { display: grid; }
+    .dstep { grid-area: 1 / 1; opacity: 0; transform: translateY(24px); transition: opacity .6s var(--ease), transform .6s var(--ease); pointer-events: none; }
+    .dstep.on { opacity: 1; transform: none; pointer-events: auto; }
+    .dstep h2 { font-size: clamp(32px, 3.6vw, 56px); }
+    .dstep p { color: rgba(255,255,255,.72); font-size: 19px; margin-top: 22px; max-width: 38ch; }
+    .dstep p b { color: #fff; font-weight: 700; }
+    .dstep .btn { margin-top: 30px; background: #fff; color: var(--ink); }
+    .dstep .btn:hover { background: var(--accent); color: #fff; }
+
+    .traits { margin-top: 22px; border-top: 1px solid rgba(255,255,255,.16); max-width: 44ch; }
+    .traits > div { display: grid; grid-template-columns: 112px 1fr; gap: 16px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .traits dt { font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.5); padding-top: 3px; }
+    .traits dd { margin: 0; font-size: 16px; color: rgba(255,255,255,.78); line-height: 1.45; }
+    .traits dd b { color: var(--accent); font-weight: 700; }
+    .traits .locked dt, .traits .star dt { color: var(--accent); }
+    .traits .star dd { color: #fff; }
+    .traits .locked dd { color: rgba(255,255,255,.55); font-style: italic; }
+    @media (max-width: 960px) {
+      .traits { margin-top: 10px; }
+      .traits > div { grid-template-columns: 92px 1fr; gap: 10px; padding: 7px 0; }
+      .traits dt { font-size: 10px; }
+      .traits dd { font-size: 13px; }
+    }
+    .demo-dots { display: flex; gap: 8px; margin-top: 28px; }
+    .demo-dots i { width: 28px; height: 3px; background: rgba(255,255,255,.18); transition: background .4s; }
+    .demo-dots i.on { background: var(--accent); }
+    .demo-stage { position: relative; height: min(68vh, 620px); }
+    #demo-canvas { width: 100%; height: 100%; display: block; }
+    .demo-legend { position: absolute; right: 0; top: 0; display: flex; gap: 18px; font-size: 13px; color: rgba(255,255,255,.6); opacity: 0; transition: opacity .5s; }
+    .demo-legend.on { opacity: 1; }
+    .demo-legend span::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: 1px; }
+    .lg-a::before { background: var(--accent); }
+    .lg-b::before { background: #8A8A86; }
+    .lg-c::before { background: #4A4A47; }
+    .demo-note { position: absolute; left: 0; right: 0; bottom: 22px; font-size: 12px; color: rgba(255,255,255,.4); }
+    @media (max-width: 960px) {
+      .demo-grid { grid-template-columns: 1fr; gap: 12px; }
+      .demo-stage { order: -1; height: 34vh; }
+      .demo .kicker { margin-bottom: 12px; }
+      .demo-pin { justify-content: flex-start; padding-top: 84px; }
+      .dstep h2 { font-size: 30px; }
+      .dstep p { font-size: 16px; margin-top: 12px; }
+      .dstep .btn { margin-top: 18px; }
+      .demo-dots { margin-top: 8px; }
+      .demo-note { position: static; margin-top: 10px; font-size: 10px; }
+      .demo-legend { top: auto; bottom: -4px; right: auto; left: 0; }
+    }
+    @media (max-width: 960px) and (max-height: 720px) {
+      .demo-stage { height: 24vh; }
+      .demo-pin { padding-top: 76px; }
+      .dstep h2 { font-size: 24px; }
+      .traits > div { padding: 5px 0; }
+      .traits dd { font-size: 12px; }
+      .dstep p { font-size: 14px; }
+    }
+    /* no scroll story under reduced motion: show the final frame and all four steps */
+    @media (prefers-reduced-motion: reduce) {
+      .demo { height: auto; }
+      .demo-pin { position: static; height: auto; padding: 100px 0 80px; }
+      .demo-steps { gap: 36px; }
+      .dstep { grid-area: auto; }
+      .dstep { position: static; opacity: 1; transform: none; }
+      .demo-dots { display: none; }
+      .demo-note { position: static; margin-top: 32px; }
+    }
+    /* highlighter: hard-coded yellow, no :root var (keeps the locked section's computed styles identical) */
+    .hl { background-image: linear-gradient(100deg, rgba(255,226,61,0) .5%, #FFE23D 2%, #FFE85A 97%, rgba(255,226,61,0) 99.5%); background-repeat: no-repeat; background-size: 100% 72%; background-position: 0 85%; padding: 0 .1em; margin: 0 -.05em; -webkit-box-decoration-break: clone; box-decoration-break: clone; color: var(--ink); }
+    .proof .hl, .read .hl { background-size: 100% 100%; background-position: 0 50%; color: #0B0B0B; }
+    /* motion: all of it switches off under reduced motion */
+    @media (prefers-reduced-motion: no-preference) {
+      .hero h1 .w { display: inline-block; opacity: 0; transform: translateY(.5em); animation: rise 1s var(--ease) forwards; animation-delay: calc(.2s + var(--i) * 70ms); }
+      .hero-foot, .hero .kicker { opacity: 0; animation: fade 1s ease .9s forwards; }
+      .hero .kicker { animation-delay: .1s; }
+      @keyframes rise { to { opacity: 1; transform: none; } }
+      @keyframes fade { to { opacity: 1; } }
+      .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: calc(var(--i, 0) * 80ms); }
+      .js .reveal.in { opacity: 1; transform: none; }
+      .js .reveal .hl { background-size: 0% 72%; transition: background-size .9s cubic-bezier(.3,.7,.2,1); transition-delay: calc(.5s + var(--i, 0) * 80ms); }
+      .js .reveal.in .hl { background-size: 100% 72%; }
+      .js .proof .reveal .hl, .js .read .reveal .hl { background-size: 0% 100%; color: inherit; transition: background-size .9s cubic-bezier(.3,.7,.2,1), color .3s ease; transition-delay: calc(.5s + var(--i, 0) * 80ms), calc(.75s + var(--i, 0) * 80ms); }
+      .js .proof .reveal.in .hl, .js .read .reveal.in .hl { background-size: 100% 100%; color: #0B0B0B; }
+      .hero .hl { animation: hlsweep 1s cubic-bezier(.3,.7,.2,1) 1.7s both; }
+      @keyframes hlsweep { from { background-size: 0% 72%; } to { background-size: 100% 72%; } }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    /* v8: compact covers, folding plan lists, links out to pricing and faq pages */
+    .areas.compact .area { grid-template-columns: 1fr 1.4fr; gap: 40px; padding: 28px 0; }
+    .areas.compact .area p + .past { margin-top: 12px; }
+    .plan .incl { margin-top: 20px; border-top: 1px solid var(--line); border-bottom: 0; }
+    .plan .incl summary { font-size: 15px; padding: 14px 32px 14px 0; }
+    .plan .incl summary::after { top: 6px; font-size: 24px; }
+    .plan .incl .lbl { margin-top: 4px; }
+    .plan .incl p { padding: 0; font-size: 14px; }
+    .plan .incl[open] { padding-bottom: 6px; }
+    .plans-more { margin-top: 28px; font-size: 16px; font-weight: 600; }
+    .plans-more a { color: var(--ink); text-decoration: none; border-bottom: 2px solid #E0482A; padding-bottom: 2px; }
+    /* small red labels: the brand red fails contrast at 12-13px, this darker red passes (4.8:1) */
+    .area .cat, .flow .n { color: #C2391E; }
+    @media (max-width: 960px) { .areas.compact .area { grid-template-columns: 1fr; gap: 12px; } }
+    @media (max-width: 600px) {
+      section { padding: 60px 0; }
+      .bridge { padding: 60px 0; }
+      .close { padding: 64px 0; }
+      .head { margin-bottom: 36px; }
+      .hero .kicker { font-size: 12px; }
+      .hero-credit { padding: 12px 0; font-size: 13px; }
+      footer ul a { display: inline-block; padding: 12px 0; }
+      .faq-grid .side a, .plans-more a { display: inline-block; padding: 10px 0 2px; }
+      .about-grid { grid-template-columns: 112px 1fr; gap: 20px; align-items: start; }
+      .about-photo { max-width: none; }
+      .about h2 { font-size: 28px; }
+      .about-copy p { font-size: 16px; }
+      .about-copy .sig { margin-top: 18px; }
+    }
+    /* short phones (iPhone SE): pull the hero up so its button shows without scrolling */
+    @media (max-width: 600px) and (max-height: 700px) {
+      .hero .wrap { padding-top: 250px; padding-bottom: 32px; }
+      .hero h1 { font-size: 36px; }
+      .hero .kicker { margin-bottom: 12px; }
+      .hero-foot { margin-top: 20px; gap: 18px; }
+      .hero-foot .copy p { font-size: 16px; }
+    }
+  </style>
+  <style>
+    nav { background: rgba(242,241,238,.94); border-color: var(--line); }
+    .page-top { padding: 152px 0 40px; }
+    .page-top .kicker { color: var(--ink-2); }
+    .page-top h1 { font-size: clamp(40px, 6vw, 88px); max-width: 16ch; }
+    .page-top p { margin-top: 20px; font-size: 19px; max-width: 52ch; }
+    .sub { padding: 64px 0 96px; }
+    .sub + .sub { border-top: 1px solid var(--line); }
+    .sub h2 { font-size: clamp(30px, 4vw, 52px); margin-bottom: 32px; }
+    .cta-band { background: var(--ink); color: #fff; padding: 88px 0; }
+    .cta-band h2 { color: #fff; font-size: clamp(30px, 4vw, 52px); max-width: 18ch; }
+    .cta-band p { color: rgba(255,255,255,.72); margin-top: 18px; font-size: 18px; max-width: 46ch; }
+    .cta-band .btn { margin-top: 28px; }
+    .faq-list { max-width: 860px; }
+    @media (max-width: 600px) { .page-top { padding: 120px 0 24px; } .sub { padding: 48px 0 72px; } }
+  </style>
 </head>
-<body style="font-family:Arial,sans-serif;padding:40px">
-  <p>This page has moved. <a href="/#pricing">Continue to LoopWorker</a>.</p>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <nav id="nav" class="solid" aria-label="Main">
+    <div class="wrap nav-inner">
+      <a href="./" class="logo">LoopWorker</a>
+      <div class="nav-right">
+        <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu<i aria-hidden="true"></i></button>
+        <div class="nav-links" id="nav-links">
+          <a href="./#opportunity">The opportunity</a>
+          <a href="/sample-brief.html">Example read</a>
+          <a href="pricing.html" class="active">Pricing</a>
+          <a href="faq.html">Questions</a>
+          <a href="./#read" class="btn" data-track="Nav Free Snapshot">Free snapshot</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main id="main">
+    <header class="page-top">
+      <div class="wrap">
+        <p class="kicker">Pricing</p>
+        <h1>Research first. Then decide how much you want handled.</h1>
+        <p>Start with a $750 Market Read. The full $750 is credited toward the first month of either monthly plan. <a href="/sample-brief.html">See a real read, names redacted.</a></p>
+      </div>
+    </header>
+    <section class="sub pricing" id="plans">
+      <div class="wrap">
+        <div class="plans">
+          <article class="plan">
+            <span class="name">Market Read</span>
+            <div class="amount">$750 <small>one-time</small></div>
+            <p class="short">Credited toward your first month</p>
+            <h3>Find the opportunity before committing to production.</h3>
+            <p class="desc">A focused competitive analysis and recommendations for your firm's next content priorities. A focused first engagement, not a full audit of every channel and competitor.</p>
+            <span class="lbl">Includes</span>
+            <ul>
+              <li>Review of your firm's public-facing marketing</li>
+              <li>Review of up to 3 relevant competitors</li>
+              <li>Meaningful competitive opportunities</li>
+              <li>Prioritized recommendations</li>
+              <li>Suggested content direction</li>
+            </ul>
+            <div class="cta-wrap">
+              <a href="./#read" class="btn" data-plan="market-read" data-track="Pricing Market Read">Request a Market Read</a>
+              <p class="fine">The full $750 is credited toward the first month of either monthly plan.</p>
+            </div>
+          </article>
+
+          <article class="plan feature">
+            <span class="name">Intelligence + Content</span>
+            <div class="amount">$4,999 <small>/ month</small></div>
+            <p class="short">Strategy and scripts</p>
+            <h3>Know what to make. Know why it matters.</h3>
+            <p class="desc">For firms with an internal team that records, edits, and publishes.</p>
+            <span class="lbl">Each month</span>
+            <ul>
+              <li>Competitive intelligence update on relevant market activity</li>
+              <li>Tracking of up to 5 competitors, swappable each month</li>
+              <li>Content strategy and a prioritized editorial calendar</li>
+              <li>8 to 15 researched content concepts, depending on length</li>
+              <li>8 to 15 ready-to-film video scripts</li>
+              <li>Talking points and recording guidance</li>
+              <li>Creative briefs with hooks, formats, and calls to action</li>
+              <li>One strategy and performance review</li>
+              <li>One consolidated revision round on the monthly package</li>
+            </ul>
+            <div class="split">
+              <p><b>You receive:</b> a research-backed monthly production package your team can execute.</p>
+              <p><b>Your team handles:</b> filming, editing, publishing, and account management.</p>
+            </div>
+            <div class="cta-wrap">
+              <a href="./#read" class="btn" data-plan="market-read" data-track="Pricing Content">Get started with a Market Read</a>
+            </div>
+          </article>
+
+          <article class="plan">
+            <span class="name">Intelligence + Production</span>
+            <div class="amount">$8,999 <small>/ month</small></div>
+            <p class="short">Strategy, scripts, and finished videos</p>
+            <h3>The strategy and the finished content.</h3>
+            <p class="desc">For firms that want the intelligence, the creative direction, and completed videos without managing the editing.</p>
+            <span class="lbl">Everything in Intelligence + Content, plus</span>
+            <ul>
+              <li class="plus">Tracking of up to 8 competitors across your markets</li>
+              <li class="plus">Editing of 8 to 15 finished videos a month, depending on length</li>
+              <li class="plus">One vertical edit per video, ready for 2 social channels you choose</li>
+              <li class="plus">5 static images for paid or organic posts</li>
+              <li class="plus">2 carousel posts</li>
+              <li class="plus">Footage review, pacing, sound cleanup, captions, and simple branded graphics</li>
+              <li class="plus">Up to 2 consolidated revision rounds per video, 1 per static or carousel</li>
+            </ul>
+            <div class="split">
+              <p><b>You receive:</b> the research, the scripts, finished videos, statics, and carousels, ready for your team to publish.</p>
+              <p><b>Your team handles:</b> on-camera talent, filming, ad approval, publishing, and account management.</p>
+            </div>
+            <div class="cta-wrap">
+              <a href="mailto:alex@loopworker.com?subject=Intelligence%20%2B%20Production" class="btn" data-track="Pricing Production">Discuss production</a>
+            </div>
+          </article>
+        </div>
+
+        
+        <div class="compare" aria-label="The difference between the monthly plans">
+          <div><b>$4,999/month</b> Up to 5 competitors, strategy, and 8 to 15 scripts. Your team edits.</div>
+          <div><b>$8,999/month</b> Up to 8 competitors, plus 8 to 15 finished videos, 5 statics, and 2 carousels.</div>
+        </div>
+
+        
+        <div class="scope-note">
+          <h3>What the production scope covers</h3>
+          <div>
+            <p>8 to 15 edited videos a month, cut from usable footage your team supplies. Shorter videos mean more of them; the count is agreed before the month starts. Each video is one vertical edit that works on both of the 2 channels you choose. The 5 statics and 2 carousels are delivered ready to post, and your firm approves any ad before it runs.</p>
+            <p>Extra versions, other aspect ratios, complex animation, new filming, heavy footage reconstruction, and work beyond the monthly scope are quoted and agreed separately before work starts. Revisions are limited to the rounds listed above.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sub covers" id="covers">
+      <div class="wrap">
+        <h2>What the Market Read covers.</h2>
+        <div class="areas">
+          <div class="area">
+            <div><span class="cat">Competitive advertising</span><h3>See what competitors are putting money behind.</h3></div>
+            <div>
+              <p><span class="lbl">What gets examined</span>Review <span class="hl">visible competitor advertising</span> activity, creative messaging, offers, and landing pages to understand how rival firms position themselves and compete for attention. Built from public ad libraries and search results. Competitors' budgets, conversions, and returns are private and not claimed.</p>
+              <p class="past"><span class="lbl">From a past read</span>Every rival was <span class="hl">buying search ads</span>, the most expensive channel in the field.</p>
+            </div>
+            <div>
+              <span class="lbl">You receive</span>
+              <ul>
+                <li>Competitor advertising observations</li>
+                <li>Messaging gaps</li>
+                <li>Campaign angles worth testing</li>
+                <li>Copy and creative recommendations</li>
+              </ul>
+            </div>
+          </div>
+          <div class="area">
+            <div><span class="cat">Social and video content</span><h3>Find the content people actually respond to.</h3></div>
+            <div>
+              <p><span class="lbl">What gets examined</span>Examine your firm's public content alongside relevant competitors. Identify the topics, formats, people, and messaging patterns associated with <span class="hl">stronger audience response</span>. Views show attention, not business value. They are one signal among several.</p>
+            </div>
+            <div>
+              <span class="lbl">You receive</span>
+              <ul>
+                <li>Content opportunity analysis</li>
+                <li>Recommended formats</li>
+                <li>Monthly topic priorities</li>
+                <li>Scripts and creative briefs</li>
+              </ul>
+            </div>
+          </div>
+          <div class="area">
+            <div><span class="cat">Search and editorial</span><h3>Find the questions your market isn't answering well.</h3></div>
+            <div>
+              <p><span class="lbl">What gets examined</span>Review relevant search topics, competitor editorial content, and <span class="hl">visible gaps in the market</span> to identify useful subjects your firm could address. No specific Google rankings are promised.</p>
+              <p class="past"><span class="lbl">From a past read</span>A top-50 rival <span class="hl">hadn't touched its blog since 2019</span>.</p>
+            </div>
+            <div>
+              <span class="lbl">You receive</span>
+              <ul>
+                <li>Prioritized content topics</li>
+                <li>Search-informed editorial recommendations</li>
+                <li>Content briefs</li>
+                <li>Article and video angles</li>
+              </ul>
+            </div>
+          </div>
+          <div class="area">
+            <div><span class="cat">Competitive movement</span><h3>Understand where your competitors are heading.</h3></div>
+            <div>
+              <p><span class="lbl">What gets examined</span>Examine relevant public developments such as <span class="hl">lateral hires, practice-area expansion, new offices</span>, partnerships, and shifts in market positioning.</p>
+            </div>
+            <div>
+              <span class="lbl">You receive</span>
+              <ul>
+                <li>Relevant competitive developments</li>
+                <li>Practical implications</li>
+                <li>Messaging opportunities</li>
+                <li>Areas to investigate, address, or avoid</li>
+              </ul>
+            </div>
+          </div>
+          <div class="area">
+            <div><span class="cat">Reviews and website experience</span><h3>Fix the gaps prospects can already see.</h3></div>
+            <div>
+              <p><span class="lbl">What gets examined</span>Examine <span class="hl">public reviews, visible website issues</span>, messaging consistency, and problems that may make it harder for prospective clients to understand or trust the firm. Uses what's publicly visible. Visitor behavior needs your analytics, shared with permission.</p>
+              <p class="past"><span class="lbl">From a past read</span>The firm's own site <span class="hl">hid its Google rating</span> and linked to an empty YouTube channel.</p>
+            </div>
+            <div>
+              <span class="lbl">You receive</span>
+              <ul>
+                <li>Prioritized improvement list</li>
+                <li>Messaging fixes</li>
+                <li>Website content recommendations</li>
+                <li>Review and reputation observations</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <p class="areas-note">Past-read examples are from real client work, clients not named. Everything is gathered from public sources. Private data such as competitor ad budgets, conversions, and site traffic is not visible and is never claimed.</p>
+      </div>
+    </section>
+    <section class="sub" id="terms">
+      <div class="wrap">
+        <h2>Terms of work.</h2>
+        <ul class="terms-list">
+          <li>Work scope is agreed in writing.</li>
+          <li>Clients keep their marketing accounts.</li>
+          <li>LoopWorker does not post on behalf of clients.</li>
+          <li>Production uses footage your team supplies, unless otherwise agreed.</li>
+          <li>Legal claims and attorney statements stay subject to your firm's review and approval.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="cta-band">
+      <div class="wrap">
+        <h2>See one thing your firm could be missing.</h2>
+        <p>A free snapshot: one observation about your market, the source, and a practical next step. No account access. No obligation to buy.</p>
+        <a href="./#read" class="btn light" data-track="Pricing Page Free Snapshot">Get a free snapshot</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div class="brand"><b>LoopWorker</b><span>Competitive intelligence and content production.</span></div>
+      <ul>
+        <li><a href="mailto:alex@loopworker.com">alex@loopworker.com</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+        <li><a href="/terms.html">Terms</a></li>
+        <li><a href="mailto:alex@loopworker.com">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var nav = document.getElementById('nav'), mb = document.getElementById('menu-btn'), links = document.getElementById('nav-links');
+      function setMenu(open) { nav.classList.toggle('open', open); mb.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+      mb.addEventListener('click', function () { setMenu(!nav.classList.contains('open')); });
+      links.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.classList.contains('open')) { setMenu(false); mb.focus(); } });
+    })();
+  </script>
+  <script defer src="/site-runtime.js"></script>
 </body>
 </html>

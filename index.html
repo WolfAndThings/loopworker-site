@@ -77,8 +77,8 @@
 
     /* nav */
     nav { position: fixed; inset: 0 0 auto 0; z-index: 20; color: var(--ink); transition: background .35s, color .35s, border-color .35s; border-bottom: 1px solid transparent; }
-    nav.dim { background: rgba(242,241,238,.85); backdrop-filter: blur(10px); }
-    nav.solid { background: rgba(242,241,238,.94); backdrop-filter: blur(10px); color: var(--ink); border-color: var(--line); }
+    nav.dim { background: rgba(242,241,238,.85); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+    nav.solid { background: rgba(242,241,238,.94); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); color: var(--ink); border-color: var(--line); }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
     .logo { font-weight: 800; font-stretch: 118%; font-size: 20px; letter-spacing: -0.02em; text-decoration: none; }
     .nav-links { display: flex; align-items: center; gap: 28px; font-size: 15px; font-weight: 500; }
@@ -433,6 +433,43 @@
       @keyframes hlsweep { from { background-size: 0% 72%; } to { background-size: 100% 72%; } }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    /* v8: compact covers, folding plan lists, links out to pricing and faq pages */
+    .areas.compact .area { grid-template-columns: 1fr 1.4fr; gap: 40px; padding: 28px 0; }
+    .areas.compact .area p + .past { margin-top: 12px; }
+    .plan .incl { margin-top: 20px; border-top: 1px solid var(--line); border-bottom: 0; }
+    .plan .incl summary { font-size: 15px; padding: 14px 32px 14px 0; }
+    .plan .incl summary::after { top: 6px; font-size: 24px; }
+    .plan .incl .lbl { margin-top: 4px; }
+    .plan .incl p { padding: 0; font-size: 14px; }
+    .plan .incl[open] { padding-bottom: 6px; }
+    .plans-more { margin-top: 28px; font-size: 16px; font-weight: 600; }
+    .plans-more a { color: var(--ink); text-decoration: none; border-bottom: 2px solid #E0482A; padding-bottom: 2px; }
+    /* small red labels: the brand red fails contrast at 12-13px, this darker red passes (4.8:1) */
+    .area .cat, .flow .n { color: #C2391E; }
+    @media (max-width: 960px) { .areas.compact .area { grid-template-columns: 1fr; gap: 12px; } }
+    @media (max-width: 600px) {
+      section { padding: 60px 0; }
+      .bridge { padding: 60px 0; }
+      .close { padding: 64px 0; }
+      .head { margin-bottom: 36px; }
+      .hero .kicker { font-size: 12px; }
+      .hero-credit { padding: 12px 0; font-size: 13px; }
+      footer ul a { display: inline-block; padding: 12px 0; }
+      .faq-grid .side a, .plans-more a { display: inline-block; padding: 10px 0 2px; }
+      .about-grid { grid-template-columns: 112px 1fr; gap: 20px; align-items: start; }
+      .about-photo { max-width: none; }
+      .about h2 { font-size: 28px; }
+      .about-copy p { font-size: 16px; }
+      .about-copy .sig { margin-top: 18px; }
+    }
+    /* short phones (iPhone SE): pull the hero up so its button shows without scrolling */
+    @media (max-width: 600px) and (max-height: 700px) {
+      .hero .wrap { padding-top: 250px; padding-bottom: 32px; }
+      .hero h1 { font-size: 36px; }
+      .hero .kicker { margin-bottom: 12px; }
+      .hero-foot { margin-top: 20px; gap: 18px; }
+      .hero-foot .copy p { font-size: 16px; }
+    }
   </style>
 </head>
 <body>
@@ -592,90 +629,45 @@
         <div class="head">
           <div>
             <h2 class="reveal">What the Market Read covers.</h2>
-            <p class="reveal">Five areas, one picture of your market. Each one separates what was observed from what it means and what to do about it.</p>
+            <p class="reveal">Five areas, one picture of your market. <a href="pricing.html#covers">See what you receive in each one.</a></p>
           </div>
         </div>
-        <div class="areas">
+        <div class="areas compact">
           <div class="area reveal">
             <div><span class="cat">Competitive advertising</span><h3>See what competitors are putting money behind.</h3></div>
             <div>
-              <p><span class="lbl">What gets examined</span>Review <span class="hl">visible competitor advertising</span> activity, creative messaging, offers, and landing pages to understand how rival firms position themselves and compete for attention. Built from public ad libraries and search results. Competitors' budgets, conversions, and returns are private and not claimed.</p>
+              <p>Rival ads, messages, offers and landing pages, from <span class="hl">public ad libraries</span> and search results.</p>
               <p class="past"><span class="lbl">From a past read</span>Every rival was <span class="hl">buying search ads</span>, the most expensive channel in the field.</p>
-            </div>
-            <div>
-              <span class="lbl">You receive</span>
-              <ul>
-                <li>Competitor advertising observations</li>
-                <li>Messaging gaps</li>
-                <li>Campaign angles worth testing</li>
-                <li>Copy and creative recommendations</li>
-              </ul>
             </div>
           </div>
           <div class="area reveal">
             <div><span class="cat">Social and video content</span><h3>Find the content people actually respond to.</h3></div>
             <div>
-              <p><span class="lbl">What gets examined</span>Examine your firm's public content alongside relevant competitors. Identify the topics, formats, people, and messaging patterns associated with <span class="hl">stronger audience response</span>. Views show attention, not business value. They are one signal among several.</p>
-            </div>
-            <div>
-              <span class="lbl">You receive</span>
-              <ul>
-                <li>Content opportunity analysis</li>
-                <li>Recommended formats</li>
-                <li>Monthly topic priorities</li>
-                <li>Scripts and creative briefs</li>
-              </ul>
+              <p>The topics, formats and people that get <span class="hl">stronger audience response</span>, for your firm and its rivals.</p>
             </div>
           </div>
           <div class="area reveal">
             <div><span class="cat">Search and editorial</span><h3>Find the questions your market isn't answering well.</h3></div>
             <div>
-              <p><span class="lbl">What gets examined</span>Review relevant search topics, competitor editorial content, and <span class="hl">visible gaps in the market</span> to identify useful subjects your firm could address. No specific Google rankings are promised.</p>
+              <p>Useful subjects your rivals skip or answer badly. No Google rankings are promised.</p>
               <p class="past"><span class="lbl">From a past read</span>A top-50 rival <span class="hl">hadn't touched its blog since 2019</span>.</p>
-            </div>
-            <div>
-              <span class="lbl">You receive</span>
-              <ul>
-                <li>Prioritized content topics</li>
-                <li>Search-informed editorial recommendations</li>
-                <li>Content briefs</li>
-                <li>Article and video angles</li>
-              </ul>
             </div>
           </div>
           <div class="area reveal">
             <div><span class="cat">Competitive movement</span><h3>Understand where your competitors are heading.</h3></div>
             <div>
-              <p><span class="lbl">What gets examined</span>Examine relevant public developments such as <span class="hl">lateral hires, practice-area expansion, new offices</span>, partnerships, and shifts in market positioning.</p>
-            </div>
-            <div>
-              <span class="lbl">You receive</span>
-              <ul>
-                <li>Relevant competitive developments</li>
-                <li>Practical implications</li>
-                <li>Messaging opportunities</li>
-                <li>Areas to investigate, address, or avoid</li>
-              </ul>
+              <p><span class="hl">Lateral hires, new practice areas, new offices</span> and shifts in how rivals position themselves.</p>
             </div>
           </div>
           <div class="area reveal">
             <div><span class="cat">Reviews and website experience</span><h3>Fix the gaps prospects can already see.</h3></div>
             <div>
-              <p><span class="lbl">What gets examined</span>Examine <span class="hl">public reviews, visible website issues</span>, messaging consistency, and problems that may make it harder for prospective clients to understand or trust the firm. Uses what's publicly visible. Visitor behavior needs your analytics, shared with permission.</p>
+              <p>Public reviews and site problems that make it harder for a prospect to trust the firm.</p>
               <p class="past"><span class="lbl">From a past read</span>The firm's own site <span class="hl">hid its Google rating</span> and linked to an empty YouTube channel.</p>
-            </div>
-            <div>
-              <span class="lbl">You receive</span>
-              <ul>
-                <li>Prioritized improvement list</li>
-                <li>Messaging fixes</li>
-                <li>Website content recommendations</li>
-                <li>Review and reputation observations</li>
-              </ul>
             </div>
           </div>
         </div>
-        <p class="areas-note">Past-read examples are from real client work, clients not named. Everything is gathered from public sources. Private data such as competitor ad budgets, conversions, and site traffic is not visible and is never claimed.</p>
+        <p class="areas-note">Past-read examples are from real client work, clients not named. Everything comes from public sources. Private data such as competitor ad budgets, conversions and site traffic is not visible and is never claimed.</p>
       </div>
     </section>
 
@@ -684,22 +676,15 @@
         <div class="head">
           <div>
             <h2 class="reveal">One process. A clearer decision every month.</h2>
-            <p class="reveal">I handle the research, strategy, and creative direction personally. Your team retains control of its accounts and publishing.</p>
+            <p class="reveal">I handle the research, strategy, and creative direction personally. Your team keeps control of its accounts and publishing.</p>
           </div>
         </div>
         <ol class="flow">
-          <li class="reveal"><span class="n">Step 01</span><h3>Read the market</h3><p>I examine the firm's public marketing alongside relevant competitors, looking for <span class="hl">patterns, weaknesses, and opportunities</span> that deserve a closer look.</p></li>
-          <li class="reveal"><span class="n">Step 02</span><h3>Decide what matters</h3><p>I separate <span class="hl">meaningful opportunities</span> from interesting numbers and prioritize recommendations according to relevance, effort, and likely business value.</p></li>
-          <li class="reveal"><span class="n">Step 03</span><h3>Build the content plan</h3><p>I turn the findings into <span class="hl">specific topics, messaging, scripts</span>, creative direction, and production requirements based on the agreed scope.</p></li>
-          <li class="reveal"><span class="n">Step 04</span><h3>Review and improve</h3><p>Your team publishes the content. Available performance results and new market developments inform the next cycle.</p></li>
+          <li class="reveal"><span class="n">Step 01</span><h3>Read the market</h3><p>Your firm's public marketing, next to <span class="hl">the rivals that matter</span>.</p></li>
+          <li class="reveal"><span class="n">Step 02</span><h3>Decide what matters</h3><p>Real opportunities, ranked by relevance, effort and <span class="hl">likely value</span>.</p></li>
+          <li class="reveal"><span class="n">Step 03</span><h3>Build the content plan</h3><p><span class="hl">Topics, messages, scripts</span> and creative direction, within the agreed scope.</p></li>
+          <li class="reveal"><span class="n">Step 04</span><h3>Review and improve</h3><p>Your team publishes. Results and market changes shape the next month.</p></li>
         </ol>
-        <ul class="terms-list">
-          <li>Work scope is agreed in writing.</li>
-          <li>Clients keep their marketing accounts.</li>
-          <li>LoopWorker does not post on behalf of clients.</li>
-          <li>Production uses footage your team supplies, unless otherwise agreed.</li>
-          <li>Legal claims and attorney statements stay subject to your firm's review and approval.</li>
-        </ul>
       </div>
     </section>
 
@@ -708,8 +693,6 @@
         <div class="about-photo reveal"><img src="/images/home/alex.jpg" alt="Alex Lamb, founder of LoopWorker" loading="lazy"></div>
         <div class="about-copy">
           <h2 class="reveal">One person doing the research and the creative work.</h2>
-          <p class="reveal">I'm the founder of LoopWorker.</p>
-          <p class="reveal">I've spent more than a decade producing and shaping marketing content across consumer brands, technology, healthcare, and professional organizations. My background includes content strategy at Cambria, production work at Wondros, and creative projects involving organizations from Arby's to the National Institutes of Health.</p>
           <p class="reveal">I built LoopWorker around a simple belief: the best content decisions start with understanding what the market is already telling you.</p>
           <p class="reveal"><strong>I handle the research, strategy, and creative direction personally.</strong> <span class="hl">No rotating account manager.</span> No handoff between the person selling the work and the person responsible for it.</p>
           <div class="sig reveal">Alex Lamb<span>Founder, LoopWorker</span></div>
@@ -732,7 +715,9 @@
             <p class="short">Credited toward your first month</p>
             <h3>Find the opportunity before committing to production.</h3>
             <p class="desc">A focused competitive analysis and recommendations for your firm's next content priorities. A focused first engagement, not a full audit of every channel and competitor.</p>
-            <span class="lbl">Includes</span>
+            <details class="incl">
+              <summary>What's included</summary>
+              <span class="lbl">Includes</span>
             <ul>
               <li>Review of your firm's public-facing marketing</li>
               <li>Review of up to 3 relevant competitors</li>
@@ -740,6 +725,7 @@
               <li>Prioritized recommendations</li>
               <li>Suggested content direction</li>
             </ul>
+            </details>
             <div class="cta-wrap">
               <a href="#read" class="btn" data-plan="market-read" data-track="Pricing Market Read">Request a Market Read</a>
               <p class="fine">The full $750 is credited toward the first month of either monthly plan.</p>
@@ -752,7 +738,9 @@
             <p class="short">Strategy and scripts</p>
             <h3>Know what to make. Know why it matters.</h3>
             <p class="desc">For firms with an internal team that records, edits, and publishes.</p>
-            <span class="lbl">Each month</span>
+            <details class="incl">
+              <summary>What's included</summary>
+              <span class="lbl">Each month</span>
             <ul>
               <li>Competitive intelligence update on relevant market activity</li>
               <li>Tracking of up to 5 competitors, swappable each month</li>
@@ -768,6 +756,7 @@
               <p><b>You receive:</b> a research-backed monthly production package your team can execute.</p>
               <p><b>Your team handles:</b> filming, editing, publishing, and account management.</p>
             </div>
+            </details>
             <div class="cta-wrap">
               <a href="#read" class="btn" data-plan="market-read" data-track="Pricing Content">Get started with a Market Read</a>
             </div>
@@ -779,7 +768,9 @@
             <p class="short">Strategy, scripts, and finished videos</p>
             <h3>The strategy and the finished content.</h3>
             <p class="desc">For firms that want the intelligence, the creative direction, and completed videos without managing the editing.</p>
-            <span class="lbl">Everything in Intelligence + Content, plus</span>
+            <details class="incl">
+              <summary>What's included</summary>
+              <span class="lbl">Everything in Intelligence + Content, plus</span>
             <ul>
               <li class="plus">Tracking of up to 8 competitors across your markets</li>
               <li class="plus">Editing of 8 to 15 finished videos a month, depending on length</li>
@@ -793,24 +784,14 @@
               <p><b>You receive:</b> the research, the scripts, finished videos, statics, and carousels, ready for your team to publish.</p>
               <p><b>Your team handles:</b> on-camera talent, filming, ad approval, publishing, and account management.</p>
             </div>
+            </details>
             <div class="cta-wrap">
               <a href="mailto:alex@loopworker.com?subject=Intelligence%20%2B%20Production" class="btn" data-track="Pricing Production">Discuss production</a>
             </div>
           </article>
         </div>
 
-        <div class="compare reveal" aria-label="The difference between the monthly plans">
-          <div><b>$4,999/month</b> Up to 5 competitors, strategy, and 8 to 15 scripts. Your team edits.</div>
-          <div><b>$8,999/month</b> Up to 8 competitors, plus 8 to 15 finished videos, 5 statics, and 2 carousels.</div>
-        </div>
-
-        <div class="scope-note">
-          <h3>What the production scope covers</h3>
-          <div>
-            <p>8 to 15 edited videos a month, cut from usable footage your team supplies. Shorter videos mean more of them; the count is agreed before the month starts. Each video is one vertical edit that works on both of the 2 channels you choose. The 5 statics and 2 carousels are delivered ready to post, and your firm approves any ad before it runs.</p>
-            <p>Extra versions, other aspect ratios, complex animation, new filming, heavy footage reconstruction, and work beyond the monthly scope are quoted and agreed separately before work starts. Revisions are limited to the rounds listed above.</p>
-          </div>
-        </div>
+        <p class="plans-more reveal"><a href="pricing.html">Full plan details, production scope and terms</a></p>
       </div>
     </section>
 
@@ -866,7 +847,7 @@
       <div class="wrap faq-grid">
         <div class="side">
           <h2 class="reveal">Questions.</h2>
-          <p class="reveal">Anything else: <a href="mailto:alex@loopworker.com">alex@loopworker.com</a></p>
+          <p class="reveal"><a href="faq.html">See all 13 questions</a>, or email <a href="mailto:alex@loopworker.com">alex@loopworker.com</a>.</p>
         </div>
         <div>
           <details>
@@ -882,44 +863,16 @@
             <p>Both plans include ongoing competitive research, a monthly content plan, and 8 to 15 ready-to-film scripts. Intelligence + Content tracks up to 5 competitors. Intelligence + Production tracks up to 8 across your markets, and adds 8 to 15 finished videos from footage your team supplies, 5 static images, and 2 carousels.</p>
           </details>
           <details>
-            <summary>Can we change the number of videos?</summary>
-            <p>Yes. The standard scope is 8 to 15 videos a month: more short videos or fewer long ones, agreed before the month starts. Anything beyond that, or more complex production, is quoted separately and documented before work starts.</p>
-          </details>
-          <details>
-            <summary>How does this differ from a traditional marketing agency?</summary>
-            <p>LoopWorker focuses on understanding the market before deciding what to make. It provides the research, recommendations, and creative direction your team can use, with optional editing and production.</p>
-          </details>
-          <details>
-            <summary>Can LoopWorker work with our existing marketing team?</summary>
-            <p>Yes. The service is designed to complement an existing internal marketing team or agency.</p>
-          </details>
-          <details>
             <summary>Do you need access to our accounts?</summary>
             <p>No account access is required for the public-data snapshot. Deeper performance analysis may benefit from reports supplied by your team, but your firm retains account ownership and control.</p>
-          </details>
-          <details>
-            <summary>Who films the videos?</summary>
-            <p>Your firm's attorneys, partners, or designated spokespeople. LoopWorker provides scripts and recording guidance. Your team records and uploads the footage.</p>
           </details>
           <details>
             <summary>Does LoopWorker post the content?</summary>
             <p>No. Your team retains control of its accounts and handles publishing.</p>
           </details>
           <details>
-            <summary>Are revisions included?</summary>
-            <p>Yes. Intelligence + Content includes one consolidated revision round on the monthly content package. Intelligence + Production also includes up to two consolidated revision rounds for each finished video and one for each static or carousel, within the agreed scope.</p>
-          </details>
-          <details>
             <summary>Can you guarantee new clients or leads?</summary>
             <p>No. LoopWorker helps improve marketing decisions and content direction using observable evidence. It does not guarantee rankings, inquiries, signed matters, or revenue.</p>
-          </details>
-          <details>
-            <summary>How are legal advertising rules handled?</summary>
-            <p>Your firm remains responsible for reviewing and approving legal claims, testimonials, attorney statements, and other materials subject to applicable professional advertising requirements.</p>
-          </details>
-          <details>
-            <summary>Is the $750 Market Read credited toward monthly service?</summary>
-            <p>Yes. The full $750 is credited toward the first month of either monthly plan.</p>
           </details>
         </div>
       </div>
@@ -1007,6 +960,7 @@
   </script>
 
   <script>
+    if (window.matchMedia('(min-width: 761px)').matches) document.querySelectorAll('.plan .incl').forEach(function (d) { d.open = true; });
     document.querySelectorAll('[data-plan="market-read"]').forEach(function (a) {
       a.addEventListener('click', function () { var s = document.getElementById('f-concern'); if (s) s.value = 'I want the $750 Market Read'; });
     });
@@ -1231,14 +1185,14 @@
     })();
   </script>
   <script>
-    // sticky CTA shows between the hero and the form
+    // sticky CTA shows between the hero and the form, and hides again over the closing band and footer
     (function () {
-      var cta = document.getElementById("sticky-cta"), hero = document.querySelector(".hero"), read = document.getElementById("read"), seen = { hero: true, read: false };
+      var cta = document.getElementById("sticky-cta"), watch = [document.querySelector(".hero"), document.getElementById("read"), document.querySelector(".close"), document.querySelector("footer")], seen = [true, false, false, false];
       var io = new IntersectionObserver(function (es) {
-        es.forEach(function (e) { seen[e.target === hero ? "hero" : "read"] = e.isIntersecting; });
-        cta.classList.toggle("on", !seen.hero && !seen.read);
+        es.forEach(function (e) { seen[watch.indexOf(e.target)] = e.isIntersecting; });
+        cta.classList.toggle("on", seen.indexOf(true) < 0);
       });
-      io.observe(hero); io.observe(read);
+      watch.forEach(function (el) { io.observe(el); });
     })();
   </script>
   <script defer src="/site-runtime.js"></script>

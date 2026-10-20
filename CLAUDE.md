@@ -6,7 +6,8 @@
 - **Dead:** Decision Read, One-Page/Focused/Deep Read, Engagement, $3,200/$8,000/$25,000, free teardown, Sprint. The sections below describing them are history.
 - **Homepage** `index.html` is built from `_mocks/home-v7-draft.html` (noindex copy; images live in `_mocks/img/`, published copies in `images/home/`).
 - 🚨 **The 41-video data section (`section#how`, its CSS block, its script) is LOCKED by Alex.** Never edit it. After any homepage change, diff its computed styles against the previous version.
-- **Redirects:** GitHub Pages cannot send 301s. Moved pages are noindex meta-refresh stubs with a canonical: pricing → `/#pricing`, faq → `/#faq`, free-teardown → `/#read`, about → `/#about`, law-firms/law/legal → `/`.
+- **Oct 20 2026 (v8):** homepage shortened for phones (22.2 → 15.9 iPhone screens). `pricing.html` and `faq.html` are REAL pages again (full plan lists, scope, covers detail, terms of work; all 13 FAQs + FAQPage schema). Homepage keeps prices, folds plan lists on phones, 6 FAQs. Draft source `_mocks/v8/`.
+- **Redirects:** GitHub Pages cannot send 301s. Moved pages are noindex meta-refresh stubs with a canonical: free-teardown → `/#read`, about → `/#about`, law-firms/law/legal → `/`.
 - **Analytics:** Plausible + `/site-runtime.js` (click and form tracking, adds landing_page/utm fields). Every page needs both.
 - **Form:** Formspree `xbdpddrn`. Notifications do NOT go to alex@loopworker.com (0 ever found there). Check the Formspree dashboard for which inbox receives them.
 - Full page inventory: `_audit/URL_INVENTORY_2026-10-14.csv`.
