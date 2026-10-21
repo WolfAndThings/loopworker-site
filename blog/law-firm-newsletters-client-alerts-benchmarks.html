@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site-pages.css">
+  <link rel="stylesheet" href="/v5-system.css">
+  <style>
+    body { background: var(--bg) !important; color: var(--text-2) !important; font-family: var(--sans) !important; }
+    .sig-article { max-width: 760px; margin: 0 auto; padding: 7rem 1.25rem 4rem; position: relative; }
+    .sig-article h1 { font-family: var(--sans-tight) !important; font-size: clamp(2rem, 4.4vw, 3rem) !important; font-weight: 800 !important; letter-spacing: -0.03em !important; line-height: 1.08 !important; color: var(--text) !important; margin: 0 0 1.1rem !important; }
+    .sig-article h2 { font-family: var(--sans-tight) !important; font-size: clamp(1.35rem, 2.4vw, 1.7rem) !important; font-weight: 700 !important; letter-spacing: -0.02em !important; color: var(--text) !important; margin: 2.4rem 0 0.9rem !important; }
+    .sig-article p, .sig-article li { color: var(--text-2) !important; font-size: 1.05rem !important; line-height: 1.7 !important; }
+    .sig-article p { margin: 0 0 1rem !important; }
+    .sig-article a { color: var(--indigo-bright); border-bottom: 1px solid rgba(227,164,74,0.35); text-decoration: none; }
+    .sig-article strong { color: var(--text); }
+    .sig-article ul { padding-left: 1.3rem; margin: 0 0 1.2rem; }
+    .sig-article li { margin-bottom: 0.45rem; }
+    .article-tag { display:inline-block; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--indigo-bright); margin-bottom: 1rem; }
+    .article-dek { font-size: 1.15rem !important; color: var(--text-2) !important; }
+    .article-meta { font-family: var(--mono); font-size: 0.75rem; color: var(--text-3); margin: 0 0 2rem; }
+    .quick-answer { border-left: 3px solid var(--indigo-bright); background: rgba(227,164,74,0.06); padding: 1.1rem 1.3rem; margin: 0 0 2rem; border-radius: 0 6px 6px 0; }
+    .quick-answer .qa-label, .key-takeaways .qa-label { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.5rem; display:block; }
+    .quick-answer p { margin: 0 !important; color: var(--text) !important; }
+    .key-takeaways { border: 1px solid var(--border); background: var(--surface); border-radius: 8px; padding: 1.2rem 1.4rem 0.6rem; margin: 0 0 2.4rem; }
+    .data-figure { margin: 2rem 0; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; background: var(--surface); }
+    .data-figure svg { width: 100%; height: auto; display: block; }
+    .data-figure figcaption { font-family: var(--mono); font-size: 0.74rem; color: var(--text-3); margin-top: 0.6rem; line-height: 1.5; }
+    .num-table { width: 100%; border-collapse: collapse; margin: 1.4rem 0 2rem; font-size: 0.95rem; }
+    .num-table th, .num-table td { text-align: left; padding: 0.55rem 0.6rem; border-bottom: 1px solid var(--border); color: var(--text-2); vertical-align: top; }
+    .num-table th { color: var(--text-3); font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+    .num-table td.n { font-family: var(--mono); color: var(--text); white-space: nowrap; }
+    .bar-row { display: grid; grid-template-columns: minmax(0, 11rem) 1fr auto; gap: 0.6rem; align-items: center; margin: 0.45rem 0; font-size: 0.9rem; }
+    .bar-row .bar { height: 10px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+    .bar-row .bar span { display: block; height: 100%; background: var(--indigo-bright); }
+    .bar-row .v { font-family: var(--mono); color: var(--text); font-size: 0.85rem; }
+    .faq details { border-bottom: 1px solid var(--border); padding: 0.9rem 0; }
+    .faq summary { cursor: pointer; color: var(--text); font-weight: 600; font-size: 1.05rem; }
+    .faq details p { margin: 0.7rem 0 0 !important; }
+    .method-note, .caveat { font-size: 0.92rem !important; color: var(--text-3) !important; }
+    .method-note { border-top: 1px solid var(--border); padding-top: 1.4rem; margin-top: 2.6rem !important; }
+    .post-cta { border: 1px solid var(--border); border-radius: 8px; padding: 1.4rem; margin: 2.6rem 0 1rem; background: var(--surface); }
+    .post-cta h2 { margin-top: 0 !important; }
+    .post-cta .cta-row { display:flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.8rem; }
+    .post-cta .cta-row a { border-bottom: 0; }
+    @media (max-width: 560px) { .bar-row { grid-template-columns: 1fr auto; } .bar-row .bar { grid-column: 1 / -1; grid-row: 2; } }
+    .moves-table td a { border-bottom: 0; }
+    .moves-table td.d { font-family: var(--mono); font-size: 0.8rem; color: var(--text-3); white-space: nowrap; }
+    .table-wrap { overflow-x: auto; margin: 1.4rem 0 2rem; }
+    .table-wrap .num-table { margin: 0; min-width: 560px; }
+  </style>
+  <title>Law firm newsletters and client alerts: the data | LoopWorker</title>
+  <meta name="description" content="How many law firms send newsletters and client alerts, what in-house readers say they value, and what email benchmarks exist, with each figure sourced.">
+  <meta name="author" content="Alex Lamb">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <link rel="canonical" href="https://www.loopworker.com/blog/law-firm-newsletters-client-alerts-benchmarks.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.loopworker.com/blog/law-firm-newsletters-client-alerts-benchmarks.html">
+  <meta property="og:title" content="Law firm newsletters and client alerts: the data">
+  <meta property="og:description" content="How many law firms send newsletters and client alerts, what in-house readers say they value, and what email benchmarks exist, with each figure sourced.">
+  <meta property="og:image" content="https://www.loopworker.com/images/loopworker-og.png">
+  <meta property="article:published_time" content="2026-10-21">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Law firm newsletters and client alerts: the data">
+  <meta name="twitter:description" content="How many law firms send newsletters and client alerts, what in-house readers say they value, and what email benchmarks exist, with each figure sourced.">
+  <meta property="og:site_name" content="LoopWorker">
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.loopworker.com/#organization",
+   "name": "LoopWorker",
+   "url": "https://www.loopworker.com/"
+  },
+  {
+   "@type": "Article",
+   "headline": "Law firm newsletters and client alerts: who sends them, what readers want, what the benchmarks say",
+   "description": "How many law firms send newsletters and client alerts, what in-house readers say they value, and what email benchmarks exist, with each figure sourced.",
+   "url": "https://www.loopworker.com/blog/law-firm-newsletters-client-alerts-benchmarks.html",
+   "datePublished": "2026-10-21",
+   "dateModified": "2026-10-21",
+   "publisher": {
+    "@id": "https://www.loopworker.com/#organization"
+   },
+   "mainEntityOfPage": "https://www.loopworker.com/blog/law-firm-newsletters-client-alerts-benchmarks.html",
+   "image": "https://www.loopworker.com/images/loopworker-og.png",
+   "author": {
+    "@type": "Person",
+    "name": "Alex Lamb",
+    "url": "https://www.loopworker.com/#about"
+   },
+   "inLanguage": "en-US",
+   "isAccessibleForFree": true,
+   "keywords": "law firm newsletter, law firm newsletter examples, what makes a law firm newsletter effective, law firm client alerts",
+   "citation": [
+    {
+     "@type": "CreativeWork",
+     "name": "American Bar Association, ABA TechReport 2023: Websites & Marketing (Allison C. Johs)",
+     "url": "https://www.americanbar.org/groups/law_practice/resources/tech-report/2023/2023-websites-and-marketing-techreport/",
+     "datePublished": "2024-01-08"
+    },
+    {
+     "@type": "CreativeWork",
+     "name": "JD Supra and LIMELIGHT (vendor survey), Trust, Relevance, & AI in 2026",
+     "url": "https://s3.amazonaws.com/documents.jdsupra.com/915efc09-7489-4abe-9691-7f36de6c000b.pdf",
+     "datePublished": "2026-04-14"
+    },
+    {
+     "@type": "CreativeWork",
+     "name": "LIMELIGHT press release (PRWeb) on the JD Supra and LIMELIGHT study",
+     "url": "https://www.prweb.com/releases/jd-supra-and-limelight-study-finds-law-firm-thought-leadership-driving-real-hiring-decisions-even-as-ai-reshapes-discovery-302742827.html",
+     "datePublished": "2026-04-15"
+    },
+    {
+     "@type": "CreativeWork",
+     "name": "Greentarget and Zeughauser Group (vendor survey), 2022 State of Digital and Content Marketing",
+     "url": "https://greentarget.com/wp-content/uploads/2022/12/2022-State-of-Digital-and-Content-Marketing-Greentarget-Zeughauser.pdf",
+     "datePublished": "2022"
+    },
+    {
+     "@type": "CreativeWork",
+     "name": "Mailchimp (Intuit), Email Marketing Benchmarks",
+     "url": "https://mailchimp.com/resources/email-marketing-benchmarks/",
+     "datePublished": "2023"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Do in-house lawyers read law firm newsletters?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "In the JD Supra and LIMELIGHT survey, 27% of corporate counsel and business leaders named outside counsel newsletters as a way they find valuable thought leadership. By contrast, 74% favored client alerts and blog posts as a format. The survey is vendor-run and does not state where respondents are based."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What makes a law firm newsletter effective?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "LIMELIGHT reported that readers value content that helps them assess legal risk (56%) and gives actionable takeaways (52%). On the other side, 35% are frustrated by content that is too long or unfocused. Greentarget and Zeughauser Group found weak relevance was the top complaint in 2022."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is a good open rate for a law firm newsletter?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No source I opened gives a law-firm-only figure. Mailchimp lists an average open rate of 35.63% and click rate of 2.62% across all industries, with no legal category. Apple Mail Privacy Protection inflates open rates, so a firm's own history is the more useful comparison."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How common are client alerts at large firms?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "In the ABA's 2023 survey, 66% of firms that market by email send client alerts by email. At firms with 100 or more lawyers, the figure is 92% or more. The ABA sample leans toward small firms."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.loopworker.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Signals",
+     "item": "https://www.loopworker.com/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Law firm newsletters and client alerts: who sends them, what readers want, what the benchmarks say",
+     "item": "https://www.loopworker.com/blog/law-firm-newsletters-client-alerts-benchmarks.html"
+    }
+   ]
+  }
+ ]
+}
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav class="v5-nav">
+    <div class="v5-nav-inner">
+      <a href="/" class="v5-logo">
+        <span class="v5-logo-mark">L</span>
+        LoopWorker
+      </a>
+      <div class="v5-nav-links">
+        <a href="/#pricing">Pricing</a>
+
+        <a href="/resources/field-manual.html">Field manual</a>
+        <a href="/#how">Example read</a>
+        <a href="/blog/" class="active">Signals</a>
+        <a href="/#about">About</a>
+        <a href="/#read" class="v5-nav-cta">Free snapshot</a>
+      </div>
+      <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="v5-mobile-nav" id="mobileNav">
+      <a href="/#pricing">Pricing</a>
+
+      <a href="/resources/field-manual.html">Field manual</a>
+      <a href="/#how">Example read</a>
+      <a href="/blog/">Signals</a>
+      <a href="/#about">About</a>
+      <a href="/#read" class="v5-nav-cta">Free snapshot</a>
+    </div>
+  </nav>
+  <main id="main">
+  <article class="sig-article">
+    <span class="article-tag">Guide</span>
+    <h1>Law firm newsletters and client alerts: who sends them, what readers want, what the benchmarks say</h1>
+    <p class="article-dek">Survey data on how many firms market by email, which formats in-house readers favor, and why there is no clean law firm open rate to aim for.</p>
+    <p class="article-meta">October 21, 2026 · Alex Lamb</p>
+    <div class="quick-answer"><span class="qa-label">Quick answer</span><p>In the ABA&#x27;s 2023 Legal Technology Survey, 32% of respondents said their firms do email marketing, and of those, 66% send client alerts by email, rising to 92% or more at firms with 100 or more lawyers. In a JD Supra and LIMELIGHT survey, 74% of corporate counsel and business leaders favored client alerts and blog posts as a format, while 27% named outside counsel newsletters as a way they find valuable thought leadership.</p></div>
+    <div class="key-takeaways"><span class="qa-label">Key takeaways</span><ul><li>At firms with 100 or more lawyers that market by email, the ABA found 92% or more send client alerts.</li><li>In-house readers in the JD Supra and LIMELIGHT survey favored client alerts and blog posts (74%) as a format.</li><li>Only 27% of those readers named outside counsel newsletters as a way they find valuable thought leadership.</li><li>Relevance and focus are the recurring complaints: 60% of C-suite members cited weak relevance in a 2022 survey.</li><li>No source I opened gives open or click rates for law firms alone.</li></ul></div>
+    <h2>How many firms send newsletters and alerts</h2>
+    <p>The American Bar Association&#x27;s TechReport 2023 on websites and marketing, written by Allison C. Johs, found that 32% of respondents said their firms do email marketing.</p>
+    <p>Among those email marketers, 66% send client alerts by email. At firms with 100 or more lawyers, that rises to 92% or more. Separately, 35% say they send individual, personalized email to clients.</p>
+    <p>The same report says 41% of respondents&#x27; firms use email newsletters. The page does not say whether that is a share of all firms or only of firms that market by email, so it cannot be set beside the 32% figure cleanly. The ABA sample also leans toward small firms.</p>
+    <p>The pattern for a larger firm: among email marketers of that size, sending alerts is close to standard practice in this survey. The open question is less whether to send and more what to send.</p>
+    
+    <h2>What in-house readers say they value</h2>
+    <p>JD Supra and LIMELIGHT surveyed corporate counsel and business leaders for Trust, Relevance, &amp; AI in 2026. LIMELIGHT sells content distribution, and the report does not state where respondents are based.</p>
+    <p>In that survey, 74% favored client alerts and blog posts as a format for law firm thought leadership. 55% said guidance from alerts and legal analysis on breaking news is a reason they seek out firm content. Only 27% named outside counsel newsletters as a way they find valuable thought leadership.</p>
+    <p>LIMELIGHT&#x27;s press release on the study, published on PRWeb, said the most valued content helps readers assess legal risk (56%) and gives actionable takeaways (52%). It also reported that 72% of respondents save useful content and 69% subscribe for more.</p>
+    <h2>Relevance and length are the complaints</h2>
+    <p>In the JD Supra and LIMELIGHT survey, 35% of respondents said they are frustrated by law firm content that is too long or unfocused.</p>
+    <p>Greentarget and Zeughauser Group found a similar complaint in their 2022 State of Digital and Content Marketing. When decision-makers rated content from their law or professional services firms as less than excellent, the top reason was that it was not sufficiently relevant. 60% of C-suite members and 38% of general counsel cited it.</p>
+    <p>These are different surveys, from different years, asking different questions. Read together, they point the same way: readers judge firm email on whether it fits their problem, not on whether it arrives.</p>
+    <h2>What email benchmarks exist</h2>
+    <p>No source I opened gives open or click rates for law firms alone.</p>
+    <p>Mailchimp&#x27;s benchmark page lists an average open rate of 35.63% and an average click rate of 2.62% across all users in all industries, with data last updated December 2023. Mailchimp has no separate legal category.</p>
+    <p>Apple Mail Privacy Protection inflates open rates, so the 35.63% figure is a weak yardstick for any list. Click rate and the firm&#x27;s own history on the same list are the cleaner comparisons available.</p>
+    <h2>What this means for the spend decision</h2>
+    <p>LIMELIGHT&#x27;s press release reported that 61% of respondents said thought leadership has influenced which outside counsel they picked, and 27% said they directly hired a firm because of its published analysis. These are self-reported answers in a vendor survey.</p>
+    <p>The decision for a firm comes down to format and cadence. A scheduled newsletter competes with a format only 27% of these readers named as a source of value. Alerts tied to breaking news match what 55% said they seek. Some firms will keep both, some will fold the newsletter into alerts.</p>
+    <p>Whichever way a firm goes, the reader data sets the bar: short, focused on legal risk, with a clear takeaway.</p>
+    <h2>Sources</h2>
+    <ul><li><a href="https://www.americanbar.org/groups/law_practice/resources/tech-report/2023/2023-websites-and-marketing-techreport/" rel="nofollow noopener" target="_blank">American Bar Association, ABA TechReport 2023: Websites &amp; Marketing (Allison C. Johs)</a>, 2024-01-08</li><li><a href="https://s3.amazonaws.com/documents.jdsupra.com/915efc09-7489-4abe-9691-7f36de6c000b.pdf" rel="nofollow noopener" target="_blank">JD Supra and LIMELIGHT (vendor survey), Trust, Relevance, &amp; AI in 2026</a>, 2026-04-14</li><li><a href="https://www.prweb.com/releases/jd-supra-and-limelight-study-finds-law-firm-thought-leadership-driving-real-hiring-decisions-even-as-ai-reshapes-discovery-302742827.html" rel="nofollow noopener" target="_blank">LIMELIGHT press release (PRWeb) on the JD Supra and LIMELIGHT study</a>, 2026-04-15</li><li><a href="https://greentarget.com/wp-content/uploads/2022/12/2022-State-of-Digital-and-Content-Marketing-Greentarget-Zeughauser.pdf" rel="nofollow noopener" target="_blank">Greentarget and Zeughauser Group (vendor survey), 2022 State of Digital and Content Marketing</a>, 2022</li><li><a href="https://mailchimp.com/resources/email-marketing-benchmarks/" rel="nofollow noopener" target="_blank">Mailchimp (Intuit), Email Marketing Benchmarks</a>, 2023</li></ul>
+    <section class="faq">
+    <h2>Frequently asked questions</h2>
+    <details><summary>Do in-house lawyers read law firm newsletters?</summary><p>In the JD Supra and LIMELIGHT survey, 27% of corporate counsel and business leaders named outside counsel newsletters as a way they find valuable thought leadership. By contrast, 74% favored client alerts and blog posts as a format. The survey is vendor-run and does not state where respondents are based.</p></details>
+    <details><summary>What makes a law firm newsletter effective?</summary><p>LIMELIGHT reported that readers value content that helps them assess legal risk (56%) and gives actionable takeaways (52%). On the other side, 35% are frustrated by content that is too long or unfocused. Greentarget and Zeughauser Group found weak relevance was the top complaint in 2022.</p></details>
+    <details><summary>What is a good open rate for a law firm newsletter?</summary><p>No source I opened gives a law-firm-only figure. Mailchimp lists an average open rate of 35.63% and click rate of 2.62% across all industries, with no legal category. Apple Mail Privacy Protection inflates open rates, so a firm&#x27;s own history is the more useful comparison.</p></details>
+    <details><summary>How common are client alerts at large firms?</summary><p>In the ABA&#x27;s 2023 survey, 66% of firms that market by email send client alerts by email. At firms with 100 or more lawyers, the figure is 92% or more. The ABA sample leans toward small firms.</p></details>
+    </section>
+    <div class="post-cta">
+      <h2>See where your firm stands</h2>
+      <p>A free snapshot gives you one evidence-backed observation about your firm's public marketing, with the source and a practical next step.</p>
+      <p>Want the full picture against up to 3 competitors? The <a href="/#pricing">$750 Market Read</a> covers it, credited toward your first month.</p>
+      <div class="cta-row"><a href="/#read" class="btn btn-primary">Get a free snapshot</a><a href="/blog/" class="btn btn-outline">More signals</a></div>
+    </div>
+    <p class="method-note">Method: every figure on this page is quoted from the dated sources listed above. Nothing is estimated.</p>
+    <p class="caveat">No source opened here gives open or click rates for law firms alone; the Mailchimp figure covers all industries. The reader surveys are small (nearly 200 respondents for JD Supra and LIMELIGHT, which sells content distribution) and do not state where respondents are based. The ABA sample leans toward small firms.</p>
+  </article>
+  </main>
+  <footer class="v5-foot">
+    <div class="v5-foot-inner">
+      <div class="v5-foot-logo">LoopWorker</div>
+      <p>Evidence before execution.</p>
+      <p>© 2026 · <a href="/#pricing">Pricing</a> · <a href="/#how">Example read</a> · <a href="/blog/">Signals</a> · <a href="/#about">About</a></p>
+      <p class="v5-foot-small">alex@loopworker.com · <a href="https://instagram.com/loopworker">@loopworker</a></p>
+    </div>
+  </footer>
+  <script defer src="/site-pages.js"></script>
+  <script defer src="/site-runtime.js"></script>
+</body>
+</html>
