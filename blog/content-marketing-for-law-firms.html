@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site-pages.css">
+  <link rel="stylesheet" href="/v5-system.css">
+  <style>
+    body { background: var(--bg) !important; color: var(--text-2) !important; font-family: var(--sans) !important; }
+    .sig-article { max-width: 760px; margin: 0 auto; padding: 7rem 1.25rem 4rem; position: relative; }
+    .sig-article h1 { font-family: var(--sans-tight) !important; font-size: clamp(2rem, 4.4vw, 3rem) !important; font-weight: 800 !important; letter-spacing: -0.03em !important; line-height: 1.08 !important; color: var(--text) !important; margin: 0 0 1.1rem !important; }
+    .sig-article h2 { font-family: var(--sans-tight) !important; font-size: clamp(1.35rem, 2.4vw, 1.7rem) !important; font-weight: 700 !important; letter-spacing: -0.02em !important; color: var(--text) !important; margin: 2.4rem 0 0.9rem !important; }
+    .sig-article p, .sig-article li { color: var(--text-2) !important; font-size: 1.05rem !important; line-height: 1.7 !important; }
+    .sig-article p { margin: 0 0 1rem !important; }
+    .sig-article a { color: var(--indigo-bright); border-bottom: 1px solid rgba(227,164,74,0.35); text-decoration: none; }
+    .sig-article strong { color: var(--text); }
+    .sig-article ul { padding-left: 1.3rem; margin: 0 0 1.2rem; }
+    .sig-article li { margin-bottom: 0.45rem; }
+    .article-tag { display:inline-block; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--indigo-bright); margin-bottom: 1rem; }
+    .article-dek { font-size: 1.15rem !important; color: var(--text-2) !important; }
+    .article-meta { font-family: var(--mono); font-size: 0.75rem; color: var(--text-3); margin: 0 0 2rem; }
+    .quick-answer { border-left: 3px solid var(--indigo-bright); background: rgba(227,164,74,0.06); padding: 1.1rem 1.3rem; margin: 0 0 2rem; border-radius: 0 6px 6px 0; }
+    .quick-answer .qa-label, .key-takeaways .qa-label { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.5rem; display:block; }
+    .quick-answer p { margin: 0 !important; color: var(--text) !important; }
+    .key-takeaways { border: 1px solid var(--border); background: var(--surface); border-radius: 8px; padding: 1.2rem 1.4rem 0.6rem; margin: 0 0 2.4rem; }
+    .data-figure { margin: 2rem 0; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; background: var(--surface); }
+    .data-figure svg { width: 100%; height: auto; display: block; }
+    .data-figure figcaption { font-family: var(--mono); font-size: 0.74rem; color: var(--text-3); margin-top: 0.6rem; line-height: 1.5; }
+    .num-table { width: 100%; border-collapse: collapse; margin: 1.4rem 0 2rem; font-size: 0.95rem; }
+    .num-table th, .num-table td { text-align: left; padding: 0.55rem 0.6rem; border-bottom: 1px solid var(--border); color: var(--text-2); vertical-align: top; }
+    .num-table th { color: var(--text-3); font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+    .num-table td.n { font-family: var(--mono); color: var(--text); white-space: nowrap; }
+    .bar-row { display: grid; grid-template-columns: minmax(0, 11rem) 1fr auto; gap: 0.6rem; align-items: center; margin: 0.45rem 0; font-size: 0.9rem; }
+    .bar-row .bar { height: 10px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+    .bar-row .bar span { display: block; height: 100%; background: var(--indigo-bright); }
+    .bar-row .v { font-family: var(--mono); color: var(--text); font-size: 0.85rem; }
+    .faq details { border-bottom: 1px solid var(--border); padding: 0.9rem 0; }
+    .faq summary { cursor: pointer; color: var(--text); font-weight: 600; font-size: 1.05rem; }
+    .faq details p { margin: 0.7rem 0 0 !important; }
+    .method-note, .caveat { font-size: 0.92rem !important; color: var(--text-3) !important; }
+    .method-note { border-top: 1px solid var(--border); padding-top: 1.4rem; margin-top: 2.6rem !important; }
+    .post-cta { border: 1px solid var(--border); border-radius: 8px; padding: 1.4rem; margin: 2.6rem 0 1rem; background: var(--surface); }
+    .post-cta h2 { margin-top: 0 !important; }
+    .post-cta .cta-row { display:flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.8rem; }
+    .post-cta .cta-row a { border-bottom: 0; }
+    @media (max-width: 560px) { .bar-row { grid-template-columns: 1fr auto; } .bar-row .bar { grid-column: 1 / -1; grid-row: 2; } }
+    .moves-table td a { border-bottom: 0; }
+    .moves-table td.d { font-family: var(--mono); font-size: 0.8rem; color: var(--text-3); white-space: nowrap; }
+    .table-wrap { overflow-x: auto; margin: 1.4rem 0 2rem; }
+    .table-wrap .num-table { margin: 0; min-width: 560px; }
+  </style>
+  <title>Content marketing for law firms: what counsel read</title>
+  <meta name="description" content="Who publishes law firm content, in which formats, and how in-house counsel say they use it when choosing outside counsel, from ABA and buyer surveys.">
+  <meta name="author" content="Alex Lamb">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <link rel="canonical" href="https://www.loopworker.com/blog/content-marketing-for-law-firms.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.loopworker.com/blog/content-marketing-for-law-firms.html">
+  <meta property="og:title" content="Content marketing for law firms: what counsel read">
+  <meta property="og:description" content="Who publishes law firm content, in which formats, and how in-house counsel say they use it when choosing outside counsel, from ABA and buyer surveys.">
+  <meta property="og:image" content="https://www.loopworker.com/images/loopworker-og.png">
+  <meta property="article:published_time" content="2026-10-22">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Content marketing for law firms: what counsel read">
+  <meta name="twitter:description" content="Who publishes law firm content, in which formats, and how in-house counsel say they use it when choosing outside counsel, from ABA and buyer surveys.">
+  <meta property="og:site_name" content="LoopWorker">
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.loopworker.com/#organization",
+   "name": "LoopWorker",
+   "url": "https://www.loopworker.com/"
+  },
+  {
+   "@type": "Article",
+   "headline": "Content marketing for law firms: who publishes, in which formats, and what counsel use",
+   "description": "Who publishes law firm content, in which formats, and how in-house counsel say they use it when choosing outside counsel, from ABA and buyer surveys.",
+   "url": "https://www.loopworker.com/blog/content-marketing-for-law-firms.html",
+   "datePublished": "2026-10-22",
+   "dateModified": "2026-10-22",
+   "publisher": {
+    "@id": "https://www.loopworker.com/#organization"
+   },
+   "mainEntityOfPage": "https://www.loopworker.com/blog/content-marketing-for-law-firms.html",
+   "image": "https://www.loopworker.com/images/loopworker-og.png",
+   "author": {
+    "@type": "Person",
+    "name": "Alex Lamb",
+    "url": "https://www.loopworker.com/#about"
+   },
+   "inLanguage": "en-US",
+   "isAccessibleForFree": true,
+   "keywords": "content marketing for law firms, content marketing for lawyers, law firm content strategy, law firm thought leadership",
+   "citation": [
+    {
+     "@type": "CreativeWork",
+     "name": "American Bar Association, ABA TechReport 2023: Websites & Marketing (Allison C. Johs)",
+     "url": "https://www.americanbar.org/groups/law_practice/resources/tech-report/2023/2023-websites-and-marketing-techreport/",
+     "datePublished": "2024-01-08"
+    },
+    {
+     "@type": "CreativeWork",
+     "name": "JD Supra and LIMELIGHT (vendor survey), Trust, Relevance, & AI in 2026 (Aviva Cuyler, Kenneth Gary)",
+     "url": "https://www.jdsupra.com/legalnews/report-trust-relevance-ai-2026-what-gc-7462638/",
+     "datePublished": "2026-04-14"
+    },
+    {
+     "@type": "CreativeWork",
+     "name": "Greentarget and Zeughauser Group (vendor survey), 2025 State of Digital & Content Marketing",
+     "url": "https://greentarget.com/wp-content/uploads/2024/12/2025-State-of-Digital-Content-Marketing.pdf",
+     "datePublished": "2024"
+    },
+    {
+     "@type": "CreativeWork",
+     "name": "Above the Law (Jeremy Barker), reporting the LMA and Above the Law 2025 Legal Marketing Decision-Makers Survey",
+     "url": "https://abovethelaw.com/2025/07/stats-of-the-week-legal-marketing-in-the-ai-age/",
+     "datePublished": "2025-07-11"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Do in-house counsel actually hire firms because of content?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "In the JD Supra and LIMELIGHT survey, 27% said they had hired a firm because of its thought leadership, and 61% said it affected their decision to hire. That survey was run by companies that sell legal content services. It does not state where respondents are based."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Should a firm invest in video or podcasts?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Only 30% of lawyers in the ABA TechReport 2023 said their firm produces video. JD Supra and LIMELIGHT respondents preferred podcasts at 28%, against 74% for client alerts and blog posts. Neither source measures buyer preference for video directly."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is LinkedIn worth the effort for law firm thought leadership?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The sources point in different directions. Greentarget and Zeughauser Group found 66% called LinkedIn a valuable distribution platform, while JD Supra and LIMELIGHT found 22% named LinkedIn posts as where they found useful thought leadership. Legal media and editorial platforms led that survey at 71%."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Who should write law firm content?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "At firms of 100 or more attorneys, ABA respondents most often named marketing staff (79%), then more than one lawyer (63%). Only 12% of lawyers keep their own legal topic blog. The data describes current practice and does not show which approach buyers prefer."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.loopworker.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Signals",
+     "item": "https://www.loopworker.com/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Content marketing for law firms: who publishes, in which formats, and what counsel use",
+     "item": "https://www.loopworker.com/blog/content-marketing-for-law-firms.html"
+    }
+   ]
+  }
+ ]
+}
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav class="v5-nav">
+    <div class="v5-nav-inner">
+      <a href="/" class="v5-logo">
+        <span class="v5-logo-mark">L</span>
+        LoopWorker
+      </a>
+      <div class="v5-nav-links">
+        <a href="/#pricing">Pricing</a>
+
+        <a href="/resources/field-manual.html">Field manual</a>
+        <a href="/#how">Example read</a>
+        <a href="/blog/" class="active">Signals</a>
+        <a href="/#about">About</a>
+        <a href="/#read" class="v5-nav-cta">Free snapshot</a>
+      </div>
+      <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="v5-mobile-nav" id="mobileNav">
+      <a href="/#pricing">Pricing</a>
+
+      <a href="/resources/field-manual.html">Field manual</a>
+      <a href="/#how">Example read</a>
+      <a href="/blog/">Signals</a>
+      <a href="/#about">About</a>
+      <a href="/#read" class="v5-nav-cta">Free snapshot</a>
+    </div>
+  </nav>
+  <main id="main">
+  <article class="sig-article">
+    <span class="article-tag">Guide</span>
+    <h1>Content marketing for law firms: who publishes, in which formats, and what counsel use</h1>
+    <p class="article-dek">Lawyer surveys show where firms put their content effort. Buyer surveys show where in-house counsel say they look, and the sources do not agree everywhere.</p>
+    <p class="article-meta">October 22, 2026 · Alex Lamb</p>
+    <div class="quick-answer"><span class="qa-label">Quick answer</span><p>At larger US firms, blogs, email client alerts and LinkedIn are the common formats: per the ABA TechReport 2023, 60% of lawyers at firms of 100-499 lawyers and over 67% at firms of 500+ lawyers said their firm has a blog. On the buyer side, JD Supra and LIMELIGHT found that 61% of the corporate counsel and business leaders surveyed said thought leadership affected their decision to hire a law firm.</p></div>
+    <div class="key-takeaways"><span class="qa-label">Key takeaways</span><ul><li>At firms of 100 or more attorneys, ABA respondents named marketing staff (79%) ahead of more than one lawyer (63%) as website content creators.</li><li>Only 12% of lawyers surveyed by the ABA keep their own legal topic blog.</li><li>JD Supra and LIMELIGHT respondents preferred client alerts and blog posts (74%) over podcasts (28%) and social media posts (15%).</li><li>71% of the same respondents found useful thought leadership through legal media and editorial platforms, and 22% named LinkedIn posts.</li><li>The buyer surveys come from companies that sell legal content and PR services.</li></ul></div>
+    <h2>Who publishes, and in which formats</h2>
+    <p>At larger US firms, the ABA data points to blogs, client alerts and LinkedIn. The American Bar Association&#x27;s ABA TechReport 2023, by Allison C. Johs, found that 60% of lawyers at firms of 100-499 lawyers and over 67% at firms of 500+ lawyers said their firm has a blog.</p>
+    <p>Client alerts follow the same pattern. Among firms that market by email, 66% of respondents said they send client alerts, rising to 92% or more at firms of 100 or more lawyers. Among respondents whose firms are on social media, 83% said the firm is on LinkedIn, and 97% at firms of 100 or more lawyers.</p>
+    <p>Video is less common. Only 30% of lawyers surveyed said their firm produces video to market the practice. These are shares of individual lawyers who answered, not shares of firms.</p>
+    
+    <h2>Who writes it</h2>
+    <p>At firms of 100 or more attorneys, ABA respondents most often said marketing staff create website content (79%), followed by more than one lawyer (63%) and technology staff (27%).</p>
+    <p>Individual authorship is thinner. Only 12% of lawyers surveyed keep their own legal topic blog, against 60% or more who report a firm blog at larger firms.</p>
+    <p>That leaves a choice the data cannot make for you: whether content runs through the marketing team, through named lawyers, or both.</p>
+    <h2>How in-house counsel say they use law firm content</h2>
+    <p>JD Supra and LIMELIGHT, in Trust, Relevance, &amp; AI in 2026 by Aviva Cuyler and Kenneth Gary, surveyed corporate counsel and business leaders. More than 82% read legal thought leadership at least once a week. 61% said it affected their decision to hire a law firm, and 27% said they had hired a firm because of it.</p>
+    <p>Written formats led. Respondents preferred client alerts and blog posts (74%) far more than podcasts (28%) or social media posts (15%). On discovery, 71% most often found useful law firm thought leadership through legal media and editorial platforms.</p>
+    <p>Greentarget and Zeughauser Group, in their 2025 State of Digital &amp; Content Marketing, reported that most respondents call articles and speeches by thought leaders an important resource when researching outside firms to hire. 69% called thought leader websites and blogs a valuable content source.</p>
+    <h2>Where the sources disagree</h2>
+    <p>LinkedIn is the split. Greentarget and Zeughauser Group found 66% of decision-makers called LinkedIn a valuable distribution platform for business intelligence. JD Supra and LIMELIGHT found 22% named LinkedIn posts as a place they found useful thought leadership. The questions differ: one asks about value as a platform, the other about where useful content was found.</p>
+    <p>Both buyer surveys were run by US companies that sell legal content and PR services, and neither states where respondents are based. The ABA numbers come from lawyers, not buyers, so supply and demand are measured on different people.</p>
+    <p>Where they line up is written work. Larger firms report blogs and client alerts, and buyers in the JD Supra and LIMELIGHT survey preferred client alerts and blog posts.</p>
+    <h2>The budget question</h2>
+    <p>Above the Law, in a piece by Jeremy Barker reporting the LMA and Above the Law 2025 Legal Marketing Decision-Makers Survey, said 54% of legal marketing decision-makers reported budgets grew in recent years after adjusting for inflation, and 14% said theirs shrank.</p>
+    <p>The data speaks to which formats to fund, who writes, and where content is distributed. Buyers in these surveys favor written alerts and posts and find them through legal media. Larger firms already report producing those formats, so the open question for your firm is whether its output is distinct from peers publishing the same kinds of pieces.</p>
+    <h2>Sources</h2>
+    <ul><li><a href="https://www.americanbar.org/groups/law_practice/resources/tech-report/2023/2023-websites-and-marketing-techreport/" rel="nofollow noopener" target="_blank">American Bar Association, ABA TechReport 2023: Websites &amp; Marketing (Allison C. Johs)</a>, 2024-01-08</li><li><a href="https://www.jdsupra.com/legalnews/report-trust-relevance-ai-2026-what-gc-7462638/" rel="nofollow noopener" target="_blank">JD Supra and LIMELIGHT (vendor survey), Trust, Relevance, &amp; AI in 2026 (Aviva Cuyler, Kenneth Gary)</a>, 2026-04-14</li><li><a href="https://greentarget.com/wp-content/uploads/2024/12/2025-State-of-Digital-Content-Marketing.pdf" rel="nofollow noopener" target="_blank">Greentarget and Zeughauser Group (vendor survey), 2025 State of Digital &amp; Content Marketing</a>, 2024</li><li><a href="https://abovethelaw.com/2025/07/stats-of-the-week-legal-marketing-in-the-ai-age/" rel="nofollow noopener" target="_blank">Above the Law (Jeremy Barker), reporting the LMA and Above the Law 2025 Legal Marketing Decision-Makers Survey</a>, 2025-07-11</li></ul>
+    <section class="faq">
+    <h2>Frequently asked questions</h2>
+    <details><summary>Do in-house counsel actually hire firms because of content?</summary><p>In the JD Supra and LIMELIGHT survey, 27% said they had hired a firm because of its thought leadership, and 61% said it affected their decision to hire. That survey was run by companies that sell legal content services. It does not state where respondents are based.</p></details>
+    <details><summary>Should a firm invest in video or podcasts?</summary><p>Only 30% of lawyers in the ABA TechReport 2023 said their firm produces video. JD Supra and LIMELIGHT respondents preferred podcasts at 28%, against 74% for client alerts and blog posts. Neither source measures buyer preference for video directly.</p></details>
+    <details><summary>Is LinkedIn worth the effort for law firm thought leadership?</summary><p>The sources point in different directions. Greentarget and Zeughauser Group found 66% called LinkedIn a valuable distribution platform, while JD Supra and LIMELIGHT found 22% named LinkedIn posts as where they found useful thought leadership. Legal media and editorial platforms led that survey at 71%.</p></details>
+    <details><summary>Who should write law firm content?</summary><p>At firms of 100 or more attorneys, ABA respondents most often named marketing staff (79%), then more than one lawyer (63%). Only 12% of lawyers keep their own legal topic blog. The data describes current practice and does not show which approach buyers prefer.</p></details>
+    </section>
+    <div class="post-cta">
+      <h2>See where your firm stands</h2>
+      <p>A free snapshot gives you one evidence-backed observation about your firm's public marketing, with the source and a practical next step.</p>
+      <p>Want the full picture against up to 3 competitors? The <a href="/#pricing">$750 Market Read</a> covers it, credited toward your first month.</p>
+      <div class="cta-row"><a href="/#read" class="btn btn-primary">Get a free snapshot</a><a href="/blog/" class="btn btn-outline">More signals</a></div>
+    </div>
+    <p class="method-note">Method: every figure on this page is quoted from the dated sources listed above. Nothing is estimated.</p>
+    <p class="caveat">The buyer-side numbers come from surveys run by US companies that sell legal content and PR services (JD Supra with LIMELIGHT, Greentarget with Zeughauser Group), with samples of nearly 200 and more than 285, and neither states where respondents are based. ABA figures are shares of individual lawyers who answered, not of firms.</p>
+  </article>
+  </main>
+  <footer class="v5-foot">
+    <div class="v5-foot-inner">
+      <div class="v5-foot-logo">LoopWorker</div>
+      <p>Evidence before execution.</p>
+      <p>© 2026 · <a href="/#pricing">Pricing</a> · <a href="/#how">Example read</a> · <a href="/blog/">Signals</a> · <a href="/#about">About</a></p>
+      <p class="v5-foot-small">alex@loopworker.com · <a href="https://instagram.com/loopworker">@loopworker</a></p>
+    </div>
+  </footer>
+  <script defer src="/site-pages.js"></script>
+  <script defer src="/site-runtime.js"></script>
+</body>
+</html>
