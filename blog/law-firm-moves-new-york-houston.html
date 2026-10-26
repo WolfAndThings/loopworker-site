@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer data-domain="loopworker.com" src="https://plausible.io/js/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site-pages.css">
+  <link rel="stylesheet" href="/v5-system.css">
+  <style>
+    body { background: var(--bg) !important; color: var(--text-2) !important; font-family: var(--sans) !important; }
+    .sig-article { max-width: 760px; margin: 0 auto; padding: 7rem 1.25rem 4rem; position: relative; }
+    .sig-article h1 { font-family: var(--sans-tight) !important; font-size: clamp(2rem, 4.4vw, 3rem) !important; font-weight: 800 !important; letter-spacing: -0.03em !important; line-height: 1.08 !important; color: var(--text) !important; margin: 0 0 1.1rem !important; }
+    .sig-article h2 { font-family: var(--sans-tight) !important; font-size: clamp(1.35rem, 2.4vw, 1.7rem) !important; font-weight: 700 !important; letter-spacing: -0.02em !important; color: var(--text) !important; margin: 2.4rem 0 0.9rem !important; }
+    .sig-article p, .sig-article li { color: var(--text-2) !important; font-size: 1.05rem !important; line-height: 1.7 !important; }
+    .sig-article p { margin: 0 0 1rem !important; }
+    .sig-article a { color: var(--indigo-bright); border-bottom: 1px solid rgba(227,164,74,0.35); text-decoration: none; }
+    .sig-article strong { color: var(--text); }
+    .sig-article ul { padding-left: 1.3rem; margin: 0 0 1.2rem; }
+    .sig-article li { margin-bottom: 0.45rem; }
+    .article-tag { display:inline-block; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--indigo-bright); margin-bottom: 1rem; }
+    .article-dek { font-size: 1.15rem !important; color: var(--text-2) !important; }
+    .article-meta { font-family: var(--mono); font-size: 0.75rem; color: var(--text-3); margin: 0 0 2rem; }
+    .quick-answer { border-left: 3px solid var(--indigo-bright); background: rgba(227,164,74,0.06); padding: 1.1rem 1.3rem; margin: 0 0 2rem; border-radius: 0 6px 6px 0; }
+    .quick-answer .qa-label, .key-takeaways .qa-label { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin-bottom: 0.5rem; display:block; }
+    .quick-answer p { margin: 0 !important; color: var(--text) !important; }
+    .key-takeaways { border: 1px solid var(--border); background: var(--surface); border-radius: 8px; padding: 1.2rem 1.4rem 0.6rem; margin: 0 0 2.4rem; }
+    .data-figure { margin: 2rem 0; border: 1px solid var(--border); border-radius: 8px; padding: 1rem; background: var(--surface); }
+    .data-figure svg { width: 100%; height: auto; display: block; }
+    .data-figure figcaption { font-family: var(--mono); font-size: 0.74rem; color: var(--text-3); margin-top: 0.6rem; line-height: 1.5; }
+    .num-table { width: 100%; border-collapse: collapse; margin: 1.4rem 0 2rem; font-size: 0.95rem; }
+    .num-table th, .num-table td { text-align: left; padding: 0.55rem 0.6rem; border-bottom: 1px solid var(--border); color: var(--text-2); vertical-align: top; }
+    .num-table th { color: var(--text-3); font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+    .num-table td.n { font-family: var(--mono); color: var(--text); white-space: nowrap; }
+    .bar-row { display: grid; grid-template-columns: minmax(0, 11rem) 1fr auto; gap: 0.6rem; align-items: center; margin: 0.45rem 0; font-size: 0.9rem; }
+    .bar-row .bar { height: 10px; background: rgba(255,255,255,0.06); border-radius: 3px; overflow: hidden; }
+    .bar-row .bar span { display: block; height: 100%; background: var(--indigo-bright); }
+    .bar-row .v { font-family: var(--mono); color: var(--text); font-size: 0.85rem; }
+    .faq details { border-bottom: 1px solid var(--border); padding: 0.9rem 0; }
+    .faq summary { cursor: pointer; color: var(--text); font-weight: 600; font-size: 1.05rem; }
+    .faq details p { margin: 0.7rem 0 0 !important; }
+    .method-note, .caveat { font-size: 0.92rem !important; color: var(--text-3) !important; }
+    .method-note { border-top: 1px solid var(--border); padding-top: 1.4rem; margin-top: 2.6rem !important; }
+    .post-cta { border: 1px solid var(--border); border-radius: 8px; padding: 1.4rem; margin: 2.6rem 0 1rem; background: var(--surface); }
+    .post-cta h2 { margin-top: 0 !important; }
+    .post-cta .cta-row { display:flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.8rem; }
+    .post-cta .cta-row a { border-bottom: 0; }
+    @media (max-width: 560px) { .bar-row { grid-template-columns: 1fr auto; } .bar-row .bar { grid-column: 1 / -1; grid-row: 2; } }
+    .moves-table td a { border-bottom: 0; }
+    .moves-table td.d { font-family: var(--mono); font-size: 0.8rem; color: var(--text-3); white-space: nowrap; }
+    .table-wrap { overflow-x: auto; margin: 1.4rem 0 2rem; }
+    .table-wrap .num-table { margin: 0; min-width: 560px; }
+  </style>
+  <title>Law firm lateral moves: New York leads the week | LoopWorker</title>
+  <meta name="description" content="New York led 20 reported law firm moves from October 19 to October 25, 2026. See who hired, who lost people, and where Houston fits.">
+  <meta name="author" content="Alex Lamb">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <link rel="canonical" href="https://www.loopworker.com/blog/law-firm-moves-new-york-houston.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.loopworker.com/blog/law-firm-moves-new-york-houston.html">
+  <meta property="og:title" content="Law firm lateral moves: New York leads the week">
+  <meta property="og:description" content="New York led 20 reported law firm moves from October 19 to October 25, 2026. See who hired, who lost people, and where Houston fits.">
+  <meta property="og:image" content="https://www.loopworker.com/images/loopworker-og.png">
+  <meta property="article:published_time" content="2026-10-26">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Law firm lateral moves: New York leads the week">
+  <meta name="twitter:description" content="New York led 20 reported law firm moves from October 19 to October 25, 2026. See who hired, who lost people, and where Houston fits.">
+  <meta property="og:site_name" content="LoopWorker">
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.loopworker.com/#organization",
+   "name": "LoopWorker",
+   "url": "https://www.loopworker.com/"
+  },
+  {
+   "@type": "Article",
+   "headline": "Market moves: New York leads, Houston gets a new office",
+   "description": "New York led 20 reported law firm moves from October 19 to October 25, 2026. See who hired, who lost people, and where Houston fits.",
+   "url": "https://www.loopworker.com/blog/law-firm-moves-new-york-houston.html",
+   "datePublished": "2026-10-26",
+   "dateModified": "2026-10-26",
+   "publisher": {
+    "@id": "https://www.loopworker.com/#organization"
+   },
+   "mainEntityOfPage": "https://www.loopworker.com/blog/law-firm-moves-new-york-houston.html",
+   "image": "https://www.loopworker.com/images/loopworker-og.png",
+   "author": {
+    "@type": "Person",
+    "name": "Alex Lamb",
+    "url": "https://www.loopworker.com/#about"
+   },
+   "inLanguage": "en-US",
+   "isAccessibleForFree": true
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Where did the most moves happen this window?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "New York had the most, with 4 of 20 reported moves. Weil Gotshal & Manges, Sullivan & Cromwell, Allen Matkins Leck Gamble Mallory & Natsis and Blank Rome were the hiring firms. Each took its hire from another law firm."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Which firms gained the most?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Troutman Pepper Locke and Ashurst Perkins Coie each had 2. Troutman Pepper Locke's entries describe an insurance litigation team in Philadelphia. Ashurst Perkins Coie's entries are reports of its Houston office launch."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Were there any mergers?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No merger was reported from October 19 to October 25, 2026. The window had 14 laterals, 4 group moves and 2 office openings."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does this capture every move in the market?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. It counts moves that public law news feeds reported in the window. A move nobody announced is not here."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://www.loopworker.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Signals",
+     "item": "https://www.loopworker.com/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Market moves: New York leads, Houston gets a new office",
+     "item": "https://www.loopworker.com/blog/law-firm-moves-new-york-houston.html"
+    }
+   ]
+  }
+ ]
+}
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav class="v5-nav">
+    <div class="v5-nav-inner">
+      <a href="/" class="v5-logo">
+        <span class="v5-logo-mark">L</span>
+        LoopWorker
+      </a>
+      <div class="v5-nav-links">
+        <a href="/#pricing">Pricing</a>
+
+        <a href="/resources/field-manual.html">Field manual</a>
+        <a href="/#how">Example read</a>
+        <a href="/blog/" class="active">Signals</a>
+        <a href="/#about">About</a>
+        <a href="/#read" class="v5-nav-cta">Free snapshot</a>
+      </div>
+      <button type="button" class="v5-hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="v5-mobile-nav" id="mobileNav">
+      <a href="/#pricing">Pricing</a>
+
+      <a href="/resources/field-manual.html">Field manual</a>
+      <a href="/#how">Example read</a>
+      <a href="/blog/">Signals</a>
+      <a href="/#about">About</a>
+      <a href="/#read" class="v5-nav-cta">Free snapshot</a>
+    </div>
+  </nav>
+  <main id="main">
+  <article class="sig-article">
+    <span class="article-tag">Market moves</span>
+    <h1>Market moves: New York leads, Houston gets a new office</h1>
+    <p class="article-dek">Public law news reported 20 moves from October 19 to October 25, 2026. New York had the most, and Ashurst Perkins Coie opened in Houston.</p>
+    <p class="article-meta">October 26, 2026 · Alex Lamb</p>
+    <div class="quick-answer"><span class="qa-label">Quick answer</span><p>New York led the window with 4 of 20 reported moves, all of them partners or teams taken from other law firms by Weil Gotshal &amp; Manges, Sullivan &amp; Cromwell, Allen Matkins Leck Gamble Mallory &amp; Natsis and Blank Rome. Houston was the other story, with Ashurst Perkins Coie opening an office there and Kirkland &amp; Ellis and Nelson Mullins Riley &amp; Scarborough adding lawyers in the city.</p></div>
+    <div class="key-takeaways"><span class="qa-label">Key takeaways</span><ul><li>Public law news reported 20 moves: 14 laterals, 4 group moves, 2 office openings and 0 mergers.</li><li>New York had the most moves, with 4, and each came from another law firm.</li><li>Ashurst Perkins Coie opened in Houston, and The Lawyer reported it launched with lawyers from Bracewell.</li><li>Troutman Pepper Locke added an insurance litigation team in Philadelphia, including 3 Faegre Drinker Biddle &amp; Reath litigators.</li><li>Kirkland &amp; Ellis and Nelson Mullins Riley &amp; Scarborough each gained and lost a lawyer.</li></ul></div>
+    <h2>New York led the window</h2>
+    <p>Public law news reported 20 moves from October 19 to October 25, 2026. That breaks into 14 laterals, 4 group moves, 2 office openings and 0 mergers. New York had the most, with 4.</p>
+    <p>Each New York arrival came from another law firm. Weil Gotshal &amp; Manges hired an antitrust partner from Paul Weiss Rifkind Wharton &amp; Garrison. Sullivan &amp; Cromwell added a tax lawyer from Kirkland &amp; Ellis as partner. Allen Matkins Leck Gamble Mallory &amp; Natsis hired Edward E. Filusch, a commercial litigator, from Kasowitz.</p>
+    <p>Blank Rome made the group move. It added Christopher Doyle and Marvin Goldstein, a commodities and finance team, from Hogan Lovells Cadwalader. Global Legal Post reported it.</p>
+    <p>If your firm competes in New York antitrust, tax, commercial litigation or commodities finance, a rival now has a new partner to put in front of your clients.</p>
+    <table class="num-table"><tbody>
+        <tr><td>Moves reported</td><td class="n">20</td></tr>
+        <tr><td>Individual laterals</td><td class="n">14</td></tr>
+        <tr><td>Group moves</td><td class="n">4</td></tr>
+        <tr><td>Office openings</td><td class="n">2</td></tr>
+        <tr><td>Mergers</td><td class="n">0</td></tr>
+      </tbody></table>
+    <table class="num-table"><thead><tr><th>Firm adding people</th><th>Moves</th></tr></thead><tbody><tr><td>Troutman Pepper Locke</td><td class="n">2</td></tr><tr><td>Ashurst Perkins Coie</td><td class="n">2</td></tr><tr><td>Ogletree Deakins Nash Smoak &amp; Stewart PC</td><td class="n">1</td></tr><tr><td>Munsch Hardt Kopf &amp; Harr PC</td><td class="n">1</td></tr><tr><td>Haber Law</td><td class="n">1</td></tr><tr><td>DLA Piper</td><td class="n">1</td></tr></tbody></table><table class="num-table"><thead><tr><th>City</th><th>Moves</th></tr></thead><tbody><tr><td>New York</td><td class="n">4</td></tr><tr><td>San Francisco</td><td class="n">2</td></tr><tr><td>Dallas</td><td class="n">2</td></tr><tr><td>Washington, DC</td><td class="n">2</td></tr><tr><td>Philadelphia</td><td class="n">2</td></tr><tr><td>Houston</td><td class="n">2</td></tr></tbody></table>
+    <h2>Houston: a new office and Texas hires</h2>
+    <p>Ashurst Perkins Coie opened an office in Houston. Both of its counted moves are reports of that launch, from LawFuel and The Lawyer. The Lawyer reported the office launched with lawyers from Bracewell.</p>
+    <p>Other firms added in Houston too. Kirkland &amp; Ellis took a longtime Susman Godfrey litigator in Houston and Austin. Nelson Mullins Riley &amp; Scarborough added 3 tax and litigation lawyers in Atlanta and Houston.</p>
+    <p>Dallas had 2 moves. Munsch Hardt Kopf &amp; Harr PC added an M&amp;A lawyer from Dorsey &amp; Whitney. Hunton Andrews Kurth hired a commercial litigator from Husch Blackwell.</p>
+    <p>For a Houston firm, a new office brings a new name into pitches, rankings submissions and local press. The launch announcement is where that entrant introduces itself.</p>
+    <h2>Philadelphia and the rest of the map</h2>
+    <p>Troutman Pepper Locke is tied with Ashurst Perkins Coie as the top gaining firm, with 2. Both entries describe an insurance litigation team joining in Philadelphia. Law360 Pennsylvania reported 3 litigators came from Faegre Drinker Biddle &amp; Reath.</p>
+    <p>Washington, DC had 2 moves. Freshfields hired a Life Sciences lawyer from Gibson Dunn &amp; Crutcher. Baker Donelson Bearman Caldwell &amp; Berkowitz PC hired a former White House information director from Nelson Mullins Riley &amp; Scarborough.</p>
+    <p>San Francisco had 2. Ogletree Deakins Nash Smoak &amp; Stewart PC hired a privacy, cybersecurity and artificial intelligence counsel from Fisher Phillips. DLA Piper hired a product liability partner from Shook Hardy &amp; Bacon.</p>
+    <p>The rest were single entries on the map. Haber Law added a real estate partner from Greenspoon Marder in Miami. Norris McLaughlin PA added a lawyer from Eckert Seamans Cherin &amp; Mellott in Allentown. Brownstein Hyatt Farber Schreck added a government relations lawyer from the U.S. Department of Agriculture in D.C. Bressler Amery &amp; Ross PC added an employment lawyer from Standard Chartered Bank in Florham Park.</p>
+    <h2>Firms on both sides of the ledger</h2>
+    <p>Kirkland &amp; Ellis appears on both lists. It lost a tax lawyer to Sullivan &amp; Cromwell in New York and gained a Susman Godfrey litigator in Texas.</p>
+    <p>Nelson Mullins Riley &amp; Scarborough also appears on both lists. It lost a lawyer to Baker Donelson Bearman Caldwell &amp; Berkowitz PC in Washington, DC and added 3 lawyers in Atlanta and Houston.</p>
+    <p>That matters for how each firm tells the story. A departure and an arrival in the same window produce 2 announcements, and only the arrival is the firm&#x27;s to make.</p>
+    <h2>What it means for your next decision</h2>
+    <p>A lateral arrival is the moment a firm&#x27;s marketing team has the most to announce: a new name, a practice to point to, a city to claim. The hiring firm owns that moment. The firm that lost the lawyer does not.</p>
+    <p>If you compete in New York, Houston or Philadelphia litigation, the firms named here have something new to say this month. Your own clients may hear it first from them.</p>
+    <p>This is a count of moves that public law news reported in the window. It describes this window and nothing beyond it.</p>
+    <h2>Every move in the count</h2>
+    <div class="table-wrap"><table class="num-table moves-table">
+      <thead><tr><th>Date</th><th>Type</th><th>Firm</th><th>From</th><th>Practice</th><th>City</th><th>Source</th></tr></thead>
+      <tbody>
+<tr><td class="d">10-23</td><td>Lateral</td><td>Ogletree Deakins Nash Smoak &amp; Stewart PC</td><td>Fisher Phillips</td><td>privacy, cybersecurity and artificial intelligence</td><td>San Francisco</td><td><a href="https://www.law360.com/pulse/california-pulse/articles/2541350?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse California</a></td></tr>
+<tr><td class="d">10-23</td><td>Lateral</td><td>Munsch Hardt Kopf &amp; Harr PC</td><td>Dorsey &amp; Whitney</td><td>corporate and securities and mergers and acquisitions</td><td>Dallas</td><td><a href="https://www.law360.com/pulse/mid-law/articles/2540914?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse Mid-Law</a></td></tr>
+<tr><td class="d">10-22</td><td>Lateral</td><td>Haber Law</td><td>Greenspoon Marder</td><td>real estate</td><td>Miami</td><td><a href="https://www.law360.com/pulse/florida-pulse/articles/2541345?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse Florida</a></td></tr>
+<tr><td class="d">10-22</td><td>Lateral</td><td>DLA Piper</td><td>Shook Hardy &amp; Bacon</td><td>product liability</td><td>San Francisco</td><td><a href="https://www.law360.com/ip/articles/2541330?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 IP</a></td></tr>
+<tr><td class="d">10-21</td><td>Lateral</td><td>Norris McLaughlin PA</td><td>Eckert Seamans Cherin &amp; Mellott</td><td></td><td>Allentown</td><td><a href="https://www.law360.com/pulse/mid-law/articles/2540882?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse Mid-Law</a></td></tr>
+<tr><td class="d">10-21</td><td>Lateral</td><td>Brownstein Hyatt Farber Schreck</td><td>U.S. Department of Agriculture</td><td>government relations</td><td>D.C.</td><td><a href="https://www.law360.com/pulse/mid-law/articles/2540010?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse Mid-Law</a></td></tr>
+<tr><td class="d">10-21</td><td>Lateral</td><td>Bressler Amery &amp; Ross PC</td><td>Standard Chartered Bank</td><td>employment</td><td>Florham Park</td><td><a href="https://www.law360.com/pulse/mid-law/articles/2540673?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse Mid-Law</a></td></tr>
+<tr><td class="d">10-21</td><td>Group</td><td>Blank Rome</td><td>Hogan Lovells Cadwalader</td><td>commodities, finance</td><td>New York</td><td><a href="https://www.globallegalpost.com/news/blank-rome-adds-two-partner-commodities-finance-team-in-new-york-from-hogan-lovells-cadwalader-1524421301" rel="nofollow noopener" target="_blank">Global Legal Post</a></td></tr>
+<tr><td class="d">10-20</td><td>Lateral</td><td>Sullivan &amp; Cromwell</td><td>Kirkland &amp; Ellis</td><td>tax</td><td>New York</td><td><a href="https://www.law360.com/pulse/new-york-pulse/articles/2540193?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse NY</a></td></tr>
+<tr><td class="d">10-20</td><td>Lateral</td><td>Hunton Andrews Kurth</td><td>Husch Blackwell</td><td>commercial litigation</td><td>Dallas</td><td><a href="https://www.law360.com/legalindustry/articles/2539554?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Legal Industry</a></td></tr>
+<tr><td class="d">10-20</td><td>Lateral</td><td>Freshfields</td><td>Gibson Dunn &amp; Crutcher</td><td>Life Sciences</td><td>Washington, DC</td><td><a href="https://www.law360.com/legalindustry/articles/2539619?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Legal Industry</a></td></tr>
+<tr><td class="d">10-20</td><td>Lateral</td><td>Baker Donelson Bearman Caldwell &amp; Berkowitz PC</td><td>Nelson Mullins Riley &amp; Scarborough</td><td></td><td>Washington, DC</td><td><a href="https://www.law360.com/pulse/dc-pulse/articles/2540210?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse DC</a></td></tr>
+<tr><td class="d">10-20</td><td>Lateral</td><td>Allen Matkins Leck Gamble Mallory &amp; Natsis</td><td>Kasowitz</td><td>commercial litigation</td><td>New York</td><td><a href="https://www.law360.com/newyork/articles/2539670?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 New York</a></td></tr>
+<tr><td class="d">10-19</td><td>Lateral</td><td>Weil Gotshal &amp; Manges</td><td>Paul Weiss Rifkind Wharton &amp; Garrison</td><td>antitrust</td><td>New York</td><td><a href="https://www.law360.com/newyork/articles/2539413?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 New York</a></td></tr>
+<tr><td class="d">10-19</td><td>Group</td><td>Troutman Pepper Locke</td><td></td><td>insurance litigation</td><td>Philadelphia</td><td><a href="https://www.lawfuel.com/us-law-troutman-pepper-locke-adds-nationally-recognized-insurance-litigation-team-in-philadelphia/" rel="nofollow noopener" target="_blank">LawFuel</a></td></tr>
+<tr><td class="d">10-19</td><td>Group</td><td>Troutman Pepper Locke</td><td>Faegre Drinker Biddle &amp; Reath</td><td>insurance litigation</td><td>Philadelphia</td><td><a href="https://www.law360.com/pennsylvania/articles/2539638?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pennsylvania</a></td></tr>
+<tr><td class="d">10-19</td><td>Group</td><td>Nelson Mullins Riley &amp; Scarborough</td><td></td><td>tax controversy and litigation</td><td>Atlanta and Houston</td><td><a href="https://www.law360.com/pulse/texas-pulse/articles/2539740?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Pulse Texas</a></td></tr>
+<tr><td class="d">10-19</td><td>Lateral</td><td>Kirkland &amp; Ellis</td><td>Susman Godfrey</td><td>litigation</td><td>Houston and Austin</td><td><a href="https://www.law360.com/texas/articles/2539426?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=section" rel="nofollow noopener" target="_blank">Law360 Texas</a></td></tr>
+<tr><td class="d">10-19</td><td>Office</td><td>Ashurst Perkins Coie</td><td></td><td></td><td>Houston</td><td><a href="https://www.lawfuel.com/ashurst-perkins-coie-makes-its-first-big-move-since-merger-with-houston-launch/" rel="nofollow noopener" target="_blank">LawFuel</a></td></tr>
+<tr><td class="d">10-19</td><td>Office</td><td>Ashurst Perkins Coie</td><td>Bracewell</td><td></td><td>Houston</td><td><a href="https://www.thelawyer.com/ashurst-perkins-coie-launches-houston-office-with-bracewell-pair/" rel="nofollow noopener" target="_blank">The Lawyer</a></td></tr>
+      </tbody></table></div>
+    <section class="faq">
+    <h2>Frequently asked questions</h2>
+    <details><summary>Where did the most moves happen this window?</summary><p>New York had the most, with 4 of 20 reported moves. Weil Gotshal &amp; Manges, Sullivan &amp; Cromwell, Allen Matkins Leck Gamble Mallory &amp; Natsis and Blank Rome were the hiring firms. Each took its hire from another law firm.</p></details>
+    <details><summary>Which firms gained the most?</summary><p>Troutman Pepper Locke and Ashurst Perkins Coie each had 2. Troutman Pepper Locke&#x27;s entries describe an insurance litigation team in Philadelphia. Ashurst Perkins Coie&#x27;s entries are reports of its Houston office launch.</p></details>
+    <details><summary>Were there any mergers?</summary><p>No merger was reported from October 19 to October 25, 2026. The window had 14 laterals, 4 group moves and 2 office openings.</p></details>
+    <details><summary>Does this capture every move in the market?</summary><p>No. It counts moves that public law news feeds reported in the window. A move nobody announced is not here.</p></details>
+    </section>
+    <div class="post-cta">
+      <h2>See where your firm stands</h2>
+      <p>A free snapshot gives you one evidence-backed observation about your firm's public marketing, with the source and a practical next step.</p>
+      <p>Want the full picture against up to 3 competitors? The <a href="/#pricing">$750 Market Read</a> covers it, credited toward your first month.</p>
+      <div class="cta-row"><a href="/#read" class="btn btn-primary">Get a free snapshot</a><a href="/blog/" class="btn btn-outline">More signals</a></div>
+    </div>
+    <p class="method-note">Method: law firm news headlines from 35 public RSS feeds, captured daily, October 19, 2026 to October 25, 2026. Firm, practice and city are read from each headline and summary; a field the text does not state is left blank. The same move reported twice is counted once. US moves only.</p>
+    <p class="caveat">This counts moves that public news feeds reported in the window. Moves nobody announced are not here.</p>
+  </article>
+  </main>
+  <footer class="v5-foot">
+    <div class="v5-foot-inner">
+      <div class="v5-foot-logo">LoopWorker</div>
+      <p>Evidence before execution.</p>
+      <p>© 2026 · <a href="/#pricing">Pricing</a> · <a href="/#how">Example read</a> · <a href="/blog/">Signals</a> · <a href="/#about">About</a></p>
+      <p class="v5-foot-small">alex@loopworker.com · <a href="https://instagram.com/loopworker">@loopworker</a></p>
+    </div>
+  </footer>
+  <script defer src="/site-pages.js"></script>
+  <script defer src="/site-runtime.js"></script>
+</body>
+</html>
